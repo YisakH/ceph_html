@@ -1,0 +1,731 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::amqp::connection_t 구조체 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structrgw_1_1amqp_1_1connection__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-attribs">Public 속성</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="structrgw_1_1amqp_1_1connection__t-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::amqp::connection_t 구조체 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+rgw::amqp::connection_t에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrgw_1_1amqp_1_1connection__t__coll__graph.png" border="0" usemap="#argw_1_1amqp_1_1connection__t_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1amqp_1_1connection__t_coll__map" id="argw_1_1amqp_1_1connection__t_coll__map">
+<area shape="rect" title=" " alt="" coords="5,171,160,581"/>
+<area shape="rect" title=" " alt="" coords="11,5,56,75"/>
+<area shape="poly" title=" " alt="" coords="35,75,37,146,38,154,33,155,32,147,29,75"/>
+<area shape="rect" title=" " alt="" coords="103,5,161,75"/>
+<area shape="poly" title=" " alt="" coords="130,75,118,154,113,153,124,74"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a4643b68fef2c0b5618068ea0f29f391d" id="r_a4643b68fef2c0b5618068ea0f29f391d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a4643b68fef2c0b5618068ea0f29f391d">connection_t</a> ()</td></tr>
+<tr class="separator:a4643b68fef2c0b5618068ea0f29f391d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af19d97553087dd5df4611e79b576a254" id="r_af19d97553087dd5df4611e79b576a254"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#af19d97553087dd5df4611e79b576a254">destroy</a> (int s)</td></tr>
+<tr class="separator:af19d97553087dd5df4611e79b576a254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72fcb95f774ee228d7634a27eb4d882" id="r_ad72fcb95f774ee228d7634a27eb4d882"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ad72fcb95f774ee228d7634a27eb4d882">is_ok</a> () const</td></tr>
+<tr class="separator:ad72fcb95f774ee228d7634a27eb4d882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf453fb6dc99ba14d96511b5a5e00d26" id="r_abf453fb6dc99ba14d96511b5a5e00d26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#abf453fb6dc99ba14d96511b5a5e00d26">~connection_t</a> ()</td></tr>
+<tr class="separator:abf453fb6dc99ba14d96511b5a5e00d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 속성</h2></td></tr>
+<tr class="memitem:a01532db27f9c31fa45a6ab37a68dbe79" id="r_a01532db27f9c31fa45a6ab37a68dbe79"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; amqp_connection_state_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a01532db27f9c31fa45a6ab37a68dbe79">state</a></td></tr>
+<tr class="separator:a01532db27f9c31fa45a6ab37a68dbe79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afafa2dc723699dd916982da8f7d8262f" id="r_afafa2dc723699dd916982da8f7d8262f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#afafa2dc723699dd916982da8f7d8262f">exchange</a></td></tr>
+<tr class="separator:afafa2dc723699dd916982da8f7d8262f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14e4d9b4c6a79f59c2b115dbc711972" id="r_ac14e4d9b4c6a79f59c2b115dbc711972"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ac14e4d9b4c6a79f59c2b115dbc711972">user</a></td></tr>
+<tr class="separator:ac14e4d9b4c6a79f59c2b115dbc711972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a929568f6e5761382f4d2207722287103" id="r_a929568f6e5761382f4d2207722287103"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a929568f6e5761382f4d2207722287103">password</a></td></tr>
+<tr class="separator:a929568f6e5761382f4d2207722287103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1dd3df389389f4418fef44e01134a3d" id="r_af1dd3df389389f4418fef44e01134a3d"><td class="memItemLeft" align="right" valign="top">amqp_bytes_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#af1dd3df389389f4418fef44e01134a3d">reply_to_queue</a></td></tr>
+<tr class="separator:af1dd3df389389f4418fef44e01134a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02762fdc326dd71e3ccb76a6301e9ab" id="r_aa02762fdc326dd71e3ccb76a6301e9ab"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#aa02762fdc326dd71e3ccb76a6301e9ab">delivery_tag</a></td></tr>
+<tr class="separator:aa02762fdc326dd71e3ccb76a6301e9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6c38ac33dd2170b9c901370f7b2756" id="r_acb6c38ac33dd2170b9c901370f7b2756"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#acb6c38ac33dd2170b9c901370f7b2756">status</a></td></tr>
+<tr class="separator:acb6c38ac33dd2170b9c901370f7b2756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad00b95a7185a1de7823b45ba83f13868" id="r_ad00b95a7185a1de7823b45ba83f13868"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ad00b95a7185a1de7823b45ba83f13868">reply_type</a></td></tr>
+<tr class="separator:ad00b95a7185a1de7823b45ba83f13868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcab662de5d3f20e621c0ca8de76064b" id="r_afcab662de5d3f20e621c0ca8de76064b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#afcab662de5d3f20e621c0ca8de76064b">reply_code</a></td></tr>
+<tr class="separator:afcab662de5d3f20e621c0ca8de76064b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37cab94faa84f34a9005bb3b60633ae" id="r_ad37cab94faa84f34a9005bb3b60633ae"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ad37cab94faa84f34a9005bb3b60633ae">ref_count</a></td></tr>
+<tr class="separator:ad37cab94faa84f34a9005bb3b60633ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab21e4faef1dc0816b966ec920e3cc9e1" id="r_ab21e4faef1dc0816b966ec920e3cc9e1"><td class="memItemLeft" align="right" valign="top">CephContext *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ab21e4faef1dc0816b966ec920e3cc9e1">cct</a></td></tr>
+<tr class="separator:ab21e4faef1dc0816b966ec920e3cc9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f22922e328f1788e6ef206ead7a9ce" id="r_a22f22922e328f1788e6ef206ead7a9ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1amqp.html#a387b005e6df0b2d7dfb9c005f1d0f91f">CallbackList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a22f22922e328f1788e6ef206ead7a9ce">callbacks</a></td></tr>
+<tr class="separator:a22f22922e328f1788e6ef206ead7a9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a4a8c3df69b5a6b765740f83ce3d7c" id="r_ae5a4a8c3df69b5a6b765740f83ce3d7c"><td class="memItemLeft" align="right" valign="top">ceph::coarse_real_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ae5a4a8c3df69b5a6b765740f83ce3d7c">next_reconnect</a></td></tr>
+<tr class="separator:ae5a4a8c3df69b5a6b765740f83ce3d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab293c913d09c81a015555ff158c03d3e" id="r_ab293c913d09c81a015555ff158c03d3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ab293c913d09c81a015555ff158c03d3e">mandatory</a></td></tr>
+<tr class="separator:ab293c913d09c81a015555ff158c03d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57191ec618d24ffefa171be2621c17c5" id="r_a57191ec618d24ffefa171be2621c17c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a57191ec618d24ffefa171be2621c17c5">use_ssl</a></td></tr>
+<tr class="separator:a57191ec618d24ffefa171be2621c17c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5053510ba4965bd589a6209aa9683357" id="r_a5053510ba4965bd589a6209aa9683357"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a5053510ba4965bd589a6209aa9683357">verify_ssl</a></td></tr>
+<tr class="separator:a5053510ba4965bd589a6209aa9683357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ef1d2d718f6592df520e44438c9b90" id="r_aa9ef1d2d718f6592df520e44438c9b90"><td class="memItemLeft" align="right" valign="top">boost::optional&lt; const std::string &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#aa9ef1d2d718f6592df520e44438c9b90">ca_location</a></td></tr>
+<tr class="separator:aa9ef1d2d718f6592df520e44438c9b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab71f2a5fd6d07adbcbe13d2712afa705" id="r_ab71f2a5fd6d07adbcbe13d2712afa705"><td class="memItemLeft" align="right" valign="top">utime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#ab71f2a5fd6d07adbcbe13d2712afa705">timestamp</a> = ceph_clock_now()</td></tr>
+<tr class="separator:ab71f2a5fd6d07adbcbe13d2712afa705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a862fac43247096134afc8f455d3ff302" id="r_a862fac43247096134afc8f455d3ff302"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a862fac43247096134afc8f455d3ff302">intrusive_ptr_add_ref</a> (const <a class="el" href="structrgw_1_1amqp_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:a862fac43247096134afc8f455d3ff302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b2b75189c5c619e270edfb2cee7f3f" id="r_a28b2b75189c5c619e270edfb2cee7f3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html#a28b2b75189c5c619e270edfb2cee7f3f">intrusive_ptr_release</a> (const <a class="el" href="structrgw_1_1amqp_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:a28b2b75189c5c619e270edfb2cee7f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00116">116</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a4643b68fef2c0b5618068ea0f29f391d" name="a4643b68fef2c0b5618068ea0f29f391d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4643b68fef2c0b5618068ea0f29f391d">&#9670;&#160;</a></span>connection_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::amqp::connection_t::connection_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00137">137</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>                 :</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a01532db27f9c31fa45a6ab37a68dbe79">state</a>(<span class="keyword">nullptr</span>),</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#af1dd3df389389f4418fef44e01134a3d">reply_to_queue</a>(amqp_empty_bytes),</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#aa02762fdc326dd71e3ccb76a6301e9ab">delivery_tag</a>(1),</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#acb6c38ac33dd2170b9c901370f7b2756">status</a>(AMQP_STATUS_OK),</div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#ad00b95a7185a1de7823b45ba83f13868">reply_type</a>(AMQP_RESPONSE_NORMAL),</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#afcab662de5d3f20e621c0ca8de76064b">reply_code</a>(<a class="code hl_variable" href="namespacergw_1_1amqp.html#a866a4e6325da144086179da5c62a06f3">RGW_AMQP_NO_REPLY_CODE</a>),</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#ad37cab94faa84f34a9005bb3b60633ae">ref_count</a>(0),</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#ab21e4faef1dc0816b966ec920e3cc9e1">cct</a>(<span class="keyword">nullptr</span>),</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#ae5a4a8c3df69b5a6b765740f83ce3d7c">next_reconnect</a>(ceph::coarse_real_clock::now()),</div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#ab293c913d09c81a015555ff158c03d3e">mandatory</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a57191ec618d24ffefa171be2621c17c5">use_ssl</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a5053510ba4965bd589a6209aa9683357">verify_ssl</a>(<span class="keyword">false</span>),</div>
+<div class="line"><span class="lineno">  150</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#aa9ef1d2d718f6592df520e44438c9b90">ca_location</a>(boost::none)</div>
+<div class="line"><span class="lineno">  151</span>  {}</div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a866a4e6325da144086179da5c62a06f3"><div class="ttname"><a href="namespacergw_1_1amqp.html#a866a4e6325da144086179da5c62a06f3">rgw::amqp::RGW_AMQP_NO_REPLY_CODE</a></div><div class="ttdeci">static const int RGW_AMQP_NO_REPLY_CODE</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00051">rgw_amqp.cc:51</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_a01532db27f9c31fa45a6ab37a68dbe79"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#a01532db27f9c31fa45a6ab37a68dbe79">rgw::amqp::connection_t::state</a></div><div class="ttdeci">std::atomic&lt; amqp_connection_state_t &gt; state</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00117">rgw_amqp.cc:117</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_a5053510ba4965bd589a6209aa9683357"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#a5053510ba4965bd589a6209aa9683357">rgw::amqp::connection_t::verify_ssl</a></div><div class="ttdeci">bool verify_ssl</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00132">rgw_amqp.cc:132</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_a57191ec618d24ffefa171be2621c17c5"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#a57191ec618d24ffefa171be2621c17c5">rgw::amqp::connection_t::use_ssl</a></div><div class="ttdeci">bool use_ssl</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00131">rgw_amqp.cc:131</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_aa02762fdc326dd71e3ccb76a6301e9ab"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#aa02762fdc326dd71e3ccb76a6301e9ab">rgw::amqp::connection_t::delivery_tag</a></div><div class="ttdeci">uint64_t delivery_tag</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00122">rgw_amqp.cc:122</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_aa9ef1d2d718f6592df520e44438c9b90"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#aa9ef1d2d718f6592df520e44438c9b90">rgw::amqp::connection_t::ca_location</a></div><div class="ttdeci">boost::optional&lt; const std::string &amp; &gt; ca_location</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00133">rgw_amqp.cc:133</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_ab21e4faef1dc0816b966ec920e3cc9e1"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#ab21e4faef1dc0816b966ec920e3cc9e1">rgw::amqp::connection_t::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00127">rgw_amqp.cc:127</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_ab293c913d09c81a015555ff158c03d3e"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#ab293c913d09c81a015555ff158c03d3e">rgw::amqp::connection_t::mandatory</a></div><div class="ttdeci">bool mandatory</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00130">rgw_amqp.cc:130</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_acb6c38ac33dd2170b9c901370f7b2756"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#acb6c38ac33dd2170b9c901370f7b2756">rgw::amqp::connection_t::status</a></div><div class="ttdeci">int status</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00123">rgw_amqp.cc:123</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_ad00b95a7185a1de7823b45ba83f13868"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#ad00b95a7185a1de7823b45ba83f13868">rgw::amqp::connection_t::reply_type</a></div><div class="ttdeci">int reply_type</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00124">rgw_amqp.cc:124</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_ad37cab94faa84f34a9005bb3b60633ae"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#ad37cab94faa84f34a9005bb3b60633ae">rgw::amqp::connection_t::ref_count</a></div><div class="ttdeci">std::atomic&lt; int &gt; ref_count</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00126">rgw_amqp.cc:126</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_ae5a4a8c3df69b5a6b765740f83ce3d7c"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#ae5a4a8c3df69b5a6b765740f83ce3d7c">rgw::amqp::connection_t::next_reconnect</a></div><div class="ttdeci">ceph::coarse_real_clock::time_point next_reconnect</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00129">rgw_amqp.cc:129</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_af1dd3df389389f4418fef44e01134a3d"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#af1dd3df389389f4418fef44e01134a3d">rgw::amqp::connection_t::reply_to_queue</a></div><div class="ttdeci">amqp_bytes_t reply_to_queue</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00121">rgw_amqp.cc:121</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_afcab662de5d3f20e621c0ca8de76064b"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#afcab662de5d3f20e621c0ca8de76064b">rgw::amqp::connection_t::reply_code</a></div><div class="ttdeci">int reply_code</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00125">rgw_amqp.cc:125</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abf453fb6dc99ba14d96511b5a5e00d26" name="abf453fb6dc99ba14d96511b5a5e00d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf453fb6dc99ba14d96511b5a5e00d26">&#9670;&#160;</a></span>~connection_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::amqp::connection_t::~connection_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00176">176</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>                  {</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_function" href="structrgw_1_1amqp_1_1connection__t.html#af19d97553087dd5df4611e79b576a254">destroy</a>(<a class="code hl_variable" href="namespacergw_1_1amqp.html#adeb59d95fb67e07c0e92c2a914633f21">RGW_AMQP_STATUS_CONNECTION_CLOSED</a>);</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_adeb59d95fb67e07c0e92c2a914633f21"><div class="ttname"><a href="namespacergw_1_1amqp.html#adeb59d95fb67e07c0e92c2a914633f21">rgw::amqp::RGW_AMQP_STATUS_CONNECTION_CLOSED</a></div><div class="ttdeci">static const int RGW_AMQP_STATUS_CONNECTION_CLOSED</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00034">rgw_amqp.cc:34</a></div></div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_af19d97553087dd5df4611e79b576a254"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#af19d97553087dd5df4611e79b576a254">rgw::amqp::connection_t::destroy</a></div><div class="ttdeci">void destroy(int s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00156">rgw_amqp.cc:156</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrgw_1_1amqp_1_1connection__t_abf453fb6dc99ba14d96511b5a5e00d26_cgraph.png" border="0" usemap="#astructrgw_1_1amqp_1_1connection__t_abf453fb6dc99ba14d96511b5a5e00d26_cgraph" alt=""/></div>
+<map name="astructrgw_1_1amqp_1_1connection__t_abf453fb6dc99ba14d96511b5a5e00d26_cgraph" id="astructrgw_1_1amqp_1_1connection__t_abf453fb6dc99ba14d96511b5a5e00d26_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,158,48"/>
+<area shape="rect" href="structrgw_1_1amqp_1_1connection__t.html#af19d97553087dd5df4611e79b576a254" title=" " alt="" coords="206,5,358,48"/>
+<area shape="poly" title=" " alt="" coords="158,24,190,24,190,29,158,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="af19d97553087dd5df4611e79b576a254" name="af19d97553087dd5df4611e79b576a254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19d97553087dd5df4611e79b576a254">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::amqp::connection_t::destroy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00156">156</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>                      {</div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#acb6c38ac33dd2170b9c901370f7b2756">status</a> = s;</div>
+<div class="line"><span class="lineno">  158</span>    ConnectionCleaner clean_state(<a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a01532db27f9c31fa45a6ab37a68dbe79">state</a>);</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a01532db27f9c31fa45a6ab37a68dbe79">state</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  160</span>    amqp_bytes_free(<a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#af1dd3df389389f4418fef44e01134a3d">reply_to_queue</a>);</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#af1dd3df389389f4418fef44e01134a3d">reply_to_queue</a> = amqp_empty_bytes;</div>
+<div class="line"><span class="lineno">  162</span>    <span class="comment">// fire all remaining callbacks</span></div>
+<div class="line"><span class="lineno">  163</span>    std::for_each(<a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a22f22922e328f1788e6ef206ead7a9ce">callbacks</a>.begin(), <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a22f22922e328f1788e6ef206ead7a9ce">callbacks</a>.end(), [<span class="keyword">this</span>](<span class="keyword">auto</span>&amp; cb_tag) {</div>
+<div class="line"><span class="lineno">  164</span>        cb_tag.cb(status);</div>
+<div class="line"><span class="lineno">  165</span>        ldout(cct, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP destroy: invoking callback with tag=&quot;</span> &lt;&lt; cb_tag.tag &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  166</span>      });</div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a22f22922e328f1788e6ef206ead7a9ce">callbacks</a>.clear();</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#aa02762fdc326dd71e3ccb76a6301e9ab">delivery_tag</a> = 1;</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+<div class="ttc" id="astructrgw_1_1amqp_1_1connection__t_html_a22f22922e328f1788e6ef206ead7a9ce"><div class="ttname"><a href="structrgw_1_1amqp_1_1connection__t.html#a22f22922e328f1788e6ef206ead7a9ce">rgw::amqp::connection_t::callbacks</a></div><div class="ttdeci">CallbackList callbacks</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00128">rgw_amqp.cc:128</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrgw_1_1amqp_1_1connection__t_af19d97553087dd5df4611e79b576a254_icgraph.png" border="0" usemap="#astructrgw_1_1amqp_1_1connection__t_af19d97553087dd5df4611e79b576a254_icgraph" alt=""/></div>
+<map name="astructrgw_1_1amqp_1_1connection__t_af19d97553087dd5df4611e79b576a254_icgraph" id="astructrgw_1_1amqp_1_1connection__t_af19d97553087dd5df4611e79b576a254_icgraph">
+<area shape="rect" title=" " alt="" coords="206,5,358,48"/>
+<area shape="rect" href="structrgw_1_1amqp_1_1connection__t.html#abf453fb6dc99ba14d96511b5a5e00d26" title=" " alt="" coords="5,5,158,48"/>
+<area shape="poly" title=" " alt="" coords="190,29,158,29,158,24,190,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad72fcb95f774ee228d7634a27eb4d882" name="ad72fcb95f774ee228d7634a27eb4d882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72fcb95f774ee228d7634a27eb4d882">&#9670;&#160;</a></span>is_ok()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::amqp::connection_t::is_ok </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00171">171</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>                     {</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="structrgw_1_1amqp_1_1connection__t.html#a01532db27f9c31fa45a6ab37a68dbe79">state</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friend, 그리고 관련된 함수 문서화</h2>
+<a id="a862fac43247096134afc8f455d3ff302" name="a862fac43247096134afc8f455d3ff302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a862fac43247096134afc8f455d3ff302">&#9670;&#160;</a></span>intrusive_ptr_add_ref</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void intrusive_ptr_add_ref </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw_1_1amqp_1_1connection__t.html">connection_t</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00185">185</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>                                                  {</div>
+<div class="line"><span class="lineno">  186</span>  ++p-&gt;ref_count;</div>
+<div class="line"><span class="lineno">  187</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a28b2b75189c5c619e270edfb2cee7f3f" name="a28b2b75189c5c619e270edfb2cee7f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b2b75189c5c619e270edfb2cee7f3f">&#9670;&#160;</a></span>intrusive_ptr_release</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void intrusive_ptr_release </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw_1_1amqp_1_1connection__t.html">connection_t</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00188">188</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>                                                  {</div>
+<div class="line"><span class="lineno">  189</span>  <span class="keywordflow">if</span> (--p-&gt;ref_count == 0) {</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keyword">delete</span> p;</div>
+<div class="line"><span class="lineno">  191</span>  }</div>
+<div class="line"><span class="lineno">  192</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="aa9ef1d2d718f6592df520e44438c9b90" name="aa9ef1d2d718f6592df520e44438c9b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ef1d2d718f6592df520e44438c9b90">&#9670;&#160;</a></span>ca_location</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::optional&lt;const std::string&amp;&gt; rgw::amqp::connection_t::ca_location</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00133">133</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a22f22922e328f1788e6ef206ead7a9ce" name="a22f22922e328f1788e6ef206ead7a9ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f22922e328f1788e6ef206ead7a9ce">&#9670;&#160;</a></span>callbacks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacergw_1_1amqp.html#a387b005e6df0b2d7dfb9c005f1d0f91f">CallbackList</a> rgw::amqp::connection_t::callbacks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00128">128</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab21e4faef1dc0816b966ec920e3cc9e1" name="ab21e4faef1dc0816b966ec920e3cc9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab21e4faef1dc0816b966ec920e3cc9e1">&#9670;&#160;</a></span>cct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CephContext* rgw::amqp::connection_t::cct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00127">127</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa02762fdc326dd71e3ccb76a6301e9ab" name="aa02762fdc326dd71e3ccb76a6301e9ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02762fdc326dd71e3ccb76a6301e9ab">&#9670;&#160;</a></span>delivery_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t rgw::amqp::connection_t::delivery_tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00122">122</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="afafa2dc723699dd916982da8f7d8262f" name="afafa2dc723699dd916982da8f7d8262f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afafa2dc723699dd916982da8f7d8262f">&#9670;&#160;</a></span>exchange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::amqp::connection_t::exchange</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00118">118</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab293c913d09c81a015555ff158c03d3e" name="ab293c913d09c81a015555ff158c03d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab293c913d09c81a015555ff158c03d3e">&#9670;&#160;</a></span>mandatory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::amqp::connection_t::mandatory</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00130">130</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae5a4a8c3df69b5a6b765740f83ce3d7c" name="ae5a4a8c3df69b5a6b765740f83ce3d7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a4a8c3df69b5a6b765740f83ce3d7c">&#9670;&#160;</a></span>next_reconnect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ceph::coarse_real_clock::time_point rgw::amqp::connection_t::next_reconnect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00129">129</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a929568f6e5761382f4d2207722287103" name="a929568f6e5761382f4d2207722287103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a929568f6e5761382f4d2207722287103">&#9670;&#160;</a></span>password</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::amqp::connection_t::password</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00120">120</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ad37cab94faa84f34a9005bb3b60633ae" name="ad37cab94faa84f34a9005bb3b60633ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37cab94faa84f34a9005bb3b60633ae">&#9670;&#160;</a></span>ref_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;int&gt; rgw::amqp::connection_t::ref_count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00126">126</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="afcab662de5d3f20e621c0ca8de76064b" name="afcab662de5d3f20e621c0ca8de76064b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcab662de5d3f20e621c0ca8de76064b">&#9670;&#160;</a></span>reply_code</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::amqp::connection_t::reply_code</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00125">125</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="af1dd3df389389f4418fef44e01134a3d" name="af1dd3df389389f4418fef44e01134a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1dd3df389389f4418fef44e01134a3d">&#9670;&#160;</a></span>reply_to_queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amqp_bytes_t rgw::amqp::connection_t::reply_to_queue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00121">121</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ad00b95a7185a1de7823b45ba83f13868" name="ad00b95a7185a1de7823b45ba83f13868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad00b95a7185a1de7823b45ba83f13868">&#9670;&#160;</a></span>reply_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::amqp::connection_t::reply_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00124">124</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a01532db27f9c31fa45a6ab37a68dbe79" name="a01532db27f9c31fa45a6ab37a68dbe79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01532db27f9c31fa45a6ab37a68dbe79">&#9670;&#160;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;amqp_connection_state_t&gt; rgw::amqp::connection_t::state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00117">117</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="acb6c38ac33dd2170b9c901370f7b2756" name="acb6c38ac33dd2170b9c901370f7b2756"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6c38ac33dd2170b9c901370f7b2756">&#9670;&#160;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::amqp::connection_t::status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00123">123</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab71f2a5fd6d07adbcbe13d2712afa705" name="ab71f2a5fd6d07adbcbe13d2712afa705"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab71f2a5fd6d07adbcbe13d2712afa705">&#9670;&#160;</a></span>timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">utime_t rgw::amqp::connection_t::timestamp = ceph_clock_now()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00134">134</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a57191ec618d24ffefa171be2621c17c5" name="a57191ec618d24ffefa171be2621c17c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57191ec618d24ffefa171be2621c17c5">&#9670;&#160;</a></span>use_ssl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::amqp::connection_t::use_ssl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00131">131</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac14e4d9b4c6a79f59c2b115dbc711972" name="ac14e4d9b4c6a79f59c2b115dbc711972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14e4d9b4c6a79f59c2b115dbc711972">&#9670;&#160;</a></span>user</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::amqp::connection_t::user</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00119">119</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5053510ba4965bd589a6209aa9683357" name="a5053510ba4965bd589a6209aa9683357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5053510ba4965bd589a6209aa9683357">&#9670;&#160;</a></span>verify_ssl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::amqp::connection_t::verify_ssl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00132">132</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1amqp.html">amqp</a></li><li class="navelem"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html">connection_t</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

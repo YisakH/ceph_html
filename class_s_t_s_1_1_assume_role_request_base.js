@@ -1,0 +1,26 @@
+var class_s_t_s_1_1_assume_role_request_base =
+[
+    [ "AssumeRoleRequestBase", "class_s_t_s_1_1_assume_role_request_base.html#a81591e0f6063c57010f38ea87ba5d4e8", null ],
+    [ "getDuration", "class_s_t_s_1_1_assume_role_request_base.html#a14a168a7777b7015367a82e8c7c3f48d", null ],
+    [ "getMaxPolicySize", "class_s_t_s_1_1_assume_role_request_base.html#ac489a9fd170af2ecf9ee2c3aa1292a76", null ],
+    [ "getPolicy", "class_s_t_s_1_1_assume_role_request_base.html#ad888dff44387f61bf50cebe31baff093", null ],
+    [ "getRoleARN", "class_s_t_s_1_1_assume_role_request_base.html#a89bf258ed5b9893d494746de2c0bfd55", null ],
+    [ "getRoleSessionName", "class_s_t_s_1_1_assume_role_request_base.html#a1bea47cda20da91eadd47fa44e584056", null ],
+    [ "setMaxDuration", "class_s_t_s_1_1_assume_role_request_base.html#a822d14307f4cd237d1212d444c74df3e", null ],
+    [ "validate_input", "class_s_t_s_1_1_assume_role_request_base.html#a07164007d5a470b1655b814e0d490f00", null ],
+    [ "cct", "class_s_t_s_1_1_assume_role_request_base.html#a19e98d1434e1c254536a04869e167513", null ],
+    [ "DEFAULT_DURATION_IN_SECS", "class_s_t_s_1_1_assume_role_request_base.html#a39ca0c32afd0c84fb8a03817befce706", null ],
+    [ "duration", "class_s_t_s_1_1_assume_role_request_base.html#af529c4e238fec420e7895dc4d95774dc", null ],
+    [ "err_msg", "class_s_t_s_1_1_assume_role_request_base.html#af46b757c9b7a039892ac6317e4e8a99b", null ],
+    [ "iamPolicy", "class_s_t_s_1_1_assume_role_request_base.html#a4d56eccbafbb6fa396baf8aa3dca4232", null ],
+    [ "MAX_DURATION_IN_SECS", "class_s_t_s_1_1_assume_role_request_base.html#a569b549ba488a24132ffebf1313d566f", null ],
+    [ "MAX_POLICY_SIZE", "class_s_t_s_1_1_assume_role_request_base.html#a1908ac486c90c6d1dffe11f19b575465", null ],
+    [ "MAX_ROLE_ARN_SIZE", "class_s_t_s_1_1_assume_role_request_base.html#ad44b6e0a3138bb54c73c94a8b8343987", null ],
+    [ "MAX_ROLE_SESSION_SIZE", "class_s_t_s_1_1_assume_role_request_base.html#a63de15162af36a0aa72b7518e8ed1358", null ],
+    [ "MIN_DURATION_IN_SECS", "class_s_t_s_1_1_assume_role_request_base.html#a654e28acccba190bfc61142d547d1bf3", null ],
+    [ "MIN_POLICY_SIZE", "class_s_t_s_1_1_assume_role_request_base.html#a98fb0a82cd55daa8a87512a0edb41c8d", null ],
+    [ "MIN_ROLE_ARN_SIZE", "class_s_t_s_1_1_assume_role_request_base.html#a103f9fe585b50df579f960f77c1180bf", null ],
+    [ "MIN_ROLE_SESSION_SIZE", "class_s_t_s_1_1_assume_role_request_base.html#aee0010fb1ad73a99611e63ff83ce4e2a", null ],
+    [ "roleArn", "class_s_t_s_1_1_assume_role_request_base.html#a1bcfe8718444f11a6ab7d2013a7dc878", null ],
+    [ "roleSessionName", "class_s_t_s_1_1_assume_role_request_base.html#ab357abc0fd92d806080fde6af0924ac7", null ]
+];

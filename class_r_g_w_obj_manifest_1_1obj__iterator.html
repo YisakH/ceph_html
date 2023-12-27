@@ -1,0 +1,1519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: RGWObjManifest::obj_iterator 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_r_g_w_obj_manifest_1_1obj__iterator.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pri-methods">Private 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
+<a href="class_r_g_w_obj_manifest_1_1obj__iterator-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">RGWObjManifest::obj_iterator 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a>&gt;</code></p>
+<div class="dynheader">
+RGWObjManifest::obj_iterator에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator__coll__graph.png" border="0" usemap="#a_r_g_w_obj_manifest_1_1obj__iterator_coll__map" alt="Collaboration graph"/></div>
+<map name="a_r_g_w_obj_manifest_1_1obj__iterator_coll__map" id="a_r_g_w_obj_manifest_1_1obj__iterator_coll__map">
+<area shape="rect" title=" " alt="" coords="1027,2891,1183,3317"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html" title=" " alt="" coords="685,2400,859,2827"/>
+<area shape="poly" title=" " alt="" coords="860,2739,1020,2973,1016,2976,856,2742"/>
+<area shape="rect" title=" " alt="" coords="80,277,139,347"/>
+<area shape="poly" title=" " alt="" coords="104,347,79,464,47,640,20,850,11,958,8,1065,8,2615,10,2654,16,2692,26,2727,40,2760,77,2821,127,2873,186,2919,254,2959,329,2992,408,3020,491,3042,575,3060,741,3085,891,3097,1010,3101,1010,3106,890,3102,740,3090,574,3066,490,3048,407,3025,327,2997,252,2963,183,2924,123,2877,73,2824,35,2763,21,2729,11,2693,5,2655,3,2615,3,1065,6,958,14,849,42,640,74,463,99,346"/>
+<area shape="poly" title=" " alt="" coords="112,346,112,1065,112,2207,116,2253,128,2295,147,2335,173,2371,203,2403,239,2433,278,2460,320,2484,411,2525,503,2556,592,2579,669,2595,668,2600,590,2584,502,2561,409,2530,318,2489,275,2465,235,2437,200,2407,168,2374,143,2337,123,2297,111,2254,107,2207,107,1065,107,346"/>
+<area shape="rect" href="struct_r_g_w_zone_group_placement_tier_s3.html" title=" " alt="" coords="409,968,615,1165"/>
+<area shape="poly" title=" " alt="" coords="114,346,126,449,139,518,158,593,185,670,219,747,262,818,316,881,334,891,351,894,371,895,392,904,420,927,444,953,440,957,416,931,389,909,369,900,351,899,332,896,313,885,258,821,214,749,180,672,153,594,134,519,121,450,109,347"/>
+<area shape="rect" href="structrgw__obj.html" title=" " alt="" coords="1137,1699,1311,2003"/>
+<area shape="poly" title=" " alt="" coords="1163,2003,1139,2075,1130,2115,1126,2149,1124,2210,1118,2268,1108,2301,1090,2337,1045,2402,990,2461,931,2511,874,2553,871,2549,928,2507,986,2457,1041,2399,1086,2335,1103,2299,1113,2267,1119,2209,1120,2149,1124,2114,1133,2074,1158,2001"/>
+<area shape="rect" href="classrgw__obj__select.html" title=" " alt="" coords="1176,2075,1320,2336"/>
+<area shape="poly" title=" " alt="" coords="1237,2002,1241,2057,1235,2058,1232,2002"/>
+<area shape="rect" href="structrgw__bucket.html" title=" " alt="" coords="1013,1291,1187,1595"/>
+<area shape="poly" title=" " alt="" coords="1137,1594,1157,1666,1162,1682,1157,1683,1152,1667,1131,1595"/>
+<area shape="rect" href="structrgw__bucket__placement.html" title=" " alt="" coords="930,2171,1075,2240"/>
+<area shape="poly" title=" " alt="" coords="1087,1595,1077,1691,1070,1792,1067,1871,1061,1950,1047,2051,1021,2155,1016,2154,1041,2050,1056,1950,1061,1871,1064,1792,1072,1690,1081,1594"/>
+<area shape="rect" title=" " alt="" coords="829,5,875,75"/>
+<area shape="poly" title=" " alt="" coords="875,39,1018,47,1233,68,1345,85,1447,107,1532,134,1565,151,1590,169,1619,201,1636,232,1644,267,1645,311,1645,2615,1642,2659,1632,2700,1617,2740,1597,2778,1573,2814,1545,2847,1480,2908,1408,2961,1334,3006,1263,3042,1200,3070,1198,3065,1261,3037,1332,3001,1405,2957,1477,2904,1541,2844,1569,2810,1593,2775,1612,2738,1627,2699,1637,2658,1640,2615,1640,311,1638,267,1631,234,1615,204,1586,173,1562,155,1530,139,1446,112,1344,90,1232,73,1018,53,874,45"/>
+<area shape="poly" title=" " alt="" coords="849,75,845,99,836,171,788,584,749,905,734,1060,723,1227,716,1417,713,1641,713,2207,717,2295,728,2383,723,2384,712,2295,708,2207,708,1641,710,1417,717,1226,729,1060,743,904,782,583,831,170,840,98,844,74"/>
+<area shape="poly" title=" " alt="" coords="876,46,919,66,964,97,997,135,1025,183,1049,237,1068,294,1097,402,1112,477,1116,530,1117,619,1115,857,1120,1092,1129,1178,1136,1207,1143,1225,1157,1235,1174,1236,1191,1237,1207,1249,1237,1298,1258,1351,1272,1407,1279,1464,1282,1521,1280,1577,1268,1682,1263,1682,1275,1577,1277,1521,1274,1464,1266,1408,1253,1353,1232,1301,1203,1252,1189,1242,1173,1241,1155,1240,1139,1228,1131,1209,1124,1179,1115,1093,1110,857,1111,620,1110,530,1107,478,1092,403,1063,296,1044,239,1020,186,993,138,961,101,917,70,873,51"/>
+<area shape="poly" title=" " alt="" coords="876,50,906,69,933,97,962,148,982,194,993,236,999,278,1004,366,1013,477,1027,591,1032,679,1036,768,1044,882,1084,1273,1078,1274,1039,883,1031,769,1027,680,1021,591,1008,478,998,367,994,279,988,238,977,196,958,151,929,100,903,73,873,54"/>
+<area shape="rect" href="structrgw__pool.html" title=" " alt="" coords="1258,171,1414,453"/>
+<area shape="poly" title=" " alt="" coords="874,38,926,40,996,48,1074,65,1112,79,1148,96,1202,135,1249,182,1245,186,1199,139,1145,101,1110,84,1072,70,995,53,926,45,874,44"/>
+<area shape="rect" href="structrgw__obj__key.html" title=" " alt="" coords="847,477,1009,883"/>
+<area shape="poly" title=" " alt="" coords="859,74,905,460,899,461,853,75"/>
+<area shape="rect" href="structrgw__placement__rule.html" title=" " alt="" coords="750,1691,906,2011"/>
+<area shape="poly" title=" " alt="" coords="854,74,843,412,832,907,829,1319,830,1673,824,1674,824,1319,827,907,838,412,848,74"/>
+<area shape="rect" href="struct_r_g_w_obj_tier.html" title=" " alt="" coords="537,2139,673,2272"/>
+<area shape="poly" title=" " alt="" coords="830,46,802,51,769,60,738,76,713,100,702,135,692,204,676,426,663,727,654,1067,642,1713,633,2051,624,2122,618,2122,628,2050,636,1713,649,1067,658,727,671,426,687,203,697,133,708,97,735,72,768,55,801,45,829,41"/>
+<area shape="rect" href="struct_r_g_w_zone_group_placement_tier.html" title=" " alt="" coords="417,1763,607,1939"/>
+<area shape="poly" title=" " alt="" coords="830,44,762,46,664,54,551,71,493,84,438,101,370,126,345,143,320,172,301,207,294,237,295,311,295,1444,298,1486,306,1528,319,1570,336,1609,378,1684,424,1748,419,1751,373,1686,332,1612,314,1571,301,1530,292,1487,289,1444,289,311,289,236,296,205,315,169,341,139,367,121,436,96,492,79,550,66,663,49,762,41,830,39"/>
+<area shape="poly" title=" " alt="" coords="830,46,773,54,698,74,660,91,625,112,595,139,571,172,559,219,550,301,537,523,527,883,522,951,517,951,521,883,532,523,545,300,554,218,567,170,591,135,622,108,658,86,696,69,772,49,829,40"/>
+<area shape="rect" href="struct_r_g_w_access_key.html" title=" " alt="" coords="329,181,503,443"/>
+<area shape="poly" title=" " alt="" coords="829,44,751,47,647,56,546,73,506,85,480,101,455,131,437,166,432,164,450,128,476,97,504,81,544,68,646,51,751,42,829,39"/>
+<area shape="rect" href="structrgw__raw__obj.html" title=" " alt="" coords="1449,915,1605,1219"/>
+<area shape="poly" title=" " alt="" coords="875,40,991,51,1159,75,1245,92,1323,113,1387,138,1411,153,1429,169,1459,208,1486,250,1508,294,1527,340,1555,436,1571,535,1578,634,1578,729,1572,818,1562,898,1557,898,1566,818,1572,729,1573,634,1566,536,1550,437,1522,342,1503,296,1481,253,1455,211,1425,172,1408,157,1384,143,1322,118,1244,97,1158,80,991,57,874,46"/>
+<area shape="rect" href="structrgw__data__placement__target.html" title=" " alt="" coords="1277,907,1425,1227"/>
+<area shape="poly" title=" " alt="" coords="1279,1197,1260,1228,1199,1316,1194,1313,1255,1225,1275,1195"/>
+<area shape="poly" title=" " alt="" coords="1336,453,1336,656,1340,883,1340,890,1335,890,1335,883,1330,656,1331,453"/>
+<area shape="poly" title=" " alt="" coords="1416,417,1444,476,1460,536,1468,588,1470,634,1469,678,1464,768,1466,821,1475,882,1478,898,1472,899,1469,883,1461,822,1459,768,1463,678,1465,634,1463,588,1455,537,1439,478,1411,419"/>
+<area shape="poly" title=" " alt="" coords="928,882,931,1074,941,1281,951,1378,965,1465,982,1539,1004,1593,1016,1612,1029,1625,1058,1643,1091,1659,1128,1686,1124,1690,1088,1664,1055,1647,1025,1629,1012,1615,999,1596,977,1540,959,1466,946,1379,936,1281,925,1075,923,882"/>
+<area shape="poly" title=" " alt="" coords="796,2011,787,2075,776,2231,772,2383,766,2383,770,2231,782,2074,791,2010"/>
+<area shape="poly" title=" " alt="" coords="802,2010,808,2030,819,2049,829,2058,839,2063,861,2064,886,2063,900,2065,913,2072,935,2090,953,2111,982,2154,978,2157,949,2114,931,2094,911,2077,898,2070,886,2068,861,2069,838,2068,826,2063,815,2052,803,2033,796,2011"/>
+<area shape="poly" title=" " alt="" coords="907,1915,969,1963,1035,2008,1069,2027,1098,2037,1127,2050,1159,2073,1166,2079,1163,2083,1156,2077,1124,2054,1096,2042,1067,2031,1032,2013,965,1967,904,1919"/>
+<area shape="poly" title=" " alt="" coords="986,2241,869,2446,865,2444,981,2239"/>
+<area shape="poly" title=" " alt="" coords="607,2271,612,2323,625,2375,649,2431,679,2484,674,2487,644,2433,619,2377,607,2324,602,2272"/>
+<area shape="poly" title=" " alt="" coords="518,1938,524,1994,536,2050,564,2123,559,2125,531,2051,519,1995,513,1939"/>
+<area shape="rect" href="struct_r_g_w_zone_group_placement_tier_1_1__tier.html" title=" " alt="" coords="417,1400,607,1485"/>
+<area shape="poly" title=" " alt="" coords="515,1485,515,1746,509,1746,509,1485"/>
+<area shape="poly" title=" " alt="" coords="515,1165,515,1383,509,1383,509,1165"/>
+<area shape="poly" title=" " alt="" coords="435,442,500,951,495,952,430,443"/>
+<area shape="poly" title=" " alt="" coords="1230,2336,1144,2874,1139,2873,1225,2336"/>
+<area shape="poly" title=" " alt="" coords="1504,1219,1474,1383,1433,1582,1383,1798,1325,2011,1309,2060,1304,2058,1320,2010,1378,1797,1428,1581,1469,1382,1499,1218"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a51f75081ae97678c8b7c220646840e56" id="r_a51f75081ae97678c8b7c220646840e56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a51f75081ae97678c8b7c220646840e56">obj_iterator</a> ()=default</td></tr>
+<tr class="separator:a51f75081ae97678c8b7c220646840e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20545e9f0d8f48374843f2196d40c70a" id="r_a20545e9f0d8f48374843f2196d40c70a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a20545e9f0d8f48374843f2196d40c70a">obj_iterator</a> (const DoutPrefixProvider *_dpp, const <a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a> *_m)</td></tr>
+<tr class="separator:a20545e9f0d8f48374843f2196d40c70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19ff4eca5b5f23f57ab1185fa46bb96" id="r_ab19ff4eca5b5f23f57ab1185fa46bb96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#ab19ff4eca5b5f23f57ab1185fa46bb96">obj_iterator</a> (const DoutPrefixProvider *_dpp, const <a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a> *_m, uint64_t _ofs)</td></tr>
+<tr class="separator:ab19ff4eca5b5f23f57ab1185fa46bb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87cae4fca6e4f202c12f34a756df6350" id="r_a87cae4fca6e4f202c12f34a756df6350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a87cae4fca6e4f202c12f34a756df6350">seek</a> (uint64_t <a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>)</td></tr>
+<tr class="separator:a87cae4fca6e4f202c12f34a756df6350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1936ccdf36e3725c28b077c4ef9ca0" id="r_a3c1936ccdf36e3725c28b077c4ef9ca0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a3c1936ccdf36e3725c28b077c4ef9ca0">operator++</a> ()</td></tr>
+<tr class="separator:a3c1936ccdf36e3725c28b077c4ef9ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5920512a816b68a686a816f4d12483f8" id="r_a5920512a816b68a686a816f4d12483f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a5920512a816b68a686a816f4d12483f8">operator==</a> (const <a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html">obj_iterator</a> &amp;rhs) const</td></tr>
+<tr class="separator:a5920512a816b68a686a816f4d12483f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8badcb04ef2860e1ecae814a6254de73" id="r_a8badcb04ef2860e1ecae814a6254de73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a8badcb04ef2860e1ecae814a6254de73">operator!=</a> (const <a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html">obj_iterator</a> &amp;rhs) const</td></tr>
+<tr class="separator:a8badcb04ef2860e1ecae814a6254de73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064ea33fce18e542ed71731d1cad9c30" id="r_a064ea33fce18e542ed71731d1cad9c30"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classrgw__obj__select.html">rgw_obj_select</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a064ea33fce18e542ed71731d1cad9c30">get_location</a> ()</td></tr>
+<tr class="separator:a064ea33fce18e542ed71731d1cad9c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6318587312ef8290f27c4d25ad10bb05" id="r_a6318587312ef8290f27c4d25ad10bb05"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6318587312ef8290f27c4d25ad10bb05">get_part_ofs</a> () const</td></tr>
+<tr class="separator:a6318587312ef8290f27c4d25ad10bb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402d91bc11d9e5fb5e3892186b5aaf02" id="r_a402d91bc11d9e5fb5e3892186b5aaf02"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a402d91bc11d9e5fb5e3892186b5aaf02">get_stripe_ofs</a> ()</td></tr>
+<tr class="separator:a402d91bc11d9e5fb5e3892186b5aaf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553350ff3ce9314aadfef0a7617f10aa" id="r_a553350ff3ce9314aadfef0a7617f10aa"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a553350ff3ce9314aadfef0a7617f10aa">get_ofs</a> () const</td></tr>
+<tr class="separator:a553350ff3ce9314aadfef0a7617f10aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d3fb69e683a1e96e12889e7aa3d1497" id="r_a3d3fb69e683a1e96e12889e7aa3d1497"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a3d3fb69e683a1e96e12889e7aa3d1497">get_cur_stripe</a> () const</td></tr>
+<tr class="separator:a3d3fb69e683a1e96e12889e7aa3d1497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec899591dbb92e9bfd9284962941f83" id="r_a7ec899591dbb92e9bfd9284962941f83"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a7ec899591dbb92e9bfd9284962941f83">get_stripe_size</a> ()</td></tr>
+<tr class="separator:a7ec899591dbb92e9bfd9284962941f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9bf3ba0ff17274af997ef121d2eba8f" id="r_ab9bf3ba0ff17274af997ef121d2eba8f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#ab9bf3ba0ff17274af997ef121d2eba8f">location_ofs</a> ()</td></tr>
+<tr class="separator:ab9bf3ba0ff17274af997ef121d2eba8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedbe4178723cd4ccfa86c06385a7900d" id="r_aedbe4178723cd4ccfa86c06385a7900d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a> ()</td></tr>
+<tr class="separator:aedbe4178723cd4ccfa86c06385a7900d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ace758d5f78c6d2efbcd88adcaedb2f" id="r_a4ace758d5f78c6d2efbcd88adcaedb2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a4ace758d5f78c6d2efbcd88adcaedb2f">dump</a> (Formatter *f) const</td></tr>
+<tr class="separator:a4ace758d5f78c6d2efbcd88adcaedb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 멤버 함수</h2></td></tr>
+<tr class="memitem:a41633c2d541acbd35e3a462d49a232b3" id="r_a41633c2d541acbd35e3a462d49a232b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a41633c2d541acbd35e3a462d49a232b3">update_explicit_pos</a> ()</td></tr>
+<tr class="separator:a41633c2d541acbd35e3a462d49a232b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a4253f9fa879da1b8fb0a78c44036cb34" id="r_a4253f9fa879da1b8fb0a78c44036cb34"><td class="memItemLeft" align="right" valign="top">const DoutPrefixProvider *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a4253f9fa879da1b8fb0a78c44036cb34">dpp</a></td></tr>
+<tr class="separator:a4253f9fa879da1b8fb0a78c44036cb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc4bad94634ed6d2052882746b214ae" id="r_accc4bad94634ed6d2052882746b214ae"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a> = nullptr</td></tr>
+<tr class="separator:accc4bad94634ed6d2052882746b214ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b6345e98f100355199aa67a862538f" id="r_a85b6345e98f100355199aa67a862538f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> = 0</td></tr>
+<tr class="separator:a85b6345e98f100355199aa67a862538f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e67df0542b2a30e3934cfbd4ee880bb" id="r_a2e67df0542b2a30e3934cfbd4ee880bb"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = 0</td></tr>
+<tr class="separator:a2e67df0542b2a30e3934cfbd4ee880bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e3caa43a9901c4155f2710d31bf488" id="r_a31e3caa43a9901c4155f2710d31bf488"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = 0</td></tr>
+<tr class="separator:a31e3caa43a9901c4155f2710d31bf488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda274286aee107f557a10d39f917ea2" id="r_adda274286aee107f557a10d39f917ea2"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = 0</td></tr>
+<tr class="separator:adda274286aee107f557a10d39f917ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d959db68d4f59aff3bbf907279ed50" id="r_a59d959db68d4f59aff3bbf907279ed50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a> = 0</td></tr>
+<tr class="separator:a59d959db68d4f59aff3bbf907279ed50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e52a2aadcb63a8d1dbbe9ed0122a5bf" id="r_a0e52a2aadcb63a8d1dbbe9ed0122a5bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a> = 0</td></tr>
+<tr class="separator:a0e52a2aadcb63a8d1dbbe9ed0122a5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e420d16585d084d4e2ff5038fb1136f" id="r_a1e420d16585d084d4e2ff5038fb1136f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a1e420d16585d084d4e2ff5038fb1136f">cur_override_prefix</a></td></tr>
+<tr class="separator:a1e420d16585d084d4e2ff5038fb1136f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6029f72dbb54a4cf7dd650142533d0b2" id="r_a6029f72dbb54a4cf7dd650142533d0b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw__obj__select.html">rgw_obj_select</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a></td></tr>
+<tr class="separator:a6029f72dbb54a4cf7dd650142533d0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c629683524d81bfb7e3433e0ad307d" id="r_a53c629683524d81bfb7e3433e0ad307d"><td class="memItemLeft" align="right" valign="top">std::map&lt; uint64_t, <a class="el" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a></td></tr>
+<tr class="separator:a53c629683524d81bfb7e3433e0ad307d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74dd3e6410d932948a59ef5dd956f867" id="r_a74dd3e6410d932948a59ef5dd956f867"><td class="memItemLeft" align="right" valign="top">std::map&lt; uint64_t, <a class="el" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">next_rule_iter</a></td></tr>
+<tr class="separator:a74dd3e6410d932948a59ef5dd956f867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868f0b2fb5c0ad1f5c01c514f77ef192" id="r_a868f0b2fb5c0ad1f5c01c514f77ef192"><td class="memItemLeft" align="right" valign="top">std::map&lt; uint64_t, <a class="el" href="struct_r_g_w_obj_manifest_part.html">RGWObjManifestPart</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a></td></tr>
+<tr class="separator:a868f0b2fb5c0ad1f5c01c514f77ef192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00481">481</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a51f75081ae97678c8b7c220646840e56" name="a51f75081ae97678c8b7c220646840e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f75081ae97678c8b7c220646840e56">&#9670;&#160;</a></span>obj_iterator() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGWObjManifest::obj_iterator::obj_iterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20545e9f0d8f48374843f2196d40c70a" name="a20545e9f0d8f48374843f2196d40c70a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20545e9f0d8f48374843f2196d40c70a">&#9670;&#160;</a></span>obj_iterator() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGWObjManifest::obj_iterator::obj_iterator </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>_dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a> *&#160;</td>
+          <td class="paramname"><em>_m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00503">503</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  504</span>      : <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a51f75081ae97678c8b7c220646840e56">obj_iterator</a>(_dpp, _m, 0)</div>
+<div class="line"><span class="lineno">  505</span>    {}</div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a51f75081ae97678c8b7c220646840e56"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a51f75081ae97678c8b7c220646840e56">RGWObjManifest::obj_iterator::obj_iterator</a></div><div class="ttdeci">obj_iterator()=default</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab19ff4eca5b5f23f57ab1185fa46bb96" name="ab19ff4eca5b5f23f57ab1185fa46bb96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19ff4eca5b5f23f57ab1185fa46bb96">&#9670;&#160;</a></span>obj_iterator() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGWObjManifest::obj_iterator::obj_iterator </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>_dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a> *&#160;</td>
+          <td class="paramname"><em>_m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>_ofs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00506">506</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  506</span>                                                                                          : <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a4253f9fa879da1b8fb0a78c44036cb34">dpp</a>(_dpp), <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>(_m) {</div>
+<div class="line"><span class="lineno">  507</span>      <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a87cae4fca6e4f202c12f34a756df6350">seek</a>(_ofs);</div>
+<div class="line"><span class="lineno">  508</span>    }</div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a4253f9fa879da1b8fb0a78c44036cb34"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a4253f9fa879da1b8fb0a78c44036cb34">RGWObjManifest::obj_iterator::dpp</a></div><div class="ttdeci">const DoutPrefixProvider * dpp</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00482">rgw_obj_manifest.h:482</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a87cae4fca6e4f202c12f34a756df6350"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a87cae4fca6e4f202c12f34a756df6350">RGWObjManifest::obj_iterator::seek</a></div><div class="ttdeci">void seek(uint64_t ofs)</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8cc_source.html#l00351">rgw_obj_manifest.cc:351</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_accc4bad94634ed6d2052882746b214ae"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">RGWObjManifest::obj_iterator::manifest</a></div><div class="ttdeci">const RGWObjManifest * manifest</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00483">rgw_obj_manifest.h:483</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a4ace758d5f78c6d2efbcd88adcaedb2f" name="a4ace758d5f78c6d2efbcd88adcaedb2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ace758d5f78c6d2efbcd88adcaedb2f">&#9670;&#160;</a></span>dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RGWObjManifest::obj_iterator::dump </td>
+          <td>(</td>
+          <td class="paramtype">Formatter *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8cc_source.html">rgw_obj_manifest.cc</a> 파일의 <a class="el" href="rgw__obj__manifest_8cc_source.html#l00553">553</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  554</span>{</div>
+<div class="line"><span class="lineno">  555</span>  f-&gt;dump_unsigned(<span class="stringliteral">&quot;part_ofs&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a>);</div>
+<div class="line"><span class="lineno">  556</span>  f-&gt;dump_unsigned(<span class="stringliteral">&quot;stripe_ofs&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a>);</div>
+<div class="line"><span class="lineno">  557</span>  f-&gt;dump_unsigned(<span class="stringliteral">&quot;ofs&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>);</div>
+<div class="line"><span class="lineno">  558</span>  f-&gt;dump_unsigned(<span class="stringliteral">&quot;stripe_size&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a>);</div>
+<div class="line"><span class="lineno">  559</span>  f-&gt;dump_int(<span class="stringliteral">&quot;cur_part_id&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a>);</div>
+<div class="line"><span class="lineno">  560</span>  f-&gt;dump_int(<span class="stringliteral">&quot;cur_stripe&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a>);</div>
+<div class="line"><span class="lineno">  561</span>  f-&gt;dump_string(<span class="stringliteral">&quot;cur_override_prefix&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a1e420d16585d084d4e2ff5038fb1136f">cur_override_prefix</a>);</div>
+<div class="line"><span class="lineno">  562</span>  f-&gt;dump_object(<span class="stringliteral">&quot;location&quot;</span>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a>);</div>
+<div class="line"><span class="lineno">  563</span>}</div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a0e52a2aadcb63a8d1dbbe9ed0122a5bf"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">RGWObjManifest::obj_iterator::cur_stripe</a></div><div class="ttdeci">int cur_stripe</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00490">rgw_obj_manifest.h:490</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a1e420d16585d084d4e2ff5038fb1136f"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a1e420d16585d084d4e2ff5038fb1136f">RGWObjManifest::obj_iterator::cur_override_prefix</a></div><div class="ttdeci">std::string cur_override_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00491">rgw_obj_manifest.h:491</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a2e67df0542b2a30e3934cfbd4ee880bb"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">RGWObjManifest::obj_iterator::stripe_ofs</a></div><div class="ttdeci">uint64_t stripe_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00485">rgw_obj_manifest.h:485</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a31e3caa43a9901c4155f2710d31bf488"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">RGWObjManifest::obj_iterator::ofs</a></div><div class="ttdeci">uint64_t ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00486">rgw_obj_manifest.h:486</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a59d959db68d4f59aff3bbf907279ed50"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">RGWObjManifest::obj_iterator::cur_part_id</a></div><div class="ttdeci">int cur_part_id</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00489">rgw_obj_manifest.h:489</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a6029f72dbb54a4cf7dd650142533d0b2"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">RGWObjManifest::obj_iterator::location</a></div><div class="ttdeci">rgw_obj_select location</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00493">rgw_obj_manifest.h:493</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a85b6345e98f100355199aa67a862538f"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">RGWObjManifest::obj_iterator::part_ofs</a></div><div class="ttdeci">uint64_t part_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00484">rgw_obj_manifest.h:484</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_adda274286aee107f557a10d39f917ea2"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">RGWObjManifest::obj_iterator::stripe_size</a></div><div class="ttdeci">uint64_t stripe_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00487">rgw_obj_manifest.h:487</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3d3fb69e683a1e96e12889e7aa3d1497" name="a3d3fb69e683a1e96e12889e7aa3d1497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d3fb69e683a1e96e12889e7aa3d1497">&#9670;&#160;</a></span>get_cur_stripe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RGWObjManifest::obj_iterator::get_cur_stripe </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00541">541</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  541</span>                               {</div>
+<div class="line"><span class="lineno">  542</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a>;</div>
+<div class="line"><span class="lineno">  543</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_a3d3fb69e683a1e96e12889e7aa3d1497_icgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_a3d3fb69e683a1e96e12889e7aa3d1497_icgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_a3d3fb69e683a1e96e12889e7aa3d1497_icgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_a3d3fb69e683a1e96e12889e7aa3d1497_icgraph">
+<area shape="rect" title=" " alt="" coords="233,5,391,48"/>
+<area shape="rect" href="class_r_g_w_get_obj___block_decrypt.html#af62e500121e58631d9a6ecf651e8383b" title=" " alt="" coords="5,5,185,48"/>
+<area shape="poly" title=" " alt="" coords="218,29,185,29,185,24,218,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a064ea33fce18e542ed71731d1cad9c30" name="a064ea33fce18e542ed71731d1cad9c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a064ea33fce18e542ed71731d1cad9c30">&#9670;&#160;</a></span>get_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classrgw__obj__select.html">rgw_obj_select</a> &amp; RGWObjManifest::obj_iterator::get_location </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00518">518</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  518</span>                                         {</div>
+<div class="line"><span class="lineno">  519</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a>;</div>
+<div class="line"><span class="lineno">  520</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_a064ea33fce18e542ed71731d1cad9c30_icgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_a064ea33fce18e542ed71731d1cad9c30_icgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_a064ea33fce18e542ed71731d1cad9c30_icgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_a064ea33fce18e542ed71731d1cad9c30_icgraph">
+<area shape="rect" title=" " alt="" coords="1273,424,1421,467"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_multipart_upload.html#a33448fa62cbd84edccd40d300de25ddf" title=" " alt="" coords="807,357,968,400"/>
+<area shape="poly" title=" " alt="" coords="1259,422,1225,415,1090,396,968,385,969,380,1090,390,1226,409,1260,417"/>
+<area shape="rect" href="class_r_g_w_rados.html#a6a68d0bee0c503c369fc95047aa427ae" title=" " alt="" coords="1050,139,1214,181"/>
+<area shape="poly" title=" " alt="" coords="1334,410,1319,363,1296,308,1264,252,1224,202,1198,184,1201,180,1227,198,1269,249,1301,306,1324,361,1339,408"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a946b849b38bf2adc87a701d1adf7ce38" title=" " alt="" coords="1047,72,1218,115"/>
+<area shape="poly" title=" " alt="" coords="1339,409,1328,348,1308,273,1292,234,1274,196,1251,160,1223,129,1209,117,1212,113,1227,125,1255,157,1278,193,1297,232,1313,272,1334,347,1344,408"/>
+<area shape="rect" href="class_r_g_w_rados.html#abdb3c2c76b2abe59e5e0dce9dae67245" title=" " alt="" coords="812,565,963,592"/>
+<area shape="poly" title=" " alt="" coords="1319,480,1278,517,1253,534,1226,548,1159,569,1089,581,1022,586,963,586,963,581,1022,581,1088,576,1158,564,1224,543,1250,529,1274,513,1315,476"/>
+<area shape="rect" href="class_r_g_w_rados.html#a87b40aab815d18911cf5ba8af786ab2c" title=" " alt="" coords="1065,307,1200,349"/>
+<area shape="poly" title=" " alt="" coords="1301,417,1224,370,1186,352,1189,347,1227,366,1304,413"/>
+<area shape="rect" href="rgw__rados_8cc.html#a278102db10cd5bb7aebdd1e5f1e6f499" title=" " alt="" coords="1069,256,1196,283"/>
+<area shape="poly" title=" " alt="" coords="1325,412,1283,353,1255,322,1224,297,1195,283,1197,278,1227,292,1259,319,1287,349,1329,409"/>
+<area shape="rect" href="class_r_g_w_rados.html#a152bf2f2b987de0e7788bb76c8b708ce" title=" " alt="" coords="784,231,991,257"/>
+<area shape="poly" title=" " alt="" coords="1334,410,1319,369,1296,323,1265,280,1246,261,1224,246,1189,230,1151,220,1112,215,1073,214,998,220,937,233,936,228,997,215,1072,209,1112,210,1152,215,1190,225,1227,242,1249,257,1269,276,1301,321,1324,367,1339,408"/>
+<area shape="rect" href="class_r_g_w_rados_list.html#a3c49ff5e087d896ea3b2a6affd1101cc" title=" " alt="" coords="1054,491,1211,533"/>
+<area shape="poly" title=" " alt="" coords="1262,474,1204,493,1203,487,1261,469"/>
+<area shape="rect" href="class_r_g_w_orphan_search.html#ab403789b66cd1faf25e92ececb504ccc" title=" " alt="" coords="1041,675,1223,717"/>
+<area shape="poly" title=" " alt="" coords="1337,482,1321,524,1298,573,1267,622,1227,665,1210,676,1207,672,1224,661,1262,619,1293,570,1316,522,1332,480"/>
+<area shape="rect" href="class_r_g_w_rados.html#abc036514a682e1b7fd923fdc9cd48dd8" title=" " alt="" coords="1053,808,1211,835"/>
+<area shape="poly" title=" " alt="" coords="1347,482,1339,550,1319,634,1304,679,1284,722,1258,762,1227,798,1211,810,1207,805,1224,794,1254,759,1279,720,1299,677,1314,633,1333,549,1341,482"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#afd72522ef665e9d69dc21211f0b41494" title=" " alt="" coords="1045,608,1219,651"/>
+<area shape="poly" title=" " alt="" coords="1326,481,1284,537,1257,566,1227,591,1196,610,1193,605,1224,587,1253,562,1280,533,1322,478"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_bucket.html#a53c98d8b35949e4e46bfcdae4446927b" title=" " alt="" coords="1039,741,1225,784"/>
+<area shape="poly" title=" " alt="" coords="1342,483,1330,537,1308,603,1274,672,1253,703,1227,731,1212,743,1209,739,1224,727,1248,700,1270,669,1303,601,1325,536,1337,481"/>
+<area shape="rect" href="class_r_g_w_rados.html#a0a82b9b01e1cc01505d8c1ed0062dfd1" title=" " alt="" coords="1053,424,1211,467"/>
+<area shape="poly" title=" " alt="" coords="1258,448,1212,448,1212,443,1258,443"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a514d1bf5b9b4512f91d3686f7628fa53" title=" " alt="" coords="801,72,974,115"/>
+<area shape="poly" title=" " alt="" coords="1031,96,974,96,974,91,1031,91"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a8524a6e1a2ab3efb41ceb1ae139e15bd" title=" " alt="" coords="563,80,736,107"/>
+<area shape="poly" title=" " alt="" coords="786,96,736,96,736,91,786,91"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#adee1f33d63675fd9df94faaa5d5197fb" title=" " alt="" coords="342,139,514,165"/>
+<area shape="poly" title=" " alt="" coords="582,114,482,141,481,136,581,109"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_append_object_processor.html#a01e8f8477c9565ab79392e3315c432e3" title=" " alt="" coords="341,5,515,48"/>
+<area shape="poly" title=" " alt="" coords="587,77,501,51,502,46,588,72"/>
+<area shape="rect" href="class_l_c_op_action___transition.html#a8a3ec9bbba1ef912e1b318681049047a" title=" " alt="" coords="351,72,505,115"/>
+<area shape="poly" title=" " alt="" coords="548,96,506,96,506,91,548,91"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_append_writer.html#a854f9e38f22c9922d5e4cdfda24508b3" title=" " alt="" coords="103,5,293,48"/>
+<area shape="poly" title=" " alt="" coords="326,29,293,29,293,24,326,24"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_object.html#a97aafcff22608ecf4d912018ae9da833" title=" " alt="" coords="575,557,724,600"/>
+<area shape="poly" title=" " alt="" coords="796,581,725,581,725,576,796,576"/>
+<area shape="poly" title=" " alt="" coords="1053,264,991,257,991,252,1053,259"/>
+<area shape="rect" href="class_r_g_w_rados_list.html#a4dab0ed40e2a60efaf52f49b6db29ca2" title=" " alt="" coords="803,491,972,533"/>
+<area shape="poly" title=" " alt="" coords="1038,515,972,515,972,509,1038,509"/>
+<area shape="rect" href="class_r_g_w_rados_list.html#af817ada1262a104ad009bdb743622328" title=" " alt="" coords="567,491,732,533"/>
+<area shape="poly" title=" " alt="" coords="788,515,733,515,733,509,788,509"/>
+<area shape="rect" href="class_r_g_w_rados_list.html#a10ffe1b88c58ed05642267232f1175d5" title=" " alt="" coords="360,540,497,567"/>
+<area shape="poly" title=" " alt="" coords="553,533,498,543,497,538,552,528"/>
+<area shape="rect" href="rgw__admin_8cc.html#a217dbf8b442f20279ea00b898af96f52" title=" " alt="" coords="5,601,55,628"/>
+<area shape="poly" title=" " alt="" coords="344,554,229,559,165,568,103,581,77,591,54,603,52,599,75,586,102,576,164,562,228,554,344,548"/>
+<area shape="rect" href="class_r_g_w_rados_list.html#a3c4c60448db4fbb383bb93fe88561912" title=" " alt="" coords="129,591,267,617"/>
+<area shape="poly" title=" " alt="" coords="350,573,262,593,261,587,348,568"/>
+<area shape="rect" href="class_r_g_w_orphan_search.html#aa04c835bd31b6d8c548ee5bea608d79a" title=" " alt="" coords="805,675,970,717"/>
+<area shape="poly" title=" " alt="" coords="1025,699,971,699,971,693,1025,693"/>
+<area shape="rect" href="class_r_g_w_orphan_search.html#ae897b54c00f8ff0a14b69307969955a6" title=" " alt="" coords="564,675,735,717"/>
+<area shape="poly" title=" " alt="" coords="790,699,735,699,735,693,790,693"/>
+<area shape="rect" href="class_r_g_w_orphan_search.html#af30fa62b65d83d1041862bd989d02d2d" title=" " alt="" coords="343,664,514,707"/>
+<area shape="poly" title=" " alt="" coords="548,694,514,692,514,687,549,688"/>
+<area shape="rect" href="class_r_g_w_orphan_search.html#ab813e9546f976642e4bc90793742b668" title=" " alt="" coords="117,652,279,679"/>
+<area shape="poly" title=" " alt="" coords="327,679,279,675,280,670,327,674"/>
+<area shape="poly" title=" " alt="" coords="136,649,54,624,56,619,137,644"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#ac6d6524f9fdc24e6d1e6f0e2ecae70ac" title=" " alt="" coords="800,800,975,843"/>
+<area shape="poly" title=" " alt="" coords="1038,824,975,824,975,819,1038,819"/>
+<area shape="rect" href="class_r_g_w_rados.html#a69d13fb21fa40398b515b9502ff6a000" title=" " alt="" coords="574,800,725,843"/>
+<area shape="poly" title=" " alt="" coords="785,824,725,824,725,819,785,819"/>
+<area shape="poly" title=" " alt="" coords="1029,611,955,595,956,590,1030,606"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="796,620,979,647"/>
+<area shape="poly" title=" " alt="" coords="1029,634,979,635,979,629,1029,628"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="569,624,730,651"/>
+<area shape="poly" title=" " alt="" coords="781,638,730,639,730,633,781,632"/>
+<area shape="poly" title=" " alt="" coords="1038,422,968,403,969,398,1039,417"/>
+<area shape="rect" href="class_r_g_w_rados_1_1_object.html#a80a4a75b4896536441bed3ad9fb52911" title=" " alt="" coords="789,424,986,467"/>
+<area shape="poly" title=" " alt="" coords="1037,448,987,448,987,443,1037,443"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a553350ff3ce9314aadfef0a7617f10aa" name="a553350ff3ce9314aadfef0a7617f10aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553350ff3ce9314aadfef0a7617f10aa">&#9670;&#160;</a></span>get_ofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::get_ofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00536">536</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  536</span>                             {</div>
+<div class="line"><span class="lineno">  537</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>;</div>
+<div class="line"><span class="lineno">  538</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_a553350ff3ce9314aadfef0a7617f10aa_icgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_a553350ff3ce9314aadfef0a7617f10aa_icgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_a553350ff3ce9314aadfef0a7617f10aa_icgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_a553350ff3ce9314aadfef0a7617f10aa_icgraph">
+<area shape="rect" title=" " alt="" coords="261,5,408,48"/>
+<area shape="rect" href="class_r_g_w_rados.html#a152bf2f2b987de0e7788bb76c8b708ce" title=" " alt="" coords="5,13,213,40"/>
+<area shape="poly" title=" " alt="" coords="245,29,213,29,213,24,245,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6318587312ef8290f27c4d25ad10bb05" name="a6318587312ef8290f27c4d25ad10bb05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6318587312ef8290f27c4d25ad10bb05">&#9670;&#160;</a></span>get_part_ofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::get_part_ofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00523">523</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  523</span>                                  {</div>
+<div class="line"><span class="lineno">  524</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a>;</div>
+<div class="line"><span class="lineno">  525</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a402d91bc11d9e5fb5e3892186b5aaf02" name="a402d91bc11d9e5fb5e3892186b5aaf02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402d91bc11d9e5fb5e3892186b5aaf02">&#9670;&#160;</a></span>get_stripe_ofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::get_stripe_ofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00528">528</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  528</span>                              {</div>
+<div class="line"><span class="lineno">  529</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a5b79091502eaf5bfb5c49bc16c56d856">explicit_objs</a>) {</div>
+<div class="line"><span class="lineno">  530</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>-&gt;first;</div>
+<div class="line"><span class="lineno">  531</span>      }</div>
+<div class="line"><span class="lineno">  532</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a>;</div>
+<div class="line"><span class="lineno">  533</span>    }</div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a868f0b2fb5c0ad1f5c01c514f77ef192"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">RGWObjManifest::obj_iterator::explicit_iter</a></div><div class="ttdeci">std::map&lt; uint64_t, RGWObjManifestPart &gt;::const_iterator explicit_iter</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00497">rgw_obj_manifest.h:497</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a5b79091502eaf5bfb5c49bc16c56d856"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a5b79091502eaf5bfb5c49bc16c56d856">RGWObjManifest::explicit_objs</a></div><div class="ttdeci">bool explicit_objs</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00179">rgw_obj_manifest.h:179</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_a402d91bc11d9e5fb5e3892186b5aaf02_icgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_a402d91bc11d9e5fb5e3892186b5aaf02_icgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_a402d91bc11d9e5fb5e3892186b5aaf02_icgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_a402d91bc11d9e5fb5e3892186b5aaf02_icgraph">
+<area shape="rect" title=" " alt="" coords="1139,123,1296,165"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a946b849b38bf2adc87a701d1adf7ce38" title=" " alt="" coords="918,60,1090,103"/>
+<area shape="poly" title=" " alt="" coords="1127,120,1078,106,1080,101,1129,115"/>
+<area shape="rect" href="class_r_g_w_rados.html#abc036514a682e1b7fd923fdc9cd48dd8" title=" " alt="" coords="925,131,1083,157"/>
+<area shape="poly" title=" " alt="" coords="1124,147,1084,147,1084,141,1124,141"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#afd72522ef665e9d69dc21211f0b41494" title=" " alt="" coords="917,185,1091,228"/>
+<area shape="poly" title=" " alt="" coords="1129,173,1080,187,1078,182,1127,168"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a514d1bf5b9b4512f91d3686f7628fa53" title=" " alt="" coords="691,56,864,99"/>
+<area shape="poly" title=" " alt="" coords="903,82,864,82,864,76,903,77"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a8524a6e1a2ab3efb41ceb1ae139e15bd" title=" " alt="" coords="466,64,638,91"/>
+<area shape="poly" title=" " alt="" coords="676,80,639,80,639,75,676,75"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#adee1f33d63675fd9df94faaa5d5197fb" title=" " alt="" coords="245,5,417,32"/>
+<area shape="poly" title=" " alt="" coords="484,62,383,35,385,30,485,57"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_append_object_processor.html#a01e8f8477c9565ab79392e3315c432e3" title=" " alt="" coords="244,56,418,99"/>
+<area shape="poly" title=" " alt="" coords="451,80,419,80,419,75,451,75"/>
+<area shape="rect" href="class_l_c_op_action___transition.html#a8a3ec9bbba1ef912e1b318681049047a" title=" " alt="" coords="254,123,408,165"/>
+<area shape="poly" title=" " alt="" coords="491,98,405,125,403,119,490,93"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_append_writer.html#a854f9e38f22c9922d5e4cdfda24508b3" title=" " alt="" coords="5,56,196,99"/>
+<area shape="poly" title=" " alt="" coords="228,80,196,80,196,75,228,75"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#ac6d6524f9fdc24e6d1e6f0e2ecae70ac" title=" " alt="" coords="690,123,865,165"/>
+<area shape="poly" title=" " alt="" coords="909,147,865,147,865,141,909,141"/>
+<area shape="rect" href="class_r_g_w_rados.html#a69d13fb21fa40398b515b9502ff6a000" title=" " alt="" coords="477,119,627,161"/>
+<area shape="poly" title=" " alt="" coords="675,145,628,144,628,139,675,140"/>
+<area shape="rect" href="class_r_g_w_rados.html#abdb3c2c76b2abe59e5e0dce9dae67245" title=" " alt="" coords="702,193,853,220"/>
+<area shape="poly" title=" " alt="" coords="901,209,853,209,853,204,901,204"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="686,248,869,275"/>
+<area shape="poly" title=" " alt="" coords="902,234,837,250,835,245,901,229"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_object.html#a97aafcff22608ecf4d912018ae9da833" title=" " alt="" coords="478,185,627,228"/>
+<area shape="poly" title=" " alt="" coords="687,209,627,209,627,204,687,204"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="472,252,632,279"/>
+<area shape="poly" title=" " alt="" coords="671,266,633,267,633,261,671,261"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ec899591dbb92e9bfd9284962941f83" name="a7ec899591dbb92e9bfd9284962941f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec899591dbb92e9bfd9284962941f83">&#9670;&#160;</a></span>get_stripe_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::get_stripe_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00546">546</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  546</span>                               {</div>
+<div class="line"><span class="lineno">  547</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a5b79091502eaf5bfb5c49bc16c56d856">explicit_objs</a>) {</div>
+<div class="line"><span class="lineno">  548</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>-&gt;second.size;</div>
+<div class="line"><span class="lineno">  549</span>      }</div>
+<div class="line"><span class="lineno">  550</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a>;</div>
+<div class="line"><span class="lineno">  551</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_a7ec899591dbb92e9bfd9284962941f83_icgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_a7ec899591dbb92e9bfd9284962941f83_icgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_a7ec899591dbb92e9bfd9284962941f83_icgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_a7ec899591dbb92e9bfd9284962941f83_icgraph">
+<area shape="rect" title=" " alt="" coords="671,72,836,115"/>
+<area shape="rect" href="class_r_g_w_rados.html#abc036514a682e1b7fd923fdc9cd48dd8" title=" " alt="" coords="455,20,613,47"/>
+<area shape="poly" title=" " alt="" coords="658,70,585,50,586,45,659,65"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#afd72522ef665e9d69dc21211f0b41494" title=" " alt="" coords="447,72,621,115"/>
+<area shape="poly" title=" " alt="" coords="655,96,621,96,621,91,655,91"/>
+<area shape="rect" href="class_r_g_w_get_obj___block_decrypt.html#af62e500121e58631d9a6ecf651e8383b" title=" " alt="" coords="444,139,623,181"/>
+<area shape="poly" title=" " alt="" coords="668,122,607,141,606,135,666,117"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#ac6d6524f9fdc24e6d1e6f0e2ecae70ac" title=" " alt="" coords="218,9,392,52"/>
+<area shape="poly" title=" " alt="" coords="439,35,393,34,393,29,439,30"/>
+<area shape="rect" href="class_r_g_w_rados.html#a69d13fb21fa40398b515b9502ff6a000" title=" " alt="" coords="10,5,161,48"/>
+<area shape="poly" title=" " alt="" coords="202,31,161,31,161,25,202,26"/>
+<area shape="rect" href="class_r_g_w_rados.html#abdb3c2c76b2abe59e5e0dce9dae67245" title=" " alt="" coords="230,80,380,107"/>
+<area shape="poly" title=" " alt="" coords="431,96,381,96,381,91,431,91"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="214,135,396,161"/>
+<area shape="poly" title=" " alt="" coords="432,120,365,137,363,131,431,115"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_object.html#a97aafcff22608ecf4d912018ae9da833" title=" " alt="" coords="11,72,160,115"/>
+<area shape="poly" title=" " alt="" coords="215,96,161,96,161,91,215,91"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="5,139,166,165"/>
+<area shape="poly" title=" " alt="" coords="198,153,166,153,166,148,198,147"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab9bf3ba0ff17274af997ef121d2eba8f" name="ab9bf3ba0ff17274af997ef121d2eba8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bf3ba0ff17274af997ef121d2eba8f">&#9670;&#160;</a></span>location_ofs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::location_ofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00554">554</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  554</span>                            {</div>
+<div class="line"><span class="lineno">  555</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a5b79091502eaf5bfb5c49bc16c56d856">explicit_objs</a>) {</div>
+<div class="line"><span class="lineno">  556</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>-&gt;second.loc_ofs;</div>
+<div class="line"><span class="lineno">  557</span>      }</div>
+<div class="line"><span class="lineno">  558</span>      <span class="keywordflow">return</span> 0; <span class="comment">/* all stripes start at zero offset */</span></div>
+<div class="line"><span class="lineno">  559</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_ab9bf3ba0ff17274af997ef121d2eba8f_icgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_ab9bf3ba0ff17274af997ef121d2eba8f_icgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_ab9bf3ba0ff17274af997ef121d2eba8f_icgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_ab9bf3ba0ff17274af997ef121d2eba8f_icgraph">
+<area shape="rect" title=" " alt="" coords="666,43,814,85"/>
+<area shape="rect" href="class_r_g_w_rados.html#abc036514a682e1b7fd923fdc9cd48dd8" title=" " alt="" coords="452,20,610,47"/>
+<area shape="poly" title=" " alt="" coords="651,54,610,48,611,42,651,48"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#afd72522ef665e9d69dc21211f0b41494" title=" " alt="" coords="444,72,618,115"/>
+<area shape="poly" title=" " alt="" coords="651,79,619,84,618,78,651,74"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#ac6d6524f9fdc24e6d1e6f0e2ecae70ac" title=" " alt="" coords="218,8,392,51"/>
+<area shape="poly" title=" " alt="" coords="437,34,392,34,392,28,437,29"/>
+<area shape="rect" href="class_r_g_w_rados.html#a69d13fb21fa40398b515b9502ff6a000" title=" " alt="" coords="10,5,161,48"/>
+<area shape="poly" title=" " alt="" coords="202,31,161,30,161,25,202,25"/>
+<area shape="rect" href="class_r_g_w_rados.html#abdb3c2c76b2abe59e5e0dce9dae67245" title=" " alt="" coords="230,80,380,107"/>
+<area shape="poly" title=" " alt="" coords="428,96,380,96,380,91,428,91"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="214,135,396,161"/>
+<area shape="poly" title=" " alt="" coords="429,121,364,137,363,131,428,115"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_object.html#a97aafcff22608ecf4d912018ae9da833" title=" " alt="" coords="11,72,160,115"/>
+<area shape="poly" title=" " alt="" coords="215,96,161,96,161,91,215,91"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="5,139,166,165"/>
+<area shape="poly" title=" " alt="" coords="198,153,166,153,166,148,198,147"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8badcb04ef2860e1ecae814a6254de73" name="a8badcb04ef2860e1ecae814a6254de73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8badcb04ef2860e1ecae814a6254de73">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjManifest::obj_iterator::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html">obj_iterator</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00515">515</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  515</span>                                                   {</div>
+<div class="line"><span class="lineno">  516</span>      <span class="keywordflow">return</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> != rhs.ofs);</div>
+<div class="line"><span class="lineno">  517</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3c1936ccdf36e3725c28b077c4ef9ca0" name="a3c1936ccdf36e3725c28b077c4ef9ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1936ccdf36e3725c28b077c4ef9ca0">&#9670;&#160;</a></span>operator++()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RGWObjManifest::obj_iterator::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8cc_source.html">rgw_obj_manifest.cc</a> 파일의 <a class="el" href="rgw__obj__manifest_8cc_source.html#l00206">206</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  207</span>{</div>
+<div class="line"><span class="lineno">  208</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a5b79091502eaf5bfb5c49bc16c56d856">explicit_objs</a>) {</div>
+<div class="line"><span class="lineno">  209</span>    ++<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a> == <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a6b62c2608cc3833caef7159cd68d9d51">objs</a>.end()) {</div>
+<div class="line"><span class="lineno">  212</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a>;</div>
+<div class="line"><span class="lineno">  213</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = 0;</div>
+<div class="line"><span class="lineno">  214</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  215</span>    }</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a41633c2d541acbd35e3a462d49a232b3">update_explicit_pos</a>();</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a>();</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>  uint64_t <a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a244948568fbe0d40159c1fcb3537e8b1">get_obj_size</a>();</div>
+<div class="line"><span class="lineno">  224</span>  uint64_t <a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a82274435803ab21fd814af8d3283aa1f">head_size</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680">get_head_size</a>();</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> == <a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a>) {</div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.empty()) {</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>  <span class="comment">/* are we still pointing at the head? */</span></div>
+<div class="line"><span class="lineno">  235</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> &lt; <a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a82274435803ab21fd814af8d3283aa1f">head_size</a>) {</div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.begin();</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a> *rule = &amp;<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>-&gt;second;</div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = std::min(<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a82274435803ab21fd814af8d3283aa1f">head_size</a>, <a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a>);</div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>;</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a> = 1;</div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = std::min(<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a> - <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>, rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a5c3d82adb5d3ee0ff3a1119568d76eb2">stripe_max_size</a>);</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">if</span> (rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a> &gt; 0) {</div>
+<div class="line"><span class="lineno">  243</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = std::min(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a>, rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a>);</div>
+<div class="line"><span class="lineno">  244</span>    }</div>
+<div class="line"><span class="lineno">  245</span>    <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a>();</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>  <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a> *rule = &amp;<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>-&gt;second;</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> += rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a5c3d82adb5d3ee0ff3a1119568d76eb2">stripe_max_size</a>;</div>
+<div class="line"><span class="lineno">  252</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a>++;</div>
+<div class="line"><span class="lineno">  253</span>  ldpp_dout(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a4253f9fa879da1b8fb0a78c44036cb34">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;RGWObjManifest::operator++(): rule-&gt;part_size=&quot;</span> &lt;&lt; rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a> &lt;&lt; <span class="stringliteral">&quot; rules.size()=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.size() &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>  <span class="keywordflow">if</span> (rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a> &gt; 0) {</div>
+<div class="line"><span class="lineno">  256</span>    <span class="comment">/* multi part, multi stripes object */</span></div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    ldpp_dout(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a4253f9fa879da1b8fb0a78c44036cb34">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;RGWObjManifest::operator++(): stripe_ofs=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> &lt;&lt; <span class="stringliteral">&quot; part_ofs=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> &lt;&lt; <span class="stringliteral">&quot; rule-&gt;part_size=&quot;</span> &lt;&lt; rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> &gt;= <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> + rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a>) {</div>
+<div class="line"><span class="lineno">  261</span>      <span class="comment">/* moved to the next part */</span></div>
+<div class="line"><span class="lineno">  262</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a> = 0;</div>
+<div class="line"><span class="lineno">  263</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> += rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a>;</div>
+<div class="line"><span class="lineno">  264</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a>;</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>      <span class="keywordtype">bool</span> last_rule = (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">next_rule_iter</a> == <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.end());</div>
+<div class="line"><span class="lineno">  267</span>      <span class="comment">/* move to the next rule? */</span></div>
+<div class="line"><span class="lineno">  268</span>      <span class="keywordflow">if</span> (!last_rule &amp;&amp; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> &gt;= <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">next_rule_iter</a>-&gt;second.start_ofs) {</div>
+<div class="line"><span class="lineno">  269</span>        <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">next_rule_iter</a>;</div>
+<div class="line"><span class="lineno">  270</span>        last_rule = (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">next_rule_iter</a> == <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.end());</div>
+<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">if</span> (!last_rule) {</div>
+<div class="line"><span class="lineno">  272</span>          ++<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">next_rule_iter</a>;</div>
+<div class="line"><span class="lineno">  273</span>        }</div>
+<div class="line"><span class="lineno">  274</span>        <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>-&gt;second.start_part_num;</div>
+<div class="line"><span class="lineno">  275</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  276</span>        <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a>++;</div>
+<div class="line"><span class="lineno">  277</span>      }</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>      rule = &amp;<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>-&gt;second;</div>
+<div class="line"><span class="lineno">  280</span>    }</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = std::min(rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a> - (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> - <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a>), rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a5c3d82adb5d3ee0ff3a1119568d76eb2">stripe_max_size</a>);</div>
+<div class="line"><span class="lineno">  283</span>  }</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a1e420d16585d084d4e2ff5038fb1136f">cur_override_prefix</a> = rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a9ae2533fd1bc24c76511d66b59ad22c6">override_prefix</a>;</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a>;</div>
+<div class="line"><span class="lineno">  288</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> &gt; <a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a>) {</div>
+<div class="line"><span class="lineno">  289</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a>;</div>
+<div class="line"><span class="lineno">  290</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>;</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = 0;</div>
+<div class="line"><span class="lineno">  292</span>  }</div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>  ldpp_dout(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a4253f9fa879da1b8fb0a78c44036cb34">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;RGWObjManifest::operator++(): result: ofs=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> &lt;&lt; <span class="stringliteral">&quot; stripe_ofs=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> &lt;&lt; <span class="stringliteral">&quot; part_ofs=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> &lt;&lt; <span class="stringliteral">&quot; rule-&gt;part_size=&quot;</span> &lt;&lt; rule-&gt;<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  295</span>  <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a>();</div>
+<div class="line"><span class="lineno">  296</span>}</div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a41633c2d541acbd35e3a462d49a232b3"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a41633c2d541acbd35e3a462d49a232b3">RGWObjManifest::obj_iterator::update_explicit_pos</a></div><div class="ttdeci">void update_explicit_pos()</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8cc_source.html#l00444">rgw_obj_manifest.cc:444</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a53c629683524d81bfb7e3433e0ad307d"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">RGWObjManifest::obj_iterator::rule_iter</a></div><div class="ttdeci">std::map&lt; uint64_t, RGWObjManifestRule &gt;::const_iterator rule_iter</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00495">rgw_obj_manifest.h:495</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_a74dd3e6410d932948a59ef5dd956f867"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">RGWObjManifest::obj_iterator::next_rule_iter</a></div><div class="ttdeci">std::map&lt; uint64_t, RGWObjManifestRule &gt;::const_iterator next_rule_iter</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00496">rgw_obj_manifest.h:496</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_html_aedbe4178723cd4ccfa86c06385a7900d"><div class="ttname"><a href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">RGWObjManifest::obj_iterator::update_location</a></div><div class="ttdeci">void update_location()</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8cc_source.html#l00424">rgw_obj_manifest.cc:424</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a1c535fe9d6d95d65c3f1b67800796680"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680">RGWObjManifest::get_head_size</a></div><div class="ttdeci">uint64_t get_head_size() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00443">rgw_obj_manifest.h:443</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a244948568fbe0d40159c1fcb3537e8b1"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a244948568fbe0d40159c1fcb3537e8b1">RGWObjManifest::get_obj_size</a></div><div class="ttdeci">uint64_t get_obj_size() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00439">rgw_obj_manifest.h:439</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a6b62c2608cc3833caef7159cd68d9d51"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a6b62c2608cc3833caef7159cd68d9d51">RGWObjManifest::objs</a></div><div class="ttdeci">std::map&lt; uint64_t, RGWObjManifestPart &gt; objs</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00180">rgw_obj_manifest.h:180</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a7a2689d4250eb7525699d02dd1e11d1e"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">RGWObjManifest::rules</a></div><div class="ttdeci">std::map&lt; uint64_t, RGWObjManifestRule &gt; rules</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00192">rgw_obj_manifest.h:192</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a82274435803ab21fd814af8d3283aa1f"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a82274435803ab21fd814af8d3283aa1f">RGWObjManifest::head_size</a></div><div class="ttdeci">uint64_t head_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00185">rgw_obj_manifest.h:185</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_aed10d2a8c0e0f6b9c215f00aa2f1c764"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">RGWObjManifest::obj_size</a></div><div class="ttdeci">uint64_t obj_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00182">rgw_obj_manifest.h:182</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00116">rgw_obj_manifest.h:116</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html_a5c3d82adb5d3ee0ff3a1119568d76eb2"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html#a5c3d82adb5d3ee0ff3a1119568d76eb2">RGWObjManifestRule::stripe_max_size</a></div><div class="ttdeci">uint64_t stripe_max_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00120">rgw_obj_manifest.h:120</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html_a9ae2533fd1bc24c76511d66b59ad22c6"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html#a9ae2533fd1bc24c76511d66b59ad22c6">RGWObjManifestRule::override_prefix</a></div><div class="ttdeci">std::string override_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00121">rgw_obj_manifest.h:121</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html_aa6f58aa0e2408d7bc898e934fbf3a153"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">RGWObjManifestRule::part_size</a></div><div class="ttdeci">uint64_t part_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00119">rgw_obj_manifest.h:119</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_a3c1936ccdf36e3725c28b077c4ef9ca0_cgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_a3c1936ccdf36e3725c28b077c4ef9ca0_cgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_a3c1936ccdf36e3725c28b077c4ef9ca0_cgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_a3c1936ccdf36e3725c28b077c4ef9ca0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,153,48"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="201,13,243,40"/>
+<area shape="poly" title=" " alt="" coords="153,24,185,24,185,29,153,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5920512a816b68a686a816f4d12483f8" name="a5920512a816b68a686a816f4d12483f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5920512a816b68a686a816f4d12483f8">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjManifest::obj_iterator::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html">obj_iterator</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00512">512</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  512</span>                                                   {</div>
+<div class="line"><span class="lineno">  513</span>      <span class="keywordflow">return</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> == rhs.ofs);</div>
+<div class="line"><span class="lineno">  514</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a87cae4fca6e4f202c12f34a756df6350" name="a87cae4fca6e4f202c12f34a756df6350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87cae4fca6e4f202c12f34a756df6350">&#9670;&#160;</a></span>seek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RGWObjManifest::obj_iterator::seek </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ofs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8cc_source.html">rgw_obj_manifest.cc</a> 파일의 <a class="el" href="rgw__obj__manifest_8cc_source.html#l00351">351</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>{</div>
+<div class="line"><span class="lineno">  353</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = o;</div>
+<div class="line"><span class="lineno">  354</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a5b79091502eaf5bfb5c49bc16c56d856">explicit_objs</a>) {</div>
+<div class="line"><span class="lineno">  355</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a6b62c2608cc3833caef7159cd68d9d51">objs</a>.upper_bound(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>);</div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a> != <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a6b62c2608cc3833caef7159cd68d9d51">objs</a>.begin()) {</div>
+<div class="line"><span class="lineno">  357</span>      --<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>;</div>
+<div class="line"><span class="lineno">  358</span>    }</div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">if</span> (ofs &lt; manifest-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a>) {</div>
+<div class="line"><span class="lineno">  360</span>      <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a41633c2d541acbd35e3a462d49a232b3">update_explicit_pos</a>();</div>
+<div class="line"><span class="lineno">  361</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  362</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a>;</div>
+<div class="line"><span class="lineno">  363</span>    }</div>
+<div class="line"><span class="lineno">  364</span>    <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a>();</div>
+<div class="line"><span class="lineno">  365</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  366</span>  }</div>
+<div class="line"><span class="lineno">  367</span>  <span class="keywordflow">if</span> (o &lt; manifest-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680">get_head_size</a>()) {</div>
+<div class="line"><span class="lineno">  368</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.begin();</div>
+<div class="line"><span class="lineno">  369</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = 0;</div>
+<div class="line"><span class="lineno">  370</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680">get_head_size</a>();</div>
+<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a> != <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.end()) {</div>
+<div class="line"><span class="lineno">  372</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>-&gt;second.start_part_num;</div>
+<div class="line"><span class="lineno">  373</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a1e420d16585d084d4e2ff5038fb1136f">cur_override_prefix</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>-&gt;second.override_prefix;</div>
+<div class="line"><span class="lineno">  374</span>    }</div>
+<div class="line"><span class="lineno">  375</span>    <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a>();</div>
+<div class="line"><span class="lineno">  376</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  377</span>  }</div>
+<div class="line"><span class="lineno">  378</span> </div>
+<div class="line"><span class="lineno">  379</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.upper_bound(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>);</div>
+<div class="line"><span class="lineno">  380</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a74dd3e6410d932948a59ef5dd956f867">next_rule_iter</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>;</div>
+<div class="line"><span class="lineno">  381</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a> != <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.begin()) {</div>
+<div class="line"><span class="lineno">  382</span>    --<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>;</div>
+<div class="line"><span class="lineno">  383</span>  }</div>
+<div class="line"><span class="lineno">  384</span> </div>
+<div class="line"><span class="lineno">  385</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a> == <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a7a2689d4250eb7525699d02dd1e11d1e">rules</a>.end()) {</div>
+<div class="line"><span class="lineno">  386</span>    <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a>();</div>
+<div class="line"><span class="lineno">  387</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  388</span>  }</div>
+<div class="line"><span class="lineno">  389</span> </div>
+<div class="line"><span class="lineno">  390</span>  <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a>&amp; rule = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a53c629683524d81bfb7e3433e0ad307d">rule_iter</a>-&gt;second;</div>
+<div class="line"><span class="lineno">  391</span> </div>
+<div class="line"><span class="lineno">  392</span>  <span class="keywordflow">if</span> (rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a> &gt; 0) {</div>
+<div class="line"><span class="lineno">  393</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a> = rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a7482c8fa7ed95efe3eba4fd100ac0b62">start_part_num</a> + (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> - rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a98187622ba1d66b8bb66d58e3292cfc4">start_ofs</a>) / rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a>;</div>
+<div class="line"><span class="lineno">  394</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  395</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a> = rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a7482c8fa7ed95efe3eba4fd100ac0b62">start_part_num</a>;</div>
+<div class="line"><span class="lineno">  396</span>  }</div>
+<div class="line"><span class="lineno">  397</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> = rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a98187622ba1d66b8bb66d58e3292cfc4">start_ofs</a> + (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a> - rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a7482c8fa7ed95efe3eba4fd100ac0b62">start_part_num</a>) * rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#aa6f58aa0e2408d7bc898e934fbf3a153">part_size</a>;</div>
+<div class="line"><span class="lineno">  398</span> </div>
+<div class="line"><span class="lineno">  399</span>  <span class="keywordflow">if</span> (rule.stripe_max_size &gt; 0) {</div>
+<div class="line"><span class="lineno">  400</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a> = (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> - <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a>) / rule.stripe_max_size;</div>
+<div class="line"><span class="lineno">  401</span> </div>
+<div class="line"><span class="lineno">  402</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> + <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a> * rule.stripe_max_size;</div>
+<div class="line"><span class="lineno">  403</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a> &amp;&amp; <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680">get_head_size</a>() &gt; 0) {</div>
+<div class="line"><span class="lineno">  404</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a>++;</div>
+<div class="line"><span class="lineno">  405</span>    }</div>
+<div class="line"><span class="lineno">  406</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  407</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a> = 0;</div>
+<div class="line"><span class="lineno">  408</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a>;</div>
+<div class="line"><span class="lineno">  409</span>  }</div>
+<div class="line"><span class="lineno">  410</span> </div>
+<div class="line"><span class="lineno">  411</span>  <span class="keywordflow">if</span> (!rule.part_size) {</div>
+<div class="line"><span class="lineno">  412</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = rule.stripe_max_size;</div>
+<div class="line"><span class="lineno">  413</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = std::min(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a244948568fbe0d40159c1fcb3537e8b1">get_obj_size</a>() - <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a>);</div>
+<div class="line"><span class="lineno">  414</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  415</span>    uint64_t next = std::min(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> + rule.stripe_max_size, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a85b6345e98f100355199aa67a862538f">part_ofs</a> + rule.part_size);</div>
+<div class="line"><span class="lineno">  416</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = next - <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a>;</div>
+<div class="line"><span class="lineno">  417</span>  }</div>
+<div class="line"><span class="lineno">  418</span> </div>
+<div class="line"><span class="lineno">  419</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a1e420d16585d084d4e2ff5038fb1136f">cur_override_prefix</a> = rule.override_prefix;</div>
+<div class="line"><span class="lineno">  420</span> </div>
+<div class="line"><span class="lineno">  421</span>  <a class="code hl_function" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#aedbe4178723cd4ccfa86c06385a7900d">update_location</a>();</div>
+<div class="line"><span class="lineno">  422</span>}</div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html_a7482c8fa7ed95efe3eba4fd100ac0b62"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html#a7482c8fa7ed95efe3eba4fd100ac0b62">RGWObjManifestRule::start_part_num</a></div><div class="ttdeci">uint32_t start_part_num</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00117">rgw_obj_manifest.h:117</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html_a98187622ba1d66b8bb66d58e3292cfc4"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html#a98187622ba1d66b8bb66d58e3292cfc4">RGWObjManifestRule::start_ofs</a></div><div class="ttdeci">uint64_t start_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00118">rgw_obj_manifest.h:118</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_a87cae4fca6e4f202c12f34a756df6350_cgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_a87cae4fca6e4f202c12f34a756df6350_cgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_a87cae4fca6e4f202c12f34a756df6350_cgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_a87cae4fca6e4f202c12f34a756df6350_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,153,48"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680" title=" " alt="" coords="201,5,349,48"/>
+<area shape="poly" title=" " alt="" coords="153,24,185,24,185,29,153,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a41633c2d541acbd35e3a462d49a232b3" name="a41633c2d541acbd35e3a462d49a232b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41633c2d541acbd35e3a462d49a232b3">&#9670;&#160;</a></span>update_explicit_pos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RGWObjManifest::obj_iterator::update_explicit_pos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8cc_source.html">rgw_obj_manifest.cc</a> 파일의 <a class="el" href="rgw__obj__manifest_8cc_source.html#l00444">444</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  445</span>{</div>
+<div class="line"><span class="lineno">  446</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>-&gt;first;</div>
+<div class="line"><span class="lineno">  447</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a2e67df0542b2a30e3934cfbd4ee880bb">stripe_ofs</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>;</div>
+<div class="line"><span class="lineno">  448</span> </div>
+<div class="line"><span class="lineno">  449</span>  <span class="keyword">auto</span> next_iter = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>;</div>
+<div class="line"><span class="lineno">  450</span>  ++next_iter;</div>
+<div class="line"><span class="lineno">  451</span>  <span class="keywordflow">if</span> (next_iter != <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a6b62c2608cc3833caef7159cd68d9d51">objs</a>.end()) {</div>
+<div class="line"><span class="lineno">  452</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = next_iter-&gt;first - <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>;</div>
+<div class="line"><span class="lineno">  453</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  454</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#adda274286aee107f557a10d39f917ea2">stripe_size</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#aed10d2a8c0e0f6b9c215f00aa2f1c764">obj_size</a> - <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>;</div>
+<div class="line"><span class="lineno">  455</span>  }</div>
+<div class="line"><span class="lineno">  456</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aedbe4178723cd4ccfa86c06385a7900d" name="aedbe4178723cd4ccfa86c06385a7900d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedbe4178723cd4ccfa86c06385a7900d">&#9670;&#160;</a></span>update_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RGWObjManifest::obj_iterator::update_location </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8cc_source.html">rgw_obj_manifest.cc</a> 파일의 <a class="el" href="rgw__obj__manifest_8cc_source.html#l00424">424</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  425</span>{</div>
+<div class="line"><span class="lineno">  426</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_variable" href="class_r_g_w_obj_manifest.html#a5b79091502eaf5bfb5c49bc16c56d856">explicit_objs</a>) {</div>
+<div class="line"><span class="lineno">  427</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a1ffd4d0344f4951313d763bd0421daac">empty</a>()) {</div>
+<div class="line"><span class="lineno">  428</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a> = <a class="code hl_class" href="classrgw__obj__select.html">rgw_obj_select</a>{};</div>
+<div class="line"><span class="lineno">  429</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  430</span>      <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a868f0b2fb5c0ad1f5c01c514f77ef192">explicit_iter</a>-&gt;second.loc;</div>
+<div class="line"><span class="lineno">  431</span>    }</div>
+<div class="line"><span class="lineno">  432</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  433</span>  }</div>
+<div class="line"><span class="lineno">  434</span> </div>
+<div class="line"><span class="lineno">  435</span>  <span class="keywordflow">if</span> (ofs &lt; manifest-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680">get_head_size</a>()) {</div>
+<div class="line"><span class="lineno">  436</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a> = <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a7942c439ac6dbf41c055e0d7431cc4ed">get_obj</a>();</div>
+<div class="line"><span class="lineno">  437</span>    <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a>.<a class="code hl_function" href="classrgw__obj__select.html#aea7953e53d83e6899f359743f3b61523">set_placement_rule</a>(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a75d103d156b4fad3fdb6a968877b2522">get_head_placement_rule</a>());</div>
+<div class="line"><span class="lineno">  438</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  439</span>  }</div>
+<div class="line"><span class="lineno">  440</span> </div>
+<div class="line"><span class="lineno">  441</span>  <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#accc4bad94634ed6d2052882746b214ae">manifest</a>-&gt;<a class="code hl_function" href="class_r_g_w_obj_manifest.html#ad9c18b810c8d066b2b83ff5997ad0ee0">get_implicit_location</a>(<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a59d959db68d4f59aff3bbf907279ed50">cur_part_id</a>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">cur_stripe</a>, <a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a31e3caa43a9901c4155f2710d31bf488">ofs</a>, &amp;<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a1e420d16585d084d4e2ff5038fb1136f">cur_override_prefix</a>, &amp;<a class="code hl_variable" href="class_r_g_w_obj_manifest_1_1obj__iterator.html#a6029f72dbb54a4cf7dd650142533d0b2">location</a>);</div>
+<div class="line"><span class="lineno">  442</span>}</div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a1ffd4d0344f4951313d763bd0421daac"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a1ffd4d0344f4951313d763bd0421daac">RGWObjManifest::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00365">rgw_obj_manifest.h:365</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a75d103d156b4fad3fdb6a968877b2522"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a75d103d156b4fad3fdb6a968877b2522">RGWObjManifest::get_head_placement_rule</a></div><div class="ttdeci">const rgw_placement_rule &amp; get_head_placement_rule() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00411">rgw_obj_manifest.h:411</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a7942c439ac6dbf41c055e0d7431cc4ed"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a7942c439ac6dbf41c055e0d7431cc4ed">RGWObjManifest::get_obj</a></div><div class="ttdeci">const rgw_obj &amp; get_obj() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00398">rgw_obj_manifest.h:398</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_ad9c18b810c8d066b2b83ff5997ad0ee0"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#ad9c18b810c8d066b2b83ff5997ad0ee0">RGWObjManifest::get_implicit_location</a></div><div class="ttdeci">void get_implicit_location(uint64_t cur_part_id, uint64_t cur_stripe, uint64_t ofs, std::string *override_prefix, rgw_obj_select *location) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8cc_source.html#l00458">rgw_obj_manifest.cc:458</a></div></div>
+<div class="ttc" id="aclassrgw__obj__select_html"><div class="ttname"><a href="classrgw__obj__select.html">rgw_obj_select</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00031">rgw_obj_manifest.h:31</a></div></div>
+<div class="ttc" id="aclassrgw__obj__select_html_aea7953e53d83e6899f359743f3b61523"><div class="ttname"><a href="classrgw__obj__select.html#aea7953e53d83e6899f359743f3b61523">rgw_obj_select::set_placement_rule</a></div><div class="ttdeci">void set_placement_rule(const rgw_placement_rule &amp;rule)</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00066">rgw_obj_manifest.h:66</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_obj_manifest_1_1obj__iterator_aedbe4178723cd4ccfa86c06385a7900d_cgraph.png" border="0" usemap="#aclass_r_g_w_obj_manifest_1_1obj__iterator_aedbe4178723cd4ccfa86c06385a7900d_cgraph" alt=""/></div>
+<map name="aclass_r_g_w_obj_manifest_1_1obj__iterator_aedbe4178723cd4ccfa86c06385a7900d_cgraph" id="aclass_r_g_w_obj_manifest_1_1obj__iterator_aedbe4178723cd4ccfa86c06385a7900d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,39,173,81"/>
+<area shape="rect" href="class_r_g_w_obj_manifest.html#a1c535fe9d6d95d65c3f1b67800796680" title=" " alt="" coords="221,5,369,48"/>
+<area shape="poly" title=" " alt="" coords="173,44,205,39,206,44,173,49"/>
+<area shape="rect" href="classrgw__obj__select.html#aea7953e53d83e6899f359743f3b61523" title=" " alt="" coords="228,72,362,115"/>
+<area shape="poly" title=" " alt="" coords="173,71,213,77,212,83,173,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="a1e420d16585d084d4e2ff5038fb1136f" name="a1e420d16585d084d4e2ff5038fb1136f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e420d16585d084d4e2ff5038fb1136f">&#9670;&#160;</a></span>cur_override_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RGWObjManifest::obj_iterator::cur_override_prefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00491">491</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a59d959db68d4f59aff3bbf907279ed50" name="a59d959db68d4f59aff3bbf907279ed50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d959db68d4f59aff3bbf907279ed50">&#9670;&#160;</a></span>cur_part_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RGWObjManifest::obj_iterator::cur_part_id = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00489">489</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0e52a2aadcb63a8d1dbbe9ed0122a5bf" name="a0e52a2aadcb63a8d1dbbe9ed0122a5bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e52a2aadcb63a8d1dbbe9ed0122a5bf">&#9670;&#160;</a></span>cur_stripe</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RGWObjManifest::obj_iterator::cur_stripe = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00490">490</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4253f9fa879da1b8fb0a78c44036cb34" name="a4253f9fa879da1b8fb0a78c44036cb34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4253f9fa879da1b8fb0a78c44036cb34">&#9670;&#160;</a></span>dpp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const DoutPrefixProvider* RGWObjManifest::obj_iterator::dpp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00482">482</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a868f0b2fb5c0ad1f5c01c514f77ef192" name="a868f0b2fb5c0ad1f5c01c514f77ef192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868f0b2fb5c0ad1f5c01c514f77ef192">&#9670;&#160;</a></span>explicit_iter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;uint64_t,<a class="el" href="struct_r_g_w_obj_manifest_part.html">RGWObjManifestPart</a>&gt;::const_iterator RGWObjManifest::obj_iterator::explicit_iter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00497">497</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a6029f72dbb54a4cf7dd650142533d0b2" name="a6029f72dbb54a4cf7dd650142533d0b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6029f72dbb54a4cf7dd650142533d0b2">&#9670;&#160;</a></span>location</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw__obj__select.html">rgw_obj_select</a> RGWObjManifest::obj_iterator::location</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00493">493</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="accc4bad94634ed6d2052882746b214ae" name="accc4bad94634ed6d2052882746b214ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc4bad94634ed6d2052882746b214ae">&#9670;&#160;</a></span>manifest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a>* RGWObjManifest::obj_iterator::manifest = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00483">483</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a74dd3e6410d932948a59ef5dd956f867" name="a74dd3e6410d932948a59ef5dd956f867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74dd3e6410d932948a59ef5dd956f867">&#9670;&#160;</a></span>next_rule_iter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;uint64_t,<a class="el" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a>&gt;::const_iterator RGWObjManifest::obj_iterator::next_rule_iter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00496">496</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a31e3caa43a9901c4155f2710d31bf488" name="a31e3caa43a9901c4155f2710d31bf488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e3caa43a9901c4155f2710d31bf488">&#9670;&#160;</a></span>ofs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::ofs = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00486">486</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a85b6345e98f100355199aa67a862538f" name="a85b6345e98f100355199aa67a862538f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b6345e98f100355199aa67a862538f">&#9670;&#160;</a></span>part_ofs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::part_ofs = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00484">484</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a53c629683524d81bfb7e3433e0ad307d" name="a53c629683524d81bfb7e3433e0ad307d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53c629683524d81bfb7e3433e0ad307d">&#9670;&#160;</a></span>rule_iter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;uint64_t,<a class="el" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a>&gt;::const_iterator RGWObjManifest::obj_iterator::rule_iter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00495">495</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a2e67df0542b2a30e3934cfbd4ee880bb" name="a2e67df0542b2a30e3934cfbd4ee880bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e67df0542b2a30e3934cfbd4ee880bb">&#9670;&#160;</a></span>stripe_ofs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::stripe_ofs = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00485">485</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="adda274286aee107f557a10d39f917ea2" name="adda274286aee107f557a10d39f917ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda274286aee107f557a10d39f917ea2">&#9670;&#160;</a></span>stripe_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjManifest::obj_iterator::stripe_size = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00487">487</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a></li>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__obj__manifest_8cc_source.html">rgw_obj_manifest.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a></li><li class="navelem"><a class="el" href="class_r_g_w_obj_manifest_1_1obj__iterator.html">obj_iterator</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

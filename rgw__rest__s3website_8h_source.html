@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_rest_s3website.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__rest__s3website_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_rest_s3website.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__rest__s3website_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Copyright (C) 2015 Robin H. Johnson &lt;robin.johnson@dreamhost.com&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * License version 2.1, as published by the Free Software </span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Foundation.  See file COPYING.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest__s3_8h.html">rgw_rest_s3.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___s3_website.html">RGWHandler_REST_S3Website</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___s3.html">RGWHandler_REST_S3</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a07174bead85881de93333a58c24d49dc">   21</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a07174bead85881de93333a58c24d49dc">original_object_name</a>; <span class="comment">// object name before retarget()</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#aedc1549974f934abb4f15a6bc57fc0b6">web_dir</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a7d8c17e060e4717d2e7efc2759092254">retarget</a>(<a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *op, <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> **new_op, optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">// TODO: this should be virtual I think, and ensure that it&#39;s always</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">// overridden, but that conflates that op_get/op_head are defined in this</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="comment">// class and call this; and don&#39;t need to be overridden later.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#aa1d274dc4ddb8cb9bf4b72990f13f6f3">   28</a></span>  <span class="keyword">virtual</span> <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#aa1d274dc4ddb8cb9bf4b72990f13f6f3">get_obj_op</a>(<span class="keywordtype">bool</span> get_data) { <span class="keywordflow">return</span> NULL; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a427a5e9402877a488ba75c37749e2a2f">op_get</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#af4792213045ce927ed5a648c2f643bfa">op_head</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">// Only allowed to use GET+HEAD</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a7270f7c98b22f5972386ba2a8a9bf0b5">   32</a></span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a7270f7c98b22f5972386ba2a8a9bf0b5">op_put</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> NULL; }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a16a4c8a918aa3b7b19e8500c76c32971">   33</a></span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a16a4c8a918aa3b7b19e8500c76c32971">op_delete</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> NULL; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#ab88011139c891e21aef4f531974c9cc1">   34</a></span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#ab88011139c891e21aef4f531974c9cc1">op_post</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> NULL; }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a0a9da9523cd7528dae97f004bc5e3937">   35</a></span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a0a9da9523cd7528dae97f004bc5e3937">op_copy</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> NULL; }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a5f1e33633ba2ea8577bfe77985c380b1">   36</a></span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a5f1e33633ba2ea8577bfe77985c380b1">op_options</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> NULL; }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#a6b5e79e2df026bbe97066189fc65cee7">serve_errordoc</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keywordtype">int</span> http_ret, <span class="keyword">const</span> std::string &amp;errordoc_key, optional_yield y);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">using </span><a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3.html#a4fe4ff0e16cabef5eedaef5d2821dfe2">RGWHandler_REST_S3::RGWHandler_REST_S3</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___s3_website.html#aadfd95306a07015d8ee2e401a0e6c813">   41</a></span>  <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#aadfd95306a07015d8ee2e401a0e6c813">~RGWHandler_REST_S3Website</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#aa6d050a282c9b8b319d71e3cbf235233">init</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="class_r_g_w_handler.html#a0a3ceece07032f8419ccb6da0d50b1bf">store</a>, <a class="code hl_struct" href="structreq__state.html">req_state</a> *<a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>, <a class="code hl_class" href="classrgw_1_1io_1_1_basic_client.html">rgw::io::BasicClient</a>* cio) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___s3_website.html#ab4386bc4752914a26db5e39698506346">error_handler</a>(<span class="keywordtype">int</span> err_no, std::string *error_content, optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___service___s3_website.html">   47</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___service___s3_website.html">RGWHandler_REST_Service_S3Website</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___s3_website.html">RGWHandler_REST_S3Website</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___service___s3_website.html#a52a82bad602ccc840b52fb273e392ed4">get_obj_op</a>(<span class="keywordtype">bool</span> get_data) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">using </span>RGWHandler_REST_S3Website::RGWHandler_REST_S3Website;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___service___s3_website.html#a4e74ee00b6d217a99c8ba7cbae86efc0">   52</a></span>  <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___service___s3_website.html#a4e74ee00b6d217a99c8ba7cbae86efc0">~RGWHandler_REST_Service_S3Website</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="};">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html">   55</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html">RGWHandler_REST_Obj_S3Website</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___s3_website.html">RGWHandler_REST_S3Website</a> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html#a19f369e334a782db4efed08249f27f17">get_obj_op</a>(<span class="keywordtype">bool</span> get_data) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">using </span>RGWHandler_REST_S3Website::RGWHandler_REST_S3Website;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html#a657d6c32d8bd488b7562323ddbad9087">   60</a></span>  <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html#a657d6c32d8bd488b7562323ddbad9087">~RGWHandler_REST_Obj_S3Website</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/* The cross-inheritance from Obj to Bucket is deliberate!</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"> * S3Websites do NOT support any bucket operations</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html">   66</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html">RGWHandler_REST_Bucket_S3Website</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___s3_website.html">RGWHandler_REST_S3Website</a> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html#a5e25d7799cc517501ccb632854e8b7c1">get_obj_op</a>(<span class="keywordtype">bool</span> get_data) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">using </span>RGWHandler_REST_S3Website::RGWHandler_REST_S3Website;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html#a0ef58265384b047f6298705fc787c37d">   71</a></span>  <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html#a0ef58265384b047f6298705fc787c37d">~RGWHandler_REST_Bucket_S3Website</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">// TODO: do we actually need this?</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___obj_store___s3_website.html">   75</a></span><span class="keyword">class  </span><a class="code hl_class" href="class_r_g_w_get_obj___obj_store___s3_website.html">RGWGetObj_ObjStore_S3Website</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_get_obj___obj_store___s3.html">RGWGetObj_ObjStore_S3</a></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___obj_store___s3_website.html#afa8c703da379c24312966b713f9d3992">   77</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___s3_website.html">RGWHandler_REST_S3Website</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">   79</a></span>   <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">is_errordoc_request</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___obj_store___s3_website.html#ab55916244b716cd20e3e07a69252d7d2">   81</a></span>  <a class="code hl_function" href="class_r_g_w_get_obj___obj_store___s3_website.html#ab55916244b716cd20e3e07a69252d7d2">RGWGetObj_ObjStore_S3Website</a>() : <a class="code hl_variable" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">is_errordoc_request</a>(false) {}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___obj_store___s3_website.html#a025bb837b10368c65b6df5b12cecc010">   82</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_get_obj___obj_store___s3_website.html#a025bb837b10368c65b6df5b12cecc010">RGWGetObj_ObjStore_S3Website</a>(<span class="keywordtype">bool</span> <a class="code hl_variable" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">is_errordoc_request</a>) : <a class="code hl_variable" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">is_errordoc_request</a>(false) { this-&gt;is_errordoc_request = <a class="code hl_variable" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">is_errordoc_request</a>; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___obj_store___s3_website.html#a518bf404d8c3cd5ce0ac754ca0435732">   83</a></span>  <a class="code hl_function" href="class_r_g_w_get_obj___obj_store___s3_website.html#a518bf404d8c3cd5ce0ac754ca0435732">~RGWGetObj_ObjStore_S3Website</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_get_obj___obj_store___s3_website.html#a57d93f56a9927963cb863a04f61b23d2">send_response_data_error</a>(optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b3f81f6af725b1308c2c618160458dc">send_response_data</a>(bufferlist&amp; bl, off_t <a class="code hl_variable" href="class_r_g_w_get_obj.html#ae72790bc149f70385fcf6ae1dd7a9afb">ofs</a>, off_t len) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="comment">// We override RGWGetObj_ObjStore::get_params here, to allow ignoring all</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">// conditional params for error pages.</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___obj_store___s3_website.html#a86da30afc2402fc78652953cb8c310bd">   88</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_get_obj___obj_store___s3_website.html#a86da30afc2402fc78652953cb8c310bd">get_params</a>(optional_yield y)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">is_errordoc_request</a>) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_variable" href="class_r_g_w_get_obj.html#a8cacf6d973716127f7dc87e7327f7f7a">range_str</a> = NULL;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_variable" href="class_r_g_w_get_obj.html#a5e85192686d4c98ef6e124ae3a6b734d">if_mod</a> = NULL;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_variable" href="class_r_g_w_get_obj.html#a8fbc73da5e610d9247a6ac6d90593697">if_unmod</a> = NULL;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <a class="code hl_variable" href="class_r_g_w_get_obj.html#a990d6156c7648ce205635d87bcc504a1">if_match</a> = NULL;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_variable" href="class_r_g_w_get_obj.html#a49392537f2e39da0e8ec2cae6af223b7">if_nomatch</a> = NULL;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_r_g_w_get_obj___obj_store___s3.html#a9dcfd191b7151c80908d943d24e4c2c5">RGWGetObj_ObjStore_S3::get_params</a>(y);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_html"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3.html">RGWGetObj_ObjStore_S3</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8h_source.html#l00039">rgw_rest_s3.h:40</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_html_a9dcfd191b7151c80908d943d24e4c2c5"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3.html#a9dcfd191b7151c80908d943d24e4c2c5">RGWGetObj_ObjStore_S3::get_params</a></div><div class="ttdeci">int get_params(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l00292">rgw_rest_s3.cc:292</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html">RGWGetObj_ObjStore_S3Website</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00075">rgw_rest_s3website.h:76</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html_a025bb837b10368c65b6df5b12cecc010"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html#a025bb837b10368c65b6df5b12cecc010">RGWGetObj_ObjStore_S3Website::RGWGetObj_ObjStore_S3Website</a></div><div class="ttdeci">RGWGetObj_ObjStore_S3Website(bool is_errordoc_request)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00082">rgw_rest_s3website.h:82</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html_a518bf404d8c3cd5ce0ac754ca0435732"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html#a518bf404d8c3cd5ce0ac754ca0435732">RGWGetObj_ObjStore_S3Website::~RGWGetObj_ObjStore_S3Website</a></div><div class="ttdeci">~RGWGetObj_ObjStore_S3Website() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00083">rgw_rest_s3website.h:83</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html_a57d93f56a9927963cb863a04f61b23d2"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html#a57d93f56a9927963cb863a04f61b23d2">RGWGetObj_ObjStore_S3Website::send_response_data_error</a></div><div class="ttdeci">int send_response_data_error(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l00287">rgw_rest_s3.cc:287</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html_a7b06df97010d6f50ac41b3662bdf4f2b"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b06df97010d6f50ac41b3662bdf4f2b">RGWGetObj_ObjStore_S3Website::is_errordoc_request</a></div><div class="ttdeci">bool is_errordoc_request</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00079">rgw_rest_s3website.h:79</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html_a7b3f81f6af725b1308c2c618160458dc"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html#a7b3f81f6af725b1308c2c618160458dc">RGWGetObj_ObjStore_S3Website::send_response_data</a></div><div class="ttdeci">int send_response_data(bufferlist &amp;bl, off_t ofs, off_t len) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l00267">rgw_rest_s3.cc:267</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html_a86da30afc2402fc78652953cb8c310bd"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html#a86da30afc2402fc78652953cb8c310bd">RGWGetObj_ObjStore_S3Website::get_params</a></div><div class="ttdeci">int get_params(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00088">rgw_rest_s3website.h:88</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___obj_store___s3_website_html_ab55916244b716cd20e3e07a69252d7d2"><div class="ttname"><a href="class_r_g_w_get_obj___obj_store___s3_website.html#ab55916244b716cd20e3e07a69252d7d2">RGWGetObj_ObjStore_S3Website::RGWGetObj_ObjStore_S3Website</a></div><div class="ttdeci">RGWGetObj_ObjStore_S3Website()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00081">rgw_rest_s3website.h:81</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj_html_a49392537f2e39da0e8ec2cae6af223b7"><div class="ttname"><a href="class_r_g_w_get_obj.html#a49392537f2e39da0e8ec2cae6af223b7">RGWGetObj::if_nomatch</a></div><div class="ttdeci">const char * if_nomatch</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00337">rgw_op.h:337</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj_html_a5e85192686d4c98ef6e124ae3a6b734d"><div class="ttname"><a href="class_r_g_w_get_obj.html#a5e85192686d4c98ef6e124ae3a6b734d">RGWGetObj::if_mod</a></div><div class="ttdeci">const char * if_mod</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00334">rgw_op.h:334</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj_html_a8cacf6d973716127f7dc87e7327f7f7a"><div class="ttname"><a href="class_r_g_w_get_obj.html#a8cacf6d973716127f7dc87e7327f7f7a">RGWGetObj::range_str</a></div><div class="ttdeci">const char * range_str</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00333">rgw_op.h:333</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj_html_a8fbc73da5e610d9247a6ac6d90593697"><div class="ttname"><a href="class_r_g_w_get_obj.html#a8fbc73da5e610d9247a6ac6d90593697">RGWGetObj::if_unmod</a></div><div class="ttdeci">const char * if_unmod</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00335">rgw_op.h:335</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj_html_a990d6156c7648ce205635d87bcc504a1"><div class="ttname"><a href="class_r_g_w_get_obj.html#a990d6156c7648ce205635d87bcc504a1">RGWGetObj::if_match</a></div><div class="ttdeci">const char * if_match</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00336">rgw_op.h:336</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj_html_ae72790bc149f70385fcf6ae1dd7a9afb"><div class="ttname"><a href="class_r_g_w_get_obj.html#ae72790bc149f70385fcf6ae1dd7a9afb">RGWGetObj::ofs</a></div><div class="ttdeci">off_t ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00340">rgw_op.h:340</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___bucket___s3_website_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html">RGWHandler_REST_Bucket_S3Website</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00066">rgw_rest_s3website.h:66</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___bucket___s3_website_html_a0ef58265384b047f6298705fc787c37d"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html#a0ef58265384b047f6298705fc787c37d">RGWHandler_REST_Bucket_S3Website::~RGWHandler_REST_Bucket_S3Website</a></div><div class="ttdeci">~RGWHandler_REST_Bucket_S3Website() override=default</div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___bucket___s3_website_html_a5e25d7799cc517501ccb632854e8b7c1"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___bucket___s3_website.html#a5e25d7799cc517501ccb632854e8b7c1">RGWHandler_REST_Bucket_S3Website::get_obj_op</a></div><div class="ttdeci">RGWOp * get_obj_op(bool get_data) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05356">rgw_rest_s3.cc:5356</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___obj___s3_website_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html">RGWHandler_REST_Obj_S3Website</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00055">rgw_rest_s3website.h:55</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___obj___s3_website_html_a19f369e334a782db4efed08249f27f17"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html#a19f369e334a782db4efed08249f27f17">RGWHandler_REST_Obj_S3Website::get_obj_op</a></div><div class="ttdeci">RGWOp * get_obj_op(bool get_data) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05345">rgw_rest_s3.cc:5345</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___obj___s3_website_html_a657d6c32d8bd488b7562323ddbad9087"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___obj___s3_website.html#a657d6c32d8bd488b7562323ddbad9087">RGWHandler_REST_Obj_S3Website::~RGWHandler_REST_Obj_S3Website</a></div><div class="ttdeci">~RGWHandler_REST_Obj_S3Website() override=default</div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3.html">RGWHandler_REST_S3</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8h_source.html#l00647">rgw_rest_s3.h:647</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_html_a4fe4ff0e16cabef5eedaef5d2821dfe2"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3.html#a4fe4ff0e16cabef5eedaef5d2821dfe2">RGWHandler_REST_S3::RGWHandler_REST_S3</a></div><div class="ttdeci">RGWHandler_REST_S3(const rgw::auth::StrategyRegistry &amp;auth_registry)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8h_source.html#l00654">rgw_rest_s3.h:654</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html">RGWHandler_REST_S3Website</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00020">rgw_rest_s3website.h:20</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a07174bead85881de93333a58c24d49dc"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a07174bead85881de93333a58c24d49dc">RGWHandler_REST_S3Website::original_object_name</a></div><div class="ttdeci">std::string original_object_name</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00021">rgw_rest_s3website.h:21</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a0a9da9523cd7528dae97f004bc5e3937"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a0a9da9523cd7528dae97f004bc5e3937">RGWHandler_REST_S3Website::op_copy</a></div><div class="ttdeci">RGWOp * op_copy() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00035">rgw_rest_s3website.h:35</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a16a4c8a918aa3b7b19e8500c76c32971"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a16a4c8a918aa3b7b19e8500c76c32971">RGWHandler_REST_S3Website::op_delete</a></div><div class="ttdeci">RGWOp * op_delete() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00033">rgw_rest_s3website.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a427a5e9402877a488ba75c37749e2a2f"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a427a5e9402877a488ba75c37749e2a2f">RGWHandler_REST_S3Website::op_get</a></div><div class="ttdeci">RGWOp * op_get() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05208">rgw_rest_s3.cc:5208</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a5f1e33633ba2ea8577bfe77985c380b1"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a5f1e33633ba2ea8577bfe77985c380b1">RGWHandler_REST_S3Website::op_options</a></div><div class="ttdeci">RGWOp * op_options() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00036">rgw_rest_s3website.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a6b5e79e2df026bbe97066189fc65cee7"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a6b5e79e2df026bbe97066189fc65cee7">RGWHandler_REST_S3Website::serve_errordoc</a></div><div class="ttdeci">int serve_errordoc(const DoutPrefixProvider *dpp, int http_ret, const std::string &amp;errordoc_key, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05218">rgw_rest_s3.cc:5218</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a7270f7c98b22f5972386ba2a8a9bf0b5"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a7270f7c98b22f5972386ba2a8a9bf0b5">RGWHandler_REST_S3Website::op_put</a></div><div class="ttdeci">RGWOp * op_put() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00032">rgw_rest_s3website.h:32</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_a7d8c17e060e4717d2e7efc2759092254"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#a7d8c17e060e4717d2e7efc2759092254">RGWHandler_REST_S3Website::retarget</a></div><div class="ttdeci">int retarget(RGWOp *op, RGWOp **new_op, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05145">rgw_rest_s3.cc:5145</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_aa1d274dc4ddb8cb9bf4b72990f13f6f3"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#aa1d274dc4ddb8cb9bf4b72990f13f6f3">RGWHandler_REST_S3Website::get_obj_op</a></div><div class="ttdeci">virtual RGWOp * get_obj_op(bool get_data)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00028">rgw_rest_s3website.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_aa6d050a282c9b8b319d71e3cbf235233"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#aa6d050a282c9b8b319d71e3cbf235233">RGWHandler_REST_S3Website::init</a></div><div class="ttdeci">int init(rgw::sal::Store *store, req_state *s, rgw::io::BasicClient *cio) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05130">rgw_rest_s3.cc:5130</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_aadfd95306a07015d8ee2e401a0e6c813"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#aadfd95306a07015d8ee2e401a0e6c813">RGWHandler_REST_S3Website::~RGWHandler_REST_S3Website</a></div><div class="ttdeci">~RGWHandler_REST_S3Website() override=default</div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_ab4386bc4752914a26db5e39698506346"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#ab4386bc4752914a26db5e39698506346">RGWHandler_REST_S3Website::error_handler</a></div><div class="ttdeci">int error_handler(int err_no, std::string *error_content, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05291">rgw_rest_s3.cc:5291</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_ab88011139c891e21aef4f531974c9cc1"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#ab88011139c891e21aef4f531974c9cc1">RGWHandler_REST_S3Website::op_post</a></div><div class="ttdeci">RGWOp * op_post() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00034">rgw_rest_s3website.h:34</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_aedc1549974f934abb4f15a6bc57fc0b6"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#aedc1549974f934abb4f15a6bc57fc0b6">RGWHandler_REST_S3Website::web_dir</a></div><div class="ttdeci">bool web_dir() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05102">rgw_rest_s3.cc:5102</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___s3_website_html_af4792213045ce927ed5a648c2f643bfa"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___s3_website.html#af4792213045ce927ed5a648c2f643bfa">RGWHandler_REST_S3Website::op_head</a></div><div class="ttdeci">RGWOp * op_head() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05213">rgw_rest_s3.cc:5213</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___service___s3_website_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___service___s3_website.html">RGWHandler_REST_Service_S3Website</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3website_8h_source.html#l00047">rgw_rest_s3website.h:47</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___service___s3_website_html_a4e74ee00b6d217a99c8ba7cbae86efc0"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___service___s3_website.html#a4e74ee00b6d217a99c8ba7cbae86efc0">RGWHandler_REST_Service_S3Website::~RGWHandler_REST_Service_S3Website</a></div><div class="ttdeci">~RGWHandler_REST_Service_S3Website() override=default</div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___service___s3_website_html_a52a82bad602ccc840b52fb273e392ed4"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___service___s3_website.html#a52a82bad602ccc840b52fb273e392ed4">RGWHandler_REST_Service_S3Website::get_obj_op</a></div><div class="ttdeci">RGWOp * get_obj_op(bool get_data) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05367">rgw_rest_s3.cc:5367</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler_html_a0a3ceece07032f8419ccb6da0d50b1bf"><div class="ttname"><a href="class_r_g_w_handler.html#a0a3ceece07032f8419ccb6da0d50b1bf">RGWHandler::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00091">rgw_op.h:91</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler_html_a0f04c8e72d3ef80580398f332b6de7d2"><div class="ttname"><a href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">RGWHandler::s</a></div><div class="ttdeci">struct req_state * s</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00092">rgw_op.h:92</a></div></div>
+<div class="ttc" id="aclass_r_g_w_op_html"><div class="ttname"><a href="class_r_g_w_op.html">RGWOp</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00175">rgw_op.h:175</a></div></div>
+<div class="ttc" id="aclassrgw_1_1io_1_1_basic_client_html"><div class="ttname"><a href="classrgw_1_1io_1_1_basic_client.html">rgw::io::BasicClient</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__client__io_8h_source.html#l00028">rgw_client_io.h:28</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__rest__s3_8h_html"><div class="ttname"><a href="rgw__rest__s3_8h.html">rgw_rest_s3.h</a></div></div>
+<div class="ttc" id="astructreq__state_html"><div class="ttname"><a href="structreq__state.html">req_state</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01551">rgw_common.h:1551</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__rest__s3website_8h.html">rgw_rest_s3website.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

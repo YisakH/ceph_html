@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_period_puller.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__period__puller_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_period_puller.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__period__puller_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rados_8h.html">rgw_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__zone_8h.html">rgw_zone.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest__conn_8h.html">rgw_rest_conn.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;common/ceph_json.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;common/errno.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="svc__zone_8h.html">services/svc_zone.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="rgw__period__puller_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   12</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#undef dout_prefix</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="rgw__period__puller_8cc.html#a7ce752e347fabcf5fa47c54cc22f9fb1">   15</a></span><span class="preprocessor">#define dout_prefix (*_dout &lt;&lt; &quot;rgw period puller: &quot;)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_r_g_w_period_puller.html#a9b6a5434bfcfc94d03063e7718faf701">   17</a></span><a class="code hl_function" href="class_r_g_w_period_puller.html#a9b6a5434bfcfc94d03063e7718faf701">RGWPeriodPuller::RGWPeriodPuller</a>(<a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *zone_svc, <a class="code hl_class" href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a> *sysobj_svc)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_variable" href="class_r_g_w_period_puller.html#aa2b33e4cac94b2c7f6143081e3100631">cct</a> = zone_svc-&gt;<a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_variable" href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">svc</a>.zone = zone_svc;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <a class="code hl_variable" href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">svc</a>.sysobj = sysobj_svc;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// pull the given period over the connection</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">int</span> pull_period(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_class" href="class_r_g_w_r_e_s_t_conn.html">RGWRESTConn</a>* conn, <span class="keyword">const</span> std::string&amp; period_id,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                <span class="keyword">const</span> std::string&amp; realm_id, <a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>&amp; period,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        optional_yield y)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_struct" href="structrgw__user.html">rgw_user</a> user;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="class_r_g_w_env.html">RGWEnv</a> env;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_struct" href="structreq__info.html">req_info</a> info(conn-&gt;<a class="code hl_function" href="class_r_g_w_r_e_s_t_conn.html#a0c46db245fa850c5e044c1f7450a7198">get_ctx</a>(), &amp;env);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  info.method = <span class="stringliteral">&quot;GET&quot;</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  info.request_uri = <span class="stringliteral">&quot;/admin/realm/period&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">auto</span>&amp; params = info.args.get_params();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  params[<span class="stringliteral">&quot;realm_id&quot;</span>] = realm_id;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  params[<span class="stringliteral">&quot;period_id&quot;</span>] = period_id;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  bufferlist data;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define MAX_REST_RESPONSE (128 * 1024)</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = conn-&gt;<a class="code hl_function" href="class_r_g_w_r_e_s_t_conn.html#a019e97bf205f671fdb89bd47035e316e">forward</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, info, <span class="keyword">nullptr</span>, <a class="code hl_define" href="rgw__period__puller_8cc.html#a2f797364c3b14adcbd8b1a5067c09d32">MAX_REST_RESPONSE</a>, <span class="keyword">nullptr</span>, &amp;data, y);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  JSONParser parser;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = parser.parse(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">data</a>.c_str(), <a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">data</a>.length());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;request failed: &quot;</span> &lt;&lt; cpp_strerror(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a83dfe8268c0c76ff6ceaf083ad129d5c">decode_json_obj</a>(period, &amp;parser);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> JSONDecoder::err&amp; e) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;failed to decode JSON input: &quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        &lt;&lt; e.what() &lt;&lt; dendl;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>} <span class="comment">// anonymous namespace</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_r_g_w_period_puller.html#a926a489065e72d0f2b0fe48ac773bfa3">   67</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_period_puller.html#a926a489065e72d0f2b0fe48ac773bfa3">RGWPeriodPuller::pull</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> std::string&amp; period_id, <a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>&amp; period,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>              optional_yield y)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="comment">// try to read the period from rados</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  period.<a class="code hl_function" href="class_r_g_w_period.html#afd41507a4587ed631e889ba472cad5f2">set_id</a>(period_id);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  period.<a class="code hl_function" href="class_r_g_w_period.html#a79d645ea58d88abc55e47dd5bff69c3b">set_epoch</a>(0);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = period.<a class="code hl_function" href="class_r_g_w_period.html#aa5e1b5147ab3f01311c33cc73927d1c2">init</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_variable" href="class_r_g_w_period_puller.html#aa2b33e4cac94b2c7f6143081e3100631">cct</a>, <a class="code hl_variable" href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">svc</a>.sysobj, y);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">svc</a>.zone-&gt;is_meta_master()) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <span class="comment">// can&#39;t pull if we&#39;re the master</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 1) &lt;&lt; <span class="stringliteral">&quot;metadata master failed to read period &quot;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>          &lt;&lt; period_id &lt;&lt; <span class="stringliteral">&quot; from local storage: &quot;</span> &lt;&lt; cpp_strerror(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 14) &lt;&lt; <span class="stringliteral">&quot;pulling period &quot;</span> &lt;&lt; period_id</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        &lt;&lt; <span class="stringliteral">&quot; from master&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// request the period from the master zone</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = pull_period(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_variable" href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">svc</a>.zone-&gt;get_master_conn(), period_id,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    <a class="code hl_variable" href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">svc</a>.zone-&gt;get_realm().get_id(), period, y);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;failed to pull period &quot;</span> &lt;&lt; period_id &lt;&lt; dendl;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// write the period to rados</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = period.<a class="code hl_function" href="class_r_g_w_period.html#a9f31f8de41684b5f70a40eedf88385ac">store_info</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">true</span>, y);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> == -EEXIST) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = 0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;failed to store period &quot;</span> &lt;&lt; period_id &lt;&lt; dendl;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// update latest epoch</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = period.<a class="code hl_function" href="class_r_g_w_period.html#a171e0664b28ddedf9facc578d12c7a9a">update_latest_epoch</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, period.<a class="code hl_function" href="class_r_g_w_period.html#ac82a2f1f3a82dfa1a5023204a28fc4a8">get_epoch</a>(), y);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> == -EEXIST) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      <span class="comment">// already have this epoch (or a more recent one)</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;failed to update latest_epoch for period &quot;</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>          &lt;&lt; period_id &lt;&lt; dendl;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// reflect period objects if this is the latest version</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">svc</a>.zone-&gt;get_realm().get_current_period() == period_id) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = period.<a class="code hl_function" href="class_r_g_w_period.html#a39130b4428595731c29a05940d438e85">reflect</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, y);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 14) &lt;&lt; <span class="stringliteral">&quot;period &quot;</span> &lt;&lt; period_id</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        &lt;&lt; <span class="stringliteral">&quot; pulled and written to local storage&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 14) &lt;&lt; <span class="stringliteral">&quot;found period &quot;</span> &lt;&lt; period_id</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        &lt;&lt; <span class="stringliteral">&quot; in local storage&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_env_html"><div class="ttname"><a href="class_r_g_w_env.html">RGWEnv</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00432">rgw_common.h:432</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html"><div class="ttname"><a href="class_r_g_w_period.html">RGWPeriod</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01231">rgw_zone.h:1232</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_a171e0664b28ddedf9facc578d12c7a9a"><div class="ttname"><a href="class_r_g_w_period.html#a171e0664b28ddedf9facc578d12c7a9a">RGWPeriod::update_latest_epoch</a></div><div class="ttdeci">int update_latest_epoch(const DoutPrefixProvider *dpp, epoch_t epoch, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8cc_source.html#l01193">rgw_zone.cc:1193</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_a39130b4428595731c29a05940d438e85"><div class="ttname"><a href="class_r_g_w_period.html#a39130b4428595731c29a05940d438e85">RGWPeriod::reflect</a></div><div class="ttdeci">int reflect(const DoutPrefixProvider *dpp, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8cc_source.html#l01419">rgw_zone.cc:1419</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_a79d645ea58d88abc55e47dd5bff69c3b"><div class="ttname"><a href="class_r_g_w_period.html#a79d645ea58d88abc55e47dd5bff69c3b">RGWPeriod::set_epoch</a></div><div class="ttdeci">void set_epoch(epoch_t epoch)</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01300">rgw_zone.h:1300</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_a9f31f8de41684b5f70a40eedf88385ac"><div class="ttname"><a href="class_r_g_w_period.html#a9f31f8de41684b5f70a40eedf88385ac">RGWPeriod::store_info</a></div><div class="ttdeci">int store_info(const DoutPrefixProvider *dpp, bool exclusive, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8cc_source.html#l01322">rgw_zone.cc:1322</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_aa5e1b5147ab3f01311c33cc73927d1c2"><div class="ttname"><a href="class_r_g_w_period.html#aa5e1b5147ab3f01311c33cc73927d1c2">RGWPeriod::init</a></div><div class="ttdeci">int init(const DoutPrefixProvider *dpp, CephContext *_cct, RGWSI_SysObj *_sysobj_svc, const std::string &amp;period_realm_id, optional_yield y, const std::string &amp;period_realm_name=&quot;&quot;, bool setup_obj=true)</div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_ac82a2f1f3a82dfa1a5023204a28fc4a8"><div class="ttname"><a href="class_r_g_w_period.html#ac82a2f1f3a82dfa1a5023204a28fc4a8">RGWPeriod::get_epoch</a></div><div class="ttdeci">epoch_t get_epoch() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01273">rgw_zone.h:1273</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_afd41507a4587ed631e889ba472cad5f2"><div class="ttname"><a href="class_r_g_w_period.html#afd41507a4587ed631e889ba472cad5f2">RGWPeriod::set_id</a></div><div class="ttdeci">void set_id(const std::string &amp;_id)</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01296">rgw_zone.h:1296</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_puller_html_a926a489065e72d0f2b0fe48ac773bfa3"><div class="ttname"><a href="class_r_g_w_period_puller.html#a926a489065e72d0f2b0fe48ac773bfa3">RGWPeriodPuller::pull</a></div><div class="ttdeci">int pull(const DoutPrefixProvider *dpp, const std::string &amp;period_id, RGWPeriod &amp;period, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__puller_8cc_source.html#l00067">rgw_period_puller.cc:67</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_puller_html_a9b6a5434bfcfc94d03063e7718faf701"><div class="ttname"><a href="class_r_g_w_period_puller.html#a9b6a5434bfcfc94d03063e7718faf701">RGWPeriodPuller::RGWPeriodPuller</a></div><div class="ttdeci">RGWPeriodPuller(RGWSI_Zone *zone_svc, RGWSI_SysObj *sysobj_svc)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__puller_8cc_source.html#l00017">rgw_period_puller.cc:17</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_puller_html_aa2b33e4cac94b2c7f6143081e3100631"><div class="ttname"><a href="class_r_g_w_period_puller.html#aa2b33e4cac94b2c7f6143081e3100631">RGWPeriodPuller::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__puller_8h_source.html#l00014">rgw_period_puller.h:14</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_puller_html_af7c494cffde9259975423b22cec0c79c"><div class="ttname"><a href="class_r_g_w_period_puller.html#af7c494cffde9259975423b22cec0c79c">RGWPeriodPuller::svc</a></div><div class="ttdeci">struct RGWPeriodPuller::@14 svc</div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_conn_html"><div class="ttname"><a href="class_r_g_w_r_e_s_t_conn.html">RGWRESTConn</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__conn_8h_source.html#l00071">rgw_rest_conn.h:72</a></div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_conn_html_a019e97bf205f671fdb89bd47035e316e"><div class="ttname"><a href="class_r_g_w_r_e_s_t_conn.html#a019e97bf205f671fdb89bd47035e316e">RGWRESTConn::forward</a></div><div class="ttdeci">int forward(const DoutPrefixProvider *dpp, const rgw_user &amp;uid, req_info &amp;info, obj_version *objv, size_t max_response, bufferlist *inbl, bufferlist *outbl, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__conn_8cc_source.html#l00132">rgw_rest_conn.cc:132</a></div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_conn_html_a0c46db245fa850c5e044c1f7450a7198"><div class="ttname"><a href="class_r_g_w_r_e_s_t_conn.html#a0c46db245fa850c5e044c1f7450a7198">RGWRESTConn::get_ctx</a></div><div class="ttdeci">CephContext * get_ctx()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__conn_8h_source.html#l00136">rgw_rest_conn.h:136</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj_8h_source.html#l00021">svc_sys_obj.h:22</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html"><div class="ttname"><a href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a></div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8h_source.html#l00027">svc_zone.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_a6f26e063fbffe66b7ae464699883ee7d"><div class="ttname"><a href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">RGWServiceInstance::ctx</a></div><div class="ttdeci">CephContext * ctx()</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00044">rgw_service.h:44</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">rgw::dmclock::client_id::data</a></div><div class="ttdeci">@ data</div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__basic__types_8cc_html_a83dfe8268c0c76ff6ceaf083ad129d5c"><div class="ttname"><a href="rgw__basic__types_8cc.html#a83dfe8268c0c76ff6ceaf083ad129d5c">decode_json_obj</a></div><div class="ttdeci">void decode_json_obj(rgw_user &amp;val, JSONObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8cc_source.html#l00023">rgw_basic_types.cc:23</a></div></div>
+<div class="ttc" id="argw__period__puller_8cc_html_a2f797364c3b14adcbd8b1a5067c09d32"><div class="ttname"><a href="rgw__period__puller_8cc.html#a2f797364c3b14adcbd8b1a5067c09d32">MAX_REST_RESPONSE</a></div><div class="ttdeci">#define MAX_REST_RESPONSE</div></div>
+<div class="ttc" id="argw__rados_8h_html"><div class="ttname"><a href="rgw__rados_8h.html">rgw_rados.h</a></div></div>
+<div class="ttc" id="argw__rest__conn_8h_html"><div class="ttname"><a href="rgw__rest__conn_8h.html">rgw_rest_conn.h</a></div></div>
+<div class="ttc" id="argw__zone_8h_html"><div class="ttname"><a href="rgw__zone_8h.html">rgw_zone.h</a></div></div>
+<div class="ttc" id="astructreq__info_html"><div class="ttname"><a href="structreq__info.html">req_info</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01225">rgw_common.h:1225</a></div></div>
+<div class="ttc" id="astructrgw__user_html"><div class="ttname"><a href="structrgw__user.html">rgw_user</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00014">rgw_basic_types.h:14</a></div></div>
+<div class="ttc" id="asvc__zone_8h_html"><div class="ttname"><a href="svc__zone_8h.html">svc_zone.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__period__puller_8cc.html">rgw_period_puller.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

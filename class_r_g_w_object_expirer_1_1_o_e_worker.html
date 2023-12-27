@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: RGWObjectExpirer::OEWorker 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_r_g_w_object_expirer_1_1_o_e_worker.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
+<a href="class_r_g_w_object_expirer_1_1_o_e_worker-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">RGWObjectExpirer::OEWorker 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a>&gt;</code></p>
+<div class="dynheader">
+RGWObjectExpirer::OEWorker에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_object_expirer_1_1_o_e_worker__inherit__graph.png" border="0" usemap="#a_r_g_w_object_expirer_1_1_o_e_worker_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_r_g_w_object_expirer_1_1_o_e_worker_inherit__map" id="a_r_g_w_object_expirer_1_1_o_e_worker_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,123,199,363"/>
+<area shape="rect" title=" " alt="" coords="21,5,73,75"/>
+<area shape="poly" title=" " alt="" coords="63,88,72,122,67,123,58,90"/>
+<area shape="rect" title=" " alt="" coords="97,5,216,75"/>
+<area shape="poly" title=" " alt="" coords="146,90,137,123,132,122,141,88"/>
+</map>
+</div>
+<div class="dynheader">
+RGWObjectExpirer::OEWorker에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_object_expirer_1_1_o_e_worker__coll__graph.png" border="0" usemap="#a_r_g_w_object_expirer_1_1_o_e_worker_coll__map" alt="Collaboration graph"/></div>
+<map name="a_r_g_w_object_expirer_1_1_o_e_worker_coll__map" id="a_r_g_w_object_expirer_1_1_o_e_worker_coll__map">
+<area shape="rect" title=" " alt="" coords="364,873,557,1092"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html" title=" " alt="" coords="242,1196,402,1479"/>
+<area shape="poly" title=" " alt="" coords="406,1093,378,1157,369,1181,364,1179,373,1155,401,1091"/>
+<area shape="rect" title=" " alt="" coords="404,487,456,556"/>
+<area shape="poly" title=" " alt="" coords="436,570,456,873,451,874,431,571"/>
+<area shape="rect" title=" " alt="" coords="480,487,599,556"/>
+<area shape="poly" title=" " alt="" coords="534,571,482,874,477,873,528,570"/>
+<area shape="poly" title=" " alt="" coords="400,1227,428,1171,445,1108,450,1110,432,1173,404,1230"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html" title="Base singleton representing a Store or stacking layer" alt="" coords="15,833,178,1132"/>
+<area shape="poly" title=" " alt="" coords="180,1111,192,1131,235,1197,231,1200,188,1133,176,1114"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html" title=" " alt="" coords="203,916,340,1049"/>
+<area shape="poly" title=" " alt="" coords="273,1049,276,1109,282,1172,283,1179,278,1180,277,1172,270,1109,268,1049"/>
+<area shape="rect" href="class_r_g_w_s_i___r_a_d_o_s.html" title=" " alt="" coords="5,273,185,769"/>
+<area shape="poly" title=" " alt="" coords="188,756,243,899,238,901,183,758"/>
+<area shape="rect" href="class_r_g_w_service_instance.html" title=" " alt="" coords="14,5,177,224"/>
+<area shape="poly" title=" " alt="" coords="98,239,98,274,93,274,93,239"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_zone.html" title="Abstraction of a Zone" alt="" coords="209,380,365,663"/>
+<area shape="poly" title=" " alt="" coords="285,662,277,899,272,899,280,662"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a5bb3781aa456ae2f178994e9d667823f" id="r_a5bb3781aa456ae2f178994e9d667823f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a5bb3781aa456ae2f178994e9d667823f">OEWorker</a> (CephContext *const <a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#aa3e81571bf5a829350d449e1d4e6237d">cct</a>, <a class="el" href="class_r_g_w_object_expirer.html">RGWObjectExpirer</a> *const <a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">oe</a>)</td></tr>
+<tr class="separator:a5bb3781aa456ae2f178994e9d667823f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba591fe43f344c6e162b5dbad5737a1" id="r_afba591fe43f344c6e162b5dbad5737a1"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#afba591fe43f344c6e162b5dbad5737a1">entry</a> () override</td></tr>
+<tr class="separator:afba591fe43f344c6e162b5dbad5737a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c10b9af3e0883b459dda824da8a8ed" id="r_ab0c10b9af3e0883b459dda824da8a8ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#ab0c10b9af3e0883b459dda824da8a8ed">stop</a> ()</td></tr>
+<tr class="separator:ab0c10b9af3e0883b459dda824da8a8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf34a56d7ccfb2d05b9fd1a3a8cbbab1" id="r_abf34a56d7ccfb2d05b9fd1a3a8cbbab1"><td class="memItemLeft" align="right" valign="top">CephContext *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#abf34a56d7ccfb2d05b9fd1a3a8cbbab1">get_cct</a> () const override</td></tr>
+<tr class="separator:abf34a56d7ccfb2d05b9fd1a3a8cbbab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92921488a03eaba7f6b8acd86313e699" id="r_a92921488a03eaba7f6b8acd86313e699"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a92921488a03eaba7f6b8acd86313e699">get_subsys</a> () const</td></tr>
+<tr class="separator:a92921488a03eaba7f6b8acd86313e699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b867536c284da899974320323164c5" id="r_a16b867536c284da899974320323164c5"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a16b867536c284da899974320323164c5">gen_prefix</a> (std::ostream &amp;out) const</td></tr>
+<tr class="separator:a16b867536c284da899974320323164c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:aa3e81571bf5a829350d449e1d4e6237d" id="r_aa3e81571bf5a829350d449e1d4e6237d"><td class="memItemLeft" align="right" valign="top">CephContext *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#aa3e81571bf5a829350d449e1d4e6237d">cct</a></td></tr>
+<tr class="separator:aa3e81571bf5a829350d449e1d4e6237d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b46f1d13c32fdeb04268c0aac76e40c" id="r_a4b46f1d13c32fdeb04268c0aac76e40c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_g_w_object_expirer.html">RGWObjectExpirer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">oe</a></td></tr>
+<tr class="separator:a4b46f1d13c32fdeb04268c0aac76e40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c97f34b2cc33641a3ba26ce22a7ca1" id="r_a39c97f34b2cc33641a3ba26ce22a7ca1"><td class="memItemLeft" align="right" valign="top">ceph::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a39c97f34b2cc33641a3ba26ce22a7ca1">lock</a> = ceph::make_mutex(&quot;OEWorker&quot;)</td></tr>
+<tr class="separator:a39c97f34b2cc33641a3ba26ce22a7ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b96f7faa136fb6cc2544577cda235c" id="r_a29b96f7faa136fb6cc2544577cda235c"><td class="memItemLeft" align="right" valign="top">ceph::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a29b96f7faa136fb6cc2544577cda235c">cond</a></td></tr>
+<tr class="separator:a29b96f7faa136fb6cc2544577cda235c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a> 파일의 <a class="el" href="rgw__object__expirer__core_8h_source.html#l00081">81</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a5bb3781aa456ae2f178994e9d667823f" name="a5bb3781aa456ae2f178994e9d667823f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb3781aa456ae2f178994e9d667823f">&#9670;&#160;</a></span>OEWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGWObjectExpirer::OEWorker::OEWorker </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *const&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_r_g_w_object_expirer.html">RGWObjectExpirer</a> *const&#160;</td>
+          <td class="paramname"><em>oe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a> 파일의 <a class="el" href="rgw__object__expirer__core_8h_source.html#l00088">88</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>      : <a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#aa3e81571bf5a829350d449e1d4e6237d">cct</a>(<a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#aa3e81571bf5a829350d449e1d4e6237d">cct</a>),</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">oe</a>(<a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">oe</a>) {</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_1_1_o_e_worker_html_a4b46f1d13c32fdeb04268c0aac76e40c"><div class="ttname"><a href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">RGWObjectExpirer::OEWorker::oe</a></div><div class="ttdeci">RGWObjectExpirer * oe</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8h_source.html#l00083">rgw_object_expirer_core.h:83</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_1_1_o_e_worker_html_aa3e81571bf5a829350d449e1d4e6237d"><div class="ttname"><a href="class_r_g_w_object_expirer_1_1_o_e_worker.html#aa3e81571bf5a829350d449e1d4e6237d">RGWObjectExpirer::OEWorker::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8h_source.html#l00082">rgw_object_expirer_core.h:82</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="afba591fe43f344c6e162b5dbad5737a1" name="afba591fe43f344c6e162b5dbad5737a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba591fe43f344c6e162b5dbad5737a1">&#9670;&#160;</a></span>entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RGWObjectExpirer::OEWorker::entry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00393">393</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  393</span>                                      {</div>
+<div class="line"><span class="lineno">  394</span>  utime_t last_run;</div>
+<div class="line"><span class="lineno">  395</span>  <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  396</span>    utime_t start = ceph_clock_now();</div>
+<div class="line"><span class="lineno">  397</span>    ldpp_dout(<span class="keyword">this</span>, 2) &lt;&lt; <span class="stringliteral">&quot;object expiration: start&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  398</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">oe</a>-&gt;<a class="code hl_function" href="class_r_g_w_object_expirer.html#afb521a81c0eb82006883b73071dabc22">inspect_all_shards</a>(<span class="keyword">this</span>, last_run, start)) {</div>
+<div class="line"><span class="lineno">  399</span>      <span class="comment">/* All shards have been processed properly. Next time we can start</span></div>
+<div class="line"><span class="lineno">  400</span><span class="comment">       * from this moment. */</span></div>
+<div class="line"><span class="lineno">  401</span>      last_run = start;</div>
+<div class="line"><span class="lineno">  402</span>    }</div>
+<div class="line"><span class="lineno">  403</span>    ldpp_dout(<span class="keyword">this</span>, 2) &lt;&lt; <span class="stringliteral">&quot;object expiration: stop&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  404</span> </div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">oe</a>-&gt;<a class="code hl_function" href="class_r_g_w_object_expirer.html#a93006e4924a82e7f26c16a2d0185f06b">going_down</a>())</div>
+<div class="line"><span class="lineno">  407</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>    utime_t end = ceph_clock_now();</div>
+<div class="line"><span class="lineno">  410</span>    end -= start;</div>
+<div class="line"><span class="lineno">  411</span>    <span class="keywordtype">int</span> secs = <a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#aa3e81571bf5a829350d449e1d4e6237d">cct</a>-&gt;_conf-&gt;rgw_objexp_gc_interval;</div>
+<div class="line"><span class="lineno">  412</span> </div>
+<div class="line"><span class="lineno">  413</span>    <span class="keywordflow">if</span> (secs &lt;= end.sec())</div>
+<div class="line"><span class="lineno">  414</span>      <span class="keywordflow">continue</span>; <span class="comment">// next round</span></div>
+<div class="line"><span class="lineno">  415</span> </div>
+<div class="line"><span class="lineno">  416</span>    secs -= end.sec();</div>
+<div class="line"><span class="lineno">  417</span> </div>
+<div class="line"><span class="lineno">  418</span>    std::unique_lock l{<a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a39c97f34b2cc33641a3ba26ce22a7ca1">lock</a>};</div>
+<div class="line"><span class="lineno">  419</span>    <a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a29b96f7faa136fb6cc2544577cda235c">cond</a>.wait_for(l, std::chrono::seconds(secs));</div>
+<div class="line"><span class="lineno">  420</span>  } <span class="keywordflow">while</span> (!<a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a4b46f1d13c32fdeb04268c0aac76e40c">oe</a>-&gt;<a class="code hl_function" href="class_r_g_w_object_expirer.html#a93006e4924a82e7f26c16a2d0185f06b">going_down</a>());</div>
+<div class="line"><span class="lineno">  421</span> </div>
+<div class="line"><span class="lineno">  422</span>  <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  423</span>}</div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_1_1_o_e_worker_html_a29b96f7faa136fb6cc2544577cda235c"><div class="ttname"><a href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a29b96f7faa136fb6cc2544577cda235c">RGWObjectExpirer::OEWorker::cond</a></div><div class="ttdeci">ceph::condition_variable cond</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8h_source.html#l00085">rgw_object_expirer_core.h:85</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_1_1_o_e_worker_html_a39c97f34b2cc33641a3ba26ce22a7ca1"><div class="ttname"><a href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a39c97f34b2cc33641a3ba26ce22a7ca1">RGWObjectExpirer::OEWorker::lock</a></div><div class="ttdeci">ceph::mutex lock</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8h_source.html#l00084">rgw_object_expirer_core.h:84</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_html_a93006e4924a82e7f26c16a2d0185f06b"><div class="ttname"><a href="class_r_g_w_object_expirer.html#a93006e4924a82e7f26c16a2d0185f06b">RGWObjectExpirer::going_down</a></div><div class="ttdeci">bool going_down()</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8cc_source.html#l00371">rgw_object_expirer_core.cc:371</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_html_afb521a81c0eb82006883b73071dabc22"><div class="ttname"><a href="class_r_g_w_object_expirer.html#afb521a81c0eb82006883b73071dabc22">RGWObjectExpirer::inspect_all_shards</a></div><div class="ttdeci">bool inspect_all_shards(const DoutPrefixProvider *dpp, const utime_t &amp;last_run, const utime_t &amp;round_start)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8cc_source.html#l00349">rgw_object_expirer_core.cc:349</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_object_expirer_1_1_o_e_worker_afba591fe43f344c6e162b5dbad5737a1_cgraph.png" border="0" usemap="#aclass_r_g_w_object_expirer_1_1_o_e_worker_afba591fe43f344c6e162b5dbad5737a1_cgraph" alt=""/></div>
+<map name="aclass_r_g_w_object_expirer_1_1_o_e_worker_afba591fe43f344c6e162b5dbad5737a1_cgraph" id="aclass_r_g_w_object_expirer_1_1_o_e_worker_afba591fe43f344c6e162b5dbad5737a1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,131,207,173"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a93006e4924a82e7f26c16a2d0185f06b" title=" " alt="" coords="255,109,463,136"/>
+<area shape="poly" title=" " alt="" coords="207,138,239,134,239,139,208,143"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#afb521a81c0eb82006883b73071dabc22" title=" " alt="" coords="268,160,450,203"/>
+<area shape="poly" title=" " alt="" coords="208,161,252,166,252,172,207,166"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e" title=" " alt="" coords="1007,44,1139,71"/>
+<area shape="poly" title=" " alt="" coords="437,157,580,121,745,87,875,70,992,59,992,65,875,75,746,92,581,126,439,162"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="1653,387,1695,413"/>
+<area shape="poly" title=" " alt="" coords="439,157,462,146,476,134,485,123,494,111,510,99,595,52,666,22,740,7,837,3,1307,3,1402,9,1441,18,1477,31,1509,50,1541,75,1607,145,1626,172,1641,201,1661,264,1671,323,1675,371,1670,371,1666,324,1656,265,1636,204,1621,175,1603,148,1537,79,1506,55,1474,36,1440,23,1401,14,1306,8,837,8,741,12,667,27,597,57,512,104,498,115,489,126,480,138,464,150,442,162"/>
+<area shape="rect" href="rgw__object__expirer__core_8cc.html#ad63bca91f0f7e66edaf3d5bfc3546d2e" title=" " alt="" coords="543,428,666,455"/>
+<area shape="poly" title=" " alt="" coords="382,201,582,415,578,419,378,205"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a7c6737558e3f66f25974964d4ff977ac" title=" " alt="" coords="511,219,697,261"/>
+<area shape="poly" title=" " alt="" coords="451,201,498,212,497,217,450,206"/>
+<area shape="rect" href="rgw__object__expirer__core_8cc.html#ad5341fdc2ffe21d8ec08267756d02b20" title=" " alt="" coords="747,576,930,603"/>
+<area shape="poly" title=" " alt="" coords="619,453,671,506,707,536,747,562,759,568,757,573,744,566,704,540,667,510,615,457"/>
+<area shape="poly" title=" " alt="" coords="627,216,678,174,710,152,744,134,807,109,873,89,992,65,993,70,874,94,809,114,746,138,713,157,681,178,630,220"/>
+<area shape="poly" title=" " alt="" coords="662,259,742,287,843,315,956,338,1014,344,1072,347,1307,347,1401,351,1494,363,1638,389,1637,394,1493,368,1400,357,1306,352,1071,352,1014,350,955,343,842,320,740,292,661,265"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a1c7df10d5a771f56b9ac65598a8d5b8a" title=" " alt="" coords="745,148,932,191"/>
+<area shape="poly" title=" " alt="" coords="677,215,750,193,752,198,678,221"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html#ab791437dd3b539c9ee830ec6158fec75" title=" " alt="" coords="986,429,1160,472"/>
+<area shape="poly" title=" " alt="" coords="625,260,676,313,710,342,747,366,802,391,860,411,971,436,970,441,859,416,800,396,744,370,707,346,672,317,621,263"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#aac3aff1fb07f538b029388a37e7b943e" title=" " alt="" coords="757,509,920,552"/>
+<area shape="poly" title=" " alt="" coords="621,260,673,342,747,441,803,497,799,501,743,444,669,345,616,263"/>
+<area shape="poly" title=" " alt="" coords="893,145,930,126,954,106,978,87,1006,74,1008,79,981,92,957,110,933,130,896,150"/>
+<area shape="poly" title=" " alt="" coords="931,145,979,133,1095,101,1147,89,1214,79,1306,66,1347,67,1397,79,1466,105,1516,134,1560,174,1607,230,1629,265,1647,303,1669,370,1664,372,1642,305,1625,268,1603,234,1556,177,1513,138,1464,109,1396,84,1346,72,1307,71,1214,84,1148,94,1097,107,980,139,932,150"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a5b1b575bb452555ca1500093b19e5182" title=" " alt="" coords="980,148,1166,191"/>
+<area shape="poly" title=" " alt="" coords="932,167,964,167,964,172,932,172"/>
+<area shape="rect" href="rgw__object__expirer__core_8cc.html#a981e851198e85dc81f7887b42980e9e3" title=" " alt="" coords="1010,235,1136,261"/>
+<area shape="poly" title=" " alt="" coords="905,189,1017,227,1015,232,904,194"/>
+<area shape="poly" title=" " alt="" coords="1167,167,1278,175,1338,184,1397,196,1460,212,1510,226,1555,248,1606,287,1625,307,1641,329,1664,371,1659,373,1636,331,1621,310,1603,291,1552,253,1508,231,1459,217,1396,201,1337,189,1277,181,1166,173"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#a3308ce50125b19ccdf5ce7f69958bd67" title=" " alt="" coords="1240,93,1371,136"/>
+<area shape="poly" title=" " alt="" coords="1166,145,1224,131,1225,136,1167,150"/>
+<area shape="poly" title=" " alt="" coords="1137,257,1214,271,1274,278,1326,280,1416,280,1458,282,1503,290,1551,304,1606,328,1634,349,1656,373,1652,376,1631,353,1603,333,1549,309,1501,295,1458,288,1416,285,1326,286,1274,283,1214,276,1136,262"/>
+<area shape="rect" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e" title=" " alt="" coords="1274,235,1337,261"/>
+<area shape="poly" title=" " alt="" coords="1136,245,1258,245,1258,251,1136,251"/>
+<area shape="poly" title=" " alt="" coords="1271,238,1262,228,1265,217,1280,210,1305,208,1336,212,1348,222,1345,226,1334,217,1305,213,1281,216,1269,221,1267,226,1275,234"/>
+<area shape="poly" title=" " alt="" coords="1160,431,1214,423,1335,411,1455,404,1637,398,1637,403,1456,409,1336,416,1214,428,1160,436"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_zone.html#aad5682df06309df9be7bc8fdab823b50" title=" " alt="" coords="1241,563,1369,605"/>
+<area shape="poly" title=" " alt="" coords="1104,470,1164,515,1215,548,1228,554,1225,559,1213,553,1161,519,1101,475"/>
+<area shape="rect" href="class_r_g_w_s_i___r_a_d_o_s.html#ad7d4a82ecd8081a59c37e3730345711d" title=" " alt="" coords="1234,437,1377,464"/>
+<area shape="poly" title=" " alt="" coords="1160,448,1218,448,1218,453,1160,453"/>
+<area shape="rect" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#adc703eaa1aad5a55504ce25bea09836a" title=" " alt="" coords="1214,512,1396,539"/>
+<area shape="poly" title=" " alt="" coords="1143,470,1247,504,1246,509,1141,475"/>
+<area shape="poly" title=" " alt="" coords="1346,509,1637,409,1639,414,1348,514"/>
+<area shape="poly" title=" " alt="" coords="1268,513,1261,503,1266,493,1281,487,1305,485,1331,488,1345,494,1343,499,1330,493,1305,491,1282,493,1270,497,1267,503,1272,510"/>
+<area shape="poly" title=" " alt="" coords="906,550,933,562,1032,616,1123,674,1206,730,1285,776,1323,794,1361,807,1399,815,1438,816,1477,811,1517,797,1559,775,1603,743,1619,722,1633,689,1652,600,1664,504,1669,429,1674,429,1669,505,1658,601,1638,690,1624,725,1607,747,1562,779,1520,802,1478,816,1438,821,1399,820,1360,812,1321,799,1282,781,1203,734,1120,679,1030,621,930,566,904,555"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html#a649346b03be48861b6b02366aa6fc072" title=" " alt="" coords="986,533,1160,576"/>
+<area shape="poly" title=" " alt="" coords="920,536,971,542,971,547,920,542"/>
+<area shape="poly" title=" " alt="" coords="1112,574,1160,597,1215,615,1265,625,1306,630,1346,627,1395,615,1603,482,1630,453,1653,424,1657,427,1634,457,1606,486,1397,620,1347,632,1306,635,1265,630,1213,620,1158,602,1110,579"/>
+<area shape="poly" title=" " alt="" coords="1160,563,1226,571,1225,577,1159,568"/>
+<area shape="poly" title=" " alt="" coords="1106,531,1156,502,1213,474,1231,467,1233,472,1215,478,1158,506,1109,535"/>
+<area shape="poly" title=" " alt="" coords="1159,541,1198,536,1199,541,1160,546"/>
+<area shape="rect" href="rgw__object__expirer__core_8cc.html#ad1d79c7ba9910d4fe28d139144803191" title=" " alt="" coords="1240,680,1370,723"/>
+<area shape="poly" title=" " alt="" coords="1101,575,1152,616,1215,659,1237,671,1234,675,1213,664,1149,620,1098,579"/>
+<area shape="poly" title=" " alt="" coords="1370,721,1425,733,1487,739,1518,737,1549,731,1577,720,1603,703,1617,685,1630,657,1649,580,1661,496,1668,429,1673,429,1667,497,1654,581,1635,658,1622,688,1606,707,1580,724,1550,736,1519,742,1487,744,1424,738,1369,726"/>
+<area shape="rect" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192" title=" " alt="" coords="1444,600,1605,643"/>
+<area shape="poly" title=" " alt="" coords="1365,677,1448,646,1450,651,1367,682"/>
+<area shape="rect" href="rgw__tools_8cc.html#ac8fd9a95626d93661d7280c9455eba5c" title="perform the rados operation, using the yield context when given" alt="" coords="1459,667,1590,693"/>
+<area shape="poly" title=" " alt="" coords="1371,692,1444,685,1444,690,1371,698"/>
+<area shape="poly" title=" " alt="" coords="1588,664,1603,653,1623,628,1638,599,1659,537,1668,477,1671,429,1676,429,1674,478,1664,538,1643,601,1627,630,1607,657,1591,668"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a16b867536c284da899974320323164c5" name="a16b867536c284da899974320323164c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b867536c284da899974320323164c5">&#9670;&#160;</a></span>gen_prefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; RGWObjectExpirer::OEWorker::gen_prefix </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00441">441</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  442</span>{ </div>
+<div class="line"><span class="lineno">  443</span>  <span class="keywordflow">return</span> out &lt;&lt; <span class="stringliteral">&quot;rgw object expirer Worker thread: &quot;</span>; </div>
+<div class="line"><span class="lineno">  444</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abf34a56d7ccfb2d05b9fd1a3a8cbbab1" name="abf34a56d7ccfb2d05b9fd1a3a8cbbab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf34a56d7ccfb2d05b9fd1a3a8cbbab1">&#9670;&#160;</a></span>get_cct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CephContext * RGWObjectExpirer::OEWorker::get_cct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00431">431</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  432</span>{ </div>
+<div class="line"><span class="lineno">  433</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#aa3e81571bf5a829350d449e1d4e6237d">cct</a>; </div>
+<div class="line"><span class="lineno">  434</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a92921488a03eaba7f6b8acd86313e699" name="a92921488a03eaba7f6b8acd86313e699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92921488a03eaba7f6b8acd86313e699">&#9670;&#160;</a></span>get_subsys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned RGWObjectExpirer::OEWorker::get_subsys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00436">436</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  437</span>{</div>
+<div class="line"><span class="lineno">  438</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="librgw_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>;</div>
+<div class="line"><span class="lineno">  439</span>}</div>
+<div class="ttc" id="alibrgw_8cc_html_a5580a2b7c4743669bb9ca22b07e84324"><div class="ttname"><a href="librgw_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a></div><div class="ttdeci">#define dout_subsys</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00070">librgw.cc:70</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab0c10b9af3e0883b459dda824da8a8ed" name="ab0c10b9af3e0883b459dda824da8a8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c10b9af3e0883b459dda824da8a8ed">&#9670;&#160;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RGWObjectExpirer::OEWorker::stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00425">425</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  426</span>{</div>
+<div class="line"><span class="lineno">  427</span>  std::lock_guard l{<a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a39c97f34b2cc33641a3ba26ce22a7ca1">lock</a>};</div>
+<div class="line"><span class="lineno">  428</span>  <a class="code hl_variable" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#a29b96f7faa136fb6cc2544577cda235c">cond</a>.notify_all();</div>
+<div class="line"><span class="lineno">  429</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_r_g_w_object_expirer_1_1_o_e_worker_ab0c10b9af3e0883b459dda824da8a8ed_icgraph.png" border="0" usemap="#aclass_r_g_w_object_expirer_1_1_o_e_worker_ab0c10b9af3e0883b459dda824da8a8ed_icgraph" alt=""/></div>
+<map name="aclass_r_g_w_object_expirer_1_1_o_e_worker_ab0c10b9af3e0883b459dda824da8a8ed_icgraph" id="aclass_r_g_w_object_expirer_1_1_o_e_worker_ab0c10b9af3e0883b459dda824da8a8ed_icgraph">
+<area shape="rect" title=" " alt="" coords="407,5,608,48"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a3d608acf6b7598cd1e55d87669716146" title=" " alt="" coords="194,5,359,48"/>
+<area shape="poly" title=" " alt="" coords="391,29,359,29,359,24,391,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#ae50a8a790d6a458de0fa3612426d1894" title=" " alt="" coords="5,5,146,48"/>
+<area shape="poly" title=" " alt="" coords="178,29,146,29,146,24,178,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="aa3e81571bf5a829350d449e1d4e6237d" name="aa3e81571bf5a829350d449e1d4e6237d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e81571bf5a829350d449e1d4e6237d">&#9670;&#160;</a></span>cct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CephContext* RGWObjectExpirer::OEWorker::cct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a> 파일의 <a class="el" href="rgw__object__expirer__core_8h_source.html#l00082">82</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a29b96f7faa136fb6cc2544577cda235c" name="a29b96f7faa136fb6cc2544577cda235c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b96f7faa136fb6cc2544577cda235c">&#9670;&#160;</a></span>cond</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ceph::condition_variable RGWObjectExpirer::OEWorker::cond</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a> 파일의 <a class="el" href="rgw__object__expirer__core_8h_source.html#l00085">85</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a39c97f34b2cc33641a3ba26ce22a7ca1" name="a39c97f34b2cc33641a3ba26ce22a7ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c97f34b2cc33641a3ba26ce22a7ca1">&#9670;&#160;</a></span>lock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ceph::mutex RGWObjectExpirer::OEWorker::lock = ceph::make_mutex(&quot;OEWorker&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a> 파일의 <a class="el" href="rgw__object__expirer__core_8h_source.html#l00084">84</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4b46f1d13c32fdeb04268c0aac76e40c" name="a4b46f1d13c32fdeb04268c0aac76e40c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b46f1d13c32fdeb04268c0aac76e40c">&#9670;&#160;</a></span>oe</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_r_g_w_object_expirer.html">RGWObjectExpirer</a>* RGWObjectExpirer::OEWorker::oe</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a> 파일의 <a class="el" href="rgw__object__expirer__core_8h_source.html#l00083">83</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a></li>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_r_g_w_object_expirer.html">RGWObjectExpirer</a></li><li class="navelem"><a class="el" href="class_r_g_w_object_expirer_1_1_o_e_worker.html">OEWorker</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

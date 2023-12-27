@@ -1,0 +1,25 @@
+var class_r_g_w_rados_1_1_bucket_1_1_update_index =
+[
+    [ "UpdateIndex", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#acfca8e62f14bfe829db8d3432459cec6", null ],
+    [ "cancel", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a9ad1c8f012535381d111a637335bdc7e", null ],
+    [ "complete", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a62cb7015c0bf71c0b4ec739c8c45598b", null ],
+    [ "complete_del", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a5980155cf7e122f01612b6ad07932b13", null ],
+    [ "get_bucket_shard", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a99f44dca34d73c51ee0f8266b1029cde", null ],
+    [ "get_optag", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a8e683971ad2a45076a64ef86443cd948", null ],
+    [ "guard_reshard", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#af38db1231e34aa56565bb7b5454e5e6c", null ],
+    [ "init_bs", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a586569d38310f43f4869a0ebc87451c1", null ],
+    [ "invalidate_bs", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#ace4e1bd2ee72547ff1898ef5c9bda755", null ],
+    [ "is_prepared", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a42efff16f272d83003d4867eb2bbd817", null ],
+    [ "prepare", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#ae4821013595c389167e9dbd8e9cfea69", null ],
+    [ "set_bilog_flags", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#aeb2a6804ea53f1506a838e36840bcaca", null ],
+    [ "set_zones_trace", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a8f070ed6a2bd709659c04bb954b7a353", null ],
+    [ "bilog_flags", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a2c4d3fbddba4ebea4e746cd9877612f7", null ],
+    [ "blind", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a5850cbc1c080dbe7eefcdab07d63b418", null ],
+    [ "bs", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a1839bb3bffe4f1555bd81e2cd5e5b5fe", null ],
+    [ "bs_initialized", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a40e1e304443655591ef12cd2be73a61f", null ],
+    [ "obj", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a605af7a7a50278411ddea01eed2380e6", null ],
+    [ "optag", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a1036280473ea63c118960b296b205ec8", null ],
+    [ "prepared", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#aca59656714fe7eef8574da190dff323f", null ],
+    [ "target", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#a8b2459a92c76e697b6634d2e1d1c57ff", null ],
+    [ "zones_trace", "class_r_g_w_rados_1_1_bucket_1_1_update_index.html#ab5f42e52c23874a0653185ccffb75631", null ]
+];

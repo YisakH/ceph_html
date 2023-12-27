@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_dmclock_scheduler_ctx.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__dmclock__scheduler__ctx_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_dmclock_scheduler_ctx.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__dmclock__scheduler__ctx_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Copyright (C) 2019 Red Hat, Inc.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *           (C) 2019 SUSE Linux LLC</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * License version 2.1, as published by the Free Software</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * Foundation. See file COPYING.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__dmclock__scheduler__ctx_8h.html">rgw_dmclock_scheduler_ctx.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw_1_1dmclock.html">rgw::dmclock</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classrgw_1_1dmclock_1_1_client_config.html#a551e19ededb54b8399112df2b86dff8d">   18</a></span><a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_config.html#a551e19ededb54b8399112df2b86dff8d">ClientConfig::ClientConfig</a>(CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_config.html#adadca0bf076b555fec955bbe90929841">update</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;_conf);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classrgw_1_1dmclock_1_1_client_config.html#add697d98c5c43dab0cd6779480ceb170">   23</a></span>ClientInfo* <a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_config.html#add697d98c5c43dab0cd6779480ceb170">ClientConfig::operator()</a>(<a class="code hl_enumeration" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> client)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_config.html#a422b720c9ad06328825b6518c6049aed">clients</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(client)];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classrgw_1_1dmclock_1_1_client_config.html#a311447554b4a1968bbca2ba64603f006">   28</a></span><span class="keyword">const</span> <span class="keywordtype">char</span>** <a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_config.html#a311447554b4a1968bbca2ba64603f006">ClientConfig::get_tracked_conf_keys</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* keys[] = {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="stringliteral">&quot;rgw_dmclock_admin_res&quot;</span>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="stringliteral">&quot;rgw_dmclock_admin_wgt&quot;</span>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="stringliteral">&quot;rgw_dmclock_admin_lim&quot;</span>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="stringliteral">&quot;rgw_dmclock_auth_res&quot;</span>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="stringliteral">&quot;rgw_dmclock_auth_wgt&quot;</span>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="stringliteral">&quot;rgw_dmclock_auth_lim&quot;</span>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="stringliteral">&quot;rgw_dmclock_data_res&quot;</span>,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="stringliteral">&quot;rgw_dmclock_data_wgt&quot;</span>,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="stringliteral">&quot;rgw_dmclock_data_lim&quot;</span>,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="stringliteral">&quot;rgw_dmclock_metadata_res&quot;</span>,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="stringliteral">&quot;rgw_dmclock_metadata_wgt&quot;</span>,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="stringliteral">&quot;rgw_dmclock_metadata_lim&quot;</span>,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="stringliteral">&quot;rgw_max_concurrent_requests&quot;</span>,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">nullptr</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordflow">return</span> keys;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classrgw_1_1dmclock_1_1_client_config.html#adadca0bf076b555fec955bbe90929841">   49</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_config.html#adadca0bf076b555fec955bbe90929841">ClientConfig::update</a>(<span class="keyword">const</span> ConfigProxy&amp; conf)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_config.html#a422b720c9ad06328825b6518c6049aed">clients</a>.clear();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">static_assert</span>(0 == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a21232f297a57a5a743894a0e4a801fc3">client_id::admin</a>));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_config.html#a422b720c9ad06328825b6518c6049aed">clients</a>.emplace_back(conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_admin_res&quot;</span>),</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_admin_wgt&quot;</span>),</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_admin_lim&quot;</span>));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">static_assert</span>(1 == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493afa53b91ccc1b78668d5af58e1ed3a485">client_id::auth</a>));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_config.html#a422b720c9ad06328825b6518c6049aed">clients</a>.emplace_back(conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_auth_res&quot;</span>),</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_auth_wgt&quot;</span>),</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_auth_lim&quot;</span>));</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">static_assert</span>(2 == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">client_id::data</a>));</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_config.html#a422b720c9ad06328825b6518c6049aed">clients</a>.emplace_back(conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_data_res&quot;</span>),</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_data_wgt&quot;</span>),</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_data_lim&quot;</span>));</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">static_assert</span>(3 == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a9f81f3c07476a0d97f6793673dd8e475">client_id::metadata</a>));</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_config.html#a422b720c9ad06328825b6518c6049aed">clients</a>.emplace_back(conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_metadata_res&quot;</span>),</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_metadata_wgt&quot;</span>),</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                       conf.get_val&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;rgw_dmclock_metadata_lim&quot;</span>));</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classrgw_1_1dmclock_1_1_client_config.html#abab95ba7215e3c8e39ba168cca78499c">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_config.html#abab95ba7215e3c8e39ba168cca78499c">ClientConfig::handle_conf_change</a>(<span class="keyword">const</span> ConfigProxy&amp; conf,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                      <span class="keyword">const</span> std::set&lt;std::string&gt;&amp; changed)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_config.html#adadca0bf076b555fec955bbe90929841">update</a>(conf);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classrgw_1_1dmclock_1_1_client_counters.html#aa3cef37a3a610f52f064c68b4de38fdf">   76</a></span><a class="code hl_function" href="classrgw_1_1dmclock_1_1_client_counters.html#aa3cef37a3a610f52f064c68b4de38fdf">ClientCounters::ClientCounters</a>(CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_counters.html#a5d5060897bde5cf36de97fb3b131fc77">clients</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a21232f297a57a5a743894a0e4a801fc3">client_id::admin</a>)] =</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <a class="code hl_function" href="namespacequeue__counters.html#af93f7098dd72b3cdde122ca686b45dc3">queue_counters::build</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="stringliteral">&quot;dmclock-admin&quot;</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_counters.html#a5d5060897bde5cf36de97fb3b131fc77">clients</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493afa53b91ccc1b78668d5af58e1ed3a485">client_id::auth</a>)] =</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <a class="code hl_function" href="namespacequeue__counters.html#af93f7098dd72b3cdde122ca686b45dc3">queue_counters::build</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="stringliteral">&quot;dmclock-auth&quot;</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_counters.html#a5d5060897bde5cf36de97fb3b131fc77">clients</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">client_id::data</a>)] =</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <a class="code hl_function" href="namespacequeue__counters.html#af93f7098dd72b3cdde122ca686b45dc3">queue_counters::build</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="stringliteral">&quot;dmclock-data&quot;</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_counters.html#a5d5060897bde5cf36de97fb3b131fc77">clients</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a9f81f3c07476a0d97f6793673dd8e475">client_id::metadata</a>)] =</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      <a class="code hl_function" href="namespacequeue__counters.html#af93f7098dd72b3cdde122ca686b45dc3">queue_counters::build</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="stringliteral">&quot;dmclock-metadata&quot;</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_client_counters.html#a5d5060897bde5cf36de97fb3b131fc77">clients</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">client_id::count</a>)] =</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <a class="code hl_function" href="namespacethrottle__counters.html#a148f8310bde2d3cd367231a39ebe3e2a">throttle_counters::build</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="stringliteral">&quot;dmclock-scheduler&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053">inc</a>(<a class="code hl_typedef" href="namespacergw_1_1dmclock.html#a0eef7391c30fc6d357739f0c73de5003">ClientSums</a>&amp; sums, <a class="code hl_enumeration" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> client, Cost cost)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">auto</span>&amp; sum = sums[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(client)];</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  sum.count++;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  sum.cost += cost;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080">on_cancel</a>(PerfCounters *<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw_1_1dmclock_1_1_client_sum.html">ClientSum</a>&amp; sum)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">if</span> (sum.count) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;dec(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90">queue_counters::l_qlen</a>, sum.count);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a05288f9ee035093654676fbb5ae739fc">queue_counters::l_cancel</a>, sum.count);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">if</span> (sum.cost) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;dec(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083">queue_counters::l_cost</a>, sum.cost);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a241e1a6a47598b6002bbd4123d3d8f34">queue_counters::l_cancel_cost</a>, sum.cost);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4">  109</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4">on_process</a>(PerfCounters* <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw_1_1dmclock_1_1_client_sum.html">ClientSum</a>&amp; rsum, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw_1_1dmclock_1_1_client_sum.html">ClientSum</a>&amp; psum)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">if</span> (rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a>) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a78adee6ca7af78814dcb4fdd79a5f663">queue_counters::l_res</a>, rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordflow">if</span> (rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a>) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2aaaaea8e2364f7e5feb045d272f76ca9c">queue_counters::l_res_cost</a>, rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">if</span> (psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a>) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2abff3ab0caa053a3e3a10101419c37b3d">queue_counters::l_prio</a>, psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">if</span> (psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a>) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a76a01494c2e950105b128869e44fa0e9">queue_counters::l_prio_cost</a>, psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">if</span> (rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a> + psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a>) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;dec(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90">queue_counters::l_qlen</a>, rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a> + psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">count</a>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordflow">if</span> (rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a> + psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a>) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;dec(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083">queue_counters::l_cost</a>, rsum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a> + psum.<a class="code hl_variable" href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">cost</a>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>} <span class="comment">// namespace rgw::dmclock</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="namespacequeue__counters.html">  132</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacequeue__counters.html">queue_counters</a> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="namespacequeue__counters.html#af93f7098dd72b3cdde122ca686b45dc3">  134</a></span>PerfCountersRef <a class="code hl_function" href="namespacequeue__counters.html#af93f7098dd72b3cdde122ca686b45dc3">build</a>(CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;_conf-&gt;throttler_perf_counter) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  PerfCountersBuilder b(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, name, <a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a51c8e02cc74fbdef896d3fd23ab6db6d">l_first</a>, <a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a5479dea7a8de713f6bbf2dc13e8e4460">l_last</a>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  b.add_u64(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90">l_qlen</a>, <span class="stringliteral">&quot;qlen&quot;</span>, <span class="stringliteral">&quot;Queue size&quot;</span>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  b.add_u64(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083">l_cost</a>, <span class="stringliteral">&quot;cost&quot;</span>, <span class="stringliteral">&quot;Cost of queued requests&quot;</span>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a78adee6ca7af78814dcb4fdd79a5f663">l_res</a>, <span class="stringliteral">&quot;res&quot;</span>, <span class="stringliteral">&quot;Requests satisfied by reservation&quot;</span>);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2aaaaea8e2364f7e5feb045d272f76ca9c">l_res_cost</a>, <span class="stringliteral">&quot;res_cost&quot;</span>, <span class="stringliteral">&quot;Cost satisfied by reservation&quot;</span>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2abff3ab0caa053a3e3a10101419c37b3d">l_prio</a>, <span class="stringliteral">&quot;prio&quot;</span>, <span class="stringliteral">&quot;Requests satisfied by priority&quot;</span>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a76a01494c2e950105b128869e44fa0e9">l_prio_cost</a>, <span class="stringliteral">&quot;prio_cost&quot;</span>, <span class="stringliteral">&quot;Cost satisfied by priority&quot;</span>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a72bb9d196cdef8c8bd940d64d8327032">l_limit</a>, <span class="stringliteral">&quot;limit&quot;</span>, <span class="stringliteral">&quot;Requests rejected by limit&quot;</span>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a9c0091ad989f37dfc68504dde2958975">l_limit_cost</a>, <span class="stringliteral">&quot;limit_cost&quot;</span>, <span class="stringliteral">&quot;Cost rejected by limit&quot;</span>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a05288f9ee035093654676fbb5ae739fc">l_cancel</a>, <span class="stringliteral">&quot;cancel&quot;</span>, <span class="stringliteral">&quot;Cancels&quot;</span>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  b.add_u64_counter(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a241e1a6a47598b6002bbd4123d3d8f34">l_cancel_cost</a>, <span class="stringliteral">&quot;cancel_cost&quot;</span>, <span class="stringliteral">&quot;Canceled cost&quot;</span>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  b.add_time_avg(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2abfd1bdfc886ca5f882ebc40af07f10e7">l_res_latency</a>, <span class="stringliteral">&quot;res latency&quot;</span>, <span class="stringliteral">&quot;Reservation latency&quot;</span>);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  b.add_time_avg(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a368102da1eeeeb76a28f683a91ec9549">l_prio_latency</a>, <span class="stringliteral">&quot;prio latency&quot;</span>, <span class="stringliteral">&quot;Priority latency&quot;</span>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keyword">auto</span> logger = PerfCountersRef{ b.create_perf_counters(), <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a> };</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;get_perfcounters_collection()-&gt;add(logger.get());</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordflow">return</span> logger;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>} <span class="comment">// namespace queue_counters</span></div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="namespacethrottle__counters.html">  161</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacethrottle__counters.html">throttle_counters</a> {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="namespacethrottle__counters.html#a148f8310bde2d3cd367231a39ebe3e2a">  163</a></span>PerfCountersRef build(CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>{</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;_conf-&gt;throttler_perf_counter) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  PerfCountersBuilder b(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, name, l_first, l_last);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  b.add_u64(<a class="code hl_enumvalue" href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa48d8164ce7a94785b2aaed4342e400ec">l_throttle</a>, <span class="stringliteral">&quot;throttle&quot;</span>, <span class="stringliteral">&quot;Requests throttled&quot;</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  b.add_u64(<a class="code hl_enumvalue" href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa8608773bfbc324abe8ae0dd0e16312dd">l_outstanding</a>, <span class="stringliteral">&quot;outstanding&quot;</span>, <span class="stringliteral">&quot;Outstanding Requests&quot;</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keyword">auto</span> logger = PerfCountersRef{ b.create_perf_counters(), <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a> };</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;get_perfcounters_collection()-&gt;add(logger.get());</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keywordflow">return</span> logger;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>} <span class="comment">// namespace throttle_counters</span></div>
+</div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_config_html_a311447554b4a1968bbca2ba64603f006"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_config.html#a311447554b4a1968bbca2ba64603f006">rgw::dmclock::ClientConfig::get_tracked_conf_keys</a></div><div class="ttdeci">const char ** get_tracked_conf_keys() const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00028">rgw_dmclock_scheduler_ctx.cc:28</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_config_html_a422b720c9ad06328825b6518c6049aed"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_config.html#a422b720c9ad06328825b6518c6049aed">rgw::dmclock::ClientConfig::clients</a></div><div class="ttdeci">std::vector&lt; ClientInfo &gt; clients</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00087">rgw_dmclock_scheduler_ctx.h:87</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_config_html_a551e19ededb54b8399112df2b86dff8d"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_config.html#a551e19ededb54b8399112df2b86dff8d">rgw::dmclock::ClientConfig::ClientConfig</a></div><div class="ttdeci">ClientConfig(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00018">rgw_dmclock_scheduler_ctx.cc:18</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_config_html_abab95ba7215e3c8e39ba168cca78499c"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_config.html#abab95ba7215e3c8e39ba168cca78499c">rgw::dmclock::ClientConfig::handle_conf_change</a></div><div class="ttdeci">void handle_conf_change(const ConfigProxy &amp;conf, const std::set&lt; std::string &gt; &amp;changed) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00070">rgw_dmclock_scheduler_ctx.cc:70</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_config_html_adadca0bf076b555fec955bbe90929841"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_config.html#adadca0bf076b555fec955bbe90929841">rgw::dmclock::ClientConfig::update</a></div><div class="ttdeci">void update(const ConfigProxy &amp;conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00049">rgw_dmclock_scheduler_ctx.cc:49</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_config_html_add697d98c5c43dab0cd6779480ceb170"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_config.html#add697d98c5c43dab0cd6779480ceb170">rgw::dmclock::ClientConfig::operator()</a></div><div class="ttdeci">ClientInfo * operator()(client_id client)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00023">rgw_dmclock_scheduler_ctx.cc:23</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_counters_html_a5d5060897bde5cf36de97fb3b131fc77"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_counters.html#a5d5060897bde5cf36de97fb3b131fc77">rgw::dmclock::ClientCounters::clients</a></div><div class="ttdeci">std::array&lt; PerfCountersRef, counter_size &gt; clients</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00052">rgw_dmclock_scheduler_ctx.h:52</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_client_counters_html_aa3cef37a3a610f52f064c68b4de38fdf"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_client_counters.html#aa3cef37a3a610f52f064c68b4de38fdf">rgw::dmclock::ClientCounters::ClientCounters</a></div><div class="ttdeci">ClientCounters(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00076">rgw_dmclock_scheduler_ctx.cc:76</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html"><div class="ttname"><a href="namespacequeue__counters.html">queue_counters</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00132">rgw_dmclock_scheduler_ctx.cc:132</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_af93f7098dd72b3cdde122ca686b45dc3"><div class="ttname"><a href="namespacequeue__counters.html#af93f7098dd72b3cdde122ca686b45dc3">queue_counters::build</a></div><div class="ttdeci">PerfCountersRef build(CephContext *cct, const std::string &amp;name)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00134">rgw_dmclock_scheduler_ctx.cc:134</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083">queue_counters::l_cost</a></div><div class="ttdeci">@ l_cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00017">rgw_dmclock_scheduler_ctx.h:17</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a05288f9ee035093654676fbb5ae739fc"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a05288f9ee035093654676fbb5ae739fc">queue_counters::l_cancel</a></div><div class="ttdeci">@ l_cancel</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00024">rgw_dmclock_scheduler_ctx.h:24</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90">queue_counters::l_qlen</a></div><div class="ttdeci">@ l_qlen</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00016">rgw_dmclock_scheduler_ctx.h:16</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a241e1a6a47598b6002bbd4123d3d8f34"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a241e1a6a47598b6002bbd4123d3d8f34">queue_counters::l_cancel_cost</a></div><div class="ttdeci">@ l_cancel_cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00025">rgw_dmclock_scheduler_ctx.h:25</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a368102da1eeeeb76a28f683a91ec9549"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a368102da1eeeeb76a28f683a91ec9549">queue_counters::l_prio_latency</a></div><div class="ttdeci">@ l_prio_latency</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00027">rgw_dmclock_scheduler_ctx.h:27</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a51c8e02cc74fbdef896d3fd23ab6db6d"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a51c8e02cc74fbdef896d3fd23ab6db6d">queue_counters::l_first</a></div><div class="ttdeci">@ l_first</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00015">rgw_dmclock_scheduler_ctx.h:15</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a5479dea7a8de713f6bbf2dc13e8e4460"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a5479dea7a8de713f6bbf2dc13e8e4460">queue_counters::l_last</a></div><div class="ttdeci">@ l_last</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00028">rgw_dmclock_scheduler_ctx.h:28</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a72bb9d196cdef8c8bd940d64d8327032"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a72bb9d196cdef8c8bd940d64d8327032">queue_counters::l_limit</a></div><div class="ttdeci">@ l_limit</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00022">rgw_dmclock_scheduler_ctx.h:22</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a76a01494c2e950105b128869e44fa0e9"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a76a01494c2e950105b128869e44fa0e9">queue_counters::l_prio_cost</a></div><div class="ttdeci">@ l_prio_cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00021">rgw_dmclock_scheduler_ctx.h:21</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a78adee6ca7af78814dcb4fdd79a5f663"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a78adee6ca7af78814dcb4fdd79a5f663">queue_counters::l_res</a></div><div class="ttdeci">@ l_res</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00018">rgw_dmclock_scheduler_ctx.h:18</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a9c0091ad989f37dfc68504dde2958975"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a9c0091ad989f37dfc68504dde2958975">queue_counters::l_limit_cost</a></div><div class="ttdeci">@ l_limit_cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00023">rgw_dmclock_scheduler_ctx.h:23</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2aaaaea8e2364f7e5feb045d272f76ca9c"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2aaaaea8e2364f7e5feb045d272f76ca9c">queue_counters::l_res_cost</a></div><div class="ttdeci">@ l_res_cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00019">rgw_dmclock_scheduler_ctx.h:19</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2abfd1bdfc886ca5f882ebc40af07f10e7"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2abfd1bdfc886ca5f882ebc40af07f10e7">queue_counters::l_res_latency</a></div><div class="ttdeci">@ l_res_latency</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00026">rgw_dmclock_scheduler_ctx.h:26</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2abff3ab0caa053a3e3a10101419c37b3d"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2abff3ab0caa053a3e3a10101419c37b3d">queue_counters::l_prio</a></div><div class="ttdeci">@ l_prio</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00020">rgw_dmclock_scheduler_ctx.h:20</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html"><div class="ttname"><a href="namespacergw_1_1dmclock.html">rgw::dmclock</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock_8h_source.html#l00021">rgw_dmclock.h:21</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a0eef7391c30fc6d357739f0c73de5003"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a0eef7391c30fc6d357739f0c73de5003">rgw::dmclock::ClientSums</a></div><div class="ttdeci">std::array&lt; ClientSum, client_count &gt; ClientSums</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00079">rgw_dmclock_scheduler_ctx.h:79</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a1b5d437add788d929f2a90d2a204d080"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080">rgw::dmclock::on_cancel</a></div><div class="ttdeci">void on_cancel(PerfCounters *c, const ClientSum &amp;sum)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00097">rgw_dmclock_scheduler_ctx.cc:97</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a2cab2653c6565b382384c4875867e053"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053">rgw::dmclock::inc</a></div><div class="ttdeci">void inc(ClientSums &amp;sums, client_id client, Cost cost)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00090">rgw_dmclock_scheduler_ctx.cc:90</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">rgw::dmclock::client_id</a></div><div class="ttdeci">client_id</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock_8h_source.html#l00023">rgw_dmclock.h:23</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493a21232f297a57a5a743894a0e4a801fc3"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a21232f297a57a5a743894a0e4a801fc3">rgw::dmclock::client_id::admin</a></div><div class="ttdeci">@ admin</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">rgw::dmclock::client_id::data</a></div><div class="ttdeci">@ data</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493a9f81f3c07476a0d97f6793673dd8e475"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a9f81f3c07476a0d97f6793673dd8e475">rgw::dmclock::client_id::metadata</a></div><div class="ttdeci">@ metadata</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">rgw::dmclock::client_id::count</a></div><div class="ttdeci">@ count</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493afa53b91ccc1b78668d5af58e1ed3a485"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493afa53b91ccc1b78668d5af58e1ed3a485">rgw::dmclock::client_id::auth</a></div><div class="ttdeci">@ auth</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_ad14cf8fe637e7307cd9186ace8767df4"><div class="ttname"><a href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4">rgw::dmclock::on_process</a></div><div class="ttdeci">void on_process(PerfCounters *c, const ClientSum &amp;rsum, const ClientSum &amp;psum)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00109">rgw_dmclock_scheduler_ctx.cc:109</a></div></div>
+<div class="ttc" id="anamespacethrottle__counters_html"><div class="ttname"><a href="namespacethrottle__counters.html">throttle_counters</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00161">rgw_dmclock_scheduler_ctx.cc:161</a></div></div>
+<div class="ttc" id="anamespacethrottle__counters_html_a148f8310bde2d3cd367231a39ebe3e2a"><div class="ttname"><a href="namespacethrottle__counters.html#a148f8310bde2d3cd367231a39ebe3e2a">throttle_counters::build</a></div><div class="ttdeci">PerfCountersRef build(CephContext *cct, const std::string &amp;name)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00163">rgw_dmclock_scheduler_ctx.cc:163</a></div></div>
+<div class="ttc" id="anamespacethrottle__counters_html_a7b61fa3a7daf7cf7a1af9c1074be2b6aa48d8164ce7a94785b2aaed4342e400ec"><div class="ttname"><a href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa48d8164ce7a94785b2aaed4342e400ec">throttle_counters::l_throttle</a></div><div class="ttdeci">@ l_throttle</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00038">rgw_dmclock_scheduler_ctx.h:38</a></div></div>
+<div class="ttc" id="anamespacethrottle__counters_html_a7b61fa3a7daf7cf7a1af9c1074be2b6aa8608773bfbc324abe8ae0dd0e16312dd"><div class="ttname"><a href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa8608773bfbc324abe8ae0dd0e16312dd">throttle_counters::l_outstanding</a></div><div class="ttdeci">@ l_outstanding</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00039">rgw_dmclock_scheduler_ctx.h:39</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_af3997c9b015c5696191674621076ae50"><div class="ttname"><a href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a></div><div class="ttdeci">librados::AioCompletion * c</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00031">rgw_aio.cc:31</a></div></div>
+<div class="ttc" id="argw__dmclock__scheduler__ctx_8h_html"><div class="ttname"><a href="rgw__dmclock__scheduler__ctx_8h.html">rgw_dmclock_scheduler_ctx.h</a></div></div>
+<div class="ttc" id="astructrgw_1_1dmclock_1_1_client_sum_html"><div class="ttname"><a href="structrgw_1_1dmclock_1_1_client_sum.html">rgw::dmclock::ClientSum</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00073">rgw_dmclock_scheduler_ctx.h:73</a></div></div>
+<div class="ttc" id="astructrgw_1_1dmclock_1_1_client_sum_html_a79f0582a4e6912b4d420e6c955d75f67"><div class="ttname"><a href="structrgw_1_1dmclock_1_1_client_sum.html#a79f0582a4e6912b4d420e6c955d75f67">rgw::dmclock::ClientSum::count</a></div><div class="ttdeci">uint64_t count</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00074">rgw_dmclock_scheduler_ctx.h:74</a></div></div>
+<div class="ttc" id="astructrgw_1_1dmclock_1_1_client_sum_html_ac3a365da1ba2cd60108aad0f4de253e5"><div class="ttname"><a href="structrgw_1_1dmclock_1_1_client_sum.html#ac3a365da1ba2cd60108aad0f4de253e5">rgw::dmclock::ClientSum::cost</a></div><div class="ttdeci">Cost cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00075">rgw_dmclock_scheduler_ctx.h:75</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__dmclock__scheduler__ctx_8cc.html">rgw_dmclock_scheduler_ctx.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

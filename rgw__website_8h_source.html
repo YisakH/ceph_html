@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_website.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__website_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_website.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__website_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*- </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Copyright (C) 2015 Yehuda Sadeh &lt;yehuda@redhat.com&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * Copyright (C) 2015 Robin H. Johnson &lt;robin.johnson@dreamhost.com&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * License version 2.1, as published by the Free Software </span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * Foundation.  See file COPYING.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifndef RGW_WEBSITE_H</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define RGW_WEBSITE_H</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;common/ceph_json.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__xml_8h.html">rgw_xml.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_r_g_w_redirect_info.html">   27</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_redirect_info.html">RGWRedirectInfo</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_r_g_w_redirect_info.html#a8c41010cf508ec967cb7061506dc4982">   29</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a8c41010cf508ec967cb7061506dc4982">protocol</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_r_g_w_redirect_info.html#a75da270ab9a4899a721a4dce06c23f1e">   30</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a75da270ab9a4899a721a4dce06c23f1e">hostname</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_r_g_w_redirect_info.html#a8796f10ccce719196e08deee61690410">   31</a></span>  uint16_t <a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a8796f10ccce719196e08deee61690410">http_redirect_code</a> = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_r_g_w_redirect_info.html#af37e81608ab5c1a23f15d09d10665a2d">   33</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_redirect_info.html#af37e81608ab5c1a23f15d09d10665a2d">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="struct_r_g_w_redirect_info.html#af37e81608ab5c1a23f15d09d10665a2d">encode</a>(<a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a8c41010cf508ec967cb7061506dc4982">protocol</a>, bl);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="struct_r_g_w_redirect_info.html#af37e81608ab5c1a23f15d09d10665a2d">encode</a>(<a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a75da270ab9a4899a721a4dce06c23f1e">hostname</a>, bl);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="struct_r_g_w_redirect_info.html#af37e81608ab5c1a23f15d09d10665a2d">encode</a>(<a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a8796f10ccce719196e08deee61690410">http_redirect_code</a>, bl);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_r_g_w_redirect_info.html#a317b7c38b11a4cb62fcbfce0f8a234e2">   40</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_redirect_info.html#a317b7c38b11a4cb62fcbfce0f8a234e2">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="struct_r_g_w_redirect_info.html#a317b7c38b11a4cb62fcbfce0f8a234e2">decode</a>(<a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a8c41010cf508ec967cb7061506dc4982">protocol</a>, bl);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="struct_r_g_w_redirect_info.html#a317b7c38b11a4cb62fcbfce0f8a234e2">decode</a>(<a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a75da270ab9a4899a721a4dce06c23f1e">hostname</a>, bl);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="struct_r_g_w_redirect_info.html#a317b7c38b11a4cb62fcbfce0f8a234e2">decode</a>(<a class="code hl_variable" href="struct_r_g_w_redirect_info.html#a8796f10ccce719196e08deee61690410">http_redirect_code</a>, bl);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_redirect_info.html#a1534caab5f53ade7b6ab374a3b2acdff">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_redirect_info.html#aeac2a28540a2f53cc77b5187ce26f6ee">decode_json</a>(JSONObj *obj);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="struct_r_g_w_redirect_info.html">RGWRedirectInfo</a>)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_redirect_info.html">   54</a></span>struct <a class="code hl_struct" href="struct_r_g_w_b_w_redirect_info.html">RGWBWRedirectInfo</a></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_redirect_info.html#afad8bbc79df1268c54bbc37dc3030a02">   56</a></span>  <a class="code hl_struct" href="struct_r_g_w_redirect_info.html">RGWRedirectInfo</a> <a class="code hl_variable" href="struct_r_g_w_b_w_redirect_info.html#afad8bbc79df1268c54bbc37dc3030a02">redirect</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_redirect_info.html#a609d03fa0fcd1c25595dbf265bc7a0fe">   57</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_b_w_redirect_info.html#a609d03fa0fcd1c25595dbf265bc7a0fe">replace_key_prefix_with</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_redirect_info.html#ac741c9322b243370ee202fd799f61971">   58</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_b_w_redirect_info.html#ac741c9322b243370ee202fd799f61971">replace_key_with</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_redirect_info.html#adbdaac262ebcee528b612214739099c8">   60</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_redirect_info.html#adbdaac262ebcee528b612214739099c8">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(redirect, bl);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(replace_key_prefix_with, bl);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(replace_key_with, bl);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_redirect_info.html#a2f0c792ca594ff0d23c27b04ae78fd10">   67</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_redirect_info.html#a2f0c792ca594ff0d23c27b04ae78fd10">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(redirect, bl);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(replace_key_prefix_with, bl);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(replace_key_with, bl);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> dump_xml(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">void</span> decode_json(JSONObj *obj);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">void</span> decode_xml(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="struct_r_g_w_b_w_redirect_info.html">RGWBWRedirectInfo</a>)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule_condition.html">   82</a></span>struct <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule_condition.html">RGWBWRoutingRuleCondition</a></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule_condition.html#afe16308ac808990873d4e16306c0a5b0">   84</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_b_w_routing_rule_condition.html#afe16308ac808990873d4e16306c0a5b0">key_prefix_equals</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule_condition.html#a22574a3e24989ef47f416d3fec4c9833">   85</a></span>  uint16_t http_error_code_returned_equals = 0;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule_condition.html#a042f0f4e78c78620e487c8e195a07d1f">   87</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rule_condition.html#a042f0f4e78c78620e487c8e195a07d1f">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(key_prefix_equals, bl);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(http_error_code_returned_equals, bl);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule_condition.html#a22bb93c4282191f5a31cc1b78fb74cc0">   93</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rule_condition.html#a22bb93c4282191f5a31cc1b78fb74cc0">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(key_prefix_equals, bl);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(http_error_code_returned_equals, bl);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  }</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordtype">void</span> dump_xml(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordtype">void</span> decode_json(JSONObj *obj);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">void</span> decode_xml(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">bool</span> check_key_condition(<span class="keyword">const</span> std::string&amp; key);</div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule_condition.html#a5dd82fcda91d19bd6cb0e30a557c2ce9">  106</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rule_condition.html#a5dd82fcda91d19bd6cb0e30a557c2ce9">check_error_code_condition</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> error_code) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> (uint16_t)error_code == http_error_code_returned_equals;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule_condition.html">RGWBWRoutingRuleCondition</a>)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="};">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule.html">  112</a></span>struct <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule.html">RGWBWRoutingRule</a></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>{</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule.html#ac535db05f9434d367d614e91190b3b2c">  114</a></span>  <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule_condition.html">RGWBWRoutingRuleCondition</a> <a class="code hl_variable" href="struct_r_g_w_b_w_routing_rule.html#ac535db05f9434d367d614e91190b3b2c">condition</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule.html#a67fd7f3283011142ad2551100eeda8a2">  115</a></span>  <a class="code hl_struct" href="struct_r_g_w_b_w_redirect_info.html">RGWBWRedirectInfo</a> <a class="code hl_variable" href="struct_r_g_w_b_w_routing_rule.html#a67fd7f3283011142ad2551100eeda8a2">redirect_info</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule.html#a0a90662b4260d84e7bfa6b82225a5626">  117</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rule.html#a0a90662b4260d84e7bfa6b82225a5626">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(condition, bl);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(redirect_info, bl);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule.html#a49bae9a805f1459c7d0c78a257fc6465">  123</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rule.html#a49bae9a805f1459c7d0c78a257fc6465">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(condition, bl);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(redirect_info, bl);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordtype">void</span> dump_xml(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">void</span> decode_json(JSONObj *obj);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordtype">void</span> decode_xml(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule.html#ab676388ef39a491fed4e6a0879030ae5">  135</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rule.html#ab676388ef39a491fed4e6a0879030ae5">check_key_condition</a>(<span class="keyword">const</span> std::string&amp; key) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">return</span> condition.<a class="code hl_function" href="struct_r_g_w_b_w_routing_rule_condition.html#adb0696a11446a29e3beee86931730208">check_key_condition</a>(key);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rule.html#aff819c78d0122626ba6b07cbde6dc760">  138</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rule.html#aff819c78d0122626ba6b07cbde6dc760">check_error_code_condition</a>(<span class="keywordtype">int</span> error_code) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">return</span> condition.<a class="code hl_function" href="struct_r_g_w_b_w_routing_rule_condition.html#a5dd82fcda91d19bd6cb0e30a557c2ce9">check_error_code_condition</a>(error_code);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  }</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keywordtype">void</span> apply_rule(<span class="keyword">const</span> std::string&amp; default_protocol,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                  <span class="keyword">const</span> std::string&amp; default_hostname,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                  <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                  std::string *redirect,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                  <span class="keywordtype">int</span> *redirect_code);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>};</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule.html">RGWBWRoutingRule</a>)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="};">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rules.html">  150</a></span>struct <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rules.html">RGWBWRoutingRules</a></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rules.html#a79d99a5c9b99200e67a2407f6e2da3eb">  152</a></span>  std::list&lt;RGWBWRoutingRule&gt; <a class="code hl_variable" href="struct_r_g_w_b_w_routing_rules.html#a79d99a5c9b99200e67a2407f6e2da3eb">rules</a>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rules.html#a1397c66b17d85e612f503cd339fc2b40">  154</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rules.html#a1397c66b17d85e612f503cd339fc2b40">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(rules, bl);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rules.html#a864a1c15d009bb8b8a867b1429d62eaa">  159</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rules.html#a864a1c15d009bb8b8a867b1429d62eaa">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(rules, bl);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  }</div>
+</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="struct_r_g_w_b_w_routing_rules.html#aebb23d5ae3cb4a1d85041032857e7d7d">  166</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_b_w_routing_rules.html#aebb23d5ae3cb4a1d85041032857e7d7d">dump_xml</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keywordtype">void</span> decode_json(JSONObj *obj);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordtype">bool</span> check_key_condition(<span class="keyword">const</span> std::string&amp; key, <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule.html">RGWBWRoutingRule</a> **rule);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordtype">bool</span> check_error_code_condition(<span class="keywordtype">int</span> error_code, <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule.html">RGWBWRoutingRule</a> **rule);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordtype">bool</span> check_key_and_error_code_condition(<span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                                          <span class="keyword">const</span> <span class="keywordtype">int</span> error_code,</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                                          <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule.html">RGWBWRoutingRule</a> **rule);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>};</div>
+</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="struct_r_g_w_b_w_routing_rules.html">RGWBWRoutingRules</a>)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="};">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html">  177</a></span>struct <a class="code hl_struct" href="struct_r_g_w_bucket_website_conf.html">RGWBucketWebsiteConf</a></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>{</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a5d38494e523b18043d9f84df6c06a2d3">  179</a></span>  <a class="code hl_struct" href="struct_r_g_w_redirect_info.html">RGWRedirectInfo</a> <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#a5d38494e523b18043d9f84df6c06a2d3">redirect_all</a>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a187431ea636e9b286d897048919e64c8">  180</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#a187431ea636e9b286d897048919e64c8">index_doc_suffix</a>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a09cd3bdcdb72ce565eca7513b205d220">  181</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#a09cd3bdcdb72ce565eca7513b205d220">error_doc</a>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a72467a4d94418dc981c60e3e7e3d9f53">  182</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#a72467a4d94418dc981c60e3e7e3d9f53">subdir_marker</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a35c14874450e69732a59a5b3e454e5d1">  183</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#a35c14874450e69732a59a5b3e454e5d1">listing_css_doc</a>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a15546fa202a90a02017bc3f924569dd7">  184</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#a15546fa202a90a02017bc3f924569dd7">listing_enabled</a>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a355bcb7e8b7d6126e01876859f42befd">  185</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#a355bcb7e8b7d6126e01876859f42befd">is_redirect_all</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#aed0b3a716cb419c6aec8f8cfe6e91c59">  186</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#aed0b3a716cb419c6aec8f8cfe6e91c59">is_set_index_doc</a>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#ac07b90a6c26f8c4649983f0fbc905aa6">  187</a></span>  <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rules.html">RGWBWRoutingRules</a> <a class="code hl_variable" href="struct_r_g_w_bucket_website_conf.html#ac07b90a6c26f8c4649983f0fbc905aa6">routing_rules</a>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="foldopen" id="foldopen00189" data-start="{" data-end="}">
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#ad22bc7f57b641fa0ecb6c68a14a918c5">  189</a></span>  <a class="code hl_function" href="struct_r_g_w_bucket_website_conf.html#ad22bc7f57b641fa0ecb6c68a14a918c5">RGWBucketWebsiteConf</a>()</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    : listing_enabled(false) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    is_redirect_all = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    is_set_index_doc = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  }</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#a237385f3ee378cbee0eb320b97f0edc9">  195</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_bucket_website_conf.html#a237385f3ee378cbee0eb320b97f0edc9">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    ENCODE_START(2, 1, bl);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(index_doc_suffix, bl);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(error_doc, bl);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(routing_rules, bl);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(redirect_all, bl);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(subdir_marker, bl);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(listing_css_doc, bl);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(listing_enabled, bl);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#adaa622cd650423ab63e302f09938bc68">  206</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_bucket_website_conf.html#adaa622cd650423ab63e302f09938bc68">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    DECODE_START(2, bl);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(index_doc_suffix, bl);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(error_doc, bl);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(routing_rules, bl);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(redirect_all, bl);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">if</span> (struct_v &gt;= 2) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>      <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(subdir_marker, bl);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(listing_css_doc, bl);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>      <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(listing_enabled, bl);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  }</div>
+</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keywordtype">void</span> decode_json(JSONObj *obj);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="keywordtype">void</span> decode_xml(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordtype">void</span> dump_xml(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordtype">bool</span> should_redirect(<span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                       <span class="keyword">const</span> <span class="keywordtype">int</span> http_error_code,</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                       <a class="code hl_struct" href="struct_r_g_w_b_w_routing_rule.html">RGWBWRoutingRule</a> *redirect);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">bool</span> get_effective_key(<span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                         std::string *effective_key, <span class="keywordtype">bool</span> is_file) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="foldopen" id="foldopen00232" data-start="{" data-end="}">
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#aa501a9c16a9073b486422ac43eab2eca">  232</a></span>  <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="struct_r_g_w_bucket_website_conf.html#aa501a9c16a9073b486422ac43eab2eca">get_index_doc</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">return</span> index_doc_suffix;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  }</div>
+</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="struct_r_g_w_bucket_website_conf.html#af1b06dfb7de781051409400c077e9338">  236</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_r_g_w_bucket_website_conf.html#af1b06dfb7de781051409400c077e9338">is_empty</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> index_doc_suffix.empty() &amp;&amp;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>           error_doc.empty() &amp;&amp;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>           subdir_marker.empty() &amp;&amp;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>           listing_css_doc.empty() &amp;&amp;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>           ! listing_enabled;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  }</div>
+</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>};</div>
+</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="struct_r_g_w_bucket_website_conf.html">RGWBucketWebsiteConf</a>)</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_x_m_l_obj_html"><div class="ttname"><a href="class_x_m_l_obj.html">XMLObj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00039">rgw_xml.h:40</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a8eac2e87b3dc3f857f25414b0dc742e6"><div class="ttname"><a href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a></div><div class="ttdeci">void dump(struct req_state *s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00360">rgw_common.cc:360</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc46efdde31cf790f3b383cb9e6f198e"><div class="ttname"><a href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a></div><div class="ttdeci">void decode(log_type &amp;type, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00049">rgw_log_backing.h:49</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc91400029fb575818b2a0ccf89e7928"><div class="ttname"><a href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a></div><div class="ttdeci">void encode(const log_type &amp;type, ceph::buffer::list &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00044">rgw_log_backing.h:44</a></div></div>
+<div class="ttc" id="argw__trim__bilog_8cc_html_ab76037c8d5c69ab3ecb59d45e42eddbc"><div class="ttname"><a href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a></div><div class="ttdeci">WRITE_CLASS_ENCODER(TrimCounters::BucketCounter)</div></div>
+<div class="ttc" id="argw__xml_8h_html"><div class="ttname"><a href="rgw__xml_8h.html">rgw_xml.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_redirect_info_html"><div class="ttname"><a href="struct_r_g_w_b_w_redirect_info.html">RGWBWRedirectInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00054">rgw_website.h:55</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_redirect_info_html_a2f0c792ca594ff0d23c27b04ae78fd10"><div class="ttname"><a href="struct_r_g_w_b_w_redirect_info.html#a2f0c792ca594ff0d23c27b04ae78fd10">RGWBWRedirectInfo::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00067">rgw_website.h:67</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_redirect_info_html_a609d03fa0fcd1c25595dbf265bc7a0fe"><div class="ttname"><a href="struct_r_g_w_b_w_redirect_info.html#a609d03fa0fcd1c25595dbf265bc7a0fe">RGWBWRedirectInfo::replace_key_prefix_with</a></div><div class="ttdeci">std::string replace_key_prefix_with</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00057">rgw_website.h:57</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_redirect_info_html_ac741c9322b243370ee202fd799f61971"><div class="ttname"><a href="struct_r_g_w_b_w_redirect_info.html#ac741c9322b243370ee202fd799f61971">RGWBWRedirectInfo::replace_key_with</a></div><div class="ttdeci">std::string replace_key_with</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00058">rgw_website.h:58</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_redirect_info_html_adbdaac262ebcee528b612214739099c8"><div class="ttname"><a href="struct_r_g_w_b_w_redirect_info.html#adbdaac262ebcee528b612214739099c8">RGWBWRedirectInfo::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00060">rgw_website.h:60</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_redirect_info_html_afad8bbc79df1268c54bbc37dc3030a02"><div class="ttname"><a href="struct_r_g_w_b_w_redirect_info.html#afad8bbc79df1268c54bbc37dc3030a02">RGWBWRedirectInfo::redirect</a></div><div class="ttdeci">RGWRedirectInfo redirect</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00056">rgw_website.h:56</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_condition_html"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule_condition.html">RGWBWRoutingRuleCondition</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00082">rgw_website.h:83</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_condition_html_a042f0f4e78c78620e487c8e195a07d1f"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule_condition.html#a042f0f4e78c78620e487c8e195a07d1f">RGWBWRoutingRuleCondition::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00087">rgw_website.h:87</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_condition_html_a22bb93c4282191f5a31cc1b78fb74cc0"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule_condition.html#a22bb93c4282191f5a31cc1b78fb74cc0">RGWBWRoutingRuleCondition::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00093">rgw_website.h:93</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_condition_html_a5dd82fcda91d19bd6cb0e30a557c2ce9"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule_condition.html#a5dd82fcda91d19bd6cb0e30a557c2ce9">RGWBWRoutingRuleCondition::check_error_code_condition</a></div><div class="ttdeci">bool check_error_code_condition(const int error_code)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00106">rgw_website.h:106</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_condition_html_adb0696a11446a29e3beee86931730208"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule_condition.html#adb0696a11446a29e3beee86931730208">RGWBWRoutingRuleCondition::check_key_condition</a></div><div class="ttdeci">bool check_key_condition(const std::string &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8cc_source.html#l00034">rgw_website.cc:34</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_condition_html_afe16308ac808990873d4e16306c0a5b0"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule_condition.html#afe16308ac808990873d4e16306c0a5b0">RGWBWRoutingRuleCondition::key_prefix_equals</a></div><div class="ttdeci">std::string key_prefix_equals</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00084">rgw_website.h:84</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_html"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule.html">RGWBWRoutingRule</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00112">rgw_website.h:113</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_html_a0a90662b4260d84e7bfa6b82225a5626"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule.html#a0a90662b4260d84e7bfa6b82225a5626">RGWBWRoutingRule::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00117">rgw_website.h:117</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_html_a49bae9a805f1459c7d0c78a257fc6465"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule.html#a49bae9a805f1459c7d0c78a257fc6465">RGWBWRoutingRule::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00123">rgw_website.h:123</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_html_a67fd7f3283011142ad2551100eeda8a2"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule.html#a67fd7f3283011142ad2551100eeda8a2">RGWBWRoutingRule::redirect_info</a></div><div class="ttdeci">RGWBWRedirectInfo redirect_info</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00115">rgw_website.h:115</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_html_ab676388ef39a491fed4e6a0879030ae5"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule.html#ab676388ef39a491fed4e6a0879030ae5">RGWBWRoutingRule::check_key_condition</a></div><div class="ttdeci">bool check_key_condition(const std::string &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00135">rgw_website.h:135</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_html_ac535db05f9434d367d614e91190b3b2c"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule.html#ac535db05f9434d367d614e91190b3b2c">RGWBWRoutingRule::condition</a></div><div class="ttdeci">RGWBWRoutingRuleCondition condition</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00114">rgw_website.h:114</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rule_html_aff819c78d0122626ba6b07cbde6dc760"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rule.html#aff819c78d0122626ba6b07cbde6dc760">RGWBWRoutingRule::check_error_code_condition</a></div><div class="ttdeci">bool check_error_code_condition(int error_code)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00138">rgw_website.h:138</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rules_html"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rules.html">RGWBWRoutingRules</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00150">rgw_website.h:151</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rules_html_a1397c66b17d85e612f503cd339fc2b40"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rules.html#a1397c66b17d85e612f503cd339fc2b40">RGWBWRoutingRules::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00154">rgw_website.h:154</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rules_html_a79d99a5c9b99200e67a2407f6e2da3eb"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rules.html#a79d99a5c9b99200e67a2407f6e2da3eb">RGWBWRoutingRules::rules</a></div><div class="ttdeci">std::list&lt; RGWBWRoutingRule &gt; rules</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00152">rgw_website.h:152</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rules_html_a864a1c15d009bb8b8a867b1429d62eaa"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rules.html#a864a1c15d009bb8b8a867b1429d62eaa">RGWBWRoutingRules::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00159">rgw_website.h:159</a></div></div>
+<div class="ttc" id="astruct_r_g_w_b_w_routing_rules_html_aebb23d5ae3cb4a1d85041032857e7d7d"><div class="ttname"><a href="struct_r_g_w_b_w_routing_rules.html#aebb23d5ae3cb4a1d85041032857e7d7d">RGWBWRoutingRules::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html">RGWBucketWebsiteConf</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00177">rgw_website.h:178</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a09cd3bdcdb72ce565eca7513b205d220"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a09cd3bdcdb72ce565eca7513b205d220">RGWBucketWebsiteConf::error_doc</a></div><div class="ttdeci">std::string error_doc</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00181">rgw_website.h:181</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a15546fa202a90a02017bc3f924569dd7"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a15546fa202a90a02017bc3f924569dd7">RGWBucketWebsiteConf::listing_enabled</a></div><div class="ttdeci">bool listing_enabled</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00184">rgw_website.h:184</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a187431ea636e9b286d897048919e64c8"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a187431ea636e9b286d897048919e64c8">RGWBucketWebsiteConf::index_doc_suffix</a></div><div class="ttdeci">std::string index_doc_suffix</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00180">rgw_website.h:180</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a237385f3ee378cbee0eb320b97f0edc9"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a237385f3ee378cbee0eb320b97f0edc9">RGWBucketWebsiteConf::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00195">rgw_website.h:195</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a355bcb7e8b7d6126e01876859f42befd"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a355bcb7e8b7d6126e01876859f42befd">RGWBucketWebsiteConf::is_redirect_all</a></div><div class="ttdeci">bool is_redirect_all</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00185">rgw_website.h:185</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a35c14874450e69732a59a5b3e454e5d1"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a35c14874450e69732a59a5b3e454e5d1">RGWBucketWebsiteConf::listing_css_doc</a></div><div class="ttdeci">std::string listing_css_doc</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00183">rgw_website.h:183</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a5d38494e523b18043d9f84df6c06a2d3"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a5d38494e523b18043d9f84df6c06a2d3">RGWBucketWebsiteConf::redirect_all</a></div><div class="ttdeci">RGWRedirectInfo redirect_all</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00179">rgw_website.h:179</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_a72467a4d94418dc981c60e3e7e3d9f53"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#a72467a4d94418dc981c60e3e7e3d9f53">RGWBucketWebsiteConf::subdir_marker</a></div><div class="ttdeci">std::string subdir_marker</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00182">rgw_website.h:182</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_aa501a9c16a9073b486422ac43eab2eca"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#aa501a9c16a9073b486422ac43eab2eca">RGWBucketWebsiteConf::get_index_doc</a></div><div class="ttdeci">const std::string &amp; get_index_doc() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00232">rgw_website.h:232</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_ac07b90a6c26f8c4649983f0fbc905aa6"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#ac07b90a6c26f8c4649983f0fbc905aa6">RGWBucketWebsiteConf::routing_rules</a></div><div class="ttdeci">RGWBWRoutingRules routing_rules</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00187">rgw_website.h:187</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_ad22bc7f57b641fa0ecb6c68a14a918c5"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#ad22bc7f57b641fa0ecb6c68a14a918c5">RGWBucketWebsiteConf::RGWBucketWebsiteConf</a></div><div class="ttdeci">RGWBucketWebsiteConf()</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00189">rgw_website.h:189</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_adaa622cd650423ab63e302f09938bc68"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#adaa622cd650423ab63e302f09938bc68">RGWBucketWebsiteConf::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00206">rgw_website.h:206</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_aed0b3a716cb419c6aec8f8cfe6e91c59"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#aed0b3a716cb419c6aec8f8cfe6e91c59">RGWBucketWebsiteConf::is_set_index_doc</a></div><div class="ttdeci">bool is_set_index_doc</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00186">rgw_website.h:186</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_website_conf_html_af1b06dfb7de781051409400c077e9338"><div class="ttname"><a href="struct_r_g_w_bucket_website_conf.html#af1b06dfb7de781051409400c077e9338">RGWBucketWebsiteConf::is_empty</a></div><div class="ttdeci">bool is_empty() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00236">rgw_website.h:236</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html"><div class="ttname"><a href="struct_r_g_w_redirect_info.html">RGWRedirectInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00027">rgw_website.h:28</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html_a1534caab5f53ade7b6ab374a3b2acdff"><div class="ttname"><a href="struct_r_g_w_redirect_info.html#a1534caab5f53ade7b6ab374a3b2acdff">RGWRedirectInfo::dump</a></div><div class="ttdeci">void dump(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8cc_source.html#l00135">rgw_website.cc:135</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html_a317b7c38b11a4cb62fcbfce0f8a234e2"><div class="ttname"><a href="struct_r_g_w_redirect_info.html#a317b7c38b11a4cb62fcbfce0f8a234e2">RGWRedirectInfo::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00040">rgw_website.h:40</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html_a75da270ab9a4899a721a4dce06c23f1e"><div class="ttname"><a href="struct_r_g_w_redirect_info.html#a75da270ab9a4899a721a4dce06c23f1e">RGWRedirectInfo::hostname</a></div><div class="ttdeci">std::string hostname</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00030">rgw_website.h:30</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html_a8796f10ccce719196e08deee61690410"><div class="ttname"><a href="struct_r_g_w_redirect_info.html#a8796f10ccce719196e08deee61690410">RGWRedirectInfo::http_redirect_code</a></div><div class="ttdeci">uint16_t http_redirect_code</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00031">rgw_website.h:31</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html_a8c41010cf508ec967cb7061506dc4982"><div class="ttname"><a href="struct_r_g_w_redirect_info.html#a8c41010cf508ec967cb7061506dc4982">RGWRedirectInfo::protocol</a></div><div class="ttdeci">std::string protocol</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00029">rgw_website.h:29</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html_aeac2a28540a2f53cc77b5187ce26f6ee"><div class="ttname"><a href="struct_r_g_w_redirect_info.html#aeac2a28540a2f53cc77b5187ce26f6ee">RGWRedirectInfo::decode_json</a></div><div class="ttdeci">void decode_json(JSONObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8cc_source.html#l00142">rgw_website.cc:142</a></div></div>
+<div class="ttc" id="astruct_r_g_w_redirect_info_html_af37e81608ab5c1a23f15d09d10665a2d"><div class="ttname"><a href="struct_r_g_w_redirect_info.html#af37e81608ab5c1a23f15d09d10665a2d">RGWRedirectInfo::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8h_source.html#l00033">rgw_website.h:33</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__website_8h.html">rgw_website.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_rest_oidc_provider.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__rest__oidc__provider_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_rest_oidc_provider.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__rest__oidc__provider_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;common/errno.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;common/Formatter.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;common/ceph_json.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;include/types.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__string_8h.html">rgw_string.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__common_8h.html">rgw_common.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__op_8h.html">rgw_op.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest_8h.html">rgw_rest.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__role_8h.html">rgw_role.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest__oidc__provider_8h.html">rgw_rest_oidc_provider.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__oidc__provider_8h.html">rgw_oidc_provider.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__sal_8h.html">rgw_sal.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="rgw__rest__oidc__provider_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   21</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_o_i_d_c_provider.html#adeb26d8c8fb9130a8772454f093d0e98">   25</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_rest_o_i_d_c_provider.html#adeb26d8c8fb9130a8772454f093d0e98">RGWRestOIDCProvider::verify_permission</a>(optional_yield y)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a6143849ef380f3410a5728a8920a7740">auth</a>.<a class="code hl_variable" href="structreq__state.html#a466fbabdb58814521e4cc80a4a1ef391">identity</a>-&gt;is_anonymous()) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> -EACCES;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a177d03d5b263aa6cdeab65c8acc8be37">provider_arn</a> = <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a813d34418ca1289e50c720669aaa9337">get</a>(<span class="stringliteral">&quot;OpenIDConnectProviderArn&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a177d03d5b263aa6cdeab65c8acc8be37">provider_arn</a>.empty()) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    ldpp_dout(<span class="keyword">this</span>, 20) &lt;&lt; <span class="stringliteral">&quot;ERROR: Provider ARN is empty&quot;</span>&lt;&lt; dendl;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">auto</span> ret = <a class="code hl_function" href="class_r_g_w_r_e_s_t_op.html#a6738e7a94ebee5cfac8cd0cf9f369ec0">check_caps</a>(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_caps());</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordflow">if</span> (ret == 0) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  uint64_t op = <a class="code hl_function" href="class_r_g_w_rest_o_i_d_c_provider.html#a94c2e2fad1b79d9bdc728bfe51e10642">get_op</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">auto</span> rgw_arn = <a class="code hl_function" href="structrgw_1_1_a_r_n.html#a3112f784bd67d01dbf3f0e9aae5e627f">rgw::ARN::parse</a>(<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a177d03d5b263aa6cdeab65c8acc8be37">provider_arn</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">if</span> (rgw_arn) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="rgw__common_8cc.html#a92e79d05255f7649209ff4c6257b2e0f">verify_user_permission</a>(<span class="keyword">this</span>, <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>, *rgw_arn, op)) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      <span class="keywordflow">return</span> -EACCES;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      <span class="keywordflow">return</span> -EACCES;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_o_i_d_c_provider.html#aa7dbd136c04cbdd22b6fbb2bea270db8">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_rest_o_i_d_c_provider.html#aa7dbd136c04cbdd22b6fbb2bea270db8">RGWRestOIDCProvider::send_response</a>()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a>) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="rgw__common_8cc.html#a53d1273d55fd8ef26925dad2c16d2718">set_req_state_err</a>(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>, <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_function" href="rgw__rest_8cc.html#a0b940737a449964936957a7936884ed8">dump_errno</a>(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_function" href="rgw__rest_8cc.html#a0f89d3468c7d71a89576b27a5dd1a954">end_header</a>(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_o_i_d_c_provider_read.html#a8360efc1db365051d4998376b787cfca">   64</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_rest_o_i_d_c_provider_read.html#a8360efc1db365051d4998376b787cfca">RGWRestOIDCProviderRead::check_caps</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_user_caps.html">RGWUserCaps</a>&amp; caps)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span> caps.<a class="code hl_function" href="class_r_g_w_user_caps.html#a6ff54b666354c518da4247863d5b7866">check_cap</a>(<span class="stringliteral">&quot;oidc-provider&quot;</span>, <a class="code hl_define" href="rgw__common_8h.html#a7de80d148d34c22de42b88a014e27a26">RGW_CAP_READ</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_o_i_d_c_provider_write.html#a94f4499dfeb20320aafc412282b3a22b">   69</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_rest_o_i_d_c_provider_write.html#a94f4499dfeb20320aafc412282b3a22b">RGWRestOIDCProviderWrite::check_caps</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_user_caps.html">RGWUserCaps</a>&amp; caps)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> caps.<a class="code hl_function" href="class_r_g_w_user_caps.html#a6ff54b666354c518da4247863d5b7866">check_cap</a>(<span class="stringliteral">&quot;oidc-provider&quot;</span>, <a class="code hl_define" href="rgw__common_8h.html#a72cb966c34703fbd8cb900378e6274d4">RGW_CAP_WRITE</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_r_g_w_create_o_i_d_c_provider.html#a73387019244016f41ab81112e47c7290">   74</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_create_o_i_d_c_provider.html#a73387019244016f41ab81112e47c7290">RGWCreateOIDCProvider::verify_permission</a>(optional_yield y)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>{</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a6143849ef380f3410a5728a8920a7740">auth</a>.<a class="code hl_variable" href="structreq__state.html#a466fbabdb58814521e4cc80a4a1ef391">identity</a>-&gt;is_anonymous()) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">return</span> -EACCES;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">auto</span> ret = <a class="code hl_function" href="class_r_g_w_rest_o_i_d_c_provider_write.html#a94f4499dfeb20320aafc412282b3a22b">check_caps</a>(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_caps());</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">if</span> (ret == 0) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">string</span> idp_url = <a class="code hl_function" href="rgw__common_8cc.html#a44daf3808dbd436a86cd495810d1b49b">url_remove_prefix</a>(<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a2f36729975bc29774043b4ce83292419">provider_url</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="rgw__common_8cc.html#a92e79d05255f7649209ff4c6257b2e0f">verify_user_permission</a>(<span class="keyword">this</span>,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                              <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                              <a class="code hl_struct" href="structrgw_1_1_a_r_n.html">rgw::ARN</a>(idp_url,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                                        <span class="stringliteral">&quot;oidc-provider&quot;</span>,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                                         <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_tenant(), <span class="keyword">true</span>),</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                                         <a class="code hl_function" href="class_r_g_w_create_o_i_d_c_provider.html#a9a9ff9d6bf415e88277332e3e6d48b69">get_op</a>())) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> -EACCES;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_r_g_w_create_o_i_d_c_provider.html#a028845599f84a7b0de954c5a63f6e967">   97</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_create_o_i_d_c_provider.html#a028845599f84a7b0de954c5a63f6e967">RGWCreateOIDCProvider::get_params</a>()</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a2f36729975bc29774043b4ce83292419">provider_url</a> = <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a813d34418ca1289e50c720669aaa9337">get</a>(<span class="stringliteral">&quot;Url&quot;</span>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">auto</span> val_map = <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a729609e097911215b7fdedb776dcb8e9">get_params</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : val_map) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="keywordflow">if</span> (it.first.find(<span class="stringliteral">&quot;ClientIDList.member.&quot;</span>) != string::npos) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>          <a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a9fad20d1129fce7cb0156dc367ba6f69">client_ids</a>.emplace_back(it.second);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <span class="keywordflow">if</span> (it.first.find(<span class="stringliteral">&quot;ThumbprintList.member.&quot;</span>) != string::npos) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>          <a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#aecf727118c63484f834b87d7fbff6c3d">thumbprints</a>.emplace_back(it.second);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a2f36729975bc29774043b4ce83292419">provider_url</a>.empty() || <a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#aecf727118c63484f834b87d7fbff6c3d">thumbprints</a>.empty()) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    ldpp_dout(<span class="keyword">this</span>, 20) &lt;&lt; <span class="stringliteral">&quot;ERROR: one of url or thumbprints is empty&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_r_g_w_create_o_i_d_c_provider.html#a3df72c4872e64d6330c66616f0e55f70">  119</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_create_o_i_d_c_provider.html#a3df72c4872e64d6330c66616f0e55f70">RGWCreateOIDCProvider::execute</a>(optional_yield y)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> = <a class="code hl_function" href="class_r_g_w_create_o_i_d_c_provider.html#a028845599f84a7b0de954c5a63f6e967">get_params</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> &lt; 0) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  std::unique_ptr&lt;rgw::sal::RGWOIDCProvider&gt; provider = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#a50b967f61b6ccb9fea93f420256e7f5e">get_oidc_provider</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  provider-&gt;set_url(<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a2f36729975bc29774043b4ce83292419">provider_url</a>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  provider-&gt;set_tenant(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_tenant());</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  provider-&gt;set_client_ids(<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a9fad20d1129fce7cb0156dc367ba6f69">client_ids</a>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  provider-&gt;set_thumbprints(<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#aecf727118c63484f834b87d7fbff6c3d">thumbprints</a>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> = provider-&gt;create(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>, <span class="keyword">true</span>, y);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> == 0) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;CreateOpenIDConnectProviderResponse&quot;</span>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;CreateOpenIDConnectProviderResult&quot;</span>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    provider-&gt;dump(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;ResponseMetadata&quot;</span>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;dump_string(<span class="stringliteral">&quot;RequestId&quot;</span>, <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a6cd4e229e74b790812f682d4a41f51d4">trans_id</a>);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_r_g_w_delete_o_i_d_c_provider.html#ae67c67a3dbdba332d93da3396290c241">  146</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_delete_o_i_d_c_provider.html#ae67c67a3dbdba332d93da3396290c241">RGWDeleteOIDCProvider::execute</a>(optional_yield y)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  std::unique_ptr&lt;rgw::sal::RGWOIDCProvider&gt; provider = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#a50b967f61b6ccb9fea93f420256e7f5e">get_oidc_provider</a>();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  provider-&gt;set_arn(<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a177d03d5b263aa6cdeab65c8acc8be37">provider_arn</a>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  provider-&gt;set_tenant(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_tenant());</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> = provider-&gt;delete_obj(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>, y);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> &lt; 0 &amp;&amp; <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> != -ENOENT &amp;&amp; <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> != -EINVAL) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> = <a class="code hl_define" href="rgw__common_8h.html#a419d97c7b68889873c1258298c64620d">ERR_INTERNAL_ERROR</a>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> == 0) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;DeleteOpenIDConnectProviderResponse&quot;</span>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;ResponseMetadata&quot;</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;dump_string(<span class="stringliteral">&quot;RequestId&quot;</span>, <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a6cd4e229e74b790812f682d4a41f51d4">trans_id</a>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>}</div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="foldopen" id="foldopen00166" data-start="{" data-end="}">
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_r_g_w_get_o_i_d_c_provider.html#ae85483d55cbac7ff43a7fcd83b058588">  166</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_get_o_i_d_c_provider.html#ae85483d55cbac7ff43a7fcd83b058588">RGWGetOIDCProvider::execute</a>(optional_yield y)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  std::unique_ptr&lt;rgw::sal::RGWOIDCProvider&gt; provider = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#a50b967f61b6ccb9fea93f420256e7f5e">get_oidc_provider</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  provider-&gt;set_arn(<a class="code hl_variable" href="class_r_g_w_rest_o_i_d_c_provider.html#a177d03d5b263aa6cdeab65c8acc8be37">provider_arn</a>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  provider-&gt;set_tenant(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_tenant());</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> = provider-&gt;get(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> &lt; 0 &amp;&amp; <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> != -ENOENT &amp;&amp; <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> != -EINVAL) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> = <a class="code hl_define" href="rgw__common_8h.html#a419d97c7b68889873c1258298c64620d">ERR_INTERNAL_ERROR</a>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> == 0) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;GetOpenIDConnectProviderResponse&quot;</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;ResponseMetadata&quot;</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;dump_string(<span class="stringliteral">&quot;RequestId&quot;</span>, <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a6cd4e229e74b790812f682d4a41f51d4">trans_id</a>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;GetOpenIDConnectProviderResult&quot;</span>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    provider-&gt;dump_all(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="foldopen" id="foldopen00189" data-start="{" data-end="}">
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="class_r_g_w_list_o_i_d_c_providers.html#aeaeb11ac8c789b5e505836e733a86754">  189</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_list_o_i_d_c_providers.html#aeaeb11ac8c789b5e505836e733a86754">RGWListOIDCProviders::verify_permission</a>(optional_yield y)</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>{</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a6143849ef380f3410a5728a8920a7740">auth</a>.<a class="code hl_variable" href="structreq__state.html#a466fbabdb58814521e4cc80a4a1ef391">identity</a>-&gt;is_anonymous()) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">return</span> -EACCES;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keywordflow">if</span> (<span class="keywordtype">int</span> ret = <a class="code hl_function" href="class_r_g_w_rest_o_i_d_c_provider_read.html#a8360efc1db365051d4998376b787cfca">check_caps</a>(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_caps()); ret == 0) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="rgw__common_8cc.html#a92e79d05255f7649209ff4c6257b2e0f">verify_user_permission</a>(<span class="keyword">this</span>, </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                              <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                              <a class="code hl_struct" href="structrgw_1_1_a_r_n.html">rgw::ARN</a>(),</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                              <a class="code hl_function" href="class_r_g_w_list_o_i_d_c_providers.html#abe1aa28b643cf6530c815a23082627a6">get_op</a>())) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">return</span> -EACCES;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="foldopen" id="foldopen00209" data-start="{" data-end="}">
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="class_r_g_w_list_o_i_d_c_providers.html#ac2e781a2b138d97f67b2ef198aa0a39a">  209</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_list_o_i_d_c_providers.html#ac2e781a2b138d97f67b2ef198aa0a39a">RGWListOIDCProviders::execute</a>(optional_yield y)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>{</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  vector&lt;std::unique_ptr&lt;rgw::sal::RGWOIDCProvider&gt;&gt; result;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#a841455bf0b7cd6f2ef6ee1135a967529">get_oidc_providers</a>(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>, <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_tenant(), result);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">op_ret</a> == 0) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_array_section(<span class="stringliteral">&quot;ListOpenIDConnectProvidersResponse&quot;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;ResponseMetadata&quot;</span>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;dump_string(<span class="stringliteral">&quot;RequestId&quot;</span>, <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a6cd4e229e74b790812f682d4a41f51d4">trans_id</a>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;ListOpenIDConnectProvidersResult&quot;</span>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_array_section(<span class="stringliteral">&quot;OpenIDConnectProviderList&quot;</span>);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; it : result) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;open_object_section(<span class="stringliteral">&quot;Arn&quot;</span>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      <span class="keyword">auto</span>&amp; arn = it-&gt;get_arn();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      ldpp_dout(<a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ARN: &quot;</span> &lt;&lt; arn &lt;&lt; dendl;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;dump_string(<span class="stringliteral">&quot;Arn&quot;</span>, arn);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_variable" href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">formatter</a>-&gt;close_section();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="ttc" id="aclass_r_g_w_create_o_i_d_c_provider_html_a028845599f84a7b0de954c5a63f6e967"><div class="ttname"><a href="class_r_g_w_create_o_i_d_c_provider.html#a028845599f84a7b0de954c5a63f6e967">RGWCreateOIDCProvider::get_params</a></div><div class="ttdeci">int get_params()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00097">rgw_rest_oidc_provider.cc:97</a></div></div>
+<div class="ttc" id="aclass_r_g_w_create_o_i_d_c_provider_html_a3df72c4872e64d6330c66616f0e55f70"><div class="ttname"><a href="class_r_g_w_create_o_i_d_c_provider.html#a3df72c4872e64d6330c66616f0e55f70">RGWCreateOIDCProvider::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00119">rgw_rest_oidc_provider.cc:119</a></div></div>
+<div class="ttc" id="aclass_r_g_w_create_o_i_d_c_provider_html_a73387019244016f41ab81112e47c7290"><div class="ttname"><a href="class_r_g_w_create_o_i_d_c_provider.html#a73387019244016f41ab81112e47c7290">RGWCreateOIDCProvider::verify_permission</a></div><div class="ttdeci">int verify_permission(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00074">rgw_rest_oidc_provider.cc:74</a></div></div>
+<div class="ttc" id="aclass_r_g_w_create_o_i_d_c_provider_html_a9a9ff9d6bf415e88277332e3e6d48b69"><div class="ttname"><a href="class_r_g_w_create_o_i_d_c_provider.html#a9a9ff9d6bf415e88277332e3e6d48b69">RGWCreateOIDCProvider::get_op</a></div><div class="ttdeci">uint64_t get_op() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00041">rgw_rest_oidc_provider.h:41</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_o_i_d_c_provider_html_ae67c67a3dbdba332d93da3396290c241"><div class="ttname"><a href="class_r_g_w_delete_o_i_d_c_provider.html#ae67c67a3dbdba332d93da3396290c241">RGWDeleteOIDCProvider::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00146">rgw_rest_oidc_provider.cc:146</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_o_i_d_c_provider_html_ae85483d55cbac7ff43a7fcd83b058588"><div class="ttname"><a href="class_r_g_w_get_o_i_d_c_provider.html#ae85483d55cbac7ff43a7fcd83b058588">RGWGetOIDCProvider::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00166">rgw_rest_oidc_provider.cc:166</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_a729609e097911215b7fdedb776dcb8e9"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#a729609e097911215b7fdedb776dcb8e9">RGWHTTPArgs::get_params</a></div><div class="ttdeci">std::map&lt; std::string, std::string &gt; &amp; get_params()</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00380">rgw_common.h:380</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_a813d34418ca1289e50c720669aaa9337"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#a813d34418ca1289e50c720669aaa9337">RGWHTTPArgs::get</a></div><div class="ttdeci">const std::string &amp; get(const std::string &amp;name, bool *exists=NULL) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00949">rgw_common.cc:949</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_o_i_d_c_providers_html_abe1aa28b643cf6530c815a23082627a6"><div class="ttname"><a href="class_r_g_w_list_o_i_d_c_providers.html#abe1aa28b643cf6530c815a23082627a6">RGWListOIDCProviders::get_op</a></div><div class="ttdeci">uint64_t get_op() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00070">rgw_rest_oidc_provider.h:70</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_o_i_d_c_providers_html_ac2e781a2b138d97f67b2ef198aa0a39a"><div class="ttname"><a href="class_r_g_w_list_o_i_d_c_providers.html#ac2e781a2b138d97f67b2ef198aa0a39a">RGWListOIDCProviders::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00209">rgw_rest_oidc_provider.cc:209</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_o_i_d_c_providers_html_aeaeb11ac8c789b5e505836e733a86754"><div class="ttname"><a href="class_r_g_w_list_o_i_d_c_providers.html#aeaeb11ac8c789b5e505836e733a86754">RGWListOIDCProviders::verify_permission</a></div><div class="ttdeci">int verify_permission(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00189">rgw_rest_oidc_provider.cc:189</a></div></div>
+<div class="ttc" id="aclass_r_g_w_op_html_a915f54146838596b5d019945eda92729"><div class="ttname"><a href="class_r_g_w_op.html#a915f54146838596b5d019945eda92729">RGWOp::op_ret</a></div><div class="ttdeci">int op_ret</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00184">rgw_op.h:184</a></div></div>
+<div class="ttc" id="aclass_r_g_w_op_html_aa8767169436c5b26a052b04b4a735808"><div class="ttname"><a href="class_r_g_w_op.html#aa8767169436c5b26a052b04b4a735808">RGWOp::s</a></div><div class="ttdeci">struct req_state * s</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00177">rgw_op.h:177</a></div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_op_html_a6738e7a94ebee5cfac8cd0cf9f369ec0"><div class="ttname"><a href="class_r_g_w_r_e_s_t_op.html#a6738e7a94ebee5cfac8cd0cf9f369ec0">RGWRESTOp::check_caps</a></div><div class="ttdeci">virtual int check_caps(const RGWUserCaps &amp;caps)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8h_source.html#l00531">rgw_rest.h:531</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_html_a177d03d5b263aa6cdeab65c8acc8be37"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider.html#a177d03d5b263aa6cdeab65c8acc8be37">RGWRestOIDCProvider::provider_arn</a></div><div class="ttdeci">std::string provider_arn</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00014">rgw_rest_oidc_provider.h:14</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_html_a2f36729975bc29774043b4ce83292419"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider.html#a2f36729975bc29774043b4ce83292419">RGWRestOIDCProvider::provider_url</a></div><div class="ttdeci">std::string provider_url</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00013">rgw_rest_oidc_provider.h:13</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_html_a94c2e2fad1b79d9bdc728bfe51e10642"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider.html#a94c2e2fad1b79d9bdc728bfe51e10642">RGWRestOIDCProvider::get_op</a></div><div class="ttdeci">virtual uint64_t get_op()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_html_a9fad20d1129fce7cb0156dc367ba6f69"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider.html#a9fad20d1129fce7cb0156dc367ba6f69">RGWRestOIDCProvider::client_ids</a></div><div class="ttdeci">std::vector&lt; std::string &gt; client_ids</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00011">rgw_rest_oidc_provider.h:11</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_html_aa7dbd136c04cbdd22b6fbb2bea270db8"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider.html#aa7dbd136c04cbdd22b6fbb2bea270db8">RGWRestOIDCProvider::send_response</a></div><div class="ttdeci">void send_response() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00055">rgw_rest_oidc_provider.cc:55</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_html_adeb26d8c8fb9130a8772454f093d0e98"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider.html#adeb26d8c8fb9130a8772454f093d0e98">RGWRestOIDCProvider::verify_permission</a></div><div class="ttdeci">int verify_permission(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00025">rgw_rest_oidc_provider.cc:25</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_html_aecf727118c63484f834b87d7fbff6c3d"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider.html#aecf727118c63484f834b87d7fbff6c3d">RGWRestOIDCProvider::thumbprints</a></div><div class="ttdeci">std::vector&lt; std::string &gt; thumbprints</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00012">rgw_rest_oidc_provider.h:12</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_read_html_a8360efc1db365051d4998376b787cfca"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider_read.html#a8360efc1db365051d4998376b787cfca">RGWRestOIDCProviderRead::check_caps</a></div><div class="ttdeci">int check_caps(const RGWUserCaps &amp;caps) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00064">rgw_rest_oidc_provider.cc:64</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_o_i_d_c_provider_write_html_a94f4499dfeb20320aafc412282b3a22b"><div class="ttname"><a href="class_r_g_w_rest_o_i_d_c_provider_write.html#a94f4499dfeb20320aafc412282b3a22b">RGWRestOIDCProviderWrite::check_caps</a></div><div class="ttdeci">int check_caps(const RGWUserCaps &amp;caps) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8cc_source.html#l00069">rgw_rest_oidc_provider.cc:69</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_caps_html"><div class="ttname"><a href="class_r_g_w_user_caps.html">RGWUserCaps</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00538">rgw_common.h:539</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_caps_html_a6ff54b666354c518da4247863d5b7866"><div class="ttname"><a href="class_r_g_w_user_caps.html#a6ff54b666354c518da4247863d5b7866">RGWUserCaps::check_cap</a></div><div class="ttdeci">int check_cap(const std::string &amp;cap, uint32_t perm) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l02047">rgw_common.cc:2047</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html_a50b967f61b6ccb9fea93f420256e7f5e"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html#a50b967f61b6ccb9fea93f420256e7f5e">rgw::sal::Store::get_oidc_provider</a></div><div class="ttdeci">virtual std::unique_ptr&lt; RGWOIDCProvider &gt; get_oidc_provider()=0</div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html_a841455bf0b7cd6f2ef6ee1135a967529"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html#a841455bf0b7cd6f2ef6ee1135a967529">rgw::sal::Store::get_oidc_providers</a></div><div class="ttdeci">virtual int get_oidc_providers(const DoutPrefixProvider *dpp, const std::string &amp;tenant, std::vector&lt; std::unique_ptr&lt; RGWOIDCProvider &gt; &gt; &amp;providers)=0</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a44daf3808dbd436a86cd495810d1b49b"><div class="ttname"><a href="rgw__common_8cc.html#a44daf3808dbd436a86cd495810d1b49b">url_remove_prefix</a></div><div class="ttdeci">std::string url_remove_prefix(const std::string &amp;url)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l01799">rgw_common.cc:1799</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a53d1273d55fd8ef26925dad2c16d2718"><div class="ttname"><a href="rgw__common_8cc.html#a53d1273d55fd8ef26925dad2c16d2718">set_req_state_err</a></div><div class="ttdeci">void set_req_state_err(struct rgw_err &amp;err, int err_no, const int prot_flags)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00301">rgw_common.cc:301</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a92e79d05255f7649209ff4c6257b2e0f"><div class="ttname"><a href="rgw__common_8cc.html#a92e79d05255f7649209ff4c6257b2e0f">verify_user_permission</a></div><div class="ttdeci">bool verify_user_permission(const DoutPrefixProvider *dpp, perm_state_base *const s, RGWAccessControlPolicy *const user_acl, const vector&lt; rgw::IAM::Policy &gt; &amp;user_policies, const vector&lt; rgw::IAM::Policy &gt; &amp;session_policies, const rgw::ARN &amp;res, const uint64_t op)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l01134">rgw_common.cc:1134</a></div></div>
+<div class="ttc" id="argw__common_8h_html"><div class="ttname"><a href="rgw__common_8h.html">rgw_common.h</a></div></div>
+<div class="ttc" id="argw__common_8h_html_a419d97c7b68889873c1258298c64620d"><div class="ttname"><a href="rgw__common_8h.html#a419d97c7b68889873c1258298c64620d">ERR_INTERNAL_ERROR</a></div><div class="ttdeci">#define ERR_INTERNAL_ERROR</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00244">rgw_common.h:244</a></div></div>
+<div class="ttc" id="argw__common_8h_html_a72cb966c34703fbd8cb900378e6274d4"><div class="ttname"><a href="rgw__common_8h.html#a72cb966c34703fbd8cb900378e6274d4">RGW_CAP_WRITE</a></div><div class="ttdeci">#define RGW_CAP_WRITE</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00162">rgw_common.h:162</a></div></div>
+<div class="ttc" id="argw__common_8h_html_a7de80d148d34c22de42b88a014e27a26"><div class="ttname"><a href="rgw__common_8h.html#a7de80d148d34c22de42b88a014e27a26">RGW_CAP_READ</a></div><div class="ttdeci">#define RGW_CAP_READ</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00161">rgw_common.h:161</a></div></div>
+<div class="ttc" id="argw__oidc__provider_8h_html"><div class="ttname"><a href="rgw__oidc__provider_8h.html">rgw_oidc_provider.h</a></div></div>
+<div class="ttc" id="argw__op_8h_html"><div class="ttname"><a href="rgw__op_8h.html">rgw_op.h</a></div></div>
+<div class="ttc" id="argw__rest_8cc_html_a0b940737a449964936957a7936884ed8"><div class="ttname"><a href="rgw__rest_8cc.html#a0b940737a449964936957a7936884ed8">dump_errno</a></div><div class="ttdeci">void dump_errno(int http_ret, string &amp;out)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8cc_source.html#l00315">rgw_rest.cc:315</a></div></div>
+<div class="ttc" id="argw__rest_8cc_html_a0f89d3468c7d71a89576b27a5dd1a954"><div class="ttname"><a href="rgw__rest_8cc.html#a0f89d3468c7d71a89576b27a5dd1a954">end_header</a></div><div class="ttdeci">void end_header(struct req_state *s, RGWOp *op, const char *content_type, const int64_t proposed_content_length, bool force_content_type, bool force_no_error)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8cc_source.html#l00565">rgw_rest.cc:565</a></div></div>
+<div class="ttc" id="argw__rest_8h_html"><div class="ttname"><a href="rgw__rest_8h.html">rgw_rest.h</a></div></div>
+<div class="ttc" id="argw__rest__oidc__provider_8h_html"><div class="ttname"><a href="rgw__rest__oidc__provider_8h.html">rgw_rest_oidc_provider.h</a></div></div>
+<div class="ttc" id="argw__role_8h_html"><div class="ttname"><a href="rgw__role_8h.html">rgw_role.h</a></div></div>
+<div class="ttc" id="argw__sal_8h_html"><div class="ttname"><a href="rgw__sal_8h.html">rgw_sal.h</a></div><div class="ttdoc">Base abstractions and API for SAL</div></div>
+<div class="ttc" id="argw__string_8h_html"><div class="ttname"><a href="rgw__string_8h.html">rgw_string.h</a></div></div>
+<div class="ttc" id="astructreq__info_html_a7c7740398b9cdf48335a1a4253dbdcf7"><div class="ttname"><a href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">req_info::args</a></div><div class="ttdeci">RGWHTTPArgs args</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01227">rgw_common.h:1227</a></div></div>
+<div class="ttc" id="astructreq__state_html_a466fbabdb58814521e4cc80a4a1ef391"><div class="ttname"><a href="structreq__state.html#a466fbabdb58814521e4cc80a4a1ef391">req_state::identity</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::auth::Identity &gt; identity</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01617">rgw_common.h:1617</a></div></div>
+<div class="ttc" id="astructreq__state_html_a494770c97c157bfcf918251e31ad2fdc"><div class="ttname"><a href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">req_state::info</a></div><div class="ttdeci">req_info info</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01669">rgw_common.h:1669</a></div></div>
+<div class="ttc" id="astructreq__state_html_a6143849ef380f3410a5728a8920a7740"><div class="ttname"><a href="structreq__state.html#a6143849ef380f3410a5728a8920a7740">req_state::auth</a></div><div class="ttdeci">struct req_state::@5 auth</div></div>
+<div class="ttc" id="astructreq__state_html_a6cd4e229e74b790812f682d4a41f51d4"><div class="ttname"><a href="structreq__state.html#a6cd4e229e74b790812f682d4a41f51d4">req_state::trans_id</a></div><div class="ttdeci">std::string trans_id</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01680">rgw_common.h:1680</a></div></div>
+<div class="ttc" id="astructreq__state_html_ab4d1aae69f6d4a5a0a6f22c52405262a"><div class="ttname"><a href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">req_state::user</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::sal::User &gt; user</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01608">rgw_common.h:1608</a></div></div>
+<div class="ttc" id="astructreq__state_html_ad38e7ae3592c7437b20d0f60e039ca48"><div class="ttname"><a href="structreq__state.html#ad38e7ae3592c7437b20d0f60e039ca48">req_state::formatter</a></div><div class="ttdeci">ceph::Formatter * formatter</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01563">rgw_common.h:1563</a></div></div>
+<div class="ttc" id="astructrgw_1_1_a_r_n_html"><div class="ttname"><a href="structrgw_1_1_a_r_n.html">rgw::ARN</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__arn_8h_source.html#l00042">rgw_arn.h:42</a></div></div>
+<div class="ttc" id="astructrgw_1_1_a_r_n_html_a3112f784bd67d01dbf3f0e9aae5e627f"><div class="ttname"><a href="structrgw_1_1_a_r_n.html#a3112f784bd67d01dbf3f0e9aae5e627f">rgw::ARN::parse</a></div><div class="ttdeci">static boost::optional&lt; ARN &gt; parse(const std::string &amp;s, bool wildcard=false)</div><div class="ttdef"><b>Definition</b> <a href="rgw__arn_8cc_source.html#l00165">rgw_arn.cc:165</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__rest__oidc__provider_8cc.html">rgw_rest_oidc_provider.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

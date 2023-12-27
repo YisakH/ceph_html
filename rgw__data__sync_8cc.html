@@ -1,0 +1,1692 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_data_sync.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__data__sync_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_data_sync.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;common/ceph_json.h&quot;</code><br />
+<code>#include &quot;common/RefCountedObj.h&quot;</code><br />
+<code>#include &quot;common/WorkQueue.h&quot;</code><br />
+<code>#include &quot;common/Throttle.h&quot;</code><br />
+<code>#include &quot;common/errno.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__common_8h_source.html">rgw_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__zone_8h_source.html">rgw_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync_8h_source.html">rgw_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__data__sync_8h_source.html">rgw_data_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__rest__conn_8h_source.html">rgw_rest_conn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__rados_8h_source.html">rgw_cr_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__rest_8h_source.html">rgw_cr_rest.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__tools_8h_source.html">rgw_cr_tools.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__http__client_8h_source.html">rgw_http_client.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__bucket_8h_source.html">rgw_bucket.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__bucket__sync_8h_source.html">rgw_bucket_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__bucket__sync__cache_8h_source.html">rgw_bucket_sync_cache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__datalog_8h_source.html">rgw_datalog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__metadata_8h_source.html">rgw_metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__counters_8h_source.html">rgw_sync_counters.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__error__repo_8h_source.html">rgw_sync_error_repo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__module_8h_source.html">rgw_sync_module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal_8h_source.html">rgw_sal.h</a>&quot;</code><br />
+<code>#include &quot;cls/lock/cls_lock_client.h&quot;</code><br />
+<code>#include &quot;cls/rgw/cls_rgw_client.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__zone_8h_source.html">services/svc_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__sync__modules_8h_source.html">services/svc_sync_modules.h</a>&quot;</code><br />
+<code>#include &quot;include/common_fwd.h&quot;</code><br />
+<code>#include &quot;include/random.h&quot;</code><br />
+<code>#include &lt;boost/asio/yield.hpp&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_data_sync.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__data__sync_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__data__sync_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__data__sync_8cc">
+<area shape="rect" title=" " alt="" coords="2246,5,2376,48"/>
+<area shape="rect" title=" " alt="" coords="145,568,290,595"/>
+<area shape="poly" title=" " alt="" coords="2245,31,1801,32,1141,41,806,49,507,61,274,77,193,87,139,99,90,111,48,123,31,132,19,144,11,160,8,183,8,409,12,437,23,462,40,485,61,505,112,537,162,560,160,565,109,542,58,509,36,488,19,465,7,439,3,410,3,182,6,159,15,141,28,128,46,118,89,106,138,93,192,82,274,72,506,56,805,44,1141,35,1801,27,2245,25"/>
+<area shape="rect" title=" " alt="" coords="1839,320,2012,347"/>
+<area shape="poly" title=" " alt="" coords="2245,36,2175,45,2099,58,2032,75,2006,86,1988,98,1969,120,1955,146,1936,203,1928,259,1927,305,1921,304,1922,259,1930,202,1950,144,1965,117,1985,94,2004,81,2030,70,2098,52,2174,39,2245,31"/>
+<area shape="rect" title=" " alt="" coords="2802,245,2958,272"/>
+<area shape="poly" title=" " alt="" coords="2377,27,2444,32,2524,44,2609,63,2691,94,2759,149,2856,233,2853,237,2755,153,2688,98,2608,68,2523,49,2444,38,2376,32"/>
+<area shape="rect" title=" " alt="" coords="2982,245,3111,272"/>
+<area shape="poly" title=" " alt="" coords="2377,30,2537,50,2632,68,2725,93,2810,126,2891,165,3015,234,3013,239,2888,169,2807,131,2723,99,2630,73,2536,55,2376,35"/>
+<area shape="rect" title=" " alt="" coords="2826,96,2942,123"/>
+<area shape="poly" title=" " alt="" coords="2377,34,2808,93,2812,94,2811,99,2808,99,2376,39"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="1609,395,1719,421"/>
+<area shape="poly" title=" " alt="" coords="2245,32,2077,40,1976,49,1874,63,1780,83,1703,109,1673,124,1651,142,1637,161,1632,183,1632,260,1634,292,1640,325,1656,379,1651,381,1635,326,1629,293,1627,260,1627,182,1632,159,1647,138,1670,120,1701,104,1779,77,1873,58,1975,44,2077,35,2245,26"/>
+<area shape="rect" title=" " alt="" coords="1695,651,1780,677"/>
+<area shape="poly" title=" " alt="" coords="2245,32,1767,44,1426,55,1066,71,723,91,433,117,319,132,233,148,178,166,164,175,160,183,160,335,155,378,144,416,116,482,106,512,104,541,112,570,134,601,156,610,203,619,358,633,572,644,821,651,1327,659,1679,660,1679,665,1327,664,821,657,571,649,357,639,202,624,155,615,130,605,107,572,98,542,101,511,111,480,139,414,150,376,155,335,155,182,160,171,176,161,232,143,319,127,432,112,723,86,1066,66,1426,50,1767,38,2245,27"/>
+<area shape="rect" href="rgw__zone_8h.html" title=" " alt="" coords="1342,320,1429,347"/>
+<area shape="poly" title=" " alt="" coords="2245,30,2091,33,1897,42,1800,51,1711,62,1636,78,1581,98,1549,119,1518,144,1466,202,1426,260,1400,308,1395,305,1422,258,1462,199,1515,140,1545,115,1579,94,1634,73,1710,57,1799,45,1896,37,2091,27,2245,25"/>
+<area shape="rect" href="rgw__sync_8h.html" title=" " alt="" coords="2471,171,2558,197"/>
+<area shape="poly" title=" " alt="" coords="2339,46,2488,159,2484,163,2336,51"/>
+<area shape="rect" href="rgw__http__client_8h.html" title=" " alt="" coords="2404,320,2524,347"/>
+<area shape="poly" title=" " alt="" coords="2311,49,2309,80,2311,119,2320,159,2338,196,2349,207,2360,214,2385,220,2412,225,2425,232,2438,244,2455,273,2463,304,2458,305,2450,275,2434,247,2422,236,2410,230,2384,225,2358,219,2346,211,2334,199,2315,161,2306,119,2304,80,2305,48"/>
+<area shape="rect" href="rgw__metadata_8h.html" title=" " alt="" coords="2310,245,2423,272"/>
+<area shape="poly" title=" " alt="" coords="2304,49,2294,79,2286,117,2284,158,2294,196,2310,218,2330,235,2327,239,2306,221,2290,198,2279,158,2280,116,2289,78,2299,48"/>
+<area shape="rect" href="rgw__sal_8h.html" title="Base abstractions and API for SAL" alt="" coords="2651,245,2728,272"/>
+<area shape="poly" title=" " alt="" coords="2353,46,2454,99,2572,168,2663,234,2660,238,2569,173,2452,104,2351,51"/>
+<area shape="rect" href="rgw__data__sync_8h.html" title=" " alt="" coords="1247,171,1366,197"/>
+<area shape="poly" title=" " alt="" coords="2246,32,2071,39,1844,51,1623,70,1532,83,1464,99,1407,126,1341,164,1338,160,1405,121,1462,93,1531,78,1622,65,1844,45,2071,33,2245,27"/>
+<area shape="rect" href="rgw__datalog_8h.html" title=" " alt="" coords="1117,245,1243,272"/>
+<area shape="poly" title=" " alt="" coords="2245,30,1998,30,1669,37,1509,46,1369,58,1263,75,1228,86,1207,98,1195,111,1187,127,1177,162,1175,198,1178,230,1172,230,1170,198,1172,161,1182,125,1191,108,1204,94,1226,81,1262,70,1368,53,1508,40,1669,32,1998,25,2245,25"/>
+<area shape="rect" href="rgw__sync__module_8h.html" title=" " alt="" coords="1667,245,1803,272"/>
+<area shape="poly" title=" " alt="" coords="2245,36,2163,44,2071,57,1988,75,1956,86,1932,98,1920,109,1912,121,1903,146,1895,172,1875,199,1838,225,1799,242,1796,237,1836,220,1871,195,1890,170,1898,144,1907,118,1916,106,1929,94,1953,81,1987,70,2070,52,2163,39,2245,30"/>
+<area shape="rect" href="rgw__bucket__sync_8h.html" title=" " alt="" coords="1459,320,1592,347"/>
+<area shape="poly" title=" " alt="" coords="2245,33,2083,41,1885,54,1708,73,1646,85,1612,98,1590,119,1572,145,1547,202,1534,259,1529,305,1524,305,1529,258,1542,200,1568,142,1586,116,1609,94,1645,80,1707,68,1884,49,2083,35,2245,28"/>
+<area shape="rect" href="rgw__rest__conn_8h.html" title=" " alt="" coords="1989,171,2105,197"/>
+<area shape="poly" title=" " alt="" coords="2273,51,2188,98,2080,165,2077,160,2185,94,2271,46"/>
+<area shape="rect" title=" " alt="" coords="2081,245,2234,272"/>
+<area shape="poly" title=" " alt="" coords="2299,50,2176,234,2172,231,2295,47"/>
+<area shape="rect" href="rgw__cr__rados_8h.html" title=" " alt="" coords="2633,171,2743,197"/>
+<area shape="poly" title=" " alt="" coords="2377,30,2454,38,2538,51,2614,69,2643,80,2664,94,2675,107,2683,123,2690,155,2685,156,2678,125,2671,110,2661,98,2641,85,2612,74,2537,56,2453,43,2376,35"/>
+<area shape="rect" href="rgw__cr__rest_8h.html" title=" " alt="" coords="1998,96,2098,123"/>
+<area shape="poly" title=" " alt="" coords="2246,51,2105,94,2103,88,2244,45"/>
+<area shape="rect" href="rgw__cr__tools_8h.html" title=" " alt="" coords="2545,96,2650,123"/>
+<area shape="poly" title=" " alt="" coords="2377,44,2538,89,2537,94,2376,49"/>
+<area shape="rect" href="rgw__bucket_8h.html" title=" " alt="" coords="2348,171,2447,197"/>
+<area shape="poly" title=" " alt="" coords="2324,47,2385,156,2381,158,2320,50"/>
+<area shape="rect" href="rgw__bucket__sync__cache_8h.html" title=" " alt="" coords="1218,96,1393,123"/>
+<area shape="poly" title=" " alt="" coords="2245,35,1890,59,1412,99,1408,99,1408,94,1412,93,1890,54,2245,29"/>
+<area shape="rect" href="rgw__sync__counters_8h.html" title=" " alt="" coords="2965,96,3110,123"/>
+<area shape="poly" title=" " alt="" coords="2377,32,2624,56,2950,93,2949,98,2624,62,2376,37"/>
+<area shape="rect" href="rgw__sync__error__repo_8h.html" title=" " alt="" coords="3133,96,3286,123"/>
+<area shape="poly" title=" " alt="" coords="2377,30,2692,53,3118,93,3117,98,2691,59,2376,35"/>
+<area shape="rect" title=" " alt="" coords="3310,96,3477,123"/>
+<area shape="poly" title=" " alt="" coords="2376,29,2761,51,3023,70,3294,93,3294,98,3022,75,2760,56,2376,34"/>
+<area shape="rect" title=" " alt="" coords="3502,96,3661,123"/>
+<area shape="poly" title=" " alt="" coords="2376,27,2836,48,3156,67,3487,93,3486,98,3155,72,2835,53,2376,33"/>
+<area shape="rect" href="svc__zone_8h.html" title=" " alt="" coords="3685,96,3822,123"/>
+<area shape="poly" title=" " alt="" coords="2376,26,2590,31,2907,42,3282,62,3669,93,3669,98,3281,67,2906,48,2590,37,2376,32"/>
+<area shape="rect" href="svc__sync__modules_8h.html" title=" " alt="" coords="1667,171,1861,197"/>
+<area shape="poly" title=" " alt="" coords="2245,31,2169,36,2076,47,1977,67,1881,98,1830,128,1789,162,1785,158,1827,124,1879,94,1976,62,2075,42,2168,31,2245,26"/>
+<area shape="rect" title=" " alt="" coords="3847,96,3967,123"/>
+<area shape="poly" title=" " alt="" coords="2376,25,2612,28,2968,37,3392,58,3613,73,3831,93,3830,98,3613,79,3392,63,2968,43,2612,33,2376,31"/>
+<area shape="rect" title=" " alt="" coords="3991,96,4129,123"/>
+<area shape="poly" title=" " alt="" coords="2376,26,2632,28,3023,38,3491,58,3736,74,3976,93,3976,99,3735,79,3491,64,3023,43,2632,34,2376,31"/>
+<area shape="rect" title=" " alt="" coords="1839,477,1889,504"/>
+<area shape="poly" title=" " alt="" coords="1699,419,1821,467,1826,469,1824,474,1819,472,1697,424"/>
+<area shape="poly" title=" " alt="" coords="1670,421,1732,635,1727,636,1665,423"/>
+<area shape="rect" title=" " alt="" coords="2609,568,2669,595"/>
+<area shape="poly" title=" " alt="" coords="1720,410,1969,429,2102,446,2156,456,2197,467,2217,477,2231,488,2245,499,2264,510,2353,538,2443,557,2527,569,2593,575,2592,580,2526,574,2443,562,2351,543,2262,514,2242,504,2228,492,2214,481,2195,472,2155,461,2101,451,1969,435,1719,415"/>
+<area shape="rect" title=" " alt="" coords="626,477,737,504"/>
+<area shape="poly" title=" " alt="" coords="1609,420,1574,424,1448,433,1341,437,1159,437,1072,438,978,442,873,453,748,472,733,475,732,470,748,467,872,448,978,437,1072,433,1159,432,1341,432,1448,428,1573,419,1609,415"/>
+<area shape="rect" title=" " alt="" coords="760,477,917,504"/>
+<area shape="poly" title=" " alt="" coords="1609,420,1574,424,1392,438,1251,443,1110,451,930,472,905,476,904,471,929,467,1109,446,1251,438,1392,433,1573,419,1609,414"/>
+<area shape="rect" title=" " alt="" coords="941,477,1110,504"/>
+<area shape="poly" title=" " alt="" coords="1609,420,1574,424,1347,445,1248,455,1122,472,1096,477,1095,471,1121,467,1248,449,1347,440,1573,419,1609,414"/>
+<area shape="rect" href="rgw__acl_8h.html" title=" " alt="" coords="1738,568,1814,595"/>
+<area shape="poly" title=" " alt="" coords="1679,420,1721,468,1747,512,1767,553,1762,555,1743,514,1717,471,1675,424"/>
+<area shape="rect" href="rgw__bucket__layout_8h.html" title=" " alt="" coords="1134,477,1274,504"/>
+<area shape="poly" title=" " alt="" coords="1610,419,1463,441,1286,472,1268,476,1267,471,1285,467,1462,435,1609,414"/>
+<area shape="rect" href="rgw__cors_8h.html" title=" " alt="" coords="1298,477,1382,504"/>
+<area shape="poly" title=" " alt="" coords="1609,422,1509,443,1395,472,1387,474,1386,469,1394,467,1508,438,1608,417"/>
+<area shape="rect" href="rgw__iam__policy_8h.html" title=" " alt="" coords="1913,477,2034,504"/>
+<area shape="poly" title=" " alt="" coords="1716,419,1902,467,1915,470,1913,475,1901,472,1715,425"/>
+<area shape="rect" href="rgw__string_8h.html" title=" " alt="" coords="2169,568,2260,595"/>
+<area shape="poly" title=" " alt="" coords="1719,407,1827,410,1957,419,2079,436,2128,450,2163,467,2182,485,2196,508,2212,552,2207,554,2191,510,2177,489,2160,472,2126,455,2078,442,1957,424,1826,415,1719,412"/>
+<area shape="rect" href="rgw__quota_8h.html" title=" " alt="" coords="2058,477,2150,504"/>
+<area shape="poly" title=" " alt="" coords="1719,412,1868,432,1958,447,2047,467,2057,469,2056,475,2046,472,1957,452,1868,437,1719,417"/>
+<area shape="rect" title=" " alt="" coords="2004,560,2145,603"/>
+<area shape="poly" title=" " alt="" coords="1684,420,1758,469,1828,510,1910,539,1990,561,1988,566,1908,544,1826,514,1755,473,1681,424"/>
+<area shape="rect" href="rgw__website_8h.html" title=" " alt="" coords="448,477,552,504"/>
+<area shape="poly" title=" " alt="" coords="1609,420,1574,424,1421,435,1291,438,1070,436,964,436,851,440,722,451,571,472,554,476,552,470,570,467,722,446,850,434,964,430,1071,431,1291,433,1421,429,1573,419,1609,415"/>
+<area shape="rect" href="rgw__object__lock_8h.html" title=" " alt="" coords="1407,477,1532,504"/>
+<area shape="poly" title=" " alt="" coords="1635,424,1514,474,1512,469,1633,419"/>
+<area shape="rect" href="rgw__tag_8h.html" title=" " alt="" coords="433,568,511,595"/>
+<area shape="poly" title=" " alt="" coords="1609,420,1574,424,1479,428,1362,429,1089,426,949,428,819,434,705,448,656,459,616,472,600,480,590,490,566,514,503,561,500,557,562,510,586,486,597,476,614,467,655,454,704,443,818,429,949,422,1089,421,1362,423,1479,423,1573,419,1609,415"/>
+<area shape="rect" href="rgw__op__type_8h.html" title=" " alt="" coords="1557,477,1662,504"/>
+<area shape="poly" title=" " alt="" coords="1658,423,1628,466,1624,463,1653,420"/>
+<area shape="rect" href="rgw__sync__policy_8h.html" title=" " alt="" coords="245,477,374,504"/>
+<area shape="poly" title=" " alt="" coords="1609,416,1488,424,1192,436,961,440,731,448,436,472,389,478,388,473,436,467,731,443,961,435,1192,431,1488,419,1609,411"/>
+<area shape="rect" title=" " alt="" coords="2274,469,2425,512"/>
+<area shape="poly" title=" " alt="" coords="1719,410,1953,430,2104,446,2256,467,2259,467,2258,472,2256,472,2104,451,1953,435,1719,416"/>
+<area shape="poly" title=" " alt="" coords="1772,596,1752,638,1747,636,1768,594"/>
+<area shape="poly" title=" " alt="" coords="1959,507,1828,605,1771,644,1768,640,1825,600,1956,502"/>
+<area shape="poly" title=" " alt="" coords="1946,507,1819,564,1817,559,1944,502"/>
+<area shape="poly" title=" " alt="" coords="2009,502,2167,560,2165,565,2007,507"/>
+<area shape="poly" title=" " alt="" coords="2183,598,2158,605,2059,626,1959,642,1795,661,1794,655,1958,637,2058,621,2157,600,2181,593"/>
+<area shape="poly" title=" " alt="" coords="2151,498,2219,509,2593,570,2592,575,2218,515,2150,503"/>
+<area shape="poly" title=" " alt="" coords="2102,505,2089,546,2084,545,2097,504"/>
+<area shape="poly" title=" " alt="" coords="460,507,273,565,271,560,459,502"/>
+<area shape="poly" title=" " alt="" coords="334,502,437,558,434,562,331,507"/>
+<area shape="poly" title=" " alt="" coords="1430,343,1601,388,1600,393,1429,349"/>
+<area shape="poly" title=" " alt="" coords="1382,348,1357,387,1338,408,1315,424,1290,432,1252,439,1145,449,856,460,566,465,392,472,370,476,369,471,392,467,566,459,856,454,1145,443,1251,433,1288,427,1312,419,1334,404,1353,384,1377,345"/>
+<area shape="poly" title=" " alt="" coords="2534,196,2595,245,2630,280,2660,319,2677,355,2685,394,2694,454,2693,480,2685,513,2675,536,2661,557,2657,554,2670,534,2680,511,2687,479,2689,454,2680,395,2672,356,2655,321,2626,283,2592,249,2531,200"/>
+<area shape="poly" title=" " alt="" coords="2513,199,2476,306,2471,304,2508,197"/>
+<area shape="poly" title=" " alt="" coords="2490,200,2407,240,2405,236,2488,195"/>
+<area shape="poly" title=" " alt="" coords="2546,195,2646,236,2644,241,2544,200"/>
+<area shape="poly" title=" " alt="" coords="2404,343,2335,349,1735,403,1734,398,2334,344,2404,338"/>
+<area shape="poly" title=" " alt="" coords="2482,345,2507,366,2533,393,2563,435,2590,478,2629,553,2624,555,2585,481,2559,438,2529,396,2504,370,2479,349"/>
+<area shape="poly" title=" " alt="" coords="2473,346,2486,378,2498,422,2500,470,2494,493,2482,514,2468,526,2448,536,2395,554,2334,567,2276,576,2275,570,2333,561,2394,548,2446,531,2465,521,2478,510,2489,491,2494,469,2493,423,2481,380,2468,348"/>
+<area shape="poly" title=" " alt="" coords="2469,347,2473,380,2473,425,2463,472,2453,494,2438,514,2417,528,2387,538,2313,550,2161,563,2160,557,2312,545,2386,533,2414,523,2434,510,2448,492,2458,471,2467,424,2468,380,2464,347"/>
+<area shape="poly" title=" " alt="" coords="2310,272,2018,320,2017,314,2309,267"/>
+<area shape="poly" title=" " alt="" coords="2361,274,2332,312,2310,333,2285,349,2239,365,2178,378,2027,395,1866,405,1734,409,1734,403,1866,400,2026,390,2177,373,2238,360,2283,344,2307,329,2328,309,2357,270"/>
+<area shape="poly" title=" " alt="" coords="2368,273,2355,454,2349,454,2363,272"/>
+<area shape="poly" title=" " alt="" coords="1247,191,1102,203,899,226,668,265,551,291,437,323,359,345,298,368,272,384,250,405,230,434,213,470,208,491,207,512,212,553,207,553,202,513,203,490,208,468,226,431,246,402,269,380,295,364,358,340,435,317,549,286,667,260,898,221,1101,198,1247,186"/>
+<area shape="poly" title=" " alt="" coords="1305,199,1288,236,1274,257,1256,274,1175,326,1102,360,1032,380,964,389,817,399,733,407,636,424,393,472,375,476,374,471,391,467,636,419,732,402,817,393,963,384,1031,374,1100,355,1173,322,1253,270,1270,253,1284,233,1300,196"/>
+<area shape="poly" title=" " alt="" coords="1367,190,1815,243,2389,319,2389,324,1814,248,1367,195"/>
+<area shape="poly" title=" " alt="" coords="1286,200,1217,240,1214,235,1283,196"/>
+<area shape="poly" title=" " alt="" coords="1367,193,1651,241,1650,246,1366,198"/>
+<area shape="poly" title=" " alt="" coords="1327,196,1496,309,1493,313,1324,200"/>
+<area shape="poly" title=" " alt="" coords="1118,273,851,323,753,337,664,341,510,341,440,348,406,357,372,369,339,385,305,408,270,436,235,471,224,489,218,510,216,552,211,552,212,509,219,487,231,468,267,432,302,403,336,381,370,364,404,351,439,343,510,336,664,336,752,332,850,317,1117,268"/>
+<area shape="poly" title=" " alt="" coords="1243,263,1823,319,1823,325,1243,269"/>
+<area shape="poly" title=" " alt="" coords="1117,264,851,275,677,285,498,299,329,318,189,342,134,356,93,372,67,389,61,398,59,407,59,492,58,526,59,554,68,578,89,600,114,609,163,617,324,630,545,641,801,648,1320,657,1680,660,1680,665,1320,662,801,653,545,646,323,636,163,622,113,614,87,605,64,581,54,555,53,527,53,492,53,406,56,396,63,385,91,367,133,351,188,337,329,312,497,294,677,279,851,269,1117,259"/>
+<area shape="poly" title=" " alt="" coords="1133,275,373,475,371,470,1131,270"/>
+<area shape="poly" title=" " alt="" coords="1217,270,1336,312,1334,317,1215,275"/>
+<area shape="poly" title=" " alt="" coords="1731,274,1679,382,1674,379,1726,271"/>
+<area shape="poly" title=" " alt="" coords="1551,345,1627,385,1625,389,1548,350"/>
+<area shape="poly" title=" " alt="" coords="1508,350,1440,388,1396,408,1350,424,1208,454,1085,468,976,470,874,465,771,458,661,454,537,457,392,472,370,476,369,471,392,467,537,451,661,448,772,453,874,460,976,465,1085,463,1207,449,1349,419,1394,403,1438,384,1505,345"/>
+<area shape="poly" title=" " alt="" coords="2022,200,1925,246,1775,309,1595,373,1499,402,1404,424,1310,435,1192,438,916,434,775,433,642,437,527,449,478,459,437,472,422,481,412,491,402,502,387,514,329,543,274,565,272,560,327,538,384,510,398,499,408,487,418,476,435,467,477,454,526,444,642,432,775,428,916,429,1192,433,1310,430,1404,419,1498,396,1593,368,1773,304,1923,241,2020,196"/>
+<area shape="poly" title=" " alt="" coords="2038,200,1947,310,1943,306,2034,196"/>
+<area shape="poly" title=" " alt="" coords="2049,197,2052,234,2059,254,2071,270,2088,281,2109,289,2164,297,2229,299,2300,297,2438,294,2495,301,2518,308,2537,318,2565,341,2587,370,2604,402,2617,435,2633,500,2640,553,2635,553,2628,501,2612,437,2599,404,2582,373,2561,345,2535,322,2516,313,2494,306,2438,300,2300,302,2229,304,2163,302,2108,294,2085,285,2068,274,2054,256,2047,236,2043,198"/>
+<area shape="poly" title=" " alt="" coords="2067,196,2127,234,2124,239,2064,200"/>
+<area shape="poly" title=" " alt="" coords="2722,195,2833,237,2831,242,2721,200"/>
+<area shape="poly" title=" " alt="" coords="2744,194,2970,239,2969,244,2743,199"/>
+<area shape="poly" title=" " alt="" coords="2704,196,2724,217,2742,244,2762,286,2768,332,2768,409,2767,440,2762,465,2752,488,2735,514,2709,541,2680,562,2677,558,2706,537,2731,510,2748,485,2757,463,2762,440,2763,409,2763,332,2757,288,2738,247,2719,221,2700,200"/>
+<area shape="poly" title=" " alt="" coords="2691,198,2691,230,2686,230,2686,198"/>
+<area shape="poly" title=" " alt="" coords="2050,123,2050,155,2045,155,2045,123"/>
+<area shape="poly" title=" " alt="" coords="2615,121,2662,159,2659,163,2611,125"/>
+<area shape="poly" title=" " alt="" coords="2378,200,2310,241,2248,274,2180,302,2110,326,1968,363,1838,387,1735,402,1734,397,1837,382,1967,357,2108,321,2178,297,2246,270,2307,236,2375,196"/>
+<area shape="poly" title=" " alt="" coords="2420,196,2449,215,2482,243,2514,278,2538,319,2558,357,2567,375,2572,395,2571,418,2561,445,2541,476,2508,514,2492,526,2469,537,2409,554,2340,567,2276,576,2275,571,2339,562,2407,549,2467,532,2490,521,2505,510,2537,473,2556,442,2565,417,2567,396,2562,377,2553,359,2534,321,2510,281,2479,247,2446,220,2417,200"/>
+<area shape="poly" title=" " alt="" coords="2394,199,2380,232,2375,230,2390,197"/>
+<area shape="poly" title=" " alt="" coords="2448,195,2637,242,2635,247,2446,200"/>
+<area shape="poly" title=" " alt="" coords="1308,123,1309,155,1303,155,1303,123"/>
+<area shape="poly" title=" " alt="" coords="1761,199,1748,232,1743,230,1756,197"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__data__sync_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_data_sync_status_markers_c_r.html">RGWReadDataSyncStatusMarkersCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_data_sync_recovering_shards_c_r.html">RGWReadDataSyncRecoveringShardsCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_data_sync_status_coroutine.html">RGWReadDataSyncStatusCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_remote_data_log_shard_info_c_r.html">RGWReadRemoteDataLogShardInfoCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structread__remote__data__log__response.html">read_remote_data_log_response</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_remote_data_log_shard_c_r.html">RGWReadRemoteDataLogShardCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_remote_data_log_info_c_r.html">RGWReadRemoteDataLogInfoCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_list_remote_data_log_shard_c_r.html">RGWListRemoteDataLogShardCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_list_remote_data_log_c_r.html">RGWListRemoteDataLogCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_init_data_sync_status_coroutine.html">RGWInitDataSyncStatusCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structread__metadata__list.html">read_metadata_list</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbucket__instance__meta__info.html">bucket_instance_meta_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_list_bucket_indexes_c_r.html">RGWListBucketIndexesCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_data_sync_shard_marker_track.html">RGWDataSyncShardMarkerTrack</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbucket__str.html">bucket_str</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbucket__str__noinstance.html">bucket_str_noinstance</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbucket__shard__str.html">bucket_shard_str</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_run_bucket_sync_coroutine.html">RGWRunBucketSyncCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structall__bucket__info.html">all_bucket_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw__sync__pipe__info__entity.html">rgw_sync_pipe_info_entity</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw__sync__pipe__handler__info.html">rgw_sync_pipe_handler_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw__sync__pipe__info__set.html">rgw_sync_pipe_info_set</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_run_buckets_sync_by_source_c_r.html">RGWRunBucketsSyncBySourceCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_run_bucket_sources_sync_c_r.html">RGWRunBucketSourcesSyncCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_data_sync_single_entry_c_r.html">RGWDataSyncSingleEntryCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_data_sync_shard_c_r.html">RGWDataSyncShardCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_data_sync_shard_control_c_r.html">RGWDataSyncShardControlCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_data_sync_c_r.html">RGWDataSyncCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_default_data_sync_module.html">RGWDefaultDataSyncModule</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_default_sync_module_instance.html">RGWDefaultSyncModuleInstance</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_user_perm_handler.html">RGWUserPermHandler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_user_perm_handler_1_1__info.html">RGWUserPermHandler::_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_user_perm_handler_1_1_init.html">RGWUserPermHandler::Init</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_user_perm_handler_1_1_bucket.html">RGWUserPermHandler::Bucket</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_fetch_obj_filter___sync.html">RGWFetchObjFilter_Sync</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_obj_fetch_c_r.html">RGWObjFetchCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_archive_data_sync_module.html">RGWArchiveDataSyncModule</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_archive_sync_module_instance.html">RGWArchiveSyncModuleInstance</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_data_sync_control_c_r.html">RGWDataSyncControlCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_remote_bucket_index_log_info_c_r.html">RGWReadRemoteBucketIndexLogInfoCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_init_bucket_shard_sync_status_coroutine.html">RGWInitBucketShardSyncStatusCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_bucket_pipe_sync_status_coroutine.html">RGWReadBucketPipeSyncStatusCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_recovering_bucket_shards_coroutine.html">RGWReadRecoveringBucketShardsCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_pending_bucket_shards_coroutine.html">RGWReadPendingBucketShardsCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbucket__list__entry.html">bucket_list_entry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbucket__list__result.html">bucket_list_result</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_list_bucket_shard_c_r.html">RGWListBucketShardCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_list_bucket_index_log_c_r.html">RGWListBucketIndexLogCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_bucket_full_sync_shard_marker_track.html">RGWBucketFullSyncShardMarkerTrack</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_write_bucket_shard_inc_sync_status.html">RGWWriteBucketShardIncSyncStatus</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_bucket_inc_sync_shard_marker_track.html">RGWBucketIncSyncShardMarkerTrack</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_bucket_inc_sync_shard_marker_track_1_1operation.html">RGWBucketIncSyncShardMarkerTrack::operation</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_bucket_sync_single_entry_c_r.html">RGWBucketSyncSingleEntryCR&lt; T, K &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_bucket_shard_full_sync_c_r.html">RGWBucketShardFullSyncCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_bucket_shard_full_sync_c_r_1_1__prefix__handler.html">RGWBucketShardFullSyncCR::_prefix_handler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_bucket_shard_incremental_sync_c_r.html">RGWBucketShardIncrementalSyncCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_get_bucket_peers_c_r.html">RGWGetBucketPeersCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_get_bucket_peers_c_r_1_1_get_hint_targets.html">RGWGetBucketPeersCR::GetHintTargets</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_sync_get_bucket_info_c_r.html">RGWSyncGetBucketInfoCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_sync_get_bucket_sync_policy_handler_c_r.html">RGWSyncGetBucketSyncPolicyHandlerCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_collect_bucket_sync_status_c_r.html">RGWCollectBucketSyncStatusCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce752e347fabcf5fa47c54cc22f9fb1" id="r_a7ce752e347fabcf5fa47c54cc22f9fb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a7ce752e347fabcf5fa47c54cc22f9fb1">dout_prefix</a>&#160;&#160;&#160;(*_dout &lt;&lt; &quot;data sync: &quot;)</td></tr>
+<tr class="separator:a7ce752e347fabcf5fa47c54cc22f9fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4980a1cb584c92fbc9d3321dafb7cb0f" id="r_a4980a1cb584c92fbc9d3321dafb7cb0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a4980a1cb584c92fbc9d3321dafb7cb0f">READ_DATALOG_MAX_CONCURRENT</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a4980a1cb584c92fbc9d3321dafb7cb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4980a1cb584c92fbc9d3321dafb7cb0f" id="r_a4980a1cb584c92fbc9d3321dafb7cb0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a4980a1cb584c92fbc9d3321dafb7cb0f">READ_DATALOG_MAX_CONCURRENT</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a4980a1cb584c92fbc9d3321dafb7cb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ef017ccbfcbd775738c77bb86b5453" id="r_a61ef017ccbfcbd775738c77bb86b5453"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a61ef017ccbfcbd775738c77bb86b5453">COOKIE_LEN</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a61ef017ccbfcbd775738c77bb86b5453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3f597bb6093ae3ef1ff21a92cd49d9" id="r_aca3f597bb6093ae3ef1ff21a92cd49d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#aca3f597bb6093ae3ef1ff21a92cd49d9">DATA_SYNC_UPDATE_MARKER_WINDOW</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aca3f597bb6093ae3ef1ff21a92cd49d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8b5cc0dca8d43a58509e9455c48182" id="r_a3f8b5cc0dca8d43a58509e9455c48182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a3f8b5cc0dca8d43a58509e9455c48182">BUCKET_SHARD_SYNC_SPAWN_WINDOW</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a3f8b5cc0dca8d43a58509e9455c48182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff1309bca1bed96b3c745c2bc673306" id="r_a9ff1309bca1bed96b3c745c2bc673306"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a9ff1309bca1bed96b3c745c2bc673306">DATA_SYNC_MAX_ERR_ENTRIES</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a9ff1309bca1bed96b3c745c2bc673306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1615305958bea3bb35e7da5a36b7aa91" id="r_a1615305958bea3bb35e7da5a36b7aa91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a1615305958bea3bb35e7da5a36b7aa91">RETRY_BACKOFF_SECS_MIN</a>&#160;&#160;&#160;60</td></tr>
+<tr class="separator:a1615305958bea3bb35e7da5a36b7aa91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ec430d0a36c5f24c32c85b73a73cc6" id="r_a43ec430d0a36c5f24c32c85b73a73cc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a43ec430d0a36c5f24c32c85b73a73cc6">RETRY_BACKOFF_SECS_DEFAULT</a>&#160;&#160;&#160;60</td></tr>
+<tr class="separator:a43ec430d0a36c5f24c32c85b73a73cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8793fb6f4a40036cd378b46bbac33a" id="r_a5a8793fb6f4a40036cd378b46bbac33a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a5a8793fb6f4a40036cd378b46bbac33a">RETRY_BACKOFF_SECS_MAX</a>&#160;&#160;&#160;600</td></tr>
+<tr class="separator:a5a8793fb6f4a40036cd378b46bbac33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c324e8b778fc24afd6d84d056e5cd7e" id="r_a5c324e8b778fc24afd6d84d056e5cd7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a5c324e8b778fc24afd6d84d056e5cd7e">OMAP_GET_MAX_ENTRIES</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:a5c324e8b778fc24afd6d84d056e5cd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cea614fb070a712265f8003d8fadb6b" id="r_a3cea614fb070a712265f8003d8fadb6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a3cea614fb070a712265f8003d8fadb6b">INCREMENTAL_INTERVAL</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a3cea614fb070a712265f8003d8fadb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23cbc8d809cf5f93a80a19b5e8d8d54" id="r_ae23cbc8d809cf5f93a80a19b5e8d8d54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ae23cbc8d809cf5f93a80a19b5e8d8d54">MAX_RACE_RETRIES_OBJ_FETCH</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ae23cbc8d809cf5f93a80a19b5e8d8d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab498db78d53b7e11e7a36a16722c6b6b" id="r_ab498db78d53b7e11e7a36a16722c6b6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ab498db78d53b7e11e7a36a16722c6b6b">BUCKET_SYNC_ATTR_PREFIX</a>&#160;&#160;&#160;<a class="el" href="rgw__common_8h.html#ade0f9ba81b5312d54a44746055c920be">RGW_ATTR_PREFIX</a> &quot;bucket-sync.&quot;</td></tr>
+<tr class="separator:ab498db78d53b7e11e7a36a16722c6b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4295d03cc5c20e04bc8a638473ff9fcc" id="r_a4295d03cc5c20e04bc8a638473ff9fcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a4295d03cc5c20e04bc8a638473ff9fcc">OMAP_READ_MAX_ENTRIES</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a4295d03cc5c20e04bc8a638473ff9fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3cba90d6bd71c5de577f5786da47a86" id="r_ac3cba90d6bd71c5de577f5786da47a86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ac3cba90d6bd71c5de577f5786da47a86">BUCKET_SYNC_UPDATE_MARKER_WINDOW</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ac3cba90d6bd71c5de577f5786da47a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8ea5a95aa957c5405d763047c853b4" id="r_aef8ea5a95aa957c5405d763047c853b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#aef8ea5a95aa957c5405d763047c853b4">BUCKET_SYNC_SPAWN_WINDOW</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:aef8ea5a95aa957c5405d763047c853b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a488ea0032b6a759537c863802b5fc3ea" id="r_a488ea0032b6a759537c863802b5fc3ea"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a488ea0032b6a759537c863802b5fc3ea">full_data_sync_index_shard_oid</a> (const <a class="el" href="structrgw__zone__id.html">rgw_zone_id</a> &amp;source_zone, int shard_id)</td></tr>
+<tr class="separator:a488ea0032b6a759537c863802b5fc3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9c05eed0f299bd06209cbc7ddce104" id="r_aec9c05eed0f299bd06209cbc7ddce104"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#aec9c05eed0f299bd06209cbc7ddce104">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structbucket__str.html">bucket_str</a> &amp;rhs)</td></tr>
+<tr class="separator:aec9c05eed0f299bd06209cbc7ddce104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a860c2f70448a3e37ceff70425572df62" id="r_a860c2f70448a3e37ceff70425572df62"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a860c2f70448a3e37ceff70425572df62">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structbucket__str__noinstance.html">bucket_str_noinstance</a> &amp;rhs)</td></tr>
+<tr class="separator:a860c2f70448a3e37ceff70425572df62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b6bad677c05d3734ddfdd07b31b110" id="r_aa0b6bad677c05d3734ddfdd07b31b110"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#aa0b6bad677c05d3734ddfdd07b31b110">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structbucket__shard__str.html">bucket_shard_str</a> &amp;rhs)</td></tr>
+<tr class="separator:aa0b6bad677c05d3734ddfdd07b31b110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3f85bce7895fc0b940ca0778122f8f1" id="r_ad3f85bce7895fc0b940ca0778122f8f1"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ad3f85bce7895fc0b940ca0778122f8f1">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structrgw__sync__pipe__info__entity.html">rgw_sync_pipe_info_entity</a> &amp;e)</td></tr>
+<tr class="separator:ad3f85bce7895fc0b940ca0778122f8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e24b2f184322892675f37a3a0839ea" id="r_ad3e24b2f184322892675f37a3a0839ea"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ad3e24b2f184322892675f37a3a0839ea">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structrgw__sync__pipe__handler__info.html">rgw_sync_pipe_handler_info</a> &amp;p)</td></tr>
+<tr class="separator:ad3e24b2f184322892675f37a3a0839ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79644ef2a9d18256908fa10268433519" id="r_a79644ef2a9d18256908fa10268433519"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a79644ef2a9d18256908fa10268433519"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a79644ef2a9d18256908fa10268433519">decode_attr</a> (CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, map&lt; string, bufferlist &gt; &amp;attrs, const string &amp;attr_name, T *val)</td></tr>
+<tr class="separator:a79644ef2a9d18256908fa10268433519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74d1e6b05ef8f30159cbd6dfca458710" id="r_a74d1e6b05ef8f30159cbd6dfca458710"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a74d1e6b05ef8f30159cbd6dfca458710">ignore_sync_error</a> (int err)</td></tr>
+<tr class="separator:a74d1e6b05ef8f30159cbd6dfca458710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2504737e86caffaf93239d184cf9c359" id="r_a2504737e86caffaf93239d184cf9c359"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a2504737e86caffaf93239d184cf9c359">has_olh_epoch</a> (RGWModifyOp op)</td></tr>
+<tr class="separator:a2504737e86caffaf93239d184cf9c359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa10dd86538d5f9fce7c0670cb1ea22ef" id="r_aa10dd86538d5f9fce7c0670cb1ea22ef"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#aa10dd86538d5f9fce7c0670cb1ea22ef">operator&lt;&lt;</a> (std::ostream &amp;out, std::optional&lt; <a class="el" href="structrgw__bucket__shard.html">rgw_bucket_shard</a> &gt; &amp;bs)</td></tr>
+<tr class="separator:aa10dd86538d5f9fce7c0670cb1ea22ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0274ae3bca3fa8d20b54b486aefd368" id="r_ac0274ae3bca3fa8d20b54b486aefd368"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ac0274ae3bca3fa8d20b54b486aefd368">rgw_read_remote_bilog_info</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="el" href="class_r_g_w_r_e_s_t_conn.html">RGWRESTConn</a> *conn, const <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &amp;bucket, BucketIndexShardsManager &amp;markers, optional_yield y)</td></tr>
+<tr class="separator:ac0274ae3bca3fa8d20b54b486aefd368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c10af719413a263b7d358154f50639" id="r_ad0c10af719413a263b7d358154f50639"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ad0c10af719413a263b7d358154f50639">rgw_bucket_sync_status</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *<a class="el" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, const <a class="el" href="structrgw__sync__bucket__pipe.html">rgw_sync_bucket_pipe</a> &amp;pipe, const <a class="el" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> &amp;dest_bucket_info, const <a class="el" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> *psource_bucket_info, std::vector&lt; <a class="el" href="structrgw__bucket__shard__sync__info.html">rgw_bucket_shard_sync_info</a> &gt; *status)</td></tr>
+<tr class="memdesc:ad0c10af719413a263b7d358154f50639"><td class="mdescLeft">&#160;</td><td class="mdescRight">read the sync status of all bucket shards from the given source zone  <br /></td></tr>
+<tr class="separator:ad0c10af719413a263b7d358154f50639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:a7dab833f4d4768ff060a2394850dc22d" id="r_a7dab833f4d4768ff060a2394850dc22d"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a7dab833f4d4768ff060a2394850dc22d">datalog_sync_status_oid_prefix</a> = &quot;datalog.sync-status&quot;</td></tr>
+<tr class="separator:a7dab833f4d4768ff060a2394850dc22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5d431216f4131f8d42cd02948421ce" id="r_a7f5d431216f4131f8d42cd02948421ce"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a7f5d431216f4131f8d42cd02948421ce">datalog_sync_status_shard_prefix</a> = &quot;datalog.sync-status.shard&quot;</td></tr>
+<tr class="separator:a7f5d431216f4131f8d42cd02948421ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27eb8f648287d586b725a0acccea1e9f" id="r_a27eb8f648287d586b725a0acccea1e9f"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a27eb8f648287d586b725a0acccea1e9f">datalog_sync_full_sync_index_prefix</a> = &quot;data.full-sync.index&quot;</td></tr>
+<tr class="separator:a27eb8f648287d586b725a0acccea1e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dee1f336d2d90027bc0f0e7e170d4b1" id="r_a0dee1f336d2d90027bc0f0e7e170d4b1"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#a0dee1f336d2d90027bc0f0e7e170d4b1">bucket_status_oid_prefix</a> = &quot;bucket.sync-status&quot;</td></tr>
+<tr class="separator:a0dee1f336d2d90027bc0f0e7e170d4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac846edd96140d18f077f146917594a96" id="r_ac846edd96140d18f077f146917594a96"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__data__sync_8cc.html#ac846edd96140d18f077f146917594a96">object_status_oid_prefix</a> = &quot;bucket.sync-status&quot;</td></tr>
+<tr class="separator:ac846edd96140d18f077f146917594a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a3f8b5cc0dca8d43a58509e9455c48182" name="a3f8b5cc0dca8d43a58509e9455c48182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8b5cc0dca8d43a58509e9455c48182">&#9670;&#160;</a></span>BUCKET_SHARD_SYNC_SPAWN_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCKET_SHARD_SYNC_SPAWN_WINDOW&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l01394">1394</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab498db78d53b7e11e7a36a16722c6b6b" name="ab498db78d53b7e11e7a36a16722c6b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab498db78d53b7e11e7a36a16722c6b6b">&#9670;&#160;</a></span>BUCKET_SYNC_ATTR_PREFIX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCKET_SYNC_ATTR_PREFIX&#160;&#160;&#160;<a class="el" href="rgw__common_8h.html#ade0f9ba81b5312d54a44746055c920be">RGW_ATTR_PREFIX</a> &quot;bucket-sync.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l02864">2864</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aef8ea5a95aa957c5405d763047c853b4" name="aef8ea5a95aa957c5405d763047c853b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8ea5a95aa957c5405d763047c853b4">&#9670;&#160;</a></span>BUCKET_SYNC_SPAWN_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCKET_SYNC_SPAWN_WINDOW&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l03661">3661</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac3cba90d6bd71c5de577f5786da47a86" name="ac3cba90d6bd71c5de577f5786da47a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3cba90d6bd71c5de577f5786da47a86">&#9670;&#160;</a></span>BUCKET_SYNC_UPDATE_MARKER_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCKET_SYNC_UPDATE_MARKER_WINDOW&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l03332">3332</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a61ef017ccbfcbd775738c77bb86b5453" name="a61ef017ccbfcbd775738c77bb86b5453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ef017ccbfcbd775738c77bb86b5453">&#9670;&#160;</a></span>COOKIE_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COOKIE_LEN&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ff1309bca1bed96b3c745c2bc673306" name="a9ff1309bca1bed96b3c745c2bc673306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff1309bca1bed96b3c745c2bc673306">&#9670;&#160;</a></span>DATA_SYNC_MAX_ERR_ENTRIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_SYNC_MAX_ERR_ENTRIES&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l01395">1395</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aca3f597bb6093ae3ef1ff21a92cd49d9" name="aca3f597bb6093ae3ef1ff21a92cd49d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca3f597bb6093ae3ef1ff21a92cd49d9">&#9670;&#160;</a></span>DATA_SYNC_UPDATE_MARKER_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_SYNC_UPDATE_MARKER_WINDOW&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00912">912</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7ce752e347fabcf5fa47c54cc22f9fb1" name="a7ce752e347fabcf5fa47c54cc22f9fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce752e347fabcf5fa47c54cc22f9fb1">&#9670;&#160;</a></span>dout_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_prefix&#160;&#160;&#160;(*_dout &lt;&lt; &quot;data sync: &quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00045">45</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a3cea614fb070a712265f8003d8fadb6b" name="a3cea614fb070a712265f8003d8fadb6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cea614fb070a712265f8003d8fadb6b">&#9670;&#160;</a></span>INCREMENTAL_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INCREMENTAL_INTERVAL&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae23cbc8d809cf5f93a80a19b5e8d8d54" name="ae23cbc8d809cf5f93a80a19b5e8d8d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae23cbc8d809cf5f93a80a19b5e8d8d54">&#9670;&#160;</a></span>MAX_RACE_RETRIES_OBJ_FETCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_RACE_RETRIES_OBJ_FETCH&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c324e8b778fc24afd6d84d056e5cd7e" name="a5c324e8b778fc24afd6d84d056e5cd7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c324e8b778fc24afd6d84d056e5cd7e">&#9670;&#160;</a></span>OMAP_GET_MAX_ENTRIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OMAP_GET_MAX_ENTRIES&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4295d03cc5c20e04bc8a638473ff9fcc" name="a4295d03cc5c20e04bc8a638473ff9fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4295d03cc5c20e04bc8a638473ff9fcc">&#9670;&#160;</a></span>OMAP_READ_MAX_ENTRIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OMAP_READ_MAX_ENTRIES&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l02962">2962</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4980a1cb584c92fbc9d3321dafb7cb0f" name="a4980a1cb584c92fbc9d3321dafb7cb0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4980a1cb584c92fbc9d3321dafb7cb0f">&#9670;&#160;</a></span>READ_DATALOG_MAX_CONCURRENT <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ_DATALOG_MAX_CONCURRENT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00353">353</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4980a1cb584c92fbc9d3321dafb7cb0f" name="a4980a1cb584c92fbc9d3321dafb7cb0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4980a1cb584c92fbc9d3321dafb7cb0f">&#9670;&#160;</a></span>READ_DATALOG_MAX_CONCURRENT <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ_DATALOG_MAX_CONCURRENT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00353">353</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a43ec430d0a36c5f24c32c85b73a73cc6" name="a43ec430d0a36c5f24c32c85b73a73cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ec430d0a36c5f24c32c85b73a73cc6">&#9670;&#160;</a></span>RETRY_BACKOFF_SECS_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RETRY_BACKOFF_SECS_DEFAULT&#160;&#160;&#160;60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l01448">1448</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5a8793fb6f4a40036cd378b46bbac33a" name="a5a8793fb6f4a40036cd378b46bbac33a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a8793fb6f4a40036cd378b46bbac33a">&#9670;&#160;</a></span>RETRY_BACKOFF_SECS_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RETRY_BACKOFF_SECS_MAX&#160;&#160;&#160;600</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l01449">1449</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1615305958bea3bb35e7da5a36b7aa91" name="a1615305958bea3bb35e7da5a36b7aa91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1615305958bea3bb35e7da5a36b7aa91">&#9670;&#160;</a></span>RETRY_BACKOFF_SECS_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RETRY_BACKOFF_SECS_MIN&#160;&#160;&#160;60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l01447">1447</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="a79644ef2a9d18256908fa10268433519" name="a79644ef2a9d18256908fa10268433519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79644ef2a9d18256908fa10268433519">&#9670;&#160;</a></span>decode_attr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool decode_attr </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">map&lt; string, bufferlist &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>attr_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l02867">2867</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2868</span>{</div>
+<div class="line"><span class="lineno"> 2869</span>  map&lt;string, bufferlist&gt;::iterator iter = attrs.find(attr_name);</div>
+<div class="line"><span class="lineno"> 2870</span>  <span class="keywordflow">if</span> (iter == attrs.end()) {</div>
+<div class="line"><span class="lineno"> 2871</span>    *val = T();</div>
+<div class="line"><span class="lineno"> 2872</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2873</span>  }</div>
+<div class="line"><span class="lineno"> 2874</span> </div>
+<div class="line"><span class="lineno"> 2875</span>  <span class="keyword">auto</span> biter = iter-&gt;second.cbegin();</div>
+<div class="line"><span class="lineno"> 2876</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno"> 2877</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(*val, biter);</div>
+<div class="line"><span class="lineno"> 2878</span>  } <span class="keywordflow">catch</span> (buffer::error&amp; err) {</div>
+<div class="line"><span class="lineno"> 2879</span>    ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to decode attribute: &quot;</span> &lt;&lt; attr_name &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 2880</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2881</span>  }</div>
+<div class="line"><span class="lineno"> 2882</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 2883</span>}</div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc46efdde31cf790f3b383cb9e6f198e"><div class="ttname"><a href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a></div><div class="ttdeci">void decode(log_type &amp;type, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00049">rgw_log_backing.h:49</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_cgraph.png" border="0" usemap="#argw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_cgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_cgraph" id="argw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,95,56"/>
+<area shape="rect" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e" title=" " alt="" coords="143,29,206,56"/>
+<area shape="poly" title=" " alt="" coords="95,40,127,40,127,45,95,45"/>
+<area shape="poly" title=" " alt="" coords="152,30,148,20,151,11,160,5,174,3,190,5,198,12,195,16,188,10,174,8,162,10,155,14,154,20,157,28"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_icgraph.png" border="0" usemap="#argw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_icgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_icgraph" id="argw__data__sync_8cc_a79644ef2a9d18256908fa10268433519_icgraph">
+<area shape="rect" title=" " alt="" coords="483,13,572,40"/>
+<area shape="rect" href="structrgw__bucket__shard__sync__info.html#a12a48ea659bd2b0c4c682fc5420a04f9" title=" " alt="" coords="272,5,435,48"/>
+<area shape="poly" title=" " alt="" coords="467,29,435,29,435,24,467,24"/>
+<area shape="rect" href="class_r_g_w_read_bucket_pipe_sync_status_coroutine.html#a901693650c332c07fdfbdc8d3f13cac4" title=" " alt="" coords="5,5,224,48"/>
+<area shape="poly" title=" " alt="" coords="256,29,224,29,224,24,256,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a488ea0032b6a759537c863802b5fc3ea" name="a488ea0032b6a759537c863802b5fc3ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a488ea0032b6a759537c863802b5fc3ea">&#9670;&#160;</a></span>full_data_sync_index_shard_oid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string full_data_sync_index_shard_oid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw__zone__id.html">rgw_zone_id</a> &amp;&#160;</td>
+          <td class="paramname"><em>source_zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shard_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00745">745</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  746</span>{</div>
+<div class="line"><span class="lineno">  747</span>  <span class="keywordtype">char</span> buf[<a class="code hl_variable" href="rgw__data__sync_8cc.html#a27eb8f648287d586b725a0acccea1e9f">datalog_sync_full_sync_index_prefix</a>.size() + 1 + source_zone.<a class="code hl_variable" href="structrgw__zone__id.html#a9d7f1a223c9b66a551119d51a04fbda9">id</a>.size() + 1 + 16];</div>
+<div class="line"><span class="lineno">  748</span>  snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s.%s.%d&quot;</span>, <a class="code hl_variable" href="rgw__data__sync_8cc.html#a27eb8f648287d586b725a0acccea1e9f">datalog_sync_full_sync_index_prefix</a>.c_str(), source_zone.<a class="code hl_variable" href="structrgw__zone__id.html#a9d7f1a223c9b66a551119d51a04fbda9">id</a>.c_str(), shard_id);</div>
+<div class="line"><span class="lineno">  749</span>  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacergw_1_1_i_a_m.html#a16270dabfb0f449a033dc28091504510ab45cffe084dd3d20d928bee85e7b0f21">string</a>(buf);</div>
+<div class="line"><span class="lineno">  750</span>}</div>
+<div class="ttc" id="anamespacergw_1_1_i_a_m_html_a16270dabfb0f449a033dc28091504510ab45cffe084dd3d20d928bee85e7b0f21"><div class="ttname"><a href="namespacergw_1_1_i_a_m.html#a16270dabfb0f449a033dc28091504510ab45cffe084dd3d20d928bee85e7b0f21">rgw::IAM::Type::string</a></div><div class="ttdeci">@ string</div></div>
+<div class="ttc" id="argw__data__sync_8cc_html_a27eb8f648287d586b725a0acccea1e9f"><div class="ttname"><a href="rgw__data__sync_8cc.html#a27eb8f648287d586b725a0acccea1e9f">datalog_sync_full_sync_index_prefix</a></div><div class="ttdeci">static string datalog_sync_full_sync_index_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l00051">rgw_data_sync.cc:51</a></div></div>
+<div class="ttc" id="astructrgw__zone__id_html_a9d7f1a223c9b66a551119d51a04fbda9"><div class="ttname"><a href="structrgw__zone__id.html#a9d7f1a223c9b66a551119d51a04fbda9">rgw_zone_id::id</a></div><div class="ttdeci">std::string id</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00466">rgw_basic_types.h:466</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_a488ea0032b6a759537c863802b5fc3ea_icgraph.png" border="0" usemap="#argw__data__sync_8cc_a488ea0032b6a759537c863802b5fc3ea_icgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_a488ea0032b6a759537c863802b5fc3ea_icgraph" id="argw__data__sync_8cc_a488ea0032b6a759537c863802b5fc3ea_icgraph">
+<area shape="rect" title=" " alt="" coords="426,5,568,48"/>
+<area shape="rect" href="class_r_g_w_data_sync_shard_c_r.html#a39b5bada67d117a0900deb43e8a055bc" title=" " alt="" coords="216,5,378,48"/>
+<area shape="poly" title=" " alt="" coords="410,29,379,29,379,24,410,24"/>
+<area shape="rect" href="class_r_g_w_data_sync_shard_c_r.html#a7329a3490f9bbb43e7647f1e5c684a58" title=" " alt="" coords="5,5,168,48"/>
+<area shape="poly" title=" " alt="" coords="200,29,168,29,168,24,200,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2504737e86caffaf93239d184cf9c359" name="a2504737e86caffaf93239d184cf9c359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2504737e86caffaf93239d184cf9c359">&#9670;&#160;</a></span>has_olh_epoch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool has_olh_epoch </td>
+          <td>(</td>
+          <td class="paramtype">RGWModifyOp&#160;</td>
+          <td class="paramname"><em>op</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l03860">3860</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3860</span>                                          {</div>
+<div class="line"><span class="lineno"> 3861</span>  <span class="keywordflow">return</span> op == CLS_RGW_OP_LINK_OLH || op == CLS_RGW_OP_UNLINK_INSTANCE;</div>
+<div class="line"><span class="lineno"> 3862</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_a2504737e86caffaf93239d184cf9c359_icgraph.png" border="0" usemap="#argw__data__sync_8cc_a2504737e86caffaf93239d184cf9c359_icgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_a2504737e86caffaf93239d184cf9c359_icgraph" id="argw__data__sync_8cc_a2504737e86caffaf93239d184cf9c359_icgraph">
+<area shape="rect" title=" " alt="" coords="249,13,357,40"/>
+<area shape="rect" href="class_r_g_w_bucket_shard_incremental_sync_c_r.html#a3beb8462ad18571bb3e1c918c44210d1" title=" " alt="" coords="5,5,201,48"/>
+<area shape="poly" title=" " alt="" coords="233,29,201,29,201,24,233,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a74d1e6b05ef8f30159cbd6dfca458710" name="a74d1e6b05ef8f30159cbd6dfca458710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d1e6b05ef8f30159cbd6dfca458710">&#9670;&#160;</a></span>ignore_sync_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ignore_sync_error </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>err</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l03502">3502</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3502</span>                                       {</div>
+<div class="line"><span class="lineno"> 3503</span>  <span class="keywordflow">switch</span> (err) {</div>
+<div class="line"><span class="lineno"> 3504</span>    <span class="keywordflow">case</span> -ENOENT:</div>
+<div class="line"><span class="lineno"> 3505</span>    <span class="keywordflow">case</span> -EPERM:</div>
+<div class="line"><span class="lineno"> 3506</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 3507</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno"> 3508</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno"> 3509</span>  }</div>
+<div class="line"><span class="lineno"> 3510</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 3511</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_a74d1e6b05ef8f30159cbd6dfca458710_icgraph.png" border="0" usemap="#argw__data__sync_8cc_a74d1e6b05ef8f30159cbd6dfca458710_icgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_a74d1e6b05ef8f30159cbd6dfca458710_icgraph" id="argw__data__sync_8cc_a74d1e6b05ef8f30159cbd6dfca458710_icgraph">
+<area shape="rect" title=" " alt="" coords="245,13,369,40"/>
+<area shape="rect" href="class_r_g_w_bucket_sync_single_entry_c_r.html#a43d2ab78b00800915d1485e77eb39577" title=" " alt="" coords="5,5,197,48"/>
+<area shape="poly" title=" " alt="" coords="229,29,197,29,197,24,229,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa0b6bad677c05d3734ddfdd07b31b110" name="aa0b6bad677c05d3734ddfdd07b31b110"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0b6bad677c05d3734ddfdd07b31b110">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structbucket__shard__str.html">bucket_shard_str</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00982">982</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  982</span>                                                                     {</div>
+<div class="line"><span class="lineno">  983</span>  <span class="keyword">auto</span>&amp; bs = rhs.<a class="code hl_variable" href="structbucket__shard__str.html#ab0ad4c705ca3e43fdb04c564139cb379">bs</a>;</div>
+<div class="line"><span class="lineno">  984</span>  out &lt;&lt; <a class="code hl_struct" href="structbucket__str.html">bucket_str</a>{bs.bucket};</div>
+<div class="line"><span class="lineno">  985</span>  <span class="keywordflow">if</span> (bs.shard_id &gt;= 0) {</div>
+<div class="line"><span class="lineno">  986</span>    out &lt;&lt; <span class="charliteral">&#39;:&#39;</span> &lt;&lt; bs.shard_id;</div>
+<div class="line"><span class="lineno">  987</span>  }</div>
+<div class="line"><span class="lineno">  988</span>  <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno">  989</span>}</div>
+<div class="ttc" id="astructbucket__shard__str_html_ab0ad4c705ca3e43fdb04c564139cb379"><div class="ttname"><a href="structbucket__shard__str.html#ab0ad4c705ca3e43fdb04c564139cb379">bucket_shard_str::bs</a></div><div class="ttdeci">const rgw_bucket_shard &amp; bs</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l00979">rgw_data_sync.cc:979</a></div></div>
+<div class="ttc" id="astructbucket__str_html"><div class="ttname"><a href="structbucket__str.html">bucket_str</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l00949">rgw_data_sync.cc:949</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aec9c05eed0f299bd06209cbc7ddce104" name="aec9c05eed0f299bd06209cbc7ddce104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9c05eed0f299bd06209cbc7ddce104">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structbucket__str.html">bucket_str</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00953">953</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  953</span>                                                               {</div>
+<div class="line"><span class="lineno">  954</span>  <span class="keyword">auto</span>&amp; b = rhs.<a class="code hl_variable" href="structbucket__str.html#a0030e4f99a3dcd35433aab2426d12e9d">b</a>;</div>
+<div class="line"><span class="lineno">  955</span>  <span class="keywordflow">if</span> (!b.tenant.empty()) {</div>
+<div class="line"><span class="lineno">  956</span>    out &lt;&lt; b.<a class="code hl_variable" href="structrgw__bucket.html#ac2d65e02c9242ad2ea2ad31da15d8836">tenant</a> &lt;&lt; <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><span class="lineno">  957</span>  }</div>
+<div class="line"><span class="lineno">  958</span>  out &lt;&lt; b.name;</div>
+<div class="line"><span class="lineno">  959</span>  <span class="keywordflow">if</span> (!b.bucket_id.empty()) {</div>
+<div class="line"><span class="lineno">  960</span>    out &lt;&lt; <span class="charliteral">&#39;:&#39;</span> &lt;&lt; b.bucket_id;</div>
+<div class="line"><span class="lineno">  961</span>  }</div>
+<div class="line"><span class="lineno">  962</span>  <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno">  963</span>}</div>
+<div class="ttc" id="astructbucket__str_html_a0030e4f99a3dcd35433aab2426d12e9d"><div class="ttname"><a href="structbucket__str.html#a0030e4f99a3dcd35433aab2426d12e9d">bucket_str::b</a></div><div class="ttdeci">const rgw_bucket &amp; b</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l00950">rgw_data_sync.cc:950</a></div></div>
+<div class="ttc" id="astructrgw__bucket_html_ac2d65e02c9242ad2ea2ad31da15d8836"><div class="ttname"><a href="structrgw__bucket.html#ac2d65e02c9242ad2ea2ad31da15d8836">rgw_bucket::tenant</a></div><div class="ttdeci">std::string tenant</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00290">rgw_basic_types.h:290</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a860c2f70448a3e37ceff70425572df62" name="a860c2f70448a3e37ceff70425572df62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a860c2f70448a3e37ceff70425572df62">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structbucket__str__noinstance.html">bucket_str_noinstance</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00969">969</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  969</span>                                                                          {</div>
+<div class="line"><span class="lineno">  970</span>  <span class="keyword">auto</span>&amp; b = rhs.<a class="code hl_variable" href="structbucket__str__noinstance.html#a203f21b609f271f4606422503c812b65">b</a>;</div>
+<div class="line"><span class="lineno">  971</span>  <span class="keywordflow">if</span> (!b.tenant.empty()) {</div>
+<div class="line"><span class="lineno">  972</span>    out &lt;&lt; b.<a class="code hl_variable" href="structrgw__bucket.html#ac2d65e02c9242ad2ea2ad31da15d8836">tenant</a> &lt;&lt; <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><span class="lineno">  973</span>  }</div>
+<div class="line"><span class="lineno">  974</span>  out &lt;&lt; b.name;</div>
+<div class="line"><span class="lineno">  975</span>  <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno">  976</span>}</div>
+<div class="ttc" id="astructbucket__str__noinstance_html_a203f21b609f271f4606422503c812b65"><div class="ttname"><a href="structbucket__str__noinstance.html#a203f21b609f271f4606422503c812b65">bucket_str_noinstance::b</a></div><div class="ttdeci">const rgw_bucket &amp; b</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l00966">rgw_data_sync.cc:966</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad3e24b2f184322892675f37a3a0839ea" name="ad3e24b2f184322892675f37a3a0839ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3e24b2f184322892675f37a3a0839ea">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__sync__pipe__handler__info.html">rgw_sync_pipe_handler_info</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l01135">1135</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1135</span>                                                                             {</div>
+<div class="line"><span class="lineno"> 1136</span>  out &lt;&lt; p.<a class="code hl_variable" href="structrgw__sync__pipe__handler__info.html#a61aa4b56b8ec0a1dc0ec73f9bff223c1">source</a> &lt;&lt; <span class="stringliteral">&quot;&gt;&quot;</span> &lt;&lt; p.<a class="code hl_variable" href="structrgw__sync__pipe__handler__info.html#afdce86e56d03fc613c47eaf3a098c969">target</a>;</div>
+<div class="line"><span class="lineno"> 1137</span>  <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno"> 1138</span>}</div>
+<div class="ttc" id="astructrgw__sync__pipe__handler__info_html_a61aa4b56b8ec0a1dc0ec73f9bff223c1"><div class="ttname"><a href="structrgw__sync__pipe__handler__info.html#a61aa4b56b8ec0a1dc0ec73f9bff223c1">rgw_sync_pipe_handler_info::source</a></div><div class="ttdeci">rgw_sync_pipe_info_entity source</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l01108">rgw_data_sync.cc:1108</a></div></div>
+<div class="ttc" id="astructrgw__sync__pipe__handler__info_html_afdce86e56d03fc613c47eaf3a098c969"><div class="ttname"><a href="structrgw__sync__pipe__handler__info.html#afdce86e56d03fc613c47eaf3a098c969">rgw_sync_pipe_handler_info::target</a></div><div class="ttdeci">rgw_sync_pipe_info_entity target</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l01109">rgw_data_sync.cc:1109</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad3f85bce7895fc0b940ca0778122f8f1" name="ad3f85bce7895fc0b940ca0778122f8f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f85bce7895fc0b940ca0778122f8f1">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__sync__pipe__info__entity.html">rgw_sync_pipe_info_entity</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l01099">1099</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1099</span>                                                                            {</div>
+<div class="line"><span class="lineno"> 1100</span>  <span class="keyword">auto</span>&amp; bucket = e.<a class="code hl_function" href="structrgw__sync__pipe__info__entity.html#aad9765b3c98ed97510dfafd1ba0f3036">get_bucket_info</a>().<a class="code hl_variable" href="struct_r_g_w_bucket_info.html#afbd8422e16061abdf72d710794ac74d4">bucket</a>;</div>
+<div class="line"><span class="lineno"> 1101</span> </div>
+<div class="line"><span class="lineno"> 1102</span>  out &lt;&lt; e.<a class="code hl_variable" href="structrgw__sync__pipe__info__entity.html#a7e5d05fd9124f3e5d2365c7cedab0990">zone</a> &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; bucket.get_key();</div>
+<div class="line"><span class="lineno"> 1103</span>  <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno"> 1104</span>}</div>
+<div class="ttc" id="astruct_r_g_w_bucket_info_html_afbd8422e16061abdf72d710794ac74d4"><div class="ttname"><a href="struct_r_g_w_bucket_info.html#afbd8422e16061abdf72d710794ac74d4">RGWBucketInfo::bucket</a></div><div class="ttdeci">rgw_bucket bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01063">rgw_common.h:1063</a></div></div>
+<div class="ttc" id="astructrgw__sync__pipe__info__entity_html_a7e5d05fd9124f3e5d2365c7cedab0990"><div class="ttname"><a href="structrgw__sync__pipe__info__entity.html#a7e5d05fd9124f3e5d2365c7cedab0990">rgw_sync_pipe_info_entity::zone</a></div><div class="ttdeci">rgw_zone_id zone</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l01035">rgw_data_sync.cc:1035</a></div></div>
+<div class="ttc" id="astructrgw__sync__pipe__info__entity_html_aad9765b3c98ed97510dfafd1ba0f3036"><div class="ttname"><a href="structrgw__sync__pipe__info__entity.html#aad9765b3c98ed97510dfafd1ba0f3036">rgw_sync_pipe_info_entity::get_bucket_info</a></div><div class="ttdeci">const RGWBucketInfo &amp; get_bucket_info() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l01080">rgw_data_sync.cc:1080</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_ad3f85bce7895fc0b940ca0778122f8f1_cgraph.png" border="0" usemap="#argw__data__sync_8cc_ad3f85bce7895fc0b940ca0778122f8f1_cgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_ad3f85bce7895fc0b940ca0778122f8f1_cgraph" id="argw__data__sync_8cc_ad3f85bce7895fc0b940ca0778122f8f1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,90,40"/>
+<area shape="rect" href="structrgw__sync__pipe__info__entity.html#aad9765b3c98ed97510dfafd1ba0f3036" title=" " alt="" coords="138,5,297,48"/>
+<area shape="poly" title=" " alt="" coords="90,24,122,24,122,29,90,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa10dd86538d5f9fce7c0670cb1ea22ef" name="aa10dd86538d5f9fce7c0670cb1ea22ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10dd86538d5f9fce7c0670cb1ea22ef">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="structrgw__bucket__shard.html">rgw_bucket_shard</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l04281">4281</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4281</span>                                                                           {</div>
+<div class="line"><span class="lineno"> 4282</span>  <span class="keywordflow">if</span> (!bs) {</div>
+<div class="line"><span class="lineno"> 4283</span>    out &lt;&lt; <span class="stringliteral">&quot;*&quot;</span>;</div>
+<div class="line"><span class="lineno"> 4284</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno"> 4285</span>    out &lt;&lt; *bs;</div>
+<div class="line"><span class="lineno"> 4286</span>  }</div>
+<div class="line"><span class="lineno"> 4287</span>  <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno"> 4288</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad0c10af719413a263b7d358154f50639" name="ad0c10af719413a263b7d358154f50639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c10af719413a263b7d358154f50639">&#9670;&#160;</a></span>rgw_bucket_sync_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw_bucket_sync_status </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *&#160;</td>
+          <td class="paramname"><em>store</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__sync__bucket__pipe.html">rgw_sync_bucket_pipe</a> &amp;&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>dest_bucket_info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> *&#160;</td>
+          <td class="paramname"><em>psource_bucket_info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structrgw__bucket__shard__sync__info.html">rgw_bucket_shard_sync_info</a> &gt; *&#160;</td>
+          <td class="paramname"><em>status</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read the sync status of all bucket shards from the given source zone </p>
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l05008">5008</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5014</span>{</div>
+<div class="line"><span class="lineno"> 5015</span>  <span class="keywordflow">if</span> (!pipe.<a class="code hl_variable" href="structrgw__sync__bucket__pipe.html#a481cac8401b1599826d827fe8fc4bbb7">source</a>.<a class="code hl_variable" href="structrgw__sync__bucket__entity.html#a0c317339addaed90997a62c10917027e">zone</a> ||</div>
+<div class="line"><span class="lineno"> 5016</span>      !pipe.<a class="code hl_variable" href="structrgw__sync__bucket__pipe.html#a481cac8401b1599826d827fe8fc4bbb7">source</a>.<a class="code hl_variable" href="structrgw__sync__bucket__entity.html#a567de4d566de8a372481e2e03996ab69">bucket</a> ||</div>
+<div class="line"><span class="lineno"> 5017</span>      !pipe.<a class="code hl_variable" href="structrgw__sync__bucket__pipe.html#a00e5a6db2749563ed72a72592e037b36">dest</a>.<a class="code hl_variable" href="structrgw__sync__bucket__entity.html#a0c317339addaed90997a62c10917027e">zone</a> ||</div>
+<div class="line"><span class="lineno"> 5018</span>      !pipe.<a class="code hl_variable" href="structrgw__sync__bucket__pipe.html#a00e5a6db2749563ed72a72592e037b36">dest</a>.<a class="code hl_variable" href="structrgw__sync__bucket__entity.html#a567de4d566de8a372481e2e03996ab69">bucket</a>) {</div>
+<div class="line"><span class="lineno"> 5019</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><span class="lineno"> 5020</span>  }</div>
+<div class="line"><span class="lineno"> 5021</span> </div>
+<div class="line"><span class="lineno"> 5022</span>  <span class="keywordflow">if</span> (*pipe.<a class="code hl_variable" href="structrgw__sync__bucket__pipe.html#a00e5a6db2749563ed72a72592e037b36">dest</a>.<a class="code hl_variable" href="structrgw__sync__bucket__entity.html#a567de4d566de8a372481e2e03996ab69">bucket</a> !=</div>
+<div class="line"><span class="lineno"> 5023</span>      dest_bucket_info.<a class="code hl_variable" href="struct_r_g_w_bucket_info.html#afbd8422e16061abdf72d710794ac74d4">bucket</a>) {</div>
+<div class="line"><span class="lineno"> 5024</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><span class="lineno"> 5025</span>  }</div>
+<div class="line"><span class="lineno"> 5026</span> </div>
+<div class="line"><span class="lineno"> 5027</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__bucket.html">rgw_bucket</a>&amp; source_bucket = *pipe.<a class="code hl_variable" href="structrgw__sync__bucket__pipe.html#a481cac8401b1599826d827fe8fc4bbb7">source</a>.<a class="code hl_variable" href="structrgw__sync__bucket__entity.html#a567de4d566de8a372481e2e03996ab69">bucket</a>;</div>
+<div class="line"><span class="lineno"> 5028</span> </div>
+<div class="line"><span class="lineno"> 5029</span>  <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> source_bucket_info;</div>
+<div class="line"><span class="lineno"> 5030</span> </div>
+<div class="line"><span class="lineno"> 5031</span>  <span class="keywordflow">if</span> (!psource_bucket_info) {</div>
+<div class="line"><span class="lineno"> 5032</span>    <span class="keyword">auto</span>&amp; bucket_ctl = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;getRados()-&gt;ctl.bucket;</div>
+<div class="line"><span class="lineno"> 5033</span> </div>
+<div class="line"><span class="lineno"> 5034</span>    <span class="keywordtype">int</span> ret = bucket_ctl-&gt;read_bucket_info(source_bucket, &amp;source_bucket_info, null_yield, <a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><span class="lineno"> 5035</span>    <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><span class="lineno"> 5036</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to get bucket instance info: bucket=&quot;</span> &lt;&lt; source_bucket &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; cpp_strerror(-ret) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 5037</span>      <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno"> 5038</span>    }</div>
+<div class="line"><span class="lineno"> 5039</span> </div>
+<div class="line"><span class="lineno"> 5040</span>    psource_bucket_info = &amp;source_bucket_info;</div>
+<div class="line"><span class="lineno"> 5041</span>  }</div>
+<div class="line"><span class="lineno"> 5042</span> </div>
+<div class="line"><span class="lineno"> 5043</span> </div>
+<div class="line"><span class="lineno"> 5044</span>  <a class="code hl_struct" href="struct_r_g_w_data_sync_env.html">RGWDataSyncEnv</a> <a class="code hl_variable" href="namespacegtest.html#aa341a0cb52b74c0879a269b35e8f323c">env</a>;</div>
+<div class="line"><span class="lineno"> 5045</span>  <a class="code hl_typedef" href="rgw__sal_8h.html#a2a039ebea62bea24dff4df3905db41df">RGWSyncModuleInstanceRef</a> <span class="keyword">module</span>; <span class="comment">// null sync module</span></div>
+<div class="line"><span class="lineno"> 5046</span>  <a class="code hl_variable" href="namespacegtest.html#aa341a0cb52b74c0879a269b35e8f323c">env</a>.init(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e">ctx</a>(), <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;svc(), <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;svc()-&gt;rados-&gt;get_async_processor(),</div>
+<div class="line"><span class="lineno"> 5047</span>           <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, module, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno"> 5048</span> </div>
+<div class="line"><span class="lineno"> 5049</span>  <a class="code hl_struct" href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a> sc;</div>
+<div class="line"><span class="lineno"> 5050</span>  sc.<a class="code hl_function" href="struct_r_g_w_data_sync_ctx.html#a6790e78be7a10a9ab56663efdf9ed503">init</a>(&amp;env, <span class="keyword">nullptr</span>, *pipe.<a class="code hl_variable" href="structrgw__sync__bucket__pipe.html#a481cac8401b1599826d827fe8fc4bbb7">source</a>.<a class="code hl_variable" href="structrgw__sync__bucket__entity.html#a0c317339addaed90997a62c10917027e">zone</a>);</div>
+<div class="line"><span class="lineno"> 5051</span> </div>
+<div class="line"><span class="lineno"> 5052</span>  <a class="code hl_class" href="class_r_g_w_coroutines_manager.html">RGWCoroutinesManager</a> crs(<a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e">ctx</a>(), <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;getRados()-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#a91db16d708ac953cef44535c16457fb5">get_cr_registry</a>());</div>
+<div class="line"><span class="lineno"> 5053</span>  <span class="keywordflow">return</span> crs.run(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_collect_bucket_sync_status_c_r.html">RGWCollectBucketSyncStatusCR</a>(<a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, &amp;sc,</div>
+<div class="line"><span class="lineno"> 5054</span>                                                  *psource_bucket_info,</div>
+<div class="line"><span class="lineno"> 5055</span>                                                  dest_bucket_info,</div>
+<div class="line"><span class="lineno"> 5056</span>                                                  status));</div>
+<div class="line"><span class="lineno"> 5057</span>}</div>
+<div class="ttc" id="aclass_r_g_w_collect_bucket_sync_status_c_r_html"><div class="ttname"><a href="class_r_g_w_collect_bucket_sync_status_c_r.html">RGWCollectBucketSyncStatusCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8cc_source.html#l04952">rgw_data_sync.cc:4952</a></div></div>
+<div class="ttc" id="aclass_r_g_w_coroutines_manager_html"><div class="ttname"><a href="class_r_g_w_coroutines_manager.html">RGWCoroutinesManager</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__coroutine_8h_source.html#l00623">rgw_coroutine.h:623</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html_a91db16d708ac953cef44535c16457fb5"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html#a91db16d708ac953cef44535c16457fb5">rgw::sal::Store::get_cr_registry</a></div><div class="ttdeci">virtual RGWCoroutinesManagerRegistry * get_cr_registry()=0</div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html_aca84a6ff80011b26fcd2fa8526c1152e"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e">rgw::sal::Store::ctx</a></div><div class="ttdeci">virtual CephContext * ctx(void)=0</div></div>
+<div class="ttc" id="anamespacegtest_html_aa341a0cb52b74c0879a269b35e8f323c"><div class="ttname"><a href="namespacegtest.html#aa341a0cb52b74c0879a269b35e8f323c">gtest::env</a></div><div class="ttdeci">class Environment * env</div><div class="ttdef"><b>Definition</b> <a href="dbstore__tests_8cc_source.html#l00017">dbstore_tests.cc:17</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__sal_8h_html_a2a039ebea62bea24dff4df3905db41df"><div class="ttname"><a href="rgw__sal_8h.html#a2a039ebea62bea24dff4df3905db41df">RGWSyncModuleInstanceRef</a></div><div class="ttdeci">std::shared_ptr&lt; RGWSyncModuleInstance &gt; RGWSyncModuleInstanceRef</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00039">rgw_sal.h:39</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_info_html"><div class="ttname"><a href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01062">rgw_common.h:1062</a></div></div>
+<div class="ttc" id="astruct_r_g_w_data_sync_ctx_html"><div class="ttname"><a href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00333">rgw_data_sync.h:333</a></div></div>
+<div class="ttc" id="astruct_r_g_w_data_sync_ctx_html_a6790e78be7a10a9ab56663efdf9ed503"><div class="ttname"><a href="struct_r_g_w_data_sync_ctx.html#a6790e78be7a10a9ab56663efdf9ed503">RGWDataSyncCtx::init</a></div><div class="ttdeci">void init(RGWDataSyncEnv *_env, RGWRESTConn *_conn, const rgw_zone_id &amp;_source_zone)</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00340">rgw_data_sync.h:340</a></div></div>
+<div class="ttc" id="astruct_r_g_w_data_sync_env_html"><div class="ttname"><a href="struct_r_g_w_data_sync_env.html">RGWDataSyncEnv</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00298">rgw_data_sync.h:298</a></div></div>
+<div class="ttc" id="astructrgw__bucket_html"><div class="ttname"><a href="structrgw__bucket.html">rgw_bucket</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00289">rgw_basic_types.h:289</a></div></div>
+<div class="ttc" id="astructrgw__sync__bucket__entity_html_a0c317339addaed90997a62c10917027e"><div class="ttname"><a href="structrgw__sync__bucket__entity.html#a0c317339addaed90997a62c10917027e">rgw_sync_bucket_entity::zone</a></div><div class="ttdeci">std::optional&lt; rgw_zone_id &gt; zone</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__policy_8h_source.html#l00074">rgw_sync_policy.h:74</a></div></div>
+<div class="ttc" id="astructrgw__sync__bucket__entity_html_a567de4d566de8a372481e2e03996ab69"><div class="ttname"><a href="structrgw__sync__bucket__entity.html#a567de4d566de8a372481e2e03996ab69">rgw_sync_bucket_entity::bucket</a></div><div class="ttdeci">std::optional&lt; rgw_bucket &gt; bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__policy_8h_source.html#l00075">rgw_sync_policy.h:75</a></div></div>
+<div class="ttc" id="astructrgw__sync__bucket__pipe_html_a00e5a6db2749563ed72a72592e037b36"><div class="ttname"><a href="structrgw__sync__bucket__pipe.html#a00e5a6db2749563ed72a72592e037b36">rgw_sync_bucket_pipe::dest</a></div><div class="ttdeci">rgw_sync_bucket_entity dest</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__policy_8h_source.html#l00375">rgw_sync_policy.h:375</a></div></div>
+<div class="ttc" id="astructrgw__sync__bucket__pipe_html_a481cac8401b1599826d827fe8fc4bbb7"><div class="ttname"><a href="structrgw__sync__bucket__pipe.html#a481cac8401b1599826d827fe8fc4bbb7">rgw_sync_bucket_pipe::source</a></div><div class="ttdeci">rgw_sync_bucket_entity source</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__policy_8h_source.html#l00374">rgw_sync_policy.h:374</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_cgraph.png" border="0" usemap="#argw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_cgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_cgraph" id="argw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_cgraph">
+<area shape="rect" title="read the sync status of all bucket shards from the given source zone" alt="" coords="5,115,171,141"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e" title=" " alt="" coords="249,5,380,32"/>
+<area shape="poly" title=" " alt="" coords="105,112,154,77,218,42,235,35,237,40,220,46,157,82,108,116"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="293,56,336,83"/>
+<area shape="poly" title=" " alt="" coords="142,112,278,76,279,81,143,117"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#a91db16d708ac953cef44535c16457fb5" title=" " alt="" coords="249,107,380,149"/>
+<area shape="poly" title=" " alt="" coords="171,125,233,125,233,131,171,131"/>
+<area shape="rect" href="struct_r_g_w_data_sync_ctx.html#a6790e78be7a10a9ab56663efdf9ed503" title=" " alt="" coords="237,173,392,200"/>
+<area shape="poly" title=" " alt="" coords="143,139,246,166,245,171,142,144"/>
+<area shape="rect" href="class_r_g_w_coroutines_manager.html#a38ec9d44810bfd9ad15dad3a30cb091a" title=" " alt="" coords="219,224,410,251"/>
+<area shape="poly" title=" " alt="" coords="108,140,157,174,220,210,237,216,235,221,218,214,154,179,105,144"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_icgraph.png" border="0" usemap="#argw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_icgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_icgraph" id="argw__data__sync_8cc_ad0c10af719413a263b7d358154f50639_icgraph">
+<area shape="rect" title="read the sync status of all bucket shards from the given source zone" alt="" coords="492,47,658,73"/>
+<area shape="rect" href="rgw__admin_8cc.html#a55572dc14e8b7410a92ba9515e0be5a1" title=" " alt="" coords="296,5,437,48"/>
+<area shape="poly" title=" " alt="" coords="477,47,437,41,438,35,477,42"/>
+<area shape="rect" href="class_r_g_w_op___b_i_log___status.html#a23c5956f11b29bcd6d0c2b4214d1e808" title=" " alt="" coords="289,72,444,115"/>
+<area shape="poly" title=" " alt="" coords="477,78,445,83,444,78,476,73"/>
+<area shape="rect" href="rgw__admin_8cc.html#a1952ece8a97cc8cf04493a430fb3b6dd" title=" " alt="" coords="103,13,241,40"/>
+<area shape="poly" title=" " alt="" coords="280,29,241,29,241,24,280,24"/>
+<area shape="rect" href="rgw__admin_8cc.html#a217dbf8b442f20279ea00b898af96f52" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac0274ae3bca3fa8d20b54b486aefd368" name="ac0274ae3bca3fa8d20b54b486aefd368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0274ae3bca3fa8d20b54b486aefd368">&#9670;&#160;</a></span>rgw_read_remote_bilog_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw_read_remote_bilog_info </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_r_g_w_r_e_s_t_conn.html">RGWRESTConn</a> *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &amp;&#160;</td>
+          <td class="paramname"><em>bucket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BucketIndexShardsManager &amp;&#160;</td>
+          <td class="paramname"><em>markers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">optional_yield&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l04925">4925</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4930</span>{</div>
+<div class="line"><span class="lineno"> 4931</span>  <span class="keyword">const</span> <span class="keyword">auto</span> instance_key = bucket.<a class="code hl_function" href="structrgw__bucket.html#ad369d093e39599e8eea191882fcdc6a9">get_key</a>();</div>
+<div class="line"><span class="lineno"> 4932</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__http__param__pair.html">rgw_http_param_pair</a> params[] = {</div>
+<div class="line"><span class="lineno"> 4933</span>    { <span class="stringliteral">&quot;type&quot;</span> , <span class="stringliteral">&quot;bucket-index&quot;</span> },</div>
+<div class="line"><span class="lineno"> 4934</span>    { <span class="stringliteral">&quot;bucket-instance&quot;</span>, instance_key.c_str() },</div>
+<div class="line"><span class="lineno"> 4935</span>    { <span class="stringliteral">&quot;info&quot;</span> , <span class="keyword">nullptr</span> },</div>
+<div class="line"><span class="lineno"> 4936</span>    { <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno"> 4937</span>  };</div>
+<div class="line"><span class="lineno"> 4938</span>  <a class="code hl_struct" href="structrgw__bucket__index__marker__info.html">rgw_bucket_index_marker_info</a> result;</div>
+<div class="line"><span class="lineno"> 4939</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = conn-&gt;<a class="code hl_function" href="class_r_g_w_r_e_s_t_conn.html#a829921dcfe02e550a48544fba8d94c77">get_json_resource</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="stringliteral">&quot;/admin/log/&quot;</span>, params, y, result);</div>
+<div class="line"><span class="lineno"> 4940</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><span class="lineno"> 4941</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;failed to fetch remote log markers: &quot;</span> &lt;&lt; cpp_strerror(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 4942</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><span class="lineno"> 4943</span>  }</div>
+<div class="line"><span class="lineno"> 4944</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = markers.from_string(result.<a class="code hl_variable" href="structrgw__bucket__index__marker__info.html#aab4a661c43a685019616596efa32ed5b">max_marker</a>, -1);</div>
+<div class="line"><span class="lineno"> 4945</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><span class="lineno"> 4946</span>    lderr(conn-&gt;<a class="code hl_function" href="class_r_g_w_r_e_s_t_conn.html#a0c46db245fa850c5e044c1f7450a7198">get_ctx</a>()) &lt;&lt; <span class="stringliteral">&quot;failed to decode remote log markers&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 4947</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><span class="lineno"> 4948</span>  }</div>
+<div class="line"><span class="lineno"> 4949</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno"> 4950</span>}</div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_conn_html_a0c46db245fa850c5e044c1f7450a7198"><div class="ttname"><a href="class_r_g_w_r_e_s_t_conn.html#a0c46db245fa850c5e044c1f7450a7198">RGWRESTConn::get_ctx</a></div><div class="ttdeci">CephContext * get_ctx()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__conn_8h_source.html#l00136">rgw_rest_conn.h:136</a></div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_conn_html_a829921dcfe02e550a48544fba8d94c77"><div class="ttname"><a href="class_r_g_w_r_e_s_t_conn.html#a829921dcfe02e550a48544fba8d94c77">RGWRESTConn::get_json_resource</a></div><div class="ttdeci">int get_json_resource(const DoutPrefixProvider *dpp, const std::string &amp;resource, param_vec_t *params, bufferlist *in_data, optional_yield y, T &amp;t)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__conn_8h_source.html#l00267">rgw_rest_conn.h:267</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="astructrgw__bucket__index__marker__info_html"><div class="ttname"><a href="structrgw__bucket__index__marker__info.html">rgw_bucket_index_marker_info</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00563">rgw_data_sync.h:563</a></div></div>
+<div class="ttc" id="astructrgw__bucket__index__marker__info_html_aab4a661c43a685019616596efa32ed5b"><div class="ttname"><a href="structrgw__bucket__index__marker__info.html#aab4a661c43a685019616596efa32ed5b">rgw_bucket_index_marker_info::max_marker</a></div><div class="ttdeci">std::string max_marker</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00566">rgw_data_sync.h:566</a></div></div>
+<div class="ttc" id="astructrgw__bucket_html_ad369d093e39599e8eea191882fcdc6a9"><div class="ttname"><a href="structrgw__bucket.html#ad369d093e39599e8eea191882fcdc6a9">rgw_bucket::get_key</a></div><div class="ttdeci">std::string get_key(char tenant_delim='/', char id_delim=':', size_t reserve=0) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8cc_source.html#l00059">rgw_basic_types.cc:59</a></div></div>
+<div class="ttc" id="astructrgw__http__param__pair_html"><div class="ttname"><a href="structrgw__http__param__pair.html">rgw_http_param_pair</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__conn_8h_source.html#l00035">rgw_rest_conn.h:35</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_cgraph.png" border="0" usemap="#argw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_cgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_cgraph" id="argw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_cgraph">
+<area shape="rect" title=" " alt="" coords="5,119,187,145"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="1257,68,1299,95"/>
+<area shape="poly" title=" " alt="" coords="125,116,199,84,304,47,427,16,492,6,556,3,806,3,933,10,1057,28,1164,50,1242,69,1241,74,1163,55,1056,33,933,15,806,8,556,8,492,11,428,21,305,52,201,89,127,121"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_conn.html#a0c46db245fa850c5e044c1f7450a7198" title=" " alt="" coords="238,89,406,116"/>
+<area shape="poly" title=" " alt="" coords="186,118,222,113,222,118,187,123"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_conn.html#a829921dcfe02e550a48544fba8d94c77" title=" " alt="" coords="235,140,409,183"/>
+<area shape="poly" title=" " alt="" coords="187,141,219,145,219,151,186,146"/>
+<area shape="rect" href="structrgw__bucket.html#ad369d093e39599e8eea191882fcdc6a9" title=" " alt="" coords="251,207,393,233"/>
+<area shape="poly" title=" " alt="" coords="126,143,236,192,255,199,253,204,234,197,124,148"/>
+<area shape="poly" title=" " alt="" coords="409,142,548,117,705,93,830,79,927,71,1025,70,1151,72,1241,76,1241,82,1151,77,1025,75,928,77,830,84,706,99,548,122,410,147"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_conn.html#a6411fb60b6947dcbe248539da0398767" title=" " alt="" coords="457,195,657,221"/>
+<area shape="poly" title=" " alt="" coords="410,176,472,189,471,194,409,181"/>
+<area shape="rect" href="rgw__rest__conn_8h.html#ae421db94874c71852c64e30964cc823f" title=" " alt="" coords="491,353,624,380"/>
+<area shape="poly" title=" " alt="" coords="391,181,411,192,452,227,489,267,542,339,537,342,485,271,448,231,407,197,388,186"/>
+<area shape="poly" title=" " alt="" coords="578,192,633,160,668,144,705,131,780,112,859,98,1013,82,1147,77,1242,77,1241,83,1147,82,1013,87,860,103,782,117,706,136,670,149,636,165,581,196"/>
+<area shape="rect" href="class_r_g_w_h_t_t_p_stream_r_w_request.html#a28de0acc4dc43fc97efbfc4a6ba82c43" title=" " alt="" coords="706,145,904,188"/>
+<area shape="poly" title=" " alt="" coords="641,191,691,183,692,188,642,197"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_conn.html#ac833f895cae6760d02b776c2a597f02d" title=" " alt="" coords="723,236,887,263"/>
+<area shape="poly" title=" " alt="" coords="642,219,708,230,707,236,641,225"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_conn.html#a919ee8e18b3c046e8b64029ab3427130" title=" " alt="" coords="718,287,892,329"/>
+<area shape="poly" title=" " alt="" coords="588,219,706,272,723,279,721,284,704,277,586,224"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_stream_r_w_request.html#ac991b0ba9e3086ee97283a7d26abdfb3" title=" " alt="" coords="705,353,905,396"/>
+<area shape="poly" title=" " alt="" coords="572,220,627,277,665,310,707,339,716,344,713,349,704,344,662,314,623,281,568,224"/>
+<area shape="rect" href="rgw__rest__client_8cc.html#afe35f1027a22ea12c1e9d5479572cafa" title=" " alt="" coords="987,144,1117,171"/>
+<area shape="poly" title=" " alt="" coords="904,160,971,158,971,163,904,166"/>
+<area shape="rect" href="rgw__rest__client_8cc.html#ab4f60e826eb9d1f1c246a8dc52a1d1f6" title=" " alt="" coords="979,195,1125,221"/>
+<area shape="poly" title=" " alt="" coords="905,181,964,191,963,196,904,186"/>
+<area shape="rect" href="class_r_g_w_h_t_t_p_client.html#a7d489c6689cd946b572415111b0c97b5" title=" " alt="" coords="977,245,1127,272"/>
+<area shape="poly" title=" " alt="" coords="880,186,906,198,930,215,954,231,970,238,968,243,951,236,927,219,903,202,878,191"/>
+<area shape="poly" title=" " alt="" coords="1096,141,1150,123,1241,91,1243,96,1152,128,1097,146"/>
+<area shape="rect" href="structrgw__http__req__data.html#a2cb0db213911deffc4b43a81a37098b5" title=" " alt="" coords="1199,245,1357,272"/>
+<area shape="poly" title=" " alt="" coords="1127,256,1184,256,1184,261,1127,261"/>
+<area shape="rect" href="structrgw__http__req__data.html#a5d6962235aabed5aabe98213b486ccb1" title=" " alt="" coords="1405,237,1541,280"/>
+<area shape="poly" title=" " alt="" coords="1358,256,1390,256,1390,261,1358,261"/>
+<area shape="poly" title=" " alt="" coords="764,237,756,227,761,217,778,211,805,209,835,212,850,219,848,224,833,217,805,215,779,217,765,221,761,227,768,234"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_conn.html#ae90bac8b6344ad9f172ce25c12cf82e9" title=" " alt="" coords="953,296,1151,323"/>
+<area shape="poly" title=" " alt="" coords="893,306,937,306,937,311,893,311"/>
+<area shape="rect" href="class_r_g_w_r_e_s_t_conn.html#a80208c730562921a2e3b4d9dde10855e" title=" " alt="" coords="965,347,1139,389"/>
+<area shape="poly" title=" " alt="" coords="893,327,950,341,949,346,892,332"/>
+<area shape="rect" href="structrgw__user.html#afd8a9e36c5a9f7773c13d903c3124e99" title=" " alt="" coords="1220,296,1337,323"/>
+<area shape="poly" title=" " alt="" coords="1151,307,1204,307,1204,312,1151,312"/>
+<area shape="rect" href="structrgw__user.html#af00f510d6a9ff0580d87ee46b274d96e" title=" " alt="" coords="1221,347,1335,373"/>
+<area shape="poly" title=" " alt="" coords="1115,321,1206,341,1205,347,1114,326"/>
+<area shape="rect" href="rgw__basic__types_8cc.html#a83dfe8268c0c76ff6ceaf083ad129d5c" title=" " alt="" coords="746,420,864,447"/>
+<area shape="poly" title=" " alt="" coords="607,378,706,405,734,413,733,418,705,411,606,383"/>
+<area shape="rect" href="structrgw__user.html#a7e60b2dd070ae3af5cebb6c34946bac6" title=" " alt="" coords="988,420,1116,447"/>
+<area shape="poly" title=" " alt="" coords="865,431,972,431,972,436,865,436"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_icgraph.png" border="0" usemap="#argw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_icgraph" alt=""/></div>
+<map name="argw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_icgraph" id="argw__data__sync_8cc_ac0274ae3bca3fa8d20b54b486aefd368_icgraph">
+<area shape="rect" title=" " alt="" coords="478,13,660,40"/>
+<area shape="rect" href="rgw__admin_8cc.html#a55572dc14e8b7410a92ba9515e0be5a1" title=" " alt="" coords="289,5,430,48"/>
+<area shape="poly" title=" " alt="" coords="463,29,431,29,431,24,463,24"/>
+<area shape="rect" href="rgw__admin_8cc.html#a1952ece8a97cc8cf04493a430fb3b6dd" title=" " alt="" coords="103,13,241,40"/>
+<area shape="poly" title=" " alt="" coords="274,29,241,29,241,24,274,24"/>
+<area shape="rect" href="rgw__admin_8cc.html#a217dbf8b442f20279ea00b898af96f52" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">변수 문서화</h2>
+<a id="a0dee1f336d2d90027bc0f0e7e170d4b1" name="a0dee1f336d2d90027bc0f0e7e170d4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dee1f336d2d90027bc0f0e7e170d4b1">&#9670;&#160;</a></span>bucket_status_oid_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string bucket_status_oid_prefix = &quot;bucket.sync-status&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00052">52</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a27eb8f648287d586b725a0acccea1e9f" name="a27eb8f648287d586b725a0acccea1e9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27eb8f648287d586b725a0acccea1e9f">&#9670;&#160;</a></span>datalog_sync_full_sync_index_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string datalog_sync_full_sync_index_prefix = &quot;data.full-sync.index&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00051">51</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7dab833f4d4768ff060a2394850dc22d" name="a7dab833f4d4768ff060a2394850dc22d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dab833f4d4768ff060a2394850dc22d">&#9670;&#160;</a></span>datalog_sync_status_oid_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string datalog_sync_status_oid_prefix = &quot;datalog.sync-status&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7f5d431216f4131f8d42cd02948421ce" name="a7f5d431216f4131f8d42cd02948421ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5d431216f4131f8d42cd02948421ce">&#9670;&#160;</a></span>datalog_sync_status_shard_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string datalog_sync_status_shard_prefix = &quot;datalog.sync-status.shard&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00050">50</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac846edd96140d18f077f146917594a96" name="ac846edd96140d18f077f146917594a96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac846edd96140d18f077f146917594a96">&#9670;&#160;</a></span>object_status_oid_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string object_status_oid_prefix = &quot;bucket.sync-status&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__data__sync_8cc_source.html">rgw_data_sync.cc</a> 파일의 <a class="el" href="rgw__data__sync_8cc_source.html#l00053">53</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__data__sync_8cc.html">rgw_data_sync.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

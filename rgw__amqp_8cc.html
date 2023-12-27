@@ -1,0 +1,1070 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_amqp.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__amqp_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#namespaces">네임스페이스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#typedef-members">타입정의</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_amqp.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="rgw__amqp_8h_source.html">rgw_amqp.h</a>&quot;</code><br />
+<code>#include &lt;amqp.h&gt;</code><br />
+<code>#include &lt;amqp_ssl_socket.h&gt;</code><br />
+<code>#include &lt;amqp_tcp_socket.h&gt;</code><br />
+<code>#include &lt;amqp_framing.h&gt;</code><br />
+<code>#include &quot;include/ceph_assert.h&quot;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;boost/lockfree/queue.hpp&gt;</code><br />
+<code>#include &quot;common/dout.h&quot;</code><br />
+<code>#include &lt;openssl/ssl.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_amqp.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__amqp_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__amqp_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__amqp_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__amqp_8cc">
+<area shape="rect" title=" " alt="" coords="1026,5,1156,48"/>
+<area shape="rect" href="rgw__amqp_8h.html" title=" " alt="" coords="138,96,230,123"/>
+<area shape="poly" title=" " alt="" coords="1026,33,695,52,474,71,246,98,245,93,473,66,694,47,1025,28"/>
+<area shape="rect" title=" " alt="" coords="5,179,59,205"/>
+<area shape="poly" title=" " alt="" coords="1025,33,810,40,530,54,273,74,181,85,128,98,104,112,83,130,51,168,47,164,80,126,101,108,126,94,180,80,272,68,530,49,810,35,1025,27"/>
+<area shape="rect" title=" " alt="" coords="253,96,318,123"/>
+<area shape="poly" title=" " alt="" coords="1025,33,899,39,729,51,534,70,333,99,332,93,534,65,729,45,899,33,1025,27"/>
+<area shape="rect" title=" " alt="" coords="342,96,477,123"/>
+<area shape="poly" title=" " alt="" coords="1025,37,794,62,493,98,492,93,793,57,1025,32"/>
+<area shape="rect" title=" " alt="" coords="500,96,636,123"/>
+<area shape="poly" title=" " alt="" coords="1025,41,651,98,651,93,1025,35"/>
+<area shape="rect" title=" " alt="" coords="659,96,773,123"/>
+<area shape="poly" title=" " alt="" coords="1026,45,789,95,787,90,1024,39"/>
+<area shape="rect" title=" " alt="" coords="797,96,945,123"/>
+<area shape="poly" title=" " alt="" coords="1035,51,920,93,918,88,1033,46"/>
+<area shape="rect" title=" " alt="" coords="969,96,1037,123"/>
+<area shape="poly" title=" " alt="" coords="1070,51,1029,87,1026,83,1066,47"/>
+<area shape="rect" title=" " alt="" coords="1061,96,1121,123"/>
+<area shape="poly" title=" " alt="" coords="1093,49,1093,80,1088,80,1088,49"/>
+<area shape="rect" title=" " alt="" coords="1145,96,1255,123"/>
+<area shape="poly" title=" " alt="" coords="1120,46,1172,85,1169,89,1117,51"/>
+<area shape="rect" title=" " alt="" coords="1279,96,1334,123"/>
+<area shape="poly" title=" " alt="" coords="1147,46,1266,90,1264,95,1145,51"/>
+<area shape="rect" title=" " alt="" coords="1358,96,1415,123"/>
+<area shape="poly" title=" " alt="" coords="1157,42,1344,92,1342,98,1155,47"/>
+<area shape="rect" title=" " alt="" coords="1439,96,1500,123"/>
+<area shape="poly" title=" " alt="" coords="1157,37,1278,60,1425,93,1423,98,1277,65,1156,42"/>
+<area shape="rect" title=" " alt="" coords="1523,96,1581,123"/>
+<area shape="poly" title=" " alt="" coords="1157,33,1313,56,1509,93,1508,98,1313,61,1156,38"/>
+<area shape="rect" title=" " alt="" coords="1605,96,1771,123"/>
+<area shape="poly" title=" " alt="" coords="1157,34,1590,92,1589,97,1156,39"/>
+<area shape="rect" title=" " alt="" coords="1795,96,1906,123"/>
+<area shape="poly" title=" " alt="" coords="1156,30,1424,53,1780,93,1780,98,1424,58,1156,35"/>
+<area shape="rect" title=" " alt="" coords="1931,96,2029,123"/>
+<area shape="poly" title=" " alt="" coords="1157,28,1479,48,1694,67,1915,93,1915,98,1693,73,1479,54,1156,34"/>
+<area shape="poly" title=" " alt="" coords="161,126,70,174,68,169,159,121"/>
+<area shape="rect" title=" " alt="" coords="83,179,160,205"/>
+<area shape="poly" title=" " alt="" coords="176,125,142,168,138,165,172,122"/>
+<area shape="rect" title=" " alt="" coords="183,179,310,205"/>
+<area shape="poly" title=" " alt="" coords="196,122,230,165,226,168,192,125"/>
+<area shape="rect" title=" " alt="" coords="334,171,498,213"/>
+<area shape="poly" title=" " alt="" coords="221,121,343,163,341,168,219,126"/>
+<area shape="rect" title=" " alt="" coords="522,179,675,205"/>
+<area shape="poly" title=" " alt="" coords="231,118,242,120,510,168,530,172,529,177,509,173,241,125,230,123"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__amqp_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__id__t.html">rgw::amqp::connection_id_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__id__t_1_1hasher.html">rgw::amqp::connection_id_t::hasher</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1amqp_1_1_connection_cleaner.html">rgw::amqp::ConnectionCleaner</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1reply__callback__with__tag__t.html">rgw::amqp::reply_callback_with_tag_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1connection__t.html">rgw::amqp::connection_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1amqp_1_1message__wrapper__t.html">rgw::amqp::message_wrapper_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct used for holding messages in the message queue  <a href="structrgw_1_1amqp_1_1message__wrapper__t.html#details">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1amqp_1_1_manager.html">rgw::amqp::Manager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+네임스페이스</h2></td></tr>
+<tr class="memitem:namespacergw" id="r_namespacergw"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw.html">rgw</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacergw_1_1amqp" id="r_namespacergw_1_1amqp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html">rgw::amqp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__amqp_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16a0c4e7131ff95615856c61ca0d2c77" id="r_a16a0c4e7131ff95615856c61ca0d2c77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__amqp_8cc.html#a16a0c4e7131ff95615856c61ca0d2c77">RETURN_ON_ERROR</a>(C,  S,  OK)</td></tr>
+<tr class="separator:a16a0c4e7131ff95615856c61ca0d2c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac171b05b8bda3bd7deb1ce31b6970d4c" id="r_ac171b05b8bda3bd7deb1ce31b6970d4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__amqp_8cc.html#ac171b05b8bda3bd7deb1ce31b6970d4c">RETURN_ON_REPLY_ERROR</a>(C,  ST,  S)</td></tr>
+<tr class="separator:ac171b05b8bda3bd7deb1ce31b6970d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8169d7e8895d040cae9f2e9c171a1bd8" id="r_a8169d7e8895d040cae9f2e9c171a1bd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(IT)</td></tr>
+<tr class="separator:a8169d7e8895d040cae9f2e9c171a1bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab62365792422ae69d81a1ccac5aac29" id="r_aab62365792422ae69d81a1ccac5aac29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__amqp_8cc.html#aab62365792422ae69d81a1ccac5aac29">ERASE_AND_CONTINUE</a>(IT,  CONTAINER)</td></tr>
+<tr class="separator:aab62365792422ae69d81a1ccac5aac29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+타입정의</h2></td></tr>
+<tr class="memitem:a387b005e6df0b2d7dfb9c005f1d0f91f" id="r_a387b005e6df0b2d7dfb9c005f1d0f91f"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structrgw_1_1amqp_1_1reply__callback__with__tag__t.html">reply_callback_with_tag_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a387b005e6df0b2d7dfb9c005f1d0f91f">rgw::amqp::CallbackList</a></td></tr>
+<tr class="separator:a387b005e6df0b2d7dfb9c005f1d0f91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b2bba1750c3eb54e89bf18915ecaba" id="r_aa7b2bba1750c3eb54e89bf18915ecaba"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; <a class="el" href="structrgw_1_1amqp_1_1connection__id__t.html">connection_id_t</a>, <a class="el" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a>, <a class="el" href="structrgw_1_1amqp_1_1connection__id__t_1_1hasher.html">connection_id_t::hasher</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#aa7b2bba1750c3eb54e89bf18915ecaba">rgw::amqp::ConnectionList</a></td></tr>
+<tr class="separator:aa7b2bba1750c3eb54e89bf18915ecaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afafb84096bd9038e03054b7dac3c0e03" id="r_afafb84096bd9038e03054b7dac3c0e03"><td class="memItemLeft" align="right" valign="top">typedef boost::lockfree::queue&lt; <a class="el" href="structrgw_1_1amqp_1_1message__wrapper__t.html">message_wrapper_t</a> *, boost::lockfree::fixed_sized&lt; true &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#afafb84096bd9038e03054b7dac3c0e03">rgw::amqp::MessageQueue</a></td></tr>
+<tr class="separator:afafb84096bd9038e03054b7dac3c0e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a78439086363b16a8eca9298da6367b78" id="r_a78439086363b16a8eca9298da6367b78"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a78439086363b16a8eca9298da6367b78">rgw::amqp::to_string</a> (const <a class="el" href="structrgw_1_1amqp_1_1connection__id__t.html">connection_id_t</a> &amp;id)</td></tr>
+<tr class="separator:a78439086363b16a8eca9298da6367b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab23afb5433fa37d8333dad03f7781fed" id="r_ab23afb5433fa37d8333dad03f7781fed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ab23afb5433fa37d8333dad03f7781fed">rgw::amqp::intrusive_ptr_add_ref</a> (const <a class="el" href="structrgw_1_1amqp_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:ab23afb5433fa37d8333dad03f7781fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17484212754e7ad18f5554ba63ff5c0" id="r_aa17484212754e7ad18f5554ba63ff5c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#aa17484212754e7ad18f5554ba63ff5c0">rgw::amqp::intrusive_ptr_release</a> (const <a class="el" href="structrgw_1_1amqp_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:aa17484212754e7ad18f5554ba63ff5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a487524d74a71f5c3da6a953c70817da6" id="r_a487524d74a71f5c3da6a953c70817da6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a487524d74a71f5c3da6a953c70817da6">rgw::amqp::to_string</a> (const amqp_connection_info &amp;info)</td></tr>
+<tr class="separator:a487524d74a71f5c3da6a953c70817da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2b72e650f01f272bce0527d874d2fd" id="r_aca2b72e650f01f272bce0527d874d2fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#aca2b72e650f01f272bce0527d874d2fd">rgw::amqp::reply_to_code</a> (const amqp_rpc_reply_t &amp;reply)</td></tr>
+<tr class="separator:aca2b72e650f01f272bce0527d874d2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a9bebbe708a538478a1832767eef8f2" id="r_a2a9bebbe708a538478a1832767eef8f2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a2a9bebbe708a538478a1832767eef8f2">rgw::amqp::to_string</a> (const amqp_rpc_reply_t &amp;reply)</td></tr>
+<tr class="separator:a2a9bebbe708a538478a1832767eef8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae551cb119217fde6db9c7cd502fcf338" id="r_ae551cb119217fde6db9c7cd502fcf338"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ae551cb119217fde6db9c7cd502fcf338">rgw::amqp::to_string</a> (amqp_status_enum s)</td></tr>
+<tr class="separator:ae551cb119217fde6db9c7cd502fcf338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42fa533a88dbf458d1b07431e64930d" id="r_ad42fa533a88dbf458d1b07431e64930d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">rgw::amqp::status_to_string</a> (int s)</td></tr>
+<tr class="separator:ad42fa533a88dbf458d1b07431e64930d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ab1d692c71f90ccdb259589704ab61" id="r_a65ab1d692c71f90ccdb259589704ab61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a65ab1d692c71f90ccdb259589704ab61">rgw::amqp::create_connection</a> (<a class="el" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> &amp;conn, const amqp_connection_info &amp;info)</td></tr>
+<tr class="separator:a65ab1d692c71f90ccdb259589704ab61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d022f0abddcb79470644b8673b83f86" id="r_a5d022f0abddcb79470644b8673b83f86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a5d022f0abddcb79470644b8673b83f86">rgw::amqp::create_new_connection</a> (const amqp_connection_info &amp;info, const std::string &amp;exchange, bool mandatory_delivery, CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</td></tr>
+<tr class="separator:a5d022f0abddcb79470644b8673b83f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b5fbef4e5bf27745801f81c8d8b990" id="r_aa3b5fbef4e5bf27745801f81c8d8b990"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">rgw::amqp::init</a> (CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</td></tr>
+<tr class="separator:aa3b5fbef4e5bf27745801f81c8d8b990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af59b18dd2b90a2d9a3dc4ccb84b63fed" id="r_af59b18dd2b90a2d9a3dc4ccb84b63fed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#af59b18dd2b90a2d9a3dc4ccb84b63fed">rgw::amqp::shutdown</a> ()</td></tr>
+<tr class="separator:af59b18dd2b90a2d9a3dc4ccb84b63fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1153289c5c0f69321f05cf497e1a71d3" id="r_a1153289c5c0f69321f05cf497e1a71d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a1153289c5c0f69321f05cf497e1a71d3">rgw::amqp::connect</a> (const std::string &amp;url, const std::string &amp;exchange, bool mandatory_delivery, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</td></tr>
+<tr class="separator:a1153289c5c0f69321f05cf497e1a71d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c7e3fe058dc195ffdfe82592598cb7" id="r_aa9c7e3fe058dc195ffdfe82592598cb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#aa9c7e3fe058dc195ffdfe82592598cb7">rgw::amqp::publish</a> (<a class="el" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> &amp;conn, const std::string &amp;topic, const std::string &amp;message)</td></tr>
+<tr class="separator:aa9c7e3fe058dc195ffdfe82592598cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3961f22de6a397ca9afb6bf9adeacc7c" id="r_a3961f22de6a397ca9afb6bf9adeacc7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a3961f22de6a397ca9afb6bf9adeacc7c">rgw::amqp::publish_with_confirm</a> (<a class="el" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> &amp;conn, const std::string &amp;topic, const std::string &amp;message, <a class="el" href="namespacergw_1_1amqp.html#a030953eb6b19b445592d0402bff72aa8">reply_callback_t</a> cb)</td></tr>
+<tr class="separator:a3961f22de6a397ca9afb6bf9adeacc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5bf93c9b27318f757e1141f6b9999e3" id="r_af5bf93c9b27318f757e1141f6b9999e3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#af5bf93c9b27318f757e1141f6b9999e3">rgw::amqp::get_connection_count</a> ()</td></tr>
+<tr class="separator:af5bf93c9b27318f757e1141f6b9999e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab800927e5fc0938994b535d7be0c388b" id="r_ab800927e5fc0938994b535d7be0c388b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ab800927e5fc0938994b535d7be0c388b">rgw::amqp::get_inflight</a> ()</td></tr>
+<tr class="separator:ab800927e5fc0938994b535d7be0c388b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d467653c3117d942213fa04518155d" id="r_aa6d467653c3117d942213fa04518155d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#aa6d467653c3117d942213fa04518155d">rgw::amqp::get_queued</a> ()</td></tr>
+<tr class="separator:aa6d467653c3117d942213fa04518155d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aea3808f59a2f55a582ae48f3aa0047" id="r_a3aea3808f59a2f55a582ae48f3aa0047"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a3aea3808f59a2f55a582ae48f3aa0047">rgw::amqp::get_dequeued</a> ()</td></tr>
+<tr class="separator:a3aea3808f59a2f55a582ae48f3aa0047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9b9c017aed3c67a3d75c386d0af518" id="r_a1b9b9c017aed3c67a3d75c386d0af518"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a1b9b9c017aed3c67a3d75c386d0af518">rgw::amqp::get_max_connections</a> ()</td></tr>
+<tr class="separator:a1b9b9c017aed3c67a3d75c386d0af518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aaf53aee20dd95b529ec84f3b5faab7" id="r_a7aaf53aee20dd95b529ec84f3b5faab7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a7aaf53aee20dd95b529ec84f3b5faab7">rgw::amqp::get_max_inflight</a> ()</td></tr>
+<tr class="separator:a7aaf53aee20dd95b529ec84f3b5faab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dee5c2916d5844ae2f28d3d5b847700" id="r_a7dee5c2916d5844ae2f28d3d5b847700"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a7dee5c2916d5844ae2f28d3d5b847700">rgw::amqp::get_max_queue</a> ()</td></tr>
+<tr class="separator:a7dee5c2916d5844ae2f28d3d5b847700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:a653d6b91001ec68a7ce2cbceb98fa5d2" id="r_a653d6b91001ec68a7ce2cbceb98fa5d2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a653d6b91001ec68a7ce2cbceb98fa5d2">rgw::amqp::RGW_AMQP_STATUS_BROKER_NACK</a> = -0x1001</td></tr>
+<tr class="separator:a653d6b91001ec68a7ce2cbceb98fa5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb59d95fb67e07c0e92c2a914633f21" id="r_adeb59d95fb67e07c0e92c2a914633f21"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#adeb59d95fb67e07c0e92c2a914633f21">rgw::amqp::RGW_AMQP_STATUS_CONNECTION_CLOSED</a> = -0x1002</td></tr>
+<tr class="separator:adeb59d95fb67e07c0e92c2a914633f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43e255f84553bb49961851c32979faca" id="r_a43e255f84553bb49961851c32979faca"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a43e255f84553bb49961851c32979faca">rgw::amqp::RGW_AMQP_STATUS_QUEUE_FULL</a> = -0x1003</td></tr>
+<tr class="separator:a43e255f84553bb49961851c32979faca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47cae674216674f66c264eeff992efe3" id="r_a47cae674216674f66c264eeff992efe3"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a47cae674216674f66c264eeff992efe3">rgw::amqp::RGW_AMQP_STATUS_MAX_INFLIGHT</a> = -0x1004</td></tr>
+<tr class="separator:a47cae674216674f66c264eeff992efe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75bff645d7396afa966b4ce3049aa95f" id="r_a75bff645d7396afa966b4ce3049aa95f"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a75bff645d7396afa966b4ce3049aa95f">rgw::amqp::RGW_AMQP_STATUS_MANAGER_STOPPED</a> = -0x1005</td></tr>
+<tr class="separator:a75bff645d7396afa966b4ce3049aa95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1311366acb0d49c00526c167bd6023" id="r_a8f1311366acb0d49c00526c167bd6023"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a8f1311366acb0d49c00526c167bd6023">rgw::amqp::RGW_AMQP_STATUS_CONN_ALLOC_FAILED</a> = -0x2001</td></tr>
+<tr class="separator:a8f1311366acb0d49c00526c167bd6023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bf7384e53514733810d0be082724ffe" id="r_a1bf7384e53514733810d0be082724ffe"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a1bf7384e53514733810d0be082724ffe">rgw::amqp::RGW_AMQP_STATUS_SOCKET_ALLOC_FAILED</a> = -0x2002</td></tr>
+<tr class="separator:a1bf7384e53514733810d0be082724ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03d04537c39929341024145c7043b935" id="r_a03d04537c39929341024145c7043b935"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a03d04537c39929341024145c7043b935">rgw::amqp::RGW_AMQP_STATUS_SOCKET_OPEN_FAILED</a> = -0x2003</td></tr>
+<tr class="separator:a03d04537c39929341024145c7043b935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a4585a61416618af7e4d4cbe93a11b" id="r_a49a4585a61416618af7e4d4cbe93a11b"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a49a4585a61416618af7e4d4cbe93a11b">rgw::amqp::RGW_AMQP_STATUS_LOGIN_FAILED</a> = -0x2004</td></tr>
+<tr class="separator:a49a4585a61416618af7e4d4cbe93a11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387b2700980fa93144c2df9f99d09866" id="r_a387b2700980fa93144c2df9f99d09866"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a387b2700980fa93144c2df9f99d09866">rgw::amqp::RGW_AMQP_STATUS_CHANNEL_OPEN_FAILED</a> = -0x2005</td></tr>
+<tr class="separator:a387b2700980fa93144c2df9f99d09866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f54c31dd9e7ef6f3b5a59578f1c52c6" id="r_a3f54c31dd9e7ef6f3b5a59578f1c52c6"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a3f54c31dd9e7ef6f3b5a59578f1c52c6">rgw::amqp::RGW_AMQP_STATUS_VERIFY_EXCHANGE_FAILED</a> = -0x2006</td></tr>
+<tr class="separator:a3f54c31dd9e7ef6f3b5a59578f1c52c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a71ec9ef57711740aada697ca5b1231" id="r_a7a71ec9ef57711740aada697ca5b1231"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a7a71ec9ef57711740aada697ca5b1231">rgw::amqp::RGW_AMQP_STATUS_Q_DECLARE_FAILED</a> = -0x2007</td></tr>
+<tr class="separator:a7a71ec9ef57711740aada697ca5b1231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42d4a7a51d1286b82ce150922388791" id="r_af42d4a7a51d1286b82ce150922388791"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#af42d4a7a51d1286b82ce150922388791">rgw::amqp::RGW_AMQP_STATUS_CONFIRM_DECLARE_FAILED</a> = -0x2008</td></tr>
+<tr class="separator:af42d4a7a51d1286b82ce150922388791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a293603e1717397837bbb993b6e45376a" id="r_a293603e1717397837bbb993b6e45376a"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a293603e1717397837bbb993b6e45376a">rgw::amqp::RGW_AMQP_STATUS_CONSUME_DECLARE_FAILED</a> = -0x2009</td></tr>
+<tr class="separator:a293603e1717397837bbb993b6e45376a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5969d697ecf6e3af681305983c75988c" id="r_a5969d697ecf6e3af681305983c75988c"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a5969d697ecf6e3af681305983c75988c">rgw::amqp::RGW_AMQP_STATUS_SOCKET_CACERT_FAILED</a> = -0x2010</td></tr>
+<tr class="separator:a5969d697ecf6e3af681305983c75988c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab964df8d4e5a8a2d861e31c01000b4d7" id="r_ab964df8d4e5a8a2d861e31c01000b4d7"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ab964df8d4e5a8a2d861e31c01000b4d7">rgw::amqp::RGW_AMQP_RESPONSE_SOCKET_ERROR</a> = -0x3008</td></tr>
+<tr class="separator:ab964df8d4e5a8a2d861e31c01000b4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866a4e6325da144086179da5c62a06f3" id="r_a866a4e6325da144086179da5c62a06f3"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a866a4e6325da144086179da5c62a06f3">rgw::amqp::RGW_AMQP_NO_REPLY_CODE</a> = 0x0</td></tr>
+<tr class="separator:a866a4e6325da144086179da5c62a06f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7674e216dded309e8dcf01760a7cf88" id="r_ad7674e216dded309e8dcf01760a7cf88"><td class="memItemLeft" align="right" valign="top">static const amqp_channel_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ad7674e216dded309e8dcf01760a7cf88">rgw::amqp::CHANNEL_ID</a> = 1</td></tr>
+<tr class="separator:ad7674e216dded309e8dcf01760a7cf88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d940ec5132f6cb35b2df66a404fc99" id="r_af5d940ec5132f6cb35b2df66a404fc99"><td class="memItemLeft" align="right" valign="top">static const amqp_channel_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#af5d940ec5132f6cb35b2df66a404fc99">rgw::amqp::CONFIRMING_CHANNEL_ID</a> = 2</td></tr>
+<tr class="separator:af5d940ec5132f6cb35b2df66a404fc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f9281007039ac67f51408fd94010202" id="r_a9f9281007039ac67f51408fd94010202"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classrgw_1_1amqp_1_1_manager.html">Manager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">rgw::amqp::s_manager</a> = nullptr</td></tr>
+<tr class="separator:a9f9281007039ac67f51408fd94010202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a797bc289439e08e6ccb2021382bf1c74" id="r_a797bc289439e08e6ccb2021382bf1c74"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a797bc289439e08e6ccb2021382bf1c74">rgw::amqp::MAX_CONNECTIONS_DEFAULT</a> = 256</td></tr>
+<tr class="separator:a797bc289439e08e6ccb2021382bf1c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6310a41635079ce15e71f7657d08c92" id="r_af6310a41635079ce15e71f7657d08c92"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#af6310a41635079ce15e71f7657d08c92">rgw::amqp::MAX_INFLIGHT_DEFAULT</a> = 8192</td></tr>
+<tr class="separator:af6310a41635079ce15e71f7657d08c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7179825528903f5f3a680daacc17b5" id="r_a0d7179825528903f5f3a680daacc17b5"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a0d7179825528903f5f3a680daacc17b5">rgw::amqp::MAX_QUEUE_DEFAULT</a> = 8192</td></tr>
+<tr class="separator:a0d7179825528903f5f3a680daacc17b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65dfa26d9bf21020c73879ce9a176dbd" id="r_a65dfa26d9bf21020c73879ce9a176dbd"><td class="memItemLeft" align="right" valign="top">static const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#a65dfa26d9bf21020c73879ce9a176dbd">rgw::amqp::READ_TIMEOUT_USEC</a> = 100</td></tr>
+<tr class="separator:a65dfa26d9bf21020c73879ce9a176dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7238ccaa0ad2d028ade0ef04d3a9c54" id="r_ab7238ccaa0ad2d028ade0ef04d3a9c54"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ab7238ccaa0ad2d028ade0ef04d3a9c54">rgw::amqp::IDLE_TIME_MS</a> = 100</td></tr>
+<tr class="separator:ab7238ccaa0ad2d028ade0ef04d3a9c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9939bfd8ef8d27f62a4754a328352c9" id="r_ac9939bfd8ef8d27f62a4754a328352c9"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1amqp.html#ac9939bfd8ef8d27f62a4754a328352c9">rgw::amqp::RECONNECT_TIME_MS</a> = 100</td></tr>
+<tr class="separator:ac9939bfd8ef8d27f62a4754a328352c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00022">22</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aab62365792422ae69d81a1ccac5aac29" name="aab62365792422ae69d81a1ccac5aac29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab62365792422ae69d81a1ccac5aac29">&#9670;&#160;</a></span>ERASE_AND_CONTINUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERASE_AND_CONTINUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CONTAINER&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>값:</b><div class="fragment"><div class="line">          IT=CONTAINER.erase(IT); \</div>
+<div class="line">          --connection_count; \</div>
+<div class="line">          <span class="keywordflow">continue</span>;</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00578">578</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  583</span>              {</div>
+<div class="line"><span class="lineno">  584</span><span class="keyword">public</span>:</div>
+<div class="line"><span class="lineno">  585</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_connections;</div>
+<div class="line"><span class="lineno">  586</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_inflight;</div>
+<div class="line"><span class="lineno">  587</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_queue;</div>
+<div class="line"><span class="lineno">  588</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_idle_time;</div>
+<div class="line"><span class="lineno">  589</span><span class="keyword">private</span>:</div>
+<div class="line"><span class="lineno">  590</span>  std::atomic&lt;size_t&gt; connection_count;</div>
+<div class="line"><span class="lineno">  591</span>  std::atomic&lt;bool&gt; stopped;</div>
+<div class="line"><span class="lineno">  592</span>  <span class="keyword">struct </span>timeval read_timeout;</div>
+<div class="line"><span class="lineno">  593</span>  <a class="code hl_typedef" href="namespacergw_1_1amqp.html#aa7b2bba1750c3eb54e89bf18915ecaba">ConnectionList</a> connections;</div>
+<div class="line"><span class="lineno">  594</span>  <a class="code hl_typedef" href="namespacergw_1_1amqp.html#afafb84096bd9038e03054b7dac3c0e03">MessageQueue</a> messages;</div>
+<div class="line"><span class="lineno">  595</span>  std::atomic&lt;size_t&gt; queued;</div>
+<div class="line"><span class="lineno">  596</span>  std::atomic&lt;size_t&gt; dequeued;</div>
+<div class="line"><span class="lineno">  597</span>  CephContext* <span class="keyword">const</span> <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>;</div>
+<div class="line"><span class="lineno">  598</span>  <span class="keyword">mutable</span> std::mutex connections_lock;</div>
+<div class="line"><span class="lineno">  599</span>  <span class="keyword">const</span> ceph::coarse_real_clock::duration idle_time;</div>
+<div class="line"><span class="lineno">  600</span>  <span class="keyword">const</span> ceph::coarse_real_clock::duration reconnect_time;</div>
+<div class="line"><span class="lineno">  601</span>  std::thread runner;</div>
+<div class="line"><span class="lineno">  602</span> </div>
+<div class="line"><span class="lineno">  603</span>  <span class="keywordtype">void</span> publish_internal(message_wrapper_t* message) {</div>
+<div class="line"><span class="lineno">  604</span>    <span class="keyword">const</span> std::unique_ptr&lt;message_wrapper_t&gt; msg_owner(message);</div>
+<div class="line"><span class="lineno">  605</span>    <span class="keyword">auto</span>&amp; conn = message-&gt;conn;</div>
+<div class="line"><span class="lineno">  606</span> </div>
+<div class="line"><span class="lineno">  607</span>    conn-&gt;timestamp = ceph_clock_now();</div>
+<div class="line"><span class="lineno">  608</span> </div>
+<div class="line"><span class="lineno">  609</span>    <span class="keywordflow">if</span> (!conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  610</span>      <span class="comment">// connection had an issue while message was in the queue</span></div>
+<div class="line"><span class="lineno">  611</span>      <span class="comment">// TODO add error stats</span></div>
+<div class="line"><span class="lineno">  612</span>      ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish: connection had an issue while message was in the queue&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  613</span>      <span class="keywordflow">if</span> (message-&gt;cb) {</div>
+<div class="line"><span class="lineno">  614</span>        message-&gt;cb(RGW_AMQP_STATUS_CONNECTION_CLOSED);</div>
+<div class="line"><span class="lineno">  615</span>      }</div>
+<div class="line"><span class="lineno">  616</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  617</span>    }</div>
+<div class="line"><span class="lineno">  618</span> </div>
+<div class="line"><span class="lineno">  619</span>    <span class="keywordflow">if</span> (message-&gt;cb == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><span class="lineno">  620</span>      <span class="comment">// TODO add error stats</span></div>
+<div class="line"><span class="lineno">  621</span>      <span class="keyword">const</span> <span class="keyword">auto</span> rc = amqp_basic_publish(conn-&gt;state,</div>
+<div class="line"><span class="lineno">  622</span>        CHANNEL_ID,</div>
+<div class="line"><span class="lineno">  623</span>        amqp_cstring_bytes(conn-&gt;exchange.c_str()),</div>
+<div class="line"><span class="lineno">  624</span>        amqp_cstring_bytes(message-&gt;topic.c_str()),</div>
+<div class="line"><span class="lineno">  625</span>        0, <span class="comment">// does not have to be routable</span></div>
+<div class="line"><span class="lineno">  626</span>        0, <span class="comment">// not immediate</span></div>
+<div class="line"><span class="lineno">  627</span>        <span class="keyword">nullptr</span>, <span class="comment">// no properties needed</span></div>
+<div class="line"><span class="lineno">  628</span>        amqp_cstring_bytes(message-&gt;message.c_str()));</div>
+<div class="line"><span class="lineno">  629</span>      <span class="keywordflow">if</span> (rc == AMQP_STATUS_OK) {</div>
+<div class="line"><span class="lineno">  630</span>        ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP publish (no callback): OK&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  631</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  632</span>      }</div>
+<div class="line"><span class="lineno">  633</span>      ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish (no callback): failed with error &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(rc) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  634</span>      <span class="comment">// an error occurred, close connection</span></div>
+<div class="line"><span class="lineno">  635</span>      <span class="comment">// it will be retied by the main loop</span></div>
+<div class="line"><span class="lineno">  636</span>      conn-&gt;destroy(rc);</div>
+<div class="line"><span class="lineno">  637</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  638</span>    }</div>
+<div class="line"><span class="lineno">  639</span> </div>
+<div class="line"><span class="lineno">  640</span>    amqp_basic_properties_t props;</div>
+<div class="line"><span class="lineno">  641</span>    props._flags = </div>
+<div class="line"><span class="lineno">  642</span>      AMQP_BASIC_DELIVERY_MODE_FLAG | </div>
+<div class="line"><span class="lineno">  643</span>      AMQP_BASIC_REPLY_TO_FLAG;</div>
+<div class="line"><span class="lineno">  644</span>    props.delivery_mode = 2; <span class="comment">// persistent delivery TODO take from conf</span></div>
+<div class="line"><span class="lineno">  645</span>    props.reply_to = conn-&gt;reply_to_queue;</div>
+<div class="line"><span class="lineno">  646</span> </div>
+<div class="line"><span class="lineno">  647</span>    <span class="keyword">const</span> <span class="keyword">auto</span> rc = amqp_basic_publish(conn-&gt;state,</div>
+<div class="line"><span class="lineno">  648</span>      CONFIRMING_CHANNEL_ID,</div>
+<div class="line"><span class="lineno">  649</span>      amqp_cstring_bytes(conn-&gt;exchange.c_str()),</div>
+<div class="line"><span class="lineno">  650</span>      amqp_cstring_bytes(message-&gt;topic.c_str()),</div>
+<div class="line"><span class="lineno">  651</span>      conn-&gt;mandatory,</div>
+<div class="line"><span class="lineno">  652</span>      0, <span class="comment">// not immediate</span></div>
+<div class="line"><span class="lineno">  653</span>      &amp;props,</div>
+<div class="line"><span class="lineno">  654</span>      amqp_cstring_bytes(message-&gt;message.c_str()));</div>
+<div class="line"><span class="lineno">  655</span> </div>
+<div class="line"><span class="lineno">  656</span>    <span class="keywordflow">if</span> (rc == AMQP_STATUS_OK) {</div>
+<div class="line"><span class="lineno">  657</span>      <span class="keyword">auto</span> <span class="keyword">const</span> q_len = conn-&gt;callbacks.size();</div>
+<div class="line"><span class="lineno">  658</span>      <span class="keywordflow">if</span> (q_len &lt; max_inflight) {</div>
+<div class="line"><span class="lineno">  659</span>        ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP publish (with callback, tag=&quot;</span> &lt;&lt; conn-&gt;delivery_tag &lt;&lt; <span class="stringliteral">&quot;): OK. Queue has: &quot;</span> &lt;&lt; q_len &lt;&lt; <span class="stringliteral">&quot; callbacks&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  660</span>        conn-&gt;callbacks.emplace_back(conn-&gt;delivery_tag++, message-&gt;cb);</div>
+<div class="line"><span class="lineno">  661</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  662</span>        <span class="comment">// immediately invoke callback with error</span></div>
+<div class="line"><span class="lineno">  663</span>        ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish (with callback): failed with error: callback queue full&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  664</span>        message-&gt;cb(RGW_AMQP_STATUS_MAX_INFLIGHT);</div>
+<div class="line"><span class="lineno">  665</span>      }</div>
+<div class="line"><span class="lineno">  666</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  667</span>      <span class="comment">// an error occurred, close connection</span></div>
+<div class="line"><span class="lineno">  668</span>      <span class="comment">// it will be retied by the main loop</span></div>
+<div class="line"><span class="lineno">  669</span>      ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish (with callback): failed with error: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(rc) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  670</span>      conn-&gt;destroy(rc);</div>
+<div class="line"><span class="lineno">  671</span>      <span class="comment">// immediately invoke callback with error</span></div>
+<div class="line"><span class="lineno">  672</span>      message-&gt;cb(rc);</div>
+<div class="line"><span class="lineno">  673</span>    }</div>
+<div class="line"><span class="lineno">  674</span>  }</div>
+<div class="line"><span class="lineno">  675</span> </div>
+<div class="line"><span class="lineno">  676</span>  <span class="comment">// the managers thread:</span></div>
+<div class="line"><span class="lineno">  677</span>  <span class="comment">// (1) empty the queue of messages to be published</span></div>
+<div class="line"><span class="lineno">  678</span>  <span class="comment">// (2) loop over all connections and read acks</span></div>
+<div class="line"><span class="lineno">  679</span>  <span class="comment">// (3) manages deleted connections</span></div>
+<div class="line"><span class="lineno">  680</span>  <span class="comment">// (4) TODO reconnect on connection errors</span></div>
+<div class="line"><span class="lineno">  681</span>  <span class="comment">// (5) TODO cleanup timedout callbacks</span></div>
+<div class="line"><span class="lineno">  682</span>  <span class="keywordtype">void</span> run() noexcept {</div>
+<div class="line"><span class="lineno">  683</span>    amqp_frame_t frame;</div>
+<div class="line"><span class="lineno">  684</span>    <span class="keywordflow">while</span> (!stopped) {</div>
+<div class="line"><span class="lineno">  685</span> </div>
+<div class="line"><span class="lineno">  686</span>      <span class="comment">// publish all messages in the queue</span></div>
+<div class="line"><span class="lineno">  687</span>      <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">count</a> = messages.consume_all(std::bind(&amp;Manager::publish_internal, <span class="keyword">this</span>, std::placeholders::_1));</div>
+<div class="line"><span class="lineno">  688</span>      dequeued += <a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">count</a>;</div>
+<div class="line"><span class="lineno">  689</span>      ConnectionList::iterator conn_it;</div>
+<div class="line"><span class="lineno">  690</span>      ConnectionList::const_iterator end_it;</div>
+<div class="line"><span class="lineno">  691</span>      {</div>
+<div class="line"><span class="lineno">  692</span>        <span class="comment">// thread safe access to the connection list</span></div>
+<div class="line"><span class="lineno">  693</span>        <span class="comment">// once the iterators are fetched they are guaranteed to remain valid</span></div>
+<div class="line"><span class="lineno">  694</span>        std::lock_guard lock(connections_lock);</div>
+<div class="line"><span class="lineno">  695</span>        conn_it = connections.begin();</div>
+<div class="line"><span class="lineno">  696</span>        end_it = connections.end();</div>
+<div class="line"><span class="lineno">  697</span>      }</div>
+<div class="line"><span class="lineno">  698</span>      <span class="keyword">auto</span> incoming_message = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  699</span>      <span class="comment">// loop over all connections to read acks</span></div>
+<div class="line"><span class="lineno">  700</span>      <span class="keywordflow">for</span> (;conn_it != end_it;) {</div>
+<div class="line"><span class="lineno">  701</span>        </div>
+<div class="line"><span class="lineno">  702</span>        <span class="keyword">auto</span>&amp; conn = conn_it-&gt;second;</div>
+<div class="line"><span class="lineno">  703</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; conn_key = conn_it-&gt;first;</div>
+<div class="line"><span class="lineno">  704</span> </div>
+<div class="line"><span class="lineno">  705</span>        <span class="keywordflow">if</span>(conn-&gt;timestamp.sec() + max_idle_time &lt; ceph_clock_now()) {</div>
+<div class="line"><span class="lineno">  706</span>          ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;Time for deleting a connection due to idle behaviour: &quot;</span> &lt;&lt; ceph_clock_now() &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  707</span>          <a class="code hl_define" href="rgw__amqp_8cc.html#aab62365792422ae69d81a1ccac5aac29">ERASE_AND_CONTINUE</a>(conn_it, connections);</div>
+<div class="line"><span class="lineno">  708</span>        }</div>
+<div class="line"><span class="lineno">  709</span> </div>
+<div class="line"><span class="lineno">  710</span>        <span class="comment">// try to reconnect the connection if it has an error</span></div>
+<div class="line"><span class="lineno">  711</span>        <span class="keywordflow">if</span> (!conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  712</span>          <span class="keyword">const</span> <span class="keyword">auto</span> now = ceph::coarse_real_clock::now();</div>
+<div class="line"><span class="lineno">  713</span>          <span class="keywordflow">if</span> (now &gt;= conn-&gt;next_reconnect) {</div>
+<div class="line"><span class="lineno">  714</span>            <span class="comment">// pointers are used temporarily inside the amqp_connection_info object</span></div>
+<div class="line"><span class="lineno">  715</span>            <span class="comment">// as read-only values, hence the assignment, and const_cast are safe here</span></div>
+<div class="line"><span class="lineno">  716</span>            amqp_connection_info info;</div>
+<div class="line"><span class="lineno">  717</span>            info.host = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(conn_key.host.c_str());</div>
+<div class="line"><span class="lineno">  718</span>            info.port = conn_key.port;</div>
+<div class="line"><span class="lineno">  719</span>            info.vhost = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(conn_key.vhost.c_str());</div>
+<div class="line"><span class="lineno">  720</span>            info.user = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(conn-&gt;user.c_str());</div>
+<div class="line"><span class="lineno">  721</span>            info.password = <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(conn-&gt;password.c_str());</div>
+<div class="line"><span class="lineno">  722</span>            info.ssl = conn-&gt;use_ssl;</div>
+<div class="line"><span class="lineno">  723</span>            ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP run: retry connection&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  724</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacergw_1_1amqp.html#a65ab1d692c71f90ccdb259589704ab61">create_connection</a>(conn, info)-&gt;is_ok() == <span class="keyword">false</span>) {</div>
+<div class="line"><span class="lineno">  725</span>              ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP run: connection (&quot;</span> &lt;&lt; <a class="code hl_function" href="rgw__keystone_8cc.html#a97140a592af15535629f284708b8f5b4">to_string</a>(conn_key) &lt;&lt; <span class="stringliteral">&quot;) retry failed. error: &quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno">  726</span>                <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(conn-&gt;status) &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; conn-&gt;reply_code &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>  &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  727</span>              <span class="comment">// TODO: add error counter for failed retries</span></div>
+<div class="line"><span class="lineno">  728</span>              <span class="comment">// TODO: add exponential backoff for retries</span></div>
+<div class="line"><span class="lineno">  729</span>              conn-&gt;next_reconnect = now + reconnect_time;</div>
+<div class="line"><span class="lineno">  730</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  731</span>              ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP run: connection (&quot;</span> &lt;&lt; <a class="code hl_function" href="rgw__keystone_8cc.html#a97140a592af15535629f284708b8f5b4">to_string</a>(conn_key) &lt;&lt; <span class="stringliteral">&quot;) retry successfull&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  732</span>            }</div>
+<div class="line"><span class="lineno">  733</span>          }</div>
+<div class="line"><span class="lineno">  734</span>          <a class="code hl_define" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  735</span>        }</div>
+<div class="line"><span class="lineno">  736</span> </div>
+<div class="line"><span class="lineno">  737</span>        <span class="keyword">const</span> <span class="keyword">auto</span> rc = amqp_simple_wait_frame_noblock(conn-&gt;state, &amp;frame, &amp;read_timeout);</div>
+<div class="line"><span class="lineno">  738</span> </div>
+<div class="line"><span class="lineno">  739</span>        <span class="keywordflow">if</span> (rc == AMQP_STATUS_TIMEOUT) {</div>
+<div class="line"><span class="lineno">  740</span>          <span class="comment">// TODO mark connection as idle</span></div>
+<div class="line"><span class="lineno">  741</span>          <a class="code hl_define" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  742</span>        }</div>
+<div class="line"><span class="lineno">  743</span>       </div>
+<div class="line"><span class="lineno">  744</span>        <span class="comment">// this is just to prevent spinning idle, does not indicate that a message</span></div>
+<div class="line"><span class="lineno">  745</span>        <span class="comment">// was successfully processed or not</span></div>
+<div class="line"><span class="lineno">  746</span>        incoming_message = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  747</span> </div>
+<div class="line"><span class="lineno">  748</span>        <span class="comment">// check if error occurred that require reopening the connection</span></div>
+<div class="line"><span class="lineno">  749</span>        <span class="keywordflow">if</span> (rc != AMQP_STATUS_OK) {</div>
+<div class="line"><span class="lineno">  750</span>          <span class="comment">// an error occurred, close connection</span></div>
+<div class="line"><span class="lineno">  751</span>          <span class="comment">// it will be retied by the main loop</span></div>
+<div class="line"><span class="lineno">  752</span>          ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP run: connection read error: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(rc) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  753</span>          conn-&gt;destroy(rc);</div>
+<div class="line"><span class="lineno">  754</span>          <a class="code hl_define" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  755</span>        }</div>
+<div class="line"><span class="lineno">  756</span> </div>
+<div class="line"><span class="lineno">  757</span>        <span class="keywordflow">if</span> (frame.frame_type != AMQP_FRAME_METHOD) {</div>
+<div class="line"><span class="lineno">  758</span>          ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP run: ignoring non n/ack messages. frame type: &quot;</span> </div>
+<div class="line"><span class="lineno">  759</span>            &lt;&lt; unsigned(frame.frame_type) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  760</span>          <span class="comment">// handler is for publish confirmation only - handle only method frames</span></div>
+<div class="line"><span class="lineno">  761</span>          <a class="code hl_define" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  762</span>        }</div>
+<div class="line"><span class="lineno">  763</span> </div>
+<div class="line"><span class="lineno">  764</span>        uint64_t tag;</div>
+<div class="line"><span class="lineno">  765</span>        <span class="keywordtype">bool</span> multiple;</div>
+<div class="line"><span class="lineno">  766</span>        <span class="keywordtype">int</span> result;</div>
+<div class="line"><span class="lineno">  767</span> </div>
+<div class="line"><span class="lineno">  768</span>        <span class="keywordflow">switch</span> (frame.payload.method.id) {</div>
+<div class="line"><span class="lineno">  769</span>          <span class="keywordflow">case</span> AMQP_BASIC_ACK_METHOD: </div>
+<div class="line"><span class="lineno">  770</span>            {</div>
+<div class="line"><span class="lineno">  771</span>              result = AMQP_STATUS_OK;</div>
+<div class="line"><span class="lineno">  772</span>              <span class="keyword">const</span> <span class="keyword">auto</span> ack = (amqp_basic_ack_t*)frame.payload.method.decoded;</div>
+<div class="line"><span class="lineno">  773</span>              ceph_assert(ack);</div>
+<div class="line"><span class="lineno">  774</span>              tag = ack-&gt;delivery_tag;</div>
+<div class="line"><span class="lineno">  775</span>              multiple = ack-&gt;multiple;</div>
+<div class="line"><span class="lineno">  776</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  777</span>            }</div>
+<div class="line"><span class="lineno">  778</span>          <span class="keywordflow">case</span> AMQP_BASIC_NACK_METHOD:</div>
+<div class="line"><span class="lineno">  779</span>            {</div>
+<div class="line"><span class="lineno">  780</span>              result = <a class="code hl_variable" href="namespacergw_1_1amqp.html#a653d6b91001ec68a7ce2cbceb98fa5d2">RGW_AMQP_STATUS_BROKER_NACK</a>;</div>
+<div class="line"><span class="lineno">  781</span>              <span class="keyword">const</span> <span class="keyword">auto</span> nack = (amqp_basic_nack_t*)frame.payload.method.decoded;</div>
+<div class="line"><span class="lineno">  782</span>              ceph_assert(nack);</div>
+<div class="line"><span class="lineno">  783</span>              tag = nack-&gt;delivery_tag;</div>
+<div class="line"><span class="lineno">  784</span>              multiple = nack-&gt;multiple;</div>
+<div class="line"><span class="lineno">  785</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  786</span>            }</div>
+<div class="line"><span class="lineno">  787</span>          <span class="keywordflow">case</span> AMQP_BASIC_REJECT_METHOD:                                                   </div>
+<div class="line"><span class="lineno">  788</span>            {                                                                              </div>
+<div class="line"><span class="lineno">  789</span>              result = <a class="code hl_variable" href="namespacergw_1_1amqp.html#a653d6b91001ec68a7ce2cbceb98fa5d2">RGW_AMQP_STATUS_BROKER_NACK</a>;                                        </div>
+<div class="line"><span class="lineno">  790</span>              <span class="keyword">const</span> <span class="keyword">auto</span> reject = (amqp_basic_reject_t*)frame.payload.method.decoded;      </div>
+<div class="line"><span class="lineno">  791</span>              tag = reject-&gt;delivery_tag;                                                  </div>
+<div class="line"><span class="lineno">  792</span>              multiple = <span class="keyword">false</span>;                                                            </div>
+<div class="line"><span class="lineno">  793</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  794</span>            }</div>
+<div class="line"><span class="lineno">  795</span>          <span class="keywordflow">case</span> AMQP_CONNECTION_CLOSE_METHOD:</div>
+<div class="line"><span class="lineno">  796</span>            <span class="comment">// TODO on channel close, no need to reopen the connection</span></div>
+<div class="line"><span class="lineno">  797</span>          <span class="keywordflow">case</span> AMQP_CHANNEL_CLOSE_METHOD:</div>
+<div class="line"><span class="lineno">  798</span>            {</div>
+<div class="line"><span class="lineno">  799</span>              <span class="comment">// other side closed the connection, no need to continue</span></div>
+<div class="line"><span class="lineno">  800</span>              ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP run: connection was closed by broker&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  801</span>              conn-&gt;destroy(rc);</div>
+<div class="line"><span class="lineno">  802</span>              <a class="code hl_define" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  803</span>            }</div>
+<div class="line"><span class="lineno">  804</span>          <span class="keywordflow">case</span> AMQP_BASIC_RETURN_METHOD:</div>
+<div class="line"><span class="lineno">  805</span>            <span class="comment">// message was not delivered, returned to sender</span></div>
+<div class="line"><span class="lineno">  806</span>            ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP run: message was not routable&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  807</span>            <a class="code hl_define" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  808</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  809</span>          <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  810</span>            <span class="comment">// unexpected method</span></div>
+<div class="line"><span class="lineno">  811</span>            ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP run: unexpected message&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  812</span>            <a class="code hl_define" href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  813</span>        }</div>
+<div class="line"><span class="lineno">  814</span> </div>
+<div class="line"><span class="lineno">  815</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; callbacks_end = conn-&gt;callbacks.end();</div>
+<div class="line"><span class="lineno">  816</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; callbacks_begin = conn-&gt;callbacks.begin();</div>
+<div class="line"><span class="lineno">  817</span>        <span class="keyword">const</span> <span class="keyword">auto</span> tag_it = std::find(callbacks_begin, callbacks_end, tag);</div>
+<div class="line"><span class="lineno">  818</span>        <span class="keywordflow">if</span> (tag_it != callbacks_end) {</div>
+<div class="line"><span class="lineno">  819</span>          <span class="keywordflow">if</span> (multiple) {</div>
+<div class="line"><span class="lineno">  820</span>            <span class="comment">// n/ack all up to (and including) the tag</span></div>
+<div class="line"><span class="lineno">  821</span>            ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP run: multiple n/acks received with tag=&quot;</span> &lt;&lt; tag &lt;&lt; <span class="stringliteral">&quot; and result=&quot;</span> &lt;&lt; result &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  822</span>            <span class="keyword">auto</span> it = callbacks_begin;</div>
+<div class="line"><span class="lineno">  823</span>            <span class="keywordflow">while</span> (it-&gt;tag &lt;= tag &amp;&amp; it != conn-&gt;callbacks.end()) {</div>
+<div class="line"><span class="lineno">  824</span>              ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP run: invoking callback with tag=&quot;</span> &lt;&lt; it-&gt;tag &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  825</span>              it-&gt;cb(result);</div>
+<div class="line"><span class="lineno">  826</span>              it = conn-&gt;callbacks.erase(it);</div>
+<div class="line"><span class="lineno">  827</span>            }</div>
+<div class="line"><span class="lineno">  828</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  829</span>            <span class="comment">// n/ack a specific tag</span></div>
+<div class="line"><span class="lineno">  830</span>            ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP run: n/ack received, invoking callback with tag=&quot;</span> &lt;&lt; tag &lt;&lt; <span class="stringliteral">&quot; and result=&quot;</span> &lt;&lt; result &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  831</span>            tag_it-&gt;cb(result);</div>
+<div class="line"><span class="lineno">  832</span>            conn-&gt;callbacks.erase(tag_it);</div>
+<div class="line"><span class="lineno">  833</span>          }</div>
+<div class="line"><span class="lineno">  834</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  835</span>          ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP run: unsolicited n/ack received with tag=&quot;</span> &lt;&lt; tag &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  836</span>        }</div>
+<div class="line"><span class="lineno">  837</span>        <span class="comment">// just increment the iterator</span></div>
+<div class="line"><span class="lineno">  838</span>        ++conn_it;</div>
+<div class="line"><span class="lineno">  839</span>      }</div>
+<div class="line"><span class="lineno">  840</span>      <span class="comment">// if no messages were received or published, sleep for 100ms</span></div>
+<div class="line"><span class="lineno">  841</span>      <span class="keywordflow">if</span> (count == 0 &amp;&amp; !incoming_message) {</div>
+<div class="line"><span class="lineno">  842</span>        std::this_thread::sleep_for(idle_time);</div>
+<div class="line"><span class="lineno">  843</span>      }</div>
+<div class="line"><span class="lineno">  844</span>    }</div>
+<div class="line"><span class="lineno">  845</span>  }</div>
+<div class="line"><span class="lineno">  846</span> </div>
+<div class="line"><span class="lineno">  847</span>  <span class="comment">// used in the dtor for message cleanup</span></div>
+<div class="line"><span class="lineno">  848</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> delete_message(<span class="keyword">const</span> message_wrapper_t* message) {</div>
+<div class="line"><span class="lineno">  849</span>    <span class="keyword">delete</span> message;</div>
+<div class="line"><span class="lineno">  850</span>  }</div>
+<div class="line"><span class="lineno">  851</span> </div>
+<div class="line"><span class="lineno">  852</span><span class="keyword">public</span>:</div>
+<div class="line"><span class="lineno">  853</span>  Manager(<span class="keywordtype">size_t</span> _max_connections,</div>
+<div class="line"><span class="lineno">  854</span>      <span class="keywordtype">size_t</span> _max_inflight,</div>
+<div class="line"><span class="lineno">  855</span>      <span class="keywordtype">size_t</span> _max_queue, </div>
+<div class="line"><span class="lineno">  856</span>      <span class="keywordtype">long</span> _usec_timeout,</div>
+<div class="line"><span class="lineno">  857</span>      <span class="keywordtype">unsigned</span> reconnect_time_ms,</div>
+<div class="line"><span class="lineno">  858</span>      <span class="keywordtype">unsigned</span> idle_time_ms,</div>
+<div class="line"><span class="lineno">  859</span>      CephContext* _cct) : </div>
+<div class="line"><span class="lineno">  860</span>    max_connections(_max_connections),</div>
+<div class="line"><span class="lineno">  861</span>    max_inflight(_max_inflight),</div>
+<div class="line"><span class="lineno">  862</span>    max_queue(_max_queue),</div>
+<div class="line"><span class="lineno">  863</span>    max_idle_time(30),</div>
+<div class="line"><span class="lineno">  864</span>    connection_count(0),</div>
+<div class="line"><span class="lineno">  865</span>    stopped(false),</div>
+<div class="line"><span class="lineno">  866</span>    read_timeout{0, _usec_timeout},</div>
+<div class="line"><span class="lineno">  867</span>    connections(_max_connections),</div>
+<div class="line"><span class="lineno">  868</span>    messages(max_queue),</div>
+<div class="line"><span class="lineno">  869</span>    queued(0),</div>
+<div class="line"><span class="lineno">  870</span>    dequeued(0),</div>
+<div class="line"><span class="lineno">  871</span>    <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>(_cct),</div>
+<div class="line"><span class="lineno">  872</span>    idle_time(<a class="code hl_namespace" href="namespacestd.html">std</a>::chrono::milliseconds(idle_time_ms)),</div>
+<div class="line"><span class="lineno">  873</span>    reconnect_time(<a class="code hl_namespace" href="namespacestd.html">std</a>::chrono::milliseconds(reconnect_time_ms)),</div>
+<div class="line"><span class="lineno">  874</span>    runner(&amp;Manager::run, this) {</div>
+<div class="line"><span class="lineno">  875</span>      <span class="comment">// The hashmap has &quot;max connections&quot; as the initial number of buckets, </span></div>
+<div class="line"><span class="lineno">  876</span>      <span class="comment">// and allows for 10 collisions per bucket before rehash.</span></div>
+<div class="line"><span class="lineno">  877</span>      <span class="comment">// This is to prevent rehashing so that iterators are not invalidated </span></div>
+<div class="line"><span class="lineno">  878</span>      <span class="comment">// when a new connection is added.</span></div>
+<div class="line"><span class="lineno">  879</span>      connections.max_load_factor(10.0);</div>
+<div class="line"><span class="lineno">  880</span>      <span class="comment">// give the runner thread a name for easier debugging</span></div>
+<div class="line"><span class="lineno">  881</span>      <span class="keyword">const</span> <span class="keyword">auto</span> rc = ceph_pthread_setname(runner.native_handle(), <span class="stringliteral">&quot;amqp_manager&quot;</span>);</div>
+<div class="line"><span class="lineno">  882</span>      ceph_assert(rc==0);</div>
+<div class="line"><span class="lineno">  883</span>  }</div>
+<div class="line"><span class="lineno">  884</span> </div>
+<div class="line"><span class="lineno">  885</span>  <span class="comment">// non copyable</span></div>
+<div class="line"><span class="lineno">  886</span>  Manager(<span class="keyword">const</span> Manager&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><span class="lineno">  887</span>  <span class="keyword">const</span> Manager&amp; operator=(<span class="keyword">const</span> Manager&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><span class="lineno">  888</span> </div>
+<div class="line"><span class="lineno">  889</span>  <span class="comment">// stop the main thread</span></div>
+<div class="line"><span class="lineno">  890</span>  <span class="keywordtype">void</span> stop() {</div>
+<div class="line"><span class="lineno">  891</span>    stopped = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  892</span>  }</div>
+<div class="line"><span class="lineno">  893</span> </div>
+<div class="line"><span class="lineno">  894</span>  <span class="comment">// connect to a broker, or reuse an existing connection if already connected</span></div>
+<div class="line"><span class="lineno">  895</span>  <a class="code hl_typedef" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> <a class="code hl_function" href="namespacergw_1_1amqp.html#a1153289c5c0f69321f05cf497e1a71d3">connect</a>(<span class="keyword">const</span> std::string&amp; url, <span class="keyword">const</span> std::string&amp; exchange, <span class="keywordtype">bool</span> mandatory_delivery, <span class="keywordtype">bool</span> verify_ssl,</div>
+<div class="line"><span class="lineno">  896</span>        boost::optional&lt;const std::string&amp;&gt; ca_location) {</div>
+<div class="line"><span class="lineno">  897</span>    <span class="keywordflow">if</span> (stopped) {</div>
+<div class="line"><span class="lineno">  898</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: manager is stopped&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  899</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  900</span>    }</div>
+<div class="line"><span class="lineno">  901</span> </div>
+<div class="line"><span class="lineno">  902</span>    <span class="keyword">struct </span>amqp_connection_info info;</div>
+<div class="line"><span class="lineno">  903</span>    <span class="comment">// cache the URL so that parsing could happen in-place</span></div>
+<div class="line"><span class="lineno">  904</span>    std::vector&lt;char&gt; url_cache(url.c_str(), url.c_str()+url.size()+1);</div>
+<div class="line"><span class="lineno">  905</span>    <span class="keyword">const</span> <span class="keyword">auto</span> retcode = amqp_parse_url(url_cache.data(), &amp;info);</div>
+<div class="line"><span class="lineno">  906</span>    <span class="keywordflow">if</span> (AMQP_STATUS_OK != retcode) {</div>
+<div class="line"><span class="lineno">  907</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: URL parsing failed. error: &quot;</span> &lt;&lt; retcode &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  908</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  909</span>    }</div>
+<div class="line"><span class="lineno">  910</span> </div>
+<div class="line"><span class="lineno">  911</span>    <span class="keyword">const</span> connection_id_t id(info);</div>
+<div class="line"><span class="lineno">  912</span>    std::lock_guard lock(connections_lock);</div>
+<div class="line"><span class="lineno">  913</span>    <span class="keyword">const</span> <span class="keyword">auto</span> it = connections.find(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  914</span>    <span class="keywordflow">if</span> (it != connections.end()) {</div>
+<div class="line"><span class="lineno">  915</span>      <span class="keywordflow">if</span> (it-&gt;second-&gt;exchange != exchange) {</div>
+<div class="line"><span class="lineno">  916</span>        ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: exchange mismatch&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  917</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  918</span>      }</div>
+<div class="line"><span class="lineno">  919</span>      <span class="comment">// connection found - return even if non-ok</span></div>
+<div class="line"><span class="lineno">  920</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 20) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: connection found&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  921</span>      <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><span class="lineno">  922</span>    }</div>
+<div class="line"><span class="lineno">  923</span> </div>
+<div class="line"><span class="lineno">  924</span>    <span class="comment">// connection not found, creating a new one</span></div>
+<div class="line"><span class="lineno">  925</span>    <span class="keywordflow">if</span> (connection_count &gt;= max_connections) {</div>
+<div class="line"><span class="lineno">  926</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: max connections exceeded&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  927</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  928</span>    }</div>
+<div class="line"><span class="lineno">  929</span>    <span class="keyword">const</span> <span class="keyword">auto</span> conn = <a class="code hl_function" href="namespacergw_1_1amqp.html#a5d022f0abddcb79470644b8673b83f86">create_new_connection</a>(info, exchange, mandatory_delivery, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, verify_ssl, ca_location);</div>
+<div class="line"><span class="lineno">  930</span>    <span class="keywordflow">if</span> (!conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  931</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: connection (&quot;</span> &lt;&lt; <a class="code hl_function" href="rgw__keystone_8cc.html#a97140a592af15535629f284708b8f5b4">to_string</a>(<span class="keywordtype">id</span>) &lt;&lt; <span class="stringliteral">&quot;) creation failed. error:&quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno">  932</span>              <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(conn-&gt;status) &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; conn-&gt;reply_code &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  933</span>    }</div>
+<div class="line"><span class="lineno">  934</span>    <span class="comment">// create_new_connection must always return a connection object</span></div>
+<div class="line"><span class="lineno">  935</span>    <span class="comment">// even if error occurred during creation. </span></div>
+<div class="line"><span class="lineno">  936</span>    <span class="comment">// in such a case the creation will be retried in the main thread</span></div>
+<div class="line"><span class="lineno">  937</span>    ceph_assert(conn);</div>
+<div class="line"><span class="lineno">  938</span>    ++connection_count;</div>
+<div class="line"><span class="lineno">  939</span>    ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: new connection is created. Total connections: &quot;</span> &lt;&lt; connection_count &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  940</span>    ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 10) &lt;&lt; <span class="stringliteral">&quot;AMQP connect: new connection status is: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(conn-&gt;status) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  941</span>    <span class="keywordflow">return</span> connections.emplace(<span class="keywordtype">id</span>, conn).first-&gt;second;</div>
+<div class="line"><span class="lineno">  942</span>  }</div>
+<div class="line"><span class="lineno">  943</span> </div>
+<div class="line"><span class="lineno">  944</span>  <span class="comment">// TODO publish with confirm is needed in &quot;none&quot; case as well, cb should be invoked publish is ok (no ack)</span></div>
+<div class="line"><span class="lineno">  945</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa9c7e3fe058dc195ffdfe82592598cb7">publish</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno">  946</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno">  947</span>    <span class="keyword">const</span> std::string&amp; message) {</div>
+<div class="line"><span class="lineno">  948</span>    <span class="keywordflow">if</span> (stopped) {</div>
+<div class="line"><span class="lineno">  949</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish: manager is not running&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  950</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a75bff645d7396afa966b4ce3049aa95f">RGW_AMQP_STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno">  951</span>    }</div>
+<div class="line"><span class="lineno">  952</span>    <span class="keywordflow">if</span> (!conn || !conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  953</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish: no connection&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  954</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#adeb59d95fb67e07c0e92c2a914633f21">RGW_AMQP_STATUS_CONNECTION_CLOSED</a>;</div>
+<div class="line"><span class="lineno">  955</span>    }</div>
+<div class="line"><span class="lineno">  956</span>    <span class="keywordflow">if</span> (messages.push(<span class="keyword">new</span> message_wrapper_t(conn, topic, message, <span class="keyword">nullptr</span>))) {</div>
+<div class="line"><span class="lineno">  957</span>      ++queued;</div>
+<div class="line"><span class="lineno">  958</span>      <span class="keywordflow">return</span> AMQP_STATUS_OK;</div>
+<div class="line"><span class="lineno">  959</span>    }</div>
+<div class="line"><span class="lineno">  960</span>    ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish: queue is full&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  961</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a43e255f84553bb49961851c32979faca">RGW_AMQP_STATUS_QUEUE_FULL</a>;</div>
+<div class="line"><span class="lineno">  962</span>  }</div>
+<div class="line"><span class="lineno">  963</span>  </div>
+<div class="line"><span class="lineno">  964</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3961f22de6a397ca9afb6bf9adeacc7c">publish_with_confirm</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno">  965</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno">  966</span>    <span class="keyword">const</span> std::string&amp; message,</div>
+<div class="line"><span class="lineno">  967</span>    reply_callback_t cb) {</div>
+<div class="line"><span class="lineno">  968</span>    <span class="keywordflow">if</span> (stopped) {</div>
+<div class="line"><span class="lineno">  969</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish_with_confirm: manager is not running&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  970</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a75bff645d7396afa966b4ce3049aa95f">RGW_AMQP_STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno">  971</span>    }</div>
+<div class="line"><span class="lineno">  972</span>    <span class="keywordflow">if</span> (!conn || !conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  973</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish_with_confirm: no connection&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  974</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#adeb59d95fb67e07c0e92c2a914633f21">RGW_AMQP_STATUS_CONNECTION_CLOSED</a>;</div>
+<div class="line"><span class="lineno">  975</span>    }</div>
+<div class="line"><span class="lineno">  976</span>    <span class="keywordflow">if</span> (messages.push(<span class="keyword">new</span> message_wrapper_t(conn, topic, message, cb))) {</div>
+<div class="line"><span class="lineno">  977</span>      ++queued;</div>
+<div class="line"><span class="lineno">  978</span>      <span class="keywordflow">return</span> AMQP_STATUS_OK;</div>
+<div class="line"><span class="lineno">  979</span>    }</div>
+<div class="line"><span class="lineno">  980</span>    ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;AMQP publish_with_confirm: queue is full&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  981</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a43e255f84553bb49961851c32979faca">RGW_AMQP_STATUS_QUEUE_FULL</a>;</div>
+<div class="line"><span class="lineno">  982</span>  }</div>
+<div class="line"><span class="lineno">  983</span> </div>
+<div class="line"><span class="lineno">  984</span>  <span class="comment">// dtor wait for thread to stop</span></div>
+<div class="line"><span class="lineno">  985</span>  <span class="comment">// then connection are cleaned-up</span></div>
+<div class="line"><span class="lineno">  986</span>  ~Manager() {</div>
+<div class="line"><span class="lineno">  987</span>    stopped = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  988</span>    runner.join();</div>
+<div class="line"><span class="lineno">  989</span>    messages.consume_all(delete_message);</div>
+<div class="line"><span class="lineno">  990</span>  }</div>
+<div class="line"><span class="lineno">  991</span> </div>
+<div class="line"><span class="lineno">  992</span>  <span class="comment">// get the number of connections</span></div>
+<div class="line"><span class="lineno">  993</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#af5bf93c9b27318f757e1141f6b9999e3">get_connection_count</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno">  994</span>    <span class="keywordflow">return</span> connection_count;</div>
+<div class="line"><span class="lineno">  995</span>  }</div>
+<div class="line"><span class="lineno">  996</span>  </div>
+<div class="line"><span class="lineno">  997</span>  <span class="comment">// get the number of in-flight messages</span></div>
+<div class="line"><span class="lineno">  998</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#ab800927e5fc0938994b535d7be0c388b">get_inflight</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno">  999</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">sum</a> = 0;</div>
+<div class="line"><span class="lineno"> 1000</span>    std::lock_guard lock(connections_lock);</div>
+<div class="line"><span class="lineno"> 1001</span>    std::for_each(connections.begin(), connections.end(), [&amp;sum](<span class="keyword">auto</span>&amp; conn_pair) {</div>
+<div class="line"><span class="lineno"> 1002</span>        <span class="comment">// concurrent access to the callback vector is safe without locking</span></div>
+<div class="line"><span class="lineno"> 1003</span>        sum += conn_pair.second-&gt;callbacks.size();</div>
+<div class="line"><span class="lineno"> 1004</span>      });</div>
+<div class="line"><span class="lineno"> 1005</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">sum</a>;</div>
+<div class="line"><span class="lineno"> 1006</span>  }</div>
+<div class="line"><span class="lineno"> 1007</span> </div>
+<div class="line"><span class="lineno"> 1008</span>  <span class="comment">// running counter of the queued messages</span></div>
+<div class="line"><span class="lineno"> 1009</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa6d467653c3117d942213fa04518155d">get_queued</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno"> 1010</span>    <span class="keywordflow">return</span> queued;</div>
+<div class="line"><span class="lineno"> 1011</span>  }</div>
+<div class="line"><span class="lineno"> 1012</span> </div>
+<div class="line"><span class="lineno"> 1013</span>  <span class="comment">// running counter of the dequeued messages</span></div>
+<div class="line"><span class="lineno"> 1014</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3aea3808f59a2f55a582ae48f3aa0047">get_dequeued</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno"> 1015</span>    <span class="keywordflow">return</span> dequeued;</div>
+<div class="line"><span class="lineno"> 1016</span>  }</div>
+<div class="line"><span class="lineno"> 1017</span>};</div>
+<div class="line"><span class="lineno"> 1018</span> </div>
+<div class="line"><span class="lineno"> 1019</span><span class="comment">// singleton manager</span></div>
+<div class="line"><span class="lineno"> 1020</span><span class="comment">// note that the manager itself is not a singleton, and multiple instances may co-exist</span></div>
+<div class="line"><span class="lineno"> 1021</span><span class="comment">// TODO make the pointer atomic in allocation and deallocation to avoid race conditions</span></div>
+<div class="line"><span class="lineno"> 1022</span><span class="keyword">static</span> Manager* <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno"> 1023</span> </div>
+<div class="line"><span class="lineno"> 1024</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a797bc289439e08e6ccb2021382bf1c74">MAX_CONNECTIONS_DEFAULT</a> = 256;</div>
+<div class="line"><span class="lineno"> 1025</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#af6310a41635079ce15e71f7657d08c92">MAX_INFLIGHT_DEFAULT</a> = 8192; </div>
+<div class="line"><span class="lineno"> 1026</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a0d7179825528903f5f3a680daacc17b5">MAX_QUEUE_DEFAULT</a> = 8192;</div>
+<div class="line"><span class="lineno"> 1027</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a65dfa26d9bf21020c73879ce9a176dbd">READ_TIMEOUT_USEC</a> = 100;</div>
+<div class="line"><span class="lineno"> 1028</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#ab7238ccaa0ad2d028ade0ef04d3a9c54">IDLE_TIME_MS</a> = 100;</div>
+<div class="line"><span class="lineno"> 1029</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#ac9939bfd8ef8d27f62a4754a328352c9">RECONNECT_TIME_MS</a> = 100;</div>
+<div class="line"><span class="lineno"> 1030</span> </div>
+<div class="line"><span class="lineno"> 1031</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">init</a>(CephContext* <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>) {</div>
+<div class="line"><span class="lineno"> 1032</span>  <span class="keywordflow">if</span> (s_manager) {</div>
+<div class="line"><span class="lineno"> 1033</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1034</span>  }</div>
+<div class="line"><span class="lineno"> 1035</span>  <span class="comment">// TODO: take conf from CephContext</span></div>
+<div class="line"><span class="lineno"> 1036</span>  <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a> = <span class="keyword">new</span> Manager(MAX_CONNECTIONS_DEFAULT, MAX_INFLIGHT_DEFAULT, MAX_QUEUE_DEFAULT, </div>
+<div class="line"><span class="lineno"> 1037</span>      READ_TIMEOUT_USEC, IDLE_TIME_MS, RECONNECT_TIME_MS, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>);</div>
+<div class="line"><span class="lineno"> 1038</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1039</span>}</div>
+<div class="line"><span class="lineno"> 1040</span> </div>
+<div class="line"><span class="lineno"> 1041</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#af59b18dd2b90a2d9a3dc4ccb84b63fed">shutdown</a>() {</div>
+<div class="line"><span class="lineno"> 1042</span>  <span class="keyword">delete</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>;</div>
+<div class="line"><span class="lineno"> 1043</span>  <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno"> 1044</span>}</div>
+<div class="line"><span class="lineno"> 1045</span> </div>
+<div class="line"><span class="lineno"> 1046</span><a class="code hl_typedef" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> <a class="code hl_function" href="namespacergw_1_1amqp.html#a1153289c5c0f69321f05cf497e1a71d3">connect</a>(<span class="keyword">const</span> std::string&amp; url, <span class="keyword">const</span> std::string&amp; exchange, <span class="keywordtype">bool</span> mandatory_delivery, <span class="keywordtype">bool</span> verify_ssl,</div>
+<div class="line"><span class="lineno"> 1047</span>        boost::optional&lt;const std::string&amp;&gt; ca_location) {</div>
+<div class="line"><span class="lineno"> 1048</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno"> 1049</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1amqp_1_1_manager.html#aacad2dd332e6514ba788377b27b64027">connect</a>(url, exchange, mandatory_delivery, verify_ssl, ca_location);</div>
+<div class="line"><span class="lineno"> 1050</span>}</div>
+<div class="line"><span class="lineno"> 1051</span> </div>
+<div class="line"><span class="lineno"> 1052</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa9c7e3fe058dc195ffdfe82592598cb7">publish</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno"> 1053</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno"> 1054</span>    <span class="keyword">const</span> std::string&amp; message) {</div>
+<div class="line"><span class="lineno"> 1055</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a75bff645d7396afa966b4ce3049aa95f">RGW_AMQP_STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno"> 1056</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1amqp_1_1_manager.html#a6f8e6ab50608baa724336fe701741cf6">publish</a>(conn, topic, message);</div>
+<div class="line"><span class="lineno"> 1057</span>}</div>
+<div class="line"><span class="lineno"> 1058</span> </div>
+<div class="line"><span class="lineno"> 1059</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3961f22de6a397ca9afb6bf9adeacc7c">publish_with_confirm</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno"> 1060</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno"> 1061</span>    <span class="keyword">const</span> std::string&amp; message,</div>
+<div class="line"><span class="lineno"> 1062</span>    reply_callback_t cb) {</div>
+<div class="line"><span class="lineno"> 1063</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a75bff645d7396afa966b4ce3049aa95f">RGW_AMQP_STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno"> 1064</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1amqp_1_1_manager.html#a959af8bd5d7a75050db7c3f3c9c3f62d">publish_with_confirm</a>(conn, topic, message, cb);</div>
+<div class="line"><span class="lineno"> 1065</span>}</div>
+<div class="line"><span class="lineno"> 1066</span> </div>
+<div class="line"><span class="lineno"> 1067</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#af5bf93c9b27318f757e1141f6b9999e3">get_connection_count</a>() {</div>
+<div class="line"><span class="lineno"> 1068</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno"> 1069</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1amqp_1_1_manager.html#a30c8998a97444ad702186e919bc1ac96">get_connection_count</a>();</div>
+<div class="line"><span class="lineno"> 1070</span>}</div>
+<div class="line"><span class="lineno"> 1071</span>  </div>
+<div class="line"><span class="lineno"> 1072</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#ab800927e5fc0938994b535d7be0c388b">get_inflight</a>() {</div>
+<div class="line"><span class="lineno"> 1073</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno"> 1074</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1amqp_1_1_manager.html#a70de351b5a8b1c3cdf0909a52ed2f374">get_inflight</a>();</div>
+<div class="line"><span class="lineno"> 1075</span>}</div>
+<div class="line"><span class="lineno"> 1076</span> </div>
+<div class="line"><span class="lineno"> 1077</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa6d467653c3117d942213fa04518155d">get_queued</a>() {</div>
+<div class="line"><span class="lineno"> 1078</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno"> 1079</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1amqp_1_1_manager.html#a0b5ee5c6be3fd41d06ad7a2d5abd6914">get_queued</a>();</div>
+<div class="line"><span class="lineno"> 1080</span>}</div>
+<div class="line"><span class="lineno"> 1081</span> </div>
+<div class="line"><span class="lineno"> 1082</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3aea3808f59a2f55a582ae48f3aa0047">get_dequeued</a>() {</div>
+<div class="line"><span class="lineno"> 1083</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno"> 1084</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1amqp_1_1_manager.html#adfd1c7bf6a8ab2faff28d65d80e460bc">get_dequeued</a>();</div>
+<div class="line"><span class="lineno"> 1085</span>}</div>
+<div class="line"><span class="lineno"> 1086</span> </div>
+<div class="line"><span class="lineno"> 1087</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a1b9b9c017aed3c67a3d75c386d0af518">get_max_connections</a>() {</div>
+<div class="line"><span class="lineno"> 1088</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a797bc289439e08e6ccb2021382bf1c74">MAX_CONNECTIONS_DEFAULT</a>;</div>
+<div class="line"><span class="lineno"> 1089</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_variable" href="classrgw_1_1amqp_1_1_manager.html#a57f04def73a27d1f0630eb805dfc77f7">max_connections</a>;</div>
+<div class="line"><span class="lineno"> 1090</span>}</div>
+<div class="line"><span class="lineno"> 1091</span> </div>
+<div class="line"><span class="lineno"> 1092</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a7aaf53aee20dd95b529ec84f3b5faab7">get_max_inflight</a>() {</div>
+<div class="line"><span class="lineno"> 1093</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#af6310a41635079ce15e71f7657d08c92">MAX_INFLIGHT_DEFAULT</a>;</div>
+<div class="line"><span class="lineno"> 1094</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_variable" href="classrgw_1_1amqp_1_1_manager.html#aa44b2fb48cd5be9d12fc03fd2d0de06a">max_inflight</a>;</div>
+<div class="line"><span class="lineno"> 1095</span>}</div>
+<div class="line"><span class="lineno"> 1096</span> </div>
+<div class="line"><span class="lineno"> 1097</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a7dee5c2916d5844ae2f28d3d5b847700">get_max_queue</a>() {</div>
+<div class="line"><span class="lineno"> 1098</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a0d7179825528903f5f3a680daacc17b5">MAX_QUEUE_DEFAULT</a>;</div>
+<div class="line"><span class="lineno"> 1099</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">s_manager</a>-&gt;<a class="code hl_variable" href="classrgw_1_1amqp_1_1_manager.html#aab0138c19bd0f8848043eef86fef0749">max_queue</a>;</div>
+<div class="line"><span class="lineno"> 1100</span>}</div>
+<div class="line"><span class="lineno"> 1101</span> </div>
+<div class="line"><span class="lineno"> 1102</span>} <span class="comment">// namespace amqp</span></div>
+<div class="line"><span class="lineno"> 1103</span> </div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_a0b5ee5c6be3fd41d06ad7a2d5abd6914"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#a0b5ee5c6be3fd41d06ad7a2d5abd6914">rgw::amqp::Manager::get_queued</a></div><div class="ttdeci">size_t get_queued() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01009">rgw_amqp.cc:1009</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_a30c8998a97444ad702186e919bc1ac96"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#a30c8998a97444ad702186e919bc1ac96">rgw::amqp::Manager::get_connection_count</a></div><div class="ttdeci">size_t get_connection_count() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00993">rgw_amqp.cc:993</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_a57f04def73a27d1f0630eb805dfc77f7"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#a57f04def73a27d1f0630eb805dfc77f7">rgw::amqp::Manager::max_connections</a></div><div class="ttdeci">const size_t max_connections</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00585">rgw_amqp.cc:585</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_a6f8e6ab50608baa724336fe701741cf6"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#a6f8e6ab50608baa724336fe701741cf6">rgw::amqp::Manager::publish</a></div><div class="ttdeci">int publish(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00945">rgw_amqp.cc:945</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_a70de351b5a8b1c3cdf0909a52ed2f374"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#a70de351b5a8b1c3cdf0909a52ed2f374">rgw::amqp::Manager::get_inflight</a></div><div class="ttdeci">size_t get_inflight() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00998">rgw_amqp.cc:998</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_a959af8bd5d7a75050db7c3f3c9c3f62d"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#a959af8bd5d7a75050db7c3f3c9c3f62d">rgw::amqp::Manager::publish_with_confirm</a></div><div class="ttdeci">int publish_with_confirm(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message, reply_callback_t cb)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00964">rgw_amqp.cc:964</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_aa44b2fb48cd5be9d12fc03fd2d0de06a"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#aa44b2fb48cd5be9d12fc03fd2d0de06a">rgw::amqp::Manager::max_inflight</a></div><div class="ttdeci">const size_t max_inflight</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00586">rgw_amqp.cc:586</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_aab0138c19bd0f8848043eef86fef0749"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#aab0138c19bd0f8848043eef86fef0749">rgw::amqp::Manager::max_queue</a></div><div class="ttdeci">const size_t max_queue</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00587">rgw_amqp.cc:587</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_aacad2dd332e6514ba788377b27b64027"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#aacad2dd332e6514ba788377b27b64027">rgw::amqp::Manager::connect</a></div><div class="ttdeci">connection_ptr_t connect(const std::string &amp;url, const std::string &amp;exchange, bool mandatory_delivery, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00895">rgw_amqp.cc:895</a></div></div>
+<div class="ttc" id="aclassrgw_1_1amqp_1_1_manager_html_adfd1c7bf6a8ab2faff28d65d80e460bc"><div class="ttname"><a href="classrgw_1_1amqp_1_1_manager.html#adfd1c7bf6a8ab2faff28d65d80e460bc">rgw::amqp::Manager::get_dequeued</a></div><div class="ttdeci">size_t get_dequeued() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01014">rgw_amqp.cc:1014</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a691d1aca9f9a55d0d2a9808488fab8b0"><div class="ttname"><a href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">detail::sum</a></div><div class="ttdeci">constexpr size_t sum(size_t v, Args... args)</div><div class="ttdef"><b>Definition</b> <a href="rgw__string_8h_source.html#l00133">rgw_string.h:133</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a0d7179825528903f5f3a680daacc17b5"><div class="ttname"><a href="namespacergw_1_1amqp.html#a0d7179825528903f5f3a680daacc17b5">rgw::amqp::MAX_QUEUE_DEFAULT</a></div><div class="ttdeci">static const size_t MAX_QUEUE_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01026">rgw_amqp.cc:1026</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a1153289c5c0f69321f05cf497e1a71d3"><div class="ttname"><a href="namespacergw_1_1amqp.html#a1153289c5c0f69321f05cf497e1a71d3">rgw::amqp::connect</a></div><div class="ttdeci">connection_ptr_t connect(const std::string &amp;url, const std::string &amp;exchange, bool mandatory_delivery, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01046">rgw_amqp.cc:1046</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a1b9b9c017aed3c67a3d75c386d0af518"><div class="ttname"><a href="namespacergw_1_1amqp.html#a1b9b9c017aed3c67a3d75c386d0af518">rgw::amqp::get_max_connections</a></div><div class="ttdeci">size_t get_max_connections()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01087">rgw_amqp.cc:1087</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a3961f22de6a397ca9afb6bf9adeacc7c"><div class="ttname"><a href="namespacergw_1_1amqp.html#a3961f22de6a397ca9afb6bf9adeacc7c">rgw::amqp::publish_with_confirm</a></div><div class="ttdeci">int publish_with_confirm(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message, reply_callback_t cb)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01059">rgw_amqp.cc:1059</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a3aea3808f59a2f55a582ae48f3aa0047"><div class="ttname"><a href="namespacergw_1_1amqp.html#a3aea3808f59a2f55a582ae48f3aa0047">rgw::amqp::get_dequeued</a></div><div class="ttdeci">size_t get_dequeued()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01082">rgw_amqp.cc:1082</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a43e255f84553bb49961851c32979faca"><div class="ttname"><a href="namespacergw_1_1amqp.html#a43e255f84553bb49961851c32979faca">rgw::amqp::RGW_AMQP_STATUS_QUEUE_FULL</a></div><div class="ttdeci">static const int RGW_AMQP_STATUS_QUEUE_FULL</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00035">rgw_amqp.cc:35</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a5d022f0abddcb79470644b8673b83f86"><div class="ttname"><a href="namespacergw_1_1amqp.html#a5d022f0abddcb79470644b8673b83f86">rgw::amqp::create_new_connection</a></div><div class="ttdeci">connection_ptr_t create_new_connection(const amqp_connection_info &amp;info, const std::string &amp;exchange, bool mandatory_delivery, CephContext *cct, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00541">rgw_amqp.cc:541</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a653d6b91001ec68a7ce2cbceb98fa5d2"><div class="ttname"><a href="namespacergw_1_1amqp.html#a653d6b91001ec68a7ce2cbceb98fa5d2">rgw::amqp::RGW_AMQP_STATUS_BROKER_NACK</a></div><div class="ttdeci">static const int RGW_AMQP_STATUS_BROKER_NACK</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00033">rgw_amqp.cc:33</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a65ab1d692c71f90ccdb259589704ab61"><div class="ttname"><a href="namespacergw_1_1amqp.html#a65ab1d692c71f90ccdb259589704ab61">rgw::amqp::create_connection</a></div><div class="ttdeci">connection_ptr_t &amp; create_connection(connection_ptr_t &amp;conn, const amqp_connection_info &amp;info)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00391">rgw_amqp.cc:391</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a65dfa26d9bf21020c73879ce9a176dbd"><div class="ttname"><a href="namespacergw_1_1amqp.html#a65dfa26d9bf21020c73879ce9a176dbd">rgw::amqp::READ_TIMEOUT_USEC</a></div><div class="ttdeci">static const long READ_TIMEOUT_USEC</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01027">rgw_amqp.cc:1027</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a75bff645d7396afa966b4ce3049aa95f"><div class="ttname"><a href="namespacergw_1_1amqp.html#a75bff645d7396afa966b4ce3049aa95f">rgw::amqp::RGW_AMQP_STATUS_MANAGER_STOPPED</a></div><div class="ttdeci">static const int RGW_AMQP_STATUS_MANAGER_STOPPED</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00037">rgw_amqp.cc:37</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a797bc289439e08e6ccb2021382bf1c74"><div class="ttname"><a href="namespacergw_1_1amqp.html#a797bc289439e08e6ccb2021382bf1c74">rgw::amqp::MAX_CONNECTIONS_DEFAULT</a></div><div class="ttdeci">static const size_t MAX_CONNECTIONS_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01024">rgw_amqp.cc:1024</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a7aaf53aee20dd95b529ec84f3b5faab7"><div class="ttname"><a href="namespacergw_1_1amqp.html#a7aaf53aee20dd95b529ec84f3b5faab7">rgw::amqp::get_max_inflight</a></div><div class="ttdeci">size_t get_max_inflight()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01092">rgw_amqp.cc:1092</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a7dee5c2916d5844ae2f28d3d5b847700"><div class="ttname"><a href="namespacergw_1_1amqp.html#a7dee5c2916d5844ae2f28d3d5b847700">rgw::amqp::get_max_queue</a></div><div class="ttdeci">size_t get_max_queue()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01097">rgw_amqp.cc:1097</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a9f9281007039ac67f51408fd94010202"><div class="ttname"><a href="namespacergw_1_1amqp.html#a9f9281007039ac67f51408fd94010202">rgw::amqp::s_manager</a></div><div class="ttdeci">static Manager * s_manager</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01022">rgw_amqp.cc:1022</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa3b5fbef4e5bf27745801f81c8d8b990"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">rgw::amqp::init</a></div><div class="ttdeci">bool init(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01031">rgw_amqp.cc:1031</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa6d467653c3117d942213fa04518155d"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa6d467653c3117d942213fa04518155d">rgw::amqp::get_queued</a></div><div class="ttdeci">size_t get_queued()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01077">rgw_amqp.cc:1077</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa7b2bba1750c3eb54e89bf18915ecaba"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa7b2bba1750c3eb54e89bf18915ecaba">rgw::amqp::ConnectionList</a></div><div class="ttdeci">std::unordered_map&lt; connection_id_t, connection_ptr_t, connection_id_t::hasher &gt; ConnectionList</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00570">rgw_amqp.cc:570</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa9c7e3fe058dc195ffdfe82592598cb7"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa9c7e3fe058dc195ffdfe82592598cb7">rgw::amqp::publish</a></div><div class="ttdeci">int publish(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01052">rgw_amqp.cc:1052</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_ab7238ccaa0ad2d028ade0ef04d3a9c54"><div class="ttname"><a href="namespacergw_1_1amqp.html#ab7238ccaa0ad2d028ade0ef04d3a9c54">rgw::amqp::IDLE_TIME_MS</a></div><div class="ttdeci">static const unsigned IDLE_TIME_MS</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01028">rgw_amqp.cc:1028</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_ab800927e5fc0938994b535d7be0c388b"><div class="ttname"><a href="namespacergw_1_1amqp.html#ab800927e5fc0938994b535d7be0c388b">rgw::amqp::get_inflight</a></div><div class="ttdeci">size_t get_inflight()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01072">rgw_amqp.cc:1072</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_ac9939bfd8ef8d27f62a4754a328352c9"><div class="ttname"><a href="namespacergw_1_1amqp.html#ac9939bfd8ef8d27f62a4754a328352c9">rgw::amqp::RECONNECT_TIME_MS</a></div><div class="ttdeci">static const unsigned RECONNECT_TIME_MS</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01029">rgw_amqp.cc:1029</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_ad42fa533a88dbf458d1b07431e64930d"><div class="ttname"><a href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">rgw::amqp::status_to_string</a></div><div class="ttdeci">std::string status_to_string(int s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00333">rgw_amqp.cc:333</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_adeb59d95fb67e07c0e92c2a914633f21"><div class="ttname"><a href="namespacergw_1_1amqp.html#adeb59d95fb67e07c0e92c2a914633f21">rgw::amqp::RGW_AMQP_STATUS_CONNECTION_CLOSED</a></div><div class="ttdeci">static const int RGW_AMQP_STATUS_CONNECTION_CLOSED</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00034">rgw_amqp.cc:34</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_af3bd5460eaa0696dc587773074d750ac"><div class="ttname"><a href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">rgw::amqp::connection_ptr_t</a></div><div class="ttdeci">boost::intrusive_ptr&lt; connection_t &gt; connection_ptr_t</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8h_source.html#l00017">rgw_amqp.h:17</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_af59b18dd2b90a2d9a3dc4ccb84b63fed"><div class="ttname"><a href="namespacergw_1_1amqp.html#af59b18dd2b90a2d9a3dc4ccb84b63fed">rgw::amqp::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01041">rgw_amqp.cc:1041</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_af5bf93c9b27318f757e1141f6b9999e3"><div class="ttname"><a href="namespacergw_1_1amqp.html#af5bf93c9b27318f757e1141f6b9999e3">rgw::amqp::get_connection_count</a></div><div class="ttdeci">size_t get_connection_count()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01067">rgw_amqp.cc:1067</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_af6310a41635079ce15e71f7657d08c92"><div class="ttname"><a href="namespacergw_1_1amqp.html#af6310a41635079ce15e71f7657d08c92">rgw::amqp::MAX_INFLIGHT_DEFAULT</a></div><div class="ttdeci">static const size_t MAX_INFLIGHT_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01025">rgw_amqp.cc:1025</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_afafb84096bd9038e03054b7dac3c0e03"><div class="ttname"><a href="namespacergw_1_1amqp.html#afafb84096bd9038e03054b7dac3c0e03">rgw::amqp::MessageQueue</a></div><div class="ttdeci">boost::lockfree::queue&lt; message_wrapper_t *, boost::lockfree::fixed_sized&lt; true &gt; &gt; MessageQueue</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00571">rgw_amqp.cc:571</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">rgw::dmclock::client_id::count</a></div><div class="ttdeci">@ count</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__amqp_8cc_html_a8169d7e8895d040cae9f2e9c171a1bd8"><div class="ttname"><a href="rgw__amqp_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a></div><div class="ttdeci">#define INCREMENT_AND_CONTINUE(IT)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00574">rgw_amqp.cc:574</a></div></div>
+<div class="ttc" id="argw__amqp_8cc_html_aab62365792422ae69d81a1ccac5aac29"><div class="ttname"><a href="rgw__amqp_8cc.html#aab62365792422ae69d81a1ccac5aac29">ERASE_AND_CONTINUE</a></div><div class="ttdeci">#define ERASE_AND_CONTINUE(IT, CONTAINER)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00578">rgw_amqp.cc:578</a></div></div>
+<div class="ttc" id="argw__keystone_8cc_html_a97140a592af15535629f284708b8f5b4"><div class="ttname"><a href="rgw__keystone_8cc.html#a97140a592af15535629f284708b8f5b4">to_string</a></div><div class="ttdeci">static std::string to_string(const std::string_view &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__keystone_8cc_source.html#l00571">rgw_keystone.cc:571</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8169d7e8895d040cae9f2e9c171a1bd8" name="a8169d7e8895d040cae9f2e9c171a1bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8169d7e8895d040cae9f2e9c171a1bd8">&#9670;&#160;</a></span>INCREMENT_AND_CONTINUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INCREMENT_AND_CONTINUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>값:</b><div class="fragment"><div class="line">          ++IT; \</div>
+<div class="line">          <span class="keywordflow">continue</span>;</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00574">574</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a16a0c4e7131ff95615856c61ca0d2c77" name="a16a0c4e7131ff95615856c61ca0d2c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16a0c4e7131ff95615856c61ca0d2c77">&#9670;&#160;</a></span>RETURN_ON_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RETURN_ON_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">C, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">S, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">OK&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>값:</b><div class="fragment"><div class="line">  <span class="keywordflow">if</span> (!OK) { \</div>
+<div class="line">    C-&gt;status = S; \</div>
+<div class="line">    <span class="keywordflow">return</span> C; \</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00370">370</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  371</span>           { \</div>
+<div class="line"><span class="lineno">  372</span>    C-&gt;status = S; \</div>
+<div class="line"><span class="lineno">  373</span>    <span class="keywordflow">return</span> C; \</div>
+<div class="line"><span class="lineno">  374</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac171b05b8bda3bd7deb1ce31b6970d4c" name="ac171b05b8bda3bd7deb1ce31b6970d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac171b05b8bda3bd7deb1ce31b6970d4c">&#9670;&#160;</a></span>RETURN_ON_REPLY_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RETURN_ON_REPLY_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">C, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ST, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">S&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>값:</b><div class="fragment"><div class="line">      { \</div>
+<div class="line">      <span class="keyword">const</span> <span class="keyword">auto</span> reply = amqp_get_rpc_reply(ST); \</div>
+<div class="line">      if (reply.reply_type != AMQP_RESPONSE_NORMAL) { \</div>
+<div class="line">        C-&gt;status = S; \</div>
+<div class="line">        C-&gt;reply_type = reply.reply_type; \</div>
+<div class="line">        C-&gt;reply_code = reply_to_code(reply); \</div>
+<div class="line">        <span class="keywordflow">return</span> C; \</div>
+<div class="line">      } \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="rgw__amqp_8cc_source.html">rgw_amqp.cc</a> 파일의 <a class="el" href="rgw__amqp_8cc_source.html#l00377">377</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  377</span>                                        { \</div>
+<div class="line"><span class="lineno">  378</span>      <span class="keyword">const</span> <span class="keyword">auto</span> reply = amqp_get_rpc_reply(ST); \</div>
+<div class="line"><span class="lineno">  379</span>      if (reply.reply_type != AMQP_RESPONSE_NORMAL) { \</div>
+<div class="line"><span class="lineno">  380</span>        C-&gt;status = S; \</div>
+<div class="line"><span class="lineno">  381</span>        C-&gt;reply_type = reply.reply_type; \</div>
+<div class="line"><span class="lineno">  382</span>        C-&gt;reply_code = <a class="code hl_function" href="namespacergw_1_1amqp.html#aca2b72e650f01f272bce0527d874d2fd">reply_to_code</a>(reply); \</div>
+<div class="line"><span class="lineno">  383</span>        <span class="keywordflow">return</span> C; \</div>
+<div class="line"><span class="lineno">  384</span>      } \</div>
+<div class="line"><span class="lineno">  385</span>    }</div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aca2b72e650f01f272bce0527d874d2fd"><div class="ttname"><a href="namespacergw_1_1amqp.html#aca2b72e650f01f272bce0527d874d2fd">rgw::amqp::reply_to_code</a></div><div class="ttdeci">int reply_to_code(const amqp_rpc_reply_t &amp;reply)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00208">rgw_amqp.cc:208</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__amqp_8cc.html">rgw_amqp.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_role_rados.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__role__rados_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_role_rados.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__role__rados_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="svc__role__rados_8h.html">svc_role_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="svc__meta__be__sobj_8h.html">svc_meta_be_sobj.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="svc__meta_8h.html">svc_meta.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__role_8h.html">rgw_role.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__zone_8h.html">rgw_zone.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="svc__zone_8h.html">svc_zone.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__tools_8h.html">rgw_tools.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="svc__role__rados_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">    9</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___role___module.html">RGWSI_Role_Module</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_s_i___m_b_s_obj___handler___module.html">RGWSI_MBSObj_Handler_Module</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#ab48be84e8ede77a85894e26e1e2cc872">   12</a></span>  <a class="code hl_struct" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html">RGWSI_Role_RADOS::Svc</a>&amp; <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#ab48be84e8ede77a85894e26e1e2cc872">svc</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">   13</a></span>  <span class="keyword">const</span> std::string <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">prefix</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#aad973183dbcbbfb866ce3db859f52cd6">   15</a></span>  <a class="code hl_function" href="class_r_g_w_s_i___role___module.html#aad973183dbcbbfb866ce3db859f52cd6">RGWSI_Role_Module</a>(<a class="code hl_struct" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html">RGWSI_Role_RADOS::Svc</a>&amp; _svc): <a class="code hl_class" href="class_r_g_w_s_i___m_b_s_obj___handler___module.html">RGWSI_MBSObj_Handler_Module</a>(<span class="stringliteral">&quot;roles&quot;</span>),</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                                                  <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#ab48be84e8ede77a85894e26e1e2cc872">svc</a>(_svc),</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                                                  <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">prefix</a>(<a class="code hl_variable" href="svc__role__rados_8h.html#a3aa19f074c7546d9861cbf41b916e70e">role_oid_prefix</a>) {}</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#a3a38984cc1bb083fd253125325db21f8">   19</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___role___module.html#a3a38984cc1bb083fd253125325db21f8">get_pool_and_oid</a>(<span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                        <a class="code hl_struct" href="structrgw__pool.html">rgw_pool</a> *pool,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                        std::string *oid)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (pool) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      *pool = <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#ab48be84e8ede77a85894e26e1e2cc872">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a946d5c246ddf35031cff0c554c795340">zone</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___zone.html#a0ade599544ff866a0e9292f49c1ad179">get_zone_params</a>().<a class="code hl_variable" href="struct_r_g_w_zone_params.html#af144c01afe26899f178544900b1835be">roles_pool</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (oid) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      *oid = <a class="code hl_function" href="class_r_g_w_s_i___role___module.html#a8884bf1a26a995a89177c3e9f92b8aa0">key_to_oid</a>(key);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#a2e3b3d7a881738b72354747192dd9b06">   32</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_s_i___role___module.html#a2e3b3d7a881738b72354747192dd9b06">is_valid_oid</a>(<span class="keyword">const</span> std::string&amp; oid)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> boost::algorithm::starts_with(oid, <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">prefix</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#a8884bf1a26a995a89177c3e9f92b8aa0">   36</a></span>  std::string <a class="code hl_function" href="class_r_g_w_s_i___role___module.html#a8884bf1a26a995a89177c3e9f92b8aa0">key_to_oid</a>(<span class="keyword">const</span> std::string&amp; key)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">prefix</a> + key;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">// This is called after `is_valid_oid` and is assumed to be a valid oid</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#a2eb3f63648fedef322c4408f72bf7882">   41</a></span>  std::string <a class="code hl_function" href="class_r_g_w_s_i___role___module.html#a2eb3f63648fedef322c4408f72bf7882">oid_to_key</a>(<span class="keyword">const</span> std::string&amp; oid)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> oid.substr(<a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">prefix</a>.size());</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___module.html#add824b7e1452b306ddbf799d34f43635">   45</a></span>  <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_r_g_w_s_i___role___module.html#add824b7e1452b306ddbf799d34f43635">get_oid_prefix</a>() {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">prefix</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a7765bd8d76c87e607559ed3259b17f90">   50</a></span><a class="code hl_class" href="class_r_g_w_s_i___meta_backend___handler.html">RGWSI_MetaBackend_Handler</a>* <a class="code hl_function" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a7765bd8d76c87e607559ed3259b17f90">RGWSI_Role_RADOS::get_be_handler</a>()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#ad7e753d94531d58779d17511a237ac2f">be_handler</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a27af9361859a04fc598a6dfef3745f6d">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a27af9361859a04fc598a6dfef3745f6d">RGWSI_Role_RADOS::init</a>(<a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *_zone_svc,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                            <a class="code hl_class" href="class_r_g_w_s_i___meta.html">RGWSI_Meta</a> *_meta_svc,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                            <a class="code hl_class" href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a> *_meta_be_svc,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                            <a class="code hl_class" href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a> *_sysobj_svc)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a99769c826558561f454a3642ffc47a89">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a946d5c246ddf35031cff0c554c795340">zone</a> = _zone_svc;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a99769c826558561f454a3642ffc47a89">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a87d8ea9f9d5d97c26930da7b575fa5b9">meta</a> = _meta_svc;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a99769c826558561f454a3642ffc47a89">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#af6e0d8c6b7224668059f211104464620">meta_be</a> = _meta_be_svc;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a99769c826558561f454a3642ffc47a89">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a6716b2d92984630946a2bd99217b366e">sysobj</a> = _sysobj_svc;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a79255ab9a1b8f17640b16dd041faad72">   66</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a79255ab9a1b8f17640b16dd041faad72">RGWSI_Role_RADOS::do_start</a>(optional_yield y, <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a99769c826558561f454a3642ffc47a89">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a87d8ea9f9d5d97c26930da7b575fa5b9">meta</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___meta.html#af9bc10087d6845e001326fd2d5b3392f">create_be_handler</a>(<a class="code hl_enumvalue" href="class_r_g_w_s_i___meta_backend.html#ad356068b4022e656464b9bae562965dfafd3a5ad2ac593485fce28d9f16b1e6d0">RGWSI_MetaBackend::Type::MDBE_SOBJ</a>,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                      &amp;<a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#ad7e753d94531d58779d17511a237ac2f">be_handler</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    ldout(<a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>(), 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to create be_handler for Roles: r=&quot;</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    &lt;&lt; <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt;&lt;dendl;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">auto</span> <span class="keyword">module</span> = new RGWSI_Role_Module(svc);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_class" href="class_r_g_w_s_i___meta_backend___handler___s_obj.html">RGWSI_MetaBackend_Handler_SObj</a>* bh= <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_r_g_w_s_i___meta_backend___handler___s_obj.html">RGWSI_MetaBackend_Handler_SObj</a> *<span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#ad7e753d94531d58779d17511a237ac2f">be_handler</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <a class="code hl_variable" href="class_r_g_w_s_i___role___r_a_d_o_s.html#a9a1aaddd769cdfafa730e4b9c4cd90b5">be_module</a>.reset(module);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  bh-&gt;<a class="code hl_function" href="class_r_g_w_s_i___meta_backend___handler___s_obj.html#a26c813f177d1a445ed6bc1bd8d2d7972">set_module</a>(module);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_s_i___m_b_s_obj___handler___module_html"><div class="ttname"><a href="class_r_g_w_s_i___m_b_s_obj___handler___module.html">RGWSI_MBSObj_Handler_Module</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be__sobj_8h_source.html#l00027">svc_meta_be_sobj.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend___handler___s_obj_html"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend___handler___s_obj.html">RGWSI_MetaBackend_Handler_SObj</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be__sobj_8h_source.html#l00186">svc_meta_be_sobj.h:186</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend___handler___s_obj_html_a26c813f177d1a445ed6bc1bd8d2d7972"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend___handler___s_obj.html#a26c813f177d1a445ed6bc1bd8d2d7972">RGWSI_MetaBackend_Handler_SObj::set_module</a></div><div class="ttdeci">void set_module(RGWSI_MBSObj_Handler_Module *_module)</div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be__sobj_8h_source.html#l00195">svc_meta_be_sobj.h:195</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend___handler_html"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend___handler.html">RGWSI_MetaBackend_Handler</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be_8h_source.html#l00214">svc_meta_be.h:214</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend_html"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be_8h_source.html#l00032">svc_meta_be.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend_html_ad356068b4022e656464b9bae562965dfafd3a5ad2ac593485fce28d9f16b1e6d0"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend.html#ad356068b4022e656464b9bae562965dfafd3a5ad2ac593485fce28d9f16b1e6d0">RGWSI_MetaBackend::MDBE_SOBJ</a></div><div class="ttdeci">@ MDBE_SOBJ</div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be_8h_source.html#l00130">svc_meta_be.h:130</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_html"><div class="ttname"><a href="class_r_g_w_s_i___meta.html">RGWSI_Meta</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta_8h_source.html#l00028">svc_meta.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_html_af9bc10087d6845e001326fd2d5b3392f"><div class="ttname"><a href="class_r_g_w_s_i___meta.html#af9bc10087d6845e001326fd2d5b3392f">RGWSI_Meta::create_be_handler</a></div><div class="ttdeci">int create_be_handler(RGWSI_MetaBackend::Type be_type, RGWSI_MetaBackend_Handler **phandler)</div><div class="ttdef"><b>Definition</b> <a href="svc__meta_8cc_source.html#l00030">svc_meta.cc:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html">RGWSI_Role_Module</a></div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00011">svc_role_rados.cc:11</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_a2e3b3d7a881738b72354747192dd9b06"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#a2e3b3d7a881738b72354747192dd9b06">RGWSI_Role_Module::is_valid_oid</a></div><div class="ttdeci">bool is_valid_oid(const std::string &amp;oid) override</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00032">svc_role_rados.cc:32</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_a2eb3f63648fedef322c4408f72bf7882"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#a2eb3f63648fedef322c4408f72bf7882">RGWSI_Role_Module::oid_to_key</a></div><div class="ttdeci">std::string oid_to_key(const std::string &amp;oid) override</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00041">svc_role_rados.cc:41</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_a3a38984cc1bb083fd253125325db21f8"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#a3a38984cc1bb083fd253125325db21f8">RGWSI_Role_Module::get_pool_and_oid</a></div><div class="ttdeci">void get_pool_and_oid(const std::string &amp;key, rgw_pool *pool, std::string *oid) override</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00019">svc_role_rados.cc:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_a8884bf1a26a995a89177c3e9f92b8aa0"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#a8884bf1a26a995a89177c3e9f92b8aa0">RGWSI_Role_Module::key_to_oid</a></div><div class="ttdeci">std::string key_to_oid(const std::string &amp;key) override</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00036">svc_role_rados.cc:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_a9145d1d8f4e30fbf48aa28c177761345"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#a9145d1d8f4e30fbf48aa28c177761345">RGWSI_Role_Module::prefix</a></div><div class="ttdeci">const std::string prefix</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00013">svc_role_rados.cc:13</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_aad973183dbcbbfb866ce3db859f52cd6"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#aad973183dbcbbfb866ce3db859f52cd6">RGWSI_Role_Module::RGWSI_Role_Module</a></div><div class="ttdeci">RGWSI_Role_Module(RGWSI_Role_RADOS::Svc &amp;_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00015">svc_role_rados.cc:15</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_ab48be84e8ede77a85894e26e1e2cc872"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#ab48be84e8ede77a85894e26e1e2cc872">RGWSI_Role_Module::svc</a></div><div class="ttdeci">RGWSI_Role_RADOS::Svc &amp; svc</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00012">svc_role_rados.cc:12</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___module_html_add824b7e1452b306ddbf799d34f43635"><div class="ttname"><a href="class_r_g_w_s_i___role___module.html#add824b7e1452b306ddbf799d34f43635">RGWSI_Role_Module::get_oid_prefix</a></div><div class="ttdeci">const std::string &amp; get_oid_prefix()</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00045">svc_role_rados.cc:45</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___r_a_d_o_s_html_a27af9361859a04fc598a6dfef3745f6d"><div class="ttname"><a href="class_r_g_w_s_i___role___r_a_d_o_s.html#a27af9361859a04fc598a6dfef3745f6d">RGWSI_Role_RADOS::init</a></div><div class="ttdeci">void init(RGWSI_Zone *_zone_svc, RGWSI_Meta *_meta_svc, RGWSI_MetaBackend *_meta_be_svc, RGWSI_SysObj *_sysobj_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00055">svc_role_rados.cc:55</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___r_a_d_o_s_html_a7765bd8d76c87e607559ed3259b17f90"><div class="ttname"><a href="class_r_g_w_s_i___role___r_a_d_o_s.html#a7765bd8d76c87e607559ed3259b17f90">RGWSI_Role_RADOS::get_be_handler</a></div><div class="ttdeci">RGWSI_MetaBackend_Handler * get_be_handler()</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00050">svc_role_rados.cc:50</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___r_a_d_o_s_html_a79255ab9a1b8f17640b16dd041faad72"><div class="ttname"><a href="class_r_g_w_s_i___role___r_a_d_o_s.html#a79255ab9a1b8f17640b16dd041faad72">RGWSI_Role_RADOS::do_start</a></div><div class="ttdeci">int do_start(optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8cc_source.html#l00066">svc_role_rados.cc:66</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___r_a_d_o_s_html_a99769c826558561f454a3642ffc47a89"><div class="ttname"><a href="class_r_g_w_s_i___role___r_a_d_o_s.html#a99769c826558561f454a3642ffc47a89">RGWSI_Role_RADOS::svc</a></div><div class="ttdeci">struct RGWSI_Role_RADOS::Svc svc</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___r_a_d_o_s_html_a9a1aaddd769cdfafa730e4b9c4cd90b5"><div class="ttname"><a href="class_r_g_w_s_i___role___r_a_d_o_s.html#a9a1aaddd769cdfafa730e4b9c4cd90b5">RGWSI_Role_RADOS::be_module</a></div><div class="ttdeci">std::unique_ptr&lt; RGWSI_MetaBackend::Module &gt; be_module</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00045">svc_role_rados.h:45</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___role___r_a_d_o_s_html_ad7e753d94531d58779d17511a237ac2f"><div class="ttname"><a href="class_r_g_w_s_i___role___r_a_d_o_s.html#ad7e753d94531d58779d17511a237ac2f">RGWSI_Role_RADOS::be_handler</a></div><div class="ttdeci">RGWSI_MetaBackend_Handler * be_handler</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00044">svc_role_rados.h:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj_8h_source.html#l00021">svc_sys_obj.h:22</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html"><div class="ttname"><a href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a></div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8h_source.html#l00027">svc_zone.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html_a0ade599544ff866a0e9292f49c1ad179"><div class="ttname"><a href="class_r_g_w_s_i___zone.html#a0ade599544ff866a0e9292f49c1ad179">RGWSI_Zone::get_zone_params</a></div><div class="ttdeci">const RGWZoneParams &amp; get_zone_params() const</div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8cc_source.html#l00945">svc_zone.cc:945</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_a6f26e063fbffe66b7ae464699883ee7d"><div class="ttname"><a href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">RGWServiceInstance::ctx</a></div><div class="ttdeci">CephContext * ctx()</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00044">rgw_service.h:44</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__role_8h_html"><div class="ttname"><a href="rgw__role_8h.html">rgw_role.h</a></div></div>
+<div class="ttc" id="argw__tools_8h_html"><div class="ttname"><a href="rgw__tools_8h.html">rgw_tools.h</a></div></div>
+<div class="ttc" id="argw__zone_8h_html"><div class="ttname"><a href="rgw__zone_8h.html">rgw_zone.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc_html"><div class="ttname"><a href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html">RGWSI_Role_RADOS::Svc</a></div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00025">svc_role_rados.h:25</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc_html_a6716b2d92984630946a2bd99217b366e"><div class="ttname"><a href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a6716b2d92984630946a2bd99217b366e">RGWSI_Role_RADOS::Svc::sysobj</a></div><div class="ttdeci">RGWSI_SysObj * sysobj</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00029">svc_role_rados.h:29</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc_html_a87d8ea9f9d5d97c26930da7b575fa5b9"><div class="ttname"><a href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a87d8ea9f9d5d97c26930da7b575fa5b9">RGWSI_Role_RADOS::Svc::meta</a></div><div class="ttdeci">RGWSI_Meta * meta</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00027">svc_role_rados.h:27</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc_html_a946d5c246ddf35031cff0c554c795340"><div class="ttname"><a href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#a946d5c246ddf35031cff0c554c795340">RGWSI_Role_RADOS::Svc::zone</a></div><div class="ttdeci">RGWSI_Zone * zone</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00026">svc_role_rados.h:26</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc_html_af6e0d8c6b7224668059f211104464620"><div class="ttname"><a href="struct_r_g_w_s_i___role___r_a_d_o_s_1_1_svc.html#af6e0d8c6b7224668059f211104464620">RGWSI_Role_RADOS::Svc::meta_be</a></div><div class="ttdeci">RGWSI_MetaBackend * meta_be</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00028">svc_role_rados.h:28</a></div></div>
+<div class="ttc" id="astruct_r_g_w_zone_params_html_af144c01afe26899f178544900b1835be"><div class="ttname"><a href="struct_r_g_w_zone_params.html#af144c01afe26899f178544900b1835be">RGWZoneParams::roles_pool</a></div><div class="ttdeci">rgw_pool roles_pool</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l00383">rgw_zone.h:383</a></div></div>
+<div class="ttc" id="astructrgw__pool_html"><div class="ttname"><a href="structrgw__pool.html">rgw_pool</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00146">rgw_basic_types.h:146</a></div></div>
+<div class="ttc" id="asvc__meta_8h_html"><div class="ttname"><a href="svc__meta_8h.html">svc_meta.h</a></div></div>
+<div class="ttc" id="asvc__meta__be__sobj_8h_html"><div class="ttname"><a href="svc__meta__be__sobj_8h.html">svc_meta_be_sobj.h</a></div></div>
+<div class="ttc" id="asvc__role__rados_8h_html"><div class="ttname"><a href="svc__role__rados_8h.html">svc_role_rados.h</a></div></div>
+<div class="ttc" id="asvc__role__rados_8h_html_a3aa19f074c7546d9861cbf41b916e70e"><div class="ttname"><a href="svc__role__rados_8h.html#a3aa19f074c7546d9861cbf41b916e70e">role_oid_prefix</a></div><div class="ttdeci">static const std::string role_oid_prefix</div><div class="ttdef"><b>Definition</b> <a href="svc__role__rados_8h_source.html#l00049">svc_role_rados.h:49</a></div></div>
+<div class="ttc" id="asvc__zone_8h_html"><div class="ttname"><a href="svc__zone_8h.html">svc_zone.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__role__rados_8cc.html">svc_role_rados.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

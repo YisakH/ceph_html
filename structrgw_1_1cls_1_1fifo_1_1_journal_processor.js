@@ -1,0 +1,27 @@
+var structrgw_1_1cls_1_1fifo_1_1_journal_processor =
+[
+    [ "JournalProcessor", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a210ddff97e0aca8c4776b4a589161466", null ],
+    [ "JournalProcessor", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#af6a3a1f0fab4127e66f33b5459f68aba", null ],
+    [ "JournalProcessor", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#ae4bc6e85d794caa6cd2677d225c5534d", null ],
+    [ "create_part", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#abfc676e290ca6401e0500e5c1d442006", null ],
+    [ "finish_je", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#aa8352e9e0cc45d6744dfb39e38693cf1", null ],
+    [ "handle", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#ada0b95135907661cd3bbe6076ef96495", null ],
+    [ "operator=", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#af0d69b65f2137c60749f9d66d0b2785d", null ],
+    [ "operator=", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a9fafb15cda42135a436a2ab588e3091c", null ],
+    [ "postprocess", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a3a5343d47c26aaec6e8ff76d516e2e14", null ],
+    [ "pp_run", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#ac307538f71585fd886f48063d871cddf", null ],
+    [ "process", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a4f683f8b3f7524fcd1a95c663a890d23", null ],
+    [ "remove_part", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#ac4e09d30b5c57e715216a633f138a7e3", null ],
+    [ "canceled", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a69028619d8045f7aba8bf7460c6ce8ab", null ],
+    [ "fifo", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a445a78bf050782b8e59680c649780d83", null ],
+    [ "first_pp", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#acf579e2f191d0c7d5ec563b8fe401541", null ],
+    [ "iter", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a6189c6b334dc7fea3d1d57d4333008a3", null ],
+    [ "journal", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a0ffcb59a49d0953895174d7b2324e481", null ],
+    [ "new_head", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#afd84ccbb8e0a9d31a8a5c399c31990ad", null ],
+    [ "new_max", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#ab0be85668751e8177322f65b44bd4553", null ],
+    [ "new_tail", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a44fde081bbb7733c753e9dafdf936979", null ],
+    [ "processed", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a1aedb4bdbeff440d9317548932e1cd6a", null ],
+    [ "race_retries", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a7a0ff2f4358b5b866d5bfac32ada27e3", null ],
+    [ "state", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a411d97fe4b2a7e070dcc5daca87815b0", null ],
+    [ "tid", "structrgw_1_1cls_1_1fifo_1_1_journal_processor.html#a00ca20ff5894634e3a1216c09c32e740", null ]
+];

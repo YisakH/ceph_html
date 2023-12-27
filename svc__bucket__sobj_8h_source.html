@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_bucket_sobj.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__bucket__sobj_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_bucket_sobj.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__bucket__sobj_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * Copyright (C) 2019 Red Hat, Inc.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * License version 2.1, as published by the Free Software</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * Foundation. See file COPYING.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__service_8h.html">rgw/rgw_service.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="svc__meta__be_8h.html">svc_meta_be.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="svc__bucket__types_8h.html">svc_bucket_types.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="svc__bucket_8h.html">svc_bucket.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___meta.html">RGWSI_Meta</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sync_modules.html">RGWSI_SyncModules</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___bucket___sync.html">RGWSI_Bucket_Sync</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__cache__entry__info.html">rgw_cache_entry_info</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_chained_cache_impl.html">RGWChainedCacheImpl</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html">   38</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___bucket___s_obj.html">RGWSI_Bucket_SObj</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_s_i___bucket.html">RGWSI_Bucket</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html">   40</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html">bucket_info_cache_entry</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a7570ea4c604ea0467e01f6155c9bb446">   41</a></span>    <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> <a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a7570ea4c604ea0467e01f6155c9bb446">info</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a03c4a11dde0fcb847f70983a89a16305">   42</a></span>    real_time <a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a03c4a11dde0fcb847f70983a89a16305">mtime</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a8a47a7da0b4495ed93097e9291e39099">   43</a></span>    std::map&lt;std::string, bufferlist&gt; <a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a8a47a7da0b4495ed93097e9291e39099">attrs</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  };</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#a60b1245f12ec6cb5405bcff3e4e26a1f">   46</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="class_r_g_w_s_i___bucket___s_obj.html#a60b1245f12ec6cb5405bcff3e4e26a1f">RGWChainedCacheImpl_bucket_info_cache_entry</a> = <a class="code hl_class" href="class_r_g_w_chained_cache_impl.html">RGWChainedCacheImpl&lt;bucket_info_cache_entry&gt;</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#a2e62b3cedec2341e80bef5b2fd2547f5">   47</a></span>  std::unique_ptr&lt;RGWChainedCacheImpl_bucket_info_cache_entry&gt; <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#a2e62b3cedec2341e80bef5b2fd2547f5">binfo_cache</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#aafe82973e8d6b5400c79c6471349a927">   49</a></span>  <a class="code hl_typedef" href="svc__bucket__types_8h.html#a5e226599a2d237e603dfa5e6e0c705a1">RGWSI_Bucket_BE_Handler</a> <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#aafe82973e8d6b5400c79c6471349a927">ep_be_handler</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#a3f9654097e31a50ab57336408928be41">   50</a></span>  std::unique_ptr&lt;RGWSI_MetaBackend::Module&gt; <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#a3f9654097e31a50ab57336408928be41">ep_be_module</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#a5aef26c784542d18ab887cb400ad0a8d">   51</a></span>  <a class="code hl_typedef" href="svc__bucket__types_8h.html#ad9597c4238a8d454a29a8cabba5ed2a1">RGWSI_BucketInstance_BE_Handler</a> <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#a5aef26c784542d18ab887cb400ad0a8d">bi_be_handler</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#a6dd214a176b717042dac6f4189157357">   52</a></span>  std::unique_ptr&lt;RGWSI_MetaBackend::Module&gt; <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#a6dd214a176b717042dac6f4189157357">bi_be_module</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a952d2e7160a5ec92996af4463f420cd6">do_start</a>(optional_yield, <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#ad551cb8e4cbcb04b2b89c2d10305575a">do_read_bucket_instance_info</a>(<a class="code hl_typedef" href="svc__bucket__types_8h.html#a86f31ec7f095d9fe7dcfb1e413f01bfd">RGWSI_Bucket_BI_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                   <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                                   <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> *info,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                   real_time *pmtime,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                                   std::map&lt;std::string, bufferlist&gt; *pattrs,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                                   <a class="code hl_struct" href="structrgw__cache__entry__info.html">rgw_cache_entry_info</a> *cache_info,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                   boost::optional&lt;obj_version&gt; refresh_version,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                                   optional_yield y,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                   <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a64f5ea74f538116e303db66d9965272b">read_bucket_stats</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; bucket_info,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                        <a class="code hl_struct" href="struct_r_g_w_bucket_ent.html">RGWBucketEnt</a> *ent,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                        optional_yield y,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                        <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html">   72</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html">Svc</a> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aa72255d3cdc63c725e6c63787417540b">   73</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___bucket___s_obj.html">RGWSI_Bucket_SObj</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aa72255d3cdc63c725e6c63787417540b">bucket</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aac1fdfa26b55be68c9eba42d137eaeed">   74</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___bucket_index.html">RGWSI_BucketIndex</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aac1fdfa26b55be68c9eba42d137eaeed">bi</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a3820f1e3e159ac667823f1b5d17c7a0b">   75</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a3820f1e3e159ac667823f1b5d17c7a0b">zone</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aaa330770b007aa93723bc1e9fad3a9da">   76</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aaa330770b007aa93723bc1e9fad3a9da">sysobj</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a98c3312bbfc90fd2c93c11e4377d140f">   77</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a98c3312bbfc90fd2c93c11e4377d140f">cache</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a1e894ac7bd9bb49ed040b57724e8fd25">   78</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___meta.html">RGWSI_Meta</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a1e894ac7bd9bb49ed040b57724e8fd25">meta</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aad8ffeff30d8d54e5acc25c18b172103">   79</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aad8ffeff30d8d54e5acc25c18b172103">meta_be</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a05c2619b20f830d1195c7e984452dac8">   80</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___sync_modules.html">RGWSI_SyncModules</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a05c2619b20f830d1195c7e984452dac8">sync_modules</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#abf9bcb785e7efb1695c123e5e1f3099d">   81</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___bucket___sync.html">RGWSI_Bucket_Sync</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#abf9bcb785e7efb1695c123e5e1f3099d">bucket_sync</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#a396f302e719ede7e32ed73b66557900a">   82</a></span>  } <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#a396f302e719ede7e32ed73b66557900a">svc</a>;</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_class" href="class_r_g_w_s_i___bucket___s_obj.html">RGWSI_Bucket_SObj</a>(CephContext *<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a7e8033bbb0145466da977951bbee7ea6">~RGWSI_Bucket_SObj</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#abe0476d8c6e3778696a1e8d77b3983e4">   87</a></span>  <a class="code hl_typedef" href="svc__bucket__types_8h.html#a5e226599a2d237e603dfa5e6e0c705a1">RGWSI_Bucket_BE_Handler</a>&amp; <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#abe0476d8c6e3778696a1e8d77b3983e4">get_ep_be_handler</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#aafe82973e8d6b5400c79c6471349a927">ep_be_handler</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  }</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___bucket___s_obj.html#a4e8c898bfd3c0c998af63e696073250b">   91</a></span>  <a class="code hl_typedef" href="svc__bucket__types_8h.html#ad9597c4238a8d454a29a8cabba5ed2a1">RGWSI_BucketInstance_BE_Handler</a>&amp; <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a4e8c898bfd3c0c998af63e696073250b">get_bi_be_handler</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_s_i___bucket___s_obj.html#a5aef26c784542d18ab887cb400ad0a8d">bi_be_handler</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#abcb8fdb935799fd2f8c5b0582d1665d3">init</a>(<a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *_zone_svc,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <a class="code hl_class" href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a> *_sysobj_svc,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> *_cache_svc,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <a class="code hl_class" href="class_r_g_w_s_i___bucket_index.html">RGWSI_BucketIndex</a> *_bi,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <a class="code hl_class" href="class_r_g_w_s_i___meta.html">RGWSI_Meta</a> *_meta_svc,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <a class="code hl_class" href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a> *_meta_be_svc,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_class" href="class_r_g_w_s_i___sync_modules.html">RGWSI_SyncModules</a> *_sync_modules_svc,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_class" href="class_r_g_w_s_i___bucket___sync.html">RGWSI_Bucket_Sync</a> *_bucket_sync_svc);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a111f73945dcfca87975c022fc6572851">read_bucket_entrypoint_info</a>(<a class="code hl_typedef" href="svc__bucket__types_8h.html#a30308e28b3588a36e2f4b98cd3ed2abf">RGWSI_Bucket_EP_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                  <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                  <a class="code hl_struct" href="struct_r_g_w_bucket_entry_point.html">RGWBucketEntryPoint</a> *entry_point,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                                  <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                  real_time *pmtime,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                  std::map&lt;std::string, bufferlist&gt; *pattrs,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                  optional_yield y,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                                  <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                                  <a class="code hl_struct" href="structrgw__cache__entry__info.html">rgw_cache_entry_info</a> *cache_info = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                                  boost::optional&lt;obj_version&gt; refresh_version = boost::none) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#aad77d0b096a0c00720f40c20e025dae3">store_bucket_entrypoint_info</a>(<a class="code hl_typedef" href="svc__bucket__types_8h.html#a30308e28b3588a36e2f4b98cd3ed2abf">RGWSI_Bucket_EP_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                   <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                   <a class="code hl_struct" href="struct_r_g_w_bucket_entry_point.html">RGWBucketEntryPoint</a>&amp; info,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                   <span class="keywordtype">bool</span> exclusive,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                                   real_time mtime,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                                   std::map&lt;std::string, bufferlist&gt; *pattrs,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                                   <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                                   optional_yield y,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                                   <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#ac711c0eb5dd297bb6d55368bdc85ef2f">remove_bucket_entrypoint_info</a>(<a class="code hl_typedef" href="svc__bucket__types_8h.html#a30308e28b3588a36e2f4b98cd3ed2abf">RGWSI_Bucket_EP_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                                    <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                                    <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                                    optional_yield y,</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                                    <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a90275566c098d38fe9e16671249433b2">read_bucket_instance_info</a>(<a class="code hl_typedef" href="svc__bucket__types_8h.html#a86f31ec7f095d9fe7dcfb1e413f01bfd">RGWSI_Bucket_BI_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                                <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                                <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> *info,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                                real_time *pmtime,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                                std::map&lt;std::string, bufferlist&gt; *pattrs,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                                optional_yield y,</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                                <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                                <a class="code hl_struct" href="structrgw__cache__entry__info.html">rgw_cache_entry_info</a> *cache_info = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                                boost::optional&lt;obj_version&gt; refresh_version = boost::none) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#ab63c55a4ce86b00576912e02fb6f44f3">read_bucket_info</a>(<a class="code hl_struct" href="struct_r_g_w_s_i___bucket___x___ctx.html">RGWSI_Bucket_X_Ctx</a>&amp; ep_ctx,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                       <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__bucket.html">rgw_bucket</a>&amp; bucket,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                       <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> *info,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                       real_time *pmtime,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                       std::map&lt;std::string, bufferlist&gt; *pattrs,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                       boost::optional&lt;obj_version&gt; refresh_version,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                       optional_yield y,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                       <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#aeff6c151f4fcafa2b43d72b3283779b9">store_bucket_instance_info</a>(<a class="code hl_typedef" href="svc__bucket__types_8h.html#a86f31ec7f095d9fe7dcfb1e413f01bfd">RGWSI_Bucket_BI_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                                 <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                                 <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; info,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                                 std::optional&lt;RGWBucketInfo *&gt; orig_info, <span class="comment">/* nullopt: orig_info was not fetched,</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">                                                                              nullptr: orig_info was not found (new bucket instance */</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                                 <span class="keywordtype">bool</span> exclusive,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                                 real_time mtime,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                                 std::map&lt;std::string, bufferlist&gt; *pattrs,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                                 optional_yield y,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                                 <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a0a019dc448966a4b7a168a3dd1dbeb27">remove_bucket_instance_info</a>(<a class="code hl_typedef" href="svc__bucket__types_8h.html#a86f31ec7f095d9fe7dcfb1e413f01bfd">RGWSI_Bucket_BI_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                                  <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                                  <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; bucket_info,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                                  <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                                  optional_yield y,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                                  <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a64f5ea74f538116e303db66d9965272b">read_bucket_stats</a>(<a class="code hl_struct" href="struct_r_g_w_s_i___bucket___x___ctx.html">RGWSI_Bucket_X_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                        <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__bucket.html">rgw_bucket</a>&amp; bucket,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                        <a class="code hl_struct" href="struct_r_g_w_bucket_ent.html">RGWBucketEnt</a> *ent,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                        optional_yield y,</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                        <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket___s_obj.html#a589a1dd57bd9ad0fb2d968d57c30bdfb">read_buckets_stats</a>(<a class="code hl_struct" href="struct_r_g_w_s_i___bucket___x___ctx.html">RGWSI_Bucket_X_Ctx</a>&amp; <a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>,</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                         std::map&lt;std::string, RGWBucketEnt&gt;&amp; m,</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                         optional_yield y,</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                         <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>};</div>
+</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html">RGWChainedCacheImpl</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00148">svc_sys_obj_cache.h:148</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html">RGWSI_Bucket_SObj</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00038">svc_bucket_sobj.h:39</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a0a019dc448966a4b7a168a3dd1dbeb27"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a0a019dc448966a4b7a168a3dd1dbeb27">RGWSI_Bucket_SObj::remove_bucket_instance_info</a></div><div class="ttdeci">int remove_bucket_instance_info(RGWSI_Bucket_BI_Ctx &amp;ctx, const std::string &amp;key, const RGWBucketInfo &amp;bucket_info, RGWObjVersionTracker *objv_tracker, optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00567">svc_bucket_sobj.cc:567</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a111f73945dcfca87975c022fc6572851"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a111f73945dcfca87975c022fc6572851">RGWSI_Bucket_SObj::read_bucket_entrypoint_info</a></div><div class="ttdeci">int read_bucket_entrypoint_info(RGWSI_Bucket_EP_Ctx &amp;ctx, const std::string &amp;key, RGWBucketEntryPoint *entry_point, RGWObjVersionTracker *objv_tracker, real_time *pmtime, std::map&lt; std::string, bufferlist &gt; *pattrs, optional_yield y, const DoutPrefixProvider *dpp, rgw_cache_entry_info *cache_info=nullptr, boost::optional&lt; obj_version &gt; refresh_version=boost::none) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00208">svc_bucket_sobj.cc:208</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a2e62b3cedec2341e80bef5b2fd2547f5"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a2e62b3cedec2341e80bef5b2fd2547f5">RGWSI_Bucket_SObj::binfo_cache</a></div><div class="ttdeci">std::unique_ptr&lt; RGWChainedCacheImpl_bucket_info_cache_entry &gt; binfo_cache</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00047">svc_bucket_sobj.h:47</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a396f302e719ede7e32ed73b66557900a"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a396f302e719ede7e32ed73b66557900a">RGWSI_Bucket_SObj::svc</a></div><div class="ttdeci">struct RGWSI_Bucket_SObj::Svc svc</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a3f9654097e31a50ab57336408928be41"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a3f9654097e31a50ab57336408928be41">RGWSI_Bucket_SObj::ep_be_module</a></div><div class="ttdeci">std::unique_ptr&lt; RGWSI_MetaBackend::Module &gt; ep_be_module</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00050">svc_bucket_sobj.h:50</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a4e8c898bfd3c0c998af63e696073250b"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a4e8c898bfd3c0c998af63e696073250b">RGWSI_Bucket_SObj::get_bi_be_handler</a></div><div class="ttdeci">RGWSI_BucketInstance_BE_Handler &amp; get_bi_be_handler() override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00091">svc_bucket_sobj.h:91</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a589a1dd57bd9ad0fb2d968d57c30bdfb"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a589a1dd57bd9ad0fb2d968d57c30bdfb">RGWSI_Bucket_SObj::read_buckets_stats</a></div><div class="ttdeci">int read_buckets_stats(RGWSI_Bucket_X_Ctx &amp;ctx, std::map&lt; std::string, RGWBucketEnt &gt; &amp;m, optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00628">svc_bucket_sobj.cc:628</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a5aef26c784542d18ab887cb400ad0a8d"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a5aef26c784542d18ab887cb400ad0a8d">RGWSI_Bucket_SObj::bi_be_handler</a></div><div class="ttdeci">RGWSI_BucketInstance_BE_Handler bi_be_handler</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00051">svc_bucket_sobj.h:51</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a60b1245f12ec6cb5405bcff3e4e26a1f"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a60b1245f12ec6cb5405bcff3e4e26a1f">RGWSI_Bucket_SObj::RGWChainedCacheImpl_bucket_info_cache_entry</a></div><div class="ttdeci">RGWChainedCacheImpl&lt; bucket_info_cache_entry &gt; RGWChainedCacheImpl_bucket_info_cache_entry</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00046">svc_bucket_sobj.h:46</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a64f5ea74f538116e303db66d9965272b"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a64f5ea74f538116e303db66d9965272b">RGWSI_Bucket_SObj::read_bucket_stats</a></div><div class="ttdeci">int read_bucket_stats(const RGWBucketInfo &amp;bucket_info, RGWBucketEnt *ent, optional_yield y, const DoutPrefixProvider *dpp)</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00593">svc_bucket_sobj.cc:593</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a6dd214a176b717042dac6f4189157357"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a6dd214a176b717042dac6f4189157357">RGWSI_Bucket_SObj::bi_be_module</a></div><div class="ttdeci">std::unique_ptr&lt; RGWSI_MetaBackend::Module &gt; bi_be_module</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00052">svc_bucket_sobj.h:52</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a7e8033bbb0145466da977951bbee7ea6"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a7e8033bbb0145466da977951bbee7ea6">RGWSI_Bucket_SObj::~RGWSI_Bucket_SObj</a></div><div class="ttdeci">~RGWSI_Bucket_SObj()</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00144">svc_bucket_sobj.cc:144</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a90275566c098d38fe9e16671249433b2"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a90275566c098d38fe9e16671249433b2">RGWSI_Bucket_SObj::read_bucket_instance_info</a></div><div class="ttdeci">int read_bucket_instance_info(RGWSI_Bucket_BI_Ctx &amp;ctx, const std::string &amp;key, RGWBucketInfo *info, real_time *pmtime, std::map&lt; std::string, bufferlist &gt; *pattrs, optional_yield y, const DoutPrefixProvider *dpp, rgw_cache_entry_info *cache_info=nullptr, boost::optional&lt; obj_version &gt; refresh_version=boost::none) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00272">svc_bucket_sobj.cc:272</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_a952d2e7160a5ec92996af4463f420cd6"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#a952d2e7160a5ec92996af4463f420cd6">RGWSI_Bucket_SObj::do_start</a></div><div class="ttdeci">int do_start(optional_yield, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00164">svc_bucket_sobj.cc:164</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_aad77d0b096a0c00720f40c20e025dae3"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#aad77d0b096a0c00720f40c20e025dae3">RGWSI_Bucket_SObj::store_bucket_entrypoint_info</a></div><div class="ttdeci">int store_bucket_entrypoint_info(RGWSI_Bucket_EP_Ctx &amp;ctx, const std::string &amp;key, RGWBucketEntryPoint &amp;info, bool exclusive, real_time mtime, std::map&lt; std::string, bufferlist &gt; *pattrs, RGWObjVersionTracker *objv_tracker, optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00239">svc_bucket_sobj.cc:239</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_aafe82973e8d6b5400c79c6471349a927"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#aafe82973e8d6b5400c79c6471349a927">RGWSI_Bucket_SObj::ep_be_handler</a></div><div class="ttdeci">RGWSI_Bucket_BE_Handler ep_be_handler</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00049">svc_bucket_sobj.h:49</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_ab63c55a4ce86b00576912e02fb6f44f3"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#ab63c55a4ce86b00576912e02fb6f44f3">RGWSI_Bucket_SObj::read_bucket_info</a></div><div class="ttdeci">int read_bucket_info(RGWSI_Bucket_X_Ctx &amp;ep_ctx, const rgw_bucket &amp;bucket, RGWBucketInfo *info, real_time *pmtime, std::map&lt; std::string, bufferlist &gt; *pattrs, boost::optional&lt; obj_version &gt; refresh_version, optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00374">svc_bucket_sobj.cc:374</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_abcb8fdb935799fd2f8c5b0582d1665d3"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#abcb8fdb935799fd2f8c5b0582d1665d3">RGWSI_Bucket_SObj::init</a></div><div class="ttdeci">void init(RGWSI_Zone *_zone_svc, RGWSI_SysObj *_sysobj_svc, RGWSI_SysObj_Cache *_cache_svc, RGWSI_BucketIndex *_bi, RGWSI_Meta *_meta_svc, RGWSI_MetaBackend *_meta_be_svc, RGWSI_SyncModules *_sync_modules_svc, RGWSI_Bucket_Sync *_bucket_sync_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00147">svc_bucket_sobj.cc:147</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_abe0476d8c6e3778696a1e8d77b3983e4"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#abe0476d8c6e3778696a1e8d77b3983e4">RGWSI_Bucket_SObj::get_ep_be_handler</a></div><div class="ttdeci">RGWSI_Bucket_BE_Handler &amp; get_ep_be_handler() override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00087">svc_bucket_sobj.h:87</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_ac711c0eb5dd297bb6d55368bdc85ef2f"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#ac711c0eb5dd297bb6d55368bdc85ef2f">RGWSI_Bucket_SObj::remove_bucket_entrypoint_info</a></div><div class="ttdeci">int remove_bucket_entrypoint_info(RGWSI_Bucket_EP_Ctx &amp;ctx, const std::string &amp;key, RGWObjVersionTracker *objv_tracker, optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00262">svc_bucket_sobj.cc:262</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_ad551cb8e4cbcb04b2b89c2d10305575a"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#ad551cb8e4cbcb04b2b89c2d10305575a">RGWSI_Bucket_SObj::do_read_bucket_instance_info</a></div><div class="ttdeci">int do_read_bucket_instance_info(RGWSI_Bucket_BI_Ctx &amp;ctx, const std::string &amp;key, RGWBucketInfo *info, real_time *pmtime, std::map&lt; std::string, bufferlist &gt; *pattrs, rgw_cache_entry_info *cache_info, boost::optional&lt; obj_version &gt; refresh_version, optional_yield y, const DoutPrefixProvider *dpp)</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00343">svc_bucket_sobj.cc:343</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___s_obj_html_aeff6c151f4fcafa2b43d72b3283779b9"><div class="ttname"><a href="class_r_g_w_s_i___bucket___s_obj.html#aeff6c151f4fcafa2b43d72b3283779b9">RGWSI_Bucket_SObj::store_bucket_instance_info</a></div><div class="ttdeci">int store_bucket_instance_info(RGWSI_Bucket_BI_Ctx &amp;ctx, const std::string &amp;key, RGWBucketInfo &amp;info, std::optional&lt; RGWBucketInfo * &gt; orig_info, bool exclusive, real_time mtime, std::map&lt; std::string, bufferlist &gt; *pattrs, optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8cc_source.html#l00489">svc_bucket_sobj.cc:489</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket___sync_html"><div class="ttname"><a href="class_r_g_w_s_i___bucket___sync.html">RGWSI_Bucket_Sync</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sync_8h_source.html#l00028">svc_bucket_sync.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket_html"><div class="ttname"><a href="class_r_g_w_s_i___bucket.html">RGWSI_Bucket</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bucket_8h_source.html#l00024">svc_bucket.h:25</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket_index_html"><div class="ttname"><a href="class_r_g_w_s_i___bucket_index.html">RGWSI_BucketIndex</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bi_8h_source.html#l00026">svc_bi.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend_html"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be_8h_source.html#l00032">svc_meta_be.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_html"><div class="ttname"><a href="class_r_g_w_s_i___meta.html">RGWSI_Meta</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta_8h_source.html#l00028">svc_meta.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html">RGWSI_SyncModules</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00013">svc_sync_modules.h:14</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00017">svc_sys_obj_cache.h:18</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj.html">RGWSI_SysObj</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj_8h_source.html#l00021">svc_sys_obj.h:22</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html"><div class="ttname"><a href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a></div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8h_source.html#l00027">svc_zone.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_a6f26e063fbffe66b7ae464699883ee7d"><div class="ttname"><a href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">RGWServiceInstance::ctx</a></div><div class="ttdeci">CephContext * ctx()</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00044">rgw_service.h:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_ab329eb7534d92dadb1c4232a6a617937"><div class="ttname"><a href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">RGWServiceInstance::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00023">rgw_service.h:23</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__service_8h_html"><div class="ttname"><a href="rgw__service_8h.html">rgw_service.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_ent_html"><div class="ttname"><a href="struct_r_g_w_bucket_ent.html">RGWBucketEnt</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01719">rgw_common.h:1719</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_entry_point_html"><div class="ttname"><a href="struct_r_g_w_bucket_entry_point.html">RGWBucketEntryPoint</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01131">rgw_common.h:1132</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_info_html"><div class="ttname"><a href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01062">rgw_common.h:1062</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01004">rgw_common.h:1004</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html">RGWSI_Bucket_SObj::Svc</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00072">svc_bucket_sobj.h:72</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_a05c2619b20f830d1195c7e984452dac8"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a05c2619b20f830d1195c7e984452dac8">RGWSI_Bucket_SObj::Svc::sync_modules</a></div><div class="ttdeci">RGWSI_SyncModules * sync_modules</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00080">svc_bucket_sobj.h:80</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_a1e894ac7bd9bb49ed040b57724e8fd25"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a1e894ac7bd9bb49ed040b57724e8fd25">RGWSI_Bucket_SObj::Svc::meta</a></div><div class="ttdeci">RGWSI_Meta * meta</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00078">svc_bucket_sobj.h:78</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_a3820f1e3e159ac667823f1b5d17c7a0b"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a3820f1e3e159ac667823f1b5d17c7a0b">RGWSI_Bucket_SObj::Svc::zone</a></div><div class="ttdeci">RGWSI_Zone * zone</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00075">svc_bucket_sobj.h:75</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_a98c3312bbfc90fd2c93c11e4377d140f"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#a98c3312bbfc90fd2c93c11e4377d140f">RGWSI_Bucket_SObj::Svc::cache</a></div><div class="ttdeci">RGWSI_SysObj_Cache * cache</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00077">svc_bucket_sobj.h:77</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_aa72255d3cdc63c725e6c63787417540b"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aa72255d3cdc63c725e6c63787417540b">RGWSI_Bucket_SObj::Svc::bucket</a></div><div class="ttdeci">RGWSI_Bucket_SObj * bucket</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00073">svc_bucket_sobj.h:73</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_aaa330770b007aa93723bc1e9fad3a9da"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aaa330770b007aa93723bc1e9fad3a9da">RGWSI_Bucket_SObj::Svc::sysobj</a></div><div class="ttdeci">RGWSI_SysObj * sysobj</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00076">svc_bucket_sobj.h:76</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_aac1fdfa26b55be68c9eba42d137eaeed"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aac1fdfa26b55be68c9eba42d137eaeed">RGWSI_Bucket_SObj::Svc::bi</a></div><div class="ttdeci">RGWSI_BucketIndex * bi</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00074">svc_bucket_sobj.h:74</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_aad8ffeff30d8d54e5acc25c18b172103"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#aad8ffeff30d8d54e5acc25c18b172103">RGWSI_Bucket_SObj::Svc::meta_be</a></div><div class="ttdeci">RGWSI_MetaBackend * meta_be</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00079">svc_bucket_sobj.h:79</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1_svc_html_abf9bcb785e7efb1695c123e5e1f3099d"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1_svc.html#abf9bcb785e7efb1695c123e5e1f3099d">RGWSI_Bucket_SObj::Svc::bucket_sync</a></div><div class="ttdeci">RGWSI_Bucket_Sync * bucket_sync</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00081">svc_bucket_sobj.h:81</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry_html"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html">RGWSI_Bucket_SObj::bucket_info_cache_entry</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00040">svc_bucket_sobj.h:40</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry_html_a03c4a11dde0fcb847f70983a89a16305"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a03c4a11dde0fcb847f70983a89a16305">RGWSI_Bucket_SObj::bucket_info_cache_entry::mtime</a></div><div class="ttdeci">real_time mtime</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00042">svc_bucket_sobj.h:42</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry_html_a7570ea4c604ea0467e01f6155c9bb446"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a7570ea4c604ea0467e01f6155c9bb446">RGWSI_Bucket_SObj::bucket_info_cache_entry::info</a></div><div class="ttdeci">RGWBucketInfo info</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00041">svc_bucket_sobj.h:41</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry_html_a8a47a7da0b4495ed93097e9291e39099"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___s_obj_1_1bucket__info__cache__entry.html#a8a47a7da0b4495ed93097e9291e39099">RGWSI_Bucket_SObj::bucket_info_cache_entry::attrs</a></div><div class="ttdeci">std::map&lt; std::string, bufferlist &gt; attrs</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__sobj_8h_source.html#l00043">svc_bucket_sobj.h:43</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___bucket___x___ctx_html"><div class="ttname"><a href="struct_r_g_w_s_i___bucket___x___ctx.html">RGWSI_Bucket_X_Ctx</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__types_8h_source.html#l00034">svc_bucket_types.h:34</a></div></div>
+<div class="ttc" id="astructrgw__bucket_html"><div class="ttname"><a href="structrgw__bucket.html">rgw_bucket</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00289">rgw_basic_types.h:289</a></div></div>
+<div class="ttc" id="astructrgw__cache__entry__info_html"><div class="ttname"><a href="structrgw__cache__entry__info.html">rgw_cache_entry_info</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01931">rgw_common.h:1931</a></div></div>
+<div class="ttc" id="asvc__bucket_8h_html"><div class="ttname"><a href="svc__bucket_8h.html">svc_bucket.h</a></div></div>
+<div class="ttc" id="asvc__bucket__types_8h_html"><div class="ttname"><a href="svc__bucket__types_8h.html">svc_bucket_types.h</a></div></div>
+<div class="ttc" id="asvc__bucket__types_8h_html_a30308e28b3588a36e2f4b98cd3ed2abf"><div class="ttname"><a href="svc__bucket__types_8h.html#a30308e28b3588a36e2f4b98cd3ed2abf">RGWSI_Bucket_EP_Ctx</a></div><div class="ttdeci">ptr_wrapper&lt; RGWSI_MetaBackend::Context, RGWSI_META_BE_TYPES::BUCKET &gt; RGWSI_Bucket_EP_Ctx</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__types_8h_source.html#l00031">svc_bucket_types.h:31</a></div></div>
+<div class="ttc" id="asvc__bucket__types_8h_html_a5e226599a2d237e603dfa5e6e0c705a1"><div class="ttname"><a href="svc__bucket__types_8h.html#a5e226599a2d237e603dfa5e6e0c705a1">RGWSI_Bucket_BE_Handler</a></div><div class="ttdeci">ptr_wrapper&lt; RGWSI_MetaBackend_Handler, RGWSI_META_BE_TYPES::BUCKET &gt; RGWSI_Bucket_BE_Handler</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__types_8h_source.html#l00027">svc_bucket_types.h:27</a></div></div>
+<div class="ttc" id="asvc__bucket__types_8h_html_a86f31ec7f095d9fe7dcfb1e413f01bfd"><div class="ttname"><a href="svc__bucket__types_8h.html#a86f31ec7f095d9fe7dcfb1e413f01bfd">RGWSI_Bucket_BI_Ctx</a></div><div class="ttdeci">ptr_wrapper&lt; RGWSI_MetaBackend::Context, RGWSI_META_BE_TYPES::BI &gt; RGWSI_Bucket_BI_Ctx</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__types_8h_source.html#l00032">svc_bucket_types.h:32</a></div></div>
+<div class="ttc" id="asvc__bucket__types_8h_html_ad9597c4238a8d454a29a8cabba5ed2a1"><div class="ttname"><a href="svc__bucket__types_8h.html#ad9597c4238a8d454a29a8cabba5ed2a1">RGWSI_BucketInstance_BE_Handler</a></div><div class="ttdeci">ptr_wrapper&lt; RGWSI_MetaBackend_Handler, RGWSI_META_BE_TYPES::BI &gt; RGWSI_BucketInstance_BE_Handler</div><div class="ttdef"><b>Definition</b> <a href="svc__bucket__types_8h_source.html#l00028">svc_bucket_types.h:28</a></div></div>
+<div class="ttc" id="asvc__meta__be_8h_html"><div class="ttname"><a href="svc__meta__be_8h.html">svc_meta_be.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__bucket__sobj_8h.html">svc_bucket_sobj.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

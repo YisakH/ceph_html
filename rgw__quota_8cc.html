@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_quota.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__quota_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_quota.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;include/utime.h&quot;</code><br />
+<code>#include &quot;common/lru_map.h&quot;</code><br />
+<code>#include &quot;common/RefCountedObj.h&quot;</code><br />
+<code>#include &quot;common/Thread.h&quot;</code><br />
+<code>#include &quot;common/ceph_mutex.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__common_8h_source.html">rgw_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal_8h_source.html">rgw_sal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal__rados_8h_source.html">rgw_sal_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__quota_8h_source.html">rgw_quota.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__bucket_8h_source.html">rgw_bucket.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__user_8h_source.html">rgw_user.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__sys__obj_8h_source.html">services/svc_sys_obj.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__meta_8h_source.html">services/svc_meta.h</a>&quot;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_quota.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__quota_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__quota_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__quota_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__quota_8cc">
+<area shape="rect" title=" " alt="" coords="2300,5,2431,48"/>
+<area shape="rect" title=" " alt="" coords="5,659,115,685"/>
+<area shape="poly" title=" " alt="" coords="2300,32,1844,39,1174,52,550,73,338,85,271,92,235,99,190,115,152,133,138,144,128,158,121,176,119,199,119,500,114,541,104,581,77,646,72,644,99,579,109,540,113,500,113,199,116,175,123,155,135,140,150,128,188,110,234,93,270,86,337,80,550,67,1173,47,1844,33,2300,26"/>
+<area shape="rect" title=" " alt="" coords="139,659,272,685"/>
+<area shape="poly" title=" " alt="" coords="2300,31,1884,32,1274,40,965,48,690,60,476,77,402,87,353,99,301,114,257,130,240,141,227,155,219,174,216,199,216,500,210,643,205,643,211,500,211,199,214,173,223,152,236,137,254,126,299,109,351,93,401,82,476,72,689,55,965,43,1274,35,1884,27,2300,25"/>
+<area shape="rect" title=" " alt="" coords="2480,336,2653,363"/>
+<area shape="poly" title=" " alt="" coords="2381,47,2413,95,2554,322,2549,324,2408,97,2377,50"/>
+<area shape="rect" title=" " alt="" coords="396,104,521,131"/>
+<area shape="poly" title=" " alt="" coords="2300,31,1954,36,1445,48,923,68,705,82,540,99,518,103,518,97,540,93,704,76,923,63,1444,42,1954,31,2300,26"/>
+<area shape="rect" title=" " alt="" coords="2677,336,2835,363"/>
+<area shape="poly" title=" " alt="" coords="2392,46,2731,324,2727,328,2389,51"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="1836,485,1945,512"/>
+<area shape="poly" title=" " alt="" coords="2300,31,2203,40,2150,50,2098,66,2051,87,2014,116,2000,133,1989,153,1982,174,1980,199,1980,351,1974,388,1958,422,1938,452,1917,476,1913,472,1934,449,1954,419,1969,386,1975,350,1975,199,1977,173,1984,151,1995,130,2010,112,2049,83,2096,61,2148,45,2202,35,2299,26"/>
+<area shape="rect" title=" " alt="" coords="518,659,578,685"/>
+<area shape="poly" title=" " alt="" coords="2300,40,2158,64,1993,99,1872,125,1757,143,1648,156,1544,163,1349,173,1169,187,1084,200,1002,218,921,245,843,282,766,330,691,392,616,468,541,561,532,581,531,602,539,644,534,645,525,602,527,579,536,559,612,465,687,388,763,326,841,277,919,240,1000,213,1083,194,1168,182,1348,168,1543,158,1648,150,1757,138,1871,120,1991,93,2157,58,2299,35"/>
+<area shape="rect" href="rgw__quota_8h.html" title=" " alt="" coords="337,568,428,595"/>
+<area shape="poly" title=" " alt="" coords="2300,31,1870,33,1245,42,936,50,669,62,475,78,415,88,385,98,367,119,360,141,361,199,361,425,367,494,378,552,373,553,362,495,356,425,356,199,355,140,362,117,383,94,414,82,474,73,668,57,935,45,1245,36,1870,28,2300,25"/>
+<area shape="rect" href="rgw__sal_8h.html" title="Base abstractions and API for SAL" alt="" coords="3083,336,3160,363"/>
+<area shape="poly" title=" " alt="" coords="2432,45,2540,80,2680,129,2834,190,2987,259,3045,292,3094,325,3091,329,3042,297,2984,264,2832,194,2678,134,2538,85,2430,50"/>
+<area shape="rect" href="rgw__user_8h.html" title=" " alt="" coords="3079,411,3164,437"/>
+<area shape="poly" title=" " alt="" coords="2373,48,2387,114,2395,199,2395,276,2400,307,2415,328,2438,344,2469,360,2518,378,2585,392,2752,410,2926,418,3064,420,3063,425,2926,423,2752,415,2585,397,2517,383,2467,365,2435,349,2411,332,2395,309,2389,276,2389,199,2382,115,2368,49"/>
+<area shape="rect" href="rgw__sal__rados_8h.html" title=" " alt="" coords="3185,104,3300,131"/>
+<area shape="poly" title=" " alt="" coords="2431,32,3170,106,3169,111,2431,37"/>
+<area shape="rect" href="rgw__bucket_8h.html" title=" " alt="" coords="2256,261,2355,288"/>
+<area shape="poly" title=" " alt="" coords="2363,49,2314,247,2309,246,2358,48"/>
+<area shape="rect" href="svc__sys__obj_8h.html" title=" " alt="" coords="3324,96,3468,139"/>
+<area shape="poly" title=" " alt="" coords="2431,26,2585,31,2801,42,3051,62,3309,93,3308,98,3051,67,2801,47,2585,36,2431,32"/>
+<area shape="rect" href="svc__meta_8h.html" title=" " alt="" coords="3492,104,3631,131"/>
+<area shape="poly" title=" " alt="" coords="2431,25,2612,28,2872,37,3174,57,3329,73,3480,93,3502,97,3501,103,3480,99,3328,78,3174,63,2872,42,2612,33,2431,31"/>
+<area shape="rect" title=" " alt="" coords="896,568,947,595"/>
+<area shape="poly" title=" " alt="" coords="1836,504,1650,508,1398,519,1148,536,1044,548,966,563,960,564,958,559,965,557,1043,543,1147,531,1398,513,1650,503,1836,498"/>
+<area shape="rect" title=" " alt="" coords="1727,741,1812,768"/>
+<area shape="poly" title=" " alt="" coords="1836,507,1775,514,1711,525,1655,541,1634,551,1621,562,1609,585,1610,608,1619,632,1637,655,1685,698,1734,731,1731,735,1681,702,1633,659,1615,634,1604,609,1604,583,1617,558,1631,546,1653,536,1710,520,1775,508,1835,502"/>
+<area shape="poly" title=" " alt="" coords="1836,503,1541,508,1127,518,750,536,624,548,586,555,567,562,554,579,548,600,546,643,541,643,542,599,550,577,564,558,584,550,623,543,749,530,1127,513,1541,502,1836,498"/>
+<area shape="rect" title=" " alt="" coords="1021,568,1131,595"/>
+<area shape="poly" title=" " alt="" coords="1836,503,1711,506,1539,516,1342,533,1143,563,1128,566,1127,561,1142,557,1341,528,1538,510,1711,501,1836,498"/>
+<area shape="rect" title=" " alt="" coords="1155,568,1312,595"/>
+<area shape="poly" title=" " alt="" coords="1836,506,1612,526,1469,542,1324,563,1301,567,1300,562,1324,557,1468,537,1611,521,1835,501"/>
+<area shape="rect" title=" " alt="" coords="1336,568,1504,595"/>
+<area shape="poly" title=" " alt="" coords="1836,511,1523,563,1498,567,1497,562,1522,557,1835,506"/>
+<area shape="rect" href="rgw__acl_8h.html" title=" " alt="" coords="1503,659,1580,685"/>
+<area shape="poly" title=" " alt="" coords="1836,506,1766,513,1689,524,1620,540,1593,550,1575,562,1561,580,1552,601,1544,644,1539,643,1547,599,1557,577,1572,558,1591,546,1618,535,1688,519,1766,508,1835,501"/>
+<area shape="rect" href="rgw__bucket__layout_8h.html" title=" " alt="" coords="746,741,886,768"/>
+<area shape="poly" title=" " alt="" coords="1836,503,1549,507,1149,517,953,525,786,535,665,547,628,554,611,562,602,574,597,586,599,610,613,635,637,658,668,680,703,701,770,733,768,737,701,705,665,685,634,662,609,638,593,612,592,585,597,571,608,558,627,549,664,542,785,529,953,519,1149,512,1549,502,1836,498"/>
+<area shape="rect" href="rgw__cors_8h.html" title=" " alt="" coords="1246,741,1330,768"/>
+<area shape="poly" title=" " alt="" coords="1836,502,1637,503,1375,509,1247,517,1137,528,1054,543,1027,552,1011,562,1000,577,995,591,995,604,999,618,1020,644,1054,668,1097,689,1143,708,1232,736,1230,741,1141,713,1094,694,1051,672,1017,647,995,620,990,605,990,590,996,574,1008,558,1025,547,1053,537,1136,522,1247,511,1375,504,1637,497,1836,497"/>
+<area shape="rect" href="rgw__iam__policy_8h.html" title=" " alt="" coords="1630,568,1751,595"/>
+<area shape="poly" title=" " alt="" coords="1860,515,1737,564,1735,559,1858,510"/>
+<area shape="rect" href="rgw__string_8h.html" title=" " alt="" coords="2188,659,2279,685"/>
+<area shape="poly" title=" " alt="" coords="1899,511,1925,556,1945,580,1970,600,1997,616,2022,626,2068,634,2117,637,2177,648,2186,651,2184,656,2175,653,2116,642,2067,639,2021,631,1995,621,1966,605,1941,584,1921,559,1894,514"/>
+<area shape="poly" title=" " alt="" coords="1835,503,1622,506,1297,515,911,533,711,546,515,563,444,572,443,567,514,557,710,541,911,527,1297,509,1622,501,1835,498"/>
+<area shape="rect" title=" " alt="" coords="2727,651,2868,693"/>
+<area shape="poly" title=" " alt="" coords="1946,500,2203,518,2339,535,2395,545,2437,558,2455,568,2467,579,2478,590,2495,600,2549,621,2606,638,2712,659,2711,664,2604,643,2547,627,2492,605,2475,594,2463,583,2452,572,2435,562,2394,550,2339,540,2202,523,1946,505"/>
+<area shape="rect" href="rgw__website_8h.html" title=" " alt="" coords="2271,741,2374,768"/>
+<area shape="poly" title=" " alt="" coords="1946,497,2040,499,2150,507,2203,515,2251,526,2289,540,2315,558,2329,577,2338,599,2344,645,2341,690,2333,727,2328,726,2336,689,2339,645,2333,600,2324,580,2311,562,2287,545,2249,531,2203,520,2150,513,2040,504,1946,502"/>
+<area shape="rect" href="rgw__object__lock_8h.html" title=" " alt="" coords="2399,741,2524,768"/>
+<area shape="poly" title=" " alt="" coords="1946,499,2043,504,2160,514,2269,531,2312,543,2344,558,2366,575,2386,595,2418,641,2441,687,2456,725,2451,727,2436,689,2413,643,2382,598,2363,579,2341,562,2311,548,2268,536,2159,519,2043,509,1945,504"/>
+<area shape="rect" href="rgw__tag_8h.html" title=" " alt="" coords="2087,659,2164,685"/>
+<area shape="poly" title=" " alt="" coords="1946,497,2035,500,2139,509,2189,516,2233,527,2269,540,2293,558,2300,570,2302,581,2293,605,2172,655,2170,650,2289,601,2297,581,2295,571,2289,562,2266,545,2231,532,2188,521,2139,514,2035,505,1946,502"/>
+<area shape="rect" href="rgw__op__type_8h.html" title=" " alt="" coords="1979,568,2085,595"/>
+<area shape="poly" title=" " alt="" coords="1914,510,1998,558,1996,562,1911,515"/>
+<area shape="rect" href="rgw__sync__policy_8h.html" title=" " alt="" coords="1776,568,1904,595"/>
+<area shape="poly" title=" " alt="" coords="1885,514,1858,556,1854,554,1880,511"/>
+<area shape="rect" title=" " alt="" coords="2505,560,2655,603"/>
+<area shape="poly" title=" " alt="" coords="1946,501,2182,520,2334,536,2487,557,2490,558,2489,563,2486,563,2333,542,2182,525,1946,506"/>
+<area shape="rect" title=" " alt="" coords="2108,568,2279,595"/>
+<area shape="poly" title=" " alt="" coords="1939,510,2132,561,2130,566,1938,515"/>
+<area shape="rect" title=" " alt="" coords="2680,568,2840,595"/>
+<area shape="poly" title=" " alt="" coords="1946,499,2254,515,2459,532,2667,557,2692,562,2691,567,2666,563,2458,538,2253,521,1946,504"/>
+<area shape="rect" title=" " alt="" coords="2865,568,3037,595"/>
+<area shape="poly" title=" " alt="" coords="1946,498,2101,502,2326,512,2587,529,2852,557,2880,562,2880,567,2852,563,2586,535,2325,517,2101,507,1946,503"/>
+<area shape="rect" href="rgw__public__access_8h.html" title=" " alt="" coords="621,568,763,595"/>
+<area shape="poly" title=" " alt="" coords="1836,502,1658,503,1396,510,1088,528,930,543,775,563,753,567,752,561,774,557,929,538,1088,523,1396,504,1658,497,1836,497"/>
+<area shape="rect" title=" " alt="" coords="3214,568,3333,595"/>
+<area shape="poly" title=" " alt="" coords="1946,499,2401,520,3050,557,3198,570,3198,575,3049,563,2401,525,1945,505"/>
+<area shape="rect" href="rgw__auth_8h.html" title=" " alt="" coords="787,568,872,595"/>
+<area shape="poly" title=" " alt="" coords="1836,504,1634,509,1355,520,1075,538,960,549,873,563,862,565,861,560,871,557,959,544,1075,532,1355,515,1634,504,1836,498"/>
+<area shape="poly" title=" " alt="" coords="1578,683,1720,733,1718,738,1576,688"/>
+<area shape="rect" title=" " alt="" coords="2296,816,2349,843"/>
+<area shape="poly" title=" " alt="" coords="1543,685,1544,726,1551,748,1564,766,1579,774,1604,781,1677,794,1774,804,1885,812,2112,821,2281,825,2281,830,2112,827,1885,817,1774,810,1676,800,1602,787,1577,779,1561,770,1546,750,1539,727,1537,686"/>
+<area shape="rect" href="rgw__basic__types_8h.html" title=" " alt="" coords="1574,741,1703,768"/>
+<area shape="poly" title=" " alt="" coords="1558,684,1614,730,1611,734,1555,688"/>
+<area shape="poly" title=" " alt="" coords="1704,764,1715,765,2041,801,2281,822,2281,827,2040,806,1714,771,1703,769"/>
+<area shape="poly" title=" " alt="" coords="887,757,2281,823,2280,829,887,762"/>
+<area shape="poly" title=" " alt="" coords="1331,756,2280,822,2280,828,1330,762"/>
+<area shape="poly" title=" " alt="" coords="1699,594,1760,726,1755,728,1694,596"/>
+<area shape="poly" title=" " alt="" coords="1671,598,1577,653,1574,648,1668,593"/>
+<area shape="poly" title=" " alt="" coords="1724,593,2282,810,2280,814,1722,598"/>
+<area shape="poly" title=" " alt="" coords="1689,596,1650,727,1644,725,1684,594"/>
+<area shape="poly" title=" " alt="" coords="1733,593,1764,600,1880,616,1971,622,2062,628,2177,648,2188,651,2187,656,2175,653,2061,633,1970,627,1879,622,1764,605,1732,598"/>
+<area shape="poly" title=" " alt="" coords="2202,688,2177,696,2081,716,1986,732,1827,751,1827,746,1985,727,2080,711,2175,691,2200,683"/>
+<area shape="poly" title=" " alt="" coords="2237,685,2244,723,2261,767,2277,787,2295,804,2291,808,2273,791,2256,769,2239,725,2232,686"/>
+<area shape="poly" title=" " alt="" coords="337,597,127,653,116,656,115,651,126,648,336,592"/>
+<area shape="poly" title=" " alt="" coords="358,598,246,654,243,649,356,593"/>
+<area shape="poly" title=" " alt="" coords="408,593,512,649,510,653,405,598"/>
+<area shape="poly" title=" " alt="" coords="398,593,506,691,644,702,946,718,1558,747,1558,752,945,724,644,707,504,696,394,597"/>
+<area shape="rect" title=" " alt="" coords="296,659,443,685"/>
+<area shape="poly" title=" " alt="" coords="383,596,376,643,371,643,378,595"/>
+<area shape="poly" title=" " alt="" coords="429,585,610,600,1082,622,1450,631,1818,636,2291,648,2711,664,2711,670,2291,653,1818,641,1450,636,1082,628,609,605,428,590"/>
+<area shape="poly" title=" " alt="" coords="2325,769,2325,800,2320,800,2320,769"/>
+<area shape="poly" title=" " alt="" coords="2438,771,2362,811,2359,806,2436,766"/>
+<area shape="poly" title=" " alt="" coords="2142,684,2243,766,2295,805,2291,809,2240,770,2138,688"/>
+<area shape="poly" title=" " alt="" coords="1827,597,1667,733,1663,729,1824,593"/>
+<area shape="poly" title=" " alt="" coords="1882,593,2073,652,2071,657,1880,598"/>
+<area shape="poly" title=" " alt="" coords="870,565,895,557,978,544,1088,533,1351,516,1820,499,1820,504,1351,521,1088,539,979,550,897,563,871,570"/>
+<area shape="poly" title=" " alt="" coords="3136,362,3178,409,3227,486,3263,553,3258,555,3223,489,3174,412,3132,365"/>
+<area shape="poly" title=" " alt="" coords="3124,363,3124,395,3119,395,3119,363"/>
+<area shape="rect" href="rgw__notify__event__type_8h.html" title=" " alt="" coords="3535,659,3694,685"/>
+<area shape="poly" title=" " alt="" coords="3161,359,3218,377,3290,404,3368,439,3442,483,3490,523,3535,567,3599,644,3595,648,3531,570,3487,527,3438,488,3365,444,3288,409,3216,382,3159,364"/>
+<area shape="poly" title=" " alt="" coords="3079,430,1961,496,1961,491,3078,425"/>
+<area shape="poly" title=" " alt="" coords="3131,436,3161,496,3173,537,3179,580,3179,674,3171,690,3149,706,3117,720,3074,733,2965,757,2835,778,2564,810,2365,828,2365,822,2564,805,2834,773,2964,752,3073,728,3115,715,3147,701,3167,687,3173,673,3173,580,3168,538,3156,498,3127,439"/>
+<area shape="poly" title=" " alt="" coords="3127,438,3131,471,3131,517,3121,564,3111,586,3095,605,3059,615,2983,626,2755,645,2295,671,2295,665,2755,639,2983,620,3058,610,3092,600,3106,583,3116,562,3126,516,3126,472,3121,438"/>
+<area shape="poly" title=" " alt="" coords="3608,687,3573,730,3547,753,3517,770,3488,779,3444,786,3319,799,2975,817,2614,827,2365,830,2365,825,2614,821,2975,812,3319,794,3444,781,3487,774,3515,766,3544,748,3569,726,3604,684"/>
+<area shape="poly" title=" " alt="" coords="3210,134,3172,155,3154,170,3140,188,3126,221,3119,257,3120,321,3115,321,3114,256,3120,219,3135,185,3150,166,3169,151,3207,129"/>
+<area shape="rect" href="rgw__rados_8h.html" title=" " alt="" coords="2882,261,2974,288"/>
+<area shape="poly" title=" " alt="" coords="3215,134,3095,189,2965,256,2963,251,3092,184,3213,129"/>
+<area shape="rect" href="rgw__notify_8h.html" title=" " alt="" coords="3644,568,3735,595"/>
+<area shape="poly" title=" " alt="" coords="3282,129,3312,136,3360,142,3420,145,3560,148,3699,158,3757,168,3801,184,3831,201,3854,218,3868,241,3873,273,3873,351,3869,386,3857,419,3840,450,3818,479,3770,527,3724,561,3721,557,3766,523,3814,475,3835,447,3852,417,3864,385,3868,351,3868,274,3863,243,3850,222,3828,205,3799,189,3755,173,3698,163,3560,154,3420,150,3360,147,3312,141,3281,134"/>
+<area shape="rect" href="rgw__oidc__provider_8h.html" title=" " alt="" coords="3700,261,3834,288"/>
+<area shape="poly" title=" " alt="" coords="3283,129,3312,136,3359,141,3418,141,3557,138,3627,140,3690,147,3742,161,3763,171,3779,185,3787,199,3789,216,3782,248,3777,247,3784,216,3782,201,3775,188,3760,176,3741,166,3689,152,3626,145,3557,144,3418,146,3358,146,3312,141,3281,134"/>
+<area shape="rect" href="rgw__role_8h.html" title=" " alt="" coords="3149,187,3230,213"/>
+<area shape="poly" title=" " alt="" coords="3237,133,3208,176,3203,173,3232,130"/>
+<area shape="rect" href="rgw__multi_8h.html" title=" " alt="" coords="3254,187,3341,213"/>
+<area shape="poly" title=" " alt="" coords="3253,130,3283,173,3278,176,3249,133"/>
+<area shape="rect" href="rgw__putobj__processor_8h.html" title=" " alt="" coords="3365,187,3523,213"/>
+<area shape="poly" title=" " alt="" coords="3275,129,3400,178,3398,183,3273,134"/>
+<area shape="rect" href="svc__tier__rados_8h.html" title=" " alt="" coords="3509,261,3675,288"/>
+<area shape="poly" title=" " alt="" coords="3285,129,3313,136,3377,146,3429,148,3479,156,3506,167,3536,185,3565,214,3584,246,3579,249,3561,217,3533,189,3504,172,3478,161,3429,153,3376,151,3311,141,3284,134"/>
+<area shape="rect" title=" " alt="" coords="3598,187,3765,213"/>
+<area shape="poly" title=" " alt="" coords="3284,129,3313,136,3454,163,3583,183,3582,188,3453,169,3311,141,3283,134"/>
+<area shape="poly" title=" " alt="" coords="2882,288,2646,335,2645,330,2881,283"/>
+<area shape="poly" title=" " alt="" coords="2899,291,2801,332,2799,327,2897,286"/>
+<area shape="poly" title=" " alt="" coords="2922,290,2893,328,2872,349,2848,365,2773,393,2671,418,2550,439,2418,457,2159,482,1961,496,1961,491,2159,477,2418,451,2549,434,2669,413,2771,388,2845,360,2869,344,2889,325,2918,287"/>
+<area shape="poly" title=" " alt="" coords="2926,289,2911,325,2885,364,2824,425,2757,477,2691,521,2634,554,2632,550,2688,517,2754,473,2820,421,2881,361,2906,322,2921,287"/>
+<area shape="poly" title=" " alt="" coords="2934,288,2944,336,2947,389,2942,432,2924,471,2893,514,2857,544,2817,564,2815,560,2854,539,2889,510,2920,468,2937,430,2942,389,2939,336,2929,289"/>
+<area shape="poly" title=" " alt="" coords="2950,286,2975,307,2994,335,3011,383,3014,423,3008,463,2995,513,2985,536,2973,557,2968,554,2980,534,2989,511,3003,462,3009,423,3005,384,2990,337,2971,310,2947,290"/>
+<area shape="poly" title=" " alt="" coords="2963,286,3074,328,3072,333,2961,291"/>
+<area shape="poly" title=" " alt="" coords="3699,594,3708,614,3716,640,3717,668,3709,695,3694,716,3678,731,3644,750,3604,760,3555,771,3445,790,3298,805,3126,816,2944,824,2598,830,2365,831,2365,826,2598,825,2943,818,3126,811,3297,800,3444,785,3554,765,3603,755,3642,745,3675,727,3690,712,3704,692,3712,668,3710,641,3703,616,3694,596"/>
+<area shape="poly" title=" " alt="" coords="3644,590,2883,665,2883,660,3644,584"/>
+<area shape="poly" title=" " alt="" coords="3681,597,3637,648,3633,645,3677,594"/>
+<area shape="poly" title=" " alt="" coords="3777,287,3805,344,3818,382,3823,422,3823,674,3818,705,3805,727,3784,742,3758,751,3695,759,3624,771,3507,791,3351,807,3169,817,2975,825,2609,831,2365,831,2365,826,2609,825,2975,819,3168,812,3350,801,3507,786,3624,765,3694,754,3757,745,3782,737,3801,724,3813,703,3817,673,3817,423,3812,384,3800,346,3772,290"/>
+<area shape="poly" title=" " alt="" coords="3699,289,3687,291,3399,324,3175,346,3175,340,3398,318,3686,285,3699,284"/>
+<area shape="poly" title=" " alt="" coords="3231,210,3300,233,3331,246,3352,259,3403,309,3444,360,3475,412,3495,465,3502,520,3496,577,3477,635,3442,695,3421,720,3400,737,3378,749,3354,755,3302,762,3239,771,3159,783,3053,795,2797,812,2365,830,2365,824,2796,807,3052,789,3158,778,3238,765,3301,756,3353,750,3376,744,3397,733,3418,716,3438,692,3472,633,3491,576,3497,521,3489,467,3470,414,3440,363,3399,313,3349,263,3329,251,3298,238,3229,215"/>
+<area shape="poly" title=" " alt="" coords="3231,212,3276,231,3322,259,3342,277,3358,298,3369,322,3373,348,3373,500,3374,558,3366,581,3347,605,3313,625,3265,641,3207,653,3141,662,3004,671,2884,674,2884,669,3004,666,3141,656,3206,648,3264,636,3311,620,3344,601,3362,579,3369,557,3368,500,3368,348,3364,323,3354,301,3338,281,3319,263,3273,235,3229,216"/>
+<area shape="poly" title=" " alt="" coords="3149,215,2989,259,2988,254,3148,210"/>
+<area shape="poly" title=" " alt="" coords="3418,216,3164,332,3161,327,3415,211"/>
+<area shape="poly" title=" " alt="" coords="3471,211,3554,252,3551,256,3469,216"/>
+<area shape="poly" title=" " alt="" coords="2256,280,1816,291,1151,316,822,336,544,360,435,374,352,390,299,407,285,415,281,423,281,500,276,542,262,583,244,619,226,647,221,644,239,616,257,581,271,541,276,500,276,422,281,411,296,402,350,385,434,369,544,355,822,331,1151,311,1816,285,2256,274"/>
+<area shape="poly" title=" " alt="" coords="2283,291,1928,480,1926,476,2281,286"/>
+<area shape="poly" title=" " alt="" coords="2324,286,2386,325,2426,345,2469,360,2574,383,2665,389,2747,386,2824,378,2901,370,2983,369,3073,380,3123,391,3177,408,3268,434,3309,446,3347,460,3378,478,3403,502,3418,536,3424,580,3424,674,3421,684,3414,695,3385,713,3342,730,3285,745,3140,770,2969,791,2788,806,2615,818,2365,829,2365,824,2615,812,2787,801,2968,785,3140,765,3284,740,3340,725,3383,708,3410,691,3416,682,3419,673,3419,580,3413,537,3398,505,3375,482,3344,464,3308,451,3266,439,3175,413,3122,397,3072,385,2982,374,2901,375,2824,383,2747,391,2665,395,2573,388,2467,365,2424,349,2384,329,2321,291"/>
+<area shape="poly" title=" " alt="" coords="2314,287,2338,324,2355,344,2375,360,2428,390,2488,412,2553,428,2621,440,2760,453,2891,459,3000,468,3042,476,3073,489,3092,507,3096,519,3096,533,3083,565,3051,605,3018,616,2947,626,2732,645,2295,670,2295,665,2732,640,2946,621,3017,610,3048,600,3078,562,3090,532,3091,520,3087,510,3070,494,3041,482,3000,473,2891,464,2760,458,2620,445,2552,434,2486,417,2426,395,2372,365,2351,347,2334,327,2310,290"/>
+<area shape="poly" title=" " alt="" coords="2355,278,3068,341,3067,346,2355,283"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__quota_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_quota_cache_stats.html">RGWQuotaCacheStats</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_cache.html">RGWQuotaCache&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_cache_1_1_stats_async_test_set.html">RGWQuotaCache&lt; T &gt;::StatsAsyncTestSet</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_cache_1_1_async_refresh_handler.html">RGWQuotaCache&lt; T &gt;::AsyncRefreshHandler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_stats_update.html">RGWQuotaStatsUpdate&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bucket_async_refresh_handler.html">BucketAsyncRefreshHandler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_bucket_stats_cache.html">RGWBucketStatsCache</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user_async_refresh_handler.html">UserAsyncRefreshHandler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_user_stats_cache.html">RGWUserStatsCache</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_user_stats_cache_1_1_buckets_sync_thread.html">RGWUserStatsCache::BucketsSyncThread</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_user_stats_cache_1_1_user_sync_thread.html">RGWUserStatsCache::UserSyncThread</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_info_applier.html">RGWQuotaInfoApplier</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_info_def_applier.html">RGWQuotaInfoDefApplier</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_info_raw_applier.html">RGWQuotaInfoRawApplier</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_quota_handler_impl.html">RGWQuotaHandlerImpl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:ac9f1b8ed4aca7999d392b2d432030e30" id="r_ac9f1b8ed4aca7999d392b2d432030e30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__quota_8cc.html#ac9f1b8ed4aca7999d392b2d432030e30">dout_context</a>&#160;&#160;&#160;g_ceph_context</td></tr>
+<tr class="separator:ac9f1b8ed4aca7999d392b2d432030e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__quota_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:add631c075459405b91e51d1af16630d4" id="r_add631c075459405b91e51d1af16630d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__quota_8cc.html#add631c075459405b91e51d1af16630d4">rgw_apply_default_bucket_quota</a> (<a class="el" href="struct_r_g_w_quota_info.html">RGWQuotaInfo</a> &amp;quota, const ConfigProxy &amp;conf)</td></tr>
+<tr class="separator:add631c075459405b91e51d1af16630d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244ccf7403be39f95ad598134e2c6a62" id="r_a244ccf7403be39f95ad598134e2c6a62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__quota_8cc.html#a244ccf7403be39f95ad598134e2c6a62">rgw_apply_default_user_quota</a> (<a class="el" href="struct_r_g_w_quota_info.html">RGWQuotaInfo</a> &amp;quota, const ConfigProxy &amp;conf)</td></tr>
+<tr class="separator:a244ccf7403be39f95ad598134e2c6a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="ac9f1b8ed4aca7999d392b2d432030e30" name="ac9f1b8ed4aca7999d392b2d432030e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9f1b8ed4aca7999d392b2d432030e30">&#9670;&#160;</a></span>dout_context</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_context&#160;&#160;&#160;g_ceph_context</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__quota_8cc_source.html">rgw_quota.cc</a> 파일의 <a class="el" href="rgw__quota_8cc_source.html#l00035">35</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__quota_8cc_source.html">rgw_quota.cc</a> 파일의 <a class="el" href="rgw__quota_8cc_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="add631c075459405b91e51d1af16630d4" name="add631c075459405b91e51d1af16630d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add631c075459405b91e51d1af16630d4">&#9670;&#160;</a></span>rgw_apply_default_bucket_quota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw_apply_default_bucket_quota </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_g_w_quota_info.html">RGWQuotaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>quota</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ConfigProxy &amp;&#160;</td>
+          <td class="paramname"><em>conf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__quota_8cc_source.html">rgw_quota.cc</a> 파일의 <a class="el" href="rgw__quota_8cc_source.html#l00983">983</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  984</span>{</div>
+<div class="line"><span class="lineno">  985</span>  <span class="keywordflow">if</span> (conf-&gt;rgw_bucket_default_quota_max_objects &gt;= 0) {</div>
+<div class="line"><span class="lineno">  986</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a425e1d2833678631d7d27fef8cd1da1f">max_objects</a> = conf-&gt;rgw_bucket_default_quota_max_objects;</div>
+<div class="line"><span class="lineno">  987</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a4dbb532beaa44f6aba6766bf845315cd">enabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  988</span>  }</div>
+<div class="line"><span class="lineno">  989</span>  <span class="keywordflow">if</span> (conf-&gt;rgw_bucket_default_quota_max_size &gt;= 0) {</div>
+<div class="line"><span class="lineno">  990</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a1488b728b6c6a2a50189503dddbf5916">max_size</a> = conf-&gt;rgw_bucket_default_quota_max_size;</div>
+<div class="line"><span class="lineno">  991</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a4dbb532beaa44f6aba6766bf845315cd">enabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  992</span>  }</div>
+<div class="line"><span class="lineno">  993</span>}</div>
+<div class="ttc" id="astruct_r_g_w_quota_info_html_a1488b728b6c6a2a50189503dddbf5916"><div class="ttname"><a href="struct_r_g_w_quota_info.html#a1488b728b6c6a2a50189503dddbf5916">RGWQuotaInfo::max_size</a></div><div class="ttdeci">int64_t max_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__quota_8h_source.html#l00041">rgw_quota.h:41</a></div></div>
+<div class="ttc" id="astruct_r_g_w_quota_info_html_a425e1d2833678631d7d27fef8cd1da1f"><div class="ttname"><a href="struct_r_g_w_quota_info.html#a425e1d2833678631d7d27fef8cd1da1f">RGWQuotaInfo::max_objects</a></div><div class="ttdeci">int64_t max_objects</div><div class="ttdef"><b>Definition</b> <a href="rgw__quota_8h_source.html#l00042">rgw_quota.h:42</a></div></div>
+<div class="ttc" id="astruct_r_g_w_quota_info_html_a4dbb532beaa44f6aba6766bf845315cd"><div class="ttname"><a href="struct_r_g_w_quota_info.html#a4dbb532beaa44f6aba6766bf845315cd">RGWQuotaInfo::enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdef"><b>Definition</b> <a href="rgw__quota_8h_source.html#l00043">rgw_quota.h:43</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__quota_8cc_add631c075459405b91e51d1af16630d4_icgraph.png" border="0" usemap="#argw__quota_8cc_add631c075459405b91e51d1af16630d4_icgraph" alt=""/></div>
+<map name="argw__quota_8cc_add631c075459405b91e51d1af16630d4_icgraph" id="argw__quota_8cc_add631c075459405b91e51d1af16630d4_icgraph">
+<area shape="rect" title=" " alt="" coords="873,72,1043,115"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_remote_applier.html#a86243ff365e6e084fd0ee2a51e8a5320" title=" " alt="" coords="645,5,813,48"/>
+<area shape="poly" title=" " alt="" coords="867,70,804,51,806,46,869,65"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_web_identity_applier.html#a7ca2d32a00b4c67eac0ffc57387489d6" title=" " alt="" coords="633,72,825,115"/>
+<area shape="poly" title=" " alt="" coords="857,96,825,96,825,91,857,91"/>
+<area shape="rect" href="class_r_g_w_user.html#ad8af9d79483919124a7a3752c5934f57" title=" " alt="" coords="648,139,810,165"/>
+<area shape="poly" title=" " alt="" coords="858,122,785,141,783,135,857,116"/>
+<area shape="rect" href="class_r_g_w_user.html#a0332f74ac2a2fc1cf134d22030b2b2d3" title=" " alt="" coords="476,139,585,165"/>
+<area shape="poly" title=" " alt="" coords="632,155,585,155,585,149,632,149"/>
+<area shape="rect" href="class_r_g_w_user_admin_op___user.html#afc9614f7336a35896aa82c796793f0fe" title=" " alt="" coords="260,101,428,144"/>
+<area shape="poly" title=" " alt="" coords="460,144,428,139,429,133,461,138"/>
+<area shape="rect" href="rgw__admin_8cc.html#a217dbf8b442f20279ea00b898af96f52" title=" " alt="" coords="319,168,369,195"/>
+<area shape="poly" title=" " alt="" coords="461,166,370,180,369,175,460,160"/>
+<area shape="rect" href="class_r_g_w_simple_write_only_async_c_r_1_1_request.html#afef5f04d212dbdfc2743b362624f51fc" title=" " alt="" coords="5,68,212,111"/>
+<area shape="poly" title=" " alt="" coords="244,111,212,107,212,101,245,106"/>
+<area shape="rect" href="class_r_g_w_op___user___create.html#aa5fdc10e4ed070458e2fe0f115153f20" title=" " alt="" coords="30,135,187,177"/>
+<area shape="poly" title=" " alt="" coords="245,139,188,148,187,142,244,134"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a244ccf7403be39f95ad598134e2c6a62" name="a244ccf7403be39f95ad598134e2c6a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244ccf7403be39f95ad598134e2c6a62">&#9670;&#160;</a></span>rgw_apply_default_user_quota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw_apply_default_user_quota </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_g_w_quota_info.html">RGWQuotaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>quota</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ConfigProxy &amp;&#160;</td>
+          <td class="paramname"><em>conf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__quota_8cc_source.html">rgw_quota.cc</a> 파일의 <a class="el" href="rgw__quota_8cc_source.html#l00995">995</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  996</span>{</div>
+<div class="line"><span class="lineno">  997</span>  <span class="keywordflow">if</span> (conf-&gt;rgw_user_default_quota_max_objects &gt;= 0) {</div>
+<div class="line"><span class="lineno">  998</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a425e1d2833678631d7d27fef8cd1da1f">max_objects</a> = conf-&gt;rgw_user_default_quota_max_objects;</div>
+<div class="line"><span class="lineno">  999</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a4dbb532beaa44f6aba6766bf845315cd">enabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1000</span>  }</div>
+<div class="line"><span class="lineno"> 1001</span>  <span class="keywordflow">if</span> (conf-&gt;rgw_user_default_quota_max_size &gt;= 0) {</div>
+<div class="line"><span class="lineno"> 1002</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a1488b728b6c6a2a50189503dddbf5916">max_size</a> = conf-&gt;rgw_user_default_quota_max_size;</div>
+<div class="line"><span class="lineno"> 1003</span>    quota.<a class="code hl_variable" href="struct_r_g_w_quota_info.html#a4dbb532beaa44f6aba6766bf845315cd">enabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1004</span>  }</div>
+<div class="line"><span class="lineno"> 1005</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__quota_8cc_a244ccf7403be39f95ad598134e2c6a62_icgraph.png" border="0" usemap="#argw__quota_8cc_a244ccf7403be39f95ad598134e2c6a62_icgraph" alt=""/></div>
+<map name="argw__quota_8cc_a244ccf7403be39f95ad598134e2c6a62_icgraph" id="argw__quota_8cc_a244ccf7403be39f95ad598134e2c6a62_icgraph">
+<area shape="rect" title=" " alt="" coords="873,72,1029,115"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_remote_applier.html#a86243ff365e6e084fd0ee2a51e8a5320" title=" " alt="" coords="645,5,813,48"/>
+<area shape="poly" title=" " alt="" coords="863,70,802,51,803,46,864,65"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_web_identity_applier.html#a7ca2d32a00b4c67eac0ffc57387489d6" title=" " alt="" coords="633,72,825,115"/>
+<area shape="poly" title=" " alt="" coords="857,96,825,96,825,91,857,91"/>
+<area shape="rect" href="class_r_g_w_user.html#ad8af9d79483919124a7a3752c5934f57" title=" " alt="" coords="648,139,810,165"/>
+<area shape="poly" title=" " alt="" coords="858,120,783,141,782,136,857,115"/>
+<area shape="rect" href="class_r_g_w_user.html#a0332f74ac2a2fc1cf134d22030b2b2d3" title=" " alt="" coords="476,139,585,165"/>
+<area shape="poly" title=" " alt="" coords="632,155,585,155,585,149,632,149"/>
+<area shape="rect" href="class_r_g_w_user_admin_op___user.html#afc9614f7336a35896aa82c796793f0fe" title=" " alt="" coords="260,101,428,144"/>
+<area shape="poly" title=" " alt="" coords="460,144,428,139,429,133,461,138"/>
+<area shape="rect" href="rgw__admin_8cc.html#a217dbf8b442f20279ea00b898af96f52" title=" " alt="" coords="319,168,369,195"/>
+<area shape="poly" title=" " alt="" coords="461,166,370,180,369,175,460,160"/>
+<area shape="rect" href="class_r_g_w_simple_write_only_async_c_r_1_1_request.html#afef5f04d212dbdfc2743b362624f51fc" title=" " alt="" coords="5,68,212,111"/>
+<area shape="poly" title=" " alt="" coords="244,111,212,107,212,101,245,106"/>
+<area shape="rect" href="class_r_g_w_op___user___create.html#aa5fdc10e4ed070458e2fe0f115153f20" title=" " alt="" coords="30,135,187,177"/>
+<area shape="poly" title=" " alt="" coords="245,139,188,148,187,142,244,134"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__quota_8cc.html">rgw_quota.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

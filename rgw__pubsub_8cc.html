@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_pubsub.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__pubsub_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_pubsub.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="svc__zone_8h_source.html">services/svc_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__b64_8h_source.html">rgw_b64.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal_8h_source.html">rgw_sal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal__rados_8h_source.html">rgw_sal_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__pubsub_8h_source.html">rgw_pubsub.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__tools_8h_source.html">rgw_tools.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__xml_8h_source.html">rgw_xml.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__arn_8h_source.html">rgw_arn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__pubsub__push_8h_source.html">rgw_pubsub_push.h</a>&quot;</code><br />
+<code>#include &lt;regex&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_pubsub.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__pubsub_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__pubsub_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__pubsub_8cc">
+<area shape="rect" title=" " alt="" coords="2390,5,2520,48"/>
+<area shape="rect" href="svc__zone_8h.html" title=" " alt="" coords="2089,320,2226,347"/>
+<area shape="poly" title=" " alt="" coords="2460,48,2464,94,2461,155,2456,187,2446,218,2432,248,2413,274,2385,291,2342,305,2242,325,2241,319,2341,300,2383,286,2409,270,2428,245,2441,216,2451,185,2456,154,2459,94,2455,49"/>
+<area shape="rect" href="rgw__b64_8h.html" title=" " alt="" coords="613,485,694,512"/>
+<area shape="poly" title=" " alt="" coords="2389,31,2191,33,1901,42,1563,63,1388,79,1218,99,1148,102,1078,97,949,83,896,84,874,89,855,98,840,111,828,129,821,152,819,183,819,335,815,360,806,383,793,405,776,424,736,457,697,480,694,476,733,452,772,420,789,402,802,381,810,359,813,334,813,183,816,151,824,126,836,107,852,93,872,84,895,79,949,77,1079,91,1148,97,1217,93,1388,73,1562,58,1901,37,2191,28,2389,25"/>
+<area shape="rect" href="rgw__sal_8h.html" title="Base abstractions and API for SAL" alt="" coords="1479,320,1556,347"/>
+<area shape="poly" title=" " alt="" coords="2389,34,2104,57,1954,76,1892,87,1846,99,1769,128,1712,157,1659,195,1595,247,1563,278,1537,309,1533,306,1559,275,1592,243,1656,191,1709,153,1767,123,1845,93,1891,81,1953,70,2103,52,2389,29"/>
+<area shape="rect" href="rgw__tools_8h.html" title=" " alt="" coords="1270,485,1357,512"/>
+<area shape="poly" title=" " alt="" coords="2389,31,2080,39,1874,48,1660,62,1459,81,1290,108,1225,124,1175,142,1144,162,1136,172,1133,183,1133,260,1138,295,1149,329,1167,360,1188,389,1237,439,1283,474,1279,478,1234,443,1184,392,1162,363,1144,331,1132,296,1128,260,1128,182,1131,170,1140,158,1173,137,1223,119,1289,102,1458,76,1660,56,1873,43,2080,34,2389,26"/>
+<area shape="rect" href="rgw__sal__rados_8h.html" title=" " alt="" coords="2028,96,2143,123"/>
+<area shape="poly" title=" " alt="" coords="2390,45,2159,95,2158,90,2389,40"/>
+<area shape="rect" href="rgw__pubsub_8h.html" title=" " alt="" coords="1631,320,1732,347"/>
+<area shape="poly" title=" " alt="" coords="2390,36,2237,51,2046,78,1952,96,1867,118,1798,143,1771,158,1750,173,1725,203,1707,238,1695,274,1688,305,1683,304,1690,273,1702,236,1720,200,1746,169,1768,153,1795,139,1866,113,1951,91,2045,72,2236,45,2389,30"/>
+<area shape="rect" href="rgw__xml_8h.html" title=" " alt="" coords="2479,403,2559,429"/>
+<area shape="poly" title=" " alt="" coords="2476,47,2497,72,2517,105,2534,142,2540,182,2540,260,2535,329,2527,388,2521,387,2530,329,2535,260,2535,183,2528,144,2513,107,2492,75,2472,50"/>
+<area shape="rect" href="rgw__arn_8h.html" title=" " alt="" coords="2612,96,2689,123"/>
+<area shape="poly" title=" " alt="" coords="2506,46,2607,87,2605,92,2504,51"/>
+<area shape="rect" href="rgw__pubsub__push_8h.html" title=" " alt="" coords="2924,403,3060,429"/>
+<area shape="poly" title=" " alt="" coords="2521,25,2610,34,2659,43,2707,57,2749,77,2784,104,2808,139,2814,160,2816,183,2816,260,2819,284,2828,306,2842,325,2860,343,2901,373,2943,394,2941,399,2898,377,2856,347,2838,329,2824,308,2814,285,2811,260,2811,183,2809,161,2803,141,2780,108,2747,82,2705,62,2658,48,2610,39,2520,31"/>
+<area shape="rect" title=" " alt="" coords="2851,96,2904,123"/>
+<area shape="poly" title=" " alt="" coords="2521,36,2664,60,2833,93,2836,94,2835,99,2832,99,2663,65,2520,41"/>
+<area shape="rect" title=" " alt="" coords="2928,96,3003,123"/>
+<area shape="poly" title=" " alt="" coords="2521,33,2694,56,2914,93,2913,98,2694,62,2520,38"/>
+<area shape="rect" href="rgw__service_8h.html" title=" " alt="" coords="2045,485,2168,512"/>
+<area shape="poly" title=" " alt="" coords="2168,346,2186,388,2189,413,2184,438,2168,461,2147,479,2143,475,2164,458,2179,436,2184,413,2181,389,2163,348"/>
+<area shape="rect" title=" " alt="" coords="2229,568,2283,595"/>
+<area shape="poly" title=" " alt="" coords="2131,510,2221,558,2218,563,2129,515"/>
+<area shape="rect" title=" " alt="" coords="2004,568,2060,595"/>
+<area shape="poly" title=" " alt="" coords="2097,514,2056,559,2052,555,2093,511"/>
+<area shape="rect" title=" " alt="" coords="2658,568,2726,595"/>
+<area shape="poly" title=" " alt="" coords="2169,506,2643,571,2642,576,2168,511"/>
+<area shape="rect" title=" " alt="" coords="2036,651,2177,693"/>
+<area shape="poly" title=" " alt="" coords="2109,512,2109,635,2104,635,2104,512"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="1403,568,1536,595"/>
+<area shape="poly" title=" " alt="" coords="2045,508,1836,529,1574,563,1546,567,1545,562,1573,557,1835,524,2044,503"/>
+<area shape="poly" title=" " alt="" coords="1532,593,1574,600,1817,634,2021,659,2021,664,1816,640,1573,605,1531,598"/>
+<area shape="rect" title=" " alt="" coords="405,659,489,685"/>
+<area shape="poly" title=" " alt="" coords="1426,598,1391,605,1264,624,1133,638,879,658,659,669,505,673,505,667,659,663,878,653,1133,633,1263,618,1390,600,1425,593"/>
+<area shape="rect" title=" " alt="" coords="1190,659,1309,685"/>
+<area shape="poly" title=" " alt="" coords="1439,598,1296,655,1294,650,1437,593"/>
+<area shape="poly" title=" " alt="" coords="694,498,1242,514,1651,531,2072,557,2214,572,2214,577,2072,563,1651,537,1242,519,694,503"/>
+<area shape="poly" title=" " alt="" coords="613,503,468,508,279,517,107,535,47,547,28,554,17,562,10,572,8,581,10,591,17,601,41,619,79,634,127,645,180,654,293,664,390,668,389,673,293,670,180,659,126,651,78,639,39,624,13,604,5,593,3,581,5,570,13,558,25,550,46,542,106,530,278,512,468,502,613,498"/>
+<area shape="rect" title=" " alt="" coords="26,560,193,603"/>
+<area shape="poly" title=" " alt="" coords="613,507,442,528,208,562,208,557,441,523,613,502"/>
+<area shape="rect" title=" " alt="" coords="217,560,383,603"/>
+<area shape="poly" title=" " alt="" coords="613,512,399,560,398,555,612,507"/>
+<area shape="rect" title=" " alt="" coords="407,560,556,603"/>
+<area shape="poly" title=" " alt="" coords="628,515,541,555,538,551,625,510"/>
+<area shape="rect" title=" " alt="" coords="579,560,728,603"/>
+<area shape="poly" title=" " alt="" coords="656,513,656,545,651,545,651,513"/>
+<area shape="rect" title=" " alt="" coords="752,560,915,603"/>
+<area shape="poly" title=" " alt="" coords="683,510,774,551,772,556,680,515"/>
+<area shape="rect" title=" " alt="" coords="939,568,992,595"/>
+<area shape="poly" title=" " alt="" coords="695,503,801,522,865,538,928,557,931,559,929,564,926,563,864,543,800,528,694,508"/>
+<area shape="poly" title=" " alt="" coords="1479,338,1392,342,1283,351,1181,369,1141,381,1114,397,1066,444,1049,468,1037,493,1032,519,1033,545,1041,573,1057,601,1081,625,1110,643,1142,655,1175,663,1174,668,1141,660,1108,648,1077,630,1053,604,1036,575,1027,546,1026,518,1032,491,1045,465,1062,440,1111,393,1139,377,1180,364,1282,346,1391,337,1479,333"/>
+<area shape="rect" href="rgw__user_8h.html" title=" " alt="" coords="1475,403,1560,429"/>
+<area shape="poly" title=" " alt="" coords="1520,347,1520,387,1515,387,1515,347"/>
+<area shape="rect" href="rgw__notify__event__type_8h.html" title=" " alt="" coords="1966,403,2125,429"/>
+<area shape="poly" title=" " alt="" coords="1556,337,1761,364,1954,392,1977,396,1976,402,1953,397,1760,369,1556,342"/>
+<area shape="poly" title=" " alt="" coords="1545,427,1642,468,1704,491,1767,509,1859,527,1984,545,2215,573,2214,578,1984,550,1858,532,1766,515,1702,496,1640,473,1543,432"/>
+<area shape="poly" title=" " alt="" coords="1487,432,1451,454,1435,469,1423,486,1419,504,1423,522,1433,540,1446,555,1442,559,1429,543,1418,524,1413,504,1418,484,1431,465,1448,450,1484,428"/>
+<area shape="rect" title=" " alt="" coords="1432,485,1603,512"/>
+<area shape="poly" title=" " alt="" coords="1520,430,1520,470,1515,470,1515,430"/>
+<area shape="rect" title=" " alt="" coords="1585,568,1695,595"/>
+<area shape="poly" title=" " alt="" coords="1546,428,1583,450,1601,466,1617,484,1633,518,1640,552,1635,553,1628,520,1613,487,1598,470,1580,455,1544,432"/>
+<area shape="poly" title=" " alt="" coords="1487,432,1360,482,1358,477,1485,427"/>
+<area shape="rect" title=" " alt="" coords="1778,485,1921,512"/>
+<area shape="poly" title=" " alt="" coords="1555,427,1579,435,1770,479,1769,484,1578,440,1553,433"/>
+<area shape="poly" title=" " alt="" coords="1358,503,1420,509,1604,524,1746,534,2072,557,2214,572,2214,578,2072,563,1746,539,1603,530,1420,515,1357,508"/>
+<area shape="poly" title=" " alt="" coords="1339,510,1433,558,1431,563,1337,515"/>
+<area shape="poly" title=" " alt="" coords="1358,508,1574,561,1573,566,1357,513"/>
+<area shape="rect" title=" " alt="" coords="1238,568,1378,595"/>
+<area shape="poly" title=" " alt="" coords="1315,513,1313,553,1307,553,1310,512"/>
+<area shape="rect" title=" " alt="" coords="1067,568,1213,595"/>
+<area shape="poly" title=" " alt="" coords="1287,515,1182,564,1179,559,1285,510"/>
+<area shape="poly" title=" " alt="" coords="2081,428,2131,450,2182,483,2216,518,2242,553,2238,556,2212,521,2178,487,2128,455,2079,432"/>
+<area shape="poly" title=" " alt="" coords="2045,430,2036,486,2034,553,2029,552,2031,485,2040,429"/>
+<area shape="poly" title=" " alt="" coords="2027,116,1968,122,1897,132,1822,149,1749,173,1707,197,1651,235,1546,313,1543,308,1648,230,1704,192,1747,168,1820,144,1896,127,1967,116,2027,111"/>
+<area shape="rect" href="rgw__rados_8h.html" title=" " alt="" coords="1396,245,1487,272"/>
+<area shape="poly" title=" " alt="" coords="2028,119,1880,139,1792,155,1705,173,1587,207,1489,242,1487,237,1586,202,1703,168,1791,149,1879,134,2027,114"/>
+<area shape="rect" href="rgw__notify_8h.html" title=" " alt="" coords="2308,245,2399,272"/>
+<area shape="poly" title=" " alt="" coords="2144,116,2250,136,2298,151,2330,169,2341,182,2348,198,2355,229,2350,230,2343,200,2336,185,2326,173,2296,156,2249,141,2143,121"/>
+<area shape="rect" href="rgw__oidc__provider_8h.html" title=" " alt="" coords="2150,245,2285,272"/>
+<area shape="poly" title=" " alt="" coords="2093,122,2111,157,2138,196,2160,217,2185,234,2181,239,2157,221,2134,199,2106,159,2088,124"/>
+<area shape="rect" href="rgw__role_8h.html" title=" " alt="" coords="1760,171,1840,197"/>
+<area shape="poly" title=" " alt="" coords="2036,126,1856,171,1855,166,2035,121"/>
+<area shape="rect" href="rgw__multi_8h.html" title=" " alt="" coords="2412,320,2500,347"/>
+<area shape="poly" title=" " alt="" coords="2144,109,2192,114,2248,124,2305,142,2358,168,2391,198,2418,235,2437,272,2450,304,2445,306,2432,275,2413,238,2387,202,2355,173,2303,147,2247,129,2192,119,2143,115"/>
+<area shape="rect" href="rgw__putobj__processor_8h.html" title=" " alt="" coords="1865,171,2023,197"/>
+<area shape="poly" title=" " alt="" coords="2062,126,1984,166,1981,161,2060,121"/>
+<area shape="rect" href="svc__tier__rados_8h.html" title=" " alt="" coords="1960,245,2126,272"/>
+<area shape="poly" title=" " alt="" coords="2084,124,2053,231,2048,229,2079,122"/>
+<area shape="rect" title=" " alt="" coords="2148,171,2316,197"/>
+<area shape="poly" title=" " alt="" coords="2112,121,2194,161,2192,166,2110,126"/>
+<area shape="poly" title=" " alt="" coords="1445,272,1450,307,1458,327,1469,345,1493,364,1516,372,1543,379,1573,392,1589,404,1599,416,1609,426,1624,435,1684,448,1793,463,2030,488,2030,493,1792,468,1683,453,1622,440,1605,430,1595,419,1585,408,1571,397,1541,384,1515,378,1490,369,1465,348,1453,330,1445,309,1439,273"/>
+<area shape="poly" title=" " alt="" coords="1410,275,1373,293,1330,319,1290,354,1273,374,1260,396,1246,428,1240,455,1244,482,1259,510,1277,521,1314,534,1406,561,1405,566,1312,539,1275,525,1256,514,1239,483,1234,455,1241,426,1255,393,1269,371,1287,350,1327,315,1370,288,1408,270"/>
+<area shape="poly" title=" " alt="" coords="1457,271,1495,307,1492,311,1453,274"/>
+<area shape="poly" title=" " alt="" coords="1396,266,1329,276,1250,299,1211,316,1174,337,1141,364,1114,396,1105,415,1101,435,1102,478,1114,519,1128,553,1123,555,1109,521,1097,479,1095,435,1100,413,1110,393,1138,360,1171,333,1209,311,1249,294,1328,271,1395,261"/>
+<area shape="rect" title=" " alt="" coords="1269,395,1400,437"/>
+<area shape="poly" title=" " alt="" coords="1435,274,1360,383,1355,380,1431,271"/>
+<area shape="poly" title=" " alt="" coords="2355,273,2344,374,2330,444,2307,513,2279,557,2275,555,2302,511,2324,443,2339,374,2350,272"/>
+<area shape="poly" title=" " alt="" coords="2399,261,2629,287,2782,309,2937,337,3078,371,3138,390,3189,411,3228,434,3253,458,3260,471,3262,485,3259,499,3252,513,3226,545,3199,566,3171,579,3142,587,3077,594,2998,605,2886,626,2772,642,2546,663,2345,672,2192,674,2192,669,2345,667,2546,658,2771,637,2886,621,2997,600,3076,589,3141,582,3169,574,3196,561,3222,541,3247,511,3254,497,3256,485,3255,473,3249,461,3225,438,3187,416,3137,395,3077,376,2936,342,2781,314,2629,293,2398,267"/>
+<area shape="poly" title=" " alt="" coords="2308,273,2296,275,2193,285,2105,288,1954,283,1882,282,1805,286,1719,299,1620,323,1595,335,1569,349,1522,361,1480,365,1407,361,1372,360,1337,364,1300,375,1259,397,1220,432,1189,474,1166,517,1151,554,1146,552,1162,515,1185,471,1216,428,1256,392,1298,370,1336,358,1372,355,1407,356,1480,359,1521,356,1567,344,1592,331,1618,317,1718,293,1805,281,1882,277,1954,278,2105,283,2193,280,2296,269,2307,267"/>
+<area shape="poly" title=" " alt="" coords="2309,272,2077,322,2066,336,2058,353,2050,388,2045,386,2053,351,2062,333,2075,318,2308,267"/>
+<area shape="rect" title=" " alt="" coords="2801,485,2954,512"/>
+<area shape="poly" title=" " alt="" coords="2391,270,2513,318,2698,403,2841,475,2839,480,2696,408,2511,322,2389,275"/>
+<area shape="poly" title=" " alt="" coords="2308,273,2297,275,2143,295,1990,311,1748,331,1748,325,1990,306,2142,290,2296,269,2307,267"/>
+<area shape="poly" title=" " alt="" coords="1631,349,1538,372,1464,397,1438,417,1414,439,1351,480,1348,475,1410,435,1435,413,1462,392,1536,367,1630,343"/>
+<area shape="poly" title=" " alt="" coords="1733,343,1974,396,1973,401,1732,348"/>
+<area shape="poly" title=" " alt="" coords="1631,349,1419,397,1416,398,1415,393,1418,392,1630,344"/>
+<area shape="rect" href="svc__sys__obj_8h.html" title=" " alt="" coords="1798,395,1941,437"/>
+<area shape="poly" title=" " alt="" coords="1712,345,1808,386,1806,391,1710,350"/>
+<area shape="rect" href="rgw__zone_8h.html" title=" " alt="" coords="1635,403,1722,429"/>
+<area shape="poly" title=" " alt="" coords="1684,347,1682,388,1677,387,1678,347"/>
+<area shape="poly" title=" " alt="" coords="1931,435,2056,477,2054,482,1930,440"/>
+<area shape="poly" title=" " alt="" coords="1675,431,1653,471,1636,494,1616,514,1572,544,1526,565,1523,560,1569,539,1613,510,1632,490,1648,468,1671,429"/>
+<area shape="poly" title=" " alt="" coords="2240,270,2265,291,2285,319,2295,350,2300,383,2298,448,2285,508,2270,554,2265,552,2280,507,2292,448,2295,383,2290,351,2280,321,2261,294,2237,274"/>
+<area shape="poly" title=" " alt="" coords="2150,273,2138,275,1979,289,1856,296,1733,304,1575,323,1571,323,1570,318,1574,317,1732,299,1856,291,1979,284,2137,269,2149,268"/>
+<area shape="poly" title=" " alt="" coords="1818,196,1875,233,1911,253,1949,269,1993,280,2033,282,2106,274,2140,271,2173,276,2206,290,2239,318,2258,345,2271,376,2278,408,2280,441,2276,504,2266,554,2261,553,2271,503,2275,441,2273,409,2266,377,2254,348,2235,322,2203,294,2172,281,2140,277,2106,279,2033,287,1992,285,1947,275,1909,258,1872,238,1815,200"/>
+<area shape="poly" title=" " alt="" coords="1797,199,1781,242,1766,305,1762,339,1764,373,1772,406,1788,436,1803,451,1819,459,1854,463,1893,464,1914,470,1934,483,1948,498,1957,513,1966,541,1975,571,1994,601,2019,623,2047,641,2044,645,2016,627,1990,604,1970,573,1961,543,1952,515,1944,501,1930,487,1911,475,1892,469,1854,468,1817,465,1800,456,1783,439,1767,408,1759,374,1757,339,1760,304,1775,241,1792,197"/>
+<area shape="poly" title=" " alt="" coords="1760,196,1503,248,1502,243,1759,191"/>
+<area shape="rect" title=" " alt="" coords="2394,485,2441,512"/>
+<area shape="poly" title=" " alt="" coords="2456,348,2426,471,2421,470,2451,346"/>
+<area shape="poly" title=" " alt="" coords="2468,346,2502,389,2498,392,2464,349"/>
+<area shape="poly" title=" " alt="" coords="2522,430,2519,470,2511,494,2498,514,2476,533,2452,548,2398,568,2345,579,2298,583,2298,578,2344,574,2397,563,2450,543,2473,528,2494,510,2507,491,2514,469,2517,429"/>
+<area shape="poly" title=" " alt="" coords="2516,431,2494,473,2476,496,2453,514,2419,522,2350,531,2141,549,1710,578,1710,573,2141,544,2349,525,2418,517,2451,510,2473,492,2490,470,2512,429"/>
+<area shape="poly" title=" " alt="" coords="2479,425,1936,490,1935,484,2478,420"/>
+<area shape="poly" title=" " alt="" coords="2505,432,2446,478,2443,474,2501,428"/>
+<area shape="rect" title=" " alt="" coords="2648,485,2726,512"/>
+<area shape="poly" title=" " alt="" coords="2546,427,2648,476,2646,481,2544,432"/>
+<area shape="rect" title=" " alt="" coords="2566,485,2623,512"/>
+<area shape="poly" title=" " alt="" coords="2533,428,2575,472,2571,476,2529,432"/>
+<area shape="poly" title=" " alt="" coords="1908,200,1569,317,1568,312,1906,195"/>
+<area shape="poly" title=" " alt="" coords="1963,196,2015,234,2012,238,1960,200"/>
+<area shape="poly" title=" " alt="" coords="2048,271,2058,306,2078,345,2094,359,2110,367,2126,376,2140,393,2145,414,2143,436,2127,473,2122,471,2138,434,2140,415,2135,396,2123,380,2108,372,2091,364,2074,348,2053,308,2043,273"/>
+<area shape="poly" title=" " alt="" coords="2674,121,2702,142,2729,169,2757,210,2763,230,2765,257,2765,417,2765,471,2757,492,2739,514,2705,534,2657,549,2598,561,2533,570,2402,579,2298,582,2298,577,2402,574,2533,564,2597,556,2656,544,2703,529,2736,510,2753,490,2760,470,2760,417,2760,257,2758,231,2752,212,2725,172,2698,146,2671,125"/>
+<area shape="rect" title=" " alt="" coords="2587,171,2714,197"/>
+<area shape="poly" title=" " alt="" coords="2653,123,2653,155,2648,155,2648,123"/>
+<area shape="poly" title=" " alt="" coords="2996,430,2992,471,2984,495,2968,514,2937,523,2873,533,2679,552,2299,580,2298,575,2679,546,2872,527,2936,518,2965,510,2979,492,2987,470,2990,429"/>
+<area shape="poly" title=" " alt="" coords="3003,429,3020,469,3022,492,3013,514,2994,529,2967,541,2895,560,2814,572,2742,579,2742,574,2813,567,2894,555,2965,536,2992,524,3009,510,3016,491,3015,470,2998,431"/>
+<area shape="poly" title=" " alt="" coords="3061,419,3130,429,3194,445,3219,458,3235,473,3239,492,3227,514,3207,529,3173,543,3072,570,2936,593,2779,614,2451,648,2193,668,2193,662,2451,642,2778,609,2936,588,3071,564,3172,538,3204,524,3223,510,3233,491,3230,475,3216,462,3193,450,3129,434,3060,425"/>
+<area shape="poly" title=" " alt="" coords="2976,432,2909,479,2906,474,2973,428"/>
+<area shape="poly" title=" " alt="" coords="2945,433,2742,486,2740,481,2943,427"/>
+<area shape="rect" title=" " alt="" coords="3080,485,3214,512"/>
+<area shape="poly" title=" " alt="" coords="3017,427,3111,476,3108,480,3015,432"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__pubsub_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a9e56763a419e65292a4d5057e92d52a4" id="r_a9e56763a419e65292a4d5057e92d52a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#a9e56763a419e65292a4d5057e92d52a4">set_event_id</a> (std::string &amp;id, const std::string &amp;hash, const utime_t &amp;ts)</td></tr>
+<tr class="separator:a9e56763a419e65292a4d5057e92d52a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7e5ca8afa6fcf8efba44fb01ad1b63" id="r_aba7e5ca8afa6fcf8efba44fb01ad1b63"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#aba7e5ca8afa6fcf8efba44fb01ad1b63">match</a> (const <a class="el" href="structrgw__s3__key__filter.html">rgw_s3_key_filter</a> &amp;filter, const std::string &amp;key)</td></tr>
+<tr class="separator:aba7e5ca8afa6fcf8efba44fb01ad1b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d9a4087480c2f0748cd74740b8b9a9d" id="r_a1d9a4087480c2f0748cd74740b8b9a9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#a1d9a4087480c2f0748cd74740b8b9a9d">match</a> (const <a class="el" href="structrgw__s3__key__value__filter.html">rgw_s3_key_value_filter</a> &amp;filter, const <a class="el" href="rgw__pubsub_8h.html#a1d541f2a95aef02ed56ace9f434e08e2">KeyValueMap</a> &amp;kv)</td></tr>
+<tr class="separator:a1d9a4087480c2f0748cd74740b8b9a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee4232d6153b49842f18034324ebc11" id="r_a7ee4232d6153b49842f18034324ebc11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#a7ee4232d6153b49842f18034324ebc11">match</a> (const <a class="el" href="structrgw__s3__key__value__filter.html">rgw_s3_key_value_filter</a> &amp;filter, const <a class="el" href="rgw__pubsub_8h.html#aa550bc222c10cf80dd57d1867d3b2aef">KeyMultiValueMap</a> &amp;kv)</td></tr>
+<tr class="separator:a7ee4232d6153b49842f18034324ebc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8fc9458028662747d46aafa5b02eed0" id="r_aa8fc9458028662747d46aafa5b02eed0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#aa8fc9458028662747d46aafa5b02eed0">match</a> (const <a class="el" href="namespacergw_1_1notify.html#ad96058e3dc68d2245f02388acb7d9bb1">rgw::notify::EventTypeList</a> &amp;events, <a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a> event)</td></tr>
+<tr class="separator:aa8fc9458028662747d46aafa5b02eed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c133fc50feca848a71cf362ad2dc403" id="r_a0c133fc50feca848a71cf362ad2dc403"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#a0c133fc50feca848a71cf362ad2dc403">do_decode_xml_obj</a> (<a class="el" href="namespacergw_1_1notify.html#ad96058e3dc68d2245f02388acb7d9bb1">rgw::notify::EventTypeList</a> &amp;l, const string &amp;name, <a class="el" href="class_x_m_l_obj.html">XMLObj</a> *obj)</td></tr>
+<tr class="separator:a0c133fc50feca848a71cf362ad2dc403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e666a506dff514ab61b0da8c3bd0ea" id="r_ac8e666a506dff514ab61b0da8c3bd0ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#ac8e666a506dff514ab61b0da8c3bd0ea">encode_xml_key_value_entry</a> (const std::string &amp;key, const std::string &amp;value, Formatter *f)</td></tr>
+<tr class="separator:ac8e666a506dff514ab61b0da8c3bd0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5094a41f96428bed352f9dce826ac866" id="r_a5094a41f96428bed352f9dce826ac866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__pubsub_8cc.html#a5094a41f96428bed352f9dce826ac866">encode_json</a> (const char *name, const <a class="el" href="namespacergw_1_1notify.html#ad96058e3dc68d2245f02388acb7d9bb1">rgw::notify::EventTypeList</a> &amp;l, Formatter *f)</td></tr>
+<tr class="separator:a5094a41f96428bed352f9dce826ac866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00016">16</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="a0c133fc50feca848a71cf362ad2dc403" name="a0c133fc50feca848a71cf362ad2dc403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c133fc50feca848a71cf362ad2dc403">&#9670;&#160;</a></span>do_decode_xml_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void do_decode_xml_obj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacergw_1_1notify.html#ad96058e3dc68d2245f02388acb7d9bb1">rgw::notify::EventTypeList</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_x_m_l_obj.html">XMLObj</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00197">197</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>                                                                                   {</div>
+<div class="line"><span class="lineno">  198</span>  l.clear();</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>  <a class="code hl_class" href="class_x_m_l_obj_iter.html">XMLObjIter</a> iter = obj-&gt;<a class="code hl_function" href="class_x_m_l_obj.html#a97256c1a1fe4c0b1fb7f422ed6ac30f3">find</a>(name);</div>
+<div class="line"><span class="lineno">  201</span>  <a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *o;</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>  <span class="keywordflow">while</span> ((o = iter.<a class="code hl_function" href="class_x_m_l_obj_iter.html#a3a22d90225f573459c9c5afc925eceb3">get_next</a>())) {</div>
+<div class="line"><span class="lineno">  204</span>    std::string val;</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_function" href="rgw__website_8cc.html#a75317733fd20f96ebc2cea63a4e0528b">decode_xml_obj</a>(val, o);</div>
+<div class="line"><span class="lineno">  206</span>    l.push_back(<a class="code hl_function" href="namespacergw_1_1notify.html#a0ae4ec0093454c0a71443b431a6bf2f6">rgw::notify::from_string</a>(val));</div>
+<div class="line"><span class="lineno">  207</span>  }</div>
+<div class="line"><span class="lineno">  208</span>}</div>
+<div class="ttc" id="aclass_x_m_l_obj_html"><div class="ttname"><a href="class_x_m_l_obj.html">XMLObj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00039">rgw_xml.h:40</a></div></div>
+<div class="ttc" id="aclass_x_m_l_obj_html_a97256c1a1fe4c0b1fb7f422ed6ac30f3"><div class="ttname"><a href="class_x_m_l_obj.html#a97256c1a1fe4c0b1fb7f422ed6ac30f3">XMLObj::find</a></div><div class="ttdeci">XMLObjIter find(const std::string &amp;name)</div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8cc_source.html#l00123">rgw_xml.cc:124</a></div></div>
+<div class="ttc" id="aclass_x_m_l_obj_iter_html"><div class="ttname"><a href="class_x_m_l_obj_iter.html">XMLObjIter</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00017">rgw_xml.h:17</a></div></div>
+<div class="ttc" id="aclass_x_m_l_obj_iter_html_a3a22d90225f573459c9c5afc925eceb3"><div class="ttname"><a href="class_x_m_l_obj_iter.html#a3a22d90225f573459c9c5afc925eceb3">XMLObjIter::get_next</a></div><div class="ttdeci">XMLObj * get_next()</div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8cc_source.html#l00035">rgw_xml.cc:36</a></div></div>
+<div class="ttc" id="anamespacergw_1_1notify_html_a0ae4ec0093454c0a71443b431a6bf2f6"><div class="ttname"><a href="namespacergw_1_1notify.html#a0ae4ec0093454c0a71443b431a6bf2f6">rgw::notify::from_string</a></div><div class="ttdeci">EventType from_string(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__notify__event__type_8cc_source.html#l00086">rgw_notify_event_type.cc:86</a></div></div>
+<div class="ttc" id="argw__website_8cc_html_a75317733fd20f96ebc2cea63a4e0528b"><div class="ttname"><a href="rgw__website_8cc.html#a75317733fd20f96ebc2cea63a4e0528b">decode_xml_obj</a></div><div class="ttdeci">void decode_xml_obj(list&lt; RGWBWRoutingRule &gt; &amp;l, XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__website_8cc_source.html#l00318">rgw_website.cc:318</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_cgraph.png" border="0" usemap="#argw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_cgraph" alt=""/></div>
+<map name="argw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_cgraph" id="argw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,142,83"/>
+<area shape="rect" href="rgw__website_8cc.html#a75317733fd20f96ebc2cea63a4e0528b" title=" " alt="" coords="208,5,324,32"/>
+<area shape="poly" title=" " alt="" coords="142,57,222,35,223,40,143,63"/>
+<area shape="rect" href="class_x_m_l_obj.html#a97256c1a1fe4c0b1fb7f422ed6ac30f3" title=" " alt="" coords="219,56,313,83"/>
+<area shape="poly" title=" " alt="" coords="142,67,203,67,203,72,142,72"/>
+<area shape="rect" href="namespacergw_1_1notify.html#a0ae4ec0093454c0a71443b431a6bf2f6" title=" " alt="" coords="190,107,342,133"/>
+<area shape="poly" title=" " alt="" coords="128,81,198,100,197,105,126,86"/>
+<area shape="rect" href="class_x_m_l_obj_iter.html#a3a22d90225f573459c9c5afc925eceb3" title=" " alt="" coords="195,157,337,184"/>
+<area shape="poly" title=" " alt="" coords="94,81,137,112,191,143,204,149,202,154,188,148,134,116,91,85"/>
+<area shape="poly" title=" " alt="" coords="208,28,117,53,116,48,207,23"/>
+<area shape="rect" href="class_x_m_l_obj_iter.html#a930f9d8fc441b9fee57a9eacb5056e73" title=" " alt="" coords="390,56,500,83"/>
+<area shape="poly" title=" " alt="" coords="314,67,374,67,374,72,314,72"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_icgraph.png" border="0" usemap="#argw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_icgraph" alt=""/></div>
+<map name="argw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_icgraph" id="argw__pubsub_8cc_a0c133fc50feca848a71cf362ad2dc403_icgraph">
+<area shape="rect" title=" " alt="" coords="241,109,377,136"/>
+<area shape="rect" href="structrgw__pubsub__s3__notification.html#aafc9c836e3f22aee92f4c6c33ffa3cdd" title=" " alt="" coords="9,5,189,48"/>
+<area shape="poly" title=" " alt="" coords="271,104,192,62,164,51,166,46,194,58,273,99"/>
+<area shape="rect" href="structrgw__pubsub__s3__notifications.html#aa5fcf6d32cd6641bd0bf92ab2325a487" title=" " alt="" coords="5,72,193,115"/>
+<area shape="poly" title=" " alt="" coords="225,114,193,109,194,104,226,108"/>
+<area shape="rect" href="rgw__website_8cc.html#a75317733fd20f96ebc2cea63a4e0528b" title=" " alt="" coords="41,139,157,165"/>
+<area shape="poly" title=" " alt="" coords="248,142,157,155,157,149,247,137"/>
+<area shape="poly" title=" " alt="" coords="160,133,240,121,241,126,160,138"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5094a41f96428bed352f9dce826ac866" name="a5094a41f96428bed352f9dce826ac866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5094a41f96428bed352f9dce826ac866">&#9670;&#160;</a></span>encode_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void encode_json </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacergw_1_1notify.html#ad96058e3dc68d2245f02388acb7d9bb1">rgw::notify::EventTypeList</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Formatter *&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00346">346</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>{</div>
+<div class="line"><span class="lineno">  348</span>  f-&gt;open_array_section(name);</div>
+<div class="line"><span class="lineno">  349</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = l.cbegin(); iter != l.cend(); ++iter) {</div>
+<div class="line"><span class="lineno">  350</span>    f-&gt;dump_string(<span class="stringliteral">&quot;obj&quot;</span>, <a class="code hl_function" href="namespacergw_1_1notify.html#aa5f191df4111ed6a5034ba18ae6f8932">rgw::notify::to_ceph_string</a>(*iter));</div>
+<div class="line"><span class="lineno">  351</span>  }</div>
+<div class="line"><span class="lineno">  352</span>  f-&gt;close_section();</div>
+<div class="line"><span class="lineno">  353</span>}</div>
+<div class="ttc" id="anamespacergw_1_1notify_html_aa5f191df4111ed6a5034ba18ae6f8932"><div class="ttname"><a href="namespacergw_1_1notify.html#aa5f191df4111ed6a5034ba18ae6f8932">rgw::notify::to_ceph_string</a></div><div class="ttdeci">std::string to_ceph_string(EventType t)</div><div class="ttdef"><b>Definition</b> <a href="rgw__notify__event__type_8cc_source.html#l00051">rgw_notify_event_type.cc:51</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc_a5094a41f96428bed352f9dce826ac866_cgraph.png" border="0" usemap="#argw__pubsub_8cc_a5094a41f96428bed352f9dce826ac866_cgraph" alt=""/></div>
+<map name="argw__pubsub_8cc_a5094a41f96428bed352f9dce826ac866_cgraph" id="argw__pubsub_8cc_a5094a41f96428bed352f9dce826ac866_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,100,40"/>
+<area shape="rect" href="namespacergw_1_1notify.html#aa5f191df4111ed6a5034ba18ae6f8932" title=" " alt="" coords="148,5,282,48"/>
+<area shape="poly" title=" " alt="" coords="100,24,132,24,132,29,100,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac8e666a506dff514ab61b0da8c3bd0ea" name="ac8e666a506dff514ab61b0da8c3bd0ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8e666a506dff514ab61b0da8c3bd0ea">&#9670;&#160;</a></span>encode_xml_key_value_entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void encode_xml_key_value_entry </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Formatter *&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00326">326</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span>                                                                                            {</div>
+<div class="line"><span class="lineno">  327</span>  f-&gt;open_object_section(<span class="stringliteral">&quot;entry&quot;</span>);</div>
+<div class="line"><span class="lineno">  328</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;key&quot;</span>, key, f);</div>
+<div class="line"><span class="lineno">  329</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;value&quot;</span>, value, f);</div>
+<div class="line"><span class="lineno">  330</span>  f-&gt;close_section(); <span class="comment">// entry</span></div>
+<div class="line"><span class="lineno">  331</span>}</div>
+<div class="ttc" id="argw__basic__types_8cc_html_a0a8bb5599abd436eaa39a31634f1f5e3"><div class="ttname"><a href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a></div><div class="ttdeci">void encode_xml(const char *name, const rgw_user &amp;val, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8cc_source.html#l00033">rgw_basic_types.cc:33</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_cgraph.png" border="0" usemap="#argw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_cgraph" alt=""/></div>
+<map name="argw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_cgraph" id="argw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_cgraph">
+<area shape="rect" title=" " alt="" coords="5,21,161,64"/>
+<area shape="rect" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3" title=" " alt="" coords="209,29,300,56"/>
+<area shape="poly" title=" " alt="" coords="161,40,193,40,193,45,161,45"/>
+<area shape="poly" title=" " alt="" coords="228,30,223,21,227,11,237,5,254,3,273,5,282,12,279,16,271,10,254,8,239,10,231,14,229,20,233,28"/>
+<area shape="rect" href="structrgw__user.html#af00f510d6a9ff0580d87ee46b274d96e" title=" " alt="" coords="348,29,462,56"/>
+<area shape="poly" title=" " alt="" coords="301,40,332,40,332,45,301,45"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_icgraph.png" border="0" usemap="#argw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_icgraph" alt=""/></div>
+<map name="argw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_icgraph" id="argw__pubsub_8cc_ac8e666a506dff514ab61b0da8c3bd0ea_icgraph">
+<area shape="rect" title=" " alt="" coords="480,5,635,48"/>
+<area shape="rect" href="structrgw__pubsub__topic.html#ac93dba7ea873402d7f534087a19151f6" title=" " alt="" coords="267,5,432,48"/>
+<area shape="poly" title=" " alt="" coords="465,29,432,29,432,24,465,24"/>
+<area shape="rect" href="class_r_g_w_p_s_get_topic_attributes___obj_store___a_w_s.html#a3ed501c7671c45c6885c98721c4c8633" title=" " alt="" coords="5,5,219,48"/>
+<area shape="poly" title=" " alt="" coords="252,29,219,29,219,24,252,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa8fc9458028662747d46aafa5b02eed0" name="aa8fc9458028662747d46aafa5b02eed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fc9458028662747d46aafa5b02eed0">&#9670;&#160;</a></span>match() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool match </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacergw_1_1notify.html#ad96058e3dc68d2245f02388acb7d9bb1">rgw::notify::EventTypeList</a> &amp;&#160;</td>
+          <td class="paramname"><em>events</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a>&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00189">189</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>                                                                           {</div>
+<div class="line"><span class="lineno">  190</span>  <span class="comment">// if event list exists, and none of the events in the list matches the event type, filter the message</span></div>
+<div class="line"><span class="lineno">  191</span>  <span class="keywordflow">if</span> (!<a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a16908b0605f2645dfcb4c3a8d248cef3">events</a>.empty() &amp;&amp; std::find(<a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a16908b0605f2645dfcb4c3a8d248cef3">events</a>.begin(), <a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a16908b0605f2645dfcb4c3a8d248cef3">events</a>.end(), event) == <a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a16908b0605f2645dfcb4c3a8d248cef3">events</a>.end()) {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+<div class="line"><span class="lineno">  194</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  195</span>}</div>
+<div class="ttc" id="anamespacergw_html_aa74ef6030865b86d25300c7309e8b191a16908b0605f2645dfcb4c3a8d248cef3"><div class="ttname"><a href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a16908b0605f2645dfcb4c3a8d248cef3">rgw::Service::events</a></div><div class="ttdeci">@ events</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aba7e5ca8afa6fcf8efba44fb01ad1b63" name="aba7e5ca8afa6fcf8efba44fb01ad1b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7e5ca8afa6fcf8efba44fb01ad1b63">&#9670;&#160;</a></span>match() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool match </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw__s3__key__filter.html">rgw_s3_key_filter</a> &amp;&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00136">136</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>                                                                  {</div>
+<div class="line"><span class="lineno">  137</span>  <span class="keyword">const</span> <span class="keyword">auto</span> key_size = key.size();</div>
+<div class="line"><span class="lineno">  138</span>  <span class="keyword">const</span> <span class="keyword">auto</span> prefix_size = filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#a17052e6c7492292e80fc533bc499ccc8">prefix_rule</a>.size();</div>
+<div class="line"><span class="lineno">  139</span>  <span class="keywordflow">if</span> (prefix_size != 0) {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="comment">// prefix rule exists</span></div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">if</span> (prefix_size &gt; key_size) {</div>
+<div class="line"><span class="lineno">  142</span>      <span class="comment">// if prefix is longer than key, we fail</span></div>
+<div class="line"><span class="lineno">  143</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span> (!std::equal(filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#a17052e6c7492292e80fc533bc499ccc8">prefix_rule</a>.begin(), filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#a17052e6c7492292e80fc533bc499ccc8">prefix_rule</a>.end(), key.begin())) {</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span>  }</div>
+<div class="line"><span class="lineno">  149</span>  <span class="keyword">const</span> <span class="keyword">auto</span> suffix_size = filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#af6f0b7a14a73fc1af323319677f6bd2c">suffix_rule</a>.size();</div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordflow">if</span> (suffix_size != 0) {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">// suffix rule exists</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (suffix_size &gt; key_size) {</div>
+<div class="line"><span class="lineno">  153</span>      <span class="comment">// if suffix is longer than key, we fail</span></div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (!std::equal(filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#af6f0b7a14a73fc1af323319677f6bd2c">suffix_rule</a>.begin(), filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#af6f0b7a14a73fc1af323319677f6bd2c">suffix_rule</a>.end(), (key.end() - suffix_size))) {</div>
+<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  158</span>    }</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span>  <span class="keywordflow">if</span> (!filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#a75eb72edeade9406d12673a158c763e7">regex_rule</a>.empty()) {</div>
+<div class="line"><span class="lineno">  161</span>    <span class="comment">// TODO add regex chaching in the filter</span></div>
+<div class="line"><span class="lineno">  162</span>    <span class="keyword">const</span> std::regex base_regex(filter.<a class="code hl_variable" href="structrgw__s3__key__filter.html#a75eb72edeade9406d12673a158c763e7">regex_rule</a>);</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (!std::regex_match(key, base_regex)) {</div>
+<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  168</span>}</div>
+<div class="ttc" id="astructrgw__s3__key__filter_html_a17052e6c7492292e80fc533bc499ccc8"><div class="ttname"><a href="structrgw__s3__key__filter.html#a17052e6c7492292e80fc533bc499ccc8">rgw_s3_key_filter::prefix_rule</a></div><div class="ttdeci">std::string prefix_rule</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8h_source.html#l00018">rgw_pubsub.h:18</a></div></div>
+<div class="ttc" id="astructrgw__s3__key__filter_html_a75eb72edeade9406d12673a158c763e7"><div class="ttname"><a href="structrgw__s3__key__filter.html#a75eb72edeade9406d12673a158c763e7">rgw_s3_key_filter::regex_rule</a></div><div class="ttdeci">std::string regex_rule</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8h_source.html#l00020">rgw_pubsub.h:20</a></div></div>
+<div class="ttc" id="astructrgw__s3__key__filter_html_af6f0b7a14a73fc1af323319677f6bd2c"><div class="ttname"><a href="structrgw__s3__key__filter.html#af6f0b7a14a73fc1af323319677f6bd2c">rgw_s3_key_filter::suffix_rule</a></div><div class="ttdeci">std::string suffix_rule</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8h_source.html#l00019">rgw_pubsub.h:19</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc_aba7e5ca8afa6fcf8efba44fb01ad1b63_icgraph.png" border="0" usemap="#argw__pubsub_8cc_aba7e5ca8afa6fcf8efba44fb01ad1b63_icgraph" alt=""/></div>
+<map name="argw__pubsub_8cc_aba7e5ca8afa6fcf8efba44fb01ad1b63_icgraph" id="argw__pubsub_8cc_aba7e5ca8afa6fcf8efba44fb01ad1b63_icgraph">
+<area shape="rect" title=" " alt="" coords="949,168,1006,195"/>
+<area shape="rect" href="namespacergw_1_1notify.html#a5565f5ea7e99d8df414495d6284aa55a" title=" " alt="" coords="736,76,887,119"/>
+<area shape="poly" title=" " alt="" coords="944,161,899,133,875,122,877,117,902,128,947,156"/>
+<area shape="rect" href="structrgw_1_1_a_r_n_resource.html#a3a6360ef7d289205e19426b8963148cf" title=" " alt="" coords="726,143,897,169"/>
+<area shape="poly" title=" " alt="" coords="933,177,897,172,898,167,934,172"/>
+<area shape="rect" href="namespacergw_1_1_i_a_m.html#a35ac4bc32448a3265d094e35cb2e261f" title=" " alt="" coords="728,193,895,220"/>
+<area shape="poly" title=" " alt="" coords="934,191,896,196,895,191,933,185"/>
+<area shape="rect" href="class_r_g_w_rest_role.html#a52979e43f5cfe8d885cca56989a45390" title=" " alt="" coords="722,252,901,279"/>
+<area shape="poly" title=" " alt="" coords="947,206,902,234,856,254,854,249,899,230,944,202"/>
+<area shape="rect" href="namespacergw_1_1notify.html#a09ee70fa21b29e699d562017d4fb191d" title=" " alt="" coords="522,76,651,119"/>
+<area shape="poly" title=" " alt="" coords="721,100,651,100,651,95,721,95"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_notification.html#a29f517fabe959de644ad1a7e62255a11" title=" " alt="" coords="275,47,450,89"/>
+<area shape="poly" title=" " alt="" coords="506,90,450,82,451,77,506,84"/>
+<area shape="rect" href="rgw__lc_8cc.html#a904fb7c78cb9c98e2d3caa347997ae6a" title=" " alt="" coords="295,113,430,140"/>
+<area shape="poly" title=" " alt="" coords="506,110,431,120,430,115,506,105"/>
+<area shape="rect" href="class_l_c_op_action___transition.html#ae5f27286bd9197b4785c9470de5b9a73" title=" " alt="" coords="39,5,193,48"/>
+<area shape="poly" title=" " alt="" coords="286,110,273,104,258,93,249,83,239,72,225,62,193,48,195,43,228,58,243,68,253,79,262,89,276,99,288,105"/>
+<area shape="rect" href="class_l_c_op_action___current_expiration.html#a6baf5669cce35527f3c3600bbb02f131" title=" " alt="" coords="17,72,215,115"/>
+<area shape="poly" title=" " alt="" coords="279,118,215,109,216,104,280,113"/>
+<area shape="rect" href="class_l_c_op_action___non_current_expiration.html#a935ee5af4430e8f4e7ae1c9d9e2f0fcd" title=" " alt="" coords="5,139,227,181"/>
+<area shape="poly" title=" " alt="" coords="280,140,227,148,227,142,279,135"/>
+<area shape="rect" href="class_l_c_op_action___d_m_expiration.html#a06537b492dfb6cb55c3b8ec7b7d9c4b9" title=" " alt="" coords="28,205,204,248"/>
+<area shape="poly" title=" " alt="" coords="324,150,228,196,196,207,194,202,226,191,322,145"/>
+<area shape="rect" href="structrgw_1_1_i_a_m_1_1_parse_state.html#a36f887d6ce7882c7aa6d9524f364782f" title=" " alt="" coords="514,177,659,220"/>
+<area shape="poly" title=" " alt="" coords="712,206,659,204,659,199,712,200"/>
+<area shape="rect" href="class_r_g_w_create_role.html#afa054347ca1944752cb0fef98dcc85b0" title=" " alt="" coords="515,244,658,287"/>
+<area shape="poly" title=" " alt="" coords="707,268,658,268,658,263,707,263"/>
+<area shape="rect" href="class_r_g_w_tag_role.html#a2490b8c96540a12eaa7070aee703293e" title=" " alt="" coords="498,311,674,337"/>
+<area shape="poly" title=" " alt="" coords="743,286,641,313,640,308,742,281"/>
+<area shape="rect" href="class_r_g_w_create_role.html#a4b13882bfa2994e79a6b7c0a47689e43" title=" " alt="" coords="277,252,448,279"/>
+<area shape="poly" title=" " alt="" coords="499,268,448,268,448,263,499,263"/>
+<area shape="rect" href="class_r_g_w_tag_role.html#a6d5afbc07d7fc2647269de1975af2415" title=" " alt="" coords="285,311,440,337"/>
+<area shape="poly" title=" " alt="" coords="482,327,440,327,440,321,482,321"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ee4232d6153b49842f18034324ebc11" name="a7ee4232d6153b49842f18034324ebc11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ee4232d6153b49842f18034324ebc11">&#9670;&#160;</a></span>match() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool match </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw__s3__key__value__filter.html">rgw_s3_key_value_filter</a> &amp;&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="rgw__pubsub_8h.html#aa550bc222c10cf80dd57d1867d3b2aef">KeyMultiValueMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>kv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00176">176</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>                                                                              {</div>
+<div class="line"><span class="lineno">  177</span>  <span class="comment">// all filter pairs must exist with the same value in the object&#39;s metadata/tags</span></div>
+<div class="line"><span class="lineno">  178</span>  <span class="comment">// object metadata/tags may include items not in the filter</span></div>
+<div class="line"><span class="lineno">  179</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; filter : filter.kv) {</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keyword">auto</span> result = kv.equal_range(filter.first);</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">if</span> (std::any_of(result.first, result.second, [&amp;filter](<span class="keyword">const</span> pair&lt;string,string&gt;&amp; p) { return p.second == filter.second;}))</div>
+<div class="line"><span class="lineno">  182</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  185</span>  }</div>
+<div class="line"><span class="lineno">  186</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  187</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1d9a4087480c2f0748cd74740b8b9a9d" name="a1d9a4087480c2f0748cd74740b8b9a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9a4087480c2f0748cd74740b8b9a9d">&#9670;&#160;</a></span>match() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool match </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw__s3__key__value__filter.html">rgw_s3_key_value_filter</a> &amp;&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="rgw__pubsub_8h.html#a1d541f2a95aef02ed56ace9f434e08e2">KeyValueMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>kv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00170">170</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>                                                                         {</div>
+<div class="line"><span class="lineno">  171</span>  <span class="comment">// all filter pairs must exist with the same value in the object&#39;s metadata/tags</span></div>
+<div class="line"><span class="lineno">  172</span>  <span class="comment">// object metadata/tags may include items not in the filter</span></div>
+<div class="line"><span class="lineno">  173</span>  <span class="keywordflow">return</span> std::includes(kv.begin(), kv.end(), filter.<a class="code hl_variable" href="structrgw__s3__key__value__filter.html#a690a37657a9b22f4b5290a5fc17009be">kv</a>.begin(), filter.<a class="code hl_variable" href="structrgw__s3__key__value__filter.html#a690a37657a9b22f4b5290a5fc17009be">kv</a>.end());</div>
+<div class="line"><span class="lineno">  174</span>}</div>
+<div class="ttc" id="astructrgw__s3__key__value__filter_html_a690a37657a9b22f4b5290a5fc17009be"><div class="ttname"><a href="structrgw__s3__key__value__filter.html#a690a37657a9b22f4b5290a5fc17009be">rgw_s3_key_value_filter::kv</a></div><div class="ttdeci">KeyValueMap kv</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8h_source.html#l00049">rgw_pubsub.h:49</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9e56763a419e65292a4d5057e92d52a4" name="a9e56763a419e65292a4d5057e92d52a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e56763a419e65292a4d5057e92d52a4">&#9670;&#160;</a></span>set_event_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_event_id </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const utime_t &amp;&#160;</td>
+          <td class="paramname"><em>ts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__pubsub_8cc_source.html">rgw_pubsub.cc</a> 파일의 <a class="el" href="rgw__pubsub_8cc_source.html#l00019">19</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                                           {</div>
+<div class="line"><span class="lineno">   20</span>  <span class="keywordtype">char</span> buf[64];</div>
+<div class="line"><span class="lineno">   21</span>  <span class="keyword">const</span> <span class="keyword">auto</span> len = snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%010ld.%06ld.%s&quot;</span>, (<span class="keywordtype">long</span>)ts.sec(), (<span class="keywordtype">long</span>)ts.usec(), hash.c_str());</div>
+<div class="line"><span class="lineno">   22</span>  <span class="keywordflow">if</span> (len &gt; 0) {</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">id</span>.assign(buf, len);</div>
+<div class="line"><span class="lineno">   24</span>  }</div>
+<div class="line"><span class="lineno">   25</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__pubsub_8cc_a9e56763a419e65292a4d5057e92d52a4_icgraph.png" border="0" usemap="#argw__pubsub_8cc_a9e56763a419e65292a4d5057e92d52a4_icgraph" alt=""/></div>
+<map name="argw__pubsub_8cc_a9e56763a419e65292a4d5057e92d52a4_icgraph" id="argw__pubsub_8cc_a9e56763a419e65292a4d5057e92d52a4_icgraph">
+<area shape="rect" title=" " alt="" coords="944,80,1037,107"/>
+<area shape="rect" href="rgw__sync__module__pubsub_8cc.html#a680685668a648b33b677265fc07be8ae" title=" " alt="" coords="771,80,883,107"/>
+<area shape="poly" title=" " alt="" coords="928,96,883,96,883,91,928,91"/>
+<area shape="rect" href="rgw__sync__module__pubsub_8cc.html#a8b3691422cb11d18dc41d77815abbb6b" title=" " alt="" coords="761,29,893,56"/>
+<area shape="poly" title=" " alt="" coords="930,77,872,59,873,54,931,72"/>
+<area shape="rect" href="namespacergw_1_1notify.html#a66eedaffaa0cc342cda4732fdf12b69a" title=" " alt="" coords="758,135,896,177"/>
+<area shape="poly" title=" " alt="" coords="940,115,886,136,884,132,938,110"/>
+<area shape="rect" href="class_r_g_w_p_s_handle_remote_obj_c_b_c_r.html#a0006bcf65d152efa3aea512aa11ab384" title=" " alt="" coords="498,72,710,115"/>
+<area shape="poly" title=" " alt="" coords="756,96,711,96,711,91,756,91"/>
+<area shape="rect" href="class_r_g_w_p_s_generic_obj_event_c_b_c_r.html#a294323e7573ea73747570b2eda958ca3" title=" " alt="" coords="502,5,706,48"/>
+<area shape="poly" title=" " alt="" coords="764,78,677,51,679,46,766,72"/>
+<area shape="poly" title=" " alt="" coords="751,63,701,74,700,69,749,57"/>
+<area shape="poly" title=" " alt="" coords="745,39,706,37,707,31,745,34"/>
+<area shape="rect" href="namespacergw_1_1notify.html#aaf327e62903969ad08625620bc30d8a2" title=" " alt="" coords="540,139,669,181"/>
+<area shape="poly" title=" " alt="" coords="743,160,669,162,669,156,743,155"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_notification.html#ac2130e17f5599a54d1b9ef6bebc82256" title=" " alt="" coords="275,109,450,152"/>
+<area shape="poly" title=" " alt="" coords="524,153,450,144,451,139,525,148"/>
+<area shape="rect" href="rgw__lc_8cc.html#a904fb7c78cb9c98e2d3caa347997ae6a" title=" " alt="" coords="295,176,430,203"/>
+<area shape="poly" title=" " alt="" coords="525,172,431,184,430,179,524,167"/>
+<area shape="rect" href="class_l_c_op_action___transition.html#ae5f27286bd9197b4785c9470de5b9a73" title=" " alt="" coords="39,68,193,111"/>
+<area shape="poly" title=" " alt="" coords="286,172,273,166,258,156,249,145,239,135,225,125,193,111,195,106,228,120,243,131,253,142,262,152,276,162,288,168"/>
+<area shape="rect" href="class_l_c_op_action___current_expiration.html#a6baf5669cce35527f3c3600bbb02f131" title=" " alt="" coords="17,135,215,177"/>
+<area shape="poly" title=" " alt="" coords="279,181,215,172,216,167,280,176"/>
+<area shape="rect" href="class_l_c_op_action___non_current_expiration.html#a935ee5af4430e8f4e7ae1c9d9e2f0fcd" title=" " alt="" coords="5,201,227,244"/>
+<area shape="poly" title=" " alt="" coords="280,203,227,210,227,205,279,198"/>
+<area shape="rect" href="class_l_c_op_action___d_m_expiration.html#a06537b492dfb6cb55c3b8ec7b7d9c4b9" title=" " alt="" coords="28,268,204,311"/>
+<area shape="poly" title=" " alt="" coords="324,213,228,258,196,270,194,265,226,254,322,208"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__pubsub_8cc.html">rgw_pubsub.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

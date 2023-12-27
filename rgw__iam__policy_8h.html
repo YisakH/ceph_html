@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_iam_policy.h 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__iam__policy_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#namespaces">네임스페이스</a> &#124;
+<a href="#typedef-members">타입정의</a> &#124;
+<a href="#enum-members">열거형 타입</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_iam_policy.h 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;bitset&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;boost/algorithm/string/predicate.hpp&gt;</code><br />
+<code>#include &lt;boost/container/flat_map.hpp&gt;</code><br />
+<code>#include &lt;boost/container/flat_set.hpp&gt;</code><br />
+<code>#include &lt;boost/optional.hpp&gt;</code><br />
+<code>#include &lt;boost/thread/shared_mutex.hpp&gt;</code><br />
+<code>#include &lt;boost/variant.hpp&gt;</code><br />
+<code>#include &quot;common/ceph_time.h&quot;</code><br />
+<code>#include &quot;common/iso_8601.h&quot;</code><br />
+<code>#include &quot;rapidjson/error/error.h&quot;</code><br />
+<code>#include &quot;rapidjson/error/en.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__acl_8h_source.html">rgw_acl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__basic__types_8h_source.html">rgw_basic_types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__iam__policy__keywords_8h_source.html">rgw_iam_policy_keywords.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__string_8h_source.html">rgw_string.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__arn_8h_source.html">rgw_arn.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_iam_policy.h에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__iam__policy_8h__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__iam__policy_8h" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__iam__policy_8h" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__iam__policy_8h">
+<area shape="rect" title=" " alt="" coords="925,5,1056,48"/>
+<area shape="rect" title=" " alt="" coords="162,104,216,131"/>
+<area shape="poly" title=" " alt="" coords="925,33,767,41,565,54,369,73,289,85,228,99,224,100,223,95,227,93,288,80,369,68,565,49,767,36,925,28"/>
+<area shape="rect" title=" " alt="" coords="240,104,301,131"/>
+<area shape="poly" title=" " alt="" coords="925,30,808,32,654,41,483,62,396,78,312,99,307,100,305,95,311,93,395,73,482,57,654,36,808,26,925,24"/>
+<area shape="rect" title=" " alt="" coords="324,104,385,131"/>
+<area shape="poly" title=" " alt="" coords="925,31,822,35,689,45,542,66,468,80,396,99,392,100,390,95,395,93,467,75,541,60,688,40,821,30,925,26"/>
+<area shape="rect" title=" " alt="" coords="408,104,479,131"/>
+<area shape="poly" title=" " alt="" coords="925,34,729,53,610,72,492,99,485,101,483,96,491,93,609,67,729,48,924,29"/>
+<area shape="rect" title=" " alt="" coords="736,277,789,304"/>
+<area shape="poly" title=" " alt="" coords="925,39,815,62,768,78,750,88,739,98,728,117,723,138,724,183,735,226,751,262,746,265,730,228,718,184,717,137,723,115,735,94,747,83,765,73,813,56,924,34"/>
+<area shape="rect" title=" " alt="" coords="590,195,674,221"/>
+<area shape="poly" title=" " alt="" coords="925,31,871,35,811,47,750,67,721,81,695,98,676,116,661,137,642,181,637,179,657,135,672,113,691,94,718,76,748,62,809,42,870,30,925,25"/>
+<area shape="rect" title=" " alt="" coords="952,187,1098,229"/>
+<area shape="poly" title=" " alt="" coords="972,50,957,69,944,91,938,115,942,138,956,158,975,175,972,179,952,162,937,140,933,114,939,89,952,66,967,47"/>
+<area shape="rect" title=" " alt="" coords="1103,96,1235,139"/>
+<area shape="poly" title=" " alt="" coords="1033,46,1115,86,1113,91,1031,51"/>
+<area shape="rect" title=" " alt="" coords="1259,96,1391,139"/>
+<area shape="poly" title=" " alt="" coords="1057,43,1245,92,1244,97,1055,48"/>
+<area shape="rect" title=" " alt="" coords="800,195,927,221"/>
+<area shape="poly" title=" " alt="" coords="972,50,932,98,880,182,875,180,928,94,968,47"/>
+<area shape="rect" title=" " alt="" coords="1414,96,1551,139"/>
+<area shape="poly" title=" " alt="" coords="1056,35,1209,58,1400,93,1399,98,1208,63,1056,40"/>
+<area shape="rect" title=" " alt="" coords="1575,104,1694,131"/>
+<area shape="poly" title=" " alt="" coords="1056,30,1281,51,1422,69,1563,93,1579,97,1578,102,1562,99,1421,75,1281,57,1056,35"/>
+<area shape="rect" title=" " alt="" coords="1719,104,1865,131"/>
+<area shape="poly" title=" " alt="" coords="1056,29,1340,49,1522,68,1707,93,1729,98,1728,103,1706,99,1522,73,1339,54,1056,34"/>
+<area shape="rect" title=" " alt="" coords="1889,104,2028,131"/>
+<area shape="poly" title=" " alt="" coords="1056,27,1204,32,1408,43,1641,63,1877,93,1898,97,1897,103,1877,99,1641,68,1407,48,1203,37,1056,32"/>
+<area shape="rect" title=" " alt="" coords="2052,104,2196,131"/>
+<area shape="poly" title=" " alt="" coords="1056,26,1228,29,1472,39,1754,60,1899,75,2040,93,2063,98,2062,103,2039,99,1898,80,1753,65,1471,45,1227,35,1056,31"/>
+<area shape="rect" title=" " alt="" coords="2220,104,2353,131"/>
+<area shape="poly" title=" " alt="" coords="1056,25,1252,25,1537,33,1870,54,2041,71,2208,93,2229,97,2228,102,2207,99,2040,76,1870,60,1537,39,1252,31,1056,30"/>
+<area shape="rect" href="rgw__acl_8h.html" title=" " alt="" coords="952,104,1029,131"/>
+<area shape="poly" title=" " alt="" coords="993,48,993,88,988,88,988,48"/>
+<area shape="rect" href="rgw__basic__types_8h.html" title=" " alt="" coords="1440,195,1570,221"/>
+<area shape="poly" title=" " alt="" coords="1008,47,1052,99,1075,122,1093,136,1138,157,1177,169,1213,174,1248,176,1323,175,1366,177,1416,184,1438,188,1437,194,1415,189,1366,182,1323,180,1248,181,1213,180,1176,174,1136,162,1090,141,1071,126,1048,102,1004,50"/>
+<area shape="rect" href="rgw__iam__policy__keywords_8h.html" title=" " alt="" coords="2376,104,2559,131"/>
+<area shape="poly" title=" " alt="" coords="1056,25,1274,28,1597,37,1977,57,2173,73,2365,93,2396,98,2396,103,2365,99,2173,78,1977,62,1597,42,1274,33,1056,31"/>
+<area shape="rect" href="rgw__string_8h.html" title=" " alt="" coords="503,104,595,131"/>
+<area shape="poly" title=" " alt="" coords="925,42,788,66,628,99,610,103,609,98,627,93,787,61,924,36"/>
+<area shape="rect" href="rgw__arn_8h.html" title=" " alt="" coords="749,104,826,131"/>
+<area shape="poly" title=" " alt="" coords="944,51,831,100,829,95,942,46"/>
+<area shape="poly" title=" " alt="" coords="1021,129,1075,155,1098,171,1113,185,1121,208,1119,220,1112,231,1091,247,1059,260,975,278,882,287,805,291,804,286,882,282,974,273,1057,255,1088,243,1108,228,1114,218,1116,209,1108,188,1095,175,1072,160,1018,133"/>
+<area shape="poly" title=" " alt="" coords="952,131,690,195,688,190,951,126"/>
+<area shape="poly" title=" " alt="" coords="998,130,1014,171,1009,173,993,132"/>
+<area shape="poly" title=" " alt="" coords="974,133,896,188,893,183,971,129"/>
+<area shape="rect" title=" " alt="" coords="1173,195,1219,221"/>
+<area shape="poly" title=" " alt="" coords="1023,129,1155,184,1160,186,1158,191,1153,189,1021,134"/>
+<area shape="rect" title=" " alt="" coords="1398,277,1508,304"/>
+<area shape="poly" title=" " alt="" coords="1024,129,1048,136,1098,145,1142,148,1219,145,1255,145,1293,149,1333,162,1378,184,1400,201,1418,221,1443,262,1439,264,1413,224,1396,205,1376,189,1331,167,1292,155,1255,150,1219,150,1142,153,1098,150,1047,141,1022,134"/>
+<area shape="rect" title=" " alt="" coords="1243,195,1364,221"/>
+<area shape="poly" title=" " alt="" coords="1026,129,1048,136,1139,161,1231,184,1244,187,1242,193,1230,189,1138,166,1047,141,1024,134"/>
+<area shape="poly" title=" " alt="" coords="1023,129,1048,136,1152,156,1234,163,1316,169,1421,184,1442,188,1441,193,1421,189,1316,175,1233,168,1151,161,1047,141,1022,134"/>
+<area shape="poly" title=" " alt="" coords="1440,223,1377,232,1048,268,805,289,804,283,1047,262,1377,227,1440,218"/>
+<area shape="poly" title=" " alt="" coords="1499,223,1471,266,1467,263,1495,220"/>
+<area shape="poly" title=" " alt="" coords="535,133,515,153,496,178,487,204,488,216,494,228,508,239,530,250,591,266,660,277,720,284,720,289,659,282,590,271,529,255,505,244,490,231,483,218,481,203,492,175,511,149,532,129"/>
+<area shape="poly" title=" " alt="" coords="563,129,611,181,608,185,559,133"/>
+<area shape="rect" title=" " alt="" coords="504,195,565,221"/>
+<area shape="poly" title=" " alt="" coords="550,132,542,180,536,179,544,131"/>
+<area shape="rect" title=" " alt="" coords="5,195,69,221"/>
+<area shape="poly" title=" " alt="" coords="518,134,492,141,430,153,377,159,286,162,195,167,143,175,82,189,76,191,75,186,80,184,142,170,194,162,285,157,377,154,429,148,491,136,516,129"/>
+<area shape="rect" title=" " alt="" coords="93,195,157,221"/>
+<area shape="poly" title=" " alt="" coords="517,134,492,141,402,158,330,163,259,169,170,189,164,191,163,186,168,184,258,164,329,158,401,152,491,136,516,129"/>
+<area shape="rect" title=" " alt="" coords="181,195,259,221"/>
+<area shape="poly" title=" " alt="" coords="516,134,492,141,430,156,381,165,332,173,271,189,265,191,263,186,270,184,331,168,380,159,429,151,491,136,514,129"/>
+<area shape="rect" title=" " alt="" coords="283,187,428,229"/>
+<area shape="poly" title=" " alt="" coords="522,134,416,182,413,177,520,129"/>
+<area shape="poly" title=" " alt="" coords="788,131,769,262,764,261,783,131"/>
+<area shape="poly" title=" " alt="" coords="801,130,845,181,841,184,797,133"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__iam__policy_8h__dep__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__iam__policy_8hdep" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__iam__policy_8hdep" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__iam__policy_8hdep">
+<area shape="rect" title=" " alt="" coords="1430,5,1560,48"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="2302,96,2432,139"/>
+<area shape="poly" title=" " alt="" coords="1575,33,2301,107,2301,112,1575,39"/>
+<area shape="rect" href="rgw__iam__policy_8cc.html" title=" " alt="" coords="606,277,738,320"/>
+<area shape="poly" title=" " alt="" coords="1414,30,1281,38,1199,47,1111,61,1020,82,929,109,841,144,759,189,734,209,713,232,684,278,680,276,709,229,731,205,756,184,839,140,927,104,1019,76,1110,56,1198,42,1280,33,1414,25"/>
+<area shape="rect" href="rgw__rest__sts_8cc.html" title=" " alt="" coords="400,277,531,320"/>
+<area shape="poly" title=" " alt="" coords="1414,33,1204,45,1074,56,938,72,805,92,685,118,586,150,547,168,518,189,500,209,487,232,472,278,467,276,482,230,496,206,514,185,545,164,584,145,683,113,804,87,937,66,1073,51,1204,40,1414,28"/>
+<area shape="rect" href="rgw__sts_8cc.html" title=" " alt="" coords="5007,187,5137,229"/>
+<area shape="poly" title=" " alt="" coords="1575,27,2204,42,3194,73,3725,94,4228,120,4662,150,4841,166,4988,184,5007,187,5006,192,4988,189,4841,172,4662,155,4227,125,3725,99,3194,78,2204,47,1575,32"/>
+<area shape="rect" href="rgw__acl__swift_8cc.html" title=" " alt="" coords="4391,187,4521,229"/>
+<area shape="poly" title=" " alt="" coords="2447,117,2832,121,3389,132,3956,152,4193,166,4372,184,4391,187,4390,192,4372,189,4193,172,3956,158,3389,137,2832,126,2447,122"/>
+<area shape="rect" href="rgw__aio_8h.html" title=" " alt="" coords="4546,187,4676,229"/>
+<area shape="poly" title=" " alt="" coords="2447,116,2859,119,3463,128,3781,137,4081,149,4339,164,4534,184,4545,186,4545,191,4533,189,4339,169,4080,154,3781,142,3463,134,2859,124,2447,121"/>
+<area shape="rect" href="rgw__arn_8cc.html" title=" " alt="" coords="4700,187,4831,229"/>
+<area shape="poly" title=" " alt="" coords="2448,117,3627,141,4297,161,4543,172,4688,184,4700,186,4699,191,4688,189,4543,178,4297,166,3627,146,2447,123"/>
+<area shape="rect" href="rgw__auth_8cc.html" title=" " alt="" coords="2010,368,2140,411"/>
+<area shape="poly" title=" " alt="" coords="2286,126,2211,133,2131,145,2062,163,2037,175,2021,188,2015,198,2014,207,2021,228,2034,243,2050,251,2067,259,2081,276,2088,300,2090,325,2083,368,2078,367,2084,325,2083,301,2076,279,2063,263,2048,256,2031,248,2016,231,2008,207,2010,196,2017,185,2035,170,2061,158,2130,140,2210,127,2286,120"/>
+<area shape="rect" href="rgw__auth_8h.html" title=" " alt="" coords="528,187,659,229"/>
+<area shape="poly" title=" " alt="" coords="2286,122,2028,128,1648,139,1202,159,746,189,659,199,659,193,745,184,1201,154,1648,134,2028,122,2286,117"/>
+<area shape="rect" href="rgw__auth__filters_8h.html" title=" " alt="" coords="144,277,275,320"/>
+<area shape="poly" title=" " alt="" coords="2286,121,1927,122,1415,130,1147,138,895,150,679,167,517,189,443,208,371,231,254,279,252,274,369,226,441,202,515,184,679,162,895,145,1146,133,1415,124,1927,117,2286,116"/>
+<area shape="rect" href="rgw__auth__s3_8h.html" title=" " alt="" coords="247,459,377,501"/>
+<area shape="poly" title=" " alt="" coords="2286,122,1806,125,1120,135,781,144,488,156,275,171,209,179,174,189,145,210,120,234,102,260,90,288,85,317,88,347,98,378,115,409,142,435,175,454,211,466,247,473,246,478,210,471,173,459,139,440,111,412,93,380,82,348,80,317,85,286,97,257,116,231,141,206,172,184,207,174,275,165,488,150,781,139,1120,130,1806,120,2286,116"/>
+<area shape="rect" href="rgw__auth__keystone_8cc.html" title=" " alt="" coords="181,549,336,592"/>
+<area shape="poly" title=" " alt="" coords="2286,122,1796,128,1093,141,443,161,223,174,153,181,117,189,73,208,38,228,26,241,16,256,10,274,8,297,8,390,12,421,25,447,43,471,67,492,123,525,182,547,180,552,121,529,63,496,39,475,20,450,7,422,3,391,3,297,5,273,11,253,21,237,35,224,71,203,115,184,152,176,222,169,443,156,1092,135,1796,123,2286,117"/>
+<area shape="rect" href="rgw__auth__s3_8cc.html" title=" " alt="" coords="2716,549,2847,592"/>
+<area shape="poly" title=" " alt="" coords="2448,117,2877,121,3479,132,3775,141,4029,152,4214,166,4272,175,4303,184,4331,207,4347,232,4354,261,4356,297,4356,391,4352,406,4341,420,4302,445,4241,467,4160,486,4064,502,3955,517,3712,539,3454,555,3208,564,2847,572,2847,566,3208,559,3454,549,3711,534,3955,511,4063,497,4159,481,4239,462,4300,440,4338,416,4347,404,4351,390,4351,297,4349,262,4342,234,4327,211,4300,189,4271,180,4214,172,4029,157,3774,146,3479,137,2877,126,2448,122"/>
+<area shape="rect" href="rgw__d3n__datacache_8cc.html" title=" " alt="" coords="4021,549,4179,592"/>
+<area shape="poly" title=" " alt="" coords="2447,117,3810,142,4549,162,4791,173,4863,178,4896,184,4930,206,4954,229,4968,258,4972,297,4972,391,4965,420,4946,446,4916,469,4877,489,4830,506,4777,520,4655,543,4524,558,4394,567,4180,572,4179,567,4393,561,4523,552,4654,537,4775,515,4829,501,4875,484,4913,464,4942,443,4960,418,4967,390,4967,297,4962,260,4949,232,4927,210,4894,189,4862,184,4791,178,4549,167,3810,147,2447,122"/>
+<area shape="rect" href="rgw__auth__keystone_8h.html" title=" " alt="" coords="126,368,274,411"/>
+<area shape="poly" title=" " alt="" coords="2286,122,1865,130,1266,143,697,163,488,175,366,189,292,200,232,209,206,217,181,230,158,250,134,279,129,290,128,301,137,324,154,347,174,366,171,370,150,350,132,327,123,302,124,288,130,276,154,246,178,225,204,212,231,203,291,195,365,184,488,170,696,158,1266,138,1865,124,2286,117"/>
+<area shape="rect" href="rgw__bucket_8cc.html" title=" " alt="" coords="1224,277,1355,320"/>
+<area shape="poly" title=" " alt="" coords="2286,123,2026,131,1694,145,1402,164,1307,176,1278,182,1265,189,1255,208,1257,231,1265,255,1277,276,1272,278,1261,257,1252,232,1250,207,1261,185,1276,177,1306,171,1402,159,1694,139,2026,126,2285,118"/>
+<area shape="rect" href="rgw__bucket_8h.html" title=" " alt="" coords="1070,187,1200,229"/>
+<area shape="poly" title=" " alt="" coords="2286,121,2095,124,1831,134,1527,154,1371,170,1219,189,1201,192,1200,187,1218,184,1371,164,1526,149,1830,128,2095,119,2286,116"/>
+<area shape="rect" href="rgw__data__sync_8cc.html" title=" " alt="" coords="1534,277,1664,320"/>
+<area shape="poly" title=" " alt="" coords="2286,122,2088,125,1846,135,1731,144,1632,155,1559,170,1535,179,1521,189,1514,199,1513,209,1523,233,1543,255,1568,275,1565,279,1540,259,1518,236,1508,210,1509,197,1517,185,1532,174,1557,165,1631,150,1731,139,1846,130,2088,120,2286,116"/>
+<area shape="rect" href="rgw__json__enc_8cc.html" title=" " alt="" coords="1122,368,1252,411"/>
+<area shape="poly" title=" " alt="" coords="2286,122,1929,126,1445,136,1211,145,1011,156,868,171,824,180,803,189,796,202,794,219,803,259,822,296,839,318,859,330,888,341,962,359,1045,372,1121,380,1121,385,1045,377,961,364,886,346,857,335,836,322,818,299,798,261,788,220,790,201,800,185,822,174,867,166,1011,151,1211,139,1445,131,1929,120,2286,116"/>
+<area shape="rect" href="rgw__lc_8cc.html" title=" " alt="" coords="1019,277,1149,320"/>
+<area shape="poly" title=" " alt="" coords="2286,122,1982,129,1583,141,1391,150,1228,161,1111,174,1076,181,1059,189,1050,208,1051,231,1060,255,1072,276,1067,278,1055,257,1046,232,1045,207,1055,185,1074,176,1110,169,1228,155,1391,144,1583,135,1982,123,2286,117"/>
+<area shape="rect" href="rgw__bucket__sync_8cc.html" title=" " alt="" coords="1739,277,1883,320"/>
+<area shape="poly" title=" " alt="" coords="2286,125,2145,132,1983,145,1843,164,1796,176,1771,189,1765,198,1763,208,1767,232,1779,255,1794,275,1790,279,1774,258,1762,233,1758,208,1760,196,1768,185,1794,171,1842,159,1982,140,2145,127,2286,119"/>
+<area shape="rect" href="rgw__bucket__sync_8h.html" title=" " alt="" coords="1531,187,1669,229"/>
+<area shape="poly" title=" " alt="" coords="2286,126,2020,148,1854,166,1688,189,1669,193,1669,188,1688,184,1854,161,2019,142,2286,121"/>
+<area shape="rect" href="rgw__common_8cc.html" title=" " alt="" coords="2564,277,2695,320"/>
+<area shape="poly" title=" " alt="" coords="2286,123,2186,131,2136,139,2090,149,2054,163,2031,180,2026,190,2026,201,2030,213,2040,227,2051,234,2070,241,2128,251,2289,263,2454,269,2552,275,2564,277,2563,282,2552,280,2453,274,2288,268,2127,256,2069,246,2049,239,2037,231,2026,216,2020,202,2021,189,2027,177,2051,158,2089,144,2135,133,2186,126,2285,118"/>
+<area shape="rect" href="rgw__cache_8h.html" title=" " alt="" coords="814,187,944,229"/>
+<area shape="poly" title=" " alt="" coords="2286,123,1624,145,1242,164,1083,176,963,189,945,192,944,187,962,184,1083,171,1242,159,1624,140,2286,118"/>
+<area shape="rect" href="rgw__dencoder_8cc.html" title=" " alt="" coords="864,277,995,320"/>
+<area shape="poly" title=" " alt="" coords="2286,122,1994,127,1605,138,1414,147,1246,158,1117,172,1072,180,1042,189,1012,207,984,231,945,279,941,275,981,227,1009,203,1040,184,1070,175,1116,167,1246,153,1414,142,1605,133,1993,122,2286,117"/>
+<area shape="rect" href="rgw__client__io_8h.html" title=" " alt="" coords="2251,187,2381,229"/>
+<area shape="poly" title=" " alt="" coords="2350,154,2330,188,2325,185,2345,151"/>
+<area shape="rect" href="rgw__client__io__filters_8h.html" title=" " alt="" coords="2236,277,2385,320"/>
+<area shape="poly" title=" " alt="" coords="2389,152,2401,190,2401,211,2396,230,2376,258,2350,279,2347,275,2372,254,2391,228,2396,210,2395,191,2384,154"/>
+<area shape="rect" href="rgw__lib_8h.html" title=" " alt="" coords="2410,277,2540,320"/>
+<area shape="poly" title=" " alt="" coords="2394,150,2418,185,2467,276,2463,278,2414,188,2389,153"/>
+<area shape="rect" href="rgw__file_8h.html" title=" " alt="" coords="2576,368,2707,411"/>
+<area shape="poly" title=" " alt="" coords="2448,116,2668,117,2943,126,3075,135,3189,147,3274,163,3303,173,3321,185,3331,204,3328,222,3313,240,3288,256,3214,286,3116,312,3006,336,2894,356,2707,383,2707,377,2893,350,3005,331,3115,307,3212,281,3285,251,3309,235,3323,220,3326,205,3317,188,3300,178,3273,168,3188,152,3075,140,2943,131,2668,123,2448,121"/>
+<area shape="rect" href="rgw__compression__types_8h.html" title=" " alt="" coords="2051,187,2227,229"/>
+<area shape="poly" title=" " alt="" coords="2300,147,2193,188,2191,184,2298,142"/>
+<area shape="rect" href="rgw__coroutine_8h.html" title=" " alt="" coords="3176,187,3307,229"/>
+<area shape="poly" title=" " alt="" coords="2447,118,2584,125,2763,137,2963,156,3164,184,3176,186,3175,192,3164,189,2963,161,2762,142,2584,130,2447,124"/>
+<area shape="rect" href="rgw__http__client_8cc.html" title=" " alt="" coords="2719,277,2849,320"/>
+<area shape="poly" title=" " alt="" coords="2448,125,2547,146,2600,163,2651,184,2678,204,2702,227,2760,275,2757,279,2698,231,2674,208,2648,189,2598,168,2546,151,2447,131"/>
+<area shape="rect" href="rgw__crypt__sanitize_8cc.html" title=" " alt="" coords="3638,277,3789,320"/>
+<area shape="poly" title=" " alt="" coords="2447,117,2760,123,3174,135,3373,144,3543,155,3665,168,3702,176,3722,185,3734,207,3736,231,3732,256,3725,278,3720,276,3727,255,3731,231,3729,208,3718,189,3701,181,3664,173,3542,160,3373,149,3174,140,2760,128,2447,122"/>
+<area shape="rect" href="rgw__crypt__sanitize_8h.html" title=" " alt="" coords="3381,187,3526,229"/>
+<area shape="poly" title=" " alt="" coords="2448,117,2615,123,2842,134,3101,154,3363,184,3381,187,3380,192,3362,189,3101,159,2842,139,2615,128,2447,123"/>
+<area shape="rect" href="rgw__env_8cc.html" title=" " alt="" coords="4016,277,4147,320"/>
+<area shape="poly" title=" " alt="" coords="2448,117,3485,140,4029,160,4204,172,4256,178,4279,185,4291,203,4289,221,4278,236,4259,250,4206,272,4148,287,4146,282,4204,267,4256,245,4274,232,4284,219,4285,205,4276,189,4255,183,4204,177,4028,166,3485,146,2448,123"/>
+<area shape="rect" href="rgw__d3n__datacache_8h.html" title=" " alt="" coords="4586,459,4737,501"/>
+<area shape="poly" title=" " alt="" coords="2447,117,3808,145,4538,165,4773,175,4867,184,4881,203,4889,221,4892,241,4889,261,4873,300,4844,339,4808,376,4768,409,4696,460,4693,456,4765,405,4804,372,4840,336,4868,298,4884,259,4886,241,4884,223,4876,205,4864,189,4773,180,4538,171,3808,151,2447,123"/>
+<area shape="rect" href="rgw__es__query_8cc.html" title=" " alt="" coords="2712,187,2843,229"/>
+<area shape="poly" title=" " alt="" coords="2448,132,2694,184,2712,188,2711,193,2693,189,2447,137"/>
+<area shape="rect" href="rgw__formats_8cc.html" title=" " alt="" coords="2867,187,2997,229"/>
+<area shape="poly" title=" " alt="" coords="2447,124,2634,148,2855,184,2867,187,2866,192,2854,189,2634,153,2447,130"/>
+<area shape="rect" href="rgw__gc_8h.html" title=" " alt="" coords="3022,187,3152,229"/>
+<area shape="poly" title=" " alt="" coords="2448,121,2699,142,2855,160,3010,184,3022,186,3020,192,3009,189,2854,165,2699,147,2447,126"/>
+<area shape="rect" href="rgw__http__client_8h.html" title=" " alt="" coords="1795,187,1925,229"/>
+<area shape="poly" title=" " alt="" coords="2286,132,2128,157,1945,189,1926,193,1925,188,1943,184,2127,151,2286,127"/>
+<area shape="rect" href="rgw__keystone_8h.html" title=" " alt="" coords="1907,277,2037,320"/>
+<area shape="poly" title=" " alt="" coords="2286,125,2148,133,1990,146,1854,165,1808,176,1784,189,1778,198,1777,207,1785,228,1799,237,1829,249,1907,275,1906,280,1827,254,1797,242,1781,231,1771,208,1773,196,1781,185,1807,171,1853,159,1989,141,2147,128,2286,120"/>
+<area shape="rect" href="rgw__keystone_8cc.html" title=" " alt="" coords="2899,368,3029,411"/>
+<area shape="poly" title=" " alt="" coords="2447,117,3796,145,4519,165,4751,175,4844,184,4852,196,4855,208,4852,220,4845,231,4807,270,4769,300,4732,323,4694,339,4656,349,4618,354,4539,353,4366,329,4267,320,4159,323,3827,349,3501,369,3030,389,3029,383,3500,363,3826,344,4159,317,4268,315,4366,323,4540,348,4618,349,4655,344,4693,334,4729,319,4766,296,4803,266,4841,228,4847,218,4850,208,4848,198,4841,189,4751,180,4519,171,3796,151,2447,123"/>
+<area shape="rect" href="rgw__http__client__curl_8cc.html" title=" " alt="" coords="3550,187,3709,229"/>
+<area shape="poly" title=" " alt="" coords="2447,116,2641,120,2911,130,3222,150,3382,165,3538,184,3550,186,3549,191,3537,189,3381,170,3222,156,2911,135,2641,125,2447,122"/>
+<area shape="rect" href="rgw__http__errors_8h.html" title=" " alt="" coords="2507,187,2637,229"/>
+<area shape="poly" title=" " alt="" coords="2430,143,2525,184,2523,188,2428,148"/>
+<area shape="rect" href="rgw__jsonparser_8cc.html" title=" " alt="" coords="3783,187,3913,229"/>
+<area shape="poly" title=" " alt="" coords="2447,118,3106,140,3486,159,3644,171,3764,184,3783,187,3782,192,3764,189,3644,176,3486,165,3106,145,2447,123"/>
+<area shape="rect" href="rgw__kmip__client_8cc.html" title=" " alt="" coords="3937,187,4074,229"/>
+<area shape="poly" title=" " alt="" coords="2447,117,2754,124,3181,137,3611,157,3790,169,3926,184,3937,186,3936,191,3925,189,3790,175,3611,162,3181,142,2754,129,2447,123"/>
+<area shape="rect" href="rgw__kmip__client__impl_8cc.html" title=" " alt="" coords="4098,187,4265,229"/>
+<area shape="poly" title=" " alt="" coords="2447,117,3256,138,3735,158,3934,170,4086,184,4098,186,4097,191,4085,189,3934,175,3734,163,3256,143,2447,123"/>
+<area shape="rect" href="rgw__lc_8h.html" title=" " alt="" coords="1275,187,1405,229"/>
+<area shape="poly" title=" " alt="" coords="2286,123,2127,128,1913,139,1670,159,1424,189,1406,193,1405,187,1424,184,1669,154,1912,134,2127,123,2286,117"/>
+<area shape="rect" href="rgw__lc__tier_8cc.html" title=" " alt="" coords="1379,277,1509,320"/>
+<area shape="poly" title=" " alt="" coords="2286,123,2088,130,1844,143,1627,162,1550,175,1507,189,1486,208,1470,231,1451,278,1446,276,1466,229,1482,204,1504,184,1549,170,1626,157,1844,138,2088,125,2286,118"/>
+<area shape="poly" title=" " alt="" coords="2448,117,3777,140,4541,160,4822,172,4988,184,5007,187,5006,192,4988,189,4822,177,4541,166,3777,145,2448,122"/>
+<area shape="poly" title=" " alt="" coords="673,194,769,184,1228,154,1676,134,2053,122,2301,117,2301,122,2053,127,1676,139,1229,159,770,189,674,200"/>
+<area shape="poly" title=" " alt="" coords="585,245,581,284,585,302,595,318,650,327,785,338,1204,357,2009,384,2009,389,1204,363,785,343,649,333,592,322,580,304,576,284,579,245"/>
+<area shape="poly" title=" " alt="" coords="514,231,510,232,294,280,275,284,274,279,293,275,509,227,513,226"/>
+<area shape="poly" title=" " alt="" coords="514,222,448,242,417,258,390,279,372,300,357,323,336,373,323,421,317,459,311,458,318,420,331,371,353,320,368,296,386,275,414,254,446,237,512,217"/>
+<area shape="poly" title=" " alt="" coords="513,232,410,260,345,280,228,370,225,365,343,275,408,254,512,227"/>
+<area shape="poly" title=" " alt="" coords="624,239,656,275,652,279,620,243"/>
+<area shape="poly" title=" " alt="" coords="553,240,497,279,494,275,550,236"/>
+<area shape="poly" title=" " alt="" coords="255,328,273,346,289,367,300,390,307,414,314,458,308,458,302,415,295,392,284,369,269,349,251,332"/>
+<area shape="poly" title=" " alt="" coords="294,516,273,550,269,548,290,513"/>
+<area shape="poly" title=" " alt="" coords="393,482,2716,564,2715,570,392,487"/>
+<area shape="poly" title=" " alt="" coords="393,481,4020,565,4020,570,393,486"/>
+<area shape="poly" title=" " alt="" coords="240,418,287,456,284,460,236,423"/>
+<area shape="poly" title=" " alt="" coords="213,425,237,500,254,548,249,550,232,502,208,426"/>
+<area shape="poly" title=" " alt="" coords="1185,235,1255,275,1252,279,1182,240"/>
+<area shape="poly" title=" " alt="" coords="1216,220,1522,275,1534,277,1532,283,1521,280,1215,225"/>
+<area shape="poly" title=" " alt="" coords="1152,243,1164,277,1185,367,1180,368,1159,278,1147,245"/>
+<area shape="poly" title=" " alt="" coords="1118,244,1098,278,1093,276,1113,242"/>
+<area shape="poly" title=" " alt="" coords="1517,236,1355,281,1354,276,1515,231"/>
+<area shape="poly" title=" " alt="" coords="1602,245,1602,277,1596,277,1597,245"/>
+<area shape="poly" title=" " alt="" coords="1645,237,1665,256,1681,278,1687,300,1685,311,1678,322,1648,343,1605,360,1550,372,1489,381,1362,390,1252,392,1252,386,1361,384,1489,375,1549,367,1603,355,1646,339,1674,318,1680,309,1681,300,1676,280,1661,260,1641,241"/>
+<area shape="poly" title=" " alt="" coords="1664,233,1762,274,1760,279,1662,238"/>
+<area shape="poly" title=" " alt="" coords="1685,217,1783,227,1999,239,2169,241,2337,249,2436,258,2552,275,2564,277,2563,282,2552,280,2435,264,2337,254,2168,247,1999,244,1782,232,1684,222"/>
+<area shape="poly" title=" " alt="" coords="859,244,851,263,846,282,846,301,854,318,871,332,897,344,967,362,1047,375,1121,382,1121,387,1046,380,966,368,895,349,868,336,850,322,841,303,840,282,846,261,855,242"/>
+<area shape="poly" title=" " alt="" coords="900,242,920,276,915,278,896,244"/>
+<area shape="poly" title=" " alt="" coords="2262,240,2241,258,2226,279,2220,299,2226,319,2249,349,2274,377,2332,426,2398,465,2467,497,2537,521,2604,539,2716,560,2715,565,2603,544,2535,526,2465,502,2395,470,2329,430,2270,381,2244,352,2222,321,2214,299,2222,276,2238,254,2258,236"/>
+<area shape="poly" title=" " alt="" coords="2236,232,1987,260,1775,273,1589,274,1414,269,1240,262,1053,259,842,263,594,280,531,288,531,283,593,275,842,258,1053,253,1240,257,1414,264,1589,269,1775,268,1986,255,2235,227"/>
+<area shape="poly" title=" " alt="" coords="2308,245,2307,277,2302,277,2302,245"/>
+<area shape="poly" title=" " alt="" coords="2368,235,2439,274,2436,279,2365,240"/>
+<area shape="poly" title=" " alt="" coords="2319,262,2320,230,2325,230,2324,262"/>
+<area shape="poly" title=" " alt="" coords="2528,325,2604,365,2601,370,2526,330"/>
+<area shape="poly" title=" " alt="" coords="3161,233,2989,266,2850,290,2849,285,2988,261,3160,227"/>
+<area shape="poly" title=" " alt="" coords="3403,239,2821,551,2818,546,3400,235"/>
+<area shape="poly" title=" " alt="" coords="3497,236,3627,318,3870,451,4059,546,4057,551,3868,456,3624,322,3494,240"/>
+<area shape="poly" title=" " alt="" coords="3366,226,3319,232,3147,246,3012,251,2878,258,2707,280,2695,282,2694,277,2706,275,2877,253,3012,245,3146,241,3318,227,3366,221"/>
+<area shape="poly" title=" " alt="" coords="3529,232,3653,274,3651,279,3528,237"/>
+<area shape="poly" title=" " alt="" coords="3541,227,3809,266,4016,289,4016,294,3808,271,3540,232"/>
+<area shape="poly" title=" " alt="" coords="4571,498,4180,559,4179,554,4570,493"/>
+<area shape="poly" title=" " alt="" coords="1941,227,2007,249,2033,262,2051,276,2065,297,2073,322,2078,367,2073,368,2068,323,2060,300,2047,279,2031,267,2005,254,1939,232"/>
+<area shape="poly" title=" " alt="" coords="1785,237,1661,279,1659,274,1784,232"/>
+<area shape="poly" title=" " alt="" coords="1941,216,2039,227,2227,239,2374,243,2520,251,2707,275,2719,277,2718,282,2706,280,2520,256,2374,248,2227,244,2038,232,1941,222"/>
+<area shape="poly" title=" " alt="" coords="1900,237,1947,275,1944,279,1896,241"/>
+<area shape="poly" title=" " alt="" coords="2009,328,2052,365,2049,369,2006,332"/>
+<area shape="poly" title=" " alt="" coords="1892,323,1662,368,1428,409,976,479,594,531,337,563,336,558,593,526,975,473,1427,403,1661,362,1891,318"/>
+<area shape="poly" title=" " alt="" coords="1892,323,1772,332,1590,343,1114,362,275,389,275,383,1114,357,1589,337,1772,327,1891,317"/>
+<area shape="poly" title=" " alt="" coords="1892,323,1707,350,1527,369,1252,388,1252,383,1527,363,1706,345,1891,318"/>
+<area shape="poly" title=" " alt="" coords="2053,304,2899,380,2899,385,2052,310"/>
+<area shape="poly" title=" " alt="" coords="2596,241,2618,276,2614,278,2591,244"/>
+<area shape="poly" title=" " alt="" coords="2637,233,2735,274,2733,279,2635,238"/>
+<area shape="poly" title=" " alt="" coords="1323,244,1303,278,1299,276,1318,242"/>
+<area shape="poly" title=" " alt="" coords="1266,237,1145,279,1143,274,1265,232"/>
+<area shape="poly" title=" " alt="" coords="1377,238,1421,275,1418,279,1374,242"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__iam__policy_8h_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_masked_i_p.html">rgw::IAM::MaskedIP</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_condition.html">rgw::IAM::Condition</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_condition_1_1ci__equal__to.html">rgw::IAM::Condition::ci_equal_to</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_condition_1_1string__like.html">rgw::IAM::Condition::string_like</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_condition_1_1ci__starts__with.html">rgw::IAM::Condition::ci_starts_with</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_statement.html">rgw::IAM::Statement</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_policy_parse_exception.html">rgw::IAM::PolicyParseException</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1_i_a_m_1_1_policy.html">rgw::IAM::Policy</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+네임스페이스</h2></td></tr>
+<tr class="memitem:namespacergw" id="r_namespacergw"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw.html">rgw</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacergw_1_1auth" id="r_namespacergw_1_1auth"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1auth.html">rgw::auth</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacergw_1_1_i_a_m" id="r_namespacergw_1_1_i_a_m"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html">rgw::IAM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+타입정의</h2></td></tr>
+<tr class="memitem:a40dea50614c07e9fe51c985fccb10193" id="r_a40dea50614c07e9fe51c985fccb10193"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a40dea50614c07e9fe51c985fccb10193">rgw::IAM::Action_t</a> = std::bitset&lt; <a class="el" href="namespacergw_1_1_i_a_m.html#af73f58d6e34104eca0dd64b2d9972f11">allCount</a> &gt;</td></tr>
+<tr class="separator:a40dea50614c07e9fe51c985fccb10193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99922f2b943b8f4e78bfd43e69229f06" id="r_a99922f2b943b8f4e78bfd43e69229f06"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a99922f2b943b8f4e78bfd43e69229f06">rgw::IAM::NotAction_t</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a40dea50614c07e9fe51c985fccb10193">Action_t</a></td></tr>
+<tr class="separator:a99922f2b943b8f4e78bfd43e69229f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4b3baf5b17b70b3b647494ee287669" id="r_aaa4b3baf5b17b70b3b647494ee287669"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aaa4b3baf5b17b70b3b647494ee287669">rgw::IAM::Environment</a> = std::unordered_multimap&lt; std::string, std::string &gt;</td></tr>
+<tr class="separator:aaa4b3baf5b17b70b3b647494ee287669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678c8599986530a3d6cb0f86e3f4a1a6" id="r_a678c8599986530a3d6cb0f86e3f4a1a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a678c8599986530a3d6cb0f86e3f4a1a6">rgw::IAM::Address</a> = std::bitset&lt; 128 &gt;</td></tr>
+<tr class="separator:a678c8599986530a3d6cb0f86e3f4a1a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+열거형 타입</h2></td></tr>
+<tr class="memitem:aa4103b3083414d74175de56d479041b3" id="r_aa4103b3083414d74175de56d479041b3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aa4103b3083414d74175de56d479041b3">rgw::IAM::PolicyPrincipal</a> { <a class="el" href="namespacergw_1_1_i_a_m.html#aa4103b3083414d74175de56d479041b3abbbabdbe1b262f75d99d62880b953be1">rgw::IAM::Role</a>
+, <a class="el" href="namespacergw_1_1_i_a_m.html#aa4103b3083414d74175de56d479041b3a71c7ae294b7abd866b3fb295b3b9e4a4">rgw::IAM::Session</a>
+, <a class="el" href="namespacergw_1_1_i_a_m.html#aa4103b3083414d74175de56d479041b3a6311ae17c1ee52b36e68aaf4ad066387">rgw::IAM::Other</a>
+ }</td></tr>
+<tr class="separator:aa4103b3083414d74175de56d479041b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a485f323454a6addd367524eb3f5b66e0" id="r_a485f323454a6addd367524eb3f5b66e0"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a485f323454a6addd367524eb3f5b66e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::bitset&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a485f323454a6addd367524eb3f5b66e0">rgw::IAM::make_bitmask</a> (size_t s)</td></tr>
+<tr class="separator:a485f323454a6addd367524eb3f5b66e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607a4141fd1c79e01a49f812ef1402ca" id="r_a607a4141fd1c79e01a49f812ef1402ca"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a607a4141fd1c79e01a49f812ef1402ca"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::bitset&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a607a4141fd1c79e01a49f812ef1402ca">rgw::IAM::set_cont_bits</a> (size_t start, size_t end)</td></tr>
+<tr class="separator:a607a4141fd1c79e01a49f812ef1402ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2cfbec7b48b53cc983d9d1b6518840" id="r_a6d2cfbec7b48b53cc983d9d1b6518840"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacergw_1_1_i_a_m.html#a40dea50614c07e9fe51c985fccb10193">Action_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a6d2cfbec7b48b53cc983d9d1b6518840">rgw::IAM::None</a> (0)</td></tr>
+<tr class="separator:a6d2cfbec7b48b53cc983d9d1b6518840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96662a585ef5af09d43399d1407140ae" id="r_a96662a585ef5af09d43399d1407140ae"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a96662a585ef5af09d43399d1407140ae">rgw::IAM::operator&lt;&lt;</a> (std::ostream &amp;m, const <a class="el" href="structrgw_1_1_i_a_m_1_1_masked_i_p.html">MaskedIP</a> &amp;ip)</td></tr>
+<tr class="separator:a96662a585ef5af09d43399d1407140ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25ee6b8fd080ba5eb22e434bc3e5628" id="r_ae25ee6b8fd080ba5eb22e434bc3e5628"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ae25ee6b8fd080ba5eb22e434bc3e5628">rgw::IAM::operator==</a> (const <a class="el" href="structrgw_1_1_i_a_m_1_1_masked_i_p.html">MaskedIP</a> &amp;l, const <a class="el" href="structrgw_1_1_i_a_m_1_1_masked_i_p.html">MaskedIP</a> &amp;<a class="el" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>)</td></tr>
+<tr class="separator:ae25ee6b8fd080ba5eb22e434bc3e5628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052a7cd0f46be4a097767f875a4865f7" id="r_a052a7cd0f46be4a097767f875a4865f7"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a052a7cd0f46be4a097767f875a4865f7">rgw::IAM::operator&lt;&lt;</a> (std::ostream &amp;m, const <a class="el" href="structrgw_1_1_i_a_m_1_1_condition.html">Condition</a> &amp;<a class="el" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>)</td></tr>
+<tr class="separator:a052a7cd0f46be4a097767f875a4865f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9eb0404d59f5ec4af6d17172922c6a" id="r_aac9eb0404d59f5ec4af6d17172922c6a"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aac9eb0404d59f5ec4af6d17172922c6a">rgw::IAM::operator&lt;&lt;</a> (std::ostream &amp;m, const <a class="el" href="structrgw_1_1_i_a_m_1_1_statement.html">Statement</a> &amp;s)</td></tr>
+<tr class="separator:aac9eb0404d59f5ec4af6d17172922c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4efb8e1964ba618acc0ca7656f9e5f12" id="r_a4efb8e1964ba618acc0ca7656f9e5f12"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a4efb8e1964ba618acc0ca7656f9e5f12">rgw::IAM::operator&lt;&lt;</a> (std::ostream &amp;m, const <a class="el" href="structrgw_1_1_i_a_m_1_1_policy.html">Policy</a> &amp;p)</td></tr>
+<tr class="separator:a4efb8e1964ba618acc0ca7656f9e5f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1d3d7111b84f9f3163acf7f0fa71ac" id="r_a6e1d3d7111b84f9f3163acf7f0fa71ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a6e1d3d7111b84f9f3163acf7f0fa71ac">rgw::IAM::is_public</a> (const <a class="el" href="structrgw_1_1_i_a_m_1_1_policy.html">Policy</a> &amp;p)</td></tr>
+<tr class="separator:a6e1d3d7111b84f9f3163acf7f0fa71ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:ab818f0a33be78b7e79a458b9b3c0a5d7" id="r_ab818f0a33be78b7e79a458b9b3c0a5d7"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ab818f0a33be78b7e79a458b9b3c0a5d7">rgw::IAM::s3GetObject</a> = 0</td></tr>
+<tr class="separator:ab818f0a33be78b7e79a458b9b3c0a5d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a978e923ee645962d559f2d7d8e2f5041" id="r_a978e923ee645962d559f2d7d8e2f5041"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a978e923ee645962d559f2d7d8e2f5041">rgw::IAM::s3GetObjectVersion</a> = 1</td></tr>
+<tr class="separator:a978e923ee645962d559f2d7d8e2f5041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa286b955819befb95248f5d321f87c13" id="r_aa286b955819befb95248f5d321f87c13"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aa286b955819befb95248f5d321f87c13">rgw::IAM::s3PutObject</a> = 2</td></tr>
+<tr class="separator:aa286b955819befb95248f5d321f87c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e7e0bf2f1f8e9013a38b8b9aad57a2" id="r_ac8e7e0bf2f1f8e9013a38b8b9aad57a2"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ac8e7e0bf2f1f8e9013a38b8b9aad57a2">rgw::IAM::s3GetObjectAcl</a> = 3</td></tr>
+<tr class="separator:ac8e7e0bf2f1f8e9013a38b8b9aad57a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a487b501bca4e30a820700c0b2bbed92a" id="r_a487b501bca4e30a820700c0b2bbed92a"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a487b501bca4e30a820700c0b2bbed92a">rgw::IAM::s3GetObjectVersionAcl</a> = 4</td></tr>
+<tr class="separator:a487b501bca4e30a820700c0b2bbed92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7dd4df8cc7f0cb30fb46d71d217167" id="r_a3b7dd4df8cc7f0cb30fb46d71d217167"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a3b7dd4df8cc7f0cb30fb46d71d217167">rgw::IAM::s3PutObjectAcl</a> = 5</td></tr>
+<tr class="separator:a3b7dd4df8cc7f0cb30fb46d71d217167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ccd2a2f1608e779f04c34bad9c9210" id="r_a96ccd2a2f1608e779f04c34bad9c9210"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a96ccd2a2f1608e779f04c34bad9c9210">rgw::IAM::s3PutObjectVersionAcl</a> = 6</td></tr>
+<tr class="separator:a96ccd2a2f1608e779f04c34bad9c9210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6e92ee9b2e150057c77418ca35005c" id="r_ade6e92ee9b2e150057c77418ca35005c"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ade6e92ee9b2e150057c77418ca35005c">rgw::IAM::s3DeleteObject</a> = 7</td></tr>
+<tr class="separator:ade6e92ee9b2e150057c77418ca35005c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1004532bd40f72897676e50fd44cdd" id="r_aaf1004532bd40f72897676e50fd44cdd"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aaf1004532bd40f72897676e50fd44cdd">rgw::IAM::s3DeleteObjectVersion</a> = 8</td></tr>
+<tr class="separator:aaf1004532bd40f72897676e50fd44cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af54a7ab2a10b3699c8ca932353f04ed7" id="r_af54a7ab2a10b3699c8ca932353f04ed7"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#af54a7ab2a10b3699c8ca932353f04ed7">rgw::IAM::s3ListMultipartUploadParts</a> = 9</td></tr>
+<tr class="separator:af54a7ab2a10b3699c8ca932353f04ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af943be0e8dcec8960340818799ad0d02" id="r_af943be0e8dcec8960340818799ad0d02"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#af943be0e8dcec8960340818799ad0d02">rgw::IAM::s3AbortMultipartUpload</a> = 10</td></tr>
+<tr class="separator:af943be0e8dcec8960340818799ad0d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4727286509ae42948e8e9c47797d54" id="r_a0b4727286509ae42948e8e9c47797d54"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a0b4727286509ae42948e8e9c47797d54">rgw::IAM::s3GetObjectTorrent</a> = 11</td></tr>
+<tr class="separator:a0b4727286509ae42948e8e9c47797d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16430ca4a6db0f7878cd922bd1a1f915" id="r_a16430ca4a6db0f7878cd922bd1a1f915"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a16430ca4a6db0f7878cd922bd1a1f915">rgw::IAM::s3GetObjectVersionTorrent</a> = 12</td></tr>
+<tr class="separator:a16430ca4a6db0f7878cd922bd1a1f915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42bfd6320f567bf2d047e156ee90022d" id="r_a42bfd6320f567bf2d047e156ee90022d"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a42bfd6320f567bf2d047e156ee90022d">rgw::IAM::s3RestoreObject</a> = 13</td></tr>
+<tr class="separator:a42bfd6320f567bf2d047e156ee90022d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae5031d168affaf89eb0ed8a57b7a00" id="r_a6ae5031d168affaf89eb0ed8a57b7a00"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a6ae5031d168affaf89eb0ed8a57b7a00">rgw::IAM::s3CreateBucket</a> = 14</td></tr>
+<tr class="separator:a6ae5031d168affaf89eb0ed8a57b7a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489d2b8802b0f24483e2409f2e6454b0" id="r_a489d2b8802b0f24483e2409f2e6454b0"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a489d2b8802b0f24483e2409f2e6454b0">rgw::IAM::s3DeleteBucket</a> = 15</td></tr>
+<tr class="separator:a489d2b8802b0f24483e2409f2e6454b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab150105bdf7170291472d040ae03bbf2" id="r_ab150105bdf7170291472d040ae03bbf2"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ab150105bdf7170291472d040ae03bbf2">rgw::IAM::s3ListBucket</a> = 16</td></tr>
+<tr class="separator:ab150105bdf7170291472d040ae03bbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa328e6a0a68e76c4f1b70fb2ddbb7f89" id="r_aa328e6a0a68e76c4f1b70fb2ddbb7f89"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aa328e6a0a68e76c4f1b70fb2ddbb7f89">rgw::IAM::s3ListBucketVersions</a> = 17</td></tr>
+<tr class="separator:aa328e6a0a68e76c4f1b70fb2ddbb7f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f4ae1255ced4c32aa64969135aae439" id="r_a8f4ae1255ced4c32aa64969135aae439"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a8f4ae1255ced4c32aa64969135aae439">rgw::IAM::s3ListAllMyBuckets</a> = 18</td></tr>
+<tr class="separator:a8f4ae1255ced4c32aa64969135aae439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7c793fa1d439590ef9fa98d654e612" id="r_adc7c793fa1d439590ef9fa98d654e612"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#adc7c793fa1d439590ef9fa98d654e612">rgw::IAM::s3ListBucketMultipartUploads</a> = 19</td></tr>
+<tr class="separator:adc7c793fa1d439590ef9fa98d654e612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13056276bd9aa9494f45b8ce089a1162" id="r_a13056276bd9aa9494f45b8ce089a1162"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a13056276bd9aa9494f45b8ce089a1162">rgw::IAM::s3GetAccelerateConfiguration</a> = 20</td></tr>
+<tr class="separator:a13056276bd9aa9494f45b8ce089a1162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b90949418d1dc44b2cd8267437c62f" id="r_a17b90949418d1dc44b2cd8267437c62f"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a17b90949418d1dc44b2cd8267437c62f">rgw::IAM::s3PutAccelerateConfiguration</a> = 21</td></tr>
+<tr class="separator:a17b90949418d1dc44b2cd8267437c62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b5e526752f225a935babfa5350c840" id="r_ad7b5e526752f225a935babfa5350c840"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ad7b5e526752f225a935babfa5350c840">rgw::IAM::s3GetBucketAcl</a> = 22</td></tr>
+<tr class="separator:ad7b5e526752f225a935babfa5350c840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac483b61734d95a307952f21d5cc88ca1" id="r_ac483b61734d95a307952f21d5cc88ca1"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ac483b61734d95a307952f21d5cc88ca1">rgw::IAM::s3PutBucketAcl</a> = 23</td></tr>
+<tr class="separator:ac483b61734d95a307952f21d5cc88ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520f133e5e5d4a589f4348308fb3ed02" id="r_a520f133e5e5d4a589f4348308fb3ed02"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a520f133e5e5d4a589f4348308fb3ed02">rgw::IAM::s3GetBucketCORS</a> = 24</td></tr>
+<tr class="separator:a520f133e5e5d4a589f4348308fb3ed02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a294485878b8a163cd4e172117a56b91a" id="r_a294485878b8a163cd4e172117a56b91a"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a294485878b8a163cd4e172117a56b91a">rgw::IAM::s3PutBucketCORS</a> = 25</td></tr>
+<tr class="separator:a294485878b8a163cd4e172117a56b91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ef2bebbf714aa7e2e72164dbf532fc" id="r_ae1ef2bebbf714aa7e2e72164dbf532fc"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ae1ef2bebbf714aa7e2e72164dbf532fc">rgw::IAM::s3GetBucketVersioning</a> = 26</td></tr>
+<tr class="separator:ae1ef2bebbf714aa7e2e72164dbf532fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c5acb099fcf7456d6c625759476226" id="r_a18c5acb099fcf7456d6c625759476226"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a18c5acb099fcf7456d6c625759476226">rgw::IAM::s3PutBucketVersioning</a> = 27</td></tr>
+<tr class="separator:a18c5acb099fcf7456d6c625759476226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d6f537377319100398a2a2e09e0711" id="r_ad1d6f537377319100398a2a2e09e0711"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ad1d6f537377319100398a2a2e09e0711">rgw::IAM::s3GetBucketRequestPayment</a> = 28</td></tr>
+<tr class="separator:ad1d6f537377319100398a2a2e09e0711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3122ee967ab127d607310711a81a5e" id="r_a1e3122ee967ab127d607310711a81a5e"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a1e3122ee967ab127d607310711a81a5e">rgw::IAM::s3PutBucketRequestPayment</a> = 29</td></tr>
+<tr class="separator:a1e3122ee967ab127d607310711a81a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08c32e7a2b77ef7f40698fb3ddc12d1" id="r_aa08c32e7a2b77ef7f40698fb3ddc12d1"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aa08c32e7a2b77ef7f40698fb3ddc12d1">rgw::IAM::s3GetBucketLocation</a> = 30</td></tr>
+<tr class="separator:aa08c32e7a2b77ef7f40698fb3ddc12d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7707fcad30ca0cf09fea2b0dd980b035" id="r_a7707fcad30ca0cf09fea2b0dd980b035"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a7707fcad30ca0cf09fea2b0dd980b035">rgw::IAM::s3GetBucketPolicy</a> = 31</td></tr>
+<tr class="separator:a7707fcad30ca0cf09fea2b0dd980b035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8e09e9d32e9392e56679712a9151d91" id="r_ae8e09e9d32e9392e56679712a9151d91"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ae8e09e9d32e9392e56679712a9151d91">rgw::IAM::s3DeleteBucketPolicy</a> = 32</td></tr>
+<tr class="separator:ae8e09e9d32e9392e56679712a9151d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d9de36af3465c9dee0f09b06f246e6" id="r_a31d9de36af3465c9dee0f09b06f246e6"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a31d9de36af3465c9dee0f09b06f246e6">rgw::IAM::s3PutBucketPolicy</a> = 33</td></tr>
+<tr class="separator:a31d9de36af3465c9dee0f09b06f246e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbbc8272d9347f99bd30720e87ffa60" id="r_acbbbc8272d9347f99bd30720e87ffa60"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#acbbbc8272d9347f99bd30720e87ffa60">rgw::IAM::s3GetBucketNotification</a> = 34</td></tr>
+<tr class="separator:acbbbc8272d9347f99bd30720e87ffa60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6164aab4f7fd566c8c7f55144f2cad" id="r_acb6164aab4f7fd566c8c7f55144f2cad"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#acb6164aab4f7fd566c8c7f55144f2cad">rgw::IAM::s3PutBucketNotification</a> = 35</td></tr>
+<tr class="separator:acb6164aab4f7fd566c8c7f55144f2cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21b19bab6a8f428b1019974fc9b26b6" id="r_ad21b19bab6a8f428b1019974fc9b26b6"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ad21b19bab6a8f428b1019974fc9b26b6">rgw::IAM::s3GetBucketLogging</a> = 36</td></tr>
+<tr class="separator:ad21b19bab6a8f428b1019974fc9b26b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b77504546d1431d637dc75d4dacefd" id="r_a69b77504546d1431d637dc75d4dacefd"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a69b77504546d1431d637dc75d4dacefd">rgw::IAM::s3PutBucketLogging</a> = 37</td></tr>
+<tr class="separator:a69b77504546d1431d637dc75d4dacefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c818513094d3caab5d733698653fd4f" id="r_a8c818513094d3caab5d733698653fd4f"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a8c818513094d3caab5d733698653fd4f">rgw::IAM::s3GetBucketTagging</a> = 38</td></tr>
+<tr class="separator:a8c818513094d3caab5d733698653fd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e1695a4a7c85dfe56372ec1b1d4b70" id="r_a48e1695a4a7c85dfe56372ec1b1d4b70"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a48e1695a4a7c85dfe56372ec1b1d4b70">rgw::IAM::s3PutBucketTagging</a> = 39</td></tr>
+<tr class="separator:a48e1695a4a7c85dfe56372ec1b1d4b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a138dd2411c90bf786989c2ef444838" id="r_a0a138dd2411c90bf786989c2ef444838"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a0a138dd2411c90bf786989c2ef444838">rgw::IAM::s3GetBucketWebsite</a> = 40</td></tr>
+<tr class="separator:a0a138dd2411c90bf786989c2ef444838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ed73b4944693db431aca49897ce761" id="r_a42ed73b4944693db431aca49897ce761"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a42ed73b4944693db431aca49897ce761">rgw::IAM::s3PutBucketWebsite</a> = 41</td></tr>
+<tr class="separator:a42ed73b4944693db431aca49897ce761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ca322373503541150a19614993717a" id="r_a58ca322373503541150a19614993717a"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a58ca322373503541150a19614993717a">rgw::IAM::s3DeleteBucketWebsite</a> = 42</td></tr>
+<tr class="separator:a58ca322373503541150a19614993717a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df080219400163e800768053ff8c7e4" id="r_a7df080219400163e800768053ff8c7e4"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a7df080219400163e800768053ff8c7e4">rgw::IAM::s3GetLifecycleConfiguration</a> = 43</td></tr>
+<tr class="separator:a7df080219400163e800768053ff8c7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a3773d0b80b3361a06a96cb24537966" id="r_a2a3773d0b80b3361a06a96cb24537966"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a2a3773d0b80b3361a06a96cb24537966">rgw::IAM::s3PutLifecycleConfiguration</a> = 44</td></tr>
+<tr class="separator:a2a3773d0b80b3361a06a96cb24537966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cdd2d94ef4b48ea27d309f903b5ad1" id="r_a32cdd2d94ef4b48ea27d309f903b5ad1"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a32cdd2d94ef4b48ea27d309f903b5ad1">rgw::IAM::s3PutReplicationConfiguration</a> = 45</td></tr>
+<tr class="separator:a32cdd2d94ef4b48ea27d309f903b5ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ccd833909aadfdc91809dfe7fa96fd7" id="r_a6ccd833909aadfdc91809dfe7fa96fd7"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a6ccd833909aadfdc91809dfe7fa96fd7">rgw::IAM::s3GetReplicationConfiguration</a> = 46</td></tr>
+<tr class="separator:a6ccd833909aadfdc91809dfe7fa96fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e1c92b19e3328024d8e93ba5f9c34ce" id="r_a4e1c92b19e3328024d8e93ba5f9c34ce"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a4e1c92b19e3328024d8e93ba5f9c34ce">rgw::IAM::s3DeleteReplicationConfiguration</a> = 47</td></tr>
+<tr class="separator:a4e1c92b19e3328024d8e93ba5f9c34ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec5d8dbd1fe32871059a3740c7df2f9" id="r_acec5d8dbd1fe32871059a3740c7df2f9"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#acec5d8dbd1fe32871059a3740c7df2f9">rgw::IAM::s3GetObjectTagging</a> = 48</td></tr>
+<tr class="separator:acec5d8dbd1fe32871059a3740c7df2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93736ee63c016daa61a955f6f40f4170" id="r_a93736ee63c016daa61a955f6f40f4170"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a93736ee63c016daa61a955f6f40f4170">rgw::IAM::s3PutObjectTagging</a> = 49</td></tr>
+<tr class="separator:a93736ee63c016daa61a955f6f40f4170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54084172fcaef3a5656c5b0fb615092f" id="r_a54084172fcaef3a5656c5b0fb615092f"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a54084172fcaef3a5656c5b0fb615092f">rgw::IAM::s3DeleteObjectTagging</a> = 50</td></tr>
+<tr class="separator:a54084172fcaef3a5656c5b0fb615092f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b15b7b91378605118b16f180d9fd2d5" id="r_a4b15b7b91378605118b16f180d9fd2d5"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a4b15b7b91378605118b16f180d9fd2d5">rgw::IAM::s3GetObjectVersionTagging</a> = 51</td></tr>
+<tr class="separator:a4b15b7b91378605118b16f180d9fd2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f713c3a97bdf976db821eb6adf5a30f" id="r_a9f713c3a97bdf976db821eb6adf5a30f"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a9f713c3a97bdf976db821eb6adf5a30f">rgw::IAM::s3PutObjectVersionTagging</a> = 52</td></tr>
+<tr class="separator:a9f713c3a97bdf976db821eb6adf5a30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc953fb2d82f4dc3c4e2c70f63b6e60" id="r_a7bc953fb2d82f4dc3c4e2c70f63b6e60"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a7bc953fb2d82f4dc3c4e2c70f63b6e60">rgw::IAM::s3DeleteObjectVersionTagging</a> = 53</td></tr>
+<tr class="separator:a7bc953fb2d82f4dc3c4e2c70f63b6e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fca77ee5dcff657bb3bb4257a238cd5" id="r_a8fca77ee5dcff657bb3bb4257a238cd5"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a8fca77ee5dcff657bb3bb4257a238cd5">rgw::IAM::s3PutBucketObjectLockConfiguration</a> = 54</td></tr>
+<tr class="separator:a8fca77ee5dcff657bb3bb4257a238cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62aff3925a94feb21c84940794ef8b99" id="r_a62aff3925a94feb21c84940794ef8b99"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a62aff3925a94feb21c84940794ef8b99">rgw::IAM::s3GetBucketObjectLockConfiguration</a> = 55</td></tr>
+<tr class="separator:a62aff3925a94feb21c84940794ef8b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1fbbf2d916d055813177e9b4e63d7d" id="r_aea1fbbf2d916d055813177e9b4e63d7d"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aea1fbbf2d916d055813177e9b4e63d7d">rgw::IAM::s3PutObjectRetention</a> = 56</td></tr>
+<tr class="separator:aea1fbbf2d916d055813177e9b4e63d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5b7ef143e61051b855b66f8db867a1" id="r_aec5b7ef143e61051b855b66f8db867a1"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aec5b7ef143e61051b855b66f8db867a1">rgw::IAM::s3GetObjectRetention</a> = 57</td></tr>
+<tr class="separator:aec5b7ef143e61051b855b66f8db867a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef17dc73356b9c3c858d7901c0a130f" id="r_a7ef17dc73356b9c3c858d7901c0a130f"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a7ef17dc73356b9c3c858d7901c0a130f">rgw::IAM::s3PutObjectLegalHold</a> = 58</td></tr>
+<tr class="separator:a7ef17dc73356b9c3c858d7901c0a130f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56f333f2bc49ce39fbc74940c86f4378" id="r_a56f333f2bc49ce39fbc74940c86f4378"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a56f333f2bc49ce39fbc74940c86f4378">rgw::IAM::s3GetObjectLegalHold</a> = 59</td></tr>
+<tr class="separator:a56f333f2bc49ce39fbc74940c86f4378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3922bc7497f824763672de241d8ba4e8" id="r_a3922bc7497f824763672de241d8ba4e8"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a3922bc7497f824763672de241d8ba4e8">rgw::IAM::s3BypassGovernanceRetention</a> = 60</td></tr>
+<tr class="separator:a3922bc7497f824763672de241d8ba4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35283a74e5829138a85ee24261ea4d4" id="r_ad35283a74e5829138a85ee24261ea4d4"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ad35283a74e5829138a85ee24261ea4d4">rgw::IAM::s3GetBucketPolicyStatus</a> = 61</td></tr>
+<tr class="separator:ad35283a74e5829138a85ee24261ea4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0327d1af19fc2d90e480bbfa5284b40" id="r_af0327d1af19fc2d90e480bbfa5284b40"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#af0327d1af19fc2d90e480bbfa5284b40">rgw::IAM::s3PutPublicAccessBlock</a> = 62</td></tr>
+<tr class="separator:af0327d1af19fc2d90e480bbfa5284b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b7a99c06a01958bbc85f47f24de3e7" id="r_ac5b7a99c06a01958bbc85f47f24de3e7"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ac5b7a99c06a01958bbc85f47f24de3e7">rgw::IAM::s3GetPublicAccessBlock</a> = 63</td></tr>
+<tr class="separator:ac5b7a99c06a01958bbc85f47f24de3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a237df02f7d1d0479585dd7055c45eeff" id="r_a237df02f7d1d0479585dd7055c45eeff"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a237df02f7d1d0479585dd7055c45eeff">rgw::IAM::s3DeletePublicAccessBlock</a> = 64</td></tr>
+<tr class="separator:a237df02f7d1d0479585dd7055c45eeff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a711b6f89c86340af5d63080939c2243c" id="r_a711b6f89c86340af5d63080939c2243c"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a711b6f89c86340af5d63080939c2243c">rgw::IAM::s3GetBucketPublicAccessBlock</a> = 65</td></tr>
+<tr class="separator:a711b6f89c86340af5d63080939c2243c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a53fc6bde5ee695b9e648c7eeeaeeb7" id="r_a1a53fc6bde5ee695b9e648c7eeeaeeb7"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a1a53fc6bde5ee695b9e648c7eeeaeeb7">rgw::IAM::s3PutBucketPublicAccessBlock</a> = 66</td></tr>
+<tr class="separator:a1a53fc6bde5ee695b9e648c7eeeaeeb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3f77e94736936dfc1bdf7728078c6c" id="r_aba3f77e94736936dfc1bdf7728078c6c"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aba3f77e94736936dfc1bdf7728078c6c">rgw::IAM::s3DeleteBucketPublicAccessBlock</a> = 67</td></tr>
+<tr class="separator:aba3f77e94736936dfc1bdf7728078c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be1dc6f35efbccaa5978a115254f4f9" id="r_a9be1dc6f35efbccaa5978a115254f4f9"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a9be1dc6f35efbccaa5978a115254f4f9">rgw::IAM::s3GetBucketEncryption</a> = 68</td></tr>
+<tr class="separator:a9be1dc6f35efbccaa5978a115254f4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1774f443e1e74327a34d7c50165fb7d6" id="r_a1774f443e1e74327a34d7c50165fb7d6"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a1774f443e1e74327a34d7c50165fb7d6">rgw::IAM::s3PutBucketEncryption</a> = 69</td></tr>
+<tr class="separator:a1774f443e1e74327a34d7c50165fb7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd47ca87ce123825f3dc2a56217ef8f" id="r_a5fd47ca87ce123825f3dc2a56217ef8f"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">rgw::IAM::s3All</a> = 70</td></tr>
+<tr class="separator:a5fd47ca87ce123825f3dc2a56217ef8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec9a7d12db777e000f10bf8a486510b" id="r_a2ec9a7d12db777e000f10bf8a486510b"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a2ec9a7d12db777e000f10bf8a486510b">rgw::IAM::iamPutUserPolicy</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 1</td></tr>
+<tr class="separator:a2ec9a7d12db777e000f10bf8a486510b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e051886368bec16d81958f1b96fbd23" id="r_a4e051886368bec16d81958f1b96fbd23"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a4e051886368bec16d81958f1b96fbd23">rgw::IAM::iamGetUserPolicy</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 2</td></tr>
+<tr class="separator:a4e051886368bec16d81958f1b96fbd23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a41f800575e9eaf3b43c125b139f0a" id="r_a83a41f800575e9eaf3b43c125b139f0a"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a83a41f800575e9eaf3b43c125b139f0a">rgw::IAM::iamDeleteUserPolicy</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 3</td></tr>
+<tr class="separator:a83a41f800575e9eaf3b43c125b139f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e0ecc5944602e8f5e767e38ad6c461" id="r_a52e0ecc5944602e8f5e767e38ad6c461"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a52e0ecc5944602e8f5e767e38ad6c461">rgw::IAM::iamListUserPolicies</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 4</td></tr>
+<tr class="separator:a52e0ecc5944602e8f5e767e38ad6c461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac115f3ca9274730ce8c479b72f84e3d5" id="r_ac115f3ca9274730ce8c479b72f84e3d5"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ac115f3ca9274730ce8c479b72f84e3d5">rgw::IAM::iamCreateRole</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 5</td></tr>
+<tr class="separator:ac115f3ca9274730ce8c479b72f84e3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f898e06d6c791b0566dcb937f38ac7" id="r_ac2f898e06d6c791b0566dcb937f38ac7"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ac2f898e06d6c791b0566dcb937f38ac7">rgw::IAM::iamDeleteRole</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 6</td></tr>
+<tr class="separator:ac2f898e06d6c791b0566dcb937f38ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e52785def38b2f121507f75197790d6" id="r_a4e52785def38b2f121507f75197790d6"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a4e52785def38b2f121507f75197790d6">rgw::IAM::iamModifyRole</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 7</td></tr>
+<tr class="separator:a4e52785def38b2f121507f75197790d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a60ac1f5a4a78425473e80d503f02d" id="r_af1a60ac1f5a4a78425473e80d503f02d"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#af1a60ac1f5a4a78425473e80d503f02d">rgw::IAM::iamGetRole</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 8</td></tr>
+<tr class="separator:af1a60ac1f5a4a78425473e80d503f02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5784b6f8dede1677ed92f6a58d8fd05" id="r_af5784b6f8dede1677ed92f6a58d8fd05"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#af5784b6f8dede1677ed92f6a58d8fd05">rgw::IAM::iamListRoles</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 9</td></tr>
+<tr class="separator:af5784b6f8dede1677ed92f6a58d8fd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1d2a296251fb7a66f84214aeb80a33" id="r_a8a1d2a296251fb7a66f84214aeb80a33"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a8a1d2a296251fb7a66f84214aeb80a33">rgw::IAM::iamPutRolePolicy</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 10</td></tr>
+<tr class="separator:a8a1d2a296251fb7a66f84214aeb80a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c12e9c64998d7205eac9496a9894f6b" id="r_a6c12e9c64998d7205eac9496a9894f6b"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a6c12e9c64998d7205eac9496a9894f6b">rgw::IAM::iamGetRolePolicy</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 11</td></tr>
+<tr class="separator:a6c12e9c64998d7205eac9496a9894f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa374b2e362b95838fb0738660c134412" id="r_aa374b2e362b95838fb0738660c134412"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aa374b2e362b95838fb0738660c134412">rgw::IAM::iamListRolePolicies</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 12</td></tr>
+<tr class="separator:aa374b2e362b95838fb0738660c134412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64279a2e1327cff1273756d0e220828f" id="r_a64279a2e1327cff1273756d0e220828f"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a64279a2e1327cff1273756d0e220828f">rgw::IAM::iamDeleteRolePolicy</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 13</td></tr>
+<tr class="separator:a64279a2e1327cff1273756d0e220828f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada96f4c81d68f20bd20afd3f3696907b" id="r_ada96f4c81d68f20bd20afd3f3696907b"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ada96f4c81d68f20bd20afd3f3696907b">rgw::IAM::iamCreateOIDCProvider</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 14</td></tr>
+<tr class="separator:ada96f4c81d68f20bd20afd3f3696907b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253dbd118255e9fe2282d97a06c5782e" id="r_a253dbd118255e9fe2282d97a06c5782e"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a253dbd118255e9fe2282d97a06c5782e">rgw::IAM::iamDeleteOIDCProvider</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 15</td></tr>
+<tr class="separator:a253dbd118255e9fe2282d97a06c5782e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae367366970965ea6f92e9c1a8af987f0" id="r_ae367366970965ea6f92e9c1a8af987f0"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ae367366970965ea6f92e9c1a8af987f0">rgw::IAM::iamGetOIDCProvider</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 16</td></tr>
+<tr class="separator:ae367366970965ea6f92e9c1a8af987f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d14e48602799438e83a642e71d551c" id="r_ae1d14e48602799438e83a642e71d551c"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ae1d14e48602799438e83a642e71d551c">rgw::IAM::iamListOIDCProviders</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 17</td></tr>
+<tr class="separator:ae1d14e48602799438e83a642e71d551c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6373467f893f033aa1c8b2a8650e097" id="r_ad6373467f893f033aa1c8b2a8650e097"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ad6373467f893f033aa1c8b2a8650e097">rgw::IAM::iamTagRole</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 18</td></tr>
+<tr class="separator:ad6373467f893f033aa1c8b2a8650e097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af295ed299fb70a450c890cfc78791caf" id="r_af295ed299fb70a450c890cfc78791caf"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#af295ed299fb70a450c890cfc78791caf">rgw::IAM::iamListRoleTags</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 19</td></tr>
+<tr class="separator:af295ed299fb70a450c890cfc78791caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6872b4555d1d4878c3099a13dd7c48fb" id="r_a6872b4555d1d4878c3099a13dd7c48fb"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a6872b4555d1d4878c3099a13dd7c48fb">rgw::IAM::iamUntagRole</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 20</td></tr>
+<tr class="separator:a6872b4555d1d4878c3099a13dd7c48fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800c3f0ced2084f41395e425d24609f8" id="r_a800c3f0ced2084f41395e425d24609f8"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">rgw::IAM::iamAll</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a> + 21</td></tr>
+<tr class="separator:a800c3f0ced2084f41395e425d24609f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c739d53ca9793669a9519038e0a27c" id="r_ae5c739d53ca9793669a9519038e0a27c"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#ae5c739d53ca9793669a9519038e0a27c">rgw::IAM::stsAssumeRole</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">iamAll</a> + 1</td></tr>
+<tr class="separator:ae5c739d53ca9793669a9519038e0a27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fef7b077c186683c8cbf83f76fcede0" id="r_a6fef7b077c186683c8cbf83f76fcede0"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a6fef7b077c186683c8cbf83f76fcede0">rgw::IAM::stsAssumeRoleWithWebIdentity</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">iamAll</a> + 2</td></tr>
+<tr class="separator:a6fef7b077c186683c8cbf83f76fcede0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b37bf7410e29720944a3471e4c69cd" id="r_a04b37bf7410e29720944a3471e4c69cd"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a04b37bf7410e29720944a3471e4c69cd">rgw::IAM::stsGetSessionToken</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">iamAll</a> + 3</td></tr>
+<tr class="separator:a04b37bf7410e29720944a3471e4c69cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ec0b7b4f4ca4aacfa99fd3b7530161" id="r_a75ec0b7b4f4ca4aacfa99fd3b7530161"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a75ec0b7b4f4ca4aacfa99fd3b7530161">rgw::IAM::stsTagSession</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">iamAll</a> + 4</td></tr>
+<tr class="separator:a75ec0b7b4f4ca4aacfa99fd3b7530161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa332324f3f0a45726037332d836abfd0" id="r_aa332324f3f0a45726037332d836abfd0"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aa332324f3f0a45726037332d836abfd0">rgw::IAM::stsAll</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">iamAll</a> + 5</td></tr>
+<tr class="separator:aa332324f3f0a45726037332d836abfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bf28d84617a10a163fb98e5bce7c8e1" id="r_a7bf28d84617a10a163fb98e5bce7c8e1"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a7bf28d84617a10a163fb98e5bce7c8e1">rgw::IAM::s3Count</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a></td></tr>
+<tr class="separator:a7bf28d84617a10a163fb98e5bce7c8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73f58d6e34104eca0dd64b2d9972f11" id="r_af73f58d6e34104eca0dd64b2d9972f11"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#af73f58d6e34104eca0dd64b2d9972f11">rgw::IAM::allCount</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#aa332324f3f0a45726037332d836abfd0">stsAll</a> + 1</td></tr>
+<tr class="separator:af73f58d6e34104eca0dd64b2d9972f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafbdbda9e90d710486c66caf583380c6" id="r_aafbdbda9e90d710486c66caf583380c6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacergw_1_1_i_a_m.html#a40dea50614c07e9fe51c985fccb10193">Action_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#aafbdbda9e90d710486c66caf583380c6">rgw::IAM::s3AllValue</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a607a4141fd1c79e01a49f812ef1402ca">set_cont_bits</a>&lt;<a class="el" href="namespacergw_1_1_i_a_m.html#af73f58d6e34104eca0dd64b2d9972f11">allCount</a>&gt;(0,<a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a>)</td></tr>
+<tr class="separator:aafbdbda9e90d710486c66caf583380c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e9ab8a10aacba8abe10c857ae2fcc58" id="r_a4e9ab8a10aacba8abe10c857ae2fcc58"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacergw_1_1_i_a_m.html#a40dea50614c07e9fe51c985fccb10193">Action_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a4e9ab8a10aacba8abe10c857ae2fcc58">rgw::IAM::iamAllValue</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a607a4141fd1c79e01a49f812ef1402ca">set_cont_bits</a>&lt;<a class="el" href="namespacergw_1_1_i_a_m.html#af73f58d6e34104eca0dd64b2d9972f11">allCount</a>&gt;(<a class="el" href="namespacergw_1_1_i_a_m.html#a5fd47ca87ce123825f3dc2a56217ef8f">s3All</a>+1,<a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">iamAll</a>)</td></tr>
+<tr class="separator:a4e9ab8a10aacba8abe10c857ae2fcc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270ff8b4bc7c61afd5fc247e99af73c4" id="r_a270ff8b4bc7c61afd5fc247e99af73c4"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacergw_1_1_i_a_m.html#a40dea50614c07e9fe51c985fccb10193">Action_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a270ff8b4bc7c61afd5fc247e99af73c4">rgw::IAM::stsAllValue</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a607a4141fd1c79e01a49f812ef1402ca">set_cont_bits</a>&lt;<a class="el" href="namespacergw_1_1_i_a_m.html#af73f58d6e34104eca0dd64b2d9972f11">allCount</a>&gt;(<a class="el" href="namespacergw_1_1_i_a_m.html#a800c3f0ced2084f41395e425d24609f8">iamAll</a>+1,<a class="el" href="namespacergw_1_1_i_a_m.html#aa332324f3f0a45726037332d836abfd0">stsAll</a>)</td></tr>
+<tr class="separator:a270ff8b4bc7c61afd5fc247e99af73c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3b6510a81b918c9cae25e6be2d8316" id="r_a5e3b6510a81b918c9cae25e6be2d8316"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="namespacergw_1_1_i_a_m.html#a40dea50614c07e9fe51c985fccb10193">Action_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1_i_a_m.html#a5e3b6510a81b918c9cae25e6be2d8316">rgw::IAM::allValue</a> = <a class="el" href="namespacergw_1_1_i_a_m.html#a607a4141fd1c79e01a49f812ef1402ca">set_cont_bits</a>&lt;<a class="el" href="namespacergw_1_1_i_a_m.html#af73f58d6e34104eca0dd64b2d9972f11">allCount</a>&gt;(0,<a class="el" href="namespacergw_1_1_i_a_m.html#af73f58d6e34104eca0dd64b2d9972f11">allCount</a>)</td></tr>
+<tr class="separator:a5e3b6510a81b918c9cae25e6be2d8316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__iam__policy_8h.html">rgw_iam_policy.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

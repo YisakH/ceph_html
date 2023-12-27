@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_sync_modules.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__sync__modules_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_sync_modules.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__sync__modules_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__service_8h.html">rgw/rgw_service.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__sync__module_8h.html">rgw/rgw_sync_module.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_sync_modules_manager.html">RGWSyncModulesManager</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sync_modules.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sync_modules.html">RGWSI_SyncModules</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_service_instance.html">RGWServiceInstance</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sync_modules.html#aaa52dcc39fa27aac7cf21b68d1cc48fc">   15</a></span>  <a class="code hl_class" href="class_r_g_w_sync_modules_manager.html">RGWSyncModulesManager</a> *<a class="code hl_variable" href="class_r_g_w_s_i___sync_modules.html#aaa52dcc39fa27aac7cf21b68d1cc48fc">sync_modules_manager</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sync_modules.html#a16d57e4c36071be0687b97c45adf76da">   16</a></span>  <a class="code hl_typedef" href="rgw__sal_8h.html#a2a039ebea62bea24dff4df3905db41df">RGWSyncModuleInstanceRef</a> <a class="code hl_variable" href="class_r_g_w_s_i___sync_modules.html#a16d57e4c36071be0687b97c45adf76da">sync_module</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___sync_modules_1_1_svc.html">   18</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_s_i___sync_modules_1_1_svc.html">Svc</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_r_g_w_s_i___sync_modules_1_1_svc.html#a03a0957199e510587471abbd43f18f80">   19</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *<a class="code hl_variable" href="struct_r_g_w_s_i___sync_modules_1_1_svc.html#a03a0957199e510587471abbd43f18f80">zone</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sync_modules.html#a72cc2ea07a88f58edcab9e80fc66d65c">   20</a></span>  } <a class="code hl_variable" href="class_r_g_w_s_i___sync_modules.html#a72cc2ea07a88f58edcab9e80fc66d65c">svc</a>;</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sync_modules.html#a4908b39f6505108df86d6365cddd5467">   23</a></span>  <a class="code hl_function" href="class_r_g_w_s_i___sync_modules.html#a4908b39f6505108df86d6365cddd5467">RGWSI_SyncModules</a>(CephContext *<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>): <a class="code hl_class" href="class_r_g_w_service_instance.html">RGWServiceInstance</a>(<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>) {}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_function" href="class_r_g_w_s_i___sync_modules.html#a7d946d930f7060814e6d95734d031573">~RGWSI_SyncModules</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sync_modules.html#af11dd01fdf026575d4b335195d703949">   26</a></span>  <a class="code hl_class" href="class_r_g_w_sync_modules_manager.html">RGWSyncModulesManager</a> *<a class="code hl_function" href="class_r_g_w_s_i___sync_modules.html#af11dd01fdf026575d4b335195d703949">get_manager</a>() {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_s_i___sync_modules.html#aaa52dcc39fa27aac7cf21b68d1cc48fc">sync_modules_manager</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sync_modules.html#a0ddc296e79e8e3fbaac98966839a4318">init</a>(<a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *zone_svc);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sync_modules.html#aaf8bcc055d4fdd7a80cc0a7a7656a134">do_start</a>(optional_yield, <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sync_modules.html#a9754843d9d27f9b9fcae2caa20b1d343">   33</a></span>  <a class="code hl_typedef" href="rgw__sal_8h.html#a2a039ebea62bea24dff4df3905db41df">RGWSyncModuleInstanceRef</a>&amp; <a class="code hl_function" href="class_r_g_w_s_i___sync_modules.html#a9754843d9d27f9b9fcae2caa20b1d343">get_sync_module</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_s_i___sync_modules.html#a16d57e4c36071be0687b97c45adf76da">sync_module</a>; }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html">RGWSI_SyncModules</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00013">svc_sync_modules.h:14</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_a0ddc296e79e8e3fbaac98966839a4318"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#a0ddc296e79e8e3fbaac98966839a4318">RGWSI_SyncModules::init</a></div><div class="ttdeci">void init(RGWSI_Zone *zone_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8cc_source.html#l00012">svc_sync_modules.cc:12</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_a16d57e4c36071be0687b97c45adf76da"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#a16d57e4c36071be0687b97c45adf76da">RGWSI_SyncModules::sync_module</a></div><div class="ttdeci">RGWSyncModuleInstanceRef sync_module</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00016">svc_sync_modules.h:16</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_a4908b39f6505108df86d6365cddd5467"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#a4908b39f6505108df86d6365cddd5467">RGWSI_SyncModules::RGWSI_SyncModules</a></div><div class="ttdeci">RGWSI_SyncModules(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00023">svc_sync_modules.h:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_a72cc2ea07a88f58edcab9e80fc66d65c"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#a72cc2ea07a88f58edcab9e80fc66d65c">RGWSI_SyncModules::svc</a></div><div class="ttdeci">struct RGWSI_SyncModules::Svc svc</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_a7d946d930f7060814e6d95734d031573"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#a7d946d930f7060814e6d95734d031573">RGWSI_SyncModules::~RGWSI_SyncModules</a></div><div class="ttdeci">~RGWSI_SyncModules()</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8cc_source.html#l00040">svc_sync_modules.cc:40</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_a9754843d9d27f9b9fcae2caa20b1d343"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#a9754843d9d27f9b9fcae2caa20b1d343">RGWSI_SyncModules::get_sync_module</a></div><div class="ttdeci">RGWSyncModuleInstanceRef &amp; get_sync_module()</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00033">svc_sync_modules.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_aaa52dcc39fa27aac7cf21b68d1cc48fc"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#aaa52dcc39fa27aac7cf21b68d1cc48fc">RGWSI_SyncModules::sync_modules_manager</a></div><div class="ttdeci">RGWSyncModulesManager * sync_modules_manager</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00015">svc_sync_modules.h:15</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_aaf8bcc055d4fdd7a80cc0a7a7656a134"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#aaf8bcc055d4fdd7a80cc0a7a7656a134">RGWSI_SyncModules::do_start</a></div><div class="ttdeci">int do_start(optional_yield, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8cc_source.html#l00019">svc_sync_modules.cc:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sync_modules_html_af11dd01fdf026575d4b335195d703949"><div class="ttname"><a href="class_r_g_w_s_i___sync_modules.html#af11dd01fdf026575d4b335195d703949">RGWSI_SyncModules::get_manager</a></div><div class="ttdeci">RGWSyncModulesManager * get_manager()</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00026">svc_sync_modules.h:26</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html"><div class="ttname"><a href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a></div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8h_source.html#l00027">svc_zone.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html"><div class="ttname"><a href="class_r_g_w_service_instance.html">RGWServiceInstance</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00018">rgw_service.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_ab329eb7534d92dadb1c4232a6a617937"><div class="ttname"><a href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">RGWServiceInstance::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00023">rgw_service.h:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_sync_modules_manager_html"><div class="ttname"><a href="class_r_g_w_sync_modules_manager.html">RGWSyncModulesManager</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00085">rgw_sync_module.h:85</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__sal_8h_html_a2a039ebea62bea24dff4df3905db41df"><div class="ttname"><a href="rgw__sal_8h.html#a2a039ebea62bea24dff4df3905db41df">RGWSyncModuleInstanceRef</a></div><div class="ttdeci">std::shared_ptr&lt; RGWSyncModuleInstance &gt; RGWSyncModuleInstanceRef</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00039">rgw_sal.h:39</a></div></div>
+<div class="ttc" id="argw__service_8h_html"><div class="ttname"><a href="rgw__service_8h.html">rgw_service.h</a></div></div>
+<div class="ttc" id="argw__sync__module_8h_html"><div class="ttname"><a href="rgw__sync__module_8h.html">rgw_sync_module.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___sync_modules_1_1_svc_html"><div class="ttname"><a href="struct_r_g_w_s_i___sync_modules_1_1_svc.html">RGWSI_SyncModules::Svc</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00018">svc_sync_modules.h:18</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___sync_modules_1_1_svc_html_a03a0957199e510587471abbd43f18f80"><div class="ttname"><a href="struct_r_g_w_s_i___sync_modules_1_1_svc.html#a03a0957199e510587471abbd43f18f80">RGWSI_SyncModules::Svc::zone</a></div><div class="ttdeci">RGWSI_Zone * zone</div><div class="ttdef"><b>Definition</b> <a href="svc__sync__modules_8h_source.html#l00019">svc_sync_modules.h:19</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__sync__modules_8h.html">svc_sync_modules.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_sync.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__sync_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_sync.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/optional.hpp&gt;</code><br />
+<code>#include &quot;common/RefCountedObj.h&quot;</code><br />
+<code>#include &quot;common/WorkQueue.h&quot;</code><br />
+<code>#include &quot;common/Throttle.h&quot;</code><br />
+<code>#include &quot;common/admin_socket.h&quot;</code><br />
+<code>#include &quot;common/errno.h&quot;</code><br />
+<code>#include &quot;common/ceph_json.h&quot;</code><br />
+<code>#include &quot;common/Formatter.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__common_8h_source.html">rgw_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__zone_8h_source.html">rgw_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync_8h_source.html">rgw_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__metadata_8h_source.html">rgw_metadata.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__mdlog__types_8h_source.html">rgw_mdlog_types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__rest__conn_8h_source.html">rgw_rest_conn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__tools_8h_source.html">rgw_tools.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__rados_8h_source.html">rgw_cr_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__rest_8h_source.html">rgw_cr_rest.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__http__client_8h_source.html">rgw_http_client.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__trace_8h_source.html">rgw_sync_trace.h</a>&quot;</code><br />
+<code>#include &quot;cls/lock/cls_lock_client.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__zone_8h_source.html">services/svc_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__mdlog_8h_source.html">services/svc_mdlog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__meta_8h_source.html">services/svc_meta.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__cls_8h_source.html">services/svc_cls.h</a>&quot;</code><br />
+<code>#include &lt;boost/asio/yield.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_sync.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__sync_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__sync_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__sync_8cc">
+<area shape="rect" title=" " alt="" coords="3552,5,3683,48"/>
+<area shape="rect" title=" " alt="" coords="2626,501,2753,528"/>
+<area shape="poly" title=" " alt="" coords="3552,34,3445,42,3319,55,3202,74,3155,85,3120,98,3052,134,3020,153,2993,173,2974,194,2963,217,2964,242,2978,270,2995,286,3014,293,3034,295,3055,293,3076,292,3097,293,3117,301,3136,319,3145,341,3136,364,3100,404,3057,437,3010,462,2959,482,2908,496,2858,506,2769,515,2768,510,2857,500,2907,491,2958,476,3007,457,3054,432,3096,400,3131,361,3139,341,3131,321,3115,306,3096,299,3076,297,3055,299,3034,300,3012,299,2992,291,2974,274,2959,244,2958,216,2969,191,2990,169,3017,148,3049,129,3118,94,3153,80,3201,68,3319,50,3445,37,3552,29"/>
+<area shape="rect" title=" " alt="" coords="3298,245,3471,272"/>
+<area shape="poly" title=" " alt="" coords="3552,40,3437,63,3387,79,3354,98,3335,121,3327,143,3327,168,3335,196,3345,216,3360,233,3356,237,3341,219,3330,198,3321,168,3321,142,3331,118,3350,94,3384,74,3436,58,3551,34"/>
+<area shape="rect" title=" " alt="" coords="3683,171,3838,197"/>
+<area shape="poly" title=" " alt="" coords="3634,47,3695,121,3735,159,3732,162,3692,124,3630,50"/>
+<area shape="rect" title=" " alt="" coords="3913,171,4042,197"/>
+<area shape="poly" title=" " alt="" coords="3684,43,3754,65,3828,94,3893,127,3947,160,3944,164,3890,131,3826,98,3752,70,3682,48"/>
+<area shape="rect" title=" " alt="" coords="3647,245,3815,272"/>
+<area shape="poly" title=" " alt="" coords="3623,48,3639,116,3654,157,3673,196,3688,216,3705,233,3701,237,3684,219,3669,199,3649,159,3634,118,3618,49"/>
+<area shape="rect" title=" " alt="" coords="3940,96,4055,123"/>
+<area shape="poly" title=" " alt="" coords="3684,39,3925,90,3924,95,3683,44"/>
+<area shape="rect" title=" " alt="" coords="3537,419,3682,445"/>
+<area shape="poly" title=" " alt="" coords="3684,40,3774,63,3872,94,3929,120,3967,130,4000,134,4030,143,4044,153,4057,169,4071,195,4077,220,4074,244,4064,266,4049,286,4027,305,3973,338,3906,366,3834,388,3698,419,3697,414,3832,383,3904,361,3970,333,4024,301,4045,283,4060,263,4069,243,4071,221,4066,197,4053,172,4040,157,4027,148,3999,139,3966,136,3927,125,3870,98,3772,68,3682,45"/>
+<area shape="rect" title=" " alt="" coords="4080,96,4222,123"/>
+<area shape="poly" title=" " alt="" coords="3683,35,4065,92,4064,98,3683,40"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="1759,245,1868,272"/>
+<area shape="poly" title=" " alt="" coords="3552,36,3263,60,2886,99,2593,137,2306,180,1884,248,1883,243,2306,175,2592,132,2885,93,3262,54,3552,30"/>
+<area shape="rect" href="rgw__zone_8h.html" title=" " alt="" coords="1770,171,1857,197"/>
+<area shape="poly" title=" " alt="" coords="3552,32,3349,37,3051,48,2703,68,2347,99,2214,116,2082,136,1873,174,1872,168,2081,131,2213,110,2347,93,2702,62,3051,43,3349,31,3552,26"/>
+<area shape="rect" href="rgw__sync_8h.html" title=" " alt="" coords="3190,96,3277,123"/>
+<area shape="poly" title=" " alt="" coords="3552,44,3292,98,3291,93,3551,39"/>
+<area shape="rect" href="rgw__http__client_8h.html" title=" " alt="" coords="2771,171,2891,197"/>
+<area shape="poly" title=" " alt="" coords="3552,32,3408,38,3228,49,3055,69,2985,82,2933,98,2910,111,2888,127,2852,161,2849,157,2884,123,2907,107,2931,94,2984,77,3054,64,3227,44,3408,32,3552,27"/>
+<area shape="rect" href="rgw__metadata_8h.html" title=" " alt="" coords="3102,171,3216,197"/>
+<area shape="poly" title=" " alt="" coords="3552,32,3455,37,3344,48,3244,68,3205,81,3179,98,3170,110,3164,125,3160,156,3155,155,3159,123,3165,108,3176,94,3203,77,3242,62,3343,43,3455,32,3552,27"/>
+<area shape="rect" href="rgw__mdlog__types_8h.html" title=" " alt="" coords="2988,245,3122,272"/>
+<area shape="poly" title=" " alt="" coords="3552,35,3453,43,3338,56,3231,74,3189,86,3158,98,3123,126,3097,161,3077,199,3065,232,3060,230,3073,197,3092,158,3119,122,3155,94,3187,81,3230,69,3337,51,3452,38,3552,29"/>
+<area shape="rect" href="rgw__sync__trace_8h.html" title=" " alt="" coords="3485,171,3609,197"/>
+<area shape="poly" title=" " alt="" coords="3611,49,3561,158,3556,155,3606,47"/>
+<area shape="rect" href="rgw__rest__conn_8h.html" title=" " alt="" coords="3345,171,3461,197"/>
+<area shape="poly" title=" " alt="" coords="3591,51,3434,164,3431,159,3587,46"/>
+<area shape="rect" href="rgw__tools_8h.html" title=" " alt="" coords="2017,171,2104,197"/>
+<area shape="poly" title=" " alt="" coords="3552,32,3373,37,3117,48,2820,68,2518,99,2407,115,2297,135,2119,172,2118,167,2296,129,2406,110,2517,93,2820,63,3117,43,3373,32,3552,27"/>
+<area shape="rect" href="rgw__cr__rados_8h.html" title=" " alt="" coords="3706,96,3815,123"/>
+<area shape="poly" title=" " alt="" coords="3656,46,3726,86,3723,90,3653,51"/>
+<area shape="rect" href="rgw__cr__rest_8h.html" title=" " alt="" coords="3364,96,3463,123"/>
+<area shape="poly" title=" " alt="" coords="3566,51,3460,92,3459,87,3564,46"/>
+<area shape="rect" title=" " alt="" coords="4246,96,4413,123"/>
+<area shape="poly" title=" " alt="" coords="3683,32,4231,93,4230,98,3683,38"/>
+<area shape="rect" href="svc__zone_8h.html" title=" " alt="" coords="4437,96,4574,123"/>
+<area shape="poly" title=" " alt="" coords="3683,29,3997,52,4206,71,4422,93,4421,98,4206,76,3997,58,3683,35"/>
+<area shape="rect" href="svc__mdlog_8h.html" title=" " alt="" coords="4599,96,4743,123"/>
+<area shape="poly" title=" " alt="" coords="3683,28,4061,50,4318,69,4583,93,4583,98,4317,74,4061,55,3683,34"/>
+<area shape="rect" href="svc__meta_8h.html" title=" " alt="" coords="4767,96,4905,123"/>
+<area shape="poly" title=" " alt="" coords="3683,27,4127,46,4434,66,4752,93,4752,98,4434,71,4126,52,3683,33"/>
+<area shape="rect" href="svc__cls_8h.html" title=" " alt="" coords="4929,96,5055,123"/>
+<area shape="poly" title=" " alt="" coords="3683,26,3888,31,4190,42,4546,62,4914,93,4913,98,4545,67,4189,47,3888,36,3683,32"/>
+<area shape="rect" title=" " alt="" coords="5080,96,5217,123"/>
+<area shape="poly" title=" " alt="" coords="3683,26,3908,30,4247,41,4648,61,5064,93,5064,99,4648,67,4246,47,3908,36,3683,31"/>
+<area shape="rect" title=" " alt="" coords="766,328,816,355"/>
+<area shape="poly" title=" " alt="" coords="1759,263,1562,266,1292,274,1023,292,912,306,829,323,825,324,823,319,827,317,911,300,1023,287,1292,269,1562,260,1759,258"/>
+<area shape="rect" title=" " alt="" coords="1575,501,1660,528"/>
+<area shape="poly" title=" " alt="" coords="1806,274,1639,490,1634,487,1802,271"/>
+<area shape="rect" title=" " alt="" coords="3281,419,3341,445"/>
+<area shape="poly" title=" " alt="" coords="1869,259,2052,264,2302,275,2551,292,2654,304,2731,317,2761,327,2783,338,2804,350,2833,360,2954,388,3075,407,3265,425,3265,431,3074,412,2953,393,2831,365,2802,355,2780,343,2759,332,2730,323,2653,309,2550,298,2302,280,2052,269,1868,264"/>
+<area shape="rect" title=" " alt="" coords="840,328,950,355"/>
+<area shape="poly" title=" " alt="" coords="1758,263,1619,266,1423,274,1197,292,1082,306,969,323,951,326,950,321,968,317,1081,300,1197,287,1423,269,1619,260,1758,258"/>
+<area shape="rect" title=" " alt="" coords="1024,328,1182,355"/>
+<area shape="poly" title=" " alt="" coords="1759,266,1513,284,1354,301,1194,323,1170,327,1169,322,1193,317,1354,296,1513,279,1758,260"/>
+<area shape="rect" title=" " alt="" coords="1352,328,1520,355"/>
+<area shape="poly" title=" " alt="" coords="1759,274,1511,327,1510,322,1758,269"/>
+<area shape="rect" href="rgw__acl_8h.html" title=" " alt="" coords="1761,419,1837,445"/>
+<area shape="poly" title=" " alt="" coords="1812,273,1801,320,1799,364,1800,403,1794,403,1794,364,1796,320,1807,272"/>
+<area shape="rect" href="rgw__bucket__layout_8h.html" title=" " alt="" coords="1545,328,1685,355"/>
+<area shape="poly" title=" " alt="" coords="1783,275,1661,324,1659,319,1781,270"/>
+<area shape="rect" href="rgw__cors_8h.html" title=" " alt="" coords="1811,328,1896,355"/>
+<area shape="poly" title=" " alt="" coords="1822,271,1843,313,1838,315,1817,274"/>
+<area shape="rect" href="rgw__iam__policy_8h.html" title=" " alt="" coords="1206,328,1328,355"/>
+<area shape="poly" title=" " alt="" coords="1759,267,1573,287,1457,302,1341,323,1324,326,1323,321,1340,317,1456,297,1572,281,1758,262"/>
+<area shape="rect" href="rgw__string_8h.html" title=" " alt="" coords="1081,419,1173,445"/>
+<area shape="poly" title=" " alt="" coords="1759,263,1577,264,1340,272,1225,280,1126,290,1052,304,1028,313,1014,322,1008,331,1006,340,1015,361,1026,377,1040,390,1073,410,1070,414,1037,394,1022,380,1010,364,1001,341,1003,329,1010,318,1026,308,1051,299,1126,285,1225,274,1340,267,1576,259,1759,257"/>
+<area shape="rect" href="rgw__quota_8h.html" title=" " alt="" coords="2628,328,2719,355"/>
+<area shape="poly" title=" " alt="" coords="1869,257,2001,259,2185,268,2396,286,2505,300,2610,317,2625,321,2623,326,2609,323,2504,305,2396,291,2185,273,2001,265,1869,263"/>
+<area shape="rect" title=" " alt="" coords="2603,411,2744,453"/>
+<area shape="poly" title=" " alt="" coords="1869,257,2024,258,2228,265,2331,273,2426,283,2507,298,2567,318,2606,350,2649,397,2645,401,2602,354,2564,322,2506,303,2425,289,2331,278,2228,270,2024,263,1869,262"/>
+<area shape="rect" href="rgw__website_8h.html" title=" " alt="" coords="2845,328,2948,355"/>
+<area shape="poly" title=" " alt="" coords="1869,259,2248,275,2509,292,2775,317,2830,325,2829,330,2775,323,2509,298,2248,280,1868,264"/>
+<area shape="rect" href="rgw__object__lock_8h.html" title=" " alt="" coords="1920,328,2046,355"/>
+<area shape="poly" title=" " alt="" coords="1841,270,1944,319,1942,324,1839,275"/>
+<area shape="rect" href="rgw__tag_8h.html" title=" " alt="" coords="107,419,184,445"/>
+<area shape="poly" title=" " alt="" coords="1758,262,1431,262,957,268,717,275,505,286,341,301,285,311,248,322,221,339,197,361,162,407,158,404,193,358,218,335,246,318,283,306,341,296,505,280,717,269,957,262,1431,257,1758,257"/>
+<area shape="rect" href="rgw__op__type_8h.html" title=" " alt="" coords="2070,328,2176,355"/>
+<area shape="poly" title=" " alt="" coords="1869,270,2058,317,2069,321,2068,326,2057,323,1868,275"/>
+<area shape="rect" href="rgw__sync__policy_8h.html" title=" " alt="" coords="5,328,134,355"/>
+<area shape="poly" title=" " alt="" coords="1758,262,1514,264,1132,271,674,289,436,304,203,323,150,329,149,324,203,317,436,298,673,284,1131,266,1514,259,1758,257"/>
+<area shape="rect" title=" " alt="" coords="2972,320,3122,363"/>
+<area shape="poly" title=" " alt="" coords="1869,257,2048,258,2315,265,2631,283,2795,298,2957,317,2956,322,2794,303,2630,288,2315,270,2048,263,1869,262"/>
+<area shape="rect" title=" " alt="" coords="2199,328,2369,355"/>
+<area shape="poly" title=" " alt="" coords="1869,265,2189,317,2212,322,2211,327,2188,323,1868,271"/>
+<area shape="rect" title=" " alt="" coords="2393,328,2554,355"/>
+<area shape="poly" title=" " alt="" coords="1869,261,2093,281,2237,297,2382,317,2406,322,2405,327,2381,323,2236,302,2093,286,1868,266"/>
+<area shape="rect" title=" " alt="" coords="259,328,432,355"/>
+<area shape="poly" title=" " alt="" coords="1758,262,1546,262,1222,268,838,287,639,302,445,323,416,327,415,322,444,317,639,297,837,281,1222,263,1546,257,1758,257"/>
+<area shape="rect" href="rgw__public__access_8h.html" title=" " alt="" coords="456,328,598,355"/>
+<area shape="poly" title=" " alt="" coords="1759,264,1192,283,856,300,716,311,610,323,588,327,587,321,609,317,715,306,856,295,1192,278,1758,259"/>
+<area shape="rect" title=" " alt="" coords="622,328,741,355"/>
+<area shape="poly" title=" " alt="" coords="1758,264,1259,283,967,301,846,311,754,323,736,326,735,321,753,317,845,306,967,295,1259,278,1758,259"/>
+<area shape="poly" title=" " alt="" coords="1837,434,2611,504,2610,509,1837,439"/>
+<area shape="poly" title=" " alt="" coords="1772,448,1660,497,1658,492,1769,443"/>
+<area shape="poly" title=" " alt="" coords="1309,353,1341,360,1483,381,1594,390,1706,396,1850,408,2279,458,2611,500,2610,506,2279,464,1849,413,1706,401,1594,395,1482,387,1340,365,1307,358"/>
+<area shape="poly" title=" " alt="" coords="1294,353,1579,492,1577,496,1291,358"/>
+<area shape="poly" title=" " alt="" coords="1310,353,1341,360,1566,399,1746,422,1745,427,1565,404,1340,365,1309,358"/>
+<area shape="poly" title=" " alt="" coords="1248,358,1161,412,1158,408,1245,353"/>
+<area shape="poly" title=" " alt="" coords="1173,438,1561,501,1560,507,1173,443"/>
+<area shape="poly" title=" " alt="" coords="2710,353,2738,360,2888,387,3037,406,3265,425,3265,431,3037,411,2887,392,2737,365,2709,358"/>
+<area shape="poly" title=" " alt="" coords="2676,355,2676,395,2671,395,2671,355"/>
+<area shape="poly" title=" " alt="" coords="2933,353,2961,360,3071,377,3224,394,3522,421,3521,426,3223,399,3071,382,2960,365,2931,358"/>
+<area shape="poly" title=" " alt="" coords="82,354,127,405,123,408,78,357"/>
+<area shape="poly" title=" " alt="" coords="1816,198,1816,230,1811,230,1811,198"/>
+<area shape="poly" title=" " alt="" coords="1770,189,893,206,401,224,233,235,180,241,153,248,132,261,113,279,85,316,81,313,109,275,129,257,151,243,179,236,232,230,400,219,893,201,1770,183"/>
+<area shape="poly" title=" " alt="" coords="3239,123,3307,403,3302,404,3234,124"/>
+<area shape="poly" title=" " alt="" coords="3190,121,2907,172,2906,167,3189,116"/>
+<area shape="poly" title=" " alt="" coords="3222,125,3184,162,3181,158,3219,121"/>
+<area shape="poly" title=" " alt="" coords="3278,118,3477,164,3476,169,3277,123"/>
+<area shape="poly" title=" " alt="" coords="2771,192,1884,255,1884,250,2770,187"/>
+<area shape="poly" title=" " alt="" coords="2850,196,2905,231,2977,270,3020,285,3056,293,3091,301,3135,318,3217,363,3283,407,3280,411,3214,367,3132,322,3089,306,3054,298,3019,290,2975,274,2903,236,2847,200"/>
+<area shape="poly" title=" " alt="" coords="2771,189,2228,199,1400,222,985,240,626,263,481,276,366,290,286,306,262,314,249,322,242,332,240,341,242,351,249,361,264,371,291,380,372,396,480,408,606,416,865,425,1065,428,1065,433,865,431,605,421,480,413,371,401,289,385,262,376,245,365,237,353,234,341,237,329,245,318,260,309,285,300,365,285,480,270,625,257,984,235,1400,217,2228,193,2771,183"/>
+<area shape="poly" title=" " alt="" coords="2827,199,2790,271,2733,364,2705,400,2700,397,2729,361,2785,268,2822,197"/>
+<area shape="poly" title=" " alt="" coords="3168,197,3188,244,3207,313,3211,351,3209,388,3199,424,3179,455,3159,467,3121,476,3013,492,2769,512,2769,507,3012,487,3120,471,3157,462,3176,451,3194,421,3204,387,3206,351,3201,314,3183,246,3163,199"/>
+<area shape="poly" title=" " alt="" coords="3199,195,3331,238,3330,243,3197,200"/>
+<area shape="poly" title=" " alt="" coords="3102,191,1884,256,1884,251,3102,186"/>
+<area shape="poly" title=" " alt="" coords="3160,198,3153,233,3136,273,3118,295,3096,313,3093,309,3114,291,3131,271,3148,232,3155,197"/>
+<area shape="poly" title=" " alt="" coords="3142,200,3087,238,3084,234,3139,196"/>
+<area shape="poly" title=" " alt="" coords="3580,195,3686,237,3684,242,3578,200"/>
+<area shape="poly" title=" " alt="" coords="3546,199,3534,231,3515,275,3488,322,3453,365,3430,382,3405,398,3357,419,3354,414,3403,393,3427,378,3449,361,3484,319,3511,273,3529,229,3541,197"/>
+<area shape="poly" title=" " alt="" coords="3402,199,3394,231,3389,229,3397,197"/>
+<area shape="poly" title=" " alt="" coords="3433,195,3469,215,3505,243,3538,283,3565,327,3602,403,3597,406,3561,330,3533,287,3501,247,3466,220,3430,200"/>
+<area shape="poly" title=" " alt="" coords="3431,196,3453,209,3474,227,3487,248,3488,261,3485,273,3458,318,3422,357,3383,389,3348,413,3345,408,3380,384,3418,353,3454,315,3480,271,3483,260,3482,250,3470,231,3450,214,3428,200"/>
+<area shape="poly" title=" " alt="" coords="2018,200,1872,243,1871,238,2016,195"/>
+<area shape="poly" title=" " alt="" coords="3763,123,3763,155,3758,155,3758,123"/>
+<area shape="poly" title=" " alt="" coords="3799,121,3926,163,3924,168,3797,126"/>
+<area shape="poly" title=" " alt="" coords="3795,121,3826,140,3841,153,3852,170,3857,197,3851,229,3840,257,3829,274,3793,299,3742,324,3679,346,3609,367,3469,402,3357,425,3356,420,3467,397,3608,362,3677,341,3740,319,3790,295,3825,270,3835,254,3845,227,3851,197,3847,172,3837,157,3823,144,3792,126"/>
+<area shape="poly" title=" " alt="" coords="3414,124,3410,156,3404,155,3409,123"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__sync_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_remote_m_d_log_info_c_r.html">RGWReadRemoteMDLogInfoCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_list_remote_m_d_log_c_r.html">RGWListRemoteMDLogCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_async_read_m_d_log_entries.html">RGWAsyncReadMDLogEntries</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_m_d_log_entries_c_r.html">RGWReadMDLogEntriesCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_remote_m_d_log_shard_info_c_r.html">RGWReadRemoteMDLogShardInfoCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_list_remote_m_d_log_shard_c_r.html">RGWListRemoteMDLogShardCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_init_sync_status_coroutine.html">RGWInitSyncStatusCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_sync_status_markers_c_r.html">RGWReadSyncStatusMarkersCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_sync_status_coroutine.html">RGWReadSyncStatusCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_fetch_all_meta_c_r.html">RGWFetchAllMetaCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_fetch_all_meta_c_r_1_1meta__list__result.html">RGWFetchAllMetaCR::meta_list_result</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_read_remote_metadata_c_r.html">RGWReadRemoteMetadataCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_async_meta_store_entry.html">RGWAsyncMetaStoreEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_meta_store_entry_c_r.html">RGWMetaStoreEntryCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_async_meta_remove_entry.html">RGWAsyncMetaRemoveEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_meta_remove_entry_c_r.html">RGWMetaRemoveEntryCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_meta_sync_shard_marker_track.html">RGWMetaSyncShardMarkerTrack</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_clone_meta_log_coroutine.html">RGWCloneMetaLogCoroutine</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_meta_sync_shard_c_r.html">RGWMetaSyncShardCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_meta_sync_shard_control_c_r.html">RGWMetaSyncShardControlCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_meta_sync_c_r.html">RGWMetaSyncCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce752e347fabcf5fa47c54cc22f9fb1" id="r_a7ce752e347fabcf5fa47c54cc22f9fb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a7ce752e347fabcf5fa47c54cc22f9fb1">dout_prefix</a>&#160;&#160;&#160;(*_dout &lt;&lt; &quot;meta sync: &quot;)</td></tr>
+<tr class="separator:a7ce752e347fabcf5fa47c54cc22f9fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2eac21dc366a23402f42cb5ff03db83" id="r_ac2eac21dc366a23402f42cb5ff03db83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#ac2eac21dc366a23402f42cb5ff03db83">READ_MDLOG_MAX_CONCURRENT</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ac2eac21dc366a23402f42cb5ff03db83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2eac21dc366a23402f42cb5ff03db83" id="r_ac2eac21dc366a23402f42cb5ff03db83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#ac2eac21dc366a23402f42cb5ff03db83">READ_MDLOG_MAX_CONCURRENT</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ac2eac21dc366a23402f42cb5ff03db83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc6880407cfcb6af0c1e56239db13286" id="r_acc6880407cfcb6af0c1e56239db13286"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#acc6880407cfcb6af0c1e56239db13286">CLONE_MAX_ENTRIES</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:acc6880407cfcb6af0c1e56239db13286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8fc03a122ed49c3b25c33e8d0ddc85" id="r_aed8fc03a122ed49c3b25c33e8d0ddc85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#aed8fc03a122ed49c3b25c33e8d0ddc85">META_FULL_SYNC_CHUNK_SIZE</a>&#160;&#160;&#160;&quot;1000&quot;</td></tr>
+<tr class="separator:aed8fc03a122ed49c3b25c33e8d0ddc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e17414a67d4976ab434e9c5ccd3e07" id="r_ac1e17414a67d4976ab434e9c5ccd3e07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#ac1e17414a67d4976ab434e9c5ccd3e07">META_SYNC_UPDATE_MARKER_WINDOW</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ac1e17414a67d4976ab434e9c5ccd3e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217c41e4e6abdda5beebb2fdabb1f0b9" id="r_a217c41e4e6abdda5beebb2fdabb1f0b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a217c41e4e6abdda5beebb2fdabb1f0b9">NUM_TRANSIENT_ERROR_RETRIES</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a217c41e4e6abdda5beebb2fdabb1f0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bad088ba5f987551398ef6708fb0886" id="r_a5bad088ba5f987551398ef6708fb0886"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a5bad088ba5f987551398ef6708fb0886">META_SYNC_SPAWN_WINDOW</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a5bad088ba5f987551398ef6708fb0886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c324e8b778fc24afd6d84d056e5cd7e" id="r_a5c324e8b778fc24afd6d84d056e5cd7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a5c324e8b778fc24afd6d84d056e5cd7e">OMAP_GET_MAX_ENTRIES</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:a5c324e8b778fc24afd6d84d056e5cd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f55bb2816ee042f8f29e1d1685476d2" id="r_a2f55bb2816ee042f8f29e1d1685476d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a2f55bb2816ee042f8f29e1d1685476d2">INCREMENTAL_MAX_ENTRIES</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:a2f55bb2816ee042f8f29e1d1685476d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cea614fb070a712265f8003d8fadb6b" id="r_a3cea614fb070a712265f8003d8fadb6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a3cea614fb070a712265f8003d8fadb6b">INCREMENTAL_INTERVAL</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a3cea614fb070a712265f8003d8fadb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a0f003f5aafe20c2df405154344e0d73e" id="r_a0f003f5aafe20c2df405154344e0d73e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_g_w_coroutine.html">RGWCoroutine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a0f003f5aafe20c2df405154344e0d73e">create_read_remote_mdlog_shard_info_cr</a> (<a class="el" href="struct_r_g_w_meta_sync_env.html">RGWMetaSyncEnv</a> *env, const std::string &amp;period, int shard_id, <a class="el" href="struct_r_g_w_metadata_log_info.html">RGWMetadataLogInfo</a> *info)</td></tr>
+<tr class="separator:a0f003f5aafe20c2df405154344e0d73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74787077dd2888098c77f32b4f33bdaf" id="r_a74787077dd2888098c77f32b4f33bdaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_g_w_coroutine.html">RGWCoroutine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a74787077dd2888098c77f32b4f33bdaf">create_list_remote_mdlog_shard_cr</a> (<a class="el" href="struct_r_g_w_meta_sync_env.html">RGWMetaSyncEnv</a> *env, const std::string &amp;period, int shard_id, const std::string &amp;marker, uint32_t max_entries, <a class="el" href="structrgw__mdlog__shard__data.html">rgw_mdlog_shard_data</a> *result)</td></tr>
+<tr class="separator:a74787077dd2888098c77f32b4f33bdaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d4cb9cb13dda4555baed2a288965dd" id="r_a17d4cb9cb13dda4555baed2a288965dd"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a17d4cb9cb13dda4555baed2a288965dd">full_sync_index_shard_oid</a> (int shard_id)</td></tr>
+<tr class="separator:a17d4cb9cb13dda4555baed2a288965dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24a0bbcf90865900c780068939d1556" id="r_aa24a0bbcf90865900c780068939d1556"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_r_g_w_period_history_1_1_cursor.html">RGWPeriodHistory::Cursor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#aa24a0bbcf90865900c780068939d1556">get_period_at</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *<a class="el" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, const <a class="el" href="structrgw__meta__sync__info.html">rgw_meta_sync_info</a> &amp;info, optional_yield y)</td></tr>
+<tr class="separator:aa24a0bbcf90865900c780068939d1556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:a246effc4765063e4ed8ec833bccf588e" id="r_a246effc4765063e4ed8ec833bccf588e"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a246effc4765063e4ed8ec833bccf588e">mdlog_sync_status_oid</a> = &quot;mdlog.sync-status&quot;</td></tr>
+<tr class="separator:a246effc4765063e4ed8ec833bccf588e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b03df8fd4122bf21a840012b6d55d6" id="r_a52b03df8fd4122bf21a840012b6d55d6"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#a52b03df8fd4122bf21a840012b6d55d6">mdlog_sync_status_shard_prefix</a> = &quot;mdlog.sync-status.shard&quot;</td></tr>
+<tr class="separator:a52b03df8fd4122bf21a840012b6d55d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae930736e18b6969e5c1e733e167d2ef" id="r_aae930736e18b6969e5c1e733e167d2ef"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync_8cc.html#aae930736e18b6969e5c1e733e167d2ef">mdlog_sync_full_sync_index_prefix</a> = &quot;meta.full-sync.index&quot;</td></tr>
+<tr class="separator:aae930736e18b6969e5c1e733e167d2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="acc6880407cfcb6af0c1e56239db13286" name="acc6880407cfcb6af0c1e56239db13286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6880407cfcb6af0c1e56239db13286">&#9670;&#160;</a></span>CLONE_MAX_ENTRIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLONE_MAX_ENTRIES&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00307">307</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7ce752e347fabcf5fa47c54cc22f9fb1" name="a7ce752e347fabcf5fa47c54cc22f9fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce752e347fabcf5fa47c54cc22f9fb1">&#9670;&#160;</a></span>dout_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_prefix&#160;&#160;&#160;(*_dout &lt;&lt; &quot;meta sync: &quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00039">39</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00036">36</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a3cea614fb070a712265f8003d8fadb6b" name="a3cea614fb070a712265f8003d8fadb6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cea614fb070a712265f8003d8fadb6b">&#9670;&#160;</a></span>INCREMENTAL_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INCREMENTAL_INTERVAL&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f55bb2816ee042f8f29e1d1685476d2" name="a2f55bb2816ee042f8f29e1d1685476d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f55bb2816ee042f8f29e1d1685476d2">&#9670;&#160;</a></span>INCREMENTAL_MAX_ENTRIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INCREMENTAL_MAX_ENTRIES&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed8fc03a122ed49c3b25c33e8d0ddc85" name="aed8fc03a122ed49c3b25c33e8d0ddc85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8fc03a122ed49c3b25c33e8d0ddc85">&#9670;&#160;</a></span>META_FULL_SYNC_CHUNK_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define META_FULL_SYNC_CHUNK_SIZE&#160;&#160;&#160;&quot;1000&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5bad088ba5f987551398ef6708fb0886" name="a5bad088ba5f987551398ef6708fb0886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bad088ba5f987551398ef6708fb0886">&#9670;&#160;</a></span>META_SYNC_SPAWN_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define META_SYNC_SPAWN_WINDOW&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l01398">1398</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac1e17414a67d4976ab434e9c5ccd3e07" name="ac1e17414a67d4976ab434e9c5ccd3e07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1e17414a67d4976ab434e9c5ccd3e07">&#9670;&#160;</a></span>META_SYNC_UPDATE_MARKER_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define META_SYNC_UPDATE_MARKER_WINDOW&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l01195">1195</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a217c41e4e6abdda5beebb2fdabb1f0b9" name="a217c41e4e6abdda5beebb2fdabb1f0b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a217c41e4e6abdda5beebb2fdabb1f0b9">&#9670;&#160;</a></span>NUM_TRANSIENT_ERROR_RETRIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NUM_TRANSIENT_ERROR_RETRIES&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c324e8b778fc24afd6d84d056e5cd7e" name="a5c324e8b778fc24afd6d84d056e5cd7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c324e8b778fc24afd6d84d056e5cd7e">&#9670;&#160;</a></span>OMAP_GET_MAX_ENTRIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OMAP_GET_MAX_ENTRIES&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2eac21dc366a23402f42cb5ff03db83" name="ac2eac21dc366a23402f42cb5ff03db83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2eac21dc366a23402f42cb5ff03db83">&#9670;&#160;</a></span>READ_MDLOG_MAX_CONCURRENT <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ_MDLOG_MAX_CONCURRENT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00205">205</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac2eac21dc366a23402f42cb5ff03db83" name="ac2eac21dc366a23402f42cb5ff03db83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2eac21dc366a23402f42cb5ff03db83">&#9670;&#160;</a></span>READ_MDLOG_MAX_CONCURRENT <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ_MDLOG_MAX_CONCURRENT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00205">205</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="a74787077dd2888098c77f32b4f33bdaf" name="a74787077dd2888098c77f32b4f33bdaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74787077dd2888098c77f32b4f33bdaf">&#9670;&#160;</a></span>create_list_remote_mdlog_shard_cr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_r_g_w_coroutine.html">RGWCoroutine</a> * create_list_remote_mdlog_shard_cr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_g_w_meta_sync_env.html">RGWMetaSyncEnv</a> *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>period</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shard_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>marker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>max_entries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structrgw__mdlog__shard__data.html">rgw_mdlog_shard_data</a> *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00599">599</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  605</span>{</div>
+<div class="line"><span class="lineno">  606</span>  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_list_remote_m_d_log_shard_c_r.html">RGWListRemoteMDLogShardCR</a>(env, period, shard_id, marker,</div>
+<div class="line"><span class="lineno">  607</span>                                       max_entries, result);</div>
+<div class="line"><span class="lineno">  608</span>}</div>
+<div class="ttc" id="aclass_r_g_w_list_remote_m_d_log_shard_c_r_html"><div class="ttname"><a href="class_r_g_w_list_remote_m_d_log_shard_c_r.html">RGWListRemoteMDLogShardCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync_8cc_source.html#l00537">rgw_sync.cc:537</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync_8cc_a74787077dd2888098c77f32b4f33bdaf_icgraph.png" border="0" usemap="#argw__sync_8cc_a74787077dd2888098c77f32b4f33bdaf_icgraph" alt=""/></div>
+<map name="argw__sync_8cc_a74787077dd2888098c77f32b4f33bdaf_icgraph" id="argw__sync_8cc_a74787077dd2888098c77f32b4f33bdaf_icgraph">
+<area shape="rect" title=" " alt="" coords="208,5,336,48"/>
+<area shape="rect" href="class_meta_peer_trim_shard_c_r.html#a53d71f0cc72e9050963901e7a84f07eb" title=" " alt="" coords="5,5,160,48"/>
+<area shape="poly" title=" " alt="" coords="192,29,160,29,160,24,192,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0f003f5aafe20c2df405154344e0d73e" name="a0f003f5aafe20c2df405154344e0d73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f003f5aafe20c2df405154344e0d73e">&#9670;&#160;</a></span>create_read_remote_mdlog_shard_info_cr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_r_g_w_coroutine.html">RGWCoroutine</a> * create_read_remote_mdlog_shard_info_cr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_g_w_meta_sync_env.html">RGWMetaSyncEnv</a> *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>period</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shard_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_r_g_w_metadata_log_info.html">RGWMetadataLogInfo</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00529">529</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  533</span>{</div>
+<div class="line"><span class="lineno">  534</span>  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_read_remote_m_d_log_shard_info_c_r.html">RGWReadRemoteMDLogShardInfoCR</a>(env, period, shard_id, info);</div>
+<div class="line"><span class="lineno">  535</span>}</div>
+<div class="ttc" id="aclass_r_g_w_read_remote_m_d_log_shard_info_c_r_html"><div class="ttname"><a href="class_r_g_w_read_remote_m_d_log_shard_info_c_r.html">RGWReadRemoteMDLogShardInfoCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync_8cc_source.html#l00472">rgw_sync.cc:472</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync_8cc_a0f003f5aafe20c2df405154344e0d73e_icgraph.png" border="0" usemap="#argw__sync_8cc_a0f003f5aafe20c2df405154344e0d73e_icgraph" alt=""/></div>
+<map name="argw__sync_8cc_a0f003f5aafe20c2df405154344e0d73e_icgraph" id="argw__sync_8cc_a0f003f5aafe20c2df405154344e0d73e_icgraph">
+<area shape="rect" title=" " alt="" coords="208,5,355,48"/>
+<area shape="rect" href="class_meta_peer_trim_shard_c_r.html#a53d71f0cc72e9050963901e7a84f07eb" title=" " alt="" coords="5,5,160,48"/>
+<area shape="poly" title=" " alt="" coords="192,29,160,29,160,24,192,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a17d4cb9cb13dda4555baed2a288965dd" name="a17d4cb9cb13dda4555baed2a288965dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d4cb9cb13dda4555baed2a288965dd">&#9670;&#160;</a></span>full_sync_index_shard_oid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string full_sync_index_shard_oid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shard_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l01017">1017</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1018</span>{</div>
+<div class="line"><span class="lineno"> 1019</span>  <span class="keywordtype">char</span> buf[<a class="code hl_variable" href="rgw__sync_8cc.html#aae930736e18b6969e5c1e733e167d2ef">mdlog_sync_full_sync_index_prefix</a>.size() + 16];</div>
+<div class="line"><span class="lineno"> 1020</span>  snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s.%d&quot;</span>, <a class="code hl_variable" href="rgw__sync_8cc.html#aae930736e18b6969e5c1e733e167d2ef">mdlog_sync_full_sync_index_prefix</a>.c_str(), shard_id);</div>
+<div class="line"><span class="lineno"> 1021</span>  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacergw_1_1_i_a_m.html#a16270dabfb0f449a033dc28091504510ab45cffe084dd3d20d928bee85e7b0f21">string</a>(buf);</div>
+<div class="line"><span class="lineno"> 1022</span>}</div>
+<div class="ttc" id="anamespacergw_1_1_i_a_m_html_a16270dabfb0f449a033dc28091504510ab45cffe084dd3d20d928bee85e7b0f21"><div class="ttname"><a href="namespacergw_1_1_i_a_m.html#a16270dabfb0f449a033dc28091504510ab45cffe084dd3d20d928bee85e7b0f21">rgw::IAM::Type::string</a></div><div class="ttdeci">@ string</div></div>
+<div class="ttc" id="argw__sync_8cc_html_aae930736e18b6969e5c1e733e167d2ef"><div class="ttname"><a href="rgw__sync_8cc.html#aae930736e18b6969e5c1e733e167d2ef">mdlog_sync_full_sync_index_prefix</a></div><div class="ttdeci">static string mdlog_sync_full_sync_index_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync_8cc_source.html#l00045">rgw_sync.cc:45</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync_8cc_a17d4cb9cb13dda4555baed2a288965dd_icgraph.png" border="0" usemap="#argw__sync_8cc_a17d4cb9cb13dda4555baed2a288965dd_icgraph" alt=""/></div>
+<map name="argw__sync_8cc_a17d4cb9cb13dda4555baed2a288965dd_icgraph" id="argw__sync_8cc_a17d4cb9cb13dda4555baed2a288965dd_icgraph">
+<area shape="rect" title=" " alt="" coords="430,13,603,40"/>
+<area shape="rect" href="class_r_g_w_meta_sync_shard_c_r.html#a635da4927c5e41e15d2fd2b417613a21" title=" " alt="" coords="218,5,382,48"/>
+<area shape="poly" title=" " alt="" coords="414,29,383,29,383,24,414,24"/>
+<area shape="rect" href="class_r_g_w_meta_sync_shard_c_r.html#a9f88bbf3708f9540ab21944592e7e885" title=" " alt="" coords="5,5,170,48"/>
+<area shape="poly" title=" " alt="" coords="202,29,170,29,170,24,202,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa24a0bbcf90865900c780068939d1556" name="aa24a0bbcf90865900c780068939d1556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24a0bbcf90865900c780068939d1556">&#9670;&#160;</a></span>get_period_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_r_g_w_period_history_1_1_cursor.html">RGWPeriodHistory::Cursor</a> get_period_at </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *&#160;</td>
+          <td class="paramname"><em>store</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__meta__sync__info.html">rgw_meta_sync_info</a> &amp;&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">optional_yield&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l02110">2110</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2114</span>{</div>
+<div class="line"><span class="lineno"> 2115</span>  <span class="keywordflow">if</span> (info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a>.empty()) {</div>
+<div class="line"><span class="lineno"> 2116</span>    <span class="comment">// return an empty cursor with error=0</span></div>
+<div class="line"><span class="lineno"> 2117</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">RGWPeriodHistory::Cursor</a>{};</div>
+<div class="line"><span class="lineno"> 2118</span>  }</div>
+<div class="line"><span class="lineno"> 2119</span> </div>
+<div class="line"><span class="lineno"> 2120</span>  <span class="comment">// look for an existing period in our history</span></div>
+<div class="line"><span class="lineno"> 2121</span>  <span class="keyword">auto</span> cursor = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;svc()-&gt;mdlog-&gt;get_period_history()-&gt;lookup(info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">realm_epoch</a>);</div>
+<div class="line"><span class="lineno"> 2122</span>  <span class="keywordflow">if</span> (cursor) {</div>
+<div class="line"><span class="lineno"> 2123</span>    <span class="comment">// verify that the period ids match</span></div>
+<div class="line"><span class="lineno"> 2124</span>    <span class="keyword">auto</span>&amp; existing = cursor.get_period().get_id();</div>
+<div class="line"><span class="lineno"> 2125</span>    <span class="keywordflow">if</span> (existing != info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a>) {</div>
+<div class="line"><span class="lineno"> 2126</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;ERROR: sync status period=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a></div>
+<div class="line"><span class="lineno"> 2127</span>          &lt;&lt; <span class="stringliteral">&quot; does not match period=&quot;</span> &lt;&lt; existing</div>
+<div class="line"><span class="lineno"> 2128</span>          &lt;&lt; <span class="stringliteral">&quot; in history at realm epoch=&quot;</span> &lt;&lt; info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">realm_epoch</a> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 2129</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">RGWPeriodHistory::Cursor</a>{-EEXIST};</div>
+<div class="line"><span class="lineno"> 2130</span>    }</div>
+<div class="line"><span class="lineno"> 2131</span>    <span class="keywordflow">return</span> cursor;</div>
+<div class="line"><span class="lineno"> 2132</span>  }</div>
+<div class="line"><span class="lineno"> 2133</span> </div>
+<div class="line"><span class="lineno"> 2134</span>  <span class="comment">// read the period from rados or pull it from the master</span></div>
+<div class="line"><span class="lineno"> 2135</span>  <a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a> period;</div>
+<div class="line"><span class="lineno"> 2136</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;svc()-&gt;mdlog-&gt;pull_period(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a>, period, y);</div>
+<div class="line"><span class="lineno"> 2137</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><span class="lineno"> 2138</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to read period id &quot;</span></div>
+<div class="line"><span class="lineno"> 2139</span>        &lt;&lt; info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; cpp_strerror(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 2140</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">RGWPeriodHistory::Cursor</a>{<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>};</div>
+<div class="line"><span class="lineno"> 2141</span>  }</div>
+<div class="line"><span class="lineno"> 2142</span>  <span class="comment">// attach the period to our history</span></div>
+<div class="line"><span class="lineno"> 2143</span>  cursor = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;svc()-&gt;mdlog-&gt;get_period_history()-&gt;attach(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, std::move(period), y);</div>
+<div class="line"><span class="lineno"> 2144</span>  <span class="keywordflow">if</span> (!cursor) {</div>
+<div class="line"><span class="lineno"> 2145</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = cursor.get_error();</div>
+<div class="line"><span class="lineno"> 2146</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to read period history back to &quot;</span></div>
+<div class="line"><span class="lineno"> 2147</span>        &lt;&lt; info.<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; cpp_strerror(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 2148</span>  }</div>
+<div class="line"><span class="lineno"> 2149</span>  <span class="keywordflow">return</span> cursor;</div>
+<div class="line"><span class="lineno"> 2150</span>}</div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html">RGWPeriodHistory::Cursor</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00062">rgw_period_history.h:62</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html"><div class="ttname"><a href="class_r_g_w_period.html">RGWPeriod</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01231">rgw_zone.h:1232</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a740e3e13fe7e6a9c99c8863a492831c3"><div class="ttname"><a href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">rgw_meta_sync_info::realm_epoch</a></div><div class="ttdeci">epoch_t realm_epoch</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00021">rgw_meta_sync_status.h:21</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_adb7d2ff8e42f94b4ffa82f8d0b6c7c03"><div class="ttname"><a href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">rgw_meta_sync_info::period</a></div><div class="ttdeci">std::string period</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00020">rgw_meta_sync_status.h:20</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync_8cc_aa24a0bbcf90865900c780068939d1556_cgraph.png" border="0" usemap="#argw__sync_8cc_aa24a0bbcf90865900c780068939d1556_cgraph" alt=""/></div>
+<map name="argw__sync_8cc_aa24a0bbcf90865900c780068939d1556_cgraph" id="argw__sync_8cc_aa24a0bbcf90865900c780068939d1556_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,105,32"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="153,5,195,32"/>
+<area shape="poly" title=" " alt="" coords="105,16,137,16,137,21,105,21"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync_8cc_aa24a0bbcf90865900c780068939d1556_icgraph.png" border="0" usemap="#argw__sync_8cc_aa24a0bbcf90865900c780068939d1556_icgraph" alt=""/></div>
+<map name="argw__sync_8cc_aa24a0bbcf90865900c780068939d1556_icgraph" id="argw__sync_8cc_aa24a0bbcf90865900c780068939d1556_icgraph">
+<area shape="rect" title=" " alt="" coords="795,35,895,61"/>
+<area shape="rect" href="class_r_g_w_remote_meta_log.html#acda3cdc36d0f85d5292141bca4cb37a9" title=" " alt="" coords="538,35,747,61"/>
+<area shape="poly" title=" " alt="" coords="780,51,748,51,748,45,780,45"/>
+<area shape="rect" href="class_r_g_w_meta_sync_status_manager.html#a2e6dcb3f153919994f8b9864c033210a" title=" " alt="" coords="264,35,490,61"/>
+<area shape="poly" title=" " alt="" coords="523,51,490,51,490,45,523,45"/>
+<area shape="rect" href="rgw__admin_8cc.html#a217dbf8b442f20279ea00b898af96f52" title=" " alt="" coords="86,5,135,32"/>
+<area shape="poly" title=" " alt="" coords="248,36,135,24,136,19,248,31"/>
+<area shape="rect" href="class_r_g_w_meta_sync_processor_thread.html#abe2acfcf6f22db63d007a86d6c389262" title=" " alt="" coords="5,56,216,99"/>
+<area shape="poly" title=" " alt="" coords="248,65,216,68,216,63,248,60"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">변수 문서화</h2>
+<a id="aae930736e18b6969e5c1e733e167d2ef" name="aae930736e18b6969e5c1e733e167d2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae930736e18b6969e5c1e733e167d2ef">&#9670;&#160;</a></span>mdlog_sync_full_sync_index_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string mdlog_sync_full_sync_index_prefix = &quot;meta.full-sync.index&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00045">45</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a246effc4765063e4ed8ec833bccf588e" name="a246effc4765063e4ed8ec833bccf588e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246effc4765063e4ed8ec833bccf588e">&#9670;&#160;</a></span>mdlog_sync_status_oid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string mdlog_sync_status_oid = &quot;mdlog.sync-status&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00043">43</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a52b03df8fd4122bf21a840012b6d55d6" name="a52b03df8fd4122bf21a840012b6d55d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b03df8fd4122bf21a840012b6d55d6">&#9670;&#160;</a></span>mdlog_sync_status_shard_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string mdlog_sync_status_shard_prefix = &quot;mdlog.sync-status.shard&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync_8cc_source.html">rgw_sync.cc</a> 파일의 <a class="el" href="rgw__sync_8cc_source.html#l00044">44</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__sync_8cc.html">rgw_sync.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

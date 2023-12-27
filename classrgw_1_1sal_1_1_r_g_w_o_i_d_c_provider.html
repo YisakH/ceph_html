@@ -1,0 +1,1880 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::sal::RGWOIDCProvider 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-static-methods">정적 Public 멤버 함수</a> &#124;
+<a href="#pub-static-attribs">정적 Public 속성</a> &#124;
+<a href="#pro-methods">Protected 멤버 함수</a> &#124;
+<a href="#pro-attribs">Protected 속성</a> &#124;
+<a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::sal::RGWOIDCProvider 클래스 참조<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a>&gt;</code></p>
+<div class="dynheader">
+rgw::sal::RGWOIDCProvider에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider__inherit__graph.png" border="0" usemap="#argw_1_1sal_1_1_r_g_w_o_i_d_c_provider_inherit__map" alt="Inheritance graph"/></div>
+<map name="argw_1_1sal_1_1_r_g_w_o_i_d_c_provider_inherit__map" id="argw_1_1sal_1_1_r_g_w_o_i_d_c_provider_inherit__map">
+<area shape="rect" title=" " alt="" coords="72,5,295,688"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_d_b_o_i_d_c_provider.html" title=" " alt="" coords="5,736,167,933"/>
+<area shape="poly" title=" " alt="" coords="115,703,108,737,103,736,110,702"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html" title=" " alt="" coords="191,736,371,933"/>
+<area shape="poly" title=" " alt="" coords="257,702,264,736,259,737,252,703"/>
+</map>
+</div>
+<div class="dynheader">
+rgw::sal::RGWOIDCProvider에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider__coll__graph.png" border="0" usemap="#argw_1_1sal_1_1_r_g_w_o_i_d_c_provider_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1sal_1_1_r_g_w_o_i_d_c_provider_coll__map" id="argw_1_1sal_1_1_r_g_w_o_i_d_c_provider_coll__map">
+<area shape="rect" title=" " alt="" coords="5,203,228,779"/>
+<area shape="rect" title=" " alt="" coords="94,5,139,75"/>
+<area shape="poly" title=" " alt="" coords="119,75,119,186,114,186,114,75"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:abaa5dddce9ff59522576e233b539229f" id="r_abaa5dddce9ff59522576e233b539229f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#abaa5dddce9ff59522576e233b539229f">set_arn</a> (std::string _arn)</td></tr>
+<tr class="separator:abaa5dddce9ff59522576e233b539229f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659eee9090273cf8d1ec79a06aa4cb21" id="r_a659eee9090273cf8d1ec79a06aa4cb21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a659eee9090273cf8d1ec79a06aa4cb21">set_url</a> (std::string _provider_url)</td></tr>
+<tr class="separator:a659eee9090273cf8d1ec79a06aa4cb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18cf318ab3cf5a8aa3ea492084a55a78" id="r_a18cf318ab3cf5a8aa3ea492084a55a78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a18cf318ab3cf5a8aa3ea492084a55a78">set_tenant</a> (std::string _tenant)</td></tr>
+<tr class="separator:a18cf318ab3cf5a8aa3ea492084a55a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be71ebda4315dc0c3d6371c2467fe89" id="r_a0be71ebda4315dc0c3d6371c2467fe89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a0be71ebda4315dc0c3d6371c2467fe89">set_client_ids</a> (std::vector&lt; std::string &gt; &amp;_client_ids)</td></tr>
+<tr class="separator:a0be71ebda4315dc0c3d6371c2467fe89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db84dbd7640f4b515ffd14ef1a3d799" id="r_a4db84dbd7640f4b515ffd14ef1a3d799"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a4db84dbd7640f4b515ffd14ef1a3d799">set_thumbprints</a> (std::vector&lt; std::string &gt; &amp;_thumbprints)</td></tr>
+<tr class="separator:a4db84dbd7640f4b515ffd14ef1a3d799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf34b58b84934c008f8fc35fdb0fa49" id="r_a6bf34b58b84934c008f8fc35fdb0fa49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a6bf34b58b84934c008f8fc35fdb0fa49">RGWOIDCProvider</a> (std::string <a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>, std::string <a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>, std::vector&lt; std::string &gt; <a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>, std::vector&lt; std::string &gt; <a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>)</td></tr>
+<tr class="separator:a6bf34b58b84934c008f8fc35fdb0fa49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8705962a4aceba56f793c48d62f2fd1" id="r_aa8705962a4aceba56f793c48d62f2fd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#aa8705962a4aceba56f793c48d62f2fd1">RGWOIDCProvider</a> (std::string <a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>, std::string <a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>)</td></tr>
+<tr class="separator:aa8705962a4aceba56f793c48d62f2fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d8cd36d14111eb132e9edabdb6f3ec" id="r_a78d8cd36d14111eb132e9edabdb6f3ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a78d8cd36d14111eb132e9edabdb6f3ec">RGWOIDCProvider</a> (std::string <a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>)</td></tr>
+<tr class="separator:a78d8cd36d14111eb132e9edabdb6f3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece318deaf146afc1110ac1d8af1130f" id="r_aece318deaf146afc1110ac1d8af1130f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#aece318deaf146afc1110ac1d8af1130f">RGWOIDCProvider</a> ()</td></tr>
+<tr class="separator:aece318deaf146afc1110ac1d8af1130f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad320e946e3a96c00d63439365292be14" id="r_ad320e946e3a96c00d63439365292be14"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ad320e946e3a96c00d63439365292be14">~RGWOIDCProvider</a> ()=default</td></tr>
+<tr class="separator:ad320e946e3a96c00d63439365292be14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabbd7e6f4b69235aebd195b816ce144" id="r_acabbd7e6f4b69235aebd195b816ce144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a> (bufferlist &amp;bl) const</td></tr>
+<tr class="separator:acabbd7e6f4b69235aebd195b816ce144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d149e43aa0bd207f079b0da9d8fd5e" id="r_a66d149e43aa0bd207f079b0da9d8fd5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a> (bufferlist::const_iterator &amp;bl)</td></tr>
+<tr class="separator:a66d149e43aa0bd207f079b0da9d8fd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb7acfeb1001a8a9c8ad8a15e0dd6645" id="r_aeb7acfeb1001a8a9c8ad8a15e0dd6645"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#aeb7acfeb1001a8a9c8ad8a15e0dd6645">get_provider_url</a> () const</td></tr>
+<tr class="separator:aeb7acfeb1001a8a9c8ad8a15e0dd6645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e633bffeaca737c2a5f521574873c7" id="r_aa1e633bffeaca737c2a5f521574873c7"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#aa1e633bffeaca737c2a5f521574873c7">get_arn</a> () const</td></tr>
+<tr class="separator:aa1e633bffeaca737c2a5f521574873c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad995b8bf9ee85598f6b51234baa47c11" id="r_ad995b8bf9ee85598f6b51234baa47c11"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ad995b8bf9ee85598f6b51234baa47c11">get_create_date</a> () const</td></tr>
+<tr class="separator:ad995b8bf9ee85598f6b51234baa47c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21572d462c2e1ddfeac53d0bad3d31a3" id="r_a21572d462c2e1ddfeac53d0bad3d31a3"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a21572d462c2e1ddfeac53d0bad3d31a3">get_client_ids</a> () const</td></tr>
+<tr class="separator:a21572d462c2e1ddfeac53d0bad3d31a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8b1188a004ac27695bf8a3a2449901f" id="r_ab8b1188a004ac27695bf8a3a2449901f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ab8b1188a004ac27695bf8a3a2449901f">get_thumbprints</a> () const</td></tr>
+<tr class="separator:ab8b1188a004ac27695bf8a3a2449901f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb79d7209f09da7d34b6ae28bbc324b" id="r_a6fb79d7209f09da7d34b6ae28bbc324b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a6fb79d7209f09da7d34b6ae28bbc324b">create</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, bool exclusive, optional_yield y)</td></tr>
+<tr class="separator:a6fb79d7209f09da7d34b6ae28bbc324b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a011ff55425c23e045ceec1c411861027" id="r_a011ff55425c23e045ceec1c411861027"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a011ff55425c23e045ceec1c411861027">delete_obj</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, optional_yield y)=0</td></tr>
+<tr class="separator:a011ff55425c23e045ceec1c411861027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a64e0cf738f12b339e81a13e94484f" id="r_af8a64e0cf738f12b339e81a13e94484f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#af8a64e0cf738f12b339e81a13e94484f">get</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)</td></tr>
+<tr class="separator:af8a64e0cf738f12b339e81a13e94484f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ac49e16044fc40f723a66db80eff88" id="r_a14ac49e16044fc40f723a66db80eff88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a14ac49e16044fc40f723a66db80eff88">dump</a> (Formatter *f) const</td></tr>
+<tr class="separator:a14ac49e16044fc40f723a66db80eff88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3a70a74dbb99132e5fcbe9ded7f733" id="r_aee3a70a74dbb99132e5fcbe9ded7f733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#aee3a70a74dbb99132e5fcbe9ded7f733">dump_all</a> (Formatter *f) const</td></tr>
+<tr class="separator:aee3a70a74dbb99132e5fcbe9ded7f733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36461c2e4fc5ade46a1c8aadc68d1c41" id="r_a36461c2e4fc5ade46a1c8aadc68d1c41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a36461c2e4fc5ade46a1c8aadc68d1c41">decode_json</a> (JSONObj *obj)</td></tr>
+<tr class="separator:a36461c2e4fc5ade46a1c8aadc68d1c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+정적 Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a8fc76c20f33da2b0c253932e3c2b7ab5" id="r_a8fc76c20f33da2b0c253932e3c2b7ab5"><td class="memItemLeft" align="right" valign="top">static const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a8fc76c20f33da2b0c253932e3c2b7ab5">get_url_oid_prefix</a> ()</td></tr>
+<tr class="separator:a8fc76c20f33da2b0c253932e3c2b7ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+정적 Public 속성</h2></td></tr>
+<tr class="memitem:a19b8a0dafdaca5f190afe53d7d25d9d1" id="r_a19b8a0dafdaca5f190afe53d7d25d9d1"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a19b8a0dafdaca5f190afe53d7d25d9d1">oidc_url_oid_prefix</a> = &quot;oidc_url.&quot;</td></tr>
+<tr class="separator:a19b8a0dafdaca5f190afe53d7d25d9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80970191e506584d68acbb8eea51e492" id="r_a80970191e506584d68acbb8eea51e492"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a80970191e506584d68acbb8eea51e492">oidc_arn_prefix</a> = &quot;arn:aws:iam::&quot;</td></tr>
+<tr class="separator:a80970191e506584d68acbb8eea51e492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2575fb4cef4efd823bc5e22b779e10b9" id="r_a2575fb4cef4efd823bc5e22b779e10b9"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2575fb4cef4efd823bc5e22b779e10b9">MAX_OIDC_NUM_CLIENT_IDS</a> = 100</td></tr>
+<tr class="separator:a2575fb4cef4efd823bc5e22b779e10b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c4965a1f2d6c9b675f8e9c2b7b77c15" id="r_a1c4965a1f2d6c9b675f8e9c2b7b77c15"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a1c4965a1f2d6c9b675f8e9c2b7b77c15">MAX_OIDC_CLIENT_ID_LEN</a> = 255</td></tr>
+<tr class="separator:a1c4965a1f2d6c9b675f8e9c2b7b77c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92bf976776a399254c2415d714dca0dd" id="r_a92bf976776a399254c2415d714dca0dd"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a92bf976776a399254c2415d714dca0dd">MAX_OIDC_NUM_THUMBPRINTS</a> = 5</td></tr>
+<tr class="separator:a92bf976776a399254c2415d714dca0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b0414f8f4cd1c1bf800a1ab8606883b" id="r_a1b0414f8f4cd1c1bf800a1ab8606883b"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a1b0414f8f4cd1c1bf800a1ab8606883b">MAX_OIDC_THUMBPRINT_LEN</a> = 40</td></tr>
+<tr class="separator:a1b0414f8f4cd1c1bf800a1ab8606883b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c5825364e7a2bafb224706e1fc61ca5" id="r_a8c5825364e7a2bafb224706e1fc61ca5"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a8c5825364e7a2bafb224706e1fc61ca5">MAX_OIDC_URL_LEN</a> = 255</td></tr>
+<tr class="separator:a8c5825364e7a2bafb224706e1fc61ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 멤버 함수</h2></td></tr>
+<tr class="memitem:ae4fa828b9c8725a811a649fee8c0f6e1" id="r_ae4fa828b9c8725a811a649fee8c0f6e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ae4fa828b9c8725a811a649fee8c0f6e1">get_tenant_url_from_arn</a> (std::string &amp;<a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>, std::string &amp;url)</td></tr>
+<tr class="separator:ae4fa828b9c8725a811a649fee8c0f6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a067a9942b895d94e1c3a336c308df2f4" id="r_a067a9942b895d94e1c3a336c308df2f4"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a067a9942b895d94e1c3a336c308df2f4">store_url</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const std::string &amp;url, bool exclusive, optional_yield y)=0</td></tr>
+<tr class="separator:a067a9942b895d94e1c3a336c308df2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f12ecad4bf4bf59f924a3445f9c36f" id="r_a04f12ecad4bf4bf59f924a3445f9c36f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a04f12ecad4bf4bf59f924a3445f9c36f">read_url</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const std::string &amp;url, const std::string &amp;<a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>)=0</td></tr>
+<tr class="separator:a04f12ecad4bf4bf59f924a3445f9c36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bd2f978dcb8a5a4f041ada9c9b4ab4" id="r_a03bd2f978dcb8a5a4f041ada9c9b4ab4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a03bd2f978dcb8a5a4f041ada9c9b4ab4">validate_input</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)</td></tr>
+<tr class="separator:a03bd2f978dcb8a5a4f041ada9c9b4ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 속성</h2></td></tr>
+<tr class="memitem:accdf22b97e800be4273710051ef09e05" id="r_accdf22b97e800be4273710051ef09e05"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#accdf22b97e800be4273710051ef09e05">id</a></td></tr>
+<tr class="separator:accdf22b97e800be4273710051ef09e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd1d59efdb9c2bb769cbc63646a3f1c" id="r_a2dd1d59efdb9c2bb769cbc63646a3f1c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a></td></tr>
+<tr class="separator:a2dd1d59efdb9c2bb769cbc63646a3f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac74782f9da72f5c59f52a1e560d49f72" id="r_ac74782f9da72f5c59f52a1e560d49f72"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a></td></tr>
+<tr class="separator:ac74782f9da72f5c59f52a1e560d49f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f8799af3919bfddeb626d927533cb9" id="r_a22f8799af3919bfddeb626d927533cb9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a22f8799af3919bfddeb626d927533cb9">creation_date</a></td></tr>
+<tr class="separator:a22f8799af3919bfddeb626d927533cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a061ecdf8cb584c0953f18b511da956d5" id="r_a061ecdf8cb584c0953f18b511da956d5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a></td></tr>
+<tr class="separator:a061ecdf8cb584c0953f18b511da956d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a34cc4cf85281aee33fedfaab32354b" id="r_a2a34cc4cf85281aee33fedfaab32354b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a></td></tr>
+<tr class="separator:a2a34cc4cf85281aee33fedfaab32354b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df74a3dccc8c1398264ca092bdfcf1a" id="r_a5df74a3dccc8c1398264ca092bdfcf1a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a></td></tr>
+<tr class="separator:a5df74a3dccc8c1398264ca092bdfcf1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00016">16</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a6bf34b58b84934c008f8fc35fdb0fa49" name="a6bf34b58b84934c008f8fc35fdb0fa49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf34b58b84934c008f8fc35fdb0fa49">&#9670;&#160;</a></span>RGWOIDCProvider() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::sal::RGWOIDCProvider::RGWOIDCProvider </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>provider_url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tenant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>client_ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>thumbprints</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00058">58</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>  : <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>(std::move(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>)),</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>(std::move(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>)),</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>(std::move(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>)),</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>(std::move(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>)) {</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a061ecdf8cb584c0953f18b511da956d5"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">rgw::sal::RGWOIDCProvider::tenant</a></div><div class="ttdeci">std::string tenant</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00032">rgw_oidc_provider.h:32</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a2a34cc4cf85281aee33fedfaab32354b"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">rgw::sal::RGWOIDCProvider::client_ids</a></div><div class="ttdeci">std::vector&lt; std::string &gt; client_ids</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00033">rgw_oidc_provider.h:33</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a2dd1d59efdb9c2bb769cbc63646a3f1c"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">rgw::sal::RGWOIDCProvider::provider_url</a></div><div class="ttdeci">std::string provider_url</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00029">rgw_oidc_provider.h:29</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a5df74a3dccc8c1398264ca092bdfcf1a"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">rgw::sal::RGWOIDCProvider::thumbprints</a></div><div class="ttdeci">std::vector&lt; std::string &gt; thumbprints</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00034">rgw_oidc_provider.h:34</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa8705962a4aceba56f793c48d62f2fd1" name="aa8705962a4aceba56f793c48d62f2fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8705962a4aceba56f793c48d62f2fd1">&#9670;&#160;</a></span>RGWOIDCProvider() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::sal::RGWOIDCProvider::RGWOIDCProvider </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>arn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tenant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00068">68</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>  : <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>(std::move(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>)),</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>(std::move(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>)) {</div>
+<div class="line"><span class="lineno">   72</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_ac74782f9da72f5c59f52a1e560d49f72"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">rgw::sal::RGWOIDCProvider::arn</a></div><div class="ttdeci">std::string arn</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00030">rgw_oidc_provider.h:30</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a78d8cd36d14111eb132e9edabdb6f3ec" name="a78d8cd36d14111eb132e9edabdb6f3ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d8cd36d14111eb132e9edabdb6f3ec">&#9670;&#160;</a></span>RGWOIDCProvider() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::sal::RGWOIDCProvider::RGWOIDCProvider </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tenant</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00074">74</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>  : <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>(std::move(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>)) {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aece318deaf146afc1110ac1d8af1130f" name="aece318deaf146afc1110ac1d8af1130f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece318deaf146afc1110ac1d8af1130f">&#9670;&#160;</a></span>RGWOIDCProvider() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::sal::RGWOIDCProvider::RGWOIDCProvider </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00077">77</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad320e946e3a96c00d63439365292be14" name="ad320e946e3a96c00d63439365292be14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad320e946e3a96c00d63439365292be14">&#9670;&#160;</a></span>~RGWOIDCProvider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual rgw::sal::RGWOIDCProvider::~RGWOIDCProvider </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a6fb79d7209f09da7d34b6ae28bbc324b" name="a6fb79d7209f09da7d34b6ae28bbc324b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb79d7209f09da7d34b6ae28bbc324b">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::sal::RGWOIDCProvider::create </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>exclusive</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">optional_yield&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00049">49</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
+<div class="line"><span class="lineno">   51</span>  <span class="keywordtype">int</span> ret;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  <span class="keywordflow">if</span> (! <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a03bd2f978dcb8a5a4f041ada9c9b4ab4">validate_input</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)) {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><span class="lineno">   55</span>  }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>  <span class="keywordtype">string</span> idp_url = <a class="code hl_function" href="rgw__common_8cc.html#a44daf3808dbd436a86cd495810d1b49b">url_remove_prefix</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>  <span class="comment">/* check to see the name is not used */</span></div>
+<div class="line"><span class="lineno">   60</span>  ret = <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a04f12ecad4bf4bf59f924a3445f9c36f">read_url</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, idp_url, <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>);</div>
+<div class="line"><span class="lineno">   61</span>  <span class="keywordflow">if</span> (exclusive &amp;&amp; ret == 0) {</div>
+<div class="line"><span class="lineno">   62</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: url &quot;</span> &lt;&lt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a> &lt;&lt; <span class="stringliteral">&quot; already in use&quot;</span></div>
+<div class="line"><span class="lineno">   63</span>                    &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> -EEXIST;</div>
+<div class="line"><span class="lineno">   65</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( ret &lt; 0 &amp;&amp; ret != -ENOENT) {</div>
+<div class="line"><span class="lineno">   66</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;failed reading provider url  &quot;</span> &lt;&lt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span></div>
+<div class="line"><span class="lineno">   67</span>                  &lt;&lt; cpp_strerror(-ret) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">   69</span>  }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>  <span class="comment">//arn</span></div>
+<div class="line"><span class="lineno">   72</span>  <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a> = <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a80970191e506584d68acbb8eea51e492">oidc_arn_prefix</a> + <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a> + <span class="stringliteral">&quot;:oidc-provider/&quot;</span> + idp_url;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>  <span class="comment">// Creation time</span></div>
+<div class="line"><span class="lineno">   75</span>  real_clock::time_point t = real_clock::now();</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>  <span class="keyword">struct </span>timeval tv;</div>
+<div class="line"><span class="lineno">   78</span>  real_clock::to_timeval(t, tv);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordtype">char</span> buf[30];</div>
+<div class="line"><span class="lineno">   81</span>  <span class="keyword">struct </span>tm result;</div>
+<div class="line"><span class="lineno">   82</span>  gmtime_r(&amp;tv.tv_sec, &amp;result);</div>
+<div class="line"><span class="lineno">   83</span>  strftime(buf,30,<span class="stringliteral">&quot;%Y-%m-%dT%H:%M:%S&quot;</span>, &amp;result);</div>
+<div class="line"><span class="lineno">   84</span>  sprintf(buf + strlen(buf),<span class="stringliteral">&quot;.%dZ&quot;</span>,(<span class="keywordtype">int</span>)tv.tv_usec/1000);</div>
+<div class="line"><span class="lineno">   85</span>  <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a22f8799af3919bfddeb626d927533cb9">creation_date</a>.assign(buf, strlen(buf));</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>  ret = <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a067a9942b895d94e1c3a336c308df2f4">store_url</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, idp_url, exclusive, y);</div>
+<div class="line"><span class="lineno">   88</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><span class="lineno">   89</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR:  storing role info in OIDC pool: &quot;</span></div>
+<div class="line"><span class="lineno">   90</span>                  &lt;&lt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; cpp_strerror(-ret) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">   92</span>  }</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   95</span>}</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a03bd2f978dcb8a5a4f041ada9c9b4ab4"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a03bd2f978dcb8a5a4f041ada9c9b4ab4">rgw::sal::RGWOIDCProvider::validate_input</a></div><div class="ttdeci">bool validate_input(const DoutPrefixProvider *dpp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8cc_source.html#l00146">rgw_oidc_provider.cc:146</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a04f12ecad4bf4bf59f924a3445f9c36f"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a04f12ecad4bf4bf59f924a3445f9c36f">rgw::sal::RGWOIDCProvider::read_url</a></div><div class="ttdeci">virtual int read_url(const DoutPrefixProvider *dpp, const std::string &amp;url, const std::string &amp;tenant)=0</div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a067a9942b895d94e1c3a336c308df2f4"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a067a9942b895d94e1c3a336c308df2f4">rgw::sal::RGWOIDCProvider::store_url</a></div><div class="ttdeci">virtual int store_url(const DoutPrefixProvider *dpp, const std::string &amp;url, bool exclusive, optional_yield y)=0</div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a22f8799af3919bfddeb626d927533cb9"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a22f8799af3919bfddeb626d927533cb9">rgw::sal::RGWOIDCProvider::creation_date</a></div><div class="ttdeci">std::string creation_date</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00031">rgw_oidc_provider.h:31</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a80970191e506584d68acbb8eea51e492"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a80970191e506584d68acbb8eea51e492">rgw::sal::RGWOIDCProvider::oidc_arn_prefix</a></div><div class="ttdeci">static const std::string oidc_arn_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00020">rgw_oidc_provider.h:20</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a44daf3808dbd436a86cd495810d1b49b"><div class="ttname"><a href="rgw__common_8cc.html#a44daf3808dbd436a86cd495810d1b49b">url_remove_prefix</a></div><div class="ttdeci">std::string url_remove_prefix(const std::string &amp;url)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l01799">rgw_common.cc:1799</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a6fb79d7209f09da7d34b6ae28bbc324b_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a6fb79d7209f09da7d34b6ae28bbc324b_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a6fb79d7209f09da7d34b6ae28bbc324b_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a6fb79d7209f09da7d34b6ae28bbc324b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,108,189,151"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="468,112,510,139"/>
+<area shape="poly" title=" " alt="" coords="118,106,168,63,201,42,236,27,287,11,330,3,372,8,421,27,441,41,457,59,479,97,475,100,453,62,437,45,419,32,371,13,330,9,288,16,238,32,203,47,171,67,121,110"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a04f12ecad4bf4bf59f924a3445f9c36f" title=" " alt="" coords="237,42,420,84"/>
+<area shape="poly" title=" " alt="" coords="172,105,236,87,238,92,174,110"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a067a9942b895d94e1c3a336c308df2f4" title=" " alt="" coords="237,108,420,151"/>
+<area shape="poly" title=" " alt="" coords="189,127,221,127,221,132,189,132"/>
+<area shape="rect" href="rgw__common_8cc.html#a44daf3808dbd436a86cd495810d1b49b" title=" " alt="" coords="268,175,389,202"/>
+<area shape="poly" title=" " alt="" coords="184,149,259,168,257,173,183,154"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a03bd2f978dcb8a5a4f041ada9c9b4ab4" title=" " alt="" coords="237,226,420,268"/>
+<area shape="poly" title=" " alt="" coords="132,149,181,180,238,211,250,217,248,221,235,216,178,185,129,154"/>
+<area shape="poly" title=" " alt="" coords="400,223,418,211,448,182,471,151,475,154,452,186,422,216,403,227"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a66d149e43aa0bd207f079b0da9d8fd5e" name="a66d149e43aa0bd207f079b0da9d8fd5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d149e43aa0bd207f079b0da9d8fd5e">&#9670;&#160;</a></span>decode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::decode </td>
+          <td>(</td>
+          <td class="paramtype">bufferlist::const_iterator &amp;&#160;</td>
+          <td class="paramname"><em>bl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00093">93</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>                                            {</div>
+<div class="line"><span class="lineno">   94</span>    DECODE_START(2, bl);</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a>(<span class="keywordtype">id</span>, bl);</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>, bl);</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>, bl);</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a22f8799af3919bfddeb626d927533cb9">creation_date</a>, bl);</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>, bl);</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>, bl);</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">decode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>, bl);</div>
+<div class="line"><span class="lineno">  102</span>    DECODE_FINISH(bl);</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a66d149e43aa0bd207f079b0da9d8fd5e"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a66d149e43aa0bd207f079b0da9d8fd5e">rgw::sal::RGWOIDCProvider::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00093">rgw_oidc_provider.h:93</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,189,72"/>
+<area shape="poly" title=" " alt="" coords="62,29,60,19,66,10,79,5,97,3,117,5,129,11,126,16,115,10,97,8,80,10,70,14,65,21,67,28"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a66d149e43aa0bd207f079b0da9d8fd5e_icgraph">
+<area shape="rect" title=" " alt="" coords="478,39,661,81"/>
+<area shape="poly" title=" " alt="" coords="608,26,593,20,570,17,548,19,534,24,529,30,531,38,525,39,524,29,531,20,546,14,570,12,595,14,610,21"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_d_b_o_i_d_c_provider.html#a215639cf79bb43d1c554ba38b34a7c63" title=" " alt="" coords="251,5,421,48"/>
+<area shape="poly" title=" " alt="" coords="462,47,420,41,421,36,463,42"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ae4c2c0b2ce2b40601e18a00526b4a540" title=" " alt="" coords="242,72,430,115"/>
+<area shape="poly" title=" " alt="" coords="463,78,431,82,430,77,462,73"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ad0dee566c284e50783335be58ef10f67" title=" " alt="" coords="5,72,194,115"/>
+<area shape="poly" title=" " alt="" coords="226,96,194,96,194,91,226,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36461c2e4fc5ade46a1c8aadc68d1c41" name="a36461c2e4fc5ade46a1c8aadc68d1c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36461c2e4fc5ade46a1c8aadc68d1c41">&#9670;&#160;</a></span>decode_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::decode_json </td>
+          <td>(</td>
+          <td class="paramtype">JSONObj *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00141">141</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
+<div class="line"><span class="lineno">  143</span>  JSONDecoder::decode_json(<span class="stringliteral">&quot;OpenIDConnectProviderArn&quot;</span>, <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>, obj);</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a011ff55425c23e045ceec1c411861027" name="a011ff55425c23e045ceec1c411861027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a011ff55425c23e045ceec1c411861027">&#9670;&#160;</a></span>delete_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int rgw::sal::RGWOIDCProvider::delete_obj </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">optional_yield&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1sal_1_1_d_b_o_i_d_c_provider.html#a63f04af0a7da74493aafb66dce2f51fb">rgw::sal::DBOIDCProvider</a>, <a class="el" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ae0c967a260153a65a58d91853cfe3a30">rgw::sal::RadosOIDCProvider</a>에서 구현되었습니다.</p>
+<div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a011ff55425c23e045ceec1c411861027_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a011ff55425c23e045ceec1c411861027_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a011ff55425c23e045ceec1c411861027_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a011ff55425c23e045ceec1c411861027_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,189,99"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#af8a64e0cf738f12b339e81a13e94484f" title=" " alt="" coords="237,64,446,91"/>
+<area shape="poly" title=" " alt="" coords="189,75,221,75,221,80,189,80"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="565,5,607,32"/>
+<area shape="poly" title=" " alt="" coords="399,61,549,25,550,30,401,66"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ae4fa828b9c8725a811a649fee8c0f6e1" title=" " alt="" coords="494,56,677,99"/>
+<area shape="poly" title=" " alt="" coords="447,75,478,75,478,80,447,80"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a04f12ecad4bf4bf59f924a3445f9c36f" title=" " alt="" coords="494,123,677,165"/>
+<area shape="poly" title=" " alt="" coords="394,89,491,115,490,121,393,94"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#a3112f784bd67d01dbf3f0e9aae5e627f" title=" " alt="" coords="725,64,842,91"/>
+<area shape="poly" title=" " alt="" coords="678,75,710,75,710,80,678,80"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#ac472c2d77d1132e94e4b96d3f73493d3" title=" " alt="" coords="894,39,1006,65"/>
+<area shape="poly" title=" " alt="" coords="842,66,878,60,879,65,842,71"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#a6015b4affbcb48aeaeb8aad3662f99c4" title=" " alt="" coords="890,89,1010,116"/>
+<area shape="poly" title=" " alt="" coords="842,84,875,89,874,94,842,89"/>
+<area shape="rect" href="rgw__common_8cc.html#a3b4ce81e50a03859bf0b90d13b623e1b" title=" " alt="" coords="1058,89,1156,116"/>
+<area shape="poly" title=" " alt="" coords="1011,100,1042,100,1042,105,1011,105"/>
+<area shape="rect" href="rgw__string_8cc.html#a61c2deec390f8207000b8eeac5869872" title=" " alt="" coords="1204,89,1323,116"/>
+<area shape="poly" title=" " alt="" coords="1157,100,1189,100,1189,105,1157,105"/>
+<area shape="rect" href="rgw__string_8cc.html#a0ebf2a5a5af6fbee9604eb1eccd9362e" title=" " alt="" coords="1379,64,1447,91"/>
+<area shape="poly" title=" " alt="" coords="1323,90,1363,83,1364,88,1324,95"/>
+<area shape="rect" href="rgw__string_8cc.html#ab65fc96577ed8d149bea64e3add93986" title=" " alt="" coords="1371,115,1455,141"/>
+<area shape="poly" title=" " alt="" coords="1324,110,1356,116,1355,121,1323,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14ac49e16044fc40f723a66db80eff88" name="a14ac49e16044fc40f723a66db80eff88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ac49e16044fc40f723a66db80eff88">&#9670;&#160;</a></span>dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::dump </td>
+          <td>(</td>
+          <td class="paramtype">Formatter *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00120">120</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{</div>
+<div class="line"><span class="lineno">  122</span>  <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;OpenIDConnectProviderArn&quot;</span>, <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>, f);</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+<div class="ttc" id="argw__admin_8cc_html_ab596b9e1a1fc78e98a4d13a66578b658"><div class="ttname"><a href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a></div><div class="ttdeci">void encode_json(const char *name, const RGWBucketSyncFlowManager::pipe_set &amp;pset, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l02560">rgw_admin.cc:2560</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a14ac49e16044fc40f723a66db80eff88_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a14ac49e16044fc40f723a66db80eff88_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a14ac49e16044fc40f723a66db80eff88_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a14ac49e16044fc40f723a66db80eff88_cgraph">
+<area shape="rect" title=" " alt="" coords="5,21,189,64"/>
+<area shape="rect" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658" title=" " alt="" coords="237,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="189,40,221,40,221,45,189,45"/>
+<area shape="poly" title=" " alt="" coords="252,30,246,21,250,11,263,5,284,3,306,5,318,12,316,16,305,10,284,8,264,10,254,15,252,20,256,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aee3a70a74dbb99132e5fcbe9ded7f733" name="aee3a70a74dbb99132e5fcbe9ded7f733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee3a70a74dbb99132e5fcbe9ded7f733">&#9670;&#160;</a></span>dump_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::dump_all </td>
+          <td>(</td>
+          <td class="paramtype">Formatter *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00125">125</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>{</div>
+<div class="line"><span class="lineno">  127</span>  f-&gt;open_object_section(<span class="stringliteral">&quot;ClientIDList&quot;</span>);</div>
+<div class="line"><span class="lineno">  128</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it : <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>) {</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;member&quot;</span>, it, f);</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
+<div class="line"><span class="lineno">  131</span>  f-&gt;close_section();</div>
+<div class="line"><span class="lineno">  132</span>  <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;CreateDate&quot;</span>, <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a22f8799af3919bfddeb626d927533cb9">creation_date</a>, f);</div>
+<div class="line"><span class="lineno">  133</span>  f-&gt;open_object_section(<span class="stringliteral">&quot;ThumbprintList&quot;</span>);</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it : <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>) {</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;member&quot;</span>, it, f);</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
+<div class="line"><span class="lineno">  137</span>  f-&gt;close_section();</div>
+<div class="line"><span class="lineno">  138</span>  <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;Url&quot;</span>, <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>, f);</div>
+<div class="line"><span class="lineno">  139</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_aee3a70a74dbb99132e5fcbe9ded7f733_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_aee3a70a74dbb99132e5fcbe9ded7f733_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_aee3a70a74dbb99132e5fcbe9ded7f733_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_aee3a70a74dbb99132e5fcbe9ded7f733_cgraph">
+<area shape="rect" title=" " alt="" coords="5,21,189,64"/>
+<area shape="rect" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658" title=" " alt="" coords="237,29,331,56"/>
+<area shape="poly" title=" " alt="" coords="189,40,221,40,221,45,189,45"/>
+<area shape="poly" title=" " alt="" coords="252,30,246,21,250,11,263,5,284,3,306,5,318,12,316,16,305,10,284,8,264,10,254,15,252,20,256,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acabbd7e6f4b69235aebd195b816ce144" name="acabbd7e6f4b69235aebd195b816ce144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabbd7e6f4b69235aebd195b816ce144">&#9670;&#160;</a></span>encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::encode </td>
+          <td>(</td>
+          <td class="paramtype">bufferlist &amp;&#160;</td>
+          <td class="paramname"><em>bl</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00081">81</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                    {</div>
+<div class="line"><span class="lineno">   82</span>    ENCODE_START(3, 1, bl);</div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a>(<span class="keywordtype">id</span>, bl);</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>, bl);</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>, bl);</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a22f8799af3919bfddeb626d927533cb9">creation_date</a>, bl);</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>, bl);</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>, bl);</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">encode</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>, bl);</div>
+<div class="line"><span class="lineno">   90</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><span class="lineno">   91</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_acabbd7e6f4b69235aebd195b816ce144"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#acabbd7e6f4b69235aebd195b816ce144">rgw::sal::RGWOIDCProvider::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00081">rgw_oidc_provider.h:81</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,189,72"/>
+<area shape="poly" title=" " alt="" coords="62,29,60,19,66,10,79,5,97,3,117,5,129,11,126,16,115,10,97,8,80,10,70,14,65,21,67,28"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_acabbd7e6f4b69235aebd195b816ce144_icgraph">
+<area shape="rect" title=" " alt="" coords="478,39,661,81"/>
+<area shape="poly" title=" " alt="" coords="608,26,593,20,570,17,548,19,534,24,529,30,531,38,525,39,524,29,531,20,546,14,570,12,595,14,610,21"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_d_b_o_i_d_c_provider.html#affc1285cdc27dd0e7be51b54c0aecfa0" title=" " alt="" coords="251,5,421,48"/>
+<area shape="poly" title=" " alt="" coords="462,47,420,41,421,36,463,42"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ae4490d9e1bb29323d26c1d998674d275" title=" " alt="" coords="242,72,430,115"/>
+<area shape="poly" title=" " alt="" coords="463,78,431,82,430,77,462,73"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#aa7e0f02f7454165b6538ea40f4de2ed4" title=" " alt="" coords="5,72,194,115"/>
+<area shape="poly" title=" " alt="" coords="226,96,194,96,194,91,226,91"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8a64e0cf738f12b339e81a13e94484f" name="af8a64e0cf738f12b339e81a13e94484f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a64e0cf738f12b339e81a13e94484f">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::sal::RGWOIDCProvider::get </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00097">97</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
+<div class="line"><span class="lineno">   99</span>  <span class="keywordtype">string</span> url, <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>;</div>
+<div class="line"><span class="lineno">  100</span>  <span class="keyword">auto</span> ret = <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ae4fa828b9c8725a811a649fee8c0f6e1">get_tenant_url_from_arn</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>, url);</div>
+<div class="line"><span class="lineno">  101</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><span class="lineno">  102</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to parse arn&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">if</span> (this-&gt;tenant != <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>) {</div>
+<div class="line"><span class="lineno">  107</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: tenant in arn doesn&#39;t match that of user &quot;</span> &lt;&lt; this-&gt;tenant &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><span class="lineno">  108</span>                  &lt;&lt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><span class="lineno">  110</span>  }</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>  ret = <a class="code hl_function" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a04f12ecad4bf4bf59f924a3445f9c36f">read_url</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, url, <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a>);</div>
+<div class="line"><span class="lineno">  113</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  118</span>}</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_ae4fa828b9c8725a811a649fee8c0f6e1"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ae4fa828b9c8725a811a649fee8c0f6e1">rgw::sal::RGWOIDCProvider::get_tenant_url_from_arn</a></div><div class="ttdeci">int get_tenant_url_from_arn(std::string &amp;tenant, std::string &amp;url)</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8cc_source.html#l00034">rgw_oidc_provider.cc:34</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,64,215,91"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="333,5,376,32"/>
+<area shape="poly" title=" " alt="" coords="168,61,317,25,319,30,169,66"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ae4fa828b9c8725a811a649fee8c0f6e1" title=" " alt="" coords="263,56,446,99"/>
+<area shape="poly" title=" " alt="" coords="215,75,247,75,247,80,215,80"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a04f12ecad4bf4bf59f924a3445f9c36f" title=" " alt="" coords="263,123,446,165"/>
+<area shape="poly" title=" " alt="" coords="163,89,260,115,258,121,161,94"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#a3112f784bd67d01dbf3f0e9aae5e627f" title=" " alt="" coords="494,64,610,91"/>
+<area shape="poly" title=" " alt="" coords="446,75,479,75,479,80,446,80"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#ac472c2d77d1132e94e4b96d3f73493d3" title=" " alt="" coords="663,39,774,65"/>
+<area shape="poly" title=" " alt="" coords="610,66,647,60,648,65,611,71"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#a6015b4affbcb48aeaeb8aad3662f99c4" title=" " alt="" coords="658,89,779,116"/>
+<area shape="poly" title=" " alt="" coords="611,84,643,89,643,94,610,89"/>
+<area shape="rect" href="rgw__common_8cc.html#a3b4ce81e50a03859bf0b90d13b623e1b" title=" " alt="" coords="827,89,925,116"/>
+<area shape="poly" title=" " alt="" coords="779,100,811,100,811,105,779,105"/>
+<area shape="rect" href="rgw__string_8cc.html#a61c2deec390f8207000b8eeac5869872" title=" " alt="" coords="973,89,1091,116"/>
+<area shape="poly" title=" " alt="" coords="925,100,957,100,957,105,925,105"/>
+<area shape="rect" href="rgw__string_8cc.html#a0ebf2a5a5af6fbee9604eb1eccd9362e" title=" " alt="" coords="1148,64,1215,91"/>
+<area shape="poly" title=" " alt="" coords="1091,90,1132,83,1133,88,1092,95"/>
+<area shape="rect" href="rgw__string_8cc.html#ab65fc96577ed8d149bea64e3add93986" title=" " alt="" coords="1139,115,1224,141"/>
+<area shape="poly" title=" " alt="" coords="1092,110,1124,116,1123,121,1091,115"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_af8a64e0cf738f12b339e81a13e94484f_icgraph">
+<area shape="rect" title=" " alt="" coords="237,13,446,40"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a011ff55425c23e045ceec1c411861027" title=" " alt="" coords="5,5,189,48"/>
+<area shape="poly" title=" " alt="" coords="221,29,189,29,189,24,221,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa1e633bffeaca737c2a5f521574873c7" name="aa1e633bffeaca737c2a5f521574873c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e633bffeaca737c2a5f521574873c7">&#9670;&#160;</a></span>get_arn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; rgw::sal::RGWOIDCProvider::get_arn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00106">106</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a21572d462c2e1ddfeac53d0bad3d31a3" name="a21572d462c2e1ddfeac53d0bad3d31a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21572d462c2e1ddfeac53d0bad3d31a3">&#9670;&#160;</a></span>get_client_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::string &gt; &amp; rgw::sal::RGWOIDCProvider::get_client_ids </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00108">108</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad995b8bf9ee85598f6b51234baa47c11" name="ad995b8bf9ee85598f6b51234baa47c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad995b8bf9ee85598f6b51234baa47c11">&#9670;&#160;</a></span>get_create_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; rgw::sal::RGWOIDCProvider::get_create_date </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00107">107</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a22f8799af3919bfddeb626d927533cb9">creation_date</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aeb7acfeb1001a8a9c8ad8a15e0dd6645" name="aeb7acfeb1001a8a9c8ad8a15e0dd6645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb7acfeb1001a8a9c8ad8a15e0dd6645">&#9670;&#160;</a></span>get_provider_url()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; rgw::sal::RGWOIDCProvider::get_provider_url </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00105">105</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae4fa828b9c8725a811a649fee8c0f6e1" name="ae4fa828b9c8725a811a649fee8c0f6e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4fa828b9c8725a811a649fee8c0f6e1">&#9670;&#160;</a></span>get_tenant_url_from_arn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::sal::RGWOIDCProvider::get_tenant_url_from_arn </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>tenant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>url</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00034">34</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
+<div class="line"><span class="lineno">   36</span>  <span class="keyword">auto</span> provider_arn = <a class="code hl_function" href="structrgw_1_1_a_r_n.html#a3112f784bd67d01dbf3f0e9aae5e627f">rgw::ARN::parse</a>(<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a>);</div>
+<div class="line"><span class="lineno">   37</span>  <span class="keywordflow">if</span> (!provider_arn) {</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><span class="lineno">   39</span>  }</div>
+<div class="line"><span class="lineno">   40</span>  url = provider_arn-&gt;resource;</div>
+<div class="line"><span class="lineno">   41</span>  <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a> = provider_arn-&gt;account;</div>
+<div class="line"><span class="lineno">   42</span>  <span class="keyword">auto</span> pos = url.find(<span class="stringliteral">&quot;oidc-provider/&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">if</span> (pos != std::string::npos) {</div>
+<div class="line"><span class="lineno">   44</span>    url.erase(pos, 14);</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
+<div class="line"><span class="lineno">   46</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+<div class="ttc" id="astructrgw_1_1_a_r_n_html_a3112f784bd67d01dbf3f0e9aae5e627f"><div class="ttname"><a href="structrgw_1_1_a_r_n.html#a3112f784bd67d01dbf3f0e9aae5e627f">rgw::ARN::parse</a></div><div class="ttdeci">static boost::optional&lt; ARN &gt; parse(const std::string &amp;s, bool wildcard=false)</div><div class="ttdef"><b>Definition</b> <a href="rgw__arn_8cc_source.html#l00165">rgw_arn.cc:165</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,189,65"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#a3112f784bd67d01dbf3f0e9aae5e627f" title=" " alt="" coords="237,31,353,57"/>
+<area shape="poly" title=" " alt="" coords="189,41,221,41,221,47,189,47"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#ac472c2d77d1132e94e4b96d3f73493d3" title=" " alt="" coords="406,5,517,32"/>
+<area shape="poly" title=" " alt="" coords="353,33,390,27,390,32,354,38"/>
+<area shape="rect" href="structrgw_1_1_a_r_n.html#a6015b4affbcb48aeaeb8aad3662f99c4" title=" " alt="" coords="401,56,521,83"/>
+<area shape="poly" title=" " alt="" coords="354,50,386,55,385,60,353,55"/>
+<area shape="rect" href="rgw__common_8cc.html#a3b4ce81e50a03859bf0b90d13b623e1b" title=" " alt="" coords="569,56,668,83"/>
+<area shape="poly" title=" " alt="" coords="522,67,554,67,554,72,522,72"/>
+<area shape="rect" href="rgw__string_8cc.html#a61c2deec390f8207000b8eeac5869872" title=" " alt="" coords="716,56,834,83"/>
+<area shape="poly" title=" " alt="" coords="668,67,700,67,700,72,668,72"/>
+<area shape="rect" href="rgw__string_8cc.html#a0ebf2a5a5af6fbee9604eb1eccd9362e" title=" " alt="" coords="891,31,958,57"/>
+<area shape="poly" title=" " alt="" coords="834,57,875,50,875,55,835,62"/>
+<area shape="rect" href="rgw__string_8cc.html#ab65fc96577ed8d149bea64e3add93986" title=" " alt="" coords="882,81,966,108"/>
+<area shape="poly" title=" " alt="" coords="835,77,867,82,866,88,834,82"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_ae4fa828b9c8725a811a649fee8c0f6e1_icgraph">
+<area shape="rect" title=" " alt="" coords="494,35,677,77"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ae0c967a260153a65a58d91853cfe3a30" title=" " alt="" coords="247,5,436,48"/>
+<area shape="poly" title=" " alt="" coords="478,46,436,41,436,35,479,40"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#af8a64e0cf738f12b339e81a13e94484f" title=" " alt="" coords="237,72,446,99"/>
+<area shape="poly" title=" " alt="" coords="479,71,447,75,446,70,478,66"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a011ff55425c23e045ceec1c411861027" title=" " alt="" coords="5,64,189,107"/>
+<area shape="poly" title=" " alt="" coords="221,88,189,88,189,83,221,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab8b1188a004ac27695bf8a3a2449901f" name="ab8b1188a004ac27695bf8a3a2449901f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b1188a004ac27695bf8a3a2449901f">&#9670;&#160;</a></span>get_thumbprints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::string &gt; &amp; rgw::sal::RGWOIDCProvider::get_thumbprints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00109">109</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8fc76c20f33da2b0c253932e3c2b7ab5" name="a8fc76c20f33da2b0c253932e3c2b7ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc76c20f33da2b0c253932e3c2b7ab5">&#9670;&#160;</a></span>get_url_oid_prefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string &amp; rgw::sal::RGWOIDCProvider::get_url_oid_prefix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00177">177</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>{</div>
+<div class="line"><span class="lineno">  179</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a19b8a0dafdaca5f190afe53d7d25d9d1">oidc_url_oid_prefix</a>;</div>
+<div class="line"><span class="lineno">  180</span>}</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a19b8a0dafdaca5f190afe53d7d25d9d1"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a19b8a0dafdaca5f190afe53d7d25d9d1">rgw::sal::RGWOIDCProvider::oidc_url_oid_prefix</a></div><div class="ttdeci">static const std::string oidc_url_oid_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00019">rgw_oidc_provider.h:19</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a8fc76c20f33da2b0c253932e3c2b7ab5_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a8fc76c20f33da2b0c253932e3c2b7ab5_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a8fc76c20f33da2b0c253932e3c2b7ab5_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a8fc76c20f33da2b0c253932e3c2b7ab5_icgraph">
+<area shape="rect" title=" " alt="" coords="242,72,425,115"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ae0c967a260153a65a58d91853cfe3a30" title=" " alt="" coords="5,5,194,48"/>
+<area shape="poly" title=" " alt="" coords="241,70,176,51,178,46,242,65"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ad0dee566c284e50783335be58ef10f67" title=" " alt="" coords="5,72,194,115"/>
+<area shape="poly" title=" " alt="" coords="226,96,194,96,194,91,226,91"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#aa7e0f02f7454165b6538ea40f4de2ed4" title=" " alt="" coords="5,139,194,181"/>
+<area shape="poly" title=" " alt="" coords="242,122,178,141,176,135,241,117"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a04f12ecad4bf4bf59f924a3445f9c36f" name="a04f12ecad4bf4bf59f924a3445f9c36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f12ecad4bf4bf59f924a3445f9c36f">&#9670;&#160;</a></span>read_url()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int rgw::sal::RGWOIDCProvider::read_url </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>tenant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1sal_1_1_d_b_o_i_d_c_provider.html#a79686f1cc000718a33c4b4021e828b38">rgw::sal::DBOIDCProvider</a>, <a class="el" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#ad0dee566c284e50783335be58ef10f67">rgw::sal::RadosOIDCProvider</a>에서 구현되었습니다.</p>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a04f12ecad4bf4bf59f924a3445f9c36f_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a04f12ecad4bf4bf59f924a3445f9c36f_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a04f12ecad4bf4bf59f924a3445f9c36f_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a04f12ecad4bf4bf59f924a3445f9c36f_icgraph">
+<area shape="rect" title=" " alt="" coords="494,35,677,77"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a6fb79d7209f09da7d34b6ae28bbc324b" title=" " alt="" coords="250,5,433,48"/>
+<area shape="poly" title=" " alt="" coords="478,46,433,40,434,35,479,41"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#af8a64e0cf738f12b339e81a13e94484f" title=" " alt="" coords="237,72,446,99"/>
+<area shape="poly" title=" " alt="" coords="479,71,447,75,446,70,478,66"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a011ff55425c23e045ceec1c411861027" title=" " alt="" coords="5,64,189,107"/>
+<area shape="poly" title=" " alt="" coords="221,88,189,88,189,83,221,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abaa5dddce9ff59522576e233b539229f" name="abaa5dddce9ff59522576e233b539229f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa5dddce9ff59522576e233b539229f">&#9670;&#160;</a></span>set_arn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::set_arn </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_arn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                               {</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#ac74782f9da72f5c59f52a1e560d49f72">arn</a> = _arn;</div>
+<div class="line"><span class="lineno">   44</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0be71ebda4315dc0c3d6371c2467fe89" name="a0be71ebda4315dc0c3d6371c2467fe89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be71ebda4315dc0c3d6371c2467fe89">&#9670;&#160;</a></span>set_client_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::set_client_ids </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_client_ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00051">51</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>                                                         {</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a> = std::move(_client_ids);</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a18cf318ab3cf5a8aa3ea492084a55a78" name="a18cf318ab3cf5a8aa3ea492084a55a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18cf318ab3cf5a8aa3ea492084a55a78">&#9670;&#160;</a></span>set_tenant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::set_tenant </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_tenant</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00048">48</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                     {</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a061ecdf8cb584c0953f18b511da956d5">tenant</a> = _tenant;</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4db84dbd7640f4b515ffd14ef1a3d799" name="a4db84dbd7640f4b515ffd14ef1a3d799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db84dbd7640f4b515ffd14ef1a3d799">&#9670;&#160;</a></span>set_thumbprints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::set_thumbprints </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_thumbprints</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00054">54</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                                                           {</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a> = std::move(_thumbprints);</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a659eee9090273cf8d1ec79a06aa4cb21" name="a659eee9090273cf8d1ec79a06aa4cb21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659eee9090273cf8d1ec79a06aa4cb21">&#9670;&#160;</a></span>set_url()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::sal::RGWOIDCProvider::set_url </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_provider_url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00045">45</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                        {</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a> = _provider_url;</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a067a9942b895d94e1c3a336c308df2f4" name="a067a9942b895d94e1c3a336c308df2f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a067a9942b895d94e1c3a336c308df2f4">&#9670;&#160;</a></span>store_url()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int rgw::sal::RGWOIDCProvider::store_url </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>exclusive</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">optional_yield&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1sal_1_1_d_b_o_i_d_c_provider.html#ac31de69c541e4918d48dbd89b686687a">rgw::sal::DBOIDCProvider</a>, <a class="el" href="classrgw_1_1sal_1_1_rados_o_i_d_c_provider.html#aa7e0f02f7454165b6538ea40f4de2ed4">rgw::sal::RadosOIDCProvider</a>에서 구현되었습니다.</p>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a067a9942b895d94e1c3a336c308df2f4_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a067a9942b895d94e1c3a336c308df2f4_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a067a9942b895d94e1c3a336c308df2f4_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a067a9942b895d94e1c3a336c308df2f4_icgraph">
+<area shape="rect" title=" " alt="" coords="237,5,420,48"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a6fb79d7209f09da7d34b6ae28bbc324b" title=" " alt="" coords="5,5,189,48"/>
+<area shape="poly" title=" " alt="" coords="221,29,189,29,189,24,221,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a03bd2f978dcb8a5a4f041ada9c9b4ab4" name="a03bd2f978dcb8a5a4f041ada9c9b4ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03bd2f978dcb8a5a4f041ada9c9b4ab4">&#9670;&#160;</a></span>validate_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::sal::RGWOIDCProvider::validate_input </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a> 파일의 <a class="el" href="rgw__oidc__provider_8cc_source.html#l00146">146</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>{</div>
+<div class="line"><span class="lineno">  148</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2dd1d59efdb9c2bb769cbc63646a3f1c">provider_url</a>.length() &gt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a8c5825364e7a2bafb224706e1fc61ca5">MAX_OIDC_URL_LEN</a>) {</div>
+<div class="line"><span class="lineno">  149</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: Invalid length of url &quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  151</span>  }</div>
+<div class="line"><span class="lineno">  152</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>.size() &gt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2575fb4cef4efd823bc5e22b779e10b9">MAX_OIDC_NUM_CLIENT_IDS</a>) {</div>
+<div class="line"><span class="lineno">  153</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: Invalid number of client ids &quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  155</span>  }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2a34cc4cf85281aee33fedfaab32354b">client_ids</a>) {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (it.length() &gt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a1c4965a1f2d6c9b675f8e9c2b7b77c15">MAX_OIDC_CLIENT_ID_LEN</a>) {</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="line"><span class="lineno">  161</span>  }</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>.size() &gt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a92bf976776a399254c2415d714dca0dd">MAX_OIDC_NUM_THUMBPRINTS</a>) {</div>
+<div class="line"><span class="lineno">  164</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: Invalid number of thumbprints &quot;</span> &lt;&lt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>.size() &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a5df74a3dccc8c1398264ca092bdfcf1a">thumbprints</a>) {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">if</span> (it.length() &gt; <a class="code hl_variable" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a1b0414f8f4cd1c1bf800a1ab8606883b">MAX_OIDC_THUMBPRINT_LEN</a>) {</div>
+<div class="line"><span class="lineno">  170</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span>  }</div>
+<div class="line"><span class="lineno">  173</span>  </div>
+<div class="line"><span class="lineno">  174</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  175</span>}</div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a1b0414f8f4cd1c1bf800a1ab8606883b"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a1b0414f8f4cd1c1bf800a1ab8606883b">rgw::sal::RGWOIDCProvider::MAX_OIDC_THUMBPRINT_LEN</a></div><div class="ttdeci">static constexpr int MAX_OIDC_THUMBPRINT_LEN</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00024">rgw_oidc_provider.h:24</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a1c4965a1f2d6c9b675f8e9c2b7b77c15"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a1c4965a1f2d6c9b675f8e9c2b7b77c15">rgw::sal::RGWOIDCProvider::MAX_OIDC_CLIENT_ID_LEN</a></div><div class="ttdeci">static constexpr int MAX_OIDC_CLIENT_ID_LEN</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00022">rgw_oidc_provider.h:22</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a2575fb4cef4efd823bc5e22b779e10b9"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a2575fb4cef4efd823bc5e22b779e10b9">rgw::sal::RGWOIDCProvider::MAX_OIDC_NUM_CLIENT_IDS</a></div><div class="ttdeci">static constexpr int MAX_OIDC_NUM_CLIENT_IDS</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00021">rgw_oidc_provider.h:21</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a8c5825364e7a2bafb224706e1fc61ca5"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a8c5825364e7a2bafb224706e1fc61ca5">rgw::sal::RGWOIDCProvider::MAX_OIDC_URL_LEN</a></div><div class="ttdeci">static constexpr int MAX_OIDC_URL_LEN</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00025">rgw_oidc_provider.h:25</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_html_a92bf976776a399254c2415d714dca0dd"><div class="ttname"><a href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a92bf976776a399254c2415d714dca0dd">rgw::sal::RGWOIDCProvider::MAX_OIDC_NUM_THUMBPRINTS</a></div><div class="ttdeci">static constexpr int MAX_OIDC_NUM_THUMBPRINTS</div><div class="ttdef"><b>Definition</b> <a href="rgw__oidc__provider_8h_source.html#l00023">rgw_oidc_provider.h:23</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_cgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_cgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,189,48"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="237,13,279,40"/>
+<area shape="poly" title=" " alt="" coords="189,24,221,24,221,29,189,29"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_icgraph.png" border="0" usemap="#aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_icgraph" id="aclassrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider_a03bd2f978dcb8a5a4f041ada9c9b4ab4_icgraph">
+<area shape="rect" title=" " alt="" coords="237,5,420,48"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html#a6fb79d7209f09da7d34b6ae28bbc324b" title=" " alt="" coords="5,5,189,48"/>
+<area shape="poly" title=" " alt="" coords="221,29,189,29,189,24,221,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="ac74782f9da72f5c59f52a1e560d49f72" name="ac74782f9da72f5c59f52a1e560d49f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac74782f9da72f5c59f52a1e560d49f72">&#9670;&#160;</a></span>arn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::sal::RGWOIDCProvider::arn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00030">30</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a2a34cc4cf85281aee33fedfaab32354b" name="a2a34cc4cf85281aee33fedfaab32354b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a34cc4cf85281aee33fedfaab32354b">&#9670;&#160;</a></span>client_ids</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; rgw::sal::RGWOIDCProvider::client_ids</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00033">33</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a22f8799af3919bfddeb626d927533cb9" name="a22f8799af3919bfddeb626d927533cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f8799af3919bfddeb626d927533cb9">&#9670;&#160;</a></span>creation_date</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::sal::RGWOIDCProvider::creation_date</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00031">31</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="accdf22b97e800be4273710051ef09e05" name="accdf22b97e800be4273710051ef09e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accdf22b97e800be4273710051ef09e05">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::sal::RGWOIDCProvider::id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00028">28</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1c4965a1f2d6c9b675f8e9c2b7b77c15" name="a1c4965a1f2d6c9b675f8e9c2b7b77c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c4965a1f2d6c9b675f8e9c2b7b77c15">&#9670;&#160;</a></span>MAX_OIDC_CLIENT_ID_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int rgw::sal::RGWOIDCProvider::MAX_OIDC_CLIENT_ID_LEN = 255</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00022">22</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a2575fb4cef4efd823bc5e22b779e10b9" name="a2575fb4cef4efd823bc5e22b779e10b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2575fb4cef4efd823bc5e22b779e10b9">&#9670;&#160;</a></span>MAX_OIDC_NUM_CLIENT_IDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int rgw::sal::RGWOIDCProvider::MAX_OIDC_NUM_CLIENT_IDS = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00021">21</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a92bf976776a399254c2415d714dca0dd" name="a92bf976776a399254c2415d714dca0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92bf976776a399254c2415d714dca0dd">&#9670;&#160;</a></span>MAX_OIDC_NUM_THUMBPRINTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int rgw::sal::RGWOIDCProvider::MAX_OIDC_NUM_THUMBPRINTS = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00023">23</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1b0414f8f4cd1c1bf800a1ab8606883b" name="a1b0414f8f4cd1c1bf800a1ab8606883b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b0414f8f4cd1c1bf800a1ab8606883b">&#9670;&#160;</a></span>MAX_OIDC_THUMBPRINT_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int rgw::sal::RGWOIDCProvider::MAX_OIDC_THUMBPRINT_LEN = 40</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00024">24</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8c5825364e7a2bafb224706e1fc61ca5" name="a8c5825364e7a2bafb224706e1fc61ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c5825364e7a2bafb224706e1fc61ca5">&#9670;&#160;</a></span>MAX_OIDC_URL_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int rgw::sal::RGWOIDCProvider::MAX_OIDC_URL_LEN = 255</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00025">25</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a80970191e506584d68acbb8eea51e492" name="a80970191e506584d68acbb8eea51e492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80970191e506584d68acbb8eea51e492">&#9670;&#160;</a></span>oidc_arn_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string rgw::sal::RGWOIDCProvider::oidc_arn_prefix = &quot;arn:aws:iam::&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00020">20</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a19b8a0dafdaca5f190afe53d7d25d9d1" name="a19b8a0dafdaca5f190afe53d7d25d9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19b8a0dafdaca5f190afe53d7d25d9d1">&#9670;&#160;</a></span>oidc_url_oid_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string rgw::sal::RGWOIDCProvider::oidc_url_oid_prefix = &quot;oidc_url.&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00019">19</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a2dd1d59efdb9c2bb769cbc63646a3f1c" name="a2dd1d59efdb9c2bb769cbc63646a3f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd1d59efdb9c2bb769cbc63646a3f1c">&#9670;&#160;</a></span>provider_url</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::sal::RGWOIDCProvider::provider_url</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00029">29</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a061ecdf8cb584c0953f18b511da956d5" name="a061ecdf8cb584c0953f18b511da956d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a061ecdf8cb584c0953f18b511da956d5">&#9670;&#160;</a></span>tenant</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string rgw::sal::RGWOIDCProvider::tenant</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00032">32</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5df74a3dccc8c1398264ca092bdfcf1a" name="a5df74a3dccc8c1398264ca092bdfcf1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df74a3dccc8c1398264ca092bdfcf1a">&#9670;&#160;</a></span>thumbprints</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; rgw::sal::RGWOIDCProvider::thumbprints</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a> 파일의 <a class="el" href="rgw__oidc__provider_8h_source.html#l00034">34</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__oidc__provider_8h_source.html">rgw_oidc_provider.h</a></li>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__oidc__provider_8cc_source.html">rgw_oidc_provider.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1sal.html">sal</a></li><li class="navelem"><a class="el" href="classrgw_1_1sal_1_1_r_g_w_o_i_d_c_provider.html">RGWOIDCProvider</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

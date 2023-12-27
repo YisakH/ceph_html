@@ -1,0 +1,36 @@
+var classrgw_1_1auth_1_1_principal =
+[
+    [ "types", "classrgw_1_1auth_1_1_principal.html#a7d682a325377b87afc810e0515809b4c", [
+      [ "User", "classrgw_1_1auth_1_1_principal.html#a7d682a325377b87afc810e0515809b4cacc08703df83eff8ed072fda97abb46f3", null ],
+      [ "Role", "classrgw_1_1auth_1_1_principal.html#a7d682a325377b87afc810e0515809b4cad29714d81932dbf3de7c233eb8045098", null ],
+      [ "Tenant", "classrgw_1_1auth_1_1_principal.html#a7d682a325377b87afc810e0515809b4ca6cf89e0564f513579df3eb855ed98969", null ],
+      [ "Wildcard", "classrgw_1_1auth_1_1_principal.html#a7d682a325377b87afc810e0515809b4ca6b83b1d594c16405685d63fb52aa7a12", null ],
+      [ "OidcProvider", "classrgw_1_1auth_1_1_principal.html#a7d682a325377b87afc810e0515809b4cabebb5713796aeef48e2b835d2cd14f41", null ],
+      [ "AssumedRole", "classrgw_1_1auth_1_1_principal.html#a7d682a325377b87afc810e0515809b4cae3f75dd042c4a29484be200168af6221", null ]
+    ] ],
+    [ "Principal", "classrgw_1_1auth_1_1_principal.html#a359cef744c00f743178548ebd9f14af9", null ],
+    [ "Principal", "classrgw_1_1auth_1_1_principal.html#a6636bae50af0d84736521661664c5c9e", null ],
+    [ "Principal", "classrgw_1_1auth_1_1_principal.html#ad46634c21e2f5f1690854459cac365d4", null ],
+    [ "assumed_role", "classrgw_1_1auth_1_1_principal.html#a40dd4e65d80b2380909c15e4108887e9", null ],
+    [ "get_id", "classrgw_1_1auth_1_1_principal.html#ad1342bb8f5b874be323999e28bcf12fe", null ],
+    [ "get_idp_url", "classrgw_1_1auth_1_1_principal.html#a9cea34bfb19978e77bd5151dcaa715ff", null ],
+    [ "get_role", "classrgw_1_1auth_1_1_principal.html#a0f45361056c2f4ccc0d0bfb90175a516", null ],
+    [ "get_role_session", "classrgw_1_1auth_1_1_principal.html#a9ea6b95fc3afe30050efb991d4084f0b", null ],
+    [ "get_tenant", "classrgw_1_1auth_1_1_principal.html#a0a249d3f0b34ed0a3a708231884cd0b8", null ],
+    [ "is_assumed_role", "classrgw_1_1auth_1_1_principal.html#a452dba57eb05d8601099c8de204b425b", null ],
+    [ "is_oidc_provider", "classrgw_1_1auth_1_1_principal.html#a5bff0fc53df2a3921debf3ca2282bd8a", null ],
+    [ "is_role", "classrgw_1_1auth_1_1_principal.html#a6bc00af9e4d3d83810422d1e329bfac1", null ],
+    [ "is_tenant", "classrgw_1_1auth_1_1_principal.html#af4f1b6e3405c08e058855ae82677bcba", null ],
+    [ "is_user", "classrgw_1_1auth_1_1_principal.html#aafa706c46692a2247de72a8f0d60a65e", null ],
+    [ "is_wildcard", "classrgw_1_1auth_1_1_principal.html#a0e0a2cf63f16c483bd540dde9f113693", null ],
+    [ "oidc_provider", "classrgw_1_1auth_1_1_principal.html#a23390ee0d61e2fb66b66d39c7de74b6d", null ],
+    [ "operator<", "classrgw_1_1auth_1_1_principal.html#a38e2a4554753bb1c25dcedaaa2e5beb3", null ],
+    [ "operator==", "classrgw_1_1auth_1_1_principal.html#ad80567b3c07047a518371d75e8ec373a", null ],
+    [ "role", "classrgw_1_1auth_1_1_principal.html#a2d95372d9ca92b72aaaa958c5af01c72", null ],
+    [ "tenant", "classrgw_1_1auth_1_1_principal.html#a03b8d372b7fc1373927ff898eb343b72", null ],
+    [ "user", "classrgw_1_1auth_1_1_principal.html#a124dbb02c61ec285843577d9ca886594", null ],
+    [ "wildcard", "classrgw_1_1auth_1_1_principal.html#aafd95e97ad90b72d6b49ad2eb6d7d7c9", null ],
+    [ "idp_url", "classrgw_1_1auth_1_1_principal.html#adc02ce74ff60074033bd62e19e05413d", null ],
+    [ "t", "classrgw_1_1auth_1_1_principal.html#a5a83d9ccecd1c2904d35a23b4ebc345a", null ],
+    [ "u", "classrgw_1_1auth_1_1_principal.html#ab9d9963c4ca17967d8766e148fb275e5", null ]
+];

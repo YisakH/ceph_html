@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_meta_sync_status.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__meta__sync__status_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_meta_sync_status.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__meta__sync__status_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef RGW_META_SYNC_STATUS_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define RGW_META_SYNC_STATUS_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;common/ceph_time.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__meta__sync__info.html">rgw_meta_sync_info</a> {</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8">   12</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8">SyncState</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8a553431dd3492ee6bce48c25cc37f0971">   13</a></span>    <a class="code hl_enumvalue" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8a553431dd3492ee6bce48c25cc37f0971">StateInit</a> = 0,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8a2d2ec081ab409d32ab805d82e3490852">   14</a></span>    <a class="code hl_enumvalue" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8a2d2ec081ab409d32ab805d82e3490852">StateBuildingFullSyncMaps</a> = 1,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8aac4bfe7f6c7ccc7708aeebf977a54b54">   15</a></span>    <a class="code hl_enumvalue" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8aac4bfe7f6c7ccc7708aeebf977a54b54">StateSync</a> = 2,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  };</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a64dede94f4bcc794b705e62b6a6958db">   18</a></span>  uint16_t <a class="code hl_variable" href="structrgw__meta__sync__info.html#a64dede94f4bcc794b705e62b6a6958db">state</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#ad374907b7ca2895d855766b71775107c">   19</a></span>  uint32_t <a class="code hl_variable" href="structrgw__meta__sync__info.html#ad374907b7ca2895d855766b71775107c">num_shards</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">   20</a></span>  std::string <a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a>; <span class="comment">//&lt; period id of current metadata log</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">   21</a></span>  epoch_t <a class="code hl_variable" href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">realm_epoch</a> = 0; <span class="comment">//&lt; realm epoch of period</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a7530eadf7d84fbb9ddf8a0410f9396d3">   23</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__info.html#a7530eadf7d84fbb9ddf8a0410f9396d3">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    ENCODE_START(2, 1, bl);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="structrgw__meta__sync__info.html#a7530eadf7d84fbb9ddf8a0410f9396d3">encode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#a64dede94f4bcc794b705e62b6a6958db">state</a>, bl);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="structrgw__meta__sync__info.html#a7530eadf7d84fbb9ddf8a0410f9396d3">encode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#ad374907b7ca2895d855766b71775107c">num_shards</a>, bl);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="structrgw__meta__sync__info.html#a7530eadf7d84fbb9ddf8a0410f9396d3">encode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a>, bl);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="structrgw__meta__sync__info.html#a7530eadf7d84fbb9ddf8a0410f9396d3">encode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">realm_epoch</a>, bl);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a636d075cd8bca382af0481c2b638636d">   32</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__info.html#a636d075cd8bca382af0481c2b638636d">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="structrgw__meta__sync__info.html#a636d075cd8bca382af0481c2b638636d">decode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#a64dede94f4bcc794b705e62b6a6958db">state</a>, bl);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="structrgw__meta__sync__info.html#a636d075cd8bca382af0481c2b638636d">decode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#ad374907b7ca2895d855766b71775107c">num_shards</a>, bl);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (struct_v &gt;= 2) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <a class="code hl_function" href="structrgw__meta__sync__info.html#a636d075cd8bca382af0481c2b638636d">decode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">period</a>, bl);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <a class="code hl_function" href="structrgw__meta__sync__info.html#a636d075cd8bca382af0481c2b638636d">decode</a>(<a class="code hl_variable" href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">realm_epoch</a>, bl);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__info.html#ad0ec9c034fe03f8f0df25522b2df2f9d">decode_json</a>(JSONObj *obj);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__info.html#aa70980e6fc2bc13882e67251f3a0684e">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__info.html#a5a2bd619eadf36ea536e3ef19447778b">generate_test_instances</a>(std::list&lt;rgw_meta_sync_info*&gt;&amp; ls);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__info.html#a3cdcc1eb92c9cfa6dc48302ff74836b1">   47</a></span>  <a class="code hl_function" href="structrgw__meta__sync__info.html#a3cdcc1eb92c9cfa6dc48302ff74836b1">rgw_meta_sync_info</a>() : <a class="code hl_variable" href="structrgw__meta__sync__info.html#a64dede94f4bcc794b705e62b6a6958db">state</a>((int)<a class="code hl_enumvalue" href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8a553431dd3492ee6bce48c25cc37f0971">StateInit</a>), <a class="code hl_variable" href="structrgw__meta__sync__info.html#ad374907b7ca2895d855766b71775107c">num_shards</a>(0) {}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="structrgw__meta__sync__info.html">rgw_meta_sync_info</a>)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html">   51</a></span>struct <a class="code hl_struct" href="structrgw__meta__sync__marker.html">rgw_meta_sync_marker</a> {</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#a4ef54e8775f35240a47a40f5661ec9f4">   52</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="structrgw__meta__sync__marker.html#a4ef54e8775f35240a47a40f5661ec9f4">SyncState</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#a4ef54e8775f35240a47a40f5661ec9f4a8c66af4c8c288fbeb9218bc541d8f3a4">   53</a></span>    FullSync = 0,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#a4ef54e8775f35240a47a40f5661ec9f4a1686b75ebab3e59399660bd8ce415272">   54</a></span>    IncrementalSync = 1,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  };</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#a942658b5cd86e38b8deb954fc80c1361">   56</a></span>  uint16_t <a class="code hl_variable" href="structrgw__meta__sync__marker.html#a942658b5cd86e38b8deb954fc80c1361">state</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#af8e2d897e1d27a9423385ffee3b1d8e4">   57</a></span>  std::string <a class="code hl_variable" href="structrgw__meta__sync__marker.html#af8e2d897e1d27a9423385ffee3b1d8e4">marker</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#a3bbf34ccdcb4a81e2a7a7d38540ba2cd">   58</a></span>  std::string <a class="code hl_variable" href="structrgw__meta__sync__marker.html#a3bbf34ccdcb4a81e2a7a7d38540ba2cd">next_step_marker</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#ad658b68c90327f9a4babb507e083f4b5">   59</a></span>  uint64_t <a class="code hl_variable" href="structrgw__meta__sync__marker.html#ad658b68c90327f9a4babb507e083f4b5">total_entries</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#ae2f077ab77e4a1f042334fd8f9a53ad2">   60</a></span>  uint64_t <a class="code hl_variable" href="structrgw__meta__sync__marker.html#ae2f077ab77e4a1f042334fd8f9a53ad2">pos</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#ae82c4a72576bab2916a5f72b75b39150">   61</a></span>  real_time <a class="code hl_variable" href="structrgw__meta__sync__marker.html#ae82c4a72576bab2916a5f72b75b39150">timestamp</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#afc25a5bda3be98eeb66cf4a4a013ff3b">   62</a></span>  epoch_t realm_epoch{0}; <span class="comment">//&lt; realm_epoch of period marker</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#ad48106d632ab86b0a1a239e565fc3935">   64</a></span>  <a class="code hl_function" href="structrgw__meta__sync__marker.html#ad48106d632ab86b0a1a239e565fc3935">rgw_meta_sync_marker</a>() : state(FullSync), total_entries(0), pos(0) {}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#aad92773436b78d5ddef998e2e39098e0">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__marker.html#aad92773436b78d5ddef998e2e39098e0">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    ENCODE_START(2, 1, bl);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(state, bl);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(marker, bl);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(next_step_marker, bl);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(total_entries, bl);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(pos, bl);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(timestamp, bl);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(realm_epoch, bl);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  }</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__marker.html#ab7925e0a21527fe0edc483682c673dc0">   78</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__marker.html#ab7925e0a21527fe0edc483682c673dc0">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    DECODE_START(2, bl);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(state, bl);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(marker, bl);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(next_step_marker, bl);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(total_entries, bl);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(pos, bl);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(timestamp, bl);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (struct_v &gt;= 2) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(realm_epoch, bl);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> decode_json(JSONObj *obj);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> generate_test_instances(std::list&lt;rgw_meta_sync_marker*&gt;&amp; ls);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>};</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="structrgw__meta__sync__marker.html">rgw_meta_sync_marker</a>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="};">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__status.html">   98</a></span>struct <a class="code hl_struct" href="structrgw__meta__sync__status.html">rgw_meta_sync_status</a> {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__status.html#a3cb7e80cb17e925f42b67c5ed5e14571">   99</a></span>  <a class="code hl_struct" href="structrgw__meta__sync__info.html">rgw_meta_sync_info</a> <a class="code hl_variable" href="structrgw__meta__sync__status.html#a3cb7e80cb17e925f42b67c5ed5e14571">sync_info</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__status.html#aea62653b347f0c287c11bf14d362d752">  100</a></span>  std::map&lt;uint32_t, rgw_meta_sync_marker&gt; <a class="code hl_variable" href="structrgw__meta__sync__status.html#aea62653b347f0c287c11bf14d362d752">sync_markers</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__status.html#a5557956ab6f0cf774dd1a3674c936e11">  102</a></span>  <a class="code hl_function" href="structrgw__meta__sync__status.html#a5557956ab6f0cf774dd1a3674c936e11">rgw_meta_sync_status</a>() {}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__status.html#a551759a5fb384fcd3bd5ebb02844d3a0">  104</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__status.html#a551759a5fb384fcd3bd5ebb02844d3a0">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(<a class="code hl_function" href="rgw__admin_8cc.html#abfa871472fdef30cd489d5795df05b4d">sync_info</a>, bl);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(sync_markers, bl);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structrgw__meta__sync__status.html#ad88c1542f334a6deaabcf2cec315e335">  111</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw__meta__sync__status.html#ad88c1542f334a6deaabcf2cec315e335">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>     DECODE_START(1, bl);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>     <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(<a class="code hl_function" href="rgw__admin_8cc.html#abfa871472fdef30cd489d5795df05b4d">sync_info</a>, bl);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>     <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(sync_markers, bl);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>     DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span> decode_json(JSONObj *obj);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> generate_test_instances(std::list&lt;rgw_meta_sync_status*&gt;&amp; ls);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>};</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="structrgw__meta__sync__status.html">rgw_meta_sync_status</a>)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="argw__admin_8cc_html_abfa871472fdef30cd489d5795df05b4d"><div class="ttname"><a href="rgw__admin_8cc.html#abfa871472fdef30cd489d5795df05b4d">sync_info</a></div><div class="ttdeci">static int sync_info(std::optional&lt; rgw_zone_id &gt; opt_target_zone, std::optional&lt; rgw_bucket &gt; opt_bucket, Formatter *formatter)</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l02618">rgw_admin.cc:2618</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a8eac2e87b3dc3f857f25414b0dc742e6"><div class="ttname"><a href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a></div><div class="ttdeci">void dump(struct req_state *s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00360">rgw_common.cc:360</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc46efdde31cf790f3b383cb9e6f198e"><div class="ttname"><a href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a></div><div class="ttdeci">void decode(log_type &amp;type, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00049">rgw_log_backing.h:49</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc91400029fb575818b2a0ccf89e7928"><div class="ttname"><a href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a></div><div class="ttdeci">void encode(const log_type &amp;type, ceph::buffer::list &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00044">rgw_log_backing.h:44</a></div></div>
+<div class="ttc" id="argw__trim__bilog_8cc_html_ab76037c8d5c69ab3ecb59d45e42eddbc"><div class="ttname"><a href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a></div><div class="ttdeci">WRITE_CLASS_ENCODER(TrimCounters::BucketCounter)</div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html"><div class="ttname"><a href="structrgw__meta__sync__info.html">rgw_meta_sync_info</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00011">rgw_meta_sync_status.h:11</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a3cdcc1eb92c9cfa6dc48302ff74836b1"><div class="ttname"><a href="structrgw__meta__sync__info.html#a3cdcc1eb92c9cfa6dc48302ff74836b1">rgw_meta_sync_info::rgw_meta_sync_info</a></div><div class="ttdeci">rgw_meta_sync_info()</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00047">rgw_meta_sync_status.h:47</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a550876307fd125825921e43e06b829a8"><div class="ttname"><a href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8">rgw_meta_sync_info::SyncState</a></div><div class="ttdeci">SyncState</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00012">rgw_meta_sync_status.h:12</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a550876307fd125825921e43e06b829a8a2d2ec081ab409d32ab805d82e3490852"><div class="ttname"><a href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8a2d2ec081ab409d32ab805d82e3490852">rgw_meta_sync_info::StateBuildingFullSyncMaps</a></div><div class="ttdeci">@ StateBuildingFullSyncMaps</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00014">rgw_meta_sync_status.h:14</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a550876307fd125825921e43e06b829a8a553431dd3492ee6bce48c25cc37f0971"><div class="ttname"><a href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8a553431dd3492ee6bce48c25cc37f0971">rgw_meta_sync_info::StateInit</a></div><div class="ttdeci">@ StateInit</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00013">rgw_meta_sync_status.h:13</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a550876307fd125825921e43e06b829a8aac4bfe7f6c7ccc7708aeebf977a54b54"><div class="ttname"><a href="structrgw__meta__sync__info.html#a550876307fd125825921e43e06b829a8aac4bfe7f6c7ccc7708aeebf977a54b54">rgw_meta_sync_info::StateSync</a></div><div class="ttdeci">@ StateSync</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00015">rgw_meta_sync_status.h:15</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a5a2bd619eadf36ea536e3ef19447778b"><div class="ttname"><a href="structrgw__meta__sync__info.html#a5a2bd619eadf36ea536e3ef19447778b">rgw_meta_sync_info::generate_test_instances</a></div><div class="ttdeci">static void generate_test_instances(std::list&lt; rgw_meta_sync_info * &gt; &amp;ls)</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8cc_source.html#l02428">rgw_zone.cc:2428</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a636d075cd8bca382af0481c2b638636d"><div class="ttname"><a href="structrgw__meta__sync__info.html#a636d075cd8bca382af0481c2b638636d">rgw_meta_sync_info::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00032">rgw_meta_sync_status.h:32</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a64dede94f4bcc794b705e62b6a6958db"><div class="ttname"><a href="structrgw__meta__sync__info.html#a64dede94f4bcc794b705e62b6a6958db">rgw_meta_sync_info::state</a></div><div class="ttdeci">uint16_t state</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00018">rgw_meta_sync_status.h:18</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a740e3e13fe7e6a9c99c8863a492831c3"><div class="ttname"><a href="structrgw__meta__sync__info.html#a740e3e13fe7e6a9c99c8863a492831c3">rgw_meta_sync_info::realm_epoch</a></div><div class="ttdeci">epoch_t realm_epoch</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00021">rgw_meta_sync_status.h:21</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_a7530eadf7d84fbb9ddf8a0410f9396d3"><div class="ttname"><a href="structrgw__meta__sync__info.html#a7530eadf7d84fbb9ddf8a0410f9396d3">rgw_meta_sync_info::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00023">rgw_meta_sync_status.h:23</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_aa70980e6fc2bc13882e67251f3a0684e"><div class="ttname"><a href="structrgw__meta__sync__info.html#aa70980e6fc2bc13882e67251f3a0684e">rgw_meta_sync_info::dump</a></div><div class="ttdeci">void dump(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync_8cc_source.html#l02508">rgw_sync.cc:2508</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_ad0ec9c034fe03f8f0df25522b2df2f9d"><div class="ttname"><a href="structrgw__meta__sync__info.html#ad0ec9c034fe03f8f0df25522b2df2f9d">rgw_meta_sync_info::decode_json</a></div><div class="ttdeci">void decode_json(JSONObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync_8cc_source.html#l02492">rgw_sync.cc:2492</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_ad374907b7ca2895d855766b71775107c"><div class="ttname"><a href="structrgw__meta__sync__info.html#ad374907b7ca2895d855766b71775107c">rgw_meta_sync_info::num_shards</a></div><div class="ttdeci">uint32_t num_shards</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00019">rgw_meta_sync_status.h:19</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__info_html_adb7d2ff8e42f94b4ffa82f8d0b6c7c03"><div class="ttname"><a href="structrgw__meta__sync__info.html#adb7d2ff8e42f94b4ffa82f8d0b6c7c03">rgw_meta_sync_info::period</a></div><div class="ttdeci">std::string period</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00020">rgw_meta_sync_status.h:20</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html"><div class="ttname"><a href="structrgw__meta__sync__marker.html">rgw_meta_sync_marker</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00051">rgw_meta_sync_status.h:51</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_a3bbf34ccdcb4a81e2a7a7d38540ba2cd"><div class="ttname"><a href="structrgw__meta__sync__marker.html#a3bbf34ccdcb4a81e2a7a7d38540ba2cd">rgw_meta_sync_marker::next_step_marker</a></div><div class="ttdeci">std::string next_step_marker</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00058">rgw_meta_sync_status.h:58</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_a4ef54e8775f35240a47a40f5661ec9f4"><div class="ttname"><a href="structrgw__meta__sync__marker.html#a4ef54e8775f35240a47a40f5661ec9f4">rgw_meta_sync_marker::SyncState</a></div><div class="ttdeci">SyncState</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00052">rgw_meta_sync_status.h:52</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_a942658b5cd86e38b8deb954fc80c1361"><div class="ttname"><a href="structrgw__meta__sync__marker.html#a942658b5cd86e38b8deb954fc80c1361">rgw_meta_sync_marker::state</a></div><div class="ttdeci">uint16_t state</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00056">rgw_meta_sync_status.h:56</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_aad92773436b78d5ddef998e2e39098e0"><div class="ttname"><a href="structrgw__meta__sync__marker.html#aad92773436b78d5ddef998e2e39098e0">rgw_meta_sync_marker::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00066">rgw_meta_sync_status.h:66</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_ab7925e0a21527fe0edc483682c673dc0"><div class="ttname"><a href="structrgw__meta__sync__marker.html#ab7925e0a21527fe0edc483682c673dc0">rgw_meta_sync_marker::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00078">rgw_meta_sync_status.h:78</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_ad48106d632ab86b0a1a239e565fc3935"><div class="ttname"><a href="structrgw__meta__sync__marker.html#ad48106d632ab86b0a1a239e565fc3935">rgw_meta_sync_marker::rgw_meta_sync_marker</a></div><div class="ttdeci">rgw_meta_sync_marker()</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00064">rgw_meta_sync_status.h:64</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_ad658b68c90327f9a4babb507e083f4b5"><div class="ttname"><a href="structrgw__meta__sync__marker.html#ad658b68c90327f9a4babb507e083f4b5">rgw_meta_sync_marker::total_entries</a></div><div class="ttdeci">uint64_t total_entries</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00059">rgw_meta_sync_status.h:59</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_ae2f077ab77e4a1f042334fd8f9a53ad2"><div class="ttname"><a href="structrgw__meta__sync__marker.html#ae2f077ab77e4a1f042334fd8f9a53ad2">rgw_meta_sync_marker::pos</a></div><div class="ttdeci">uint64_t pos</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00060">rgw_meta_sync_status.h:60</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_ae82c4a72576bab2916a5f72b75b39150"><div class="ttname"><a href="structrgw__meta__sync__marker.html#ae82c4a72576bab2916a5f72b75b39150">rgw_meta_sync_marker::timestamp</a></div><div class="ttdeci">real_time timestamp</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00061">rgw_meta_sync_status.h:61</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__marker_html_af8e2d897e1d27a9423385ffee3b1d8e4"><div class="ttname"><a href="structrgw__meta__sync__marker.html#af8e2d897e1d27a9423385ffee3b1d8e4">rgw_meta_sync_marker::marker</a></div><div class="ttdeci">std::string marker</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00057">rgw_meta_sync_status.h:57</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__status_html"><div class="ttname"><a href="structrgw__meta__sync__status.html">rgw_meta_sync_status</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00098">rgw_meta_sync_status.h:98</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__status_html_a3cb7e80cb17e925f42b67c5ed5e14571"><div class="ttname"><a href="structrgw__meta__sync__status.html#a3cb7e80cb17e925f42b67c5ed5e14571">rgw_meta_sync_status::sync_info</a></div><div class="ttdeci">rgw_meta_sync_info sync_info</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00099">rgw_meta_sync_status.h:99</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__status_html_a551759a5fb384fcd3bd5ebb02844d3a0"><div class="ttname"><a href="structrgw__meta__sync__status.html#a551759a5fb384fcd3bd5ebb02844d3a0">rgw_meta_sync_status::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00104">rgw_meta_sync_status.h:104</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__status_html_a5557956ab6f0cf774dd1a3674c936e11"><div class="ttname"><a href="structrgw__meta__sync__status.html#a5557956ab6f0cf774dd1a3674c936e11">rgw_meta_sync_status::rgw_meta_sync_status</a></div><div class="ttdeci">rgw_meta_sync_status()</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00102">rgw_meta_sync_status.h:102</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__status_html_ad88c1542f334a6deaabcf2cec315e335"><div class="ttname"><a href="structrgw__meta__sync__status.html#ad88c1542f334a6deaabcf2cec315e335">rgw_meta_sync_status::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00111">rgw_meta_sync_status.h:111</a></div></div>
+<div class="ttc" id="astructrgw__meta__sync__status_html_aea62653b347f0c287c11bf14d362d752"><div class="ttname"><a href="structrgw__meta__sync__status.html#aea62653b347f0c287c11bf14d362d752">rgw_meta_sync_status::sync_markers</a></div><div class="ttdeci">std::map&lt; uint32_t, rgw_meta_sync_marker &gt; sync_markers</div><div class="ttdef"><b>Definition</b> <a href="rgw__meta__sync__status_8h_source.html#l00100">rgw_meta_sync_status.h:100</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__meta__sync__status_8h.html">rgw_meta_sync_status.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

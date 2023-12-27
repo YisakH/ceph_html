@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_kmip_client.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__kmip__client_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_kmip_client.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__kmip__client_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;common/Thread.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;include/compat.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;common/errno.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__common_8h.html">rgw_common.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__kmip__client_8h.html">rgw_kmip_client.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="rgw__kmip__client_8cc.html#ac9f1b8ed4aca7999d392b2d432030e30">   12</a></span><span class="preprocessor">#define dout_context g_ceph_context</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="rgw__kmip__client_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   13</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">   15</a></span><a class="code hl_class" href="class_r_g_w_k_m_i_p_manager.html">RGWKMIPManager</a> *<a class="code hl_variable" href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">rgw_kmip_manager</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_r_g_w_k_m_i_p_transceiver.html#a9d616cd520b4b04a7673476f5d23d83b">   18</a></span><a class="code hl_function" href="class_r_g_w_k_m_i_p_transceiver.html#a9d616cd520b4b04a7673476f5d23d83b">RGWKMIPTransceiver::wait</a>(optional_yield y)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a8b819356c710008e45f2bdf399cf3ab2">done</a>)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a08f233d603bef91bc6cae83d3b91ce8f">ret</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::unique_lock l{<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a88221eb90ab550d166ff3fa7b79b2b1b">lock</a>};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a8b819356c710008e45f2bdf399cf3ab2">done</a>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a2b264bc5b478e32c5071ae4fcfffd414">cond</a>.wait(l);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a08f233d603bef91bc6cae83d3b91ce8f">ret</a>) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    lderr(<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a3e2c0dd0da7196131c460bde566863ef">cct</a>) &lt;&lt; <span class="stringliteral">&quot;kmip process failed, &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a08f233d603bef91bc6cae83d3b91ce8f">ret</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a08f233d603bef91bc6cae83d3b91ce8f">ret</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">int</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_r_g_w_k_m_i_p_transceiver.html#aa11589d791eacfbc44e22e3c77403e00">   32</a></span><a class="code hl_function" href="class_r_g_w_k_m_i_p_transceiver.html#aa11589d791eacfbc44e22e3c77403e00">RGWKMIPTransceiver::send</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">rgw_kmip_manager</a>-&gt;<a class="code hl_function" href="class_r_g_w_k_m_i_p_manager.html#a96534b6006ce7a3d52958c113685dc63">add_request</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    lderr(<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a3e2c0dd0da7196131c460bde566863ef">cct</a>) &lt;&lt; <span class="stringliteral">&quot;kmip send failed, &quot;</span> &lt;&lt; <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">int</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_r_g_w_k_m_i_p_transceiver.html#af2edb8523bef2f3b6c4ee04b8cb0b0d3">   42</a></span><a class="code hl_function" href="class_r_g_w_k_m_i_p_transceiver.html#af2edb8523bef2f3b6c4ee04b8cb0b0d3">RGWKMIPTransceiver::process</a>(optional_yield y)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_function" href="class_r_g_w_k_m_i_p_transceiver.html#aa11589d791eacfbc44e22e3c77403e00">send</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_r_g_w_k_m_i_p_transceiver.html#a9d616cd520b4b04a7673476f5d23d83b">wait</a>(y);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_r_g_w_k_m_i_p_transceiver.html#a1895dada2d6a26e611ca281221f9e766">   50</a></span><a class="code hl_function" href="class_r_g_w_k_m_i_p_transceiver.html#a1895dada2d6a26e611ca281221f9e766">RGWKMIPTransceiver::~RGWKMIPTransceiver</a>()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a29d6d24d74621aa73fa30e606b104580">out</a>)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    free(<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a29d6d24d74621aa73fa30e606b104580">out</a>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a29d6d24d74621aa73fa30e606b104580">out</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a95356a9789cfd39724b972f54d0d9dcc">outlist</a>-&gt;strings) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a95356a9789cfd39724b972f54d0d9dcc">outlist</a>-&gt;string_count; ++i) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      free(<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a95356a9789cfd39724b972f54d0d9dcc">outlist</a>-&gt;strings[i]);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    free(<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a95356a9789cfd39724b972f54d0d9dcc">outlist</a>-&gt;strings);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#a95356a9789cfd39724b972f54d0d9dcc">outlist</a>-&gt;strings = 0;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#adcb2f3ac14443528fd08a703d2d2302b">outkey</a>-&gt;data) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    ::ceph::crypto::zeroize_for_security(<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#adcb2f3ac14443528fd08a703d2d2302b">outkey</a>-&gt;data, <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#adcb2f3ac14443528fd08a703d2d2302b">outkey</a>-&gt;keylen);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    free(<a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#adcb2f3ac14443528fd08a703d2d2302b">outkey</a>-&gt;data);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_variable" href="class_r_g_w_k_m_i_p_transceiver.html#adcb2f3ac14443528fd08a703d2d2302b">outkey</a>-&gt;data = 0;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="rgw__kmip__client_8cc.html#ac376b28ccbc3986f4ecadb5468dfc137">   71</a></span><a class="code hl_function" href="rgw__kmip__client_8cc.html#ac376b28ccbc3986f4ecadb5468dfc137">rgw_kmip_client_init</a>(<a class="code hl_class" href="class_r_g_w_k_m_i_p_manager.html">RGWKMIPManager</a> &amp;m)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_variable" href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">rgw_kmip_manager</a> = &amp;m;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_variable" href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">rgw_kmip_manager</a>-&gt;<a class="code hl_function" href="class_r_g_w_k_m_i_p_manager.html#a7d0f13de8add227101f23114d707e9bf">start</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="rgw__kmip__client_8cc.html#ad34e065f5d586766ca9876e44eae3ae3">   78</a></span><a class="code hl_function" href="rgw__kmip__client_8cc.html#ad34e065f5d586766ca9876e44eae3ae3">rgw_kmip_client_cleanup</a>()</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_variable" href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">rgw_kmip_manager</a>-&gt;<a class="code hl_function" href="class_r_g_w_k_m_i_p_manager.html#aa168ca644c1e0997684e390519e5d7d0">stop</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">delete</span> <a class="code hl_variable" href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">rgw_kmip_manager</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_manager_html"><div class="ttname"><a href="class_r_g_w_k_m_i_p_manager.html">RGWKMIPManager</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8h_source.html#l00053">rgw_kmip_client.h:53</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_manager_html_a7d0f13de8add227101f23114d707e9bf"><div class="ttname"><a href="class_r_g_w_k_m_i_p_manager.html#a7d0f13de8add227101f23114d707e9bf">RGWKMIPManager::start</a></div><div class="ttdeci">virtual int start()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_manager_html_a96534b6006ce7a3d52958c113685dc63"><div class="ttname"><a href="class_r_g_w_k_m_i_p_manager.html#a96534b6006ce7a3d52958c113685dc63">RGWKMIPManager::add_request</a></div><div class="ttdeci">virtual int add_request(RGWKMIPTransceiver *)=0</div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_manager_html_aa168ca644c1e0997684e390519e5d7d0"><div class="ttname"><a href="class_r_g_w_k_m_i_p_manager.html#aa168ca644c1e0997684e390519e5d7d0">RGWKMIPManager::stop</a></div><div class="ttdeci">virtual void stop()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a08f233d603bef91bc6cae83d3b91ce8f"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a08f233d603bef91bc6cae83d3b91ce8f">RGWKMIPTransceiver::ret</a></div><div class="ttdeci">int ret</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8h_source.html#l00034">rgw_kmip_client.h:34</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a1895dada2d6a26e611ca281221f9e766"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a1895dada2d6a26e611ca281221f9e766">RGWKMIPTransceiver::~RGWKMIPTransceiver</a></div><div class="ttdeci">~RGWKMIPTransceiver()</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8cc_source.html#l00050">rgw_kmip_client.cc:50</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a29d6d24d74621aa73fa30e606b104580"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a29d6d24d74621aa73fa30e606b104580">RGWKMIPTransceiver::out</a></div><div class="ttdeci">char * out</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8h_source.html#l00024">rgw_kmip_client.h:24</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a2b264bc5b478e32c5071ae4fcfffd414"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a2b264bc5b478e32c5071ae4fcfffd414">RGWKMIPTransceiver::cond</a></div><div class="ttdeci">ceph::condition_variable cond</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8h_source.html#l00037">rgw_kmip_client.h:37</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a3e2c0dd0da7196131c460bde566863ef"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a3e2c0dd0da7196131c460bde566863ef">RGWKMIPTransceiver::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8h_source.html#l00019">rgw_kmip_client.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a88221eb90ab550d166ff3fa7b79b2b1b"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a88221eb90ab550d166ff3fa7b79b2b1b">RGWKMIPTransceiver::lock</a></div><div class="ttdeci">ceph::mutex lock</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8h_source.html#l00036">rgw_kmip_client.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a8b819356c710008e45f2bdf399cf3ab2"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a8b819356c710008e45f2bdf399cf3ab2">RGWKMIPTransceiver::done</a></div><div class="ttdeci">bool done</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8h_source.html#l00035">rgw_kmip_client.h:35</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a95356a9789cfd39724b972f54d0d9dcc"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a95356a9789cfd39724b972f54d0d9dcc">RGWKMIPTransceiver::outlist</a></div><div class="ttdeci">struct RGWKMIPTransceiver::@11 outlist[1]</div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_a9d616cd520b4b04a7673476f5d23d83b"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#a9d616cd520b4b04a7673476f5d23d83b">RGWKMIPTransceiver::wait</a></div><div class="ttdeci">int wait(optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8cc_source.html#l00018">rgw_kmip_client.cc:18</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_aa11589d791eacfbc44e22e3c77403e00"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#aa11589d791eacfbc44e22e3c77403e00">RGWKMIPTransceiver::send</a></div><div class="ttdeci">int send()</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8cc_source.html#l00032">rgw_kmip_client.cc:32</a></div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_adcb2f3ac14443528fd08a703d2d2302b"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#adcb2f3ac14443528fd08a703d2d2302b">RGWKMIPTransceiver::outkey</a></div><div class="ttdeci">struct RGWKMIPTransceiver::@12 outkey[1]</div></div>
+<div class="ttc" id="aclass_r_g_w_k_m_i_p_transceiver_html_af2edb8523bef2f3b6c4ee04b8cb0b0d3"><div class="ttname"><a href="class_r_g_w_k_m_i_p_transceiver.html#af2edb8523bef2f3b6c4ee04b8cb0b0d3">RGWKMIPTransceiver::process</a></div><div class="ttdeci">int process(optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8cc_source.html#l00042">rgw_kmip_client.cc:42</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__common_8h_html"><div class="ttname"><a href="rgw__common_8h.html">rgw_common.h</a></div></div>
+<div class="ttc" id="argw__kmip__client_8cc_html_aa15a0763a781c341f32b244657976b11"><div class="ttname"><a href="rgw__kmip__client_8cc.html#aa15a0763a781c341f32b244657976b11">rgw_kmip_manager</a></div><div class="ttdeci">RGWKMIPManager * rgw_kmip_manager</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8cc_source.html#l00015">rgw_kmip_client.cc:15</a></div></div>
+<div class="ttc" id="argw__kmip__client_8cc_html_ac376b28ccbc3986f4ecadb5468dfc137"><div class="ttname"><a href="rgw__kmip__client_8cc.html#ac376b28ccbc3986f4ecadb5468dfc137">rgw_kmip_client_init</a></div><div class="ttdeci">void rgw_kmip_client_init(RGWKMIPManager &amp;m)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8cc_source.html#l00071">rgw_kmip_client.cc:71</a></div></div>
+<div class="ttc" id="argw__kmip__client_8cc_html_ad34e065f5d586766ca9876e44eae3ae3"><div class="ttname"><a href="rgw__kmip__client_8cc.html#ad34e065f5d586766ca9876e44eae3ae3">rgw_kmip_client_cleanup</a></div><div class="ttdeci">void rgw_kmip_client_cleanup()</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client_8cc_source.html#l00078">rgw_kmip_client.cc:78</a></div></div>
+<div class="ttc" id="argw__kmip__client_8h_html"><div class="ttname"><a href="rgw__kmip__client_8h.html">rgw_kmip_client.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__kmip__client_8cc.html">rgw_kmip_client.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

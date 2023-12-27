@@ -1,0 +1,838 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_kafka.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__kafka_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#namespaces">네임스페이스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#typedef-members">타입정의</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_kafka.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="rgw__kafka_8h_source.html">rgw_kafka.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__url_8h_source.html">rgw_url.h</a>&quot;</code><br />
+<code>#include &lt;librdkafka/rdkafka.h&gt;</code><br />
+<code>#include &quot;include/ceph_assert.h&quot;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;boost/lockfree/queue.hpp&gt;</code><br />
+<code>#include &quot;common/dout.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_kafka.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__kafka_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__kafka_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__kafka_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__kafka_8cc">
+<area shape="rect" title=" " alt="" coords="723,5,853,48"/>
+<area shape="rect" href="rgw__kafka_8h.html" title=" " alt="" coords="167,96,257,123"/>
+<area shape="poly" title=" " alt="" coords="723,38,525,61,273,98,272,93,525,56,722,32"/>
+<area shape="rect" title=" " alt="" coords="5,179,59,205"/>
+<area shape="poly" title=" " alt="" coords="722,33,554,39,345,52,159,71,94,84,59,98,47,112,40,129,34,164,29,163,35,127,43,109,56,94,93,79,158,66,345,46,554,34,722,27"/>
+<area shape="rect" href="rgw__url_8h.html" title=" " alt="" coords="70,96,143,123"/>
+<area shape="poly" title=" " alt="" coords="723,35,478,55,321,74,159,98,158,93,320,68,478,50,722,29"/>
+<area shape="rect" title=" " alt="" coords="281,96,415,123"/>
+<area shape="poly" title=" " alt="" coords="723,43,430,96,429,90,722,37"/>
+<area shape="rect" title=" " alt="" coords="439,96,588,123"/>
+<area shape="poly" title=" " alt="" coords="723,50,572,94,570,89,721,45"/>
+<area shape="rect" title=" " alt="" coords="611,96,680,123"/>
+<area shape="poly" title=" " alt="" coords="753,51,682,90,680,86,750,46"/>
+<area shape="rect" title=" " alt="" coords="703,96,764,123"/>
+<area shape="poly" title=" " alt="" coords="776,50,753,85,748,82,772,47"/>
+<area shape="rect" title=" " alt="" coords="788,96,898,123"/>
+<area shape="poly" title=" " alt="" coords="804,47,828,82,823,85,800,50"/>
+<area shape="rect" title=" " alt="" coords="922,96,977,123"/>
+<area shape="poly" title=" " alt="" coords="831,46,912,86,909,91,828,51"/>
+<area shape="rect" title=" " alt="" coords="1001,96,1058,123"/>
+<area shape="poly" title=" " alt="" coords="851,46,987,91,985,96,849,51"/>
+<area shape="rect" title=" " alt="" coords="1082,96,1142,123"/>
+<area shape="poly" title=" " alt="" coords="854,40,1068,93,1066,98,853,45"/>
+<area shape="rect" title=" " alt="" coords="1166,96,1223,123"/>
+<area shape="poly" title=" " alt="" coords="854,35,988,58,1151,93,1150,98,987,64,853,41"/>
+<area shape="rect" title=" " alt="" coords="1248,96,1414,123"/>
+<area shape="poly" title=" " alt="" coords="854,35,1233,91,1232,96,853,40"/>
+<area shape="rect" title=" " alt="" coords="1438,96,1549,123"/>
+<area shape="poly" title=" " alt="" coords="854,31,1100,54,1423,93,1422,98,1099,60,854,36"/>
+<area shape="poly" title=" " alt="" coords="182,126,72,173,70,174,68,169,70,168,180,121"/>
+<area shape="rect" title=" " alt="" coords="83,179,160,205"/>
+<area shape="poly" title=" " alt="" coords="200,125,148,171,144,167,196,121"/>
+<area shape="rect" title=" " alt="" coords="184,171,347,213"/>
+<area shape="poly" title=" " alt="" coords="223,122,246,156,241,159,218,125"/>
+<area shape="rect" title=" " alt="" coords="371,179,498,205"/>
+<area shape="poly" title=" " alt="" coords="248,121,387,171,385,176,246,126"/>
+<area shape="rect" title=" " alt="" coords="522,179,675,205"/>
+<area shape="poly" title=" " alt="" coords="258,118,270,120,511,168,530,172,529,177,510,173,269,125,257,123"/>
+<area shape="poly" title=" " alt="" coords="97,125,56,169,52,166,93,121"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__kafka_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1reply__callback__with__tag__t.html">rgw::kafka::reply_callback_with_tag_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html">rgw::kafka::connection_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1message__wrapper__t.html">rgw::kafka::message_wrapper_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct used for holding messages in the message queue  <a href="structrgw_1_1kafka_1_1message__wrapper__t.html#details">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1kafka_1_1_manager.html">rgw::kafka::Manager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+네임스페이스</h2></td></tr>
+<tr class="memitem:namespacergw" id="r_namespacergw"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw.html">rgw</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacergw_1_1kafka" id="r_namespacergw_1_1kafka"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html">rgw::kafka</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kafka_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8169d7e8895d040cae9f2e9c171a1bd8" id="r_a8169d7e8895d040cae9f2e9c171a1bd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kafka_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(IT)</td></tr>
+<tr class="separator:a8169d7e8895d040cae9f2e9c171a1bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab62365792422ae69d81a1ccac5aac29" id="r_aab62365792422ae69d81a1ccac5aac29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kafka_8cc.html#aab62365792422ae69d81a1ccac5aac29">ERASE_AND_CONTINUE</a>(IT,  CONTAINER)</td></tr>
+<tr class="separator:aab62365792422ae69d81a1ccac5aac29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+타입정의</h2></td></tr>
+<tr class="memitem:a76d49f9675b351deaf58f6b146798077" id="r_a76d49f9675b351deaf58f6b146798077"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structrgw_1_1kafka_1_1reply__callback__with__tag__t.html">reply_callback_with_tag_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a76d49f9675b351deaf58f6b146798077">rgw::kafka::CallbackList</a></td></tr>
+<tr class="separator:a76d49f9675b351deaf58f6b146798077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6f362ea18f9102de579d8e1aaa3d82" id="r_a5f6f362ea18f9102de579d8e1aaa3d82"><td class="memItemLeft" align="right" valign="top">typedef std::unordered_map&lt; std::string, <a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a5f6f362ea18f9102de579d8e1aaa3d82">rgw::kafka::ConnectionList</a></td></tr>
+<tr class="separator:a5f6f362ea18f9102de579d8e1aaa3d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9d9ed7882b9d635764a6938816df8e" id="r_a0c9d9ed7882b9d635764a6938816df8e"><td class="memItemLeft" align="right" valign="top">typedef boost::lockfree::queue&lt; <a class="el" href="structrgw_1_1kafka_1_1message__wrapper__t.html">message_wrapper_t</a> *, boost::lockfree::fixed_sized&lt; true &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a0c9d9ed7882b9d635764a6938816df8e">rgw::kafka::MessageQueue</a></td></tr>
+<tr class="separator:a0c9d9ed7882b9d635764a6938816df8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:ae51aa9cb4e5070afcbe727215172abac" id="r_ae51aa9cb4e5070afcbe727215172abac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kafka_8cc.html#ae51aa9cb4e5070afcbe727215172abac">operator==</a> (const rd_kafka_topic_t *rkt, const std::string &amp;name)</td></tr>
+<tr class="separator:ae51aa9cb4e5070afcbe727215172abac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a9566274d563dbfdbf658835db31bd" id="r_a19a9566274d563dbfdbf658835db31bd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a19a9566274d563dbfdbf658835db31bd">rgw::kafka::to_string</a> (const <a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a> &amp;conn)</td></tr>
+<tr class="separator:a19a9566274d563dbfdbf658835db31bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f739616033722af2555eb5b2b86e1d9" id="r_a0f739616033722af2555eb5b2b86e1d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a0f739616033722af2555eb5b2b86e1d9">rgw::kafka::intrusive_ptr_add_ref</a> (const <a class="el" href="structrgw_1_1kafka_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:a0f739616033722af2555eb5b2b86e1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6196ddcedfae311bfb96ef43bef78875" id="r_a6196ddcedfae311bfb96ef43bef78875"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a6196ddcedfae311bfb96ef43bef78875">rgw::kafka::intrusive_ptr_release</a> (const <a class="el" href="structrgw_1_1kafka_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:a6196ddcedfae311bfb96ef43bef78875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d1a54b62527344bc73410f250b2c196" id="r_a4d1a54b62527344bc73410f250b2c196"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a4d1a54b62527344bc73410f250b2c196">rgw::kafka::status_to_string</a> (int s)</td></tr>
+<tr class="separator:a4d1a54b62527344bc73410f250b2c196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0edfbfd7e5fe54b29b8317876a96293" id="r_ac0edfbfd7e5fe54b29b8317876a96293"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#ac0edfbfd7e5fe54b29b8317876a96293">rgw::kafka::message_callback</a> (rd_kafka_t *rk, const rd_kafka_message_t *rkmessage, void *opaque)</td></tr>
+<tr class="separator:ac0edfbfd7e5fe54b29b8317876a96293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26cd963767545fce0e01a939e54a1174" id="r_a26cd963767545fce0e01a939e54a1174"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a26cd963767545fce0e01a939e54a1174">rgw::kafka::create_connection</a> (<a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a> &amp;conn)</td></tr>
+<tr class="separator:a26cd963767545fce0e01a939e54a1174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b3810843d6fd133f13ea55f9ec94460" id="r_a7b3810843d6fd133f13ea55f9ec94460"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a7b3810843d6fd133f13ea55f9ec94460">rgw::kafka::create_new_connection</a> (const std::string &amp;broker, CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, bool use_ssl, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location, const std::string &amp;user, const std::string &amp;password)</td></tr>
+<tr class="separator:a7b3810843d6fd133f13ea55f9ec94460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6021bda90f515ae85879293a51143680" id="r_a6021bda90f515ae85879293a51143680"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a6021bda90f515ae85879293a51143680">rgw::kafka::init</a> (CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</td></tr>
+<tr class="separator:a6021bda90f515ae85879293a51143680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1046e8a6c79b8c81713ef2649101a58" id="r_ae1046e8a6c79b8c81713ef2649101a58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#ae1046e8a6c79b8c81713ef2649101a58">rgw::kafka::shutdown</a> ()</td></tr>
+<tr class="separator:ae1046e8a6c79b8c81713ef2649101a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b25a3f846fe368674891d03f198ad5" id="r_a36b25a3f846fe368674891d03f198ad5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a36b25a3f846fe368674891d03f198ad5">rgw::kafka::connect</a> (const std::string &amp;url, bool use_ssl, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</td></tr>
+<tr class="separator:a36b25a3f846fe368674891d03f198ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013f928708144cb27311082e42ec058e" id="r_a013f928708144cb27311082e42ec058e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a013f928708144cb27311082e42ec058e">rgw::kafka::publish</a> (<a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a> &amp;conn, const std::string &amp;topic, const std::string &amp;message)</td></tr>
+<tr class="separator:a013f928708144cb27311082e42ec058e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a31df2120c6664ee4f2031f41f678c4" id="r_a9a31df2120c6664ee4f2031f41f678c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a9a31df2120c6664ee4f2031f41f678c4">rgw::kafka::publish_with_confirm</a> (<a class="el" href="namespacergw_1_1kafka.html#ad8a83a0305e5b0eaf4b6f7cb411d35ca">connection_ptr_t</a> &amp;conn, const std::string &amp;topic, const std::string &amp;message, <a class="el" href="namespacergw_1_1kafka.html#a1190975385473ee008f7c18ae01f871c">reply_callback_t</a> cb)</td></tr>
+<tr class="separator:a9a31df2120c6664ee4f2031f41f678c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66fd49a8c0e4b823b9105d2d52aa59d5" id="r_a66fd49a8c0e4b823b9105d2d52aa59d5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a66fd49a8c0e4b823b9105d2d52aa59d5">rgw::kafka::get_connection_count</a> ()</td></tr>
+<tr class="separator:a66fd49a8c0e4b823b9105d2d52aa59d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2f7e4c8c3d2613424520eb73b5085c" id="r_a6a2f7e4c8c3d2613424520eb73b5085c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a6a2f7e4c8c3d2613424520eb73b5085c">rgw::kafka::get_inflight</a> ()</td></tr>
+<tr class="separator:a6a2f7e4c8c3d2613424520eb73b5085c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab2e712116757e0ee4b09e8c91577e78" id="r_aab2e712116757e0ee4b09e8c91577e78"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#aab2e712116757e0ee4b09e8c91577e78">rgw::kafka::get_queued</a> ()</td></tr>
+<tr class="separator:aab2e712116757e0ee4b09e8c91577e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925216e979e4fc89825b7c58b0e5472f" id="r_a925216e979e4fc89825b7c58b0e5472f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a925216e979e4fc89825b7c58b0e5472f">rgw::kafka::get_dequeued</a> ()</td></tr>
+<tr class="separator:a925216e979e4fc89825b7c58b0e5472f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ead319678eaecfc121e34376afeec58" id="r_a2ead319678eaecfc121e34376afeec58"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a2ead319678eaecfc121e34376afeec58">rgw::kafka::get_max_connections</a> ()</td></tr>
+<tr class="separator:a2ead319678eaecfc121e34376afeec58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5afcacc3b396b38f8a84ed8dbb623e21" id="r_a5afcacc3b396b38f8a84ed8dbb623e21"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a5afcacc3b396b38f8a84ed8dbb623e21">rgw::kafka::get_max_inflight</a> ()</td></tr>
+<tr class="separator:a5afcacc3b396b38f8a84ed8dbb623e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f40006cbae715c26d17d3d7966bb3a7" id="r_a8f40006cbae715c26d17d3d7966bb3a7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a8f40006cbae715c26d17d3d7966bb3a7">rgw::kafka::get_max_queue</a> ()</td></tr>
+<tr class="separator:a8f40006cbae715c26d17d3d7966bb3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:ad8f8b6a4794772e7b5023d2b644871be" id="r_ad8f8b6a4794772e7b5023d2b644871be"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#ad8f8b6a4794772e7b5023d2b644871be">rgw::kafka::STATUS_CONNECTION_CLOSED</a> = -0x1002</td></tr>
+<tr class="separator:ad8f8b6a4794772e7b5023d2b644871be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12748ff97e0ea66e6a3bc23ea1b7ba8f" id="r_a12748ff97e0ea66e6a3bc23ea1b7ba8f"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a12748ff97e0ea66e6a3bc23ea1b7ba8f">rgw::kafka::STATUS_QUEUE_FULL</a> = -0x1003</td></tr>
+<tr class="separator:a12748ff97e0ea66e6a3bc23ea1b7ba8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a5d3a7fa8d2a8d25b3b3ec18aa48a3" id="r_a38a5d3a7fa8d2a8d25b3b3ec18aa48a3"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a38a5d3a7fa8d2a8d25b3b3ec18aa48a3">rgw::kafka::STATUS_MAX_INFLIGHT</a> = -0x1004</td></tr>
+<tr class="separator:a38a5d3a7fa8d2a8d25b3b3ec18aa48a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1efe9bf6317876ef77a64457e5caf9fa" id="r_a1efe9bf6317876ef77a64457e5caf9fa"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a1efe9bf6317876ef77a64457e5caf9fa">rgw::kafka::STATUS_MANAGER_STOPPED</a> = -0x1005</td></tr>
+<tr class="separator:a1efe9bf6317876ef77a64457e5caf9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e5f5eb04bd44437d7d94ebcdc79d15" id="r_a83e5f5eb04bd44437d7d94ebcdc79d15"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a83e5f5eb04bd44437d7d94ebcdc79d15">rgw::kafka::STATUS_CONF_ALLOC_FAILED</a> = -0x2001</td></tr>
+<tr class="separator:a83e5f5eb04bd44437d7d94ebcdc79d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6950957f590676bbd62fdd2a65b7771" id="r_ae6950957f590676bbd62fdd2a65b7771"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#ae6950957f590676bbd62fdd2a65b7771">rgw::kafka::STATUS_OK</a> = 0x0</td></tr>
+<tr class="separator:ae6950957f590676bbd62fdd2a65b7771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e980a7bc3aaf78e771eed4c198bbd8" id="r_a03e980a7bc3aaf78e771eed4c198bbd8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classrgw_1_1kafka_1_1_manager.html">Manager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">rgw::kafka::s_manager</a> = nullptr</td></tr>
+<tr class="separator:a03e980a7bc3aaf78e771eed4c198bbd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462a79a958b52638a7c2f954466ecbed" id="r_a462a79a958b52638a7c2f954466ecbed"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a462a79a958b52638a7c2f954466ecbed">rgw::kafka::MAX_CONNECTIONS_DEFAULT</a> = 256</td></tr>
+<tr class="separator:a462a79a958b52638a7c2f954466ecbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aecf757c445042f56d735e6b27fb615" id="r_a5aecf757c445042f56d735e6b27fb615"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#a5aecf757c445042f56d735e6b27fb615">rgw::kafka::MAX_INFLIGHT_DEFAULT</a> = 8192</td></tr>
+<tr class="separator:a5aecf757c445042f56d735e6b27fb615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1f8d72ef0b825d7ff2a4d40315d944" id="r_aac1f8d72ef0b825d7ff2a4d40315d944"><td class="memItemLeft" align="right" valign="top">static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#aac1f8d72ef0b825d7ff2a4d40315d944">rgw::kafka::MAX_QUEUE_DEFAULT</a> = 8192</td></tr>
+<tr class="separator:aac1f8d72ef0b825d7ff2a4d40315d944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0406c28a559befb717849290bb2650" id="r_adf0406c28a559befb717849290bb2650"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacergw_1_1kafka.html#adf0406c28a559befb717849290bb2650">rgw::kafka::READ_TIMEOUT_MS_DEFAULT</a> = 500</td></tr>
+<tr class="separator:adf0406c28a559befb717849290bb2650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00019">19</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aab62365792422ae69d81a1ccac5aac29" name="aab62365792422ae69d81a1ccac5aac29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab62365792422ae69d81a1ccac5aac29">&#9670;&#160;</a></span>ERASE_AND_CONTINUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERASE_AND_CONTINUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CONTAINER&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>값:</b><div class="fragment"><div class="line">          IT=CONTAINER.erase(IT); \</div>
+<div class="line">          --connection_count; \</div>
+<div class="line">          <span class="keywordflow">continue</span>;</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00288">288</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  293</span>              {</div>
+<div class="line"><span class="lineno">  294</span><span class="keyword">public</span>:</div>
+<div class="line"><span class="lineno">  295</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_connections;</div>
+<div class="line"><span class="lineno">  296</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_inflight;</div>
+<div class="line"><span class="lineno">  297</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_queue;</div>
+<div class="line"><span class="lineno">  298</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_idle_time;</div>
+<div class="line"><span class="lineno">  299</span><span class="keyword">private</span>:</div>
+<div class="line"><span class="lineno">  300</span>  std::atomic&lt;size_t&gt; connection_count;</div>
+<div class="line"><span class="lineno">  301</span>  <span class="keywordtype">bool</span> stopped;</div>
+<div class="line"><span class="lineno">  302</span>  <span class="keywordtype">int</span> read_timeout_ms;</div>
+<div class="line"><span class="lineno">  303</span>  <a class="code hl_typedef" href="namespacergw_1_1amqp.html#aa7b2bba1750c3eb54e89bf18915ecaba">ConnectionList</a> connections;</div>
+<div class="line"><span class="lineno">  304</span>  <a class="code hl_typedef" href="namespacergw_1_1amqp.html#afafb84096bd9038e03054b7dac3c0e03">MessageQueue</a> messages;</div>
+<div class="line"><span class="lineno">  305</span>  std::atomic&lt;size_t&gt; queued;</div>
+<div class="line"><span class="lineno">  306</span>  std::atomic&lt;size_t&gt; dequeued;</div>
+<div class="line"><span class="lineno">  307</span>  CephContext* <span class="keyword">const</span> <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>;</div>
+<div class="line"><span class="lineno">  308</span>  <span class="keyword">mutable</span> std::mutex connections_lock;</div>
+<div class="line"><span class="lineno">  309</span>  std::thread runner;</div>
+<div class="line"><span class="lineno">  310</span> </div>
+<div class="line"><span class="lineno">  311</span>  <span class="comment">// TODO use rd_kafka_produce_batch for better performance</span></div>
+<div class="line"><span class="lineno">  312</span>  <span class="keywordtype">void</span> publish_internal(message_wrapper_t* message) {</div>
+<div class="line"><span class="lineno">  313</span>    <span class="keyword">const</span> std::unique_ptr&lt;message_wrapper_t&gt; msg_owner(message);</div>
+<div class="line"><span class="lineno">  314</span>    <span class="keyword">auto</span>&amp; conn = message-&gt;conn;</div>
+<div class="line"><span class="lineno">  315</span> </div>
+<div class="line"><span class="lineno">  316</span>    conn-&gt;timestamp = ceph_clock_now(); </div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    <span class="keywordflow">if</span> (!conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  319</span>      <span class="comment">// connection had an issue while message was in the queue</span></div>
+<div class="line"><span class="lineno">  320</span>      <span class="comment">// TODO add error stats</span></div>
+<div class="line"><span class="lineno">  321</span>      ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;Kafka publish: connection had an issue while message was in the queue. error: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(conn-&gt;status) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  322</span>      <span class="keywordflow">if</span> (message-&gt;cb) {</div>
+<div class="line"><span class="lineno">  323</span>        message-&gt;cb(conn-&gt;status);</div>
+<div class="line"><span class="lineno">  324</span>      }</div>
+<div class="line"><span class="lineno">  325</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  326</span>    }</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>    <span class="comment">// create a new topic unless it was already created</span></div>
+<div class="line"><span class="lineno">  329</span>    <span class="keyword">auto</span> topic_it = std::find(conn-&gt;topics.begin(), conn-&gt;topics.end(), message-&gt;topic);</div>
+<div class="line"><span class="lineno">  330</span>    rd_kafka_topic_t* topic = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  331</span>    <span class="keywordflow">if</span> (topic_it == conn-&gt;topics.end()) {</div>
+<div class="line"><span class="lineno">  332</span>      topic = rd_kafka_topic_new(conn-&gt;producer, message-&gt;topic.c_str(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  333</span>      <span class="keywordflow">if</span> (!topic) {</div>
+<div class="line"><span class="lineno">  334</span>        <span class="keyword">const</span> <span class="keyword">auto</span> err = rd_kafka_last_error();</div>
+<div class="line"><span class="lineno">  335</span>        ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;Kafka publish: failed to create topic: &quot;</span> &lt;&lt; message-&gt;topic &lt;&lt; <span class="stringliteral">&quot; error: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(err) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  336</span>        <span class="keywordflow">if</span> (message-&gt;cb) {</div>
+<div class="line"><span class="lineno">  337</span>          message-&gt;cb(err);</div>
+<div class="line"><span class="lineno">  338</span>        }</div>
+<div class="line"><span class="lineno">  339</span>        conn-&gt;destroy(err);</div>
+<div class="line"><span class="lineno">  340</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  341</span>      }</div>
+<div class="line"><span class="lineno">  342</span>      <span class="comment">// TODO use the topics list as an LRU cache</span></div>
+<div class="line"><span class="lineno">  343</span>      conn-&gt;topics.push_back(topic);</div>
+<div class="line"><span class="lineno">  344</span>      ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;Kafka publish: successfully created topic: &quot;</span> &lt;&lt; message-&gt;topic &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  345</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  346</span>        topic = *topic_it;</div>
+<div class="line"><span class="lineno">  347</span>        ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;Kafka publish: reused existing topic: &quot;</span> &lt;&lt; message-&gt;topic &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  348</span>    }</div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>    <span class="keyword">const</span> <span class="keyword">auto</span> tag = (message-&gt;cb == <span class="keyword">nullptr</span> ? nullptr : <span class="keyword">new</span> uint64_t(conn-&gt;delivery_tag++));</div>
+<div class="line"><span class="lineno">  351</span>    <span class="keyword">const</span> <span class="keyword">auto</span> rc = rd_kafka_produce(</div>
+<div class="line"><span class="lineno">  352</span>            topic,</div>
+<div class="line"><span class="lineno">  353</span>            <span class="comment">// TODO: non builtin partitioning</span></div>
+<div class="line"><span class="lineno">  354</span>            RD_KAFKA_PARTITION_UA,</div>
+<div class="line"><span class="lineno">  355</span>            <span class="comment">// make a copy of the payload</span></div>
+<div class="line"><span class="lineno">  356</span>            <span class="comment">// so it is safe to pass the pointer from the string</span></div>
+<div class="line"><span class="lineno">  357</span>            RD_KAFKA_MSG_F_COPY,</div>
+<div class="line"><span class="lineno">  358</span>            message-&gt;message.data(),</div>
+<div class="line"><span class="lineno">  359</span>            message-&gt;message.length(),</div>
+<div class="line"><span class="lineno">  360</span>            <span class="comment">// optional key and its length</span></div>
+<div class="line"><span class="lineno">  361</span>            <span class="keyword">nullptr</span>, </div>
+<div class="line"><span class="lineno">  362</span>            0,</div>
+<div class="line"><span class="lineno">  363</span>            <span class="comment">// opaque data: tag, used in the global callback</span></div>
+<div class="line"><span class="lineno">  364</span>            <span class="comment">// in order to invoke the real callback</span></div>
+<div class="line"><span class="lineno">  365</span>            <span class="comment">// null if no callback exists</span></div>
+<div class="line"><span class="lineno">  366</span>            tag);</div>
+<div class="line"><span class="lineno">  367</span>    <span class="keywordflow">if</span> (rc == -1) {</div>
+<div class="line"><span class="lineno">  368</span>      <span class="keyword">const</span> <span class="keyword">auto</span> err = rd_kafka_last_error();</div>
+<div class="line"><span class="lineno">  369</span>      ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;Kafka publish: failed to produce: &quot;</span> &lt;&lt; rd_kafka_err2str(err) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  370</span>      <span class="comment">// TODO: dont error on full queue, and don&#39;t destroy connection, retry instead</span></div>
+<div class="line"><span class="lineno">  371</span>      <span class="comment">// immediatly invoke callback on error if needed</span></div>
+<div class="line"><span class="lineno">  372</span>      <span class="keywordflow">if</span> (message-&gt;cb) {</div>
+<div class="line"><span class="lineno">  373</span>        message-&gt;cb(err);</div>
+<div class="line"><span class="lineno">  374</span>      }</div>
+<div class="line"><span class="lineno">  375</span>      conn-&gt;destroy(err);</div>
+<div class="line"><span class="lineno">  376</span>      <span class="keyword">delete</span> tag;</div>
+<div class="line"><span class="lineno">  377</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  378</span>    }</div>
+<div class="line"><span class="lineno">  379</span>   </div>
+<div class="line"><span class="lineno">  380</span>    <span class="keywordflow">if</span> (tag) {</div>
+<div class="line"><span class="lineno">  381</span>      <span class="keyword">auto</span> <span class="keyword">const</span> q_len = conn-&gt;callbacks.size();</div>
+<div class="line"><span class="lineno">  382</span>      <span class="keywordflow">if</span> (q_len &lt; max_inflight) {</div>
+<div class="line"><span class="lineno">  383</span>        ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;Kafka publish (with callback, tag=&quot;</span> &lt;&lt; *tag &lt;&lt; <span class="stringliteral">&quot;): OK. Queue has: &quot;</span> &lt;&lt; q_len &lt;&lt; <span class="stringliteral">&quot; callbacks&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  384</span>        conn-&gt;callbacks.emplace_back(*tag, message-&gt;cb);</div>
+<div class="line"><span class="lineno">  385</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  386</span>        <span class="comment">// immediately invoke callback with error - this is not a connection error</span></div>
+<div class="line"><span class="lineno">  387</span>        ldout(conn-&gt;cct, 1) &lt;&lt; <span class="stringliteral">&quot;Kafka publish (with callback): failed with error: callback queue full&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  388</span>        message-&gt;cb(STATUS_MAX_INFLIGHT);</div>
+<div class="line"><span class="lineno">  389</span>        <span class="comment">// tag will be deleted when the global callback is invoked</span></div>
+<div class="line"><span class="lineno">  390</span>      }</div>
+<div class="line"><span class="lineno">  391</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  392</span>        ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;Kafka publish (no callback): OK&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  393</span>    }</div>
+<div class="line"><span class="lineno">  394</span>  }</div>
+<div class="line"><span class="lineno">  395</span> </div>
+<div class="line"><span class="lineno">  396</span>  <span class="comment">// the managers thread:</span></div>
+<div class="line"><span class="lineno">  397</span>  <span class="comment">// (1) empty the queue of messages to be published</span></div>
+<div class="line"><span class="lineno">  398</span>  <span class="comment">// (2) loop over all connections and read acks</span></div>
+<div class="line"><span class="lineno">  399</span>  <span class="comment">// (3) manages deleted connections</span></div>
+<div class="line"><span class="lineno">  400</span>  <span class="comment">// (4) TODO reconnect on connection errors</span></div>
+<div class="line"><span class="lineno">  401</span>  <span class="comment">// (5) TODO cleanup timedout callbacks</span></div>
+<div class="line"><span class="lineno">  402</span>  <span class="keywordtype">void</span> run() noexcept {</div>
+<div class="line"><span class="lineno">  403</span>    <span class="keywordflow">while</span> (!stopped) {</div>
+<div class="line"><span class="lineno">  404</span> </div>
+<div class="line"><span class="lineno">  405</span>      <span class="comment">// publish all messages in the queue</span></div>
+<div class="line"><span class="lineno">  406</span>      <span class="keyword">auto</span> reply_count = 0U;</div>
+<div class="line"><span class="lineno">  407</span>      <span class="keyword">const</span> <span class="keyword">auto</span> send_count = messages.consume_all(std::bind(&amp;Manager::publish_internal, <span class="keyword">this</span>, std::placeholders::_1));</div>
+<div class="line"><span class="lineno">  408</span>      dequeued += send_count;</div>
+<div class="line"><span class="lineno">  409</span>      ConnectionList::iterator conn_it;</div>
+<div class="line"><span class="lineno">  410</span>      ConnectionList::const_iterator end_it;</div>
+<div class="line"><span class="lineno">  411</span>      {</div>
+<div class="line"><span class="lineno">  412</span>        <span class="comment">// thread safe access to the connection list</span></div>
+<div class="line"><span class="lineno">  413</span>        <span class="comment">// once the iterators are fetched they are guaranteed to remain valid</span></div>
+<div class="line"><span class="lineno">  414</span>        std::lock_guard lock(connections_lock);</div>
+<div class="line"><span class="lineno">  415</span>        conn_it = connections.begin();</div>
+<div class="line"><span class="lineno">  416</span>        end_it = connections.end();</div>
+<div class="line"><span class="lineno">  417</span>      }</div>
+<div class="line"><span class="lineno">  418</span>      <span class="comment">// loop over all connections to read acks</span></div>
+<div class="line"><span class="lineno">  419</span>      <span class="keywordflow">for</span> (;conn_it != end_it;) {</div>
+<div class="line"><span class="lineno">  420</span>        </div>
+<div class="line"><span class="lineno">  421</span>        <span class="keyword">auto</span>&amp; conn = conn_it-&gt;second;</div>
+<div class="line"><span class="lineno">  422</span> </div>
+<div class="line"><span class="lineno">  423</span>        <span class="comment">// Checking the connection idlesness</span></div>
+<div class="line"><span class="lineno">  424</span>        <span class="keywordflow">if</span>(conn-&gt;timestamp.sec() + max_idle_time &lt; ceph_clock_now()) {</div>
+<div class="line"><span class="lineno">  425</span>          ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;Time for deleting a connection due to idle behaviour: &quot;</span> &lt;&lt; ceph_clock_now() &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  426</span>          <a class="code hl_define" href="rgw__kafka_8cc.html#aab62365792422ae69d81a1ccac5aac29">ERASE_AND_CONTINUE</a>(conn_it, connections);</div>
+<div class="line"><span class="lineno">  427</span>        }</div>
+<div class="line"><span class="lineno">  428</span> </div>
+<div class="line"><span class="lineno">  429</span>        <span class="comment">// try to reconnect the connection if it has an error</span></div>
+<div class="line"><span class="lineno">  430</span>        <span class="keywordflow">if</span> (!conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  431</span>          ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;Kafka run: connection status is: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">status_to_string</a>(conn-&gt;status) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  432</span>          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; broker = conn_it-&gt;first;</div>
+<div class="line"><span class="lineno">  433</span>          ldout(conn-&gt;cct, 20) &lt;&lt; <span class="stringliteral">&quot;Kafka run: retry connection&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  434</span>          <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacergw_1_1amqp.html#a65ab1d692c71f90ccdb259589704ab61">create_connection</a>(conn)-&gt;is_ok() == <span class="keyword">false</span>) {</div>
+<div class="line"><span class="lineno">  435</span>            ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;Kafka run: connection (&quot;</span> &lt;&lt; broker &lt;&lt; <span class="stringliteral">&quot;) retry failed&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  436</span>            <span class="comment">// TODO: add error counter for failed retries</span></div>
+<div class="line"><span class="lineno">  437</span>            <span class="comment">// TODO: add exponential backoff for retries</span></div>
+<div class="line"><span class="lineno">  438</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  439</span>            ldout(conn-&gt;cct, 10) &lt;&lt; <span class="stringliteral">&quot;Kafka run: connection (&quot;</span> &lt;&lt; broker &lt;&lt; <span class="stringliteral">&quot;) retry successfull&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  440</span>          }</div>
+<div class="line"><span class="lineno">  441</span>          <a class="code hl_define" href="rgw__kafka_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a>(conn_it);</div>
+<div class="line"><span class="lineno">  442</span>        }</div>
+<div class="line"><span class="lineno">  443</span> </div>
+<div class="line"><span class="lineno">  444</span>        reply_count += rd_kafka_poll(conn-&gt;producer, read_timeout_ms);</div>
+<div class="line"><span class="lineno">  445</span> </div>
+<div class="line"><span class="lineno">  446</span>        <span class="comment">// just increment the iterator</span></div>
+<div class="line"><span class="lineno">  447</span>        ++conn_it;</div>
+<div class="line"><span class="lineno">  448</span>      }</div>
+<div class="line"><span class="lineno">  449</span>      <span class="comment">// if no messages were received or published</span></div>
+<div class="line"><span class="lineno">  450</span>      <span class="comment">// across all connection, sleep for 100ms</span></div>
+<div class="line"><span class="lineno">  451</span>      <span class="keywordflow">if</span> (send_count == 0 &amp;&amp; reply_count == 0) {</div>
+<div class="line"><span class="lineno">  452</span>        std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><span class="lineno">  453</span>      }</div>
+<div class="line"><span class="lineno">  454</span>    }</div>
+<div class="line"><span class="lineno">  455</span>  }</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>  <span class="comment">// used in the dtor for message cleanup</span></div>
+<div class="line"><span class="lineno">  458</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> delete_message(<span class="keyword">const</span> message_wrapper_t* message) {</div>
+<div class="line"><span class="lineno">  459</span>    <span class="keyword">delete</span> message;</div>
+<div class="line"><span class="lineno">  460</span>  }</div>
+<div class="line"><span class="lineno">  461</span> </div>
+<div class="line"><span class="lineno">  462</span><span class="keyword">public</span>:</div>
+<div class="line"><span class="lineno">  463</span>  Manager(<span class="keywordtype">size_t</span> _max_connections,</div>
+<div class="line"><span class="lineno">  464</span>      <span class="keywordtype">size_t</span> _max_inflight,</div>
+<div class="line"><span class="lineno">  465</span>      <span class="keywordtype">size_t</span> _max_queue, </div>
+<div class="line"><span class="lineno">  466</span>      <span class="keywordtype">int</span> _read_timeout_ms,</div>
+<div class="line"><span class="lineno">  467</span>      CephContext* _cct) : </div>
+<div class="line"><span class="lineno">  468</span>    max_connections(_max_connections),</div>
+<div class="line"><span class="lineno">  469</span>    max_inflight(_max_inflight),</div>
+<div class="line"><span class="lineno">  470</span>    max_queue(_max_queue),</div>
+<div class="line"><span class="lineno">  471</span>    max_idle_time(30),</div>
+<div class="line"><span class="lineno">  472</span>    connection_count(0),</div>
+<div class="line"><span class="lineno">  473</span>    stopped(false),</div>
+<div class="line"><span class="lineno">  474</span>    read_timeout_ms(_read_timeout_ms),</div>
+<div class="line"><span class="lineno">  475</span>    connections(_max_connections),</div>
+<div class="line"><span class="lineno">  476</span>    messages(max_queue),</div>
+<div class="line"><span class="lineno">  477</span>    queued(0),</div>
+<div class="line"><span class="lineno">  478</span>    dequeued(0),</div>
+<div class="line"><span class="lineno">  479</span>    <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>(_cct),</div>
+<div class="line"><span class="lineno">  480</span>    runner(&amp;Manager::run, this) {</div>
+<div class="line"><span class="lineno">  481</span>      <span class="comment">// The hashmap has &quot;max connections&quot; as the initial number of buckets, </span></div>
+<div class="line"><span class="lineno">  482</span>      <span class="comment">// and allows for 10 collisions per bucket before rehash.</span></div>
+<div class="line"><span class="lineno">  483</span>      <span class="comment">// This is to prevent rehashing so that iterators are not invalidated </span></div>
+<div class="line"><span class="lineno">  484</span>      <span class="comment">// when a new connection is added.</span></div>
+<div class="line"><span class="lineno">  485</span>      connections.max_load_factor(10.0);</div>
+<div class="line"><span class="lineno">  486</span>      <span class="comment">// give the runner thread a name for easier debugging</span></div>
+<div class="line"><span class="lineno">  487</span>      <span class="keyword">const</span> <span class="keyword">auto</span> rc = ceph_pthread_setname(runner.native_handle(), <span class="stringliteral">&quot;kafka_manager&quot;</span>);</div>
+<div class="line"><span class="lineno">  488</span>      ceph_assert(rc==0);</div>
+<div class="line"><span class="lineno">  489</span>  }</div>
+<div class="line"><span class="lineno">  490</span> </div>
+<div class="line"><span class="lineno">  491</span>  <span class="comment">// non copyable</span></div>
+<div class="line"><span class="lineno">  492</span>  Manager(<span class="keyword">const</span> Manager&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><span class="lineno">  493</span>  <span class="keyword">const</span> Manager&amp; operator=(<span class="keyword">const</span> Manager&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><span class="lineno">  494</span> </div>
+<div class="line"><span class="lineno">  495</span>  <span class="comment">// stop the main thread</span></div>
+<div class="line"><span class="lineno">  496</span>  <span class="keywordtype">void</span> stop() {</div>
+<div class="line"><span class="lineno">  497</span>    stopped = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  498</span>  }</div>
+<div class="line"><span class="lineno">  499</span> </div>
+<div class="line"><span class="lineno">  500</span>  <span class="comment">// connect to a broker, or reuse an existing connection if already connected</span></div>
+<div class="line"><span class="lineno">  501</span>  <a class="code hl_typedef" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> <a class="code hl_function" href="namespacergw_1_1amqp.html#a1153289c5c0f69321f05cf497e1a71d3">connect</a>(<span class="keyword">const</span> std::string&amp; url, </div>
+<div class="line"><span class="lineno">  502</span>          <span class="keywordtype">bool</span> use_ssl,</div>
+<div class="line"><span class="lineno">  503</span>          <span class="keywordtype">bool</span> verify_ssl,</div>
+<div class="line"><span class="lineno">  504</span>          boost::optional&lt;const std::string&amp;&gt; ca_location) {</div>
+<div class="line"><span class="lineno">  505</span>    <span class="keywordflow">if</span> (stopped) {</div>
+<div class="line"><span class="lineno">  506</span>      <span class="comment">// TODO: increment counter</span></div>
+<div class="line"><span class="lineno">  507</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;Kafka connect: manager is stopped&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  508</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  509</span>    }</div>
+<div class="line"><span class="lineno">  510</span> </div>
+<div class="line"><span class="lineno">  511</span>    std::string broker;</div>
+<div class="line"><span class="lineno">  512</span>    std::string user;</div>
+<div class="line"><span class="lineno">  513</span>    std::string password;</div>
+<div class="line"><span class="lineno">  514</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacergw.html#a6237df832e7e1e6aed1d3cb1c0e963f9">parse_url_authority</a>(url, broker, user, password)) {</div>
+<div class="line"><span class="lineno">  515</span>      <span class="comment">// TODO: increment counter</span></div>
+<div class="line"><span class="lineno">  516</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;Kafka connect: URL parsing failed&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  517</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  518</span>    }</div>
+<div class="line"><span class="lineno">  519</span> </div>
+<div class="line"><span class="lineno">  520</span>    <span class="comment">// this should be validated by the regex in parse_url()</span></div>
+<div class="line"><span class="lineno">  521</span>    ceph_assert(user.empty() == password.empty());</div>
+<div class="line"><span class="lineno">  522</span> </div>
+<div class="line"><span class="lineno">  523</span>    <span class="keywordflow">if</span> (!user.empty() &amp;&amp; !use_ssl) {</div>
+<div class="line"><span class="lineno">  524</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;Kafka connect: user/password are only allowed over secure connection&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  525</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  526</span>    }</div>
+<div class="line"><span class="lineno">  527</span> </div>
+<div class="line"><span class="lineno">  528</span>    std::lock_guard lock(connections_lock);</div>
+<div class="line"><span class="lineno">  529</span>    <span class="keyword">const</span> <span class="keyword">auto</span> it = connections.find(broker);</div>
+<div class="line"><span class="lineno">  530</span>    <span class="comment">// note that ssl vs. non-ssl connection to the same host are two separate conenctions</span></div>
+<div class="line"><span class="lineno">  531</span>    <span class="keywordflow">if</span> (it != connections.end()) {</div>
+<div class="line"><span class="lineno">  532</span>      <span class="comment">// connection found - return even if non-ok</span></div>
+<div class="line"><span class="lineno">  533</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 20) &lt;&lt; <span class="stringliteral">&quot;Kafka connect: connection found&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  534</span>      <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><span class="lineno">  535</span>    }</div>
+<div class="line"><span class="lineno">  536</span> </div>
+<div class="line"><span class="lineno">  537</span>    <span class="comment">// connection not found, creating a new one</span></div>
+<div class="line"><span class="lineno">  538</span>    <span class="keywordflow">if</span> (connection_count &gt;= max_connections) {</div>
+<div class="line"><span class="lineno">  539</span>      <span class="comment">// TODO: increment counter</span></div>
+<div class="line"><span class="lineno">  540</span>      ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 1) &lt;&lt; <span class="stringliteral">&quot;Kafka connect: max connections exceeded&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  541</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  542</span>    }</div>
+<div class="line"><span class="lineno">  543</span>    <span class="keyword">const</span> <span class="keyword">auto</span> conn = <a class="code hl_function" href="namespacergw_1_1amqp.html#a5d022f0abddcb79470644b8673b83f86">create_new_connection</a>(broker, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, use_ssl, verify_ssl, ca_location, user, password);</div>
+<div class="line"><span class="lineno">  544</span>    <span class="comment">// create_new_connection must always return a connection object</span></div>
+<div class="line"><span class="lineno">  545</span>    <span class="comment">// even if error occurred during creation. </span></div>
+<div class="line"><span class="lineno">  546</span>    <span class="comment">// in such a case the creation will be retried in the main thread</span></div>
+<div class="line"><span class="lineno">  547</span>    ceph_assert(conn);</div>
+<div class="line"><span class="lineno">  548</span>    ++connection_count;</div>
+<div class="line"><span class="lineno">  549</span>    ldout(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, 10) &lt;&lt; <span class="stringliteral">&quot;Kafka connect: new connection is created. Total connections: &quot;</span> &lt;&lt; connection_count &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  550</span>    <span class="keywordflow">return</span> connections.emplace(broker, conn).first-&gt;second;</div>
+<div class="line"><span class="lineno">  551</span>  }</div>
+<div class="line"><span class="lineno">  552</span> </div>
+<div class="line"><span class="lineno">  553</span>  <span class="comment">// TODO publish with confirm is needed in &quot;none&quot; case as well, cb should be invoked publish is ok (no ack)</span></div>
+<div class="line"><span class="lineno">  554</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa9c7e3fe058dc195ffdfe82592598cb7">publish</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno">  555</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno">  556</span>    <span class="keyword">const</span> std::string&amp; message) {</div>
+<div class="line"><span class="lineno">  557</span>    <span class="keywordflow">if</span> (stopped) {</div>
+<div class="line"><span class="lineno">  558</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a1efe9bf6317876ef77a64457e5caf9fa">STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno">  559</span>    }</div>
+<div class="line"><span class="lineno">  560</span>    <span class="keywordflow">if</span> (!conn || !conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  561</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#ad8f8b6a4794772e7b5023d2b644871be">STATUS_CONNECTION_CLOSED</a>;</div>
+<div class="line"><span class="lineno">  562</span>    }</div>
+<div class="line"><span class="lineno">  563</span>    <span class="keywordflow">if</span> (messages.push(<span class="keyword">new</span> message_wrapper_t(conn, topic, message, <span class="keyword">nullptr</span>))) {</div>
+<div class="line"><span class="lineno">  564</span>      ++queued;</div>
+<div class="line"><span class="lineno">  565</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#ae6950957f590676bbd62fdd2a65b7771">STATUS_OK</a>;</div>
+<div class="line"><span class="lineno">  566</span>    }</div>
+<div class="line"><span class="lineno">  567</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a12748ff97e0ea66e6a3bc23ea1b7ba8f">STATUS_QUEUE_FULL</a>;</div>
+<div class="line"><span class="lineno">  568</span>  }</div>
+<div class="line"><span class="lineno">  569</span>  </div>
+<div class="line"><span class="lineno">  570</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3961f22de6a397ca9afb6bf9adeacc7c">publish_with_confirm</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno">  571</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno">  572</span>    <span class="keyword">const</span> std::string&amp; message,</div>
+<div class="line"><span class="lineno">  573</span>    reply_callback_t cb) {</div>
+<div class="line"><span class="lineno">  574</span>    <span class="keywordflow">if</span> (stopped) {</div>
+<div class="line"><span class="lineno">  575</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a1efe9bf6317876ef77a64457e5caf9fa">STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno">  576</span>    }</div>
+<div class="line"><span class="lineno">  577</span>    <span class="keywordflow">if</span> (!conn || !conn-&gt;is_ok()) {</div>
+<div class="line"><span class="lineno">  578</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#ad8f8b6a4794772e7b5023d2b644871be">STATUS_CONNECTION_CLOSED</a>;</div>
+<div class="line"><span class="lineno">  579</span>    }</div>
+<div class="line"><span class="lineno">  580</span>    <span class="keywordflow">if</span> (messages.push(<span class="keyword">new</span> message_wrapper_t(conn, topic, message, cb))) {</div>
+<div class="line"><span class="lineno">  581</span>      ++queued;</div>
+<div class="line"><span class="lineno">  582</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#ae6950957f590676bbd62fdd2a65b7771">STATUS_OK</a>;</div>
+<div class="line"><span class="lineno">  583</span>    }</div>
+<div class="line"><span class="lineno">  584</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a12748ff97e0ea66e6a3bc23ea1b7ba8f">STATUS_QUEUE_FULL</a>;</div>
+<div class="line"><span class="lineno">  585</span>  }</div>
+<div class="line"><span class="lineno">  586</span> </div>
+<div class="line"><span class="lineno">  587</span>  <span class="comment">// dtor wait for thread to stop</span></div>
+<div class="line"><span class="lineno">  588</span>  <span class="comment">// then connection are cleaned-up</span></div>
+<div class="line"><span class="lineno">  589</span>  ~Manager() {</div>
+<div class="line"><span class="lineno">  590</span>    stopped = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  591</span>    runner.join();</div>
+<div class="line"><span class="lineno">  592</span>    messages.consume_all(delete_message);</div>
+<div class="line"><span class="lineno">  593</span>  }</div>
+<div class="line"><span class="lineno">  594</span> </div>
+<div class="line"><span class="lineno">  595</span>  <span class="comment">// get the number of connections</span></div>
+<div class="line"><span class="lineno">  596</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#af5bf93c9b27318f757e1141f6b9999e3">get_connection_count</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno">  597</span>    <span class="keywordflow">return</span> connection_count;</div>
+<div class="line"><span class="lineno">  598</span>  }</div>
+<div class="line"><span class="lineno">  599</span>  </div>
+<div class="line"><span class="lineno">  600</span>  <span class="comment">// get the number of in-flight messages</span></div>
+<div class="line"><span class="lineno">  601</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#ab800927e5fc0938994b535d7be0c388b">get_inflight</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno">  602</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">sum</a> = 0;</div>
+<div class="line"><span class="lineno">  603</span>    std::lock_guard lock(connections_lock);</div>
+<div class="line"><span class="lineno">  604</span>    std::for_each(connections.begin(), connections.end(), [&amp;sum](<span class="keyword">auto</span>&amp; conn_pair) {</div>
+<div class="line"><span class="lineno">  605</span>        sum += conn_pair.second-&gt;callbacks.size();</div>
+<div class="line"><span class="lineno">  606</span>      });</div>
+<div class="line"><span class="lineno">  607</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">sum</a>;</div>
+<div class="line"><span class="lineno">  608</span>  }</div>
+<div class="line"><span class="lineno">  609</span> </div>
+<div class="line"><span class="lineno">  610</span>  <span class="comment">// running counter of the queued messages</span></div>
+<div class="line"><span class="lineno">  611</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa6d467653c3117d942213fa04518155d">get_queued</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno">  612</span>    <span class="keywordflow">return</span> queued;</div>
+<div class="line"><span class="lineno">  613</span>  }</div>
+<div class="line"><span class="lineno">  614</span> </div>
+<div class="line"><span class="lineno">  615</span>  <span class="comment">// running counter of the dequeued messages</span></div>
+<div class="line"><span class="lineno">  616</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3aea3808f59a2f55a582ae48f3aa0047">get_dequeued</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><span class="lineno">  617</span>    <span class="keywordflow">return</span> dequeued;</div>
+<div class="line"><span class="lineno">  618</span>  }</div>
+<div class="line"><span class="lineno">  619</span>};</div>
+<div class="line"><span class="lineno">  620</span> </div>
+<div class="line"><span class="lineno">  621</span><span class="comment">// singleton manager</span></div>
+<div class="line"><span class="lineno">  622</span><span class="comment">// note that the manager itself is not a singleton, and multiple instances may co-exist</span></div>
+<div class="line"><span class="lineno">  623</span><span class="comment">// TODO make the pointer atomic in allocation and deallocation to avoid race conditions</span></div>
+<div class="line"><span class="lineno">  624</span><span class="keyword">static</span> Manager* <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  625</span> </div>
+<div class="line"><span class="lineno">  626</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a462a79a958b52638a7c2f954466ecbed">MAX_CONNECTIONS_DEFAULT</a> = 256;</div>
+<div class="line"><span class="lineno">  627</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a5aecf757c445042f56d735e6b27fb615">MAX_INFLIGHT_DEFAULT</a> = 8192; </div>
+<div class="line"><span class="lineno">  628</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#aac1f8d72ef0b825d7ff2a4d40315d944">MAX_QUEUE_DEFAULT</a> = 8192;</div>
+<div class="line"><span class="lineno">  629</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#adf0406c28a559befb717849290bb2650">READ_TIMEOUT_MS_DEFAULT</a> = 500;</div>
+<div class="line"><span class="lineno">  630</span> </div>
+<div class="line"><span class="lineno">  631</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">init</a>(CephContext* <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>) {</div>
+<div class="line"><span class="lineno">  632</span>  <span class="keywordflow">if</span> (s_manager) {</div>
+<div class="line"><span class="lineno">  633</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  634</span>  }</div>
+<div class="line"><span class="lineno">  635</span>  <span class="comment">// TODO: take conf from CephContext</span></div>
+<div class="line"><span class="lineno">  636</span>  <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a> = <span class="keyword">new</span> Manager(MAX_CONNECTIONS_DEFAULT, MAX_INFLIGHT_DEFAULT, MAX_QUEUE_DEFAULT, READ_TIMEOUT_MS_DEFAULT, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>);</div>
+<div class="line"><span class="lineno">  637</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  638</span>}</div>
+<div class="line"><span class="lineno">  639</span> </div>
+<div class="line"><span class="lineno">  640</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#af59b18dd2b90a2d9a3dc4ccb84b63fed">shutdown</a>() {</div>
+<div class="line"><span class="lineno">  641</span>  <span class="keyword">delete</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>;</div>
+<div class="line"><span class="lineno">  642</span>  <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  643</span>}</div>
+<div class="line"><span class="lineno">  644</span> </div>
+<div class="line"><span class="lineno">  645</span><a class="code hl_typedef" href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">connection_ptr_t</a> <a class="code hl_function" href="namespacergw_1_1amqp.html#a1153289c5c0f69321f05cf497e1a71d3">connect</a>(<span class="keyword">const</span> std::string&amp; url, <span class="keywordtype">bool</span> use_ssl, <span class="keywordtype">bool</span> verify_ssl,</div>
+<div class="line"><span class="lineno">  646</span>        boost::optional&lt;const std::string&amp;&gt; ca_location) {</div>
+<div class="line"><span class="lineno">  647</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  648</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1kafka_1_1_manager.html#a726362fe1f4143d62fa3847f10a9a129">connect</a>(url, use_ssl, verify_ssl, ca_location);</div>
+<div class="line"><span class="lineno">  649</span>}</div>
+<div class="line"><span class="lineno">  650</span> </div>
+<div class="line"><span class="lineno">  651</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa9c7e3fe058dc195ffdfe82592598cb7">publish</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno">  652</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno">  653</span>    <span class="keyword">const</span> std::string&amp; message) {</div>
+<div class="line"><span class="lineno">  654</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a1efe9bf6317876ef77a64457e5caf9fa">STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno">  655</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1kafka_1_1_manager.html#a2f4bee5c8a67cd7fbaea9fff14ff212f">publish</a>(conn, topic, message);</div>
+<div class="line"><span class="lineno">  656</span>}</div>
+<div class="line"><span class="lineno">  657</span> </div>
+<div class="line"><span class="lineno">  658</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3961f22de6a397ca9afb6bf9adeacc7c">publish_with_confirm</a>(connection_ptr_t&amp; conn, </div>
+<div class="line"><span class="lineno">  659</span>    <span class="keyword">const</span> std::string&amp; topic,</div>
+<div class="line"><span class="lineno">  660</span>    <span class="keyword">const</span> std::string&amp; message,</div>
+<div class="line"><span class="lineno">  661</span>    reply_callback_t cb) {</div>
+<div class="line"><span class="lineno">  662</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a1efe9bf6317876ef77a64457e5caf9fa">STATUS_MANAGER_STOPPED</a>;</div>
+<div class="line"><span class="lineno">  663</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1kafka_1_1_manager.html#a7fd4bea8414d0ca4dadc348912b9a8a8">publish_with_confirm</a>(conn, topic, message, cb);</div>
+<div class="line"><span class="lineno">  664</span>}</div>
+<div class="line"><span class="lineno">  665</span> </div>
+<div class="line"><span class="lineno">  666</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#af5bf93c9b27318f757e1141f6b9999e3">get_connection_count</a>() {</div>
+<div class="line"><span class="lineno">  667</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  668</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1kafka_1_1_manager.html#a07873167ef7cb74f108a34105c5aa23a">get_connection_count</a>();</div>
+<div class="line"><span class="lineno">  669</span>}</div>
+<div class="line"><span class="lineno">  670</span>  </div>
+<div class="line"><span class="lineno">  671</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#ab800927e5fc0938994b535d7be0c388b">get_inflight</a>() {</div>
+<div class="line"><span class="lineno">  672</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  673</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1kafka_1_1_manager.html#aff48a536112b41e910b95e17399516cb">get_inflight</a>();</div>
+<div class="line"><span class="lineno">  674</span>}</div>
+<div class="line"><span class="lineno">  675</span> </div>
+<div class="line"><span class="lineno">  676</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa6d467653c3117d942213fa04518155d">get_queued</a>() {</div>
+<div class="line"><span class="lineno">  677</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  678</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1kafka_1_1_manager.html#a4bf1a00db0c5abf2ecbd5eee03b266f8">get_queued</a>();</div>
+<div class="line"><span class="lineno">  679</span>}</div>
+<div class="line"><span class="lineno">  680</span> </div>
+<div class="line"><span class="lineno">  681</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a3aea3808f59a2f55a582ae48f3aa0047">get_dequeued</a>() {</div>
+<div class="line"><span class="lineno">  682</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  683</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_function" href="classrgw_1_1kafka_1_1_manager.html#ae87a6892320c5e416da354e8d01c4a23">get_dequeued</a>();</div>
+<div class="line"><span class="lineno">  684</span>}</div>
+<div class="line"><span class="lineno">  685</span> </div>
+<div class="line"><span class="lineno">  686</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a1b9b9c017aed3c67a3d75c386d0af518">get_max_connections</a>() {</div>
+<div class="line"><span class="lineno">  687</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a462a79a958b52638a7c2f954466ecbed">MAX_CONNECTIONS_DEFAULT</a>;</div>
+<div class="line"><span class="lineno">  688</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_variable" href="classrgw_1_1kafka_1_1_manager.html#ab24bef1a6e697504795184308c138638">max_connections</a>;</div>
+<div class="line"><span class="lineno">  689</span>}</div>
+<div class="line"><span class="lineno">  690</span> </div>
+<div class="line"><span class="lineno">  691</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a7aaf53aee20dd95b529ec84f3b5faab7">get_max_inflight</a>() {</div>
+<div class="line"><span class="lineno">  692</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a5aecf757c445042f56d735e6b27fb615">MAX_INFLIGHT_DEFAULT</a>;</div>
+<div class="line"><span class="lineno">  693</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_variable" href="classrgw_1_1kafka_1_1_manager.html#aa304192167f7005ab094fdcfafb83faf">max_inflight</a>;</div>
+<div class="line"><span class="lineno">  694</span>}</div>
+<div class="line"><span class="lineno">  695</span> </div>
+<div class="line"><span class="lineno">  696</span><span class="keywordtype">size_t</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#a7dee5c2916d5844ae2f28d3d5b847700">get_max_queue</a>() {</div>
+<div class="line"><span class="lineno">  697</span>  <span class="keywordflow">if</span> (!s_manager) <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#aac1f8d72ef0b825d7ff2a4d40315d944">MAX_QUEUE_DEFAULT</a>;</div>
+<div class="line"><span class="lineno">  698</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">s_manager</a>-&gt;<a class="code hl_variable" href="classrgw_1_1kafka_1_1_manager.html#a6d960118710d138e320d927cc4298ff2">max_queue</a>;</div>
+<div class="line"><span class="lineno">  699</span>}</div>
+<div class="line"><span class="lineno">  700</span> </div>
+<div class="line"><span class="lineno">  701</span>} <span class="comment">// namespace kafka</span></div>
+<div class="line"><span class="lineno">  702</span> </div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_a07873167ef7cb74f108a34105c5aa23a"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#a07873167ef7cb74f108a34105c5aa23a">rgw::kafka::Manager::get_connection_count</a></div><div class="ttdeci">size_t get_connection_count() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00596">rgw_kafka.cc:596</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_a2f4bee5c8a67cd7fbaea9fff14ff212f"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#a2f4bee5c8a67cd7fbaea9fff14ff212f">rgw::kafka::Manager::publish</a></div><div class="ttdeci">int publish(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00554">rgw_kafka.cc:554</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_a4bf1a00db0c5abf2ecbd5eee03b266f8"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#a4bf1a00db0c5abf2ecbd5eee03b266f8">rgw::kafka::Manager::get_queued</a></div><div class="ttdeci">size_t get_queued() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00611">rgw_kafka.cc:611</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_a6d960118710d138e320d927cc4298ff2"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#a6d960118710d138e320d927cc4298ff2">rgw::kafka::Manager::max_queue</a></div><div class="ttdeci">const size_t max_queue</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00297">rgw_kafka.cc:297</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_a726362fe1f4143d62fa3847f10a9a129"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#a726362fe1f4143d62fa3847f10a9a129">rgw::kafka::Manager::connect</a></div><div class="ttdeci">connection_ptr_t connect(const std::string &amp;url, bool use_ssl, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00501">rgw_kafka.cc:501</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_a7fd4bea8414d0ca4dadc348912b9a8a8"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#a7fd4bea8414d0ca4dadc348912b9a8a8">rgw::kafka::Manager::publish_with_confirm</a></div><div class="ttdeci">int publish_with_confirm(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message, reply_callback_t cb)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00570">rgw_kafka.cc:570</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_aa304192167f7005ab094fdcfafb83faf"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#aa304192167f7005ab094fdcfafb83faf">rgw::kafka::Manager::max_inflight</a></div><div class="ttdeci">const size_t max_inflight</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00296">rgw_kafka.cc:296</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_ab24bef1a6e697504795184308c138638"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#ab24bef1a6e697504795184308c138638">rgw::kafka::Manager::max_connections</a></div><div class="ttdeci">const size_t max_connections</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00295">rgw_kafka.cc:295</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_ae87a6892320c5e416da354e8d01c4a23"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#ae87a6892320c5e416da354e8d01c4a23">rgw::kafka::Manager::get_dequeued</a></div><div class="ttdeci">size_t get_dequeued() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00616">rgw_kafka.cc:616</a></div></div>
+<div class="ttc" id="aclassrgw_1_1kafka_1_1_manager_html_aff48a536112b41e910b95e17399516cb"><div class="ttname"><a href="classrgw_1_1kafka_1_1_manager.html#aff48a536112b41e910b95e17399516cb">rgw::kafka::Manager::get_inflight</a></div><div class="ttdeci">size_t get_inflight() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00601">rgw_kafka.cc:601</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a691d1aca9f9a55d0d2a9808488fab8b0"><div class="ttname"><a href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">detail::sum</a></div><div class="ttdeci">constexpr size_t sum(size_t v, Args... args)</div><div class="ttdef"><b>Definition</b> <a href="rgw__string_8h_source.html#l00133">rgw_string.h:133</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a1153289c5c0f69321f05cf497e1a71d3"><div class="ttname"><a href="namespacergw_1_1amqp.html#a1153289c5c0f69321f05cf497e1a71d3">rgw::amqp::connect</a></div><div class="ttdeci">connection_ptr_t connect(const std::string &amp;url, const std::string &amp;exchange, bool mandatory_delivery, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01046">rgw_amqp.cc:1046</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a1b9b9c017aed3c67a3d75c386d0af518"><div class="ttname"><a href="namespacergw_1_1amqp.html#a1b9b9c017aed3c67a3d75c386d0af518">rgw::amqp::get_max_connections</a></div><div class="ttdeci">size_t get_max_connections()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01087">rgw_amqp.cc:1087</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a3961f22de6a397ca9afb6bf9adeacc7c"><div class="ttname"><a href="namespacergw_1_1amqp.html#a3961f22de6a397ca9afb6bf9adeacc7c">rgw::amqp::publish_with_confirm</a></div><div class="ttdeci">int publish_with_confirm(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message, reply_callback_t cb)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01059">rgw_amqp.cc:1059</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a3aea3808f59a2f55a582ae48f3aa0047"><div class="ttname"><a href="namespacergw_1_1amqp.html#a3aea3808f59a2f55a582ae48f3aa0047">rgw::amqp::get_dequeued</a></div><div class="ttdeci">size_t get_dequeued()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01082">rgw_amqp.cc:1082</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a5d022f0abddcb79470644b8673b83f86"><div class="ttname"><a href="namespacergw_1_1amqp.html#a5d022f0abddcb79470644b8673b83f86">rgw::amqp::create_new_connection</a></div><div class="ttdeci">connection_ptr_t create_new_connection(const amqp_connection_info &amp;info, const std::string &amp;exchange, bool mandatory_delivery, CephContext *cct, bool verify_ssl, boost::optional&lt; const std::string &amp; &gt; ca_location)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00541">rgw_amqp.cc:541</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a65ab1d692c71f90ccdb259589704ab61"><div class="ttname"><a href="namespacergw_1_1amqp.html#a65ab1d692c71f90ccdb259589704ab61">rgw::amqp::create_connection</a></div><div class="ttdeci">connection_ptr_t &amp; create_connection(connection_ptr_t &amp;conn, const amqp_connection_info &amp;info)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00391">rgw_amqp.cc:391</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a7aaf53aee20dd95b529ec84f3b5faab7"><div class="ttname"><a href="namespacergw_1_1amqp.html#a7aaf53aee20dd95b529ec84f3b5faab7">rgw::amqp::get_max_inflight</a></div><div class="ttdeci">size_t get_max_inflight()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01092">rgw_amqp.cc:1092</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_a7dee5c2916d5844ae2f28d3d5b847700"><div class="ttname"><a href="namespacergw_1_1amqp.html#a7dee5c2916d5844ae2f28d3d5b847700">rgw::amqp::get_max_queue</a></div><div class="ttdeci">size_t get_max_queue()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01097">rgw_amqp.cc:1097</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa3b5fbef4e5bf27745801f81c8d8b990"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">rgw::amqp::init</a></div><div class="ttdeci">bool init(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01031">rgw_amqp.cc:1031</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa6d467653c3117d942213fa04518155d"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa6d467653c3117d942213fa04518155d">rgw::amqp::get_queued</a></div><div class="ttdeci">size_t get_queued()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01077">rgw_amqp.cc:1077</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa7b2bba1750c3eb54e89bf18915ecaba"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa7b2bba1750c3eb54e89bf18915ecaba">rgw::amqp::ConnectionList</a></div><div class="ttdeci">std::unordered_map&lt; connection_id_t, connection_ptr_t, connection_id_t::hasher &gt; ConnectionList</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00570">rgw_amqp.cc:570</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa9c7e3fe058dc195ffdfe82592598cb7"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa9c7e3fe058dc195ffdfe82592598cb7">rgw::amqp::publish</a></div><div class="ttdeci">int publish(connection_ptr_t &amp;conn, const std::string &amp;topic, const std::string &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01052">rgw_amqp.cc:1052</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_ab800927e5fc0938994b535d7be0c388b"><div class="ttname"><a href="namespacergw_1_1amqp.html#ab800927e5fc0938994b535d7be0c388b">rgw::amqp::get_inflight</a></div><div class="ttdeci">size_t get_inflight()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01072">rgw_amqp.cc:1072</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_ad42fa533a88dbf458d1b07431e64930d"><div class="ttname"><a href="namespacergw_1_1amqp.html#ad42fa533a88dbf458d1b07431e64930d">rgw::amqp::status_to_string</a></div><div class="ttdeci">std::string status_to_string(int s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00333">rgw_amqp.cc:333</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_af3bd5460eaa0696dc587773074d750ac"><div class="ttname"><a href="namespacergw_1_1amqp.html#af3bd5460eaa0696dc587773074d750ac">rgw::amqp::connection_ptr_t</a></div><div class="ttdeci">boost::intrusive_ptr&lt; connection_t &gt; connection_ptr_t</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8h_source.html#l00017">rgw_amqp.h:17</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_af59b18dd2b90a2d9a3dc4ccb84b63fed"><div class="ttname"><a href="namespacergw_1_1amqp.html#af59b18dd2b90a2d9a3dc4ccb84b63fed">rgw::amqp::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01041">rgw_amqp.cc:1041</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_af5bf93c9b27318f757e1141f6b9999e3"><div class="ttname"><a href="namespacergw_1_1amqp.html#af5bf93c9b27318f757e1141f6b9999e3">rgw::amqp::get_connection_count</a></div><div class="ttdeci">size_t get_connection_count()</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01067">rgw_amqp.cc:1067</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_afafb84096bd9038e03054b7dac3c0e03"><div class="ttname"><a href="namespacergw_1_1amqp.html#afafb84096bd9038e03054b7dac3c0e03">rgw::amqp::MessageQueue</a></div><div class="ttdeci">boost::lockfree::queue&lt; message_wrapper_t *, boost::lockfree::fixed_sized&lt; true &gt; &gt; MessageQueue</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l00571">rgw_amqp.cc:571</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_a03e980a7bc3aaf78e771eed4c198bbd8"><div class="ttname"><a href="namespacergw_1_1kafka.html#a03e980a7bc3aaf78e771eed4c198bbd8">rgw::kafka::s_manager</a></div><div class="ttdeci">static Manager * s_manager</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00624">rgw_kafka.cc:624</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_a12748ff97e0ea66e6a3bc23ea1b7ba8f"><div class="ttname"><a href="namespacergw_1_1kafka.html#a12748ff97e0ea66e6a3bc23ea1b7ba8f">rgw::kafka::STATUS_QUEUE_FULL</a></div><div class="ttdeci">static const int STATUS_QUEUE_FULL</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00036">rgw_kafka.cc:36</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_a1efe9bf6317876ef77a64457e5caf9fa"><div class="ttname"><a href="namespacergw_1_1kafka.html#a1efe9bf6317876ef77a64457e5caf9fa">rgw::kafka::STATUS_MANAGER_STOPPED</a></div><div class="ttdeci">static const int STATUS_MANAGER_STOPPED</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00038">rgw_kafka.cc:38</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_a462a79a958b52638a7c2f954466ecbed"><div class="ttname"><a href="namespacergw_1_1kafka.html#a462a79a958b52638a7c2f954466ecbed">rgw::kafka::MAX_CONNECTIONS_DEFAULT</a></div><div class="ttdeci">static const size_t MAX_CONNECTIONS_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00626">rgw_kafka.cc:626</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_a5aecf757c445042f56d735e6b27fb615"><div class="ttname"><a href="namespacergw_1_1kafka.html#a5aecf757c445042f56d735e6b27fb615">rgw::kafka::MAX_INFLIGHT_DEFAULT</a></div><div class="ttdeci">static const size_t MAX_INFLIGHT_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00627">rgw_kafka.cc:627</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_aac1f8d72ef0b825d7ff2a4d40315d944"><div class="ttname"><a href="namespacergw_1_1kafka.html#aac1f8d72ef0b825d7ff2a4d40315d944">rgw::kafka::MAX_QUEUE_DEFAULT</a></div><div class="ttdeci">static const size_t MAX_QUEUE_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00628">rgw_kafka.cc:628</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_ad8f8b6a4794772e7b5023d2b644871be"><div class="ttname"><a href="namespacergw_1_1kafka.html#ad8f8b6a4794772e7b5023d2b644871be">rgw::kafka::STATUS_CONNECTION_CLOSED</a></div><div class="ttdeci">static const int STATUS_CONNECTION_CLOSED</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00035">rgw_kafka.cc:35</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_adf0406c28a559befb717849290bb2650"><div class="ttname"><a href="namespacergw_1_1kafka.html#adf0406c28a559befb717849290bb2650">rgw::kafka::READ_TIMEOUT_MS_DEFAULT</a></div><div class="ttdeci">static const int READ_TIMEOUT_MS_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00629">rgw_kafka.cc:629</a></div></div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_ae6950957f590676bbd62fdd2a65b7771"><div class="ttname"><a href="namespacergw_1_1kafka.html#ae6950957f590676bbd62fdd2a65b7771">rgw::kafka::STATUS_OK</a></div><div class="ttdeci">static const int STATUS_OK</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00042">rgw_kafka.cc:42</a></div></div>
+<div class="ttc" id="anamespacergw_html_a6237df832e7e1e6aed1d3cb1c0e963f9"><div class="ttname"><a href="namespacergw.html#a6237df832e7e1e6aed1d3cb1c0e963f9">rgw::parse_url_authority</a></div><div class="ttdeci">bool parse_url_authority(const std::string &amp;url, std::string &amp;host, std::string &amp;user, std::string &amp;password)</div><div class="ttdef"><b>Definition</b> <a href="rgw__url_8cc_source.html#l00020">rgw_url.cc:20</a></div></div>
+<div class="ttc" id="argw__kafka_8cc_html_a8169d7e8895d040cae9f2e9c171a1bd8"><div class="ttname"><a href="rgw__kafka_8cc.html#a8169d7e8895d040cae9f2e9c171a1bd8">INCREMENT_AND_CONTINUE</a></div><div class="ttdeci">#define INCREMENT_AND_CONTINUE(IT)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00284">rgw_kafka.cc:284</a></div></div>
+<div class="ttc" id="argw__kafka_8cc_html_aab62365792422ae69d81a1ccac5aac29"><div class="ttname"><a href="rgw__kafka_8cc.html#aab62365792422ae69d81a1ccac5aac29">ERASE_AND_CONTINUE</a></div><div class="ttdeci">#define ERASE_AND_CONTINUE(IT, CONTAINER)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00288">rgw_kafka.cc:288</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8169d7e8895d040cae9f2e9c171a1bd8" name="a8169d7e8895d040cae9f2e9c171a1bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8169d7e8895d040cae9f2e9c171a1bd8">&#9670;&#160;</a></span>INCREMENT_AND_CONTINUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INCREMENT_AND_CONTINUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>값:</b><div class="fragment"><div class="line">          ++IT; \</div>
+<div class="line">          <span class="keywordflow">continue</span>;</div>
+</div><!-- fragment -->
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00284">284</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="ae51aa9cb4e5070afcbe727215172abac" name="ae51aa9cb4e5070afcbe727215172abac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51aa9cb4e5070afcbe727215172abac">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const rd_kafka_topic_t *&#160;</td>
+          <td class="paramname"><em>rkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00027">27</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>                                                                    {</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> name == std::string_view(rd_kafka_topic_name(rkt)); </div>
+<div class="line"><span class="lineno">   29</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__kafka_8cc.html">rgw_kafka.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

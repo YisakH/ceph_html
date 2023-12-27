@@ -1,0 +1,744 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::auth::swift::SignedTokenEngine 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pri-types">Private 타입</a> &#124;
+<a href="#pri-methods">Private 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
+<a href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::auth::swift::SignedTokenEngine 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a>&gt;</code></p>
+<div class="dynheader">
+rgw::auth::swift::SignedTokenEngine에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1swift_1_1_signed_token_engine__inherit__graph.png" border="0" usemap="#argw_1_1auth_1_1swift_1_1_signed_token_engine_inherit__map" alt="Inheritance graph"/></div>
+<map name="argw_1_1auth_1_1swift_1_1_signed_token_engine_inherit__map" id="argw_1_1auth_1_1swift_1_1_signed_token_engine_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,165,153,400"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine.html" title=" " alt="" coords="23,5,136,117"/>
+<area shape="poly" title=" " alt="" coords="82,132,82,165,77,165,77,132"/>
+</map>
+</div>
+<div class="dynheader">
+rgw::auth::swift::SignedTokenEngine에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1swift_1_1_signed_token_engine__coll__graph.png" border="0" usemap="#argw_1_1auth_1_1swift_1_1_signed_token_engine_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1auth_1_1swift_1_1_signed_token_engine_coll__map" id="argw_1_1auth_1_1swift_1_1_signed_token_engine_coll__map">
+<area shape="rect" title=" " alt="" coords="244,368,392,539"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine.html" title=" " alt="" coords="5,99,119,211"/>
+<area shape="poly" title=" " alt="" coords="89,223,108,264,133,302,187,358,246,404,243,408,184,362,129,306,104,267,84,225"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html" title="Base singleton representing a Store or stacking layer" alt="" coords="143,5,306,304"/>
+<area shape="poly" title=" " alt="" coords="274,303,289,351,284,352,269,304"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_token_extractor.html" title=" " alt="" coords="331,109,492,200"/>
+<area shape="poly" title=" " alt="" coords="400,200,352,353,347,351,395,199"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html" title=" " alt="" coords="516,101,661,208"/>
+<area shape="poly" title=" " alt="" coords="568,209,541,258,507,306,459,354,407,396,404,392,455,350,503,302,537,255,563,206"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a0dbce24e488417ed705782c91b587425" id="r_a0dbce24e488417ed705782c91b587425"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a0dbce24e488417ed705782c91b587425">SignedTokenEngine</a> (CephContext *const <a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#af8a863af113ccc8296f3cfd58aeb0ce6">cct</a>, <a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *_store, const <a class="el" href="classrgw_1_1auth_1_1_token_extractor.html">rgw::auth::TokenExtractor</a> *const <a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a1fc3140f82646132f35e16c20150e9f0">extractor</a>, const <a class="el" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a> *const <a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac7b11c09786c8e494a358449fb918e22">apl_factory</a>)</td></tr>
+<tr class="separator:a0dbce24e488417ed705782c91b587425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1f3eaee1cc25d8e1d1078c1928708a" id="r_abd1f3eaee1cc25d8e1d1078c1928708a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#abd1f3eaee1cc25d8e1d1078c1928708a">get_name</a> () const noexcept override</td></tr>
+<tr class="separator:abd1f3eaee1cc25d8e1d1078c1928708a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a8fa18537e1d3ad619a59cbbc96574" id="r_ac6a8fa18537e1d3ad619a59cbbc96574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a0924f7d2dacc7d7ee2ce41b16078905b">result_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac6a8fa18537e1d3ad619a59cbbc96574">authenticate</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const <a class="el" href="structreq__state.html">req_state</a> *const s, optional_yield y) const override</td></tr>
+<tr class="separator:ac6a8fa18537e1d3ad619a59cbbc96574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1auth_1_1_engine"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1auth_1_1_engine')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_engine.html">rgw::auth::Engine</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:af7d8cbe5dcab2f0e690ebaa1e8a7c511 inherit pub_methods_classrgw_1_1auth_1_1_engine" id="r_af7d8cbe5dcab2f0e690ebaa1e8a7c511"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_engine.html#af7d8cbe5dcab2f0e690ebaa1e8a7c511">~Engine</a> ()=default</td></tr>
+<tr class="separator:af7d8cbe5dcab2f0e690ebaa1e8a7c511 inherit pub_methods_classrgw_1_1auth_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 타입</h2></td></tr>
+<tr class="memitem:a0924f7d2dacc7d7ee2ce41b16078905b" id="r_a0924f7d2dacc7d7ee2ce41b16078905b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a0924f7d2dacc7d7ee2ce41b16078905b">result_t</a> = <a class="el" href="classrgw_1_1auth_1_1_engine.html#a1655e1082e3318b00d0121d2bc54e214">rgw::auth::Engine::result_t</a></td></tr>
+<tr class="separator:a0924f7d2dacc7d7ee2ce41b16078905b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 멤버 함수</h2></td></tr>
+<tr class="memitem:a74f555a2d7d6308e4503f56f1dabd9d7" id="r_a74f555a2d7d6308e4503f56f1dabd9d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a74f555a2d7d6308e4503f56f1dabd9d7">is_applicable</a> (const std::string &amp;token) const noexcept</td></tr>
+<tr class="separator:a74f555a2d7d6308e4503f56f1dabd9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a220c1e25d1e036321f7f768e4bcc1a8c" id="r_a220c1e25d1e036321f7f768e4bcc1a8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a0924f7d2dacc7d7ee2ce41b16078905b">result_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a220c1e25d1e036321f7f768e4bcc1a8c">authenticate</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const std::string &amp;token, const <a class="el" href="structreq__state.html">req_state</a> *s) const</td></tr>
+<tr class="separator:a220c1e25d1e036321f7f768e4bcc1a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:af8a863af113ccc8296f3cfd58aeb0ce6" id="r_af8a863af113ccc8296f3cfd58aeb0ce6"><td class="memItemLeft" align="right" valign="top">CephContext *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#af8a863af113ccc8296f3cfd58aeb0ce6">cct</a></td></tr>
+<tr class="separator:af8a863af113ccc8296f3cfd58aeb0ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9614203754136aaddd8db24ca43ca958" id="r_a9614203754136aaddd8db24ca43ca958"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a9614203754136aaddd8db24ca43ca958">store</a></td></tr>
+<tr class="separator:a9614203754136aaddd8db24ca43ca958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc3140f82646132f35e16c20150e9f0" id="r_a1fc3140f82646132f35e16c20150e9f0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classrgw_1_1auth_1_1_token_extractor.html">rgw::auth::TokenExtractor</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a1fc3140f82646132f35e16c20150e9f0">extractor</a></td></tr>
+<tr class="separator:a1fc3140f82646132f35e16c20150e9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b11c09786c8e494a358449fb918e22" id="r_ac7b11c09786c8e494a358449fb918e22"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac7b11c09786c8e494a358449fb918e22">apl_factory</a></td></tr>
+<tr class="separator:ac7b11c09786c8e494a358449fb918e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+추가로 상속된 멤버들</h2></td></tr>
+<tr class="inherit_header pub_types_classrgw_1_1auth_1_1_engine"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrgw_1_1auth_1_1_engine')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_engine.html">rgw::auth::Engine</a>(으)로부터 상속된 Public 타입</td></tr>
+<tr class="memitem:a1655e1082e3318b00d0121d2bc54e214 inherit pub_types_classrgw_1_1auth_1_1_engine" id="r_a1655e1082e3318b00d0121d2bc54e214"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_engine.html#a1655e1082e3318b00d0121d2bc54e214">result_t</a> = <a class="el" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html">AuthResult</a></td></tr>
+<tr class="separator:a1655e1082e3318b00d0121d2bc54e214 inherit pub_types_classrgw_1_1auth_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00081">81</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">멤버 타입정의 문서화</h2>
+<a id="a0924f7d2dacc7d7ee2ce41b16078905b" name="a0924f7d2dacc7d7ee2ce41b16078905b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0924f7d2dacc7d7ee2ce41b16078905b">&#9670;&#160;</a></span>result_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a0924f7d2dacc7d7ee2ce41b16078905b">rgw::auth::swift::SignedTokenEngine::result_t</a> =  <a class="el" href="classrgw_1_1auth_1_1_engine.html#a1655e1082e3318b00d0121d2bc54e214">rgw::auth::Engine::result_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00082">82</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a0dbce24e488417ed705782c91b587425" name="a0dbce24e488417ed705782c91b587425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbce24e488417ed705782c91b587425">&#9670;&#160;</a></span>SignedTokenEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::auth::swift::SignedTokenEngine::SignedTokenEngine </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *const&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *&#160;</td>
+          <td class="paramname"><em>_store</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classrgw_1_1auth_1_1_token_extractor.html">rgw::auth::TokenExtractor</a> *const&#160;</td>
+          <td class="paramname"><em>extractor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a> *const&#160;</td>
+          <td class="paramname"><em>apl_factory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00096">96</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>    : <a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#af8a863af113ccc8296f3cfd58aeb0ce6">cct</a>(<a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#af8a863af113ccc8296f3cfd58aeb0ce6">cct</a>),</div>
+<div class="line"><span class="lineno">  101</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a9614203754136aaddd8db24ca43ca958">store</a>(_store),</div>
+<div class="line"><span class="lineno">  102</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a1fc3140f82646132f35e16c20150e9f0">extractor</a>(<a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a1fc3140f82646132f35e16c20150e9f0">extractor</a>),</div>
+<div class="line"><span class="lineno">  103</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac7b11c09786c8e494a358449fb918e22">apl_factory</a>(<a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac7b11c09786c8e494a358449fb918e22">apl_factory</a>) {</div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_html_a1fc3140f82646132f35e16c20150e9f0"><div class="ttname"><a href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a1fc3140f82646132f35e16c20150e9f0">rgw::auth::swift::SignedTokenEngine::extractor</a></div><div class="ttdeci">const rgw::auth::TokenExtractor *const extractor</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8h_source.html#l00086">rgw_swift_auth.h:86</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_html_a9614203754136aaddd8db24ca43ca958"><div class="ttname"><a href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a9614203754136aaddd8db24ca43ca958">rgw::auth::swift::SignedTokenEngine::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8h_source.html#l00085">rgw_swift_auth.h:85</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_html_ac7b11c09786c8e494a358449fb918e22"><div class="ttname"><a href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac7b11c09786c8e494a358449fb918e22">rgw::auth::swift::SignedTokenEngine::apl_factory</a></div><div class="ttdeci">const rgw::auth::LocalApplier::Factory *const apl_factory</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8h_source.html#l00087">rgw_swift_auth.h:87</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_html_af8a863af113ccc8296f3cfd58aeb0ce6"><div class="ttname"><a href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#af8a863af113ccc8296f3cfd58aeb0ce6">rgw::auth::swift::SignedTokenEngine::cct</a></div><div class="ttdeci">CephContext *const cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8h_source.html#l00084">rgw_swift_auth.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="ac6a8fa18537e1d3ad619a59cbbc96574" name="ac6a8fa18537e1d3ad619a59cbbc96574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a8fa18537e1d3ad619a59cbbc96574">&#9670;&#160;</a></span>authenticate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a0924f7d2dacc7d7ee2ce41b16078905b">result_t</a> rgw::auth::swift::SignedTokenEngine::authenticate </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structreq__state.html">req_state</a> *const&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">optional_yield&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1auth_1_1_engine.html#a23e157b40b46d994bf29fce435e99903">rgw::auth::Engine</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00110">110</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>                                             {</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a220c1e25d1e036321f7f768e4bcc1a8c">authenticate</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a1fc3140f82646132f35e16c20150e9f0">extractor</a>-&gt;<a class="code hl_function" href="classrgw_1_1auth_1_1_token_extractor.html#ad69d0a7855d70a0b244a51fc782467cb">get_token</a>(s), s);</div>
+<div class="line"><span class="lineno">  113</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_token_extractor_html_ad69d0a7855d70a0b244a51fc782467cb"><div class="ttname"><a href="classrgw_1_1auth_1_1_token_extractor.html#ad69d0a7855d70a0b244a51fc782467cb">rgw::auth::TokenExtractor::get_token</a></div><div class="ttdeci">virtual std::string get_token(const req_state *s) const =0</div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_html_a220c1e25d1e036321f7f768e4bcc1a8c"><div class="ttname"><a href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a220c1e25d1e036321f7f768e4bcc1a8c">rgw::auth::swift::SignedTokenEngine::authenticate</a></div><div class="ttdeci">result_t authenticate(const DoutPrefixProvider *dpp, const std::string &amp;token, const req_state *s) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8cc_source.html#l00531">rgw_swift_auth.cc:531</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1swift_1_1_signed_token_engine_ac6a8fa18537e1d3ad619a59cbbc96574_cgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_ac6a8fa18537e1d3ad619a59cbbc96574_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_ac6a8fa18537e1d3ad619a59cbbc96574_cgraph" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_ac6a8fa18537e1d3ad619a59cbbc96574_cgraph">
+<area shape="rect" title=" " alt="" coords="5,517,181,560"/>
+<area shape="rect" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a220c1e25d1e036321f7f768e4bcc1a8c" title=" " alt="" coords="229,366,404,409"/>
+<area shape="poly" title=" " alt="" coords="125,514,269,416,272,420,128,519"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="521,650,563,677"/>
+<area shape="poly" title=" " alt="" coords="181,523,234,521,292,525,351,538,405,562,424,579,431,599,438,618,454,636,479,650,506,657,504,662,477,655,450,641,434,621,426,601,419,582,403,566,349,543,292,530,234,527,181,529"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_token_extractor.html#ad69d0a7855d70a0b244a51fc782467cb" title=" " alt="" coords="231,576,402,618"/>
+<area shape="poly" title=" " alt="" coords="177,558,218,569,217,574,176,563"/>
+<area shape="rect" href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f" title=" " alt="" coords="697,10,781,37"/>
+<area shape="poly" title=" " alt="" coords="316,366,324,301,344,212,361,165,384,120,414,79,450,44,477,28,506,16,568,5,629,4,682,9,681,15,629,9,569,10,508,21,480,33,454,49,418,82,389,123,366,167,349,213,329,301,321,366"/>
+<area shape="rect" href="namespacergw_1_1auth_1_1swift.html#a59e349bb2118995758f13fd97b5d96f8" title=" " alt="" coords="470,58,613,101"/>
+<area shape="poly" title=" " alt="" coords="320,365,334,314,360,246,398,174,422,141,450,111,455,107,459,111,454,115,426,144,402,177,365,248,339,316,325,367"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html#a8036db83ca2afe2beccd761b8010f389" title=" " alt="" coords="454,125,629,168"/>
+<area shape="poly" title=" " alt="" coords="324,365,342,326,369,276,405,223,450,178,455,174,458,178,454,182,409,227,373,278,346,328,328,367"/>
+<area shape="rect" href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467" title=" " alt="" coords="496,216,587,242"/>
+<area shape="poly" title=" " alt="" coords="332,364,381,308,414,278,451,252,480,239,482,244,453,257,417,282,385,312,336,368"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691" title=" " alt="" coords="477,266,607,309"/>
+<area shape="poly" title=" " alt="" coords="358,364,451,319,465,313,467,318,453,324,360,368"/>
+<area shape="poly" title=" " alt="" coords="336,408,370,457,406,519,419,554,425,583,433,610,454,636,478,651,506,658,504,663,476,656,450,640,428,612,419,584,414,555,402,521,366,460,332,411"/>
+<area shape="rect" href="namespacergw_1_1auth_1_1swift.html#a43f6933373261f4641068dc41aceccbf" title=" " alt="" coords="464,333,620,376"/>
+<area shape="poly" title=" " alt="" coords="404,372,448,366,448,371,405,377"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#ae17ed0d19bcb7533ea56db7ab70ad83d" title=" " alt="" coords="476,400,607,442"/>
+<area shape="poly" title=" " alt="" coords="405,398,461,407,460,412,404,403"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#a8e64fb4c72f69f8d9bf514c0da077f6f" title=" " alt="" coords="477,466,607,509"/>
+<area shape="poly" title=" " alt="" coords="360,407,453,452,467,458,465,463,451,457,358,412"/>
+<area shape="rect" href="rgw__common_8h.html#a4bc9629a22d328ea8a54466e35e86c89" title=" " alt="" coords="500,533,584,560"/>
+<area shape="poly" title=" " alt="" coords="336,408,385,464,417,493,453,519,486,533,483,538,451,523,414,498,381,467,332,411"/>
+<area shape="rect" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a74f555a2d7d6308e4503f56f1dabd9d7" title=" " alt="" coords="452,584,631,626"/>
+<area shape="poly" title=" " alt="" coords="333,408,393,497,426,541,454,570,459,573,456,578,450,574,422,544,388,500,329,411"/>
+<area shape="poly" title=" " alt="" coords="613,57,682,37,683,42,615,62"/>
+<area shape="rect" href="rgw__common_8cc.html#aa39158860adaaaa9be76ebec5ffbabca" title=" " alt="" coords="679,62,799,89"/>
+<area shape="poly" title=" " alt="" coords="614,76,663,75,664,80,614,81"/>
+<area shape="rect" href="namespacergw.html#a34a5757756e9618325f611b073ccd448" title=" " alt="" coords="693,137,785,164"/>
+<area shape="poly" title=" " alt="" coords="604,99,686,129,684,134,603,104"/>
+<area shape="poly" title=" " alt="" coords="705,138,699,128,704,119,717,113,739,110,763,113,775,120,773,124,761,118,739,116,718,118,707,122,705,128,710,135"/>
+<area shape="poly" title=" " alt="" coords="508,217,502,207,506,197,520,191,542,189,565,192,578,198,575,203,564,197,542,194,521,196,510,201,507,207,513,214"/>
+<area shape="rect" href="rgw__common_8h.html#afd2ecae145416d16c58fbc062bfb901d" title=" " alt="" coords="706,533,772,560"/>
+<area shape="poly" title=" " alt="" coords="584,544,690,544,690,549,584,549"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a220c1e25d1e036321f7f768e4bcc1a8c" name="a220c1e25d1e036321f7f768e4bcc1a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220c1e25d1e036321f7f768e4bcc1a8c">&#9670;&#160;</a></span>authenticate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a0924f7d2dacc7d7ee2ce41b16078905b">SignedTokenEngine::result_t</a> rgw::auth::swift::SignedTokenEngine::authenticate </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structreq__state.html">req_state</a> *&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8cc_source.html">rgw_swift_auth.cc</a> 파일의 <a class="el" href="rgw__swift__auth_8cc_source.html#l00531">531</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  534</span>{</div>
+<div class="line"><span class="lineno">  535</span>  <span class="keywordflow">if</span> (! <a class="code hl_function" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a74f555a2d7d6308e4503f56f1dabd9d7">is_applicable</a>(token)) {</div>
+<div class="line"><span class="lineno">  536</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691">result_t::deny</a>(-EPERM);</div>
+<div class="line"><span class="lineno">  537</span>  }</div>
+<div class="line"><span class="lineno">  538</span> </div>
+<div class="line"><span class="lineno">  539</span>  <span class="comment">/* Effective token string is the part after the prefix. */</span></div>
+<div class="line"><span class="lineno">  540</span>  <span class="keyword">const</span> std::string etoken = token.substr(strlen(<span class="stringliteral">&quot;AUTH_rgwtk&quot;</span>));</div>
+<div class="line"><span class="lineno">  541</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> etoken_len = etoken.length();</div>
+<div class="line"><span class="lineno">  542</span> </div>
+<div class="line"><span class="lineno">  543</span>  <span class="keywordflow">if</span> (etoken_len &amp; 1) {</div>
+<div class="line"><span class="lineno">  544</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;NOTICE: failed to verify token: odd token length=&quot;</span></div>
+<div class="line"><span class="lineno">  545</span>              &lt;&lt; etoken_len &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  546</span>    <span class="keywordflow">throw</span> -EINVAL;</div>
+<div class="line"><span class="lineno">  547</span>  }</div>
+<div class="line"><span class="lineno">  548</span> </div>
+<div class="line"><span class="lineno">  549</span>  ceph::bufferptr p(etoken_len/2);</div>
+<div class="line"><span class="lineno">  550</span>  <span class="keywordtype">int</span> ret = <a class="code hl_function" href="rgw__common_8h.html#a4bc9629a22d328ea8a54466e35e86c89">hex_to_buf</a>(etoken.c_str(), p.c_str(), etoken_len);</div>
+<div class="line"><span class="lineno">  551</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><span class="lineno">  552</span>    <span class="keywordflow">throw</span> ret;</div>
+<div class="line"><span class="lineno">  553</span>  }</div>
+<div class="line"><span class="lineno">  554</span> </div>
+<div class="line"><span class="lineno">  555</span>  ceph::bufferlist tok_bl;</div>
+<div class="line"><span class="lineno">  556</span>  tok_bl.append(p);</div>
+<div class="line"><span class="lineno">  557</span> </div>
+<div class="line"><span class="lineno">  558</span>  uint64_t nonce;</div>
+<div class="line"><span class="lineno">  559</span>  utime_t expiration;</div>
+<div class="line"><span class="lineno">  560</span>  std::string swift_user;</div>
+<div class="line"><span class="lineno">  561</span> </div>
+<div class="line"><span class="lineno">  562</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  563</span>    <span class="keyword">auto</span> iter = tok_bl.cbegin();</div>
+<div class="line"><span class="lineno">  564</span> </div>
+<div class="line"><span class="lineno">  565</span>    <span class="keyword">using </span>ceph::decode;</div>
+<div class="line"><span class="lineno">  566</span>    <a class="code hl_function" href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467">decode</a>(swift_user, iter);</div>
+<div class="line"><span class="lineno">  567</span>    <a class="code hl_function" href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467">decode</a>(nonce, iter);</div>
+<div class="line"><span class="lineno">  568</span>    <a class="code hl_function" href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467">decode</a>(expiration, iter);</div>
+<div class="line"><span class="lineno">  569</span>  } <span class="keywordflow">catch</span> (buffer::error&amp; err) {</div>
+<div class="line"><span class="lineno">  570</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;NOTICE: failed to decode token&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  571</span>    <span class="keywordflow">throw</span> -EINVAL;</div>
+<div class="line"><span class="lineno">  572</span>  }</div>
+<div class="line"><span class="lineno">  573</span> </div>
+<div class="line"><span class="lineno">  574</span>  <span class="keyword">const</span> utime_t now = ceph_clock_now();</div>
+<div class="line"><span class="lineno">  575</span>  <span class="keywordflow">if</span> (expiration &lt; now) {</div>
+<div class="line"><span class="lineno">  576</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;NOTICE: old timed out token was used now=&quot;</span> &lt;&lt; now</div>
+<div class="line"><span class="lineno">  577</span>              &lt;&lt; <span class="stringliteral">&quot; token.expiration=&quot;</span> &lt;&lt; expiration</div>
+<div class="line"><span class="lineno">  578</span>                  &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  579</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691">result_t::deny</a>(-EPERM);</div>
+<div class="line"><span class="lineno">  580</span>  }</div>
+<div class="line"><span class="lineno">  581</span> </div>
+<div class="line"><span class="lineno">  582</span>  std::unique_ptr&lt;rgw::sal::User&gt; user;</div>
+<div class="line"><span class="lineno">  583</span>  ret = <a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a9614203754136aaddd8db24ca43ca958">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#ae17ed0d19bcb7533ea56db7ab70ad83d">get_user_by_swift</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, swift_user, s-&gt;<a class="code hl_variable" href="structreq__state.html#ad3c78631c321aaeb2986ec3c2f2915c7">yield</a>, &amp;user);</div>
+<div class="line"><span class="lineno">  584</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><span class="lineno">  585</span>    <span class="keywordflow">throw</span> ret;</div>
+<div class="line"><span class="lineno">  586</span>  }</div>
+<div class="line"><span class="lineno">  587</span> </div>
+<div class="line"><span class="lineno">  588</span>  ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 10) &lt;&lt; <span class="stringliteral">&quot;swift_user=&quot;</span> &lt;&lt; swift_user &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  589</span> </div>
+<div class="line"><span class="lineno">  590</span>  <span class="keyword">const</span> <span class="keyword">auto</span> siter = user-&gt;get_info().swift_keys.find(swift_user);</div>
+<div class="line"><span class="lineno">  591</span>  <span class="keywordflow">if</span> (siter == std::end(user-&gt;get_info().swift_keys)) {</div>
+<div class="line"><span class="lineno">  592</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691">result_t::deny</a>(-EPERM);</div>
+<div class="line"><span class="lineno">  593</span>  }</div>
+<div class="line"><span class="lineno">  594</span> </div>
+<div class="line"><span class="lineno">  595</span>  <span class="keyword">const</span> <span class="keyword">auto</span> swift_key = siter-&gt;second;</div>
+<div class="line"><span class="lineno">  596</span> </div>
+<div class="line"><span class="lineno">  597</span>  bufferlist local_tok_bl;</div>
+<div class="line"><span class="lineno">  598</span>  ret = <a class="code hl_function" href="namespacergw_1_1auth_1_1swift.html#a59e349bb2118995758f13fd97b5d96f8">build_token</a>(swift_user, swift_key.key, nonce, expiration, local_tok_bl);</div>
+<div class="line"><span class="lineno">  599</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><span class="lineno">  600</span>    <span class="keywordflow">throw</span> ret;</div>
+<div class="line"><span class="lineno">  601</span>  }</div>
+<div class="line"><span class="lineno">  602</span> </div>
+<div class="line"><span class="lineno">  603</span>  <span class="keywordflow">if</span> (local_tok_bl.length() != tok_bl.length()) {</div>
+<div class="line"><span class="lineno">  604</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;NOTICE: tokens length mismatch:&quot;</span></div>
+<div class="line"><span class="lineno">  605</span>                  &lt;&lt; <span class="stringliteral">&quot; tok_bl.length()=&quot;</span> &lt;&lt; tok_bl.length()</div>
+<div class="line"><span class="lineno">  606</span>              &lt;&lt; <span class="stringliteral">&quot; local_tok_bl.length()=&quot;</span> &lt;&lt; local_tok_bl.length()</div>
+<div class="line"><span class="lineno">  607</span>                  &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  608</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691">result_t::deny</a>(-EPERM);</div>
+<div class="line"><span class="lineno">  609</span>  }</div>
+<div class="line"><span class="lineno">  610</span> </div>
+<div class="line"><span class="lineno">  611</span>  <span class="keywordflow">if</span> (memcmp(local_tok_bl.c_str(), tok_bl.c_str(),</div>
+<div class="line"><span class="lineno">  612</span>             local_tok_bl.length()) != 0) {</div>
+<div class="line"><span class="lineno">  613</span>    <span class="keywordtype">char</span> buf[local_tok_bl.length() * 2 + 1];</div>
+<div class="line"><span class="lineno">  614</span> </div>
+<div class="line"><span class="lineno">  615</span>    <a class="code hl_function" href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f">buf_to_hex</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(local_tok_bl.c_str()),</div>
+<div class="line"><span class="lineno">  616</span>               local_tok_bl.length(), buf);</div>
+<div class="line"><span class="lineno">  617</span> </div>
+<div class="line"><span class="lineno">  618</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;NOTICE: tokens mismatch tok=&quot;</span> &lt;&lt; buf &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  619</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691">result_t::deny</a>(-EPERM);</div>
+<div class="line"><span class="lineno">  620</span>  }</div>
+<div class="line"><span class="lineno">  621</span> </div>
+<div class="line"><span class="lineno">  622</span>  <span class="keyword">auto</span> apl = <a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac7b11c09786c8e494a358449fb918e22">apl_factory</a>-&gt;<a class="code hl_function" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html#a8036db83ca2afe2beccd761b8010f389">create_apl_local</a>(<a class="code hl_variable" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#af8a863af113ccc8296f3cfd58aeb0ce6">cct</a>, s, user-&gt;get_info(),</div>
+<div class="line"><span class="lineno">  623</span>                                           <a class="code hl_function" href="namespacergw_1_1auth_1_1swift.html#a43f6933373261f4641068dc41aceccbf">extract_swift_subuser</a>(swift_user),</div>
+<div class="line"><span class="lineno">  624</span>                                           std::nullopt, <a class="code hl_variable" href="classrgw_1_1auth_1_1_local_applier.html#a4e745b0ebefada89bc436ee5af6bc62f">rgw::auth::LocalApplier::NO_ACCESS_KEY</a>);</div>
+<div class="line"><span class="lineno">  625</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#a8e64fb4c72f69f8d9bf514c0da077f6f">result_t::grant</a>(std::move(apl));</div>
+<div class="line"><span class="lineno">  626</span>}</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_engine_1_1_auth_result_html_a8e64fb4c72f69f8d9bf514c0da077f6f"><div class="ttname"><a href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#a8e64fb4c72f69f8d9bf514c0da077f6f">rgw::auth::Engine::AuthResult::grant</a></div><div class="ttdeci">static AuthResult grant(IdentityApplier::aplptr_t &amp;&amp;applier)</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00278">rgw_auth.h:278</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_engine_1_1_auth_result_html_aa0c366f39c42efb55207f7ba39b54691"><div class="ttname"><a href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691">rgw::auth::Engine::AuthResult::deny</a></div><div class="ttdeci">static AuthResult deny(const int reason=-EACCES)</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00274">rgw_auth.h:274</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_local_applier_html_a4e745b0ebefada89bc436ee5af6bc62f"><div class="ttname"><a href="classrgw_1_1auth_1_1_local_applier.html#a4e745b0ebefada89bc436ee5af6bc62f">rgw::auth::LocalApplier::NO_ACCESS_KEY</a></div><div class="ttdeci">static const std::string NO_ACCESS_KEY</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00660">rgw_auth.h:660</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_html_a74f555a2d7d6308e4503f56f1dabd9d7"><div class="ttname"><a href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a74f555a2d7d6308e4503f56f1dabd9d7">rgw::auth::swift::SignedTokenEngine::is_applicable</a></div><div class="ttdeci">bool is_applicable(const std::string &amp;token) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8cc_source.html#l00521">rgw_swift_auth.cc:521</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html_ae17ed0d19bcb7533ea56db7ab70ad83d"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html#ae17ed0d19bcb7533ea56db7ab70ad83d">rgw::sal::Store::get_user_by_swift</a></div><div class="ttdeci">virtual int get_user_by_swift(const DoutPrefixProvider *dpp, const std::string &amp;user_str, optional_yield y, std::unique_ptr&lt; User &gt; *user)=0</div></div>
+<div class="ttc" id="anamespacergw_1_1auth_1_1swift_html_a43f6933373261f4641068dc41aceccbf"><div class="ttname"><a href="namespacergw_1_1auth_1_1swift.html#a43f6933373261f4641068dc41aceccbf">rgw::auth::swift::extract_swift_subuser</a></div><div class="ttdeci">std::string extract_swift_subuser(const std::string &amp;swift_user_name)</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8cc_source.html#l00183">rgw_swift_auth.cc:183</a></div></div>
+<div class="ttc" id="anamespacergw_1_1auth_1_1swift_html_a59e349bb2118995758f13fd97b5d96f8"><div class="ttname"><a href="namespacergw_1_1auth_1_1swift.html#a59e349bb2118995758f13fd97b5d96f8">rgw::auth::swift::build_token</a></div><div class="ttdeci">static int build_token(const string &amp;swift_user, const string &amp;key, const uint64_t nonce, const utime_t &amp;expiration, bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__swift__auth_8cc_source.html#l00474">rgw_swift_auth.cc:474</a></div></div>
+<div class="ttc" id="anamespacergw_html_a49e77e75ed539fdbde0dcc092bb76467"><div class="ttname"><a href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467">rgw::decode</a></div><div class="ttdeci">void decode(bucket_index_normal_layout &amp;l, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__layout_8cc_source.html#l00027">rgw_bucket_layout.cc:27</a></div></div>
+<div class="ttc" id="argw__common_8h_html_a4bc9629a22d328ea8a54466e35e86c89"><div class="ttname"><a href="rgw__common_8h.html#a4bc9629a22d328ea8a54466e35e86c89">hex_to_buf</a></div><div class="ttdeci">static int hex_to_buf(const char *hex, char *buf, int len)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01990">rgw_common.h:1990</a></div></div>
+<div class="ttc" id="argw__common_8h_html_a558d2aac04be1b2ad9db62daa9b8cc7f"><div class="ttname"><a href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f">buf_to_hex</a></div><div class="ttdeci">static void buf_to_hex(const unsigned char *const buf, const size_t len, char *const str)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01960">rgw_common.h:1960</a></div></div>
+<div class="ttc" id="astructreq__state_html_ad3c78631c321aaeb2986ec3c2f2915c7"><div class="ttname"><a href="structreq__state.html#ad3c78631c321aaeb2986ec3c2f2915c7">req_state::yield</a></div><div class="ttdeci">optional_yield yield</div><div class="ttdoc">optional coroutine context</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01688">rgw_common.h:1688</a></div></div>
+<div class="ttc" id="astructrgw_1_1auth_1_1_local_applier_1_1_factory_html_a8036db83ca2afe2beccd761b8010f389"><div class="ttname"><a href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html#a8036db83ca2afe2beccd761b8010f389">rgw::auth::LocalApplier::Factory::create_apl_local</a></div><div class="ttdeci">virtual aplptr_t create_apl_local(CephContext *cct, const req_state *s, const RGWUserInfo &amp;user_info, const std::string &amp;subuser, const std::optional&lt; uint32_t &gt; &amp;perm_mask, const std::string &amp;access_key_id) const =0</div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_cgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_cgraph" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,324,181,367"/>
+<area shape="rect" href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f" title=" " alt="" coords="474,9,558,36"/>
+<area shape="poly" title=" " alt="" coords="94,323,104,265,127,188,144,147,166,108,194,73,227,43,254,28,284,16,345,5,406,4,458,9,458,14,406,9,346,10,285,21,257,32,230,48,198,76,171,111,149,150,132,190,109,266,99,324"/>
+<area shape="rect" href="namespacergw_1_1auth_1_1swift.html#a59e349bb2118995758f13fd97b5d96f8" title=" " alt="" coords="247,57,390,100"/>
+<area shape="poly" title=" " alt="" coords="99,323,115,279,142,222,179,162,202,135,227,110,232,106,235,111,230,114,206,138,184,165,147,224,120,281,104,324"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html#a8036db83ca2afe2beccd761b8010f389" title=" " alt="" coords="231,124,406,167"/>
+<area shape="poly" title=" " alt="" coords="104,322,152,252,187,212,227,177,234,172,237,177,230,181,191,216,156,255,109,325"/>
+<area shape="rect" href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467" title=" " alt="" coords="273,215,364,241"/>
+<area shape="poly" title=" " alt="" coords="119,322,168,286,228,251,257,240,259,245,230,256,171,290,122,326"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#aa0c366f39c42efb55207f7ba39b54691" title=" " alt="" coords="253,265,384,308"/>
+<area shape="poly" title=" " alt="" coords="177,321,237,305,239,310,178,326"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="297,332,340,359"/>
+<area shape="poly" title=" " alt="" coords="181,343,281,343,281,348,181,348"/>
+<area shape="rect" href="namespacergw_1_1auth_1_1swift.html#a43f6933373261f4641068dc41aceccbf" title=" " alt="" coords="240,383,397,425"/>
+<area shape="poly" title=" " alt="" coords="178,365,226,377,224,382,177,370"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#ae17ed0d19bcb7533ea56db7ab70ad83d" title=" " alt="" coords="253,449,384,492"/>
+<area shape="poly" title=" " alt="" coords="123,365,172,400,230,435,241,440,238,445,227,440,169,404,120,369"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html#a8e64fb4c72f69f8d9bf514c0da077f6f" title=" " alt="" coords="253,516,384,559"/>
+<area shape="poly" title=" " alt="" coords="110,365,158,432,192,469,230,502,241,508,238,513,227,506,188,473,154,435,105,369"/>
+<area shape="rect" href="rgw__common_8h.html#a4bc9629a22d328ea8a54466e35e86c89" title=" " alt="" coords="276,583,361,609"/>
+<area shape="poly" title=" " alt="" coords="104,366,120,409,146,464,183,521,205,546,230,569,262,585,260,589,227,573,202,550,179,524,142,467,115,411,99,368"/>
+<area shape="rect" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a74f555a2d7d6308e4503f56f1dabd9d7" title=" " alt="" coords="229,633,408,676"/>
+<area shape="poly" title=" " alt="" coords="102,367,116,418,141,485,179,557,203,590,231,620,234,622,230,626,227,623,199,594,174,560,136,488,111,419,97,368"/>
+<area shape="poly" title=" " alt="" coords="390,56,458,36,460,41,391,61"/>
+<area shape="rect" href="rgw__common_8cc.html#aa39158860adaaaa9be76ebec5ffbabca" title=" " alt="" coords="456,61,575,88"/>
+<area shape="poly" title=" " alt="" coords="390,75,440,74,440,79,391,80"/>
+<area shape="rect" href="namespacergw.html#a34a5757756e9618325f611b073ccd448" title=" " alt="" coords="470,136,561,163"/>
+<area shape="poly" title=" " alt="" coords="381,98,463,128,461,133,379,103"/>
+<area shape="poly" title=" " alt="" coords="482,137,476,127,480,118,494,112,516,109,539,112,552,118,549,123,538,117,516,115,495,117,484,121,481,127,487,134"/>
+<area shape="poly" title=" " alt="" coords="285,216,279,206,283,196,296,190,318,188,342,191,354,197,352,202,340,196,318,193,298,195,287,200,284,206,289,213"/>
+<area shape="rect" href="rgw__common_8h.html#afd2ecae145416d16c58fbc062bfb901d" title=" " alt="" coords="483,583,549,609"/>
+<area shape="poly" title=" " alt="" coords="361,593,467,593,467,599,361,599"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_icgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_icgraph" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a220c1e25d1e036321f7f768e4bcc1a8c_icgraph">
+<area shape="rect" title=" " alt="" coords="229,5,404,48"/>
+<area shape="rect" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac6a8fa18537e1d3ad619a59cbbc96574" title=" " alt="" coords="5,5,181,48"/>
+<area shape="poly" title=" " alt="" coords="213,29,181,29,181,24,213,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd1f3eaee1cc25d8e1d1078c1928708a" name="abd1f3eaee1cc25d8e1d1078c1928708a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd1f3eaee1cc25d8e1d1078c1928708a">&#9670;&#160;</a></span>get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * rgw::auth::swift::SignedTokenEngine::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1auth_1_1_engine.html#aad7a0f7c3737f8b43c09eed62be6d76b">rgw::auth::Engine</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00106">106</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>                                                 {</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;rgw::auth::swift::SignedTokenEngine&quot;</span>;</div>
+<div class="line"><span class="lineno">  108</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a74f555a2d7d6308e4503f56f1dabd9d7" name="a74f555a2d7d6308e4503f56f1dabd9d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f555a2d7d6308e4503f56f1dabd9d7">&#9670;&#160;</a></span>is_applicable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::auth::swift::SignedTokenEngine::is_applicable </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>token</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8cc_source.html">rgw_swift_auth.cc</a> 파일의 <a class="el" href="rgw__swift__auth_8cc_source.html#l00521">521</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  522</span>{</div>
+<div class="line"><span class="lineno">  523</span>  <span class="keywordflow">if</span> (token.empty()) {</div>
+<div class="line"><span class="lineno">  524</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  525</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  526</span>    <span class="keywordflow">return</span> token.compare(0, 10, <span class="stringliteral">&quot;AUTH_rgwtk&quot;</span>) == 0;</div>
+<div class="line"><span class="lineno">  527</span>  }</div>
+<div class="line"><span class="lineno">  528</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1swift_1_1_signed_token_engine_a74f555a2d7d6308e4503f56f1dabd9d7_icgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a74f555a2d7d6308e4503f56f1dabd9d7_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a74f555a2d7d6308e4503f56f1dabd9d7_icgraph" id="aclassrgw_1_1auth_1_1swift_1_1_signed_token_engine_a74f555a2d7d6308e4503f56f1dabd9d7_icgraph">
+<area shape="rect" title=" " alt="" coords="452,5,631,48"/>
+<area shape="rect" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#a220c1e25d1e036321f7f768e4bcc1a8c" title=" " alt="" coords="229,5,404,48"/>
+<area shape="poly" title=" " alt="" coords="437,29,405,29,405,24,437,24"/>
+<area shape="rect" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html#ac6a8fa18537e1d3ad619a59cbbc96574" title=" " alt="" coords="5,5,181,48"/>
+<area shape="poly" title=" " alt="" coords="213,29,181,29,181,24,213,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="ac7b11c09786c8e494a358449fb918e22" name="ac7b11c09786c8e494a358449fb918e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b11c09786c8e494a358449fb918e22">&#9670;&#160;</a></span>apl_factory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a>* const rgw::auth::swift::SignedTokenEngine::apl_factory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00087">87</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="af8a863af113ccc8296f3cfd58aeb0ce6" name="af8a863af113ccc8296f3cfd58aeb0ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a863af113ccc8296f3cfd58aeb0ce6">&#9670;&#160;</a></span>cct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CephContext* const rgw::auth::swift::SignedTokenEngine::cct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00084">84</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1fc3140f82646132f35e16c20150e9f0" name="a1fc3140f82646132f35e16c20150e9f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc3140f82646132f35e16c20150e9f0">&#9670;&#160;</a></span>extractor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classrgw_1_1auth_1_1_token_extractor.html">rgw::auth::TokenExtractor</a>* const rgw::auth::swift::SignedTokenEngine::extractor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00086">86</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9614203754136aaddd8db24ca43ca958" name="a9614203754136aaddd8db24ca43ca958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9614203754136aaddd8db24ca43ca958">&#9670;&#160;</a></span>store</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* rgw::auth::swift::SignedTokenEngine::store</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a> 파일의 <a class="el" href="rgw__swift__auth_8h_source.html#l00085">85</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__swift__auth_8h_source.html">rgw_swift_auth.h</a></li>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__swift__auth_8cc_source.html">rgw_swift_auth.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1auth.html">auth</a></li><li class="navelem"><a class="el" href="namespacergw_1_1auth_1_1swift.html">swift</a></li><li class="navelem"><a class="el" href="classrgw_1_1auth_1_1swift_1_1_signed_token_engine.html">SignedTokenEngine</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

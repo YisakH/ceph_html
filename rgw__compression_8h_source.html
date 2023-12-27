@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_compression.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__compression_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_compression.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__compression_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef CEPH_RGW_COMPRESSION_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define CEPH_RGW_COMPRESSION_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;compressor/Compressor.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__putobj_8h.html">rgw_putobj.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__op_8h.html">rgw_op.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__compression__types_8h.html">rgw_compression_types.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">int</span> <a class="code hl_function" href="rgw__compression_8h.html#a01348559a606a99c1181eb81bc781007">rgw_compression_info_from_attr</a>(<span class="keyword">const</span> bufferlist&amp; attr,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                                   <span class="keywordtype">bool</span>&amp; need_decompress,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                                   <a class="code hl_struct" href="struct_r_g_w_compression_info.html">RGWCompressionInfo</a>&amp; cs_info);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="rgw__compression_8h.html#a0086d875ad588ba64230276db80ab154">   17</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="rgw__compression_8h.html#a0086d875ad588ba64230276db80ab154">rgw_compression_info_from_attrset</a>(<span class="keyword">const</span> std::map&lt;std::string, bufferlist&gt;&amp; attrs,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                                      <span class="keywordtype">bool</span>&amp; need_decompress,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                                      <a class="code hl_struct" href="struct_r_g_w_compression_info.html">RGWCompressionInfo</a>&amp; cs_info);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_get_obj___decompress.html">RGWGetObj_Decompress</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_get_obj___filter.html">RGWGetObj_Filter</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#ae7efb28ce3cea1b21d9c25d66e3b1253">   23</a></span>  CephContext* <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#ae7efb28ce3cea1b21d9c25d66e3b1253">cct</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#aed02be2857527e32cac07eedcab2a1b0">   24</a></span>  CompressorRef <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#aed02be2857527e32cac07eedcab2a1b0">compressor</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#ab31b913bd461a3a979c63c5573c5d814">   25</a></span>  <a class="code hl_struct" href="struct_r_g_w_compression_info.html">RGWCompressionInfo</a>* <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#ab31b913bd461a3a979c63c5573c5d814">cs_info</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#a7b67c4eff502917ee5b796df2366c25a">   26</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#a7b67c4eff502917ee5b796df2366c25a">partial_content</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#a0bf1bb6694ef95de74fd145fb57bd0b0">   27</a></span>  std::vector&lt;compression_block&gt;::iterator <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#a0bf1bb6694ef95de74fd145fb57bd0b0">first_block</a>, <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#a9891895151e769ed93712c7a38aa2848">last_block</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#af834da1c33d9135108a84d091213fcbd">   28</a></span>  off_t <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#a7ed35ee90f9091e2d51557e36a8a4bb4">q_ofs</a>, <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#af834da1c33d9135108a84d091213fcbd">q_len</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#a94063ae2bf01d997838fd2712892bbe7">   29</a></span>  uint64_t <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#a94063ae2bf01d997838fd2712892bbe7">cur_ofs</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#a14ccaf066447a7bad05cacaf69b1b335">   30</a></span>  bufferlist <a class="code hl_variable" href="class_r_g_w_get_obj___decompress.html#a14ccaf066447a7bad05cacaf69b1b335">waiting</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="class_r_g_w_get_obj___decompress.html">RGWGetObj_Decompress</a>(CephContext* cct_, </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                       <a class="code hl_struct" href="struct_r_g_w_compression_info.html">RGWCompressionInfo</a>* cs_info_, </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                       <span class="keywordtype">bool</span> partial_content_,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                       <a class="code hl_class" href="class_r_g_w_get_obj___filter.html">RGWGetObj_Filter</a>* <a class="code hl_variable" href="class_r_g_w_get_obj___filter.html#a90e916333d2e7d30da2d9e6175329893">next</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_get_obj___decompress.html#a178af40f105edb359a9a7946f4d4c0df">   36</a></span>  <a class="code hl_function" href="class_r_g_w_get_obj___decompress.html#a178af40f105edb359a9a7946f4d4c0df">~RGWGetObj_Decompress</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_get_obj___decompress.html#ae0c314cf322ae3d6421e62fbd2769a44">handle_data</a>(bufferlist&amp; bl, off_t bl_ofs, off_t bl_len) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_get_obj___decompress.html#a8af59745bee6a52649a5f70b48a6786d">fixup_range</a>(off_t&amp; ofs, off_t&amp; end) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html">   43</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_put_obj___compress.html">RGWPutObj_Compress</a> : <span class="keyword">public</span> <a class="code hl_class" href="classrgw_1_1putobj_1_1_pipe.html">rgw::putobj::Pipe</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#a084ad407b70c911c2733eea0cd8ba070">   45</a></span>  CephContext* <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a084ad407b70c911c2733eea0cd8ba070">cct</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#a78d2d19824726d01620cb2d66fe9ae95">   46</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a78d2d19824726d01620cb2d66fe9ae95">compressed</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#a4ae21fe97712ee2aa838fd31e9e7239b">   47</a></span>  CompressorRef <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a4ae21fe97712ee2aa838fd31e9e7239b">compressor</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#abf0aa4856f6b03d4c5767d808263a48a">   48</a></span>  boost::optional&lt;int32_t&gt; <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#abf0aa4856f6b03d4c5767d808263a48a">compressor_message</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#a151653109bceb2ceddee5abd868cee8a">   49</a></span>  std::vector&lt;compression_block&gt; <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a151653109bceb2ceddee5abd868cee8a">blocks</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#a1712ce6dbc32f80f1909c920674e69d5">   51</a></span>  <a class="code hl_function" href="class_r_g_w_put_obj___compress.html#a1712ce6dbc32f80f1909c920674e69d5">RGWPutObj_Compress</a>(CephContext* cct_, CompressorRef <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a4ae21fe97712ee2aa838fd31e9e7239b">compressor</a>,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                     <a class="code hl_class" href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a> *<a class="code hl_variable" href="classrgw_1_1putobj_1_1_pipe.html#a3afa048f2a221d0fa237212dce069b60">next</a>)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    : <a class="code hl_function" href="classrgw_1_1putobj_1_1_pipe.html#a96d06f782f620706f9bc30dd01dec49d">Pipe</a>(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_pipe.html#a3afa048f2a221d0fa237212dce069b60">next</a>), <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a084ad407b70c911c2733eea0cd8ba070">cct</a>(cct_), <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a4ae21fe97712ee2aa838fd31e9e7239b">compressor</a>(<a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a4ae21fe97712ee2aa838fd31e9e7239b">compressor</a>) {}</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_put_obj___compress.html#aa9f9871de9d3e0d6304bb07584ecc2ba">process</a>(bufferlist&amp;&amp; data, uint64_t logical_offset) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#aefd34a2b3b113d579ade013e1d7063a2">   57</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_put_obj___compress.html#aefd34a2b3b113d579ade013e1d7063a2">is_compressed</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a78d2d19824726d01620cb2d66fe9ae95">compressed</a>; }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#a8ed9b3d377f14a44cc98af3ed9d92614">   58</a></span>  std::vector&lt;compression_block&gt;&amp; <a class="code hl_function" href="class_r_g_w_put_obj___compress.html#a8ed9b3d377f14a44cc98af3ed9d92614">get_compression_blocks</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#a151653109bceb2ceddee5abd868cee8a">blocks</a>; }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_r_g_w_put_obj___compress.html#a7dbfbef5cf7375e65a5f21cbd75fe98f">   59</a></span>  boost::optional&lt;int32_t&gt; <a class="code hl_function" href="class_r_g_w_put_obj___compress.html#a7dbfbef5cf7375e65a5f21cbd75fe98f">get_compressor_message</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_put_obj___compress.html#abf0aa4856f6b03d4c5767d808263a48a">compressor_message</a>; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}; <span class="comment">/* RGWPutObj_Compress */</span></div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">/* CEPH_RGW_COMPRESSION_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html">RGWGetObj_Decompress</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00021">rgw_compression.h:22</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a0bf1bb6694ef95de74fd145fb57bd0b0"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a0bf1bb6694ef95de74fd145fb57bd0b0">RGWGetObj_Decompress::first_block</a></div><div class="ttdeci">std::vector&lt; compression_block &gt;::iterator first_block</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00027">rgw_compression.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a14ccaf066447a7bad05cacaf69b1b335"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a14ccaf066447a7bad05cacaf69b1b335">RGWGetObj_Decompress::waiting</a></div><div class="ttdeci">bufferlist waiting</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00030">rgw_compression.h:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a178af40f105edb359a9a7946f4d4c0df"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a178af40f105edb359a9a7946f4d4c0df">RGWGetObj_Decompress::~RGWGetObj_Decompress</a></div><div class="ttdeci">~RGWGetObj_Decompress() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00036">rgw_compression.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a7b67c4eff502917ee5b796df2366c25a"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a7b67c4eff502917ee5b796df2366c25a">RGWGetObj_Decompress::partial_content</a></div><div class="ttdeci">bool partial_content</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00026">rgw_compression.h:26</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a7ed35ee90f9091e2d51557e36a8a4bb4"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a7ed35ee90f9091e2d51557e36a8a4bb4">RGWGetObj_Decompress::q_ofs</a></div><div class="ttdeci">off_t q_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00028">rgw_compression.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a8af59745bee6a52649a5f70b48a6786d"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a8af59745bee6a52649a5f70b48a6786d">RGWGetObj_Decompress::fixup_range</a></div><div class="ttdeci">int fixup_range(off_t &amp;ofs, off_t &amp;end) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8cc_source.html#l00175">rgw_compression.cc:175</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a94063ae2bf01d997838fd2712892bbe7"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a94063ae2bf01d997838fd2712892bbe7">RGWGetObj_Decompress::cur_ofs</a></div><div class="ttdeci">uint64_t cur_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00029">rgw_compression.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_a9891895151e769ed93712c7a38aa2848"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#a9891895151e769ed93712c7a38aa2848">RGWGetObj_Decompress::last_block</a></div><div class="ttdeci">std::vector&lt; compression_block &gt;::iterator last_block</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00027">rgw_compression.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_ab31b913bd461a3a979c63c5573c5d814"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#ab31b913bd461a3a979c63c5573c5d814">RGWGetObj_Decompress::cs_info</a></div><div class="ttdeci">RGWCompressionInfo * cs_info</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00025">rgw_compression.h:25</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_ae0c314cf322ae3d6421e62fbd2769a44"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#ae0c314cf322ae3d6421e62fbd2769a44">RGWGetObj_Decompress::handle_data</a></div><div class="ttdeci">int handle_data(bufferlist &amp;bl, off_t bl_ofs, off_t bl_len) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8cc_source.html#l00099">rgw_compression.cc:99</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_ae7efb28ce3cea1b21d9c25d66e3b1253"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#ae7efb28ce3cea1b21d9c25d66e3b1253">RGWGetObj_Decompress::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00023">rgw_compression.h:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_aed02be2857527e32cac07eedcab2a1b0"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#aed02be2857527e32cac07eedcab2a1b0">RGWGetObj_Decompress::compressor</a></div><div class="ttdeci">CompressorRef compressor</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00024">rgw_compression.h:24</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___decompress_html_af834da1c33d9135108a84d091213fcbd"><div class="ttname"><a href="class_r_g_w_get_obj___decompress.html#af834da1c33d9135108a84d091213fcbd">RGWGetObj_Decompress::q_len</a></div><div class="ttdeci">off_t q_len</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00028">rgw_compression.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___filter_html"><div class="ttname"><a href="class_r_g_w_get_obj___filter.html">RGWGetObj_Filter</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00290">rgw_op.h:291</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_obj___filter_html_a90e916333d2e7d30da2d9e6175329893"><div class="ttname"><a href="class_r_g_w_get_obj___filter.html#a90e916333d2e7d30da2d9e6175329893">RGWGetObj_Filter::next</a></div><div class="ttdeci">RGWGetObj_Filter * next</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00293">rgw_op.h:293</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html">RGWPutObj_Compress</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00043">rgw_compression.h:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_a084ad407b70c911c2733eea0cd8ba070"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#a084ad407b70c911c2733eea0cd8ba070">RGWPutObj_Compress::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00045">rgw_compression.h:45</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_a151653109bceb2ceddee5abd868cee8a"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#a151653109bceb2ceddee5abd868cee8a">RGWPutObj_Compress::blocks</a></div><div class="ttdeci">std::vector&lt; compression_block &gt; blocks</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00049">rgw_compression.h:49</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_a1712ce6dbc32f80f1909c920674e69d5"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#a1712ce6dbc32f80f1909c920674e69d5">RGWPutObj_Compress::RGWPutObj_Compress</a></div><div class="ttdeci">RGWPutObj_Compress(CephContext *cct_, CompressorRef compressor, rgw::sal::DataProcessor *next)</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00051">rgw_compression.h:51</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_a4ae21fe97712ee2aa838fd31e9e7239b"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#a4ae21fe97712ee2aa838fd31e9e7239b">RGWPutObj_Compress::compressor</a></div><div class="ttdeci">CompressorRef compressor</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00047">rgw_compression.h:47</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_a78d2d19824726d01620cb2d66fe9ae95"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#a78d2d19824726d01620cb2d66fe9ae95">RGWPutObj_Compress::compressed</a></div><div class="ttdeci">bool compressed</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00046">rgw_compression.h:46</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_a7dbfbef5cf7375e65a5f21cbd75fe98f"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#a7dbfbef5cf7375e65a5f21cbd75fe98f">RGWPutObj_Compress::get_compressor_message</a></div><div class="ttdeci">boost::optional&lt; int32_t &gt; get_compressor_message()</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00059">rgw_compression.h:59</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_a8ed9b3d377f14a44cc98af3ed9d92614"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#a8ed9b3d377f14a44cc98af3ed9d92614">RGWPutObj_Compress::get_compression_blocks</a></div><div class="ttdeci">std::vector&lt; compression_block &gt; &amp; get_compression_blocks()</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00058">rgw_compression.h:58</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_aa9f9871de9d3e0d6304bb07584ecc2ba"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#aa9f9871de9d3e0d6304bb07584ecc2ba">RGWPutObj_Compress::process</a></div><div class="ttdeci">int process(bufferlist &amp;&amp;data, uint64_t logical_offset) override</div><div class="ttdoc">Consume a bufferlist in its entirety at the given object offset.</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8cc_source.html#l00044">rgw_compression.cc:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_abf0aa4856f6b03d4c5767d808263a48a"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#abf0aa4856f6b03d4c5767d808263a48a">RGWPutObj_Compress::compressor_message</a></div><div class="ttdeci">boost::optional&lt; int32_t &gt; compressor_message</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00048">rgw_compression.h:48</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_obj___compress_html_aefd34a2b3b113d579ade013e1d7063a2"><div class="ttname"><a href="class_r_g_w_put_obj___compress.html#aefd34a2b3b113d579ade013e1d7063a2">RGWPutObj_Compress::is_compressed</a></div><div class="ttdeci">bool is_compressed()</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8h_source.html#l00057">rgw_compression.h:57</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_pipe_html"><div class="ttname"><a href="classrgw_1_1putobj_1_1_pipe.html">rgw::putobj::Pipe</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj_8h_source.html#l00024">rgw_putobj.h:24</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_pipe_html_a3afa048f2a221d0fa237212dce069b60"><div class="ttname"><a href="classrgw_1_1putobj_1_1_pipe.html#a3afa048f2a221d0fa237212dce069b60">rgw::putobj::Pipe::next</a></div><div class="ttdeci">rgw::sal::DataProcessor * next</div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj_8h_source.html#l00025">rgw_putobj.h:25</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_pipe_html_a96d06f782f620706f9bc30dd01dec49d"><div class="ttname"><a href="classrgw_1_1putobj_1_1_pipe.html#a96d06f782f620706f9bc30dd01dec49d">rgw::putobj::Pipe::Pipe</a></div><div class="ttdeci">Pipe(rgw::sal::DataProcessor *next)</div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj_8h_source.html#l00027">rgw_putobj.h:27</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_data_processor_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a></div><div class="ttdoc">A simple streaming data processing abstraction</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00185">rgw_sal.h:185</a></div></div>
+<div class="ttc" id="argw__compression_8h_html_a0086d875ad588ba64230276db80ab154"><div class="ttname"><a href="rgw__compression_8h.html#a0086d875ad588ba64230276db80ab154">rgw_compression_info_from_attrset</a></div><div class="ttdeci">int rgw_compression_info_from_attrset(const std::map&lt; std::string, bufferlist &gt; &amp;attrs, bool &amp;need_decompress, RGWCompressionInfo &amp;cs_info)</div></div>
+<div class="ttc" id="argw__compression_8h_html_a01348559a606a99c1181eb81bc781007"><div class="ttname"><a href="rgw__compression_8h.html#a01348559a606a99c1181eb81bc781007">rgw_compression_info_from_attr</a></div><div class="ttdeci">int rgw_compression_info_from_attr(const bufferlist &amp;attr, bool &amp;need_decompress, RGWCompressionInfo &amp;cs_info)</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression_8cc_source.html#l00010">rgw_compression.cc:10</a></div></div>
+<div class="ttc" id="argw__compression__types_8h_html"><div class="ttname"><a href="rgw__compression__types_8h.html">rgw_compression_types.h</a></div></div>
+<div class="ttc" id="argw__op_8h_html"><div class="ttname"><a href="rgw__op_8h.html">rgw_op.h</a></div></div>
+<div class="ttc" id="argw__putobj_8h_html"><div class="ttname"><a href="rgw__putobj_8h.html">rgw_putobj.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_compression_info_html"><div class="ttname"><a href="struct_r_g_w_compression_info.html">RGWCompressionInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__compression__types_8h_source.html#l00044">rgw_compression_types.h:44</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__compression_8h.html">rgw_compression.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+var class_r_g_w_obj_fetch_c_r =
+[
+    [ "RGWObjFetchCR", "class_r_g_w_obj_fetch_c_r.html#a22e04811e5e8d2a31b0054e83e487da6", null ],
+    [ "operate", "class_r_g_w_obj_fetch_c_r.html#a5040b446762a0a3636867b78ac1688f7", null ],
+    [ "check_change", "class_r_g_w_obj_fetch_c_r.html#a870ae1aa818dcb7a53ffdd99e5b18a56", null ],
+    [ "dest_bucket_perms", "class_r_g_w_obj_fetch_c_r.html#a20775dc2a91d62a4c2b38dd18aaeaacc", null ],
+    [ "dest_key", "class_r_g_w_obj_fetch_c_r.html#ae07d11907b01c6a404d82c6e52decd5a", null ],
+    [ "dest_params", "class_r_g_w_obj_fetch_c_r.html#a8b174b207c2e9348e9c5d8911d71b153", null ],
+    [ "key", "class_r_g_w_obj_fetch_c_r.html#afa832c00f895ace5e5917fb8cb76a9bb", null ],
+    [ "need_more_info", "class_r_g_w_obj_fetch_c_r.html#a3de2e1f615026792e124365bed67ac28", null ],
+    [ "need_retry", "class_r_g_w_obj_fetch_c_r.html#aa3fe68ddff56ae829cac2b6782dd2e73", null ],
+    [ "param_mode", "class_r_g_w_obj_fetch_c_r.html#a76f5a9f7b9af066e3295d36b87de8d3a", null ],
+    [ "param_user", "class_r_g_w_obj_fetch_c_r.html#a62d47623bb2a111463f4fd050c2bbbe8", null ],
+    [ "sc", "class_r_g_w_obj_fetch_c_r.html#a10e921083df1ee90ccb6d5fb4c1aef83", null ],
+    [ "source_bucket_perms", "class_r_g_w_obj_fetch_c_r.html#a84d8bfc1f7a7195aa81eb92c63dfa980", null ],
+    [ "src_attrs", "class_r_g_w_obj_fetch_c_r.html#aced03800dba9a4031d0598c02110802f", null ],
+    [ "src_etag", "class_r_g_w_obj_fetch_c_r.html#a122b317b59766d6b5dcb4b46650d6068", null ],
+    [ "src_headers", "class_r_g_w_obj_fetch_c_r.html#a16fb56c637ea9d6945d0c0ae11b46edd", null ],
+    [ "src_mtime", "class_r_g_w_obj_fetch_c_r.html#a725bc1c7653a5090591cf7d408b7aa16", null ],
+    [ "src_size", "class_r_g_w_obj_fetch_c_r.html#aefd888f30026ac4107c8919a7acf0287", null ],
+    [ "sync_env", "class_r_g_w_obj_fetch_c_r.html#a54c9b122868edfc8e02c0eeb0d66cc47", null ],
+    [ "sync_pipe", "class_r_g_w_obj_fetch_c_r.html#a5e7a8706807a270bd50d37671be79b1f", null ],
+    [ "try_num", "class_r_g_w_obj_fetch_c_r.html#af79267d3046e86bedde815d23d0f22d3", null ],
+    [ "user_perms", "class_r_g_w_obj_fetch_c_r.html#abd3efd0468960d27843e712921967cbd", null ],
+    [ "versioned_epoch", "class_r_g_w_obj_fetch_c_r.html#aab9d85770a72b16148c6888745c0d0ba", null ],
+    [ "zones_trace", "class_r_g_w_obj_fetch_c_r.html#a2abe87d9c950334dfe8be4041977a36a", null ]
+];

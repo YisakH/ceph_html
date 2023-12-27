@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_asio_client.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__asio__client_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_asio_client.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__asio__client_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;boost/algorithm/string/predicate.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;boost/asio/write.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__asio__client_8h.html">rgw_asio_client.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__perf__counters_8h.html">rgw_perf_counters.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="rgw__asio__client_8cc.html#ac9f1b8ed4aca7999d392b2d432030e30">   10</a></span><span class="preprocessor">#define dout_context g_ceph_context</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="rgw__asio__client_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   11</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacergw_1_1asio.html">rgw::asio</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#a05bcf08c0a58af43afa982dd8d3ec8d0">   15</a></span><a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a05bcf08c0a58af43afa982dd8d3ec8d0">ClientIO::ClientIO</a>(<a class="code hl_typedef" href="namespacergw_1_1asio.html#ab5d969d90170f58ac4ab6768bbebcb90">parser_type</a>&amp; parser, <span class="keywordtype">bool</span> is_ssl,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                   <span class="keyword">const</span> <a class="code hl_typedef" href="classrgw_1_1asio_1_1_client_i_o.html#a8cb6d47e2017b0a8fdb7fa5f3ba2bc50">endpoint_type</a>&amp; local_endpoint,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                   <span class="keyword">const</span> <a class="code hl_typedef" href="classrgw_1_1asio_1_1_client_i_o.html#a8cb6d47e2017b0a8fdb7fa5f3ba2bc50">endpoint_type</a>&amp; remote_endpoint)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  : parser(parser), is_ssl(is_ssl),</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    local_endpoint(local_endpoint),</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    remote_endpoint(remote_endpoint),</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    txbuf(*this)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a873abfe9ef18724ad77ec766f6088cd3">ClientIO::~ClientIO</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#a6aab19378dc59b82fcffbefc70496fe8">   27</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a6aab19378dc59b82fcffbefc70496fe8">ClientIO::init_env</a>(CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a0b2a3f1977027cd6bacb6fb0890bbc35">init</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_variable" href="rgw__perf__counters_8cc.html#a770a29716cf802e8b212dbd61b157b2e">perfcounter</a>-&gt;inc(<a class="code hl_enumvalue" href="rgw__perf__counters_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea09b455b4d3984a2459fd2d3b8d3edd1a">l_rgw_qlen</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_variable" href="rgw__perf__counters_8cc.html#a770a29716cf802e8b212dbd61b157b2e">perfcounter</a>-&gt;inc(<a class="code hl_enumvalue" href="rgw__perf__counters_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea2d0f6dee68caec5bc00e7ff717eac732">l_rgw_qactive</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; request = <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a23c4ec91f4eed4d29325854b18c3c7b3">parser</a>.get();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; headers = request;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> header = headers.begin(); header != headers.end(); ++header) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; field = header-&gt;name(); <span class="comment">// enum type for known headers</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; name = header-&gt;name_string();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; value = header-&gt;value();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (field == beast::http::field::content_length) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;CONTENT_LENGTH&quot;</span>, value.to_string());</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (field == beast::http::field::content_type) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;CONTENT_TYPE&quot;</span>, value.to_string());</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">static</span> <span class="keyword">const</span> std::string_view HTTP_{<span class="stringliteral">&quot;HTTP_&quot;</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">char</span> buf[name.size() + HTTP_.size() + 1];</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">auto</span> dest = std::copy(std::begin(HTTP_), std::end(HTTP_), buf);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> src = name.begin(); src != name.end(); ++src, ++dest) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordflow">if</span> (*src == <span class="charliteral">&#39;-&#39;</span>) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        *dest = <span class="charliteral">&#39;_&#39;</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*src == <span class="charliteral">&#39;_&#39;</span>) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        *dest = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        *dest = std::toupper(*src);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    *dest = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(buf, value.to_string());</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">int</span> major = request.version() / 10;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">int</span> minor = request.version() % 10;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;HTTP_VERSION&quot;</span>, std::to_string(major) + <span class="charliteral">&#39;.&#39;</span> + std::to_string(minor));</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;REQUEST_METHOD&quot;</span>, request.method_string().to_string());</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// split uri from query</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">auto</span> uri = request.target();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">auto</span> pos = uri.find(<span class="charliteral">&#39;?&#39;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordflow">if</span> (pos != uri.npos) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">auto</span> query = uri.substr(pos + 1);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;QUERY_STRING&quot;</span>, query.to_string());</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    uri = uri.substr(0, pos);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;SCRIPT_URI&quot;</span>, uri.to_string());</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;REQUEST_URI&quot;</span>, request.target().to_string());</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">char</span> port_buf[16];</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  snprintf(port_buf, <span class="keyword">sizeof</span>(port_buf), <span class="stringliteral">&quot;%d&quot;</span>, <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a95359773fc4c48daa86246ced7a1d79b">local_endpoint</a>.port());</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;SERVER_PORT&quot;</span>, port_buf);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#ae8095fb6eede95133995a78513bc3601">is_ssl</a>) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;SERVER_PORT_SECURE&quot;</span>, port_buf);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">env</a>.<a class="code hl_function" href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">set</a>(<span class="stringliteral">&quot;REMOTE_ADDR&quot;</span>, <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a9007cfbdf4bea102b9ff1074fd458465">remote_endpoint</a>.address().to_string());</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="comment">// TODO: set REMOTE_USER if authenticated</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#ac3162172aa3fc59ec2e0e744e210e666">   97</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#ac3162172aa3fc59ec2e0e744e210e666">ClientIO::complete_request</a>()</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <a class="code hl_variable" href="rgw__perf__counters_8cc.html#a770a29716cf802e8b212dbd61b157b2e">perfcounter</a>-&gt;inc(<a class="code hl_enumvalue" href="rgw__perf__counters_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea09b455b4d3984a2459fd2d3b8d3edd1a">l_rgw_qlen</a>, -1);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_variable" href="rgw__perf__counters_8cc.html#a770a29716cf802e8b212dbd61b157b2e">perfcounter</a>-&gt;inc(<a class="code hl_enumvalue" href="rgw__perf__counters_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea2d0f6dee68caec5bc00e7ff717eac732">l_rgw_qactive</a>, -1);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#a067b13f316279654602c98704c16862b">  104</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a067b13f316279654602c98704c16862b">ClientIO::flush</a>()</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.pubsync();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#aa077c219b893aa37222454fca03b83aa">  109</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#aa077c219b893aa37222454fca03b83aa">ClientIO::send_status</a>(<span class="keywordtype">int</span> status, <span class="keyword">const</span> <span class="keywordtype">char</span>* status_name)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> STATUS_BUF_SIZE = 128;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keywordtype">char</span> statusbuf[STATUS_BUF_SIZE];</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">const</span> <span class="keyword">auto</span> statuslen = snprintf(statusbuf, <span class="keyword">sizeof</span>(statusbuf),</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                  <span class="stringliteral">&quot;HTTP/1.1 %d %s\r\n&quot;</span>, status, status_name);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(statusbuf, statuslen);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#a1342ddea7e6bb4e2bbf3377def8ee2ed">  120</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a1342ddea7e6bb4e2bbf3377def8ee2ed">ClientIO::send_100_continue</a>()</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> HTTTP_100_CONTINUE[] = <span class="stringliteral">&quot;HTTP/1.1 100 CONTINUE\r\n\r\n&quot;</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> sent = <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(HTTTP_100_CONTINUE,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                                  <span class="keyword">sizeof</span>(HTTTP_100_CONTINUE) - 1);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a067b13f316279654602c98704c16862b">flush</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a29a07ad763d12babd0aa283aa61f1d95">sent100continue</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordflow">return</span> sent;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="rgw__asio__client_8cc.html#a7389deab12dbbfc27198bad820955e58">  130</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_define" href="rgw__common_8cc.html#a511df01696146d80383d83b07042bf50">TIME_BUF_SIZE</a> = 128;</div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="rgw__asio__client_8cc.html#a18511e410b209dfb872327536cff5b7c">  131</a></span><span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="rgw__asio__client_8cc.html#a18511e410b209dfb872327536cff5b7c">dump_date_header</a>(<span class="keywordtype">char</span> (&amp;timestr)[<a class="code hl_define" href="rgw__common_8cc.html#a511df01696146d80383d83b07042bf50">TIME_BUF_SIZE</a>])</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keyword">const</span> time_t gtime = time(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">struct </span>tm result;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">struct </span>tm const * <span class="keyword">const</span> tmp = gmtime_r(&amp;gtime, &amp;result);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordflow">if</span> (tmp == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordflow">return</span> strftime(timestr, <span class="keyword">sizeof</span>(timestr),</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                  <span class="stringliteral">&quot;Date: %a, %d %b %Y %H:%M:%S %Z\r\n&quot;</span>, tmp);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#a199d53e40706e791edf78d92d8b1a45c">  143</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a199d53e40706e791edf78d92d8b1a45c">ClientIO::complete_header</a>()</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">size_t</span> sent = 0;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keywordtype">char</span> timestr[<a class="code hl_define" href="rgw__common_8cc.html#a511df01696146d80383d83b07042bf50">TIME_BUF_SIZE</a>];</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="rgw__asio__client_8cc.html#a18511e410b209dfb872327536cff5b7c">dump_date_header</a>(timestr)) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(timestr, strlen(timestr));</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a23c4ec91f4eed4d29325854b18c3c7b3">parser</a>.keep_alive()) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">constexpr</span> <span class="keywordtype">char</span> CONN_KEEP_ALIVE[] = <span class="stringliteral">&quot;Connection: Keep-Alive\r\n&quot;</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(CONN_KEEP_ALIVE, <span class="keyword">sizeof</span>(CONN_KEEP_ALIVE) - 1);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">constexpr</span> <span class="keywordtype">char</span> CONN_KEEP_CLOSE[] = <span class="stringliteral">&quot;Connection: close\r\n&quot;</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(CONN_KEEP_CLOSE, <span class="keyword">sizeof</span>(CONN_KEEP_CLOSE) - 1);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keyword">constexpr</span> <span class="keywordtype">char</span> HEADER_END[] = <span class="stringliteral">&quot;\r\n&quot;</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(HEADER_END, <span class="keyword">sizeof</span>(HEADER_END) - 1);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a067b13f316279654602c98704c16862b">flush</a>();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="keywordflow">return</span> sent;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#acd45c5ba10d3a66c8f12192ae3de320e">  167</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#acd45c5ba10d3a66c8f12192ae3de320e">ClientIO::send_header</a>(<span class="keyword">const</span> std::string_view&amp; name,</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                             <span class="keyword">const</span> std::string_view&amp; value)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>{</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> HEADER_SEP[] = <span class="stringliteral">&quot;: &quot;</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> HEADER_END[] = <span class="stringliteral">&quot;\r\n&quot;</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordtype">size_t</span> sent = 0;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(name.data(), name.length());</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(HEADER_SEP, <span class="keyword">sizeof</span>(HEADER_SEP) - 1);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(value.data(), value.length());</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  sent += <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(HEADER_END, <span class="keyword">sizeof</span>(HEADER_END) - 1);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keywordflow">return</span> sent;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>}</div>
+</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classrgw_1_1asio_1_1_client_i_o.html#a6ad46a91c9baa3ac4eda08d35e57ea56">  183</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classrgw_1_1asio_1_1_client_i_o.html#a6ad46a91c9baa3ac4eda08d35e57ea56">ClientIO::send_content_length</a>(uint64_t len)</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>{</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> CONLEN_BUF_SIZE = 128;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">char</span> sizebuf[CONLEN_BUF_SIZE];</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keyword">const</span> <span class="keyword">auto</span> sizelen = snprintf(sizebuf, <span class="keyword">sizeof</span>(sizebuf),</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                                <span class="stringliteral">&quot;Content-Length: %&quot;</span> PRIu64 <span class="stringliteral">&quot;\r\n&quot;</span>, len);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">txbuf</a>.sputn(sizebuf, sizelen);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_env_html_a0b2a3f1977027cd6bacb6fb0890bbc35"><div class="ttname"><a href="class_r_g_w_env.html#a0b2a3f1977027cd6bacb6fb0890bbc35">RGWEnv::init</a></div><div class="ttdeci">void init(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__env_8cc_source.html#l00017">rgw_env.cc:17</a></div></div>
+<div class="ttc" id="aclass_r_g_w_env_html_a9cf6eca7c7e7fd76595f6f3039fe393d"><div class="ttname"><a href="class_r_g_w_env.html#a9cf6eca7c7e7fd76595f6f3039fe393d">RGWEnv::set</a></div><div class="ttdeci">void set(std::string name, std::string val)</div><div class="ttdef"><b>Definition</b> <a href="rgw__env_8cc_source.html#l00022">rgw_env.cc:22</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a05bcf08c0a58af43afa982dd8d3ec8d0"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a05bcf08c0a58af43afa982dd8d3ec8d0">rgw::asio::ClientIO::ClientIO</a></div><div class="ttdeci">ClientIO(parser_type &amp;parser, bool is_ssl, const endpoint_type &amp;local_endpoint, const endpoint_type &amp;remote_endpoint)</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00015">rgw_asio_client.cc:15</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a067b13f316279654602c98704c16862b"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a067b13f316279654602c98704c16862b">rgw::asio::ClientIO::flush</a></div><div class="ttdeci">void flush() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00104">rgw_asio_client.cc:104</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a1342ddea7e6bb4e2bbf3377def8ee2ed"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a1342ddea7e6bb4e2bbf3377def8ee2ed">rgw::asio::ClientIO::send_100_continue</a></div><div class="ttdeci">size_t send_100_continue() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00120">rgw_asio_client.cc:120</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a199d53e40706e791edf78d92d8b1a45c"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a199d53e40706e791edf78d92d8b1a45c">rgw::asio::ClientIO::complete_header</a></div><div class="ttdeci">size_t complete_header() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00143">rgw_asio_client.cc:143</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a1e0abd93960f882893ca097cbb76554a"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a1e0abd93960f882893ca097cbb76554a">rgw::asio::ClientIO::txbuf</a></div><div class="ttdeci">rgw::io::StaticOutputBufferer txbuf</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00032">rgw_asio_client.h:32</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a23c4ec91f4eed4d29325854b18c3c7b3"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a23c4ec91f4eed4d29325854b18c3c7b3">rgw::asio::ClientIO::parser</a></div><div class="ttdeci">parser_type &amp; parser</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00023">rgw_asio_client.h:23</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a29a07ad763d12babd0aa283aa61f1d95"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a29a07ad763d12babd0aa283aa61f1d95">rgw::asio::ClientIO::sent100continue</a></div><div class="ttdeci">bool sent100continue</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00033">rgw_asio_client.h:33</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a6aab19378dc59b82fcffbefc70496fe8"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a6aab19378dc59b82fcffbefc70496fe8">rgw::asio::ClientIO::init_env</a></div><div class="ttdeci">int init_env(CephContext *cct) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00027">rgw_asio_client.cc:27</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a6ad46a91c9baa3ac4eda08d35e57ea56"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a6ad46a91c9baa3ac4eda08d35e57ea56">rgw::asio::ClientIO::send_content_length</a></div><div class="ttdeci">size_t send_content_length(uint64_t len) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00183">rgw_asio_client.cc:183</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a784ca3ad0825f98b83d9bb0a256f0292"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a784ca3ad0825f98b83d9bb0a256f0292">rgw::asio::ClientIO::env</a></div><div class="ttdeci">RGWEnv env</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00030">rgw_asio_client.h:30</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a873abfe9ef18724ad77ec766f6088cd3"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a873abfe9ef18724ad77ec766f6088cd3">rgw::asio::ClientIO::~ClientIO</a></div><div class="ttdeci">~ClientIO() override</div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a8cb6d47e2017b0a8fdb7fa5f3ba2bc50"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a8cb6d47e2017b0a8fdb7fa5f3ba2bc50">rgw::asio::ClientIO::endpoint_type</a></div><div class="ttdeci">boost::asio::ip::tcp::endpoint endpoint_type</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00026">rgw_asio_client.h:26</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a9007cfbdf4bea102b9ff1074fd458465"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a9007cfbdf4bea102b9ff1074fd458465">rgw::asio::ClientIO::remote_endpoint</a></div><div class="ttdeci">endpoint_type remote_endpoint</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00028">rgw_asio_client.h:28</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_a95359773fc4c48daa86246ced7a1d79b"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#a95359773fc4c48daa86246ced7a1d79b">rgw::asio::ClientIO::local_endpoint</a></div><div class="ttdeci">endpoint_type local_endpoint</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00027">rgw_asio_client.h:27</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_aa077c219b893aa37222454fca03b83aa"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#aa077c219b893aa37222454fca03b83aa">rgw::asio::ClientIO::send_status</a></div><div class="ttdeci">size_t send_status(int status, const char *status_name) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00109">rgw_asio_client.cc:109</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_ac3162172aa3fc59ec2e0e744e210e666"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#ac3162172aa3fc59ec2e0e744e210e666">rgw::asio::ClientIO::complete_request</a></div><div class="ttdeci">size_t complete_request() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00097">rgw_asio_client.cc:97</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_acd45c5ba10d3a66c8f12192ae3de320e"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#acd45c5ba10d3a66c8f12192ae3de320e">rgw::asio::ClientIO::send_header</a></div><div class="ttdeci">size_t send_header(const std::string_view &amp;name, const std::string_view &amp;value) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00167">rgw_asio_client.cc:167</a></div></div>
+<div class="ttc" id="aclassrgw_1_1asio_1_1_client_i_o_html_ae8095fb6eede95133995a78513bc3601"><div class="ttname"><a href="classrgw_1_1asio_1_1_client_i_o.html#ae8095fb6eede95133995a78513bc3601">rgw::asio::ClientIO::is_ssl</a></div><div class="ttdeci">const bool is_ssl</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00025">rgw_asio_client.h:25</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacergw_1_1asio_html"><div class="ttname"><a href="namespacergw_1_1asio.html">rgw::asio</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00015">rgw_asio_client.h:15</a></div></div>
+<div class="ttc" id="anamespacergw_1_1asio_html_ab5d969d90170f58ac4ab6768bbebcb90"><div class="ttname"><a href="namespacergw_1_1asio.html#ab5d969d90170f58ac4ab6768bbebcb90">rgw::asio::parser_type</a></div><div class="ttdeci">beast::http::request_parser&lt; beast::http::buffer_body &gt; parser_type</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8h_source.html#l00018">rgw_asio_client.h:18</a></div></div>
+<div class="ttc" id="argw__asio__client_8cc_html_a18511e410b209dfb872327536cff5b7c"><div class="ttname"><a href="rgw__asio__client_8cc.html#a18511e410b209dfb872327536cff5b7c">dump_date_header</a></div><div class="ttdeci">static size_t dump_date_header(char(&amp;timestr)[TIME_BUF_SIZE])</div><div class="ttdef"><b>Definition</b> <a href="rgw__asio__client_8cc_source.html#l00131">rgw_asio_client.cc:131</a></div></div>
+<div class="ttc" id="argw__asio__client_8h_html"><div class="ttname"><a href="rgw__asio__client_8h.html">rgw_asio_client.h</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a511df01696146d80383d83b07042bf50"><div class="ttname"><a href="rgw__common_8cc.html#a511df01696146d80383d83b07042bf50">TIME_BUF_SIZE</a></div><div class="ttdeci">#define TIME_BUF_SIZE</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00698">rgw_common.cc:698</a></div></div>
+<div class="ttc" id="argw__perf__counters_8cc_html_a770a29716cf802e8b212dbd61b157b2e"><div class="ttname"><a href="rgw__perf__counters_8cc.html#a770a29716cf802e8b212dbd61b157b2e">perfcounter</a></div><div class="ttdeci">PerfCounters * perfcounter</div><div class="ttdef"><b>Definition</b> <a href="rgw__perf__counters_8cc_source.html#l00008">rgw_perf_counters.cc:8</a></div></div>
+<div class="ttc" id="argw__perf__counters_8h_html"><div class="ttname"><a href="rgw__perf__counters_8h.html">rgw_perf_counters.h</a></div></div>
+<div class="ttc" id="argw__perf__counters_8h_html_a05589fbab0657f08285ebdfe93f5ec9ea09b455b4d3984a2459fd2d3b8d3edd1a"><div class="ttname"><a href="rgw__perf__counters_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea09b455b4d3984a2459fd2d3b8d3edd1a">l_rgw_qlen</a></div><div class="ttdeci">@ l_rgw_qlen</div><div class="ttdef"><b>Definition</b> <a href="rgw__perf__counters_8h_source.html#l00025">rgw_perf_counters.h:25</a></div></div>
+<div class="ttc" id="argw__perf__counters_8h_html_a05589fbab0657f08285ebdfe93f5ec9ea2d0f6dee68caec5bc00e7ff717eac732"><div class="ttname"><a href="rgw__perf__counters_8h.html#a05589fbab0657f08285ebdfe93f5ec9ea2d0f6dee68caec5bc00e7ff717eac732">l_rgw_qactive</a></div><div class="ttdeci">@ l_rgw_qactive</div><div class="ttdef"><b>Definition</b> <a href="rgw__perf__counters_8h_source.html#l00026">rgw_perf_counters.h:26</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__asio__client_8cc.html">rgw_asio_client.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

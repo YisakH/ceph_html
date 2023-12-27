@@ -1,0 +1,26 @@
+var class_r_g_w_metadata_manager =
+[
+    [ "RGWMetadataManager", "class_r_g_w_metadata_manager.html#aad4f1447bbfdcf77ff6a8ebd13a19e4b", null ],
+    [ "~RGWMetadataManager", "class_r_g_w_metadata_manager.html#aa76000f1c0de920bcb7da2e421331811", null ],
+    [ "dump_log_entry", "class_r_g_w_metadata_manager.html#a2db86f321b4603842d30511800d3b248", null ],
+    [ "find_handler", "class_r_g_w_metadata_manager.html#aeb2fd2d07750867984001bec2545213b", null ],
+    [ "get", "class_r_g_w_metadata_manager.html#a07f3a7617a4276003c4974f573c5418d", null ],
+    [ "get_handler", "class_r_g_w_metadata_manager.html#af6f77c4522475e94000199f6a07bc5ed", null ],
+    [ "get_marker", "class_r_g_w_metadata_manager.html#a9274bb0330b4c57b5a40136ea529db33", null ],
+    [ "get_sections", "class_r_g_w_metadata_manager.html#ab9ca86c5480302af34d0913ccb626fd3", null ],
+    [ "get_shard_id", "class_r_g_w_metadata_manager.html#aa32faa526e8a5b4a05286e92ba02d606", null ],
+    [ "list_keys_complete", "class_r_g_w_metadata_manager.html#a757181d77c553ec4f79e4ec3c128f7f5", null ],
+    [ "list_keys_init", "class_r_g_w_metadata_manager.html#a8e4e46ba340b783ce003d6a6ef81864b", null ],
+    [ "list_keys_init", "class_r_g_w_metadata_manager.html#a94f8cf34ad7d7bfb6e99a20eee381cb5", null ],
+    [ "list_keys_next", "class_r_g_w_metadata_manager.html#acc29dd4e5961fe0d523310ea4c1eea4a", null ],
+    [ "mutate", "class_r_g_w_metadata_manager.html#aabc6b4d44e87f25be58e57bd2d9dd7e8", null ],
+    [ "parse_metadata_key", "class_r_g_w_metadata_manager.html#af47bee328c8ab5e7fe37d9ab64cd491c", null ],
+    [ "put", "class_r_g_w_metadata_manager.html#a4a6c0b2e4389273362bb92334a76a39c", null ],
+    [ "register_handler", "class_r_g_w_metadata_manager.html#a3e553dfebabdbcc237994b9a08040035", null ],
+    [ "remove", "class_r_g_w_metadata_manager.html#a2696ed0a42286f559e89fd6f1e611812", null ],
+    [ "RGWMetadataHandler", "class_r_g_w_metadata_manager.html#ace79066c4faddfbb16ad4890a8db49c8", null ],
+    [ "cct", "class_r_g_w_metadata_manager.html#ab9fb66463b0b31ae8e4bdc26db2d959d", null ],
+    [ "handlers", "class_r_g_w_metadata_manager.html#aadb6fe49d52b17235edc54ac09397d84", null ],
+    [ "md_top_handler", "class_r_g_w_metadata_manager.html#a6bdced5c644c14cfa26b733c1cafbd70", null ],
+    [ "meta_svc", "class_r_g_w_metadata_manager.html#a8e23405a80976684761759fd3675a1dc", null ]
+];

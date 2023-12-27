@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_cr_tools.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__cr__tools_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_cr_tools.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__cr__tools_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef CEPH_RGW_CR_TOOLS_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define CEPH_RGW_CR_TOOLS_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__cr__rados_8h.html">rgw_cr_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__tools_8h.html">rgw_tools.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__lc_8h.html">rgw_lc.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="svc__bucket__sync_8h.html">services/svc_bucket_sync.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__user__create__params.html">rgw_user_create_params</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a402e0e953064cc0d57dd87460c3d1d37">   14</a></span>  <a class="code hl_struct" href="structrgw__user.html">rgw_user</a> <a class="code hl_variable" href="structrgw__user__create__params.html#a402e0e953064cc0d57dd87460c3d1d37">user</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a940417f1b31319cb6a53e5361fb897f8">   15</a></span>  std::string <a class="code hl_variable" href="structrgw__user__create__params.html#a940417f1b31319cb6a53e5361fb897f8">display_name</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a5cfbbd09114420466f4a8c611dacfafd">   16</a></span>  std::string <a class="code hl_variable" href="structrgw__user__create__params.html#a5cfbbd09114420466f4a8c611dacfafd">email</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#aeb88d0b827df36a9c916ed497c6ca940">   17</a></span>  std::string <a class="code hl_variable" href="structrgw__user__create__params.html#aeb88d0b827df36a9c916ed497c6ca940">access_key</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#af1460f70f522c482a75e3e004198a81e">   18</a></span>  std::string <a class="code hl_variable" href="structrgw__user__create__params.html#af1460f70f522c482a75e3e004198a81e">secret_key</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a6d37291f330eb6b5a2b5c5b741057126">   19</a></span>  std::string <a class="code hl_variable" href="structrgw__user__create__params.html#a6d37291f330eb6b5a2b5c5b741057126">key_type</a>; <span class="comment">/* &quot;swift&quot; or &quot;s3&quot; */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a1e39fb52a2e368e20f7b892b8b30db00">   20</a></span>  std::string <a class="code hl_variable" href="structrgw__user__create__params.html#a1e39fb52a2e368e20f7b892b8b30db00">caps</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a6090daa6a3eea7805709061ff9c00c81">   22</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structrgw__user__create__params.html#a6090daa6a3eea7805709061ff9c00c81">generate_key</a>{<span class="keyword">true</span>};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a786008088d7b1e25b14ba3e4c92c5336">   23</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structrgw__user__create__params.html#a786008088d7b1e25b14ba3e4c92c5336">suspended</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a245a940036f4d4cd02a9ea31e4f76bcd">   24</a></span>  std::optional&lt;int32_t&gt; <a class="code hl_variable" href="structrgw__user__create__params.html#a245a940036f4d4cd02a9ea31e4f76bcd">max_buckets</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a6a78e36acb980d8cf9b9391ac7fe85fb">   25</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structrgw__user__create__params.html#a6a78e36acb980d8cf9b9391ac7fe85fb">system</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a1faa36c10988153f6cfa5550344a7592">   26</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structrgw__user__create__params.html#a1faa36c10988153f6cfa5550344a7592">exclusive</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structrgw__user__create__params.html#a838e092300f8a71c3ac38c98524a64a9">   27</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structrgw__user__create__params.html#a838e092300f8a71c3ac38c98524a64a9">apply_quota</a>{<span class="keyword">true</span>};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="rgw__cr__tools_8h.html#ac04dba484d5d560d4949fd9e8009b0ff">   30</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWUserCreateCR</a> = <a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWSimpleWriteOnlyAsyncCR&lt;rgw_user_create_params&gt;</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structrgw__get__user__info__params.html">   32</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__get__user__info__params.html">rgw_get_user_info_params</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structrgw__get__user__info__params.html#ab2a2f83240eecb2269d32359e5ca61d3">   33</a></span>  <a class="code hl_struct" href="structrgw__user.html">rgw_user</a> <a class="code hl_variable" href="structrgw__get__user__info__params.html#ab2a2f83240eecb2269d32359e5ca61d3">user</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="rgw__cr__tools_8h.html#a6574e07e6e1d4ff7ff46e824d3ee1791">   36</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_simple_async_c_r.html">RGWGetUserInfoCR</a> = <a class="code hl_class" href="class_r_g_w_simple_async_c_r.html">RGWSimpleAsyncCR&lt;rgw_get_user_info_params, RGWUserInfo&gt;</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structrgw__get__bucket__info__params.html">   38</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__get__bucket__info__params.html">rgw_get_bucket_info_params</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structrgw__get__bucket__info__params.html#a7f015bafc42bdd6a6f49b5cc27e06f2b">   39</a></span>  std::string <a class="code hl_variable" href="structrgw__get__bucket__info__params.html#a7f015bafc42bdd6a6f49b5cc27e06f2b">tenant</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structrgw__get__bucket__info__params.html#a72ff9cd0ec86635fd8c6021095661a86">   40</a></span>  std::string <a class="code hl_variable" href="structrgw__get__bucket__info__params.html#a72ff9cd0ec86635fd8c6021095661a86">bucket_name</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structrgw__get__bucket__info__result.html">   43</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__get__bucket__info__result.html">rgw_get_bucket_info_result</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structrgw__get__bucket__info__result.html#a4755877b431d6b3e671849bef173786f">   44</a></span>  std::unique_ptr&lt;rgw::sal::Bucket&gt; <a class="code hl_variable" href="structrgw__get__bucket__info__result.html#a4755877b431d6b3e671849bef173786f">bucket</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="rgw__cr__tools_8h.html#a38e1914ad3d44c3fc59fb313f28bbcb1">   47</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_simple_async_c_r.html">RGWGetBucketInfoCR</a> = <a class="code hl_class" href="class_r_g_w_simple_async_c_r.html">RGWSimpleAsyncCR&lt;rgw_get_bucket_info_params, rgw_get_bucket_info_result&gt;</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structrgw__bucket__create__local__params.html">   49</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__bucket__create__local__params.html">rgw_bucket_create_local_params</a> {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structrgw__bucket__create__local__params.html#a35277269af4d1f83c6695a81bd9c156a">   50</a></span>  std::shared_ptr&lt;RGWUserInfo&gt; <a class="code hl_variable" href="structrgw__bucket__create__local__params.html#a35277269af4d1f83c6695a81bd9c156a">user_info</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structrgw__bucket__create__local__params.html#a9436a7087e3e00ac114df8c36bcee0db">   51</a></span>  std::string <a class="code hl_variable" href="structrgw__bucket__create__local__params.html#a9436a7087e3e00ac114df8c36bcee0db">bucket_name</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structrgw__bucket__create__local__params.html#aecd457ad149bd3164e418a64fe4d84c4">   52</a></span>  <a class="code hl_struct" href="structrgw__placement__rule.html">rgw_placement_rule</a> <a class="code hl_variable" href="structrgw__bucket__create__local__params.html#aecd457ad149bd3164e418a64fe4d84c4">placement_rule</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="rgw__cr__tools_8h.html#a167ac77a509121e34667659eea294483">   55</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWBucketCreateLocalCR</a> = <a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWSimpleWriteOnlyAsyncCR&lt;rgw_bucket_create_local_params&gt;</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structrgw__object__simple__put__params.html">   57</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__object__simple__put__params.html">rgw_object_simple_put_params</a> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structrgw__object__simple__put__params.html#a6b50628ccd86f6d890fd1c1881cf8952">   58</a></span>  <a class="code hl_typedef" href="class_r_g_w_data_access.html#a111204bb0879434a2ae00e2eca9ec026">RGWDataAccess::BucketRef</a> <a class="code hl_variable" href="structrgw__object__simple__put__params.html#a6b50628ccd86f6d890fd1c1881cf8952">bucket</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structrgw__object__simple__put__params.html#a7d93d93ec10761ea3b8cbd5608326e9f">   59</a></span>  <a class="code hl_struct" href="structrgw__obj__key.html">rgw_obj_key</a> <a class="code hl_variable" href="structrgw__object__simple__put__params.html#a7d93d93ec10761ea3b8cbd5608326e9f">key</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structrgw__object__simple__put__params.html#a938de9f134a1dc186cf8d8eccf2709a9">   60</a></span>  bufferlist <a class="code hl_variable" href="structrgw__object__simple__put__params.html#a938de9f134a1dc186cf8d8eccf2709a9">data</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structrgw__object__simple__put__params.html#ad23da8341da30c5ebadf105398f144f8">   61</a></span>  std::map&lt;std::string, bufferlist&gt; <a class="code hl_variable" href="structrgw__object__simple__put__params.html#ad23da8341da30c5ebadf105398f144f8">attrs</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structrgw__object__simple__put__params.html#a1365b4827b01099307ae857bd42aecbb">   62</a></span>  std::optional&lt;std::string&gt; <a class="code hl_variable" href="structrgw__object__simple__put__params.html#a1365b4827b01099307ae857bd42aecbb">user_data</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="rgw__cr__tools_8h.html#abf95ff846d1dc3626ed9c61af109a6c4">   65</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWObjectSimplePutCR</a> = <a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWSimpleWriteOnlyAsyncCR&lt;rgw_object_simple_put_params&gt;</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structrgw__bucket__lifecycle__config__params.html">   68</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__bucket__lifecycle__config__params.html">rgw_bucket_lifecycle_config_params</a> {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structrgw__bucket__lifecycle__config__params.html#a69124459275686a3005182fe72a93545">   69</a></span>  <a class="code hl_class" href="classrgw_1_1sal_1_1_bucket.html">rgw::sal::Bucket</a>* <a class="code hl_variable" href="structrgw__bucket__lifecycle__config__params.html#a69124459275686a3005182fe72a93545">bucket</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structrgw__bucket__lifecycle__config__params.html#acd50b70d47affff98aa9261f8840b21c">   70</a></span>  <a class="code hl_typedef" href="group___r_g_w_s_a_l.html#gab1b58d5f8747844fae5ddfb48fadf7bc">rgw::sal::Attrs</a> <a class="code hl_variable" href="structrgw__bucket__lifecycle__config__params.html#acd50b70d47affff98aa9261f8840b21c">bucket_attrs</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structrgw__bucket__lifecycle__config__params.html#ad89c41a7a010a81f95b2da9623fcb973">   71</a></span>  <a class="code hl_class" href="class_r_g_w_lifecycle_configuration.html">RGWLifecycleConfiguration</a> <a class="code hl_variable" href="structrgw__bucket__lifecycle__config__params.html#ad89c41a7a010a81f95b2da9623fcb973">config</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="rgw__cr__tools_8h.html#a77993615d2488afa7addd93a603e32c5">   74</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWBucketLifecycleConfigCR</a> = <a class="code hl_class" href="class_r_g_w_simple_write_only_async_c_r.html">RGWSimpleWriteOnlyAsyncCR&lt;rgw_bucket_lifecycle_config_params&gt;</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structrgw__bucket__get__sync__policy__params.html">   76</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__bucket__get__sync__policy__params.html">rgw_bucket_get_sync_policy_params</a> {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structrgw__bucket__get__sync__policy__params.html#a54accf8e3a286b5e628f426b7d4c8911">   77</a></span>  std::optional&lt;rgw_zone_id&gt; <a class="code hl_variable" href="structrgw__bucket__get__sync__policy__params.html#a54accf8e3a286b5e628f426b7d4c8911">zone</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structrgw__bucket__get__sync__policy__params.html#a160bd98900f18c83b61ce3660b2a1810">   78</a></span>  std::optional&lt;rgw_bucket&gt; <a class="code hl_variable" href="structrgw__bucket__get__sync__policy__params.html#a160bd98900f18c83b61ce3660b2a1810">bucket</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structrgw__bucket__get__sync__policy__result.html">   81</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__bucket__get__sync__policy__result.html">rgw_bucket_get_sync_policy_result</a> {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structrgw__bucket__get__sync__policy__result.html#a79934a9d41b0603164c6a087661eb755">   82</a></span>  <a class="code hl_typedef" href="rgw__sal_8h.html#a34a498a236dfdf1358ada02a62afc853">RGWBucketSyncPolicyHandlerRef</a> <a class="code hl_variable" href="structrgw__bucket__get__sync__policy__result.html#a79934a9d41b0603164c6a087661eb755">policy_handler</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="rgw__cr__tools_8h.html#a129c41444e3b9a883f50c68e2e4b37cc">   85</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_simple_async_c_r.html">RGWBucketGetSyncPolicyHandlerCR</a> = <a class="code hl_class" href="class_r_g_w_simple_async_c_r.html">RGWSimpleAsyncCR&lt;rgw_bucket_get_sync_policy_params, rgw_bucket_get_sync_policy_result&gt;</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_r_g_w_data_access_html_a111204bb0879434a2ae00e2eca9ec026"><div class="ttname"><a href="class_r_g_w_data_access.html#a111204bb0879434a2ae00e2eca9ec026">RGWDataAccess::BucketRef</a></div><div class="ttdeci">std::shared_ptr&lt; Bucket &gt; BucketRef</div><div class="ttdef"><b>Definition</b> <a href="rgw__tools_8h_source.html#l00165">rgw_tools.h:165</a></div></div>
+<div class="ttc" id="aclass_r_g_w_lifecycle_configuration_html"><div class="ttname"><a href="class_r_g_w_lifecycle_configuration.html">RGWLifecycleConfiguration</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lc_8h_source.html#l00405">rgw_lc.h:406</a></div></div>
+<div class="ttc" id="aclass_r_g_w_simple_async_c_r_html"><div class="ttname"><a href="class_r_g_w_simple_async_c_r.html">RGWSimpleAsyncCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__rados_8h_source.html#l00181">rgw_cr_rados.h:181</a></div></div>
+<div class="ttc" id="aclass_r_g_w_simple_write_only_async_c_r_html"><div class="ttname"><a href="class_r_g_w_simple_write_only_async_c_r.html">RGWSimpleWriteOnlyAsyncCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__rados_8h_source.html#l00120">rgw_cr_rados.h:120</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_bucket_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_bucket.html">rgw::sal::Bucket</a></div><div class="ttdoc">Bucket abstraction</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00553">rgw_sal.h:553</a></div></div>
+<div class="ttc" id="agroup___r_g_w_s_a_l_html_gab1b58d5f8747844fae5ddfb48fadf7bc"><div class="ttname"><a href="group___r_g_w_s_a_l.html#gab1b58d5f8747844fae5ddfb48fadf7bc">rgw::sal::Attrs</a></div><div class="ttdeci">std::map&lt; std::string, ceph::buffer::list &gt; Attrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00053">rgw_common.h:53</a></div></div>
+<div class="ttc" id="argw__cr__rados_8h_html"><div class="ttname"><a href="rgw__cr__rados_8h.html">rgw_cr_rados.h</a></div></div>
+<div class="ttc" id="argw__lc_8h_html"><div class="ttname"><a href="rgw__lc_8h.html">rgw_lc.h</a></div></div>
+<div class="ttc" id="argw__sal_8h_html_a34a498a236dfdf1358ada02a62afc853"><div class="ttname"><a href="rgw__sal_8h.html#a34a498a236dfdf1358ada02a62afc853">RGWBucketSyncPolicyHandlerRef</a></div><div class="ttdeci">std::shared_ptr&lt; RGWBucketSyncPolicyHandler &gt; RGWBucketSyncPolicyHandlerRef</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00036">rgw_sal.h:36</a></div></div>
+<div class="ttc" id="argw__tools_8h_html"><div class="ttname"><a href="rgw__tools_8h.html">rgw_tools.h</a></div></div>
+<div class="ttc" id="astructrgw__bucket__create__local__params_html"><div class="ttname"><a href="structrgw__bucket__create__local__params.html">rgw_bucket_create_local_params</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00049">rgw_cr_tools.h:49</a></div></div>
+<div class="ttc" id="astructrgw__bucket__create__local__params_html_a35277269af4d1f83c6695a81bd9c156a"><div class="ttname"><a href="structrgw__bucket__create__local__params.html#a35277269af4d1f83c6695a81bd9c156a">rgw_bucket_create_local_params::user_info</a></div><div class="ttdeci">std::shared_ptr&lt; RGWUserInfo &gt; user_info</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00050">rgw_cr_tools.h:50</a></div></div>
+<div class="ttc" id="astructrgw__bucket__create__local__params_html_a9436a7087e3e00ac114df8c36bcee0db"><div class="ttname"><a href="structrgw__bucket__create__local__params.html#a9436a7087e3e00ac114df8c36bcee0db">rgw_bucket_create_local_params::bucket_name</a></div><div class="ttdeci">std::string bucket_name</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00051">rgw_cr_tools.h:51</a></div></div>
+<div class="ttc" id="astructrgw__bucket__create__local__params_html_aecd457ad149bd3164e418a64fe4d84c4"><div class="ttname"><a href="structrgw__bucket__create__local__params.html#aecd457ad149bd3164e418a64fe4d84c4">rgw_bucket_create_local_params::placement_rule</a></div><div class="ttdeci">rgw_placement_rule placement_rule</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00052">rgw_cr_tools.h:52</a></div></div>
+<div class="ttc" id="astructrgw__bucket__get__sync__policy__params_html"><div class="ttname"><a href="structrgw__bucket__get__sync__policy__params.html">rgw_bucket_get_sync_policy_params</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00076">rgw_cr_tools.h:76</a></div></div>
+<div class="ttc" id="astructrgw__bucket__get__sync__policy__params_html_a160bd98900f18c83b61ce3660b2a1810"><div class="ttname"><a href="structrgw__bucket__get__sync__policy__params.html#a160bd98900f18c83b61ce3660b2a1810">rgw_bucket_get_sync_policy_params::bucket</a></div><div class="ttdeci">std::optional&lt; rgw_bucket &gt; bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00078">rgw_cr_tools.h:78</a></div></div>
+<div class="ttc" id="astructrgw__bucket__get__sync__policy__params_html_a54accf8e3a286b5e628f426b7d4c8911"><div class="ttname"><a href="structrgw__bucket__get__sync__policy__params.html#a54accf8e3a286b5e628f426b7d4c8911">rgw_bucket_get_sync_policy_params::zone</a></div><div class="ttdeci">std::optional&lt; rgw_zone_id &gt; zone</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00077">rgw_cr_tools.h:77</a></div></div>
+<div class="ttc" id="astructrgw__bucket__get__sync__policy__result_html"><div class="ttname"><a href="structrgw__bucket__get__sync__policy__result.html">rgw_bucket_get_sync_policy_result</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00081">rgw_cr_tools.h:81</a></div></div>
+<div class="ttc" id="astructrgw__bucket__get__sync__policy__result_html_a79934a9d41b0603164c6a087661eb755"><div class="ttname"><a href="structrgw__bucket__get__sync__policy__result.html#a79934a9d41b0603164c6a087661eb755">rgw_bucket_get_sync_policy_result::policy_handler</a></div><div class="ttdeci">RGWBucketSyncPolicyHandlerRef policy_handler</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00082">rgw_cr_tools.h:82</a></div></div>
+<div class="ttc" id="astructrgw__bucket__lifecycle__config__params_html"><div class="ttname"><a href="structrgw__bucket__lifecycle__config__params.html">rgw_bucket_lifecycle_config_params</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00068">rgw_cr_tools.h:68</a></div></div>
+<div class="ttc" id="astructrgw__bucket__lifecycle__config__params_html_a69124459275686a3005182fe72a93545"><div class="ttname"><a href="structrgw__bucket__lifecycle__config__params.html#a69124459275686a3005182fe72a93545">rgw_bucket_lifecycle_config_params::bucket</a></div><div class="ttdeci">rgw::sal::Bucket * bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00069">rgw_cr_tools.h:69</a></div></div>
+<div class="ttc" id="astructrgw__bucket__lifecycle__config__params_html_acd50b70d47affff98aa9261f8840b21c"><div class="ttname"><a href="structrgw__bucket__lifecycle__config__params.html#acd50b70d47affff98aa9261f8840b21c">rgw_bucket_lifecycle_config_params::bucket_attrs</a></div><div class="ttdeci">rgw::sal::Attrs bucket_attrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00070">rgw_cr_tools.h:70</a></div></div>
+<div class="ttc" id="astructrgw__bucket__lifecycle__config__params_html_ad89c41a7a010a81f95b2da9623fcb973"><div class="ttname"><a href="structrgw__bucket__lifecycle__config__params.html#ad89c41a7a010a81f95b2da9623fcb973">rgw_bucket_lifecycle_config_params::config</a></div><div class="ttdeci">RGWLifecycleConfiguration config</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00071">rgw_cr_tools.h:71</a></div></div>
+<div class="ttc" id="astructrgw__get__bucket__info__params_html"><div class="ttname"><a href="structrgw__get__bucket__info__params.html">rgw_get_bucket_info_params</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00038">rgw_cr_tools.h:38</a></div></div>
+<div class="ttc" id="astructrgw__get__bucket__info__params_html_a72ff9cd0ec86635fd8c6021095661a86"><div class="ttname"><a href="structrgw__get__bucket__info__params.html#a72ff9cd0ec86635fd8c6021095661a86">rgw_get_bucket_info_params::bucket_name</a></div><div class="ttdeci">std::string bucket_name</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00040">rgw_cr_tools.h:40</a></div></div>
+<div class="ttc" id="astructrgw__get__bucket__info__params_html_a7f015bafc42bdd6a6f49b5cc27e06f2b"><div class="ttname"><a href="structrgw__get__bucket__info__params.html#a7f015bafc42bdd6a6f49b5cc27e06f2b">rgw_get_bucket_info_params::tenant</a></div><div class="ttdeci">std::string tenant</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00039">rgw_cr_tools.h:39</a></div></div>
+<div class="ttc" id="astructrgw__get__bucket__info__result_html"><div class="ttname"><a href="structrgw__get__bucket__info__result.html">rgw_get_bucket_info_result</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00043">rgw_cr_tools.h:43</a></div></div>
+<div class="ttc" id="astructrgw__get__bucket__info__result_html_a4755877b431d6b3e671849bef173786f"><div class="ttname"><a href="structrgw__get__bucket__info__result.html#a4755877b431d6b3e671849bef173786f">rgw_get_bucket_info_result::bucket</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::sal::Bucket &gt; bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00044">rgw_cr_tools.h:44</a></div></div>
+<div class="ttc" id="astructrgw__get__user__info__params_html"><div class="ttname"><a href="structrgw__get__user__info__params.html">rgw_get_user_info_params</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00032">rgw_cr_tools.h:32</a></div></div>
+<div class="ttc" id="astructrgw__get__user__info__params_html_ab2a2f83240eecb2269d32359e5ca61d3"><div class="ttname"><a href="structrgw__get__user__info__params.html#ab2a2f83240eecb2269d32359e5ca61d3">rgw_get_user_info_params::user</a></div><div class="ttdeci">rgw_user user</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00033">rgw_cr_tools.h:33</a></div></div>
+<div class="ttc" id="astructrgw__obj__key_html"><div class="ttname"><a href="structrgw__obj__key.html">rgw_obj_key</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01248">rgw_common.h:1248</a></div></div>
+<div class="ttc" id="astructrgw__object__simple__put__params_html"><div class="ttname"><a href="structrgw__object__simple__put__params.html">rgw_object_simple_put_params</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00057">rgw_cr_tools.h:57</a></div></div>
+<div class="ttc" id="astructrgw__object__simple__put__params_html_a1365b4827b01099307ae857bd42aecbb"><div class="ttname"><a href="structrgw__object__simple__put__params.html#a1365b4827b01099307ae857bd42aecbb">rgw_object_simple_put_params::user_data</a></div><div class="ttdeci">std::optional&lt; std::string &gt; user_data</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00062">rgw_cr_tools.h:62</a></div></div>
+<div class="ttc" id="astructrgw__object__simple__put__params_html_a6b50628ccd86f6d890fd1c1881cf8952"><div class="ttname"><a href="structrgw__object__simple__put__params.html#a6b50628ccd86f6d890fd1c1881cf8952">rgw_object_simple_put_params::bucket</a></div><div class="ttdeci">RGWDataAccess::BucketRef bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00058">rgw_cr_tools.h:58</a></div></div>
+<div class="ttc" id="astructrgw__object__simple__put__params_html_a7d93d93ec10761ea3b8cbd5608326e9f"><div class="ttname"><a href="structrgw__object__simple__put__params.html#a7d93d93ec10761ea3b8cbd5608326e9f">rgw_object_simple_put_params::key</a></div><div class="ttdeci">rgw_obj_key key</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00059">rgw_cr_tools.h:59</a></div></div>
+<div class="ttc" id="astructrgw__object__simple__put__params_html_a938de9f134a1dc186cf8d8eccf2709a9"><div class="ttname"><a href="structrgw__object__simple__put__params.html#a938de9f134a1dc186cf8d8eccf2709a9">rgw_object_simple_put_params::data</a></div><div class="ttdeci">bufferlist data</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00060">rgw_cr_tools.h:60</a></div></div>
+<div class="ttc" id="astructrgw__object__simple__put__params_html_ad23da8341da30c5ebadf105398f144f8"><div class="ttname"><a href="structrgw__object__simple__put__params.html#ad23da8341da30c5ebadf105398f144f8">rgw_object_simple_put_params::attrs</a></div><div class="ttdeci">std::map&lt; std::string, bufferlist &gt; attrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00061">rgw_cr_tools.h:61</a></div></div>
+<div class="ttc" id="astructrgw__placement__rule_html"><div class="ttname"><a href="structrgw__placement__rule.html">rgw_placement_rule</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00588">rgw_common.h:588</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html"><div class="ttname"><a href="structrgw__user__create__params.html">rgw_user_create_params</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00013">rgw_cr_tools.h:13</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a1e39fb52a2e368e20f7b892b8b30db00"><div class="ttname"><a href="structrgw__user__create__params.html#a1e39fb52a2e368e20f7b892b8b30db00">rgw_user_create_params::caps</a></div><div class="ttdeci">std::string caps</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00020">rgw_cr_tools.h:20</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a1faa36c10988153f6cfa5550344a7592"><div class="ttname"><a href="structrgw__user__create__params.html#a1faa36c10988153f6cfa5550344a7592">rgw_user_create_params::exclusive</a></div><div class="ttdeci">bool exclusive</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00026">rgw_cr_tools.h:26</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a245a940036f4d4cd02a9ea31e4f76bcd"><div class="ttname"><a href="structrgw__user__create__params.html#a245a940036f4d4cd02a9ea31e4f76bcd">rgw_user_create_params::max_buckets</a></div><div class="ttdeci">std::optional&lt; int32_t &gt; max_buckets</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00024">rgw_cr_tools.h:24</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a402e0e953064cc0d57dd87460c3d1d37"><div class="ttname"><a href="structrgw__user__create__params.html#a402e0e953064cc0d57dd87460c3d1d37">rgw_user_create_params::user</a></div><div class="ttdeci">rgw_user user</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00014">rgw_cr_tools.h:14</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a5cfbbd09114420466f4a8c611dacfafd"><div class="ttname"><a href="structrgw__user__create__params.html#a5cfbbd09114420466f4a8c611dacfafd">rgw_user_create_params::email</a></div><div class="ttdeci">std::string email</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00016">rgw_cr_tools.h:16</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a6090daa6a3eea7805709061ff9c00c81"><div class="ttname"><a href="structrgw__user__create__params.html#a6090daa6a3eea7805709061ff9c00c81">rgw_user_create_params::generate_key</a></div><div class="ttdeci">bool generate_key</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00022">rgw_cr_tools.h:22</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a6a78e36acb980d8cf9b9391ac7fe85fb"><div class="ttname"><a href="structrgw__user__create__params.html#a6a78e36acb980d8cf9b9391ac7fe85fb">rgw_user_create_params::system</a></div><div class="ttdeci">bool system</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00025">rgw_cr_tools.h:25</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a6d37291f330eb6b5a2b5c5b741057126"><div class="ttname"><a href="structrgw__user__create__params.html#a6d37291f330eb6b5a2b5c5b741057126">rgw_user_create_params::key_type</a></div><div class="ttdeci">std::string key_type</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00019">rgw_cr_tools.h:19</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a786008088d7b1e25b14ba3e4c92c5336"><div class="ttname"><a href="structrgw__user__create__params.html#a786008088d7b1e25b14ba3e4c92c5336">rgw_user_create_params::suspended</a></div><div class="ttdeci">bool suspended</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00023">rgw_cr_tools.h:23</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a838e092300f8a71c3ac38c98524a64a9"><div class="ttname"><a href="structrgw__user__create__params.html#a838e092300f8a71c3ac38c98524a64a9">rgw_user_create_params::apply_quota</a></div><div class="ttdeci">bool apply_quota</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00027">rgw_cr_tools.h:27</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_a940417f1b31319cb6a53e5361fb897f8"><div class="ttname"><a href="structrgw__user__create__params.html#a940417f1b31319cb6a53e5361fb897f8">rgw_user_create_params::display_name</a></div><div class="ttdeci">std::string display_name</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00015">rgw_cr_tools.h:15</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_aeb88d0b827df36a9c916ed497c6ca940"><div class="ttname"><a href="structrgw__user__create__params.html#aeb88d0b827df36a9c916ed497c6ca940">rgw_user_create_params::access_key</a></div><div class="ttdeci">std::string access_key</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00017">rgw_cr_tools.h:17</a></div></div>
+<div class="ttc" id="astructrgw__user__create__params_html_af1460f70f522c482a75e3e004198a81e"><div class="ttname"><a href="structrgw__user__create__params.html#af1460f70f522c482a75e3e004198a81e">rgw_user_create_params::secret_key</a></div><div class="ttdeci">std::string secret_key</div><div class="ttdef"><b>Definition</b> <a href="rgw__cr__tools_8h_source.html#l00018">rgw_cr_tools.h:18</a></div></div>
+<div class="ttc" id="astructrgw__user_html"><div class="ttname"><a href="structrgw__user.html">rgw_user</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00014">rgw_basic_types.h:14</a></div></div>
+<div class="ttc" id="asvc__bucket__sync_8h_html"><div class="ttname"><a href="svc__bucket__sync_8h.html">svc_bucket_sync.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__cr__tools_8h.html">rgw_cr_tools.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

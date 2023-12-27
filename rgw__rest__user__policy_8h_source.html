@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_rest_user_policy.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__rest__user__policy_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_rest_user_policy.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__rest__user__policy_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest_8h.html">rgw_rest.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_user_policy.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_rest_user_policy.html">RGWRestUserPolicy</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_r_e_s_t_op.html">RGWRESTOp</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_user_policy.html#abb98ca691318f5a50513dbcc80d747c8">    9</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_g_w_rest_user_policy.html#abb98ca691318f5a50513dbcc80d747c8">MAX_POLICY_NAME_LEN</a> = 128;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_user_policy.html#a0ee4fc355438f155d9e947a731c6f9e4">   10</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_rest_user_policy.html#a0ee4fc355438f155d9e947a731c6f9e4">policy_name</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_user_policy.html#ab70352e0a27d69f4e346450fb1bb7e77">   11</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_rest_user_policy.html#ab70352e0a27d69f4e346450fb1bb7e77">user_name</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_user_policy.html#a103621f504a4100315140269324e5ac0">   12</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_rest_user_policy.html#a103621f504a4100315140269324e5ac0">policy</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_rest_user_policy.html#a4c4cb62b8bfced58a8761a0d3b21cce3">validate_input</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_rest_user_policy.html#a5d3ebd3e5fa50c2571ad2ab28c57717e">verify_permission</a>(optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_r_g_w_rest_user_policy.html#aaf19ae3d0cf829696e85528109031ea4">   18</a></span>  <span class="keyword">virtual</span> uint64_t <a class="code hl_function" href="class_r_g_w_rest_user_policy.html#aaf19ae3d0cf829696e85528109031ea4">get_op</a>() = 0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_rest_user_policy.html#a6fd4b92b9d92167681f185da7f8d71e9">send_response</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_rest_user_policy.html#adb6cc940d1c352fcf23f47f6aa00952e">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_r_g_w_user_policy_read.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_user_policy_read.html">RGWUserPolicyRead</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_rest_user_policy.html">RGWRestUserPolicy</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_r_g_w_user_policy_read.html#ac7526b40e87ca58cfa71771413e6ce5b">   25</a></span>  <a class="code hl_function" href="class_r_g_w_user_policy_read.html#ac7526b40e87ca58cfa71771413e6ce5b">RGWUserPolicyRead</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_user_policy_read.html#ab30b1713603570f49956fc81b31139bc">check_caps</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_user_caps.html">RGWUserCaps</a>&amp; caps) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_r_g_w_user_policy_write.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_user_policy_write.html">RGWUserPolicyWrite</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_rest_user_policy.html">RGWRestUserPolicy</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_r_g_w_user_policy_write.html#aaaeb3e848ace057ede6f3637872a9b27">   31</a></span>  <a class="code hl_function" href="class_r_g_w_user_policy_write.html#aaaeb3e848ace057ede6f3637872a9b27">RGWUserPolicyWrite</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_user_policy_write.html#a12fdbe94ec6e4dd1f8058870482da438">check_caps</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_user_caps.html">RGWUserCaps</a>&amp; caps) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_r_g_w_put_user_policy.html">   35</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_put_user_policy.html">RGWPutUserPolicy</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_user_policy_write.html">RGWUserPolicyWrite</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_r_g_w_put_user_policy.html#aa60fdc249e674d678967d55408262471">   37</a></span>  <a class="code hl_function" href="class_r_g_w_put_user_policy.html#aa60fdc249e674d678967d55408262471">RGWPutUserPolicy</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_put_user_policy.html#a359c1a00b3822e66b4ce4a53f1f77b1c">execute</a>(optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_put_user_policy.html#a57f07ddaa68492aa7380dfee57325333">get_params</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_r_g_w_put_user_policy.html#ab724b80f9695d604db87c3415a58dc1c">   40</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_r_g_w_put_user_policy.html#ab724b80f9695d604db87c3415a58dc1c">name</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;put_user-policy&quot;</span>; }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  uint64_t <a class="code hl_function" href="class_r_g_w_put_user_policy.html#a7d8d207c2a51b2b616e27be92fc03089">get_op</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_r_g_w_put_user_policy.html#abce2670611266e1cebc8fe7c21f992a0">   42</a></span>  <a class="code hl_enumeration" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8">RGWOpType</a> <a class="code hl_function" href="class_r_g_w_put_user_policy.html#abce2670611266e1cebc8fe7c21f992a0">get_type</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8a702137b238484af6314878298037133b">RGW_OP_PUT_USER_POLICY</a>; }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_r_g_w_get_user_policy.html">   45</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_get_user_policy.html">RGWGetUserPolicy</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_user_policy_read.html">RGWUserPolicyRead</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_r_g_w_get_user_policy.html#a63516c1e7820881691c00bd4ea9cbdff">   47</a></span>  <a class="code hl_function" href="class_r_g_w_get_user_policy.html#a63516c1e7820881691c00bd4ea9cbdff">RGWGetUserPolicy</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_get_user_policy.html#a2798f45cfa7a32a6b2de624f3d3096fa">execute</a>(optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_get_user_policy.html#a39f65e58b0eaf8951e7f2b683e131bfc">get_params</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_r_g_w_get_user_policy.html#a894c899b8c88db29e41e6f1e22749576">   50</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_r_g_w_get_user_policy.html#a894c899b8c88db29e41e6f1e22749576">name</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;get_user_policy&quot;</span>; }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  uint64_t <a class="code hl_function" href="class_r_g_w_get_user_policy.html#a57ece38dc09958795f6966de7e75497b">get_op</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_get_user_policy.html#a68d50263e91655aa92a6d581e56925e7">   52</a></span>  <a class="code hl_enumeration" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8">RGWOpType</a> <a class="code hl_function" href="class_r_g_w_get_user_policy.html#a68d50263e91655aa92a6d581e56925e7">get_type</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8acf16feca683d479f48d30e4675a257c9">RGW_OP_GET_USER_POLICY</a>; }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="};">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_r_g_w_list_user_policies.html">   55</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_list_user_policies.html">RGWListUserPolicies</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_user_policy_read.html">RGWUserPolicyRead</a> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_r_g_w_list_user_policies.html#a12ff10b738ac7e1805cbe4a7f075e32f">   57</a></span>  <a class="code hl_function" href="class_r_g_w_list_user_policies.html#a12ff10b738ac7e1805cbe4a7f075e32f">RGWListUserPolicies</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_list_user_policies.html#a1b0f0777fd5b697d82fdc644c30cc492">execute</a>(optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_list_user_policies.html#a499c09e3d1d0e182a8c4ce733b3c9315">get_params</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_r_g_w_list_user_policies.html#abfc77c7e754f01f7720d770d4fa5bcc3">   60</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_r_g_w_list_user_policies.html#abfc77c7e754f01f7720d770d4fa5bcc3">name</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;list_user_policies&quot;</span>; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  uint64_t <a class="code hl_function" href="class_r_g_w_list_user_policies.html#a9e1643e6da4e7f91aea104f4e898d9d1">get_op</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_r_g_w_list_user_policies.html#ac9d82ea45782b25bf0ef00a23cdf9698">   62</a></span>  <a class="code hl_enumeration" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8">RGWOpType</a> <a class="code hl_function" href="class_r_g_w_list_user_policies.html#ac9d82ea45782b25bf0ef00a23cdf9698">get_type</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8af2f595c31315190a1a8cd4ca22b6fc9d">RGW_OP_LIST_USER_POLICIES</a>; }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_r_g_w_delete_user_policy.html">   65</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_delete_user_policy.html">RGWDeleteUserPolicy</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_user_policy_write.html">RGWUserPolicyWrite</a> {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_r_g_w_delete_user_policy.html#a8cde2bf93ac07dadc766fcf05d5b1e8c">   67</a></span>  <a class="code hl_function" href="class_r_g_w_delete_user_policy.html#a8cde2bf93ac07dadc766fcf05d5b1e8c">RGWDeleteUserPolicy</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_delete_user_policy.html#a36524719df54584d7fa3706cfaec6dcb">execute</a>(optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_delete_user_policy.html#a9c909d8476c95c4e3503d2d2fe1a9122">get_params</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_r_g_w_delete_user_policy.html#ac06d0b1afa4807f6350ef732a1c4312e">   70</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_r_g_w_delete_user_policy.html#ac06d0b1afa4807f6350ef732a1c4312e">name</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;delete_user_policy&quot;</span>; }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  uint64_t <a class="code hl_function" href="class_r_g_w_delete_user_policy.html#a961569de70d5903cb1bb7d3915fd7e8c">get_op</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_r_g_w_delete_user_policy.html#a5f5fac6cea3910ea59dca7d10f659f57">   72</a></span>  <a class="code hl_enumeration" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8">RGWOpType</a> <a class="code hl_function" href="class_r_g_w_delete_user_policy.html#a5f5fac6cea3910ea59dca7d10f659f57">get_type</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8ab2ac62393c0086cb9a859f5fa9f0adf9">RGW_OP_DELETE_USER_POLICY</a>; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html">RGWDeleteUserPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00065">rgw_rest_user_policy.h:65</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html_a36524719df54584d7fa3706cfaec6dcb"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html#a36524719df54584d7fa3706cfaec6dcb">RGWDeleteUserPolicy::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00322">rgw_rest_user_policy.cc:322</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html_a5f5fac6cea3910ea59dca7d10f659f57"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html#a5f5fac6cea3910ea59dca7d10f659f57">RGWDeleteUserPolicy::get_type</a></div><div class="ttdeci">RGWOpType get_type() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00072">rgw_rest_user_policy.h:72</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html_a8cde2bf93ac07dadc766fcf05d5b1e8c"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html#a8cde2bf93ac07dadc766fcf05d5b1e8c">RGWDeleteUserPolicy::RGWDeleteUserPolicy</a></div><div class="ttdeci">RGWDeleteUserPolicy()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html_a961569de70d5903cb1bb7d3915fd7e8c"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html#a961569de70d5903cb1bb7d3915fd7e8c">RGWDeleteUserPolicy::get_op</a></div><div class="ttdeci">uint64_t get_op() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00304">rgw_rest_user_policy.cc:304</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html_a9c909d8476c95c4e3503d2d2fe1a9122"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html#a9c909d8476c95c4e3503d2d2fe1a9122">RGWDeleteUserPolicy::get_params</a></div><div class="ttdeci">int get_params()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00309">rgw_rest_user_policy.cc:309</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html_ac06d0b1afa4807f6350ef732a1c4312e"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html#ac06d0b1afa4807f6350ef732a1c4312e">RGWDeleteUserPolicy::name</a></div><div class="ttdeci">const char * name() const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00070">rgw_rest_user_policy.h:70</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html"><div class="ttname"><a href="class_r_g_w_get_user_policy.html">RGWGetUserPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00045">rgw_rest_user_policy.h:45</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html_a2798f45cfa7a32a6b2de624f3d3096fa"><div class="ttname"><a href="class_r_g_w_get_user_policy.html#a2798f45cfa7a32a6b2de624f3d3096fa">RGWGetUserPolicy::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00192">rgw_rest_user_policy.cc:192</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html_a39f65e58b0eaf8951e7f2b683e131bfc"><div class="ttname"><a href="class_r_g_w_get_user_policy.html#a39f65e58b0eaf8951e7f2b683e131bfc">RGWGetUserPolicy::get_params</a></div><div class="ttdeci">int get_params()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00178">rgw_rest_user_policy.cc:178</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html_a57ece38dc09958795f6966de7e75497b"><div class="ttname"><a href="class_r_g_w_get_user_policy.html#a57ece38dc09958795f6966de7e75497b">RGWGetUserPolicy::get_op</a></div><div class="ttdeci">uint64_t get_op() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00173">rgw_rest_user_policy.cc:173</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html_a63516c1e7820881691c00bd4ea9cbdff"><div class="ttname"><a href="class_r_g_w_get_user_policy.html#a63516c1e7820881691c00bd4ea9cbdff">RGWGetUserPolicy::RGWGetUserPolicy</a></div><div class="ttdeci">RGWGetUserPolicy()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html_a68d50263e91655aa92a6d581e56925e7"><div class="ttname"><a href="class_r_g_w_get_user_policy.html#a68d50263e91655aa92a6d581e56925e7">RGWGetUserPolicy::get_type</a></div><div class="ttdeci">RGWOpType get_type() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00052">rgw_rest_user_policy.h:52</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html_a894c899b8c88db29e41e6f1e22749576"><div class="ttname"><a href="class_r_g_w_get_user_policy.html#a894c899b8c88db29e41e6f1e22749576">RGWGetUserPolicy::name</a></div><div class="ttdeci">const char * name() const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00050">rgw_rest_user_policy.h:50</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html"><div class="ttname"><a href="class_r_g_w_list_user_policies.html">RGWListUserPolicies</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00055">rgw_rest_user_policy.h:55</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html_a12ff10b738ac7e1805cbe4a7f075e32f"><div class="ttname"><a href="class_r_g_w_list_user_policies.html#a12ff10b738ac7e1805cbe4a7f075e32f">RGWListUserPolicies::RGWListUserPolicies</a></div><div class="ttdeci">RGWListUserPolicies()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html_a1b0f0777fd5b697d82fdc644c30cc492"><div class="ttname"><a href="class_r_g_w_list_user_policies.html#a1b0f0777fd5b697d82fdc644c30cc492">RGWListUserPolicies::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00255">rgw_rest_user_policy.cc:255</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html_a499c09e3d1d0e182a8c4ce733b3c9315"><div class="ttname"><a href="class_r_g_w_list_user_policies.html#a499c09e3d1d0e182a8c4ce733b3c9315">RGWListUserPolicies::get_params</a></div><div class="ttdeci">int get_params()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00243">rgw_rest_user_policy.cc:243</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html_a9e1643e6da4e7f91aea104f4e898d9d1"><div class="ttname"><a href="class_r_g_w_list_user_policies.html#a9e1643e6da4e7f91aea104f4e898d9d1">RGWListUserPolicies::get_op</a></div><div class="ttdeci">uint64_t get_op() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00238">rgw_rest_user_policy.cc:238</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html_abfc77c7e754f01f7720d770d4fa5bcc3"><div class="ttname"><a href="class_r_g_w_list_user_policies.html#abfc77c7e754f01f7720d770d4fa5bcc3">RGWListUserPolicies::name</a></div><div class="ttdeci">const char * name() const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00060">rgw_rest_user_policy.h:60</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html_ac9d82ea45782b25bf0ef00a23cdf9698"><div class="ttname"><a href="class_r_g_w_list_user_policies.html#ac9d82ea45782b25bf0ef00a23cdf9698">RGWListUserPolicies::get_type</a></div><div class="ttdeci">RGWOpType get_type() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00062">rgw_rest_user_policy.h:62</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html"><div class="ttname"><a href="class_r_g_w_put_user_policy.html">RGWPutUserPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00035">rgw_rest_user_policy.h:35</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html_a359c1a00b3822e66b4ce4a53f1f77b1c"><div class="ttname"><a href="class_r_g_w_put_user_policy.html#a359c1a00b3822e66b4ce4a53f1f77b1c">RGWPutUserPolicy::execute</a></div><div class="ttdeci">void execute(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00113">rgw_rest_user_policy.cc:113</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html_a57f07ddaa68492aa7380dfee57325333"><div class="ttname"><a href="class_r_g_w_put_user_policy.html#a57f07ddaa68492aa7380dfee57325333">RGWPutUserPolicy::get_params</a></div><div class="ttdeci">int get_params()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00094">rgw_rest_user_policy.cc:94</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html_a7d8d207c2a51b2b616e27be92fc03089"><div class="ttname"><a href="class_r_g_w_put_user_policy.html#a7d8d207c2a51b2b616e27be92fc03089">RGWPutUserPolicy::get_op</a></div><div class="ttdeci">uint64_t get_op() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00089">rgw_rest_user_policy.cc:89</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html_aa60fdc249e674d678967d55408262471"><div class="ttname"><a href="class_r_g_w_put_user_policy.html#aa60fdc249e674d678967d55408262471">RGWPutUserPolicy::RGWPutUserPolicy</a></div><div class="ttdeci">RGWPutUserPolicy()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html_ab724b80f9695d604db87c3415a58dc1c"><div class="ttname"><a href="class_r_g_w_put_user_policy.html#ab724b80f9695d604db87c3415a58dc1c">RGWPutUserPolicy::name</a></div><div class="ttdeci">const char * name() const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00040">rgw_rest_user_policy.h:40</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html_abce2670611266e1cebc8fe7c21f992a0"><div class="ttname"><a href="class_r_g_w_put_user_policy.html#abce2670611266e1cebc8fe7c21f992a0">RGWPutUserPolicy::get_type</a></div><div class="ttdeci">RGWOpType get_type() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00042">rgw_rest_user_policy.h:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_op_html"><div class="ttname"><a href="class_r_g_w_r_e_s_t_op.html">RGWRESTOp</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8h_source.html#l00520">rgw_rest.h:520</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html">RGWRestUserPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00007">rgw_rest_user_policy.h:7</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_a0ee4fc355438f155d9e947a731c6f9e4"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#a0ee4fc355438f155d9e947a731c6f9e4">RGWRestUserPolicy::policy_name</a></div><div class="ttdeci">std::string policy_name</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00010">rgw_rest_user_policy.h:10</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_a103621f504a4100315140269324e5ac0"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#a103621f504a4100315140269324e5ac0">RGWRestUserPolicy::policy</a></div><div class="ttdeci">std::string policy</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00012">rgw_rest_user_policy.h:12</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_a4c4cb62b8bfced58a8761a0d3b21cce3"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#a4c4cb62b8bfced58a8761a0d3b21cce3">RGWRestUserPolicy::validate_input</a></div><div class="ttdeci">bool validate_input()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00063">rgw_rest_user_policy.cc:63</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_a5d3ebd3e5fa50c2571ad2ab28c57717e"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#a5d3ebd3e5fa50c2571ad2ab28c57717e">RGWRestUserPolicy::verify_permission</a></div><div class="ttdeci">int verify_permission(optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00042">rgw_rest_user_policy.cc:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_a6fd4b92b9d92167681f185da7f8d71e9"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#a6fd4b92b9d92167681f185da7f8d71e9">RGWRestUserPolicy::send_response</a></div><div class="ttdeci">void send_response() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00033">rgw_rest_user_policy.cc:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_aaf19ae3d0cf829696e85528109031ea4"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#aaf19ae3d0cf829696e85528109031ea4">RGWRestUserPolicy::get_op</a></div><div class="ttdeci">virtual uint64_t get_op()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_ab70352e0a27d69f4e346450fb1bb7e77"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#ab70352e0a27d69f4e346450fb1bb7e77">RGWRestUserPolicy::user_name</a></div><div class="ttdeci">std::string user_name</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00011">rgw_rest_user_policy.h:11</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_abb98ca691318f5a50513dbcc80d747c8"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#abb98ca691318f5a50513dbcc80d747c8">RGWRestUserPolicy::MAX_POLICY_NAME_LEN</a></div><div class="ttdeci">static constexpr int MAX_POLICY_NAME_LEN</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00009">rgw_rest_user_policy.h:9</a></div></div>
+<div class="ttc" id="aclass_r_g_w_rest_user_policy_html_adb6cc940d1c352fcf23f47f6aa00952e"><div class="ttname"><a href="class_r_g_w_rest_user_policy.html#adb6cc940d1c352fcf23f47f6aa00952e">RGWRestUserPolicy::dump</a></div><div class="ttdeci">void dump(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00026">rgw_rest_user_policy.cc:26</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_caps_html"><div class="ttname"><a href="class_r_g_w_user_caps.html">RGWUserCaps</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00538">rgw_common.h:539</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_policy_read_html"><div class="ttname"><a href="class_r_g_w_user_policy_read.html">RGWUserPolicyRead</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00023">rgw_rest_user_policy.h:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_policy_read_html_ab30b1713603570f49956fc81b31139bc"><div class="ttname"><a href="class_r_g_w_user_policy_read.html#ab30b1713603570f49956fc81b31139bc">RGWUserPolicyRead::check_caps</a></div><div class="ttdeci">int check_caps(const RGWUserCaps &amp;caps) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00079">rgw_rest_user_policy.cc:79</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_policy_read_html_ac7526b40e87ca58cfa71771413e6ce5b"><div class="ttname"><a href="class_r_g_w_user_policy_read.html#ac7526b40e87ca58cfa71771413e6ce5b">RGWUserPolicyRead::RGWUserPolicyRead</a></div><div class="ttdeci">RGWUserPolicyRead()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_user_policy_write_html"><div class="ttname"><a href="class_r_g_w_user_policy_write.html">RGWUserPolicyWrite</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00029">rgw_rest_user_policy.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_policy_write_html_a12fdbe94ec6e4dd1f8058870482da438"><div class="ttname"><a href="class_r_g_w_user_policy_write.html#a12fdbe94ec6e4dd1f8058870482da438">RGWUserPolicyWrite::check_caps</a></div><div class="ttdeci">int check_caps(const RGWUserCaps &amp;caps) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8cc_source.html#l00084">rgw_rest_user_policy.cc:84</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_policy_write_html_aaaeb3e848ace057ede6f3637872a9b27"><div class="ttname"><a href="class_r_g_w_user_policy_write.html#aaaeb3e848ace057ede6f3637872a9b27">RGWUserPolicyWrite::RGWUserPolicyWrite</a></div><div class="ttdeci">RGWUserPolicyWrite()=default</div></div>
+<div class="ttc" id="argw__op__type_8h_html_adedf6eb016de146128a1adb706df37d8"><div class="ttname"><a href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8">RGWOpType</a></div><div class="ttdeci">RGWOpType</div><div class="ttdef"><b>Definition</b> <a href="rgw__op__type_8h_source.html#l00006">rgw_op_type.h:6</a></div></div>
+<div class="ttc" id="argw__op__type_8h_html_adedf6eb016de146128a1adb706df37d8a702137b238484af6314878298037133b"><div class="ttname"><a href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8a702137b238484af6314878298037133b">RGW_OP_PUT_USER_POLICY</a></div><div class="ttdeci">@ RGW_OP_PUT_USER_POLICY</div><div class="ttdef"><b>Definition</b> <a href="rgw__op__type_8h_source.html#l00076">rgw_op_type.h:76</a></div></div>
+<div class="ttc" id="argw__op__type_8h_html_adedf6eb016de146128a1adb706df37d8ab2ac62393c0086cb9a859f5fa9f0adf9"><div class="ttname"><a href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8ab2ac62393c0086cb9a859f5fa9f0adf9">RGW_OP_DELETE_USER_POLICY</a></div><div class="ttdeci">@ RGW_OP_DELETE_USER_POLICY</div><div class="ttdef"><b>Definition</b> <a href="rgw__op__type_8h_source.html#l00079">rgw_op_type.h:79</a></div></div>
+<div class="ttc" id="argw__op__type_8h_html_adedf6eb016de146128a1adb706df37d8acf16feca683d479f48d30e4675a257c9"><div class="ttname"><a href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8acf16feca683d479f48d30e4675a257c9">RGW_OP_GET_USER_POLICY</a></div><div class="ttdeci">@ RGW_OP_GET_USER_POLICY</div><div class="ttdef"><b>Definition</b> <a href="rgw__op__type_8h_source.html#l00077">rgw_op_type.h:77</a></div></div>
+<div class="ttc" id="argw__op__type_8h_html_adedf6eb016de146128a1adb706df37d8af2f595c31315190a1a8cd4ca22b6fc9d"><div class="ttname"><a href="rgw__op__type_8h.html#adedf6eb016de146128a1adb706df37d8af2f595c31315190a1a8cd4ca22b6fc9d">RGW_OP_LIST_USER_POLICIES</a></div><div class="ttdeci">@ RGW_OP_LIST_USER_POLICIES</div><div class="ttdef"><b>Definition</b> <a href="rgw__op__type_8h_source.html#l00078">rgw_op_type.h:78</a></div></div>
+<div class="ttc" id="argw__rest_8h_html"><div class="ttname"><a href="rgw__rest_8h.html">rgw_rest.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__rest__user__policy_8h.html">rgw_rest_user_policy.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

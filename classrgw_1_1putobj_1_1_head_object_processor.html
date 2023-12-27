@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::putobj::HeadObjectProcessor 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrgw_1_1putobj_1_1_head_object_processor.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pro-methods">Protected 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
+<a href="classrgw_1_1putobj_1_1_head_object_processor-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::putobj::HeadObjectProcessor 클래스 참조<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a>&gt;</code></p>
+<div class="dynheader">
+rgw::putobj::HeadObjectProcessor에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1putobj_1_1_head_object_processor__inherit__graph.png" border="0" usemap="#argw_1_1putobj_1_1_head_object_processor_inherit__map" alt="Inheritance graph"/></div>
+<map name="argw_1_1putobj_1_1_head_object_processor_inherit__map" id="argw_1_1putobj_1_1_head_object_processor_inherit__map">
+<area shape="rect" title=" " alt="" coords="181,283,391,501"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_manifest_object_processor.html" title=" " alt="" coords="197,549,375,933"/>
+<area shape="poly" title=" " alt="" coords="289,516,289,549,283,549,283,516"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_object_processor.html" title="a data consumer that writes an object in a bucket" alt="" coords="205,144,367,235"/>
+<area shape="poly" title=" " alt="" coords="289,250,289,283,283,283,283,250"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_data_processor.html" title="A simple streaming data processing abstraction" alt="" coords="210,5,362,96"/>
+<area shape="poly" title=" " alt="" coords="289,111,289,144,283,144,283,111"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_append_object_processor.html" title=" " alt="" coords="5,981,177,1259"/>
+<area shape="poly" title=" " alt="" coords="193,928,165,983,160,980,188,926"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_atomic_object_processor.html" title=" " alt="" coords="201,1024,371,1216"/>
+<area shape="poly" title=" " alt="" coords="289,948,289,1024,283,1024,283,948"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_multipart_object_processor.html" title=" " alt="" coords="395,992,574,1248"/>
+<area shape="poly" title=" " alt="" coords="384,922,420,991,416,994,379,925"/>
+</map>
+</div>
+<div class="dynheader">
+rgw::putobj::HeadObjectProcessor에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1putobj_1_1_head_object_processor__coll__graph.png" border="0" usemap="#argw_1_1putobj_1_1_head_object_processor_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1putobj_1_1_head_object_processor_coll__map" id="argw_1_1putobj_1_1_head_object_processor_coll__map">
+<area shape="rect" title=" " alt="" coords="131,316,341,471"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_object_processor.html" title="a data consumer that writes an object in a bucket" alt="" coords="155,145,317,236"/>
+<area shape="poly" title=" " alt="" coords="239,251,239,316,233,316,233,251"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_data_processor.html" title="A simple streaming data processing abstraction" alt="" coords="5,5,157,96"/>
+<area shape="poly" title=" " alt="" coords="73,96,67,164,70,200,80,235,100,270,125,302,121,306,95,273,75,237,65,201,62,164,68,96"/>
+<area shape="poly" title=" " alt="" coords="144,104,188,143,185,147,140,108"/>
+<area shape="rect" title=" " alt="" coords="341,156,400,225"/>
+<area shape="poly" title=" " alt="" coords="351,227,299,303,294,300,346,224"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a8fae0113467f296e4998bd98a6b45398" id="r_a8fae0113467f296e4998bd98a6b45398"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a8fae0113467f296e4998bd98a6b45398">HeadObjectProcessor</a> (uint64_t <a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a>)</td></tr>
+<tr class="separator:a8fae0113467f296e4998bd98a6b45398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f065c360fcbcc33ca90098bfcf3fc1" id="r_a80f065c360fcbcc33ca90098bfcf3fc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a80f065c360fcbcc33ca90098bfcf3fc1">set_head_chunk_size</a> (uint64_t size)</td></tr>
+<tr class="separator:a80f065c360fcbcc33ca90098bfcf3fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da70c0ba679b2be00e9ee7d5967e581" id="r_a3da70c0ba679b2be00e9ee7d5967e581"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a3da70c0ba679b2be00e9ee7d5967e581">process</a> (bufferlist &amp;&amp;data, uint64_t logical_offset) final override</td></tr>
+<tr class="memdesc:a3da70c0ba679b2be00e9ee7d5967e581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consume a bufferlist in its entirety at the given object offset.  <br /></td></tr>
+<tr class="separator:a3da70c0ba679b2be00e9ee7d5967e581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1sal_1_1_object_processor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1sal_1_1_object_processor')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1sal_1_1_object_processor.html">rgw::sal::ObjectProcessor</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:afd5094ee8e0b04dc98010d411d48fb55 inherit pub_methods_classrgw_1_1sal_1_1_object_processor" id="r_afd5094ee8e0b04dc98010d411d48fb55"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_object_processor.html#afd5094ee8e0b04dc98010d411d48fb55">prepare</a> (optional_yield y)=0</td></tr>
+<tr class="separator:afd5094ee8e0b04dc98010d411d48fb55 inherit pub_methods_classrgw_1_1sal_1_1_object_processor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d173c8010a2df65fe6acb711c157af inherit pub_methods_classrgw_1_1sal_1_1_object_processor" id="r_ae3d173c8010a2df65fe6acb711c157af"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_object_processor.html#ae3d173c8010a2df65fe6acb711c157af">complete</a> (size_t accounted_size, const std::string &amp;etag, ceph::real_time *mtime, ceph::real_time set_mtime, std::map&lt; std::string, bufferlist &gt; &amp;attrs, ceph::real_time delete_at, const char *if_match, const char *if_nomatch, const std::string *user_data, rgw_zone_set *zones_trace, bool *canceled, optional_yield y)=0</td></tr>
+<tr class="separator:ae3d173c8010a2df65fe6acb711c157af inherit pub_methods_classrgw_1_1sal_1_1_object_processor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1sal_1_1_data_processor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1sal_1_1_data_processor')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:aad21da6c585ad3c3316e54397162c810 inherit pub_methods_classrgw_1_1sal_1_1_data_processor" id="r_aad21da6c585ad3c3316e54397162c810"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1sal_1_1_data_processor.html#aad21da6c585ad3c3316e54397162c810">~DataProcessor</a> ()</td></tr>
+<tr class="separator:aad21da6c585ad3c3316e54397162c810 inherit pub_methods_classrgw_1_1sal_1_1_data_processor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 멤버 함수</h2></td></tr>
+<tr class="memitem:a9c62c83e875ae6a364d1d2753a63dbc0" id="r_a9c62c83e875ae6a364d1d2753a63dbc0"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a9c62c83e875ae6a364d1d2753a63dbc0">get_actual_size</a> () const</td></tr>
+<tr class="separator:a9c62c83e875ae6a364d1d2753a63dbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f04928fa5434f4ce18652d3041444e" id="r_aa8f04928fa5434f4ce18652d3041444e"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa8f04928fa5434f4ce18652d3041444e">process_first_chunk</a> (bufferlist &amp;&amp;data, <a class="el" href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a> **<a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a85d906cc1873e5ed8ab5447ab353b220">processor</a>)=0</td></tr>
+<tr class="separator:aa8f04928fa5434f4ce18652d3041444e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a1fd028865c94b9207e18d6da727ec854" id="r_a1fd028865c94b9207e18d6da727ec854"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a></td></tr>
+<tr class="separator:a1fd028865c94b9207e18d6da727ec854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b5092d4b8d163f7f2dafaa234a315f" id="r_aa0b5092d4b8d163f7f2dafaa234a315f"><td class="memItemLeft" align="right" valign="top">bufferlist&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa0b5092d4b8d163f7f2dafaa234a315f">head_data</a></td></tr>
+<tr class="separator:aa0b5092d4b8d163f7f2dafaa234a315f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d906cc1873e5ed8ab5447ab353b220" id="r_a85d906cc1873e5ed8ab5447ab353b220"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#a85d906cc1873e5ed8ab5447ab353b220">processor</a> = nullptr</td></tr>
+<tr class="separator:a85d906cc1873e5ed8ab5447ab353b220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc976b8a3d2cc6814caa762dd5f335cd" id="r_acc976b8a3d2cc6814caa762dd5f335cd"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a> = 0</td></tr>
+<tr class="separator:acc976b8a3d2cc6814caa762dd5f335cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00039">39</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a8fae0113467f296e4998bd98a6b45398" name="a8fae0113467f296e4998bd98a6b45398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fae0113467f296e4998bd98a6b45398">&#9670;&#160;</a></span>HeadObjectProcessor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::putobj::HeadObjectProcessor::HeadObjectProcessor </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>head_chunk_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00053">53</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    : <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a>(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a>)</div>
+<div class="line"><span class="lineno">   55</span>  {}</div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_head_object_processor_html_a1fd028865c94b9207e18d6da727ec854"><div class="ttname"><a href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">rgw::putobj::HeadObjectProcessor::head_chunk_size</a></div><div class="ttdeci">uint64_t head_chunk_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj__processor_8h_source.html#l00040">rgw_putobj_processor.h:40</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a9c62c83e875ae6a364d1d2753a63dbc0" name="a9c62c83e875ae6a364d1d2753a63dbc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c62c83e875ae6a364d1d2753a63dbc0">&#9670;&#160;</a></span>get_actual_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t rgw::putobj::HeadObjectProcessor::get_actual_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00047">47</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a>; }</div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_head_object_processor_html_acc976b8a3d2cc6814caa762dd5f335cd"><div class="ttname"><a href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">rgw::putobj::HeadObjectProcessor::data_offset</a></div><div class="ttdeci">uint64_t data_offset</div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj__processor_8h_source.html#l00045">rgw_putobj_processor.h:45</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1putobj_1_1_head_object_processor_a9c62c83e875ae6a364d1d2753a63dbc0_icgraph.png" border="0" usemap="#aclassrgw_1_1putobj_1_1_head_object_processor_a9c62c83e875ae6a364d1d2753a63dbc0_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1putobj_1_1_head_object_processor_a9c62c83e875ae6a364d1d2753a63dbc0_icgraph" id="aclassrgw_1_1putobj_1_1_head_object_processor_a9c62c83e875ae6a364d1d2753a63dbc0_icgraph">
+<area shape="rect" title=" " alt="" coords="715,173,935,216"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_atomic_object_processor.html#ab1ff7cd55c65dd56716a55866532f1c0" title=" " alt="" coords="492,85,663,128"/>
+<area shape="poly" title=" " alt="" coords="747,170,638,131,640,126,749,165"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_multipart_object_processor.html#ad9680d453595af9390aa660ae28dcc05" title=" " alt="" coords="487,173,667,216"/>
+<area shape="poly" title=" " alt="" coords="700,197,668,197,668,192,700,192"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_append_object_processor.html#a01e8f8477c9565ab79392e3315c432e3" title=" " alt="" coords="490,240,664,283"/>
+<area shape="poly" title=" " alt="" coords="729,223,660,242,658,237,728,218"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_atomic_writer.html#a2a72f4c193e1643bd82188a605c6ae36" title=" " alt="" coords="247,5,434,48"/>
+<area shape="poly" title=" " alt="" coords="497,82,405,51,407,46,498,77"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="249,72,432,99"/>
+<area shape="poly" title=" " alt="" coords="476,100,432,96,432,91,476,95"/>
+<area shape="rect" href="class_r_g_w_rados.html#aff88d12761e087239a360b37c552437d" title=" " alt="" coords="242,123,439,149"/>
+<area shape="poly" title=" " alt="" coords="476,122,440,126,439,121,476,117"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="19,68,180,95"/>
+<area shape="poly" title=" " alt="" coords="234,86,180,85,180,80,234,81"/>
+<area shape="rect" href="class_r_g_w_async_fetch_remote_obj.html#a5f31e80c9f11bd407493bf3b87fd0bb0" title=" " alt="" coords="5,119,194,161"/>
+<area shape="poly" title=" " alt="" coords="226,141,194,141,194,136,226,135"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_multipart_writer.html#a36c868aa5002652dab0e2f57cfd7a43a" title=" " alt="" coords="260,173,421,216"/>
+<area shape="poly" title=" " alt="" coords="471,197,421,197,421,192,471,192"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_append_writer.html#a854f9e38f22c9922d5e4cdfda24508b3" title=" " alt="" coords="245,240,436,283"/>
+<area shape="poly" title=" " alt="" coords="475,264,436,264,436,259,475,259"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3da70c0ba679b2be00e9ee7d5967e581" name="a3da70c0ba679b2be00e9ee7d5967e581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da70c0ba679b2be00e9ee7d5967e581">&#9670;&#160;</a></span>process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::putobj::HeadObjectProcessor::process </td>
+          <td>(</td>
+          <td class="paramtype">bufferlist &amp;&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Consume a bufferlist in its entirety at the given object offset. </p>
+<p>An empty bufferlist is given to request that any buffered data be flushed, though this doesn't wait for completions </p>
+
+<p><a class="el" href="classrgw_1_1sal_1_1_data_processor.html#a0594e13db684bba27840757faa69a673">rgw::sal::DataProcessor</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8cc_source.html">rgw_putobj_processor.cc</a> 파일의 <a class="el" href="rgw__putobj__processor_8cc_source.html#l00030">30</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> flush = (<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">data</a>.length() == 0);</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>  <span class="comment">// capture the first chunk for special handling</span></div>
+<div class="line"><span class="lineno">   35</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a> &lt; <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a> || <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a> == 0) {</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (flush) {</div>
+<div class="line"><span class="lineno">   37</span>      <span class="comment">// flush partial chunk</span></div>
+<div class="line"><span class="lineno">   38</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa8f04928fa5434f4ce18652d3041444e">process_first_chunk</a>(std::move(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa0b5092d4b8d163f7f2dafaa234a315f">head_data</a>), &amp;<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a85d906cc1873e5ed8ab5447ab353b220">processor</a>);</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keyword">auto</span> remaining = <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a> - <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a>;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">count</a> = std::min&lt;uint64_t&gt;(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">data</a>.length(), remaining);</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">data</a>.splice(0, count, &amp;<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa0b5092d4b8d163f7f2dafaa234a315f">head_data</a>);</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a> += <a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">count</a>;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a> == <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a>) {</div>
+<div class="line"><span class="lineno">   47</span>      <span class="comment">// process the first complete chunk</span></div>
+<div class="line"><span class="lineno">   48</span>      ceph_assert(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa0b5092d4b8d163f7f2dafaa234a315f">head_data</a>.length() == <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a>);</div>
+<div class="line"><span class="lineno">   49</span>      <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_function" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa8f04928fa5434f4ce18652d3041444e">process_first_chunk</a>(std::move(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa0b5092d4b8d163f7f2dafaa234a315f">head_data</a>), &amp;<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a85d906cc1873e5ed8ab5447ab353b220">processor</a>);</div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><span class="lineno">   52</span>      }</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">data</a>.length() == 0) { <span class="comment">// avoid flushing stripe processor</span></div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
+<div class="line"><span class="lineno">   58</span>  ceph_assert(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a85d906cc1873e5ed8ab5447ab353b220">processor</a>); <span class="comment">// process_first_chunk() must initialize</span></div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>  <span class="comment">// send everything else through the processor</span></div>
+<div class="line"><span class="lineno">   61</span>  <span class="keyword">auto</span> write_offset = <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a>;</div>
+<div class="line"><span class="lineno">   62</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#acc976b8a3d2cc6814caa762dd5f335cd">data_offset</a> += <a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">data</a>.length();</div>
+<div class="line"><span class="lineno">   63</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a85d906cc1873e5ed8ab5447ab353b220">processor</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_data_processor.html#a0594e13db684bba27840757faa69a673">process</a>(std::move(data), write_offset);</div>
+<div class="line"><span class="lineno">   64</span>}</div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_head_object_processor_html_a85d906cc1873e5ed8ab5447ab353b220"><div class="ttname"><a href="classrgw_1_1putobj_1_1_head_object_processor.html#a85d906cc1873e5ed8ab5447ab353b220">rgw::putobj::HeadObjectProcessor::processor</a></div><div class="ttdeci">rgw::sal::DataProcessor * processor</div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj__processor_8h_source.html#l00044">rgw_putobj_processor.h:44</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_head_object_processor_html_aa0b5092d4b8d163f7f2dafaa234a315f"><div class="ttname"><a href="classrgw_1_1putobj_1_1_head_object_processor.html#aa0b5092d4b8d163f7f2dafaa234a315f">rgw::putobj::HeadObjectProcessor::head_data</a></div><div class="ttdeci">bufferlist head_data</div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj__processor_8h_source.html#l00042">rgw_putobj_processor.h:42</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_head_object_processor_html_aa8f04928fa5434f4ce18652d3041444e"><div class="ttname"><a href="classrgw_1_1putobj_1_1_head_object_processor.html#aa8f04928fa5434f4ce18652d3041444e">rgw::putobj::HeadObjectProcessor::process_first_chunk</a></div><div class="ttdeci">virtual int process_first_chunk(bufferlist &amp;&amp;data, rgw::sal::DataProcessor **processor)=0</div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_data_processor_html_a0594e13db684bba27840757faa69a673"><div class="ttname"><a href="classrgw_1_1sal_1_1_data_processor.html#a0594e13db684bba27840757faa69a673">rgw::sal::DataProcessor::process</a></div><div class="ttdeci">virtual int process(bufferlist &amp;&amp;data, uint64_t offset)=0</div><div class="ttdoc">Consume a bufferlist in its entirety at the given object offset.</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493a8d777f385d3dfec8815d20f7496026dc">rgw::dmclock::client_id::data</a></div><div class="ttdeci">@ data</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">rgw::dmclock::client_id::count</a></div><div class="ttdeci">@ count</div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_cgraph.png" border="0" usemap="#aclassrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_cgraph" id="aclassrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_cgraph">
+<area shape="rect" title="Consume a bufferlist in its entirety at the given object offset." alt="" coords="5,39,225,81"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_data_processor.html#a0594e13db684bba27840757faa69a673" title="Consume a bufferlist in its entirety at the given object offset." alt="" coords="302,5,463,48"/>
+<area shape="poly" title=" " alt="" coords="225,44,286,36,287,41,225,49"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_head_object_processor.html#aa8f04928fa5434f4ce18652d3041444e" title=" " alt="" coords="273,72,492,115"/>
+<area shape="poly" title=" " alt="" coords="225,71,257,75,257,80,225,76"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_icgraph.png" border="0" usemap="#aclassrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_icgraph" id="aclassrgw_1_1putobj_1_1_head_object_processor_a3da70c0ba679b2be00e9ee7d5967e581_icgraph">
+<area shape="rect" title="Consume a bufferlist in its entirety at the given object offset." alt="" coords="452,89,671,132"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="218,5,400,32"/>
+<area shape="poly" title=" " alt="" coords="499,85,403,47,366,35,367,30,405,41,501,80"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_atomic_writer.html#ae615ce3a5a3cf6101ac09a7e7e4cf711" title=" " alt="" coords="215,56,403,99"/>
+<area shape="poly" title=" " alt="" coords="436,97,403,92,403,87,437,91"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_append_writer.html#ad97b826a8ef25c74edd718873263102c" title=" " alt="" coords="214,123,404,165"/>
+<area shape="poly" title=" " alt="" coords="437,130,405,134,404,129,436,125"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_multipart_writer.html#add6537adadf8742330c4832ce1cc4880" title=" " alt="" coords="228,189,390,232"/>
+<area shape="poly" title=" " alt="" coords="498,141,405,180,374,191,373,186,403,175,496,136"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="5,5,166,32"/>
+<area shape="poly" title=" " alt="" coords="202,21,166,21,166,16,202,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa8f04928fa5434f4ce18652d3041444e" name="aa8f04928fa5434f4ce18652d3041444e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f04928fa5434f4ce18652d3041444e">&#9670;&#160;</a></span>process_first_chunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int rgw::putobj::HeadObjectProcessor::process_first_chunk </td>
+          <td>(</td>
+          <td class="paramtype">bufferlist &amp;&amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a> **&#160;</td>
+          <td class="paramname"><em>processor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1putobj_1_1_atomic_object_processor.html#a56f1ae365249db14b3dc95e4176ee992">rgw::putobj::AtomicObjectProcessor</a>, <a class="el" href="classrgw_1_1putobj_1_1_multipart_object_processor.html#afb9f68cdb7e0e8577750479f52986eca">rgw::putobj::MultipartObjectProcessor</a>, <a class="el" href="classrgw_1_1putobj_1_1_append_object_processor.html#ab620ab4d7dabcf32fc4cdde230c82957">rgw::putobj::AppendObjectProcessor</a>에서 구현되었습니다.</p>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1putobj_1_1_head_object_processor_aa8f04928fa5434f4ce18652d3041444e_icgraph.png" border="0" usemap="#aclassrgw_1_1putobj_1_1_head_object_processor_aa8f04928fa5434f4ce18652d3041444e_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1putobj_1_1_head_object_processor_aa8f04928fa5434f4ce18652d3041444e_icgraph" id="aclassrgw_1_1putobj_1_1_head_object_processor_aa8f04928fa5434f4ce18652d3041444e_icgraph">
+<area shape="rect" title=" " alt="" coords="719,89,939,132"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_head_object_processor.html#a3da70c0ba679b2be00e9ee7d5967e581" title="Consume a bufferlist in its entirety at the given object offset." alt="" coords="452,89,671,132"/>
+<area shape="poly" title=" " alt="" coords="704,113,672,113,672,108,704,108"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="218,5,400,32"/>
+<area shape="poly" title=" " alt="" coords="499,85,403,47,366,35,367,30,405,41,501,80"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_atomic_writer.html#ae615ce3a5a3cf6101ac09a7e7e4cf711" title=" " alt="" coords="215,56,403,99"/>
+<area shape="poly" title=" " alt="" coords="436,97,403,92,403,87,437,91"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_append_writer.html#ad97b826a8ef25c74edd718873263102c" title=" " alt="" coords="214,123,404,165"/>
+<area shape="poly" title=" " alt="" coords="437,130,405,134,404,129,436,125"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_multipart_writer.html#add6537adadf8742330c4832ce1cc4880" title=" " alt="" coords="228,189,390,232"/>
+<area shape="poly" title=" " alt="" coords="498,141,405,180,374,191,373,186,403,175,496,136"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="5,5,166,32"/>
+<area shape="poly" title=" " alt="" coords="202,21,166,21,166,16,202,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a80f065c360fcbcc33ca90098bfcf3fc1" name="a80f065c360fcbcc33ca90098bfcf3fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f065c360fcbcc33ca90098bfcf3fc1">&#9670;&#160;</a></span>set_head_chunk_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::putobj::HeadObjectProcessor::set_head_chunk_size </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00057">57</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{ <a class="code hl_variable" href="classrgw_1_1putobj_1_1_head_object_processor.html#a1fd028865c94b9207e18d6da727ec854">head_chunk_size</a> = size; }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1putobj_1_1_head_object_processor_a80f065c360fcbcc33ca90098bfcf3fc1_icgraph.png" border="0" usemap="#aclassrgw_1_1putobj_1_1_head_object_processor_a80f065c360fcbcc33ca90098bfcf3fc1_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1putobj_1_1_head_object_processor_a80f065c360fcbcc33ca90098bfcf3fc1_icgraph" id="aclassrgw_1_1putobj_1_1_head_object_processor_a80f065c360fcbcc33ca90098bfcf3fc1_icgraph">
+<area shape="rect" title=" " alt="" coords="722,179,942,221"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_atomic_object_processor.html#a940d824173f346cacf64df9d6e3354a0" title=" " alt="" coords="499,83,670,125"/>
+<area shape="poly" title=" " alt="" coords="760,175,640,128,642,123,762,170"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_append_object_processor.html#a2e9120ccc465592e0fe41ecd0ca56e52" title=" " alt="" coords="497,179,671,221"/>
+<area shape="poly" title=" " alt="" coords="707,203,672,203,672,197,707,197"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_multipart_object_processor.html#a16d6f80767e513e1fb2942b90e18face" title=" " alt="" coords="494,245,674,288"/>
+<area shape="poly" title=" " alt="" coords="736,229,667,247,665,242,735,223"/>
+<area shape="rect" href="class_r_g_w_rados.html#a224ed2ca934e3ade5742fec6bf5d9c5a" title=" " alt="" coords="253,9,435,36"/>
+<area shape="poly" title=" " alt="" coords="518,79,445,52,402,39,403,34,447,47,520,74"/>
+<area shape="rect" href="class_r_g_w_rados.html#aff88d12761e087239a360b37c552437d" title=" " alt="" coords="245,61,443,88"/>
+<area shape="poly" title=" " alt="" coords="483,94,443,89,443,84,483,89"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_atomic_writer.html#aeecf1e4f6d5dcbd8fb72d97479bb4e53" title=" " alt="" coords="250,112,438,155"/>
+<area shape="poly" title=" " alt="" coords="484,119,438,125,438,119,483,114"/>
+<area shape="rect" href="class_r_g_w_rados.html#ab920c10899881d90aa36cfe5c4e57e43" title=" " alt="" coords="19,5,180,32"/>
+<area shape="poly" title=" " alt="" coords="237,24,180,23,180,17,237,18"/>
+<area shape="rect" href="class_r_g_w_async_fetch_remote_obj.html#a5f31e80c9f11bd407493bf3b87fd0bb0" title=" " alt="" coords="5,56,194,99"/>
+<area shape="poly" title=" " alt="" coords="229,79,194,79,194,74,229,73"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_append_writer.html#acb02ae93674b2d74bbeea0ee036602f1" title=" " alt="" coords="249,179,439,221"/>
+<area shape="poly" title=" " alt="" coords="481,203,440,203,440,197,481,197"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_multipart_object_processor.html#ac39a3c3aba863c24cf73fff241df60d9" title=" " alt="" coords="254,245,434,288"/>
+<area shape="poly" title=" " alt="" coords="478,269,434,269,434,264,478,264"/>
+<area shape="rect" href="classrgw_1_1putobj_1_1_multipart_object_processor.html#afb9f68cdb7e0e8577750479f52986eca" title=" " alt="" coords="242,312,446,355"/>
+<area shape="poly" title=" " alt="" coords="491,295,424,314,423,309,490,290"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_multipart_writer.html#a709a8850e3696ceda76ac3a0a12fe9cf" title=" " alt="" coords="19,245,180,288"/>
+<area shape="poly" title=" " alt="" coords="238,269,181,269,181,264,238,264"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="acc976b8a3d2cc6814caa762dd5f335cd" name="acc976b8a3d2cc6814caa762dd5f335cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc976b8a3d2cc6814caa762dd5f335cd">&#9670;&#160;</a></span>data_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t rgw::putobj::HeadObjectProcessor::data_offset = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00045">45</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1fd028865c94b9207e18d6da727ec854" name="a1fd028865c94b9207e18d6da727ec854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd028865c94b9207e18d6da727ec854">&#9670;&#160;</a></span>head_chunk_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t rgw::putobj::HeadObjectProcessor::head_chunk_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00040">40</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa0b5092d4b8d163f7f2dafaa234a315f" name="aa0b5092d4b8d163f7f2dafaa234a315f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0b5092d4b8d163f7f2dafaa234a315f">&#9670;&#160;</a></span>head_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bufferlist rgw::putobj::HeadObjectProcessor::head_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00042">42</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a85d906cc1873e5ed8ab5447ab353b220" name="a85d906cc1873e5ed8ab5447ab353b220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d906cc1873e5ed8ab5447ab353b220">&#9670;&#160;</a></span>processor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a>* rgw::putobj::HeadObjectProcessor::processor = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a> 파일의 <a class="el" href="rgw__putobj__processor_8h_source.html#l00044">44</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__putobj__processor_8h_source.html">rgw_putobj_processor.h</a></li>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__putobj__processor_8cc_source.html">rgw_putobj_processor.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1putobj.html">putobj</a></li><li class="navelem"><a class="el" href="classrgw_1_1putobj_1_1_head_object_processor.html">HeadObjectProcessor</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

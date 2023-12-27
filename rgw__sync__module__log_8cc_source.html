@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_sync_module_log.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__sync__module__log_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_sync_module_log.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__sync__module__log_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__common_8h.html">rgw_common.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__coroutine_8h.html">rgw_coroutine.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__cr__rados_8h.html">rgw_cr_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__sync__module_8h.html">rgw_sync_module.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__data__sync_8h.html">rgw_data_sync.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__sync__module__log_8h.html">rgw_sync_module_log.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="rgw__sync__module__log_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   11</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html">RGWLogStatRemoteObjCBCR</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_stat_remote_obj_c_b_c_r.html">RGWStatRemoteObjCBCR</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html#a667d47563b230322fd007bae3f84fe11">   17</a></span>  <a class="code hl_function" href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html#a667d47563b230322fd007bae3f84fe11">RGWLogStatRemoteObjCBCR</a>(<a class="code hl_struct" href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a> *_sc,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                          <a class="code hl_struct" href="structrgw__bucket.html">rgw_bucket</a>&amp; _src_bucket, <a class="code hl_struct" href="structrgw__obj__key.html">rgw_obj_key</a>&amp; _key) : <a class="code hl_class" href="class_r_g_w_stat_remote_obj_c_b_c_r.html">RGWStatRemoteObjCBCR</a>(_sc, _src_bucket, _key) {}</div>
+</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html#a49e756e3b87d2d0b7eafa99cdb00929f">   19</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html#a49e756e3b87d2d0b7eafa99cdb00929f">operate</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;SYNC_LOG: stat of remote obj: z=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a18285d712a1f4574882ec6edaf4f6b2e">sc</a>-&gt;<a class="code hl_variable" href="struct_r_g_w_data_sync_ctx.html#aaa4f4a845ebb475fbdfa87c5df786afb">source_zone</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                            &lt;&lt; <span class="stringliteral">&quot; b=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a13e00f47f032ed8f8a86de0cb29a57ca">src_bucket</a> &lt;&lt; <span class="stringliteral">&quot; k=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_stat_remote_obj_c_b_c_r.html#aed705de4ac538552a3c4581ff73fe0d2">key</a> &lt;&lt; <span class="stringliteral">&quot; size=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a1c4c474c82f713e2f6c4c960bb45f15f">size</a> &lt;&lt; <span class="stringliteral">&quot; mtime=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_stat_remote_obj_c_b_c_r.html#acc62327d02a31f0b233678d30c6e2960">mtime</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                            &lt;&lt; <span class="stringliteral">&quot; attrs=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a5922639e84e215801ee018ba9b4f5c32">attrs</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="class_r_g_w_coroutine.html#a15bce10b8fbd959412a9473b03f0dd82">set_cr_done</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  }</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_r_g_w_log_stat_remote_obj_c_r.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_log_stat_remote_obj_c_r.html">RGWLogStatRemoteObjCR</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_call_stat_remote_obj_c_r.html">RGWCallStatRemoteObjCR</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_r_g_w_log_stat_remote_obj_c_r.html#a60b9e5f0afbad4dd2b017759fecb483b">   30</a></span>  <a class="code hl_function" href="class_r_g_w_log_stat_remote_obj_c_r.html#a60b9e5f0afbad4dd2b017759fecb483b">RGWLogStatRemoteObjCR</a>(<a class="code hl_struct" href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a> *_sc,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                        <a class="code hl_struct" href="structrgw__bucket.html">rgw_bucket</a>&amp; _src_bucket, <a class="code hl_struct" href="structrgw__obj__key.html">rgw_obj_key</a>&amp; _key) : <a class="code hl_class" href="class_r_g_w_call_stat_remote_obj_c_r.html">RGWCallStatRemoteObjCR</a>(_sc, _src_bucket, _key) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  }</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_r_g_w_log_stat_remote_obj_c_r.html#a9f2f4cc93afbc9b5a728f237f11eab5f">   34</a></span>  <a class="code hl_function" href="class_r_g_w_log_stat_remote_obj_c_r.html#a9f2f4cc93afbc9b5a728f237f11eab5f">~RGWLogStatRemoteObjCR</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_log_stat_remote_obj_c_r.html#a4b08bbaaf8e65277f58c742538a6e48c">   36</a></span>  <a class="code hl_class" href="class_r_g_w_stat_remote_obj_c_b_c_r.html">RGWStatRemoteObjCBCR</a> *<a class="code hl_function" href="class_r_g_w_log_stat_remote_obj_c_r.html#a4b08bbaaf8e65277f58c742538a6e48c">allocate_callback</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html">RGWLogStatRemoteObjCBCR</a>(<a class="code hl_variable" href="class_r_g_w_call_stat_remote_obj_c_r.html#a1957800f11ca717cc6ea98837bc8e3e0">sc</a>, <a class="code hl_variable" href="class_r_g_w_call_stat_remote_obj_c_r.html#a09303f5777ccac753dd6f76f26e991c8">src_bucket</a>, <a class="code hl_variable" href="class_r_g_w_call_stat_remote_obj_c_r.html#a7e2c7a26a3f7627674772c959a9847ca">key</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_r_g_w_log_data_sync_module.html">   41</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_log_data_sync_module.html">RGWLogDataSyncModule</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_data_sync_module.html">RGWDataSyncModule</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_r_g_w_log_data_sync_module.html#aaec88ce48f1258b4f1d5af31e73de755">   42</a></span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="class_r_g_w_log_data_sync_module.html#aaec88ce48f1258b4f1d5af31e73de755">prefix</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_r_g_w_log_data_sync_module.html#a6d713dd0352e3b3bab8b2d68a2f79f0c">   44</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_log_data_sync_module.html#a6d713dd0352e3b3bab8b2d68a2f79f0c">RGWLogDataSyncModule</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; _prefix) : <a class="code hl_variable" href="class_r_g_w_log_data_sync_module.html#aaec88ce48f1258b4f1d5af31e73de755">prefix</a>(_prefix) {}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_r_g_w_log_data_sync_module.html#ac141b252f73b1b29763c2175645ec871">   46</a></span>  <a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a> *<a class="code hl_function" href="class_r_g_w_log_data_sync_module.html#ac141b252f73b1b29763c2175645ec871">sync_object</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_struct" href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a> *sc, <a class="code hl_struct" href="structrgw__bucket__sync__pipe.html">rgw_bucket_sync_pipe</a>&amp; sync_pipe, <a class="code hl_struct" href="structrgw__obj__key.html">rgw_obj_key</a>&amp; key, std::optional&lt;uint64_t&gt; versioned_epoch, rgw_zone_set *zones_trace)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <a class="code hl_variable" href="class_r_g_w_log_data_sync_module.html#aaec88ce48f1258b4f1d5af31e73de755">prefix</a> &lt;&lt; <span class="stringliteral">&quot;: SYNC_LOG: sync_object: b=&quot;</span> &lt;&lt; sync_pipe.<a class="code hl_variable" href="structrgw__bucket__sync__pipe.html#a24becd8d2b536e5483ac8bbe0853f811">info</a>.<a class="code hl_variable" href="structrgw__bucket__sync__pair__info.html#a0ece37c1c51ed70a1ceade1049619445">source_bs</a>.<a class="code hl_variable" href="structrgw__bucket__shard.html#aa6821665d28ae2987ee05096b8a284e8">bucket</a> &lt;&lt; <span class="stringliteral">&quot; k=&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot; versioned_epoch=&quot;</span> &lt;&lt; versioned_epoch.value_or(0) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_log_stat_remote_obj_c_r.html">RGWLogStatRemoteObjCR</a>(sc, sync_pipe.<a class="code hl_variable" href="structrgw__bucket__sync__pipe.html#a24becd8d2b536e5483ac8bbe0853f811">info</a>.<a class="code hl_variable" href="structrgw__bucket__sync__pair__info.html#a0ece37c1c51ed70a1ceade1049619445">source_bs</a>.<a class="code hl_variable" href="structrgw__bucket__shard.html#aa6821665d28ae2987ee05096b8a284e8">bucket</a>, key);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_r_g_w_log_data_sync_module.html#a78b4ec7bc979a0f9ec7ddcf7a729dbd4">   50</a></span>  <a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a> *<a class="code hl_function" href="class_r_g_w_log_data_sync_module.html#a78b4ec7bc979a0f9ec7ddcf7a729dbd4">remove_object</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_struct" href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a> *sc, <a class="code hl_struct" href="structrgw__bucket__sync__pipe.html">rgw_bucket_sync_pipe</a>&amp; sync_pipe, <a class="code hl_struct" href="structrgw__obj__key.html">rgw_obj_key</a>&amp; key, real_time&amp; mtime, <span class="keywordtype">bool</span> versioned, uint64_t versioned_epoch, rgw_zone_set *zones_trace)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <a class="code hl_variable" href="class_r_g_w_log_data_sync_module.html#aaec88ce48f1258b4f1d5af31e73de755">prefix</a> &lt;&lt; <span class="stringliteral">&quot;: SYNC_LOG: rm_object: b=&quot;</span> &lt;&lt; sync_pipe.<a class="code hl_variable" href="structrgw__bucket__sync__pipe.html#a24becd8d2b536e5483ac8bbe0853f811">info</a>.<a class="code hl_variable" href="structrgw__bucket__sync__pair__info.html#a0ece37c1c51ed70a1ceade1049619445">source_bs</a>.<a class="code hl_variable" href="structrgw__bucket__shard.html#aa6821665d28ae2987ee05096b8a284e8">bucket</a> &lt;&lt; <span class="stringliteral">&quot; k=&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot; mtime=&quot;</span> &lt;&lt; mtime &lt;&lt; <span class="stringliteral">&quot; versioned=&quot;</span> &lt;&lt; versioned &lt;&lt; <span class="stringliteral">&quot; versioned_epoch=&quot;</span> &lt;&lt; versioned_epoch &lt;&lt; dendl;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_r_g_w_log_data_sync_module.html#ada0e5082fe1e79cade67d651d17cefc2">   54</a></span>  <a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a> *<a class="code hl_function" href="class_r_g_w_log_data_sync_module.html#ada0e5082fe1e79cade67d651d17cefc2">create_delete_marker</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_struct" href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a> *sc, <a class="code hl_struct" href="structrgw__bucket__sync__pipe.html">rgw_bucket_sync_pipe</a>&amp; sync_pipe, <a class="code hl_struct" href="structrgw__obj__key.html">rgw_obj_key</a>&amp; key, real_time&amp; mtime,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                                     <a class="code hl_struct" href="structrgw__bucket__entry__owner.html">rgw_bucket_entry_owner</a>&amp; owner, <span class="keywordtype">bool</span> versioned, uint64_t versioned_epoch, rgw_zone_set *zones_trace)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <a class="code hl_variable" href="class_r_g_w_log_data_sync_module.html#aaec88ce48f1258b4f1d5af31e73de755">prefix</a> &lt;&lt; <span class="stringliteral">&quot;: SYNC_LOG: create_delete_marker: b=&quot;</span> &lt;&lt; sync_pipe.<a class="code hl_variable" href="structrgw__bucket__sync__pipe.html#a24becd8d2b536e5483ac8bbe0853f811">info</a>.<a class="code hl_variable" href="structrgw__bucket__sync__pair__info.html#a0ece37c1c51ed70a1ceade1049619445">source_bs</a>.<a class="code hl_variable" href="structrgw__bucket__shard.html#aa6821665d28ae2987ee05096b8a284e8">bucket</a> &lt;&lt; <span class="stringliteral">&quot; k=&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot; mtime=&quot;</span> &lt;&lt; mtime</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                            &lt;&lt; <span class="stringliteral">&quot; versioned=&quot;</span> &lt;&lt; versioned &lt;&lt; <span class="stringliteral">&quot; versioned_epoch=&quot;</span> &lt;&lt; versioned_epoch &lt;&lt; dendl;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_r_g_w_log_sync_module_instance.html">   62</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_log_sync_module_instance.html">RGWLogSyncModuleInstance</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_sync_module_instance.html">RGWSyncModuleInstance</a> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_r_g_w_log_sync_module_instance.html#abaf94125b1d80bb183a8d44eafaa11d4">   63</a></span>  <a class="code hl_class" href="class_r_g_w_log_data_sync_module.html">RGWLogDataSyncModule</a> <a class="code hl_variable" href="class_r_g_w_log_sync_module_instance.html#abaf94125b1d80bb183a8d44eafaa11d4">data_handler</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_r_g_w_log_sync_module_instance.html#a77a7eb0815c2b29d7e73f10d30535197">   65</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_log_sync_module_instance.html#a77a7eb0815c2b29d7e73f10d30535197">RGWLogSyncModuleInstance</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; prefix) : <a class="code hl_variable" href="class_r_g_w_log_sync_module_instance.html#abaf94125b1d80bb183a8d44eafaa11d4">data_handler</a>(prefix) {}</div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_r_g_w_log_sync_module_instance.html#ab64579679622bc92a01b1e639af3fea5">   66</a></span>  <a class="code hl_class" href="class_r_g_w_data_sync_module.html">RGWDataSyncModule</a> *<a class="code hl_function" href="class_r_g_w_log_sync_module_instance.html#ab64579679622bc92a01b1e639af3fea5">get_data_handler</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="class_r_g_w_log_sync_module_instance.html#abaf94125b1d80bb183a8d44eafaa11d4">data_handler</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_r_g_w_log_sync_module.html#a59716dce24e869bb3211073493371356">   71</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_log_sync_module.html#a59716dce24e869bb3211073493371356">RGWLogSyncModule::create_instance</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="keyword">const</span> JSONFormattable&amp; config, <a class="code hl_typedef" href="rgw__sal_8h.html#a2a039ebea62bea24dff4df3905db41df">RGWSyncModuleInstanceRef</a> *instance) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordtype">string</span> prefix = config[<span class="stringliteral">&quot;prefix&quot;</span>];</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  instance-&gt;reset(<span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_log_sync_module_instance.html">RGWLogSyncModuleInstance</a>(prefix));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="ttc" id="aclass_r_g_w_call_stat_remote_obj_c_r_html"><div class="ttname"><a href="class_r_g_w_call_stat_remote_obj_c_r.html">RGWCallStatRemoteObjCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00173">rgw_sync_module.h:173</a></div></div>
+<div class="ttc" id="aclass_r_g_w_call_stat_remote_obj_c_r_html_a09303f5777ccac753dd6f76f26e991c8"><div class="ttname"><a href="class_r_g_w_call_stat_remote_obj_c_r.html#a09303f5777ccac753dd6f76f26e991c8">RGWCallStatRemoteObjCR::src_bucket</a></div><div class="ttdeci">rgw_bucket src_bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00184">rgw_sync_module.h:184</a></div></div>
+<div class="ttc" id="aclass_r_g_w_call_stat_remote_obj_c_r_html_a1957800f11ca717cc6ea98837bc8e3e0"><div class="ttname"><a href="class_r_g_w_call_stat_remote_obj_c_r.html#a1957800f11ca717cc6ea98837bc8e3e0">RGWCallStatRemoteObjCR::sc</a></div><div class="ttdeci">RGWDataSyncCtx * sc</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00181">rgw_sync_module.h:181</a></div></div>
+<div class="ttc" id="aclass_r_g_w_call_stat_remote_obj_c_r_html_a7e2c7a26a3f7627674772c959a9847ca"><div class="ttname"><a href="class_r_g_w_call_stat_remote_obj_c_r.html#a7e2c7a26a3f7627674772c959a9847ca">RGWCallStatRemoteObjCR::key</a></div><div class="ttdeci">rgw_obj_key key</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00185">rgw_sync_module.h:185</a></div></div>
+<div class="ttc" id="aclass_r_g_w_coroutine_html"><div class="ttname"><a href="class_r_g_w_coroutine.html">RGWCoroutine</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__coroutine_8h_source.html#l00186">rgw_coroutine.h:186</a></div></div>
+<div class="ttc" id="aclass_r_g_w_coroutine_html_a15bce10b8fbd959412a9473b03f0dd82"><div class="ttname"><a href="class_r_g_w_coroutine.html#a15bce10b8fbd959412a9473b03f0dd82">RGWCoroutine::set_cr_done</a></div><div class="ttdeci">int set_cr_done()</div><div class="ttdef"><b>Definition</b> <a href="rgw__coroutine_8h_source.html#l00251">rgw_coroutine.h:251</a></div></div>
+<div class="ttc" id="aclass_r_g_w_data_sync_module_html"><div class="ttname"><a href="class_r_g_w_data_sync_module.html">RGWDataSyncModule</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00019">rgw_sync_module.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_data_sync_module_html"><div class="ttname"><a href="class_r_g_w_log_data_sync_module.html">RGWLogDataSyncModule</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00041">rgw_sync_module_log.cc:41</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_data_sync_module_html_a6d713dd0352e3b3bab8b2d68a2f79f0c"><div class="ttname"><a href="class_r_g_w_log_data_sync_module.html#a6d713dd0352e3b3bab8b2d68a2f79f0c">RGWLogDataSyncModule::RGWLogDataSyncModule</a></div><div class="ttdeci">RGWLogDataSyncModule(const string &amp;_prefix)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00044">rgw_sync_module_log.cc:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_data_sync_module_html_a78b4ec7bc979a0f9ec7ddcf7a729dbd4"><div class="ttname"><a href="class_r_g_w_log_data_sync_module.html#a78b4ec7bc979a0f9ec7ddcf7a729dbd4">RGWLogDataSyncModule::remove_object</a></div><div class="ttdeci">RGWCoroutine * remove_object(const DoutPrefixProvider *dpp, RGWDataSyncCtx *sc, rgw_bucket_sync_pipe &amp;sync_pipe, rgw_obj_key &amp;key, real_time &amp;mtime, bool versioned, uint64_t versioned_epoch, rgw_zone_set *zones_trace) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00050">rgw_sync_module_log.cc:50</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_data_sync_module_html_aaec88ce48f1258b4f1d5af31e73de755"><div class="ttname"><a href="class_r_g_w_log_data_sync_module.html#aaec88ce48f1258b4f1d5af31e73de755">RGWLogDataSyncModule::prefix</a></div><div class="ttdeci">string prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00042">rgw_sync_module_log.cc:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_data_sync_module_html_ac141b252f73b1b29763c2175645ec871"><div class="ttname"><a href="class_r_g_w_log_data_sync_module.html#ac141b252f73b1b29763c2175645ec871">RGWLogDataSyncModule::sync_object</a></div><div class="ttdeci">RGWCoroutine * sync_object(const DoutPrefixProvider *dpp, RGWDataSyncCtx *sc, rgw_bucket_sync_pipe &amp;sync_pipe, rgw_obj_key &amp;key, std::optional&lt; uint64_t &gt; versioned_epoch, rgw_zone_set *zones_trace) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00046">rgw_sync_module_log.cc:46</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_data_sync_module_html_ada0e5082fe1e79cade67d651d17cefc2"><div class="ttname"><a href="class_r_g_w_log_data_sync_module.html#ada0e5082fe1e79cade67d651d17cefc2">RGWLogDataSyncModule::create_delete_marker</a></div><div class="ttdeci">RGWCoroutine * create_delete_marker(const DoutPrefixProvider *dpp, RGWDataSyncCtx *sc, rgw_bucket_sync_pipe &amp;sync_pipe, rgw_obj_key &amp;key, real_time &amp;mtime, rgw_bucket_entry_owner &amp;owner, bool versioned, uint64_t versioned_epoch, rgw_zone_set *zones_trace) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00054">rgw_sync_module_log.cc:54</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_stat_remote_obj_c_b_c_r_html"><div class="ttname"><a href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html">RGWLogStatRemoteObjCBCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00015">rgw_sync_module_log.cc:15</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_stat_remote_obj_c_b_c_r_html_a49e756e3b87d2d0b7eafa99cdb00929f"><div class="ttname"><a href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html#a49e756e3b87d2d0b7eafa99cdb00929f">RGWLogStatRemoteObjCBCR::operate</a></div><div class="ttdeci">int operate(const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00019">rgw_sync_module_log.cc:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_stat_remote_obj_c_b_c_r_html_a667d47563b230322fd007bae3f84fe11"><div class="ttname"><a href="class_r_g_w_log_stat_remote_obj_c_b_c_r.html#a667d47563b230322fd007bae3f84fe11">RGWLogStatRemoteObjCBCR::RGWLogStatRemoteObjCBCR</a></div><div class="ttdeci">RGWLogStatRemoteObjCBCR(RGWDataSyncCtx *_sc, rgw_bucket &amp;_src_bucket, rgw_obj_key &amp;_key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00017">rgw_sync_module_log.cc:17</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_stat_remote_obj_c_r_html"><div class="ttname"><a href="class_r_g_w_log_stat_remote_obj_c_r.html">RGWLogStatRemoteObjCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00028">rgw_sync_module_log.cc:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_stat_remote_obj_c_r_html_a4b08bbaaf8e65277f58c742538a6e48c"><div class="ttname"><a href="class_r_g_w_log_stat_remote_obj_c_r.html#a4b08bbaaf8e65277f58c742538a6e48c">RGWLogStatRemoteObjCR::allocate_callback</a></div><div class="ttdeci">RGWStatRemoteObjCBCR * allocate_callback() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00036">rgw_sync_module_log.cc:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_stat_remote_obj_c_r_html_a60b9e5f0afbad4dd2b017759fecb483b"><div class="ttname"><a href="class_r_g_w_log_stat_remote_obj_c_r.html#a60b9e5f0afbad4dd2b017759fecb483b">RGWLogStatRemoteObjCR::RGWLogStatRemoteObjCR</a></div><div class="ttdeci">RGWLogStatRemoteObjCR(RGWDataSyncCtx *_sc, rgw_bucket &amp;_src_bucket, rgw_obj_key &amp;_key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00030">rgw_sync_module_log.cc:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_stat_remote_obj_c_r_html_a9f2f4cc93afbc9b5a728f237f11eab5f"><div class="ttname"><a href="class_r_g_w_log_stat_remote_obj_c_r.html#a9f2f4cc93afbc9b5a728f237f11eab5f">RGWLogStatRemoteObjCR::~RGWLogStatRemoteObjCR</a></div><div class="ttdeci">~RGWLogStatRemoteObjCR() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00034">rgw_sync_module_log.cc:34</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_sync_module_html_a59716dce24e869bb3211073493371356"><div class="ttname"><a href="class_r_g_w_log_sync_module.html#a59716dce24e869bb3211073493371356">RGWLogSyncModule::create_instance</a></div><div class="ttdeci">int create_instance(const DoutPrefixProvider *dpp, CephContext *cct, const JSONFormattable &amp;config, RGWSyncModuleInstanceRef *instance) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00071">rgw_sync_module_log.cc:71</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_sync_module_instance_html"><div class="ttname"><a href="class_r_g_w_log_sync_module_instance.html">RGWLogSyncModuleInstance</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00062">rgw_sync_module_log.cc:62</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_sync_module_instance_html_a77a7eb0815c2b29d7e73f10d30535197"><div class="ttname"><a href="class_r_g_w_log_sync_module_instance.html#a77a7eb0815c2b29d7e73f10d30535197">RGWLogSyncModuleInstance::RGWLogSyncModuleInstance</a></div><div class="ttdeci">RGWLogSyncModuleInstance(const string &amp;prefix)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00065">rgw_sync_module_log.cc:65</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_sync_module_instance_html_ab64579679622bc92a01b1e639af3fea5"><div class="ttname"><a href="class_r_g_w_log_sync_module_instance.html#ab64579679622bc92a01b1e639af3fea5">RGWLogSyncModuleInstance::get_data_handler</a></div><div class="ttdeci">RGWDataSyncModule * get_data_handler() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00066">rgw_sync_module_log.cc:66</a></div></div>
+<div class="ttc" id="aclass_r_g_w_log_sync_module_instance_html_abaf94125b1d80bb183a8d44eafaa11d4"><div class="ttname"><a href="class_r_g_w_log_sync_module_instance.html#abaf94125b1d80bb183a8d44eafaa11d4">RGWLogSyncModuleInstance::data_handler</a></div><div class="ttdeci">RGWLogDataSyncModule data_handler</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__log_8cc_source.html#l00063">rgw_sync_module_log.cc:63</a></div></div>
+<div class="ttc" id="aclass_r_g_w_stat_remote_obj_c_b_c_r_html"><div class="ttname"><a href="class_r_g_w_stat_remote_obj_c_b_c_r.html">RGWStatRemoteObjCBCR</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00142">rgw_sync_module.h:142</a></div></div>
+<div class="ttc" id="aclass_r_g_w_stat_remote_obj_c_b_c_r_html_a13e00f47f032ed8f8a86de0cb29a57ca"><div class="ttname"><a href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a13e00f47f032ed8f8a86de0cb29a57ca">RGWStatRemoteObjCBCR::src_bucket</a></div><div class="ttdeci">rgw_bucket src_bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00147">rgw_sync_module.h:147</a></div></div>
+<div class="ttc" id="aclass_r_g_w_stat_remote_obj_c_b_c_r_html_a18285d712a1f4574882ec6edaf4f6b2e"><div class="ttname"><a href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a18285d712a1f4574882ec6edaf4f6b2e">RGWStatRemoteObjCBCR::sc</a></div><div class="ttdeci">RGWDataSyncCtx * sc</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00144">rgw_sync_module.h:144</a></div></div>
+<div class="ttc" id="aclass_r_g_w_stat_remote_obj_c_b_c_r_html_a1c4c474c82f713e2f6c4c960bb45f15f"><div class="ttname"><a href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a1c4c474c82f713e2f6c4c960bb45f15f">RGWStatRemoteObjCBCR::size</a></div><div class="ttdeci">uint64_t size</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00151">rgw_sync_module.h:151</a></div></div>
+<div class="ttc" id="aclass_r_g_w_stat_remote_obj_c_b_c_r_html_a5922639e84e215801ee018ba9b4f5c32"><div class="ttname"><a href="class_r_g_w_stat_remote_obj_c_b_c_r.html#a5922639e84e215801ee018ba9b4f5c32">RGWStatRemoteObjCBCR::attrs</a></div><div class="ttdeci">std::map&lt; std::string, bufferlist &gt; attrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00153">rgw_sync_module.h:153</a></div></div>
+<div class="ttc" id="aclass_r_g_w_stat_remote_obj_c_b_c_r_html_acc62327d02a31f0b233678d30c6e2960"><div class="ttname"><a href="class_r_g_w_stat_remote_obj_c_b_c_r.html#acc62327d02a31f0b233678d30c6e2960">RGWStatRemoteObjCBCR::mtime</a></div><div class="ttdeci">ceph::real_time mtime</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00150">rgw_sync_module.h:150</a></div></div>
+<div class="ttc" id="aclass_r_g_w_stat_remote_obj_c_b_c_r_html_aed705de4ac538552a3c4581ff73fe0d2"><div class="ttname"><a href="class_r_g_w_stat_remote_obj_c_b_c_r.html#aed705de4ac538552a3c4581ff73fe0d2">RGWStatRemoteObjCBCR::key</a></div><div class="ttdeci">rgw_obj_key key</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00148">rgw_sync_module.h:148</a></div></div>
+<div class="ttc" id="aclass_r_g_w_sync_module_instance_html"><div class="ttname"><a href="class_r_g_w_sync_module_instance.html">RGWSyncModuleInstance</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module_8h_source.html#l00044">rgw_sync_module.h:44</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__common_8h_html"><div class="ttname"><a href="rgw__common_8h.html">rgw_common.h</a></div></div>
+<div class="ttc" id="argw__coroutine_8h_html"><div class="ttname"><a href="rgw__coroutine_8h.html">rgw_coroutine.h</a></div></div>
+<div class="ttc" id="argw__cr__rados_8h_html"><div class="ttname"><a href="rgw__cr__rados_8h.html">rgw_cr_rados.h</a></div></div>
+<div class="ttc" id="argw__data__sync_8h_html"><div class="ttname"><a href="rgw__data__sync_8h.html">rgw_data_sync.h</a></div></div>
+<div class="ttc" id="argw__sal_8h_html_a2a039ebea62bea24dff4df3905db41df"><div class="ttname"><a href="rgw__sal_8h.html#a2a039ebea62bea24dff4df3905db41df">RGWSyncModuleInstanceRef</a></div><div class="ttdeci">std::shared_ptr&lt; RGWSyncModuleInstance &gt; RGWSyncModuleInstanceRef</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00039">rgw_sal.h:39</a></div></div>
+<div class="ttc" id="argw__sync__module_8h_html"><div class="ttname"><a href="rgw__sync__module_8h.html">rgw_sync_module.h</a></div></div>
+<div class="ttc" id="argw__sync__module__log_8h_html"><div class="ttname"><a href="rgw__sync__module__log_8h.html">rgw_sync_module_log.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_data_sync_ctx_html"><div class="ttname"><a href="struct_r_g_w_data_sync_ctx.html">RGWDataSyncCtx</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00333">rgw_data_sync.h:333</a></div></div>
+<div class="ttc" id="astruct_r_g_w_data_sync_ctx_html_aaa4f4a845ebb475fbdfa87c5df786afb"><div class="ttname"><a href="struct_r_g_w_data_sync_ctx.html#aaa4f4a845ebb475fbdfa87c5df786afb">RGWDataSyncCtx::source_zone</a></div><div class="ttdeci">rgw_zone_id source_zone</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00338">rgw_data_sync.h:338</a></div></div>
+<div class="ttc" id="astructrgw__bucket__entry__owner_html"><div class="ttname"><a href="structrgw__bucket__entry__owner.html">rgw_bucket_entry_owner</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00284">rgw_data_sync.h:284</a></div></div>
+<div class="ttc" id="astructrgw__bucket__shard_html_aa6821665d28ae2987ee05096b8a284e8"><div class="ttname"><a href="structrgw__bucket__shard.html#aa6821665d28ae2987ee05096b8a284e8">rgw_bucket_shard::bucket</a></div><div class="ttdeci">rgw_bucket bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00431">rgw_basic_types.h:431</a></div></div>
+<div class="ttc" id="astructrgw__bucket__sync__pair__info_html_a0ece37c1c51ed70a1ceade1049619445"><div class="ttname"><a href="structrgw__bucket__sync__pair__info.html#a0ece37c1c51ed70a1ceade1049619445">rgw_bucket_sync_pair_info::source_bs</a></div><div class="ttdeci">rgw_bucket_shard source_bs</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00049">rgw_data_sync.h:49</a></div></div>
+<div class="ttc" id="astructrgw__bucket__sync__pipe_html"><div class="ttname"><a href="structrgw__bucket__sync__pipe.html">rgw_bucket_sync_pipe</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00065">rgw_data_sync.h:65</a></div></div>
+<div class="ttc" id="astructrgw__bucket__sync__pipe_html_a24becd8d2b536e5483ac8bbe0853f811"><div class="ttname"><a href="structrgw__bucket__sync__pipe.html#a24becd8d2b536e5483ac8bbe0853f811">rgw_bucket_sync_pipe::info</a></div><div class="ttdeci">rgw_bucket_sync_pair_info info</div><div class="ttdef"><b>Definition</b> <a href="rgw__data__sync_8h_source.html#l00066">rgw_data_sync.h:66</a></div></div>
+<div class="ttc" id="astructrgw__bucket_html"><div class="ttname"><a href="structrgw__bucket.html">rgw_bucket</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00289">rgw_basic_types.h:289</a></div></div>
+<div class="ttc" id="astructrgw__obj__key_html"><div class="ttname"><a href="structrgw__obj__key.html">rgw_obj_key</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01248">rgw_common.h:1248</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__sync__module__log_8cc.html">rgw_sync_module_log.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

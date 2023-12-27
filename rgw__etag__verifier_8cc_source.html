@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_etag_verifier.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__etag__verifier_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_etag_verifier.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__etag__verifier_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__etag__verifier_8h.html">rgw_etag_verifier.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__obj__manifest_8h.html">rgw_obj_manifest.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="rgw__etag__verifier_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">    7</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespacergw_1_1putobj.html">    9</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw_1_1putobj.html">rgw::putobj</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespacergw_1_1putobj.html#aa5649a0e294493028f6dc88249ceb7c5">   11</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacergw_1_1putobj.html#aa5649a0e294493028f6dc88249ceb7c5">create_etag_verifier</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                         CephContext* <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_class" href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a>* filter,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                         <span class="keyword">const</span> bufferlist&amp; manifest_bl,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                         <span class="keyword">const</span> std::optional&lt;RGWCompressionInfo&gt;&amp; compression,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                         <a class="code hl_typedef" href="namespacergw_1_1putobj.html#a6136a213ce5752aa3252dc18ca0a2667">etag_verifier_ptr</a>&amp; verifier)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_class" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a> manifest;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">auto</span> miter = manifest_bl.cbegin();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467">decode</a>(manifest, miter);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  } <span class="keywordflow">catch</span> (buffer::error&amp; err) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: couldn&#39;t decode manifest&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> -EIO;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_struct" href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a> rule;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">bool</span> found = manifest.<a class="code hl_function" href="class_r_g_w_obj_manifest.html#a71b195ad38eec07e9748d6303e8c286d">get_rule</a>(0, &amp;rule);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">if</span> (!found) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;ERROR: manifest-&gt;get_rule() could not find rule&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> -EIO;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordflow">if</span> (rule.<a class="code hl_variable" href="struct_r_g_w_obj_manifest_rule.html#a7482c8fa7ed95efe3eba4fd100ac0b62">start_part_num</a> == 0) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">/* Atomic object */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    verifier.emplace&lt;<a class="code hl_class" href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html">ETagVerifier_Atomic</a>&gt;(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, filter);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  uint64_t cur_part_ofs = UINT64_MAX;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  std::vector&lt;uint64_t&gt; part_ofs;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">/*</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">   * We must store the offset of each part to calculate the ETAGs for each</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">   * MPU part. These part ETags then become the input for the MPU object</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">   * Etag.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> mi = manifest.<a class="code hl_function" href="class_r_g_w_obj_manifest.html#ae2f4e68b09b46a0df516c63b2edbcffb">obj_begin</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>); mi != manifest.<a class="code hl_function" href="class_r_g_w_obj_manifest.html#acd322607ce983203f80ab1518a531f4c">obj_end</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>); ++mi) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (cur_part_ofs == mi.get_part_ofs())</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    cur_part_ofs = mi.get_part_ofs();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;MPU Part offset:&quot;</span> &lt;&lt; cur_part_ofs &lt;&lt; dendl;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    part_ofs.push_back(cur_part_ofs);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">if</span> (compression) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// if the source object was compressed, the manifest is storing</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// compressed part offsets. transform the compressed offsets back to</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// their original offsets by finding the first block of each part</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; blocks = compression-&gt;blocks;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">auto</span> block = blocks.begin();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; ofs : part_ofs) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      <span class="comment">// find the compression_block with new_ofs == ofs</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keyword">constexpr</span> <span class="keyword">auto</span> less = [] (<span class="keyword">const</span> <a class="code hl_struct" href="structcompression__block.html">compression_block</a>&amp; block, uint64_t ofs) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> block.<a class="code hl_variable" href="structcompression__block.html#a502543516bd3809ef014bc1d3c088440">new_ofs</a> &lt; ofs;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      };</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      block = std::lower_bound(block, blocks.end(), ofs, less);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">if</span> (block == blocks.end() || block-&gt;<a class="code hl_variable" href="structcompression__block.html#a502543516bd3809ef014bc1d3c088440">new_ofs</a> != ofs) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 4) &lt;&lt; <span class="stringliteral">&quot;no match for compressed offset &quot;</span> &lt;&lt; ofs</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            &lt;&lt; <span class="stringliteral">&quot;, disabling etag verification&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> -EIO;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      ofs = block-&gt;<a class="code hl_variable" href="structcompression__block.html#a69e5d20533a7f6b924a44906a5b079e6">old_ofs</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;MPU Part uncompressed offset:&quot;</span> &lt;&lt; ofs &lt;&lt; dendl;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  verifier.emplace&lt;<a class="code hl_class" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html">ETagVerifier_MPU</a>&gt;(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, std::move(part_ofs), filter);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html#a919ffeb4ec89ee207957b3dd80c9e57e">   82</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html#a919ffeb4ec89ee207957b3dd80c9e57e">ETagVerifier_Atomic::process</a>(bufferlist&amp;&amp; in, uint64_t logical_offset)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  bufferlist out;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordflow">if</span> (in.length() &gt; 0)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Update((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)in.c_str(), in.length());</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_pipe.html#a18f2f98c2f53d13ffb46cce2c53e7cc0">Pipe::process</a>(std::move(in), logical_offset);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html#a9d4a935b3612e402ce39dfc23bb34288">   91</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html#a9d4a935b3612e402ce39dfc23bb34288">ETagVerifier_Atomic::calculate_etag</a>()</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m[CEPH_CRYPTO_MD5_DIGESTSIZE];</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">char</span> calc_md5[CEPH_CRYPTO_MD5_DIGESTSIZE * 2 + 1];</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="comment">/* Return early if ETag has already been calculated */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a3948e2abb3ba4a207d297f6a00208167">calculated_etag</a>.empty())</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Final(m);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_function" href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f">buf_to_hex</a>(m, CEPH_CRYPTO_MD5_DIGESTSIZE, calc_md5);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a3948e2abb3ba4a207d297f6a00208167">calculated_etag</a> = calc_md5;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  ldout(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a0c40e9870f943243193965bdf8d15bea">cct</a>, 20) &lt;&lt; <span class="stringliteral">&quot;Single part object: &quot;</span> &lt;&lt; <span class="stringliteral">&quot; etag:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a3948e2abb3ba4a207d297f6a00208167">calculated_etag</a></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>          &lt;&lt; dendl;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#af666490cb3c3ca007a35dcfc3e4d74c5">  107</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#af666490cb3c3ca007a35dcfc3e4d74c5">ETagVerifier_MPU::process_end_of_MPU_part</a>()</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m[CEPH_CRYPTO_MD5_DIGESTSIZE];</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">char</span> calc_md5_part[CEPH_CRYPTO_MD5_DIGESTSIZE * 2 + 1];</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  std::string calculated_etag_part;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Final(m);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#ae58fb43624a2acd75e3221dc9c0ec016">mpu_etag_hash</a>.Update((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)m, <span class="keyword">sizeof</span>(m));</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Restart();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a0c40e9870f943243193965bdf8d15bea">cct</a>-&gt;_conf-&gt;subsys.should_gather(<a class="code hl_define" href="librgw_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>, 20)) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_function" href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f">buf_to_hex</a>(m, CEPH_CRYPTO_MD5_DIGESTSIZE, calc_md5_part);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    calculated_etag_part = calc_md5_part;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    ldout(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a0c40e9870f943243193965bdf8d15bea">cct</a>, 20) &lt;&lt; <span class="stringliteral">&quot;Part etag: &quot;</span> &lt;&lt; calculated_etag_part &lt;&lt; dendl;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a47dbd4e10ff71b56daf56c1d3dba8346">cur_part_index</a>++;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a7ff29f7ac5ae3e40361e94399f140bed">next_part_index</a>++;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a35a3a3f306a8e7d28440d8e318dd077f">  127</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a35a3a3f306a8e7d28440d8e318dd077f">ETagVerifier_MPU::process</a>(bufferlist&amp;&amp; in, uint64_t logical_offset)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>{</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  uint64_t bl_end = in.length() + logical_offset;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="comment">/* Handle the last MPU part */</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordflow">if</span> (<span class="keywordtype">size_t</span>(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a7ff29f7ac5ae3e40361e94399f140bed">next_part_index</a>) == <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">part_ofs</a>.size()) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Update((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)in.c_str(), in.length());</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">goto</span> done;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="comment">/* Incoming bufferlist spans two MPU parts. Calculate separate ETags */</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordflow">if</span> (bl_end &gt; <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">part_ofs</a>[<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a7ff29f7ac5ae3e40361e94399f140bed">next_part_index</a>]) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    uint64_t part_one_len = <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">part_ofs</a>[<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a7ff29f7ac5ae3e40361e94399f140bed">next_part_index</a>] - logical_offset;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Update((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)in.c_str(), part_one_len);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_function" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#af666490cb3c3ca007a35dcfc3e4d74c5">process_end_of_MPU_part</a>();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Update((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)in.c_str() + part_one_len,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      bl_end - <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">part_ofs</a>[<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a47dbd4e10ff71b56daf56c1d3dba8346">cur_part_index</a>]);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">     * If we&#39;ve moved to the last part of the MPU, avoid usage of</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">     * parts_ofs[next_part_index] as it will lead to our-of-range access.</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span> (<span class="keywordtype">size_t</span>(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a7ff29f7ac5ae3e40361e94399f140bed">next_part_index</a>) == <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">part_ofs</a>.size())</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keywordflow">goto</span> done;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Update((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)in.c_str(), in.length());</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="comment">/* Update the MPU Etag if the current part has ended */</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordflow">if</span> (logical_offset + in.length() + 1 == <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">part_ofs</a>[<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a7ff29f7ac5ae3e40361e94399f140bed">next_part_index</a>])</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_function" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#af666490cb3c3ca007a35dcfc3e4d74c5">process_end_of_MPU_part</a>();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>done:</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_pipe.html#a18f2f98c2f53d13ffb46cce2c53e7cc0">Pipe::process</a>(std::move(in), logical_offset);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a9d09824d0c8ce926ab00bec61b6d4677">  164</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a9d09824d0c8ce926ab00bec61b6d4677">ETagVerifier_MPU::calculate_etag</a>()</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keyword">const</span> uint32_t parts = <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">part_ofs</a>.size();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> digits10 = std::numeric_limits&lt;uint32_t&gt;::digits10;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> extra = 2 + digits10; <span class="comment">// add &quot;-%u\0&quot; at the end</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> m[CEPH_CRYPTO_MD5_DIGESTSIZE], mpu_m[CEPH_CRYPTO_MD5_DIGESTSIZE];</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordtype">char</span> final_etag_str[CEPH_CRYPTO_MD5_DIGESTSIZE * 2 + extra];</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="comment">/* Return early if ETag has already been calculated */</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a3948e2abb3ba4a207d297f6a00208167">calculated_etag</a>.empty())</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">hash</a>.Final(m);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#ae58fb43624a2acd75e3221dc9c0ec016">mpu_etag_hash</a>.Update((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)m, <span class="keyword">sizeof</span>(m));</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="comment">/* Refer RGWCompleteMultipart::execute() for ETag calculation for MPU object */</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#ae58fb43624a2acd75e3221dc9c0ec016">mpu_etag_hash</a>.Final(mpu_m);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <a class="code hl_function" href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f">buf_to_hex</a>(mpu_m, CEPH_CRYPTO_MD5_DIGESTSIZE, final_etag_str);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  snprintf(&amp;final_etag_str[CEPH_CRYPTO_MD5_DIGESTSIZE * 2],</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>           <span class="keyword">sizeof</span>(final_etag_str) - CEPH_CRYPTO_MD5_DIGESTSIZE * 2,</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>           <span class="stringliteral">&quot;-%u&quot;</span>, parts);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a3948e2abb3ba4a207d297f6a00208167">calculated_etag</a> = final_etag_str;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  ldout(<a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a0c40e9870f943243193965bdf8d15bea">cct</a>, 20) &lt;&lt; <span class="stringliteral">&quot;MPU calculated ETag:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a3948e2abb3ba4a207d297f6a00208167">calculated_etag</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>} <span class="comment">// namespace rgw::putobj</span></div>
+</div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html"><div class="ttname"><a href="class_r_g_w_obj_manifest.html">RGWObjManifest</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00177">rgw_obj_manifest.h:177</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_a71b195ad38eec07e9748d6303e8c286d"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#a71b195ad38eec07e9748d6303e8c286d">RGWObjManifest::get_rule</a></div><div class="ttdeci">bool get_rule(uint64_t ofs, RGWObjManifestRule *rule)</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8cc_source.html#l00190">rgw_obj_manifest.cc:190</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_acd322607ce983203f80ab1518a531f4c"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#acd322607ce983203f80ab1518a531f4c">RGWObjManifest::obj_end</a></div><div class="ttdeci">obj_iterator obj_end(const DoutPrefixProvider *dpp) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00567">rgw_obj_manifest.h:567</a></div></div>
+<div class="ttc" id="aclass_r_g_w_obj_manifest_html_ae2f4e68b09b46a0df516c63b2edbcffb"><div class="ttname"><a href="class_r_g_w_obj_manifest.html#ae2f4e68b09b46a0df516c63b2edbcffb">RGWObjManifest::obj_begin</a></div><div class="ttdeci">obj_iterator obj_begin(const DoutPrefixProvider *dpp) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00566">rgw_obj_manifest.h:566</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___atomic_html"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html">rgw::putobj::ETagVerifier_Atomic</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00043">rgw_etag_verifier.h:44</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___atomic_html_a919ffeb4ec89ee207957b3dd80c9e57e"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html#a919ffeb4ec89ee207957b3dd80c9e57e">rgw::putobj::ETagVerifier_Atomic::process</a></div><div class="ttdeci">int process(bufferlist &amp;&amp;data, uint64_t logical_offset) override</div><div class="ttdoc">Consume a bufferlist in its entirety at the given object offset.</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8cc_source.html#l00082">rgw_etag_verifier.cc:82</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___atomic_html_a9d4a935b3612e402ce39dfc23bb34288"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___atomic.html#a9d4a935b3612e402ce39dfc23bb34288">rgw::putobj::ETagVerifier_Atomic::calculate_etag</a></div><div class="ttdeci">void calculate_etag() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8cc_source.html#l00091">rgw_etag_verifier.cc:91</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html">rgw::putobj::ETagVerifier_MPU</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00054">rgw_etag_verifier.h:55</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html_a35a3a3f306a8e7d28440d8e318dd077f"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a35a3a3f306a8e7d28440d8e318dd077f">rgw::putobj::ETagVerifier_MPU::process</a></div><div class="ttdeci">int process(bufferlist &amp;&amp;data, uint64_t logical_offset) override</div><div class="ttdoc">Consume a bufferlist in its entirety at the given object offset.</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8cc_source.html#l00127">rgw_etag_verifier.cc:127</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html_a47dbd4e10ff71b56daf56c1d3dba8346"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a47dbd4e10ff71b56daf56c1d3dba8346">rgw::putobj::ETagVerifier_MPU::cur_part_index</a></div><div class="ttdeci">uint64_t cur_part_index</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00057">rgw_etag_verifier.h:57</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html_a77198caa56dd2dccc50cf8f2f9bfb55c"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a77198caa56dd2dccc50cf8f2f9bfb55c">rgw::putobj::ETagVerifier_MPU::part_ofs</a></div><div class="ttdeci">std::vector&lt; uint64_t &gt; part_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00056">rgw_etag_verifier.h:56</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html_a7ff29f7ac5ae3e40361e94399f140bed"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a7ff29f7ac5ae3e40361e94399f140bed">rgw::putobj::ETagVerifier_MPU::next_part_index</a></div><div class="ttdeci">uint64_t next_part_index</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00057">rgw_etag_verifier.h:57</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html_a9d09824d0c8ce926ab00bec61b6d4677"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#a9d09824d0c8ce926ab00bec61b6d4677">rgw::putobj::ETagVerifier_MPU::calculate_etag</a></div><div class="ttdeci">void calculate_etag() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8cc_source.html#l00164">rgw_etag_verifier.cc:164</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html_ae58fb43624a2acd75e3221dc9c0ec016"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#ae58fb43624a2acd75e3221dc9c0ec016">rgw::putobj::ETagVerifier_MPU::mpu_etag_hash</a></div><div class="ttdeci">MD5 mpu_etag_hash</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00058">rgw_etag_verifier.h:58</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier___m_p_u_html_af666490cb3c3ca007a35dcfc3e4d74c5"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier___m_p_u.html#af666490cb3c3ca007a35dcfc3e4d74c5">rgw::putobj::ETagVerifier_MPU::process_end_of_MPU_part</a></div><div class="ttdeci">void process_end_of_MPU_part()</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8cc_source.html#l00107">rgw_etag_verifier.cc:107</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier_html_a0c40e9870f943243193965bdf8d15bea"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a0c40e9870f943243193965bdf8d15bea">rgw::putobj::ETagVerifier::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00027">rgw_etag_verifier.h:27</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier_html_a3948e2abb3ba4a207d297f6a00208167"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a3948e2abb3ba4a207d297f6a00208167">rgw::putobj::ETagVerifier::calculated_etag</a></div><div class="ttdeci">std::string calculated_etag</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00029">rgw_etag_verifier.h:29</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_e_tag_verifier_html_a870dca3ef2eb66dfb7bce7e09f10195c"><div class="ttname"><a href="classrgw_1_1putobj_1_1_e_tag_verifier.html#a870dca3ef2eb66dfb7bce7e09f10195c">rgw::putobj::ETagVerifier::hash</a></div><div class="ttdeci">MD5 hash</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00028">rgw_etag_verifier.h:28</a></div></div>
+<div class="ttc" id="aclassrgw_1_1putobj_1_1_pipe_html_a18f2f98c2f53d13ffb46cce2c53e7cc0"><div class="ttname"><a href="classrgw_1_1putobj_1_1_pipe.html#a18f2f98c2f53d13ffb46cce2c53e7cc0">rgw::putobj::Pipe::process</a></div><div class="ttdeci">int process(bufferlist &amp;&amp;data, uint64_t offset) override</div><div class="ttdoc">Consume a bufferlist in its entirety at the given object offset.</div><div class="ttdef"><b>Definition</b> <a href="rgw__putobj_8h_source.html#l00030">rgw_putobj.h:30</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_data_processor_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_data_processor.html">rgw::sal::DataProcessor</a></div><div class="ttdoc">A simple streaming data processing abstraction</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00185">rgw_sal.h:185</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="alibrgw_8cc_html_a5580a2b7c4743669bb9ca22b07e84324"><div class="ttname"><a href="librgw_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a></div><div class="ttdeci">#define dout_subsys</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00070">librgw.cc:70</a></div></div>
+<div class="ttc" id="anamespacergw_1_1putobj_html"><div class="ttname"><a href="namespacergw_1_1putobj.html">rgw::putobj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8cc_source.html#l00009">rgw_etag_verifier.cc:9</a></div></div>
+<div class="ttc" id="anamespacergw_1_1putobj_html_a6136a213ce5752aa3252dc18ca0a2667"><div class="ttname"><a href="namespacergw_1_1putobj.html#a6136a213ce5752aa3252dc18ca0a2667">rgw::putobj::etag_verifier_ptr</a></div><div class="ttdeci">ceph::static_ptr&lt; ETagVerifier, max_etag_verifier_size &gt; etag_verifier_ptr</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8h_source.html#l00082">rgw_etag_verifier.h:82</a></div></div>
+<div class="ttc" id="anamespacergw_1_1putobj_html_aa5649a0e294493028f6dc88249ceb7c5"><div class="ttname"><a href="namespacergw_1_1putobj.html#aa5649a0e294493028f6dc88249ceb7c5">rgw::putobj::create_etag_verifier</a></div><div class="ttdeci">int create_etag_verifier(const DoutPrefixProvider *dpp, CephContext *cct, rgw::sal::DataProcessor *filter, const bufferlist &amp;manifest_bl, const std::optional&lt; RGWCompressionInfo &gt; &amp;compression, etag_verifier_ptr &amp;verifier)</div><div class="ttdef"><b>Definition</b> <a href="rgw__etag__verifier_8cc_source.html#l00011">rgw_etag_verifier.cc:11</a></div></div>
+<div class="ttc" id="anamespacergw_html_a49e77e75ed539fdbde0dcc092bb76467"><div class="ttname"><a href="namespacergw.html#a49e77e75ed539fdbde0dcc092bb76467">rgw::decode</a></div><div class="ttdeci">void decode(bucket_index_normal_layout &amp;l, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__layout_8cc_source.html#l00027">rgw_bucket_layout.cc:27</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__common_8h_html_a558d2aac04be1b2ad9db62daa9b8cc7f"><div class="ttname"><a href="rgw__common_8h.html#a558d2aac04be1b2ad9db62daa9b8cc7f">buf_to_hex</a></div><div class="ttdeci">static void buf_to_hex(const unsigned char *const buf, const size_t len, char *const str)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01960">rgw_common.h:1960</a></div></div>
+<div class="ttc" id="argw__etag__verifier_8h_html"><div class="ttname"><a href="rgw__etag__verifier_8h.html">rgw_etag_verifier.h</a></div></div>
+<div class="ttc" id="argw__obj__manifest_8h_html"><div class="ttname"><a href="rgw__obj__manifest_8h.html">rgw_obj_manifest.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html">RGWObjManifestRule</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00116">rgw_obj_manifest.h:116</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_manifest_rule_html_a7482c8fa7ed95efe3eba4fd100ac0b62"><div class="ttname"><a href="struct_r_g_w_obj_manifest_rule.html#a7482c8fa7ed95efe3eba4fd100ac0b62">RGWObjManifestRule::start_part_num</a></div><div class="ttdeci">uint32_t start_part_num</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00117">rgw_obj_manifest.h:117</a></div></div>
+<div class="ttc" id="astructcompression__block_html"><div class="ttname"><a href="structcompression__block.html">compression_block</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__compression__types_8h_source.html#l00020">rgw_compression_types.h:20</a></div></div>
+<div class="ttc" id="astructcompression__block_html_a502543516bd3809ef014bc1d3c088440"><div class="ttname"><a href="structcompression__block.html#a502543516bd3809ef014bc1d3c088440">compression_block::new_ofs</a></div><div class="ttdeci">uint64_t new_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression__types_8h_source.html#l00022">rgw_compression_types.h:22</a></div></div>
+<div class="ttc" id="astructcompression__block_html_a69e5d20533a7f6b924a44906a5b079e6"><div class="ttname"><a href="structcompression__block.html#a69e5d20533a7f6b924a44906a5b079e6">compression_block::old_ofs</a></div><div class="ttdeci">uint64_t old_ofs</div><div class="ttdef"><b>Definition</b> <a href="rgw__compression__types_8h_source.html#l00021">rgw_compression_types.h:21</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__etag__verifier_8cc.html">rgw_etag_verifier.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

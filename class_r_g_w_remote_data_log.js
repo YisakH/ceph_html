@@ -1,0 +1,27 @@
+var class_r_g_w_remote_data_log =
+[
+    [ "RGWRemoteDataLog", "class_r_g_w_remote_data_log.html#a55444ef422ff8e966d7cd4d7ffbb4a1c", null ],
+    [ "finish", "class_r_g_w_remote_data_log.html#a790f4fe3ef5ed7a787fb49d853d85191", null ],
+    [ "init", "class_r_g_w_remote_data_log.html#a48a22f7275c73966abb4760f76f18601", null ],
+    [ "init_sync_status", "class_r_g_w_remote_data_log.html#aa781e10fae1b2aad769f12ae97692004", null ],
+    [ "read_log_info", "class_r_g_w_remote_data_log.html#a8c47be64773374c277c2a83f595f9c3e", null ],
+    [ "read_recovering_shards", "class_r_g_w_remote_data_log.html#a0ea09aa59ca21fd4fd5ba02afc95c4a4", null ],
+    [ "read_shard_status", "class_r_g_w_remote_data_log.html#abaa546dd2c8bf24aa24677e334805708", null ],
+    [ "read_source_log_shards_info", "class_r_g_w_remote_data_log.html#a9f19c1c5e5812c645d187daa4a30dd23", null ],
+    [ "read_source_log_shards_next", "class_r_g_w_remote_data_log.html#ad0f10a47ac00d2b84a7ee68983d039a2", null ],
+    [ "read_sync_status", "class_r_g_w_remote_data_log.html#ad7c62d2805330625048edb27c009b46d", null ],
+    [ "run_sync", "class_r_g_w_remote_data_log.html#a67dc66974edef383cf934c2b7a2194cf", null ],
+    [ "wakeup", "class_r_g_w_remote_data_log.html#a7090844db61e7f77e690f5a26d309a76", null ],
+    [ "async_rados", "class_r_g_w_remote_data_log.html#afbe5b4e1c899ac7af542124079110f33", null ],
+    [ "cct", "class_r_g_w_remote_data_log.html#a5e19241faa6ae081c94ab46a7ecbab5a", null ],
+    [ "cr_registry", "class_r_g_w_remote_data_log.html#a4106f0230f6befbfb41a7b34f1d814dc", null ],
+    [ "data_sync_cr", "class_r_g_w_remote_data_log.html#a770b40524096a5e310a762c0c48d4907", null ],
+    [ "dpp", "class_r_g_w_remote_data_log.html#a630f650c9e13b5739227599c22be8384", null ],
+    [ "http_manager", "class_r_g_w_remote_data_log.html#a65029a6aec5cfa876f1a14340fad4282", null ],
+    [ "initialized", "class_r_g_w_remote_data_log.html#aabbbf4b50a175f51e90a2e258970ee07", null ],
+    [ "lock", "class_r_g_w_remote_data_log.html#a612cce059f4faeca815d52c026292de6", null ],
+    [ "sc", "class_r_g_w_remote_data_log.html#af896bb8bebf7bc0a3b91788e993564ad", null ],
+    [ "store", "class_r_g_w_remote_data_log.html#a3966eee35c091ca54869961f1307f215", null ],
+    [ "sync_env", "class_r_g_w_remote_data_log.html#adcaa685ac0cee4ff9a6da6eccbbc580f", null ],
+    [ "tn", "class_r_g_w_remote_data_log.html#a22d543189ee6a1042d882db68cfb3766", null ]
+];

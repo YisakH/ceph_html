@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_config_key_rados.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__config__key__rados_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_config_key_rados.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__config__key__rados_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="svc__rados_8h.html">svc_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="svc__config__key__rados_8h.html">svc_config_key_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#ab35364f0d527ff86c4e9cda3301af4dd">    7</a></span><a class="code hl_function" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#ab35364f0d527ff86c4e9cda3301af4dd">RGWSI_ConfigKey_RADOS::~RGWSI_ConfigKey_RADOS</a>(){}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a28eb8ef15c665632cffad782be57c102">    9</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a28eb8ef15c665632cffad782be57c102">RGWSI_ConfigKey_RADOS::do_start</a>(optional_yield, <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <a class="code hl_variable" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a4e4a672e53b37d35f991912937f9c302">maybe_insecure_mon_conn</a> = !<a class="code hl_variable" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a4621094de7952a21a5cd0e2756fd2a24">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___config_key___r_a_d_o_s_1_1_svc.html#af10263a5fbc86833c1bb2d9d876bdebd">rados</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#adcb2338696e4ce3aef5de6b42d8386fe">check_secure_mon_conn</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a9a0fe9f8cbd35b82218f4b5d711a7981">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a9a0fe9f8cbd35b82218f4b5d711a7981">RGWSI_ConfigKey_RADOS::warn_if_insecure</a>()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a4e4a672e53b37d35f991912937f9c302">maybe_insecure_mon_conn</a> ||</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <a class="code hl_variable" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a0d8e8bae4169843d64d01ee6f604a45e">warned_insecure</a>.test_and_set()) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">string</span> s = <span class="stringliteral">&quot;rgw is configured to optionally allow insecure connections to the monitors (auth_supported, ms_mon_client_mode), ssl certificates stored at the monitor configuration could leak&quot;</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_variable" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a4621094de7952a21a5cd0e2756fd2a24">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___config_key___r_a_d_o_s_1_1_svc.html#af10263a5fbc86833c1bb2d9d876bdebd">rados</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#ad7e329db26cbdfc27a9ff63dac650792">clog_warn</a>(s);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  lderr(<a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>()) &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot;(): WARNING: &quot;</span> &lt;&lt; s &lt;&lt; dendl;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a0da002689bb4f25353b5b4ea36079cbd">   30</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a0da002689bb4f25353b5b4ea36079cbd">RGWSI_ConfigKey_RADOS::get</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; key, <span class="keywordtype">bool</span> secure, bufferlist *result)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordtype">string</span> cmd =</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="stringliteral">&quot;{&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <span class="stringliteral">&quot;\&quot;prefix\&quot;: \&quot;config-key get\&quot;, &quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="stringliteral">&quot;\&quot;key\&quot;: \&quot;&quot;</span> + key + <span class="stringliteral">&quot;\&quot;&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="stringliteral">&quot;}&quot;</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  bufferlist inbl;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">auto</span> handle = <a class="code hl_variable" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a4621094de7952a21a5cd0e2756fd2a24">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___config_key___r_a_d_o_s_1_1_svc.html#af10263a5fbc86833c1bb2d9d876bdebd">rados</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#ab5cbadbdc57472e02e085ca8f5f0341b">handle</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">int</span> ret = handle.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_handle.html#abd44d0da3b57fba5b6ddb17c521c3040">mon_command</a>(cmd, inbl, result, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">if</span> (secure) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a9a0fe9f8cbd35b82218f4b5d711a7981">warn_if_insecure</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_s_i___config_key___r_a_d_o_s_html_a0d8e8bae4169843d64d01ee6f604a45e"><div class="ttname"><a href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a0d8e8bae4169843d64d01ee6f604a45e">RGWSI_ConfigKey_RADOS::warned_insecure</a></div><div class="ttdeci">std::atomic_flag warned_insecure</div><div class="ttdef"><b>Definition</b> <a href="svc__config__key__rados_8h_source.html#l00032">svc_config_key_rados.h:32</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___config_key___r_a_d_o_s_html_a0da002689bb4f25353b5b4ea36079cbd"><div class="ttname"><a href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a0da002689bb4f25353b5b4ea36079cbd">RGWSI_ConfigKey_RADOS::get</a></div><div class="ttdeci">int get(const std::string &amp;key, bool secure, bufferlist *result) override</div><div class="ttdef"><b>Definition</b> <a href="svc__config__key__rados_8cc_source.html#l00030">svc_config_key_rados.cc:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___config_key___r_a_d_o_s_html_a28eb8ef15c665632cffad782be57c102"><div class="ttname"><a href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a28eb8ef15c665632cffad782be57c102">RGWSI_ConfigKey_RADOS::do_start</a></div><div class="ttdeci">int do_start(optional_yield, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__config__key__rados_8cc_source.html#l00009">svc_config_key_rados.cc:9</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___config_key___r_a_d_o_s_html_a4621094de7952a21a5cd0e2756fd2a24"><div class="ttname"><a href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a4621094de7952a21a5cd0e2756fd2a24">RGWSI_ConfigKey_RADOS::svc</a></div><div class="ttdeci">struct RGWSI_ConfigKey_RADOS::Svc svc</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___config_key___r_a_d_o_s_html_a4e4a672e53b37d35f991912937f9c302"><div class="ttname"><a href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a4e4a672e53b37d35f991912937f9c302">RGWSI_ConfigKey_RADOS::maybe_insecure_mon_conn</a></div><div class="ttdeci">bool maybe_insecure_mon_conn</div><div class="ttdef"><b>Definition</b> <a href="svc__config__key__rados_8h_source.html#l00031">svc_config_key_rados.h:31</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___config_key___r_a_d_o_s_html_a9a0fe9f8cbd35b82218f4b5d711a7981"><div class="ttname"><a href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#a9a0fe9f8cbd35b82218f4b5d711a7981">RGWSI_ConfigKey_RADOS::warn_if_insecure</a></div><div class="ttdeci">void warn_if_insecure()</div><div class="ttdef"><b>Definition</b> <a href="svc__config__key__rados_8cc_source.html#l00016">svc_config_key_rados.cc:16</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___config_key___r_a_d_o_s_html_ab35364f0d527ff86c4e9cda3301af4dd"><div class="ttname"><a href="class_r_g_w_s_i___config_key___r_a_d_o_s.html#ab35364f0d527ff86c4e9cda3301af4dd">RGWSI_ConfigKey_RADOS::~RGWSI_ConfigKey_RADOS</a></div><div class="ttdeci">virtual ~RGWSI_ConfigKey_RADOS() override</div><div class="ttdef"><b>Definition</b> <a href="svc__config__key__rados_8cc_source.html#l00007">svc_config_key_rados.cc:7</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_handle_html_abd44d0da3b57fba5b6ddb17c521c3040"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_handle.html#abd44d0da3b57fba5b6ddb17c521c3040">RGWSI_RADOS::Handle::mon_command</a></div><div class="ttdeci">int mon_command(std::string cmd, const bufferlist &amp;inbl, bufferlist *outbl, std::string *outs)</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8cc_source.html#l00366">svc_rados.cc:366</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_html_ab5cbadbdc57472e02e085ca8f5f0341b"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s.html#ab5cbadbdc57472e02e085ca8f5f0341b">RGWSI_RADOS::handle</a></div><div class="ttdeci">Handle handle()</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00218">svc_rados.h:218</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_html_ad7e329db26cbdfc27a9ff63dac650792"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s.html#ad7e329db26cbdfc27a9ff63dac650792">RGWSI_RADOS::clog_warn</a></div><div class="ttdeci">int clog_warn(const std::string &amp;msg)</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8cc_source.html#l00385">svc_rados.cc:385</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_html_adcb2338696e4ce3aef5de6b42d8386fe"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s.html#adcb2338696e4ce3aef5de6b42d8386fe">RGWSI_RADOS::check_secure_mon_conn</a></div><div class="ttdeci">bool check_secure_mon_conn(const DoutPrefixProvider *dpp) const</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8cc_source.html#l00399">svc_rados.cc:399</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_a6f26e063fbffe66b7ae464699883ee7d"><div class="ttname"><a href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">RGWServiceInstance::ctx</a></div><div class="ttdeci">CephContext * ctx()</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00044">rgw_service.h:44</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___config_key___r_a_d_o_s_1_1_svc_html_af10263a5fbc86833c1bb2d9d876bdebd"><div class="ttname"><a href="struct_r_g_w_s_i___config_key___r_a_d_o_s_1_1_svc.html#af10263a5fbc86833c1bb2d9d876bdebd">RGWSI_ConfigKey_RADOS::Svc::rados</a></div><div class="ttdeci">RGWSI_RADOS * rados</div><div class="ttdef"><b>Definition</b> <a href="svc__config__key__rados_8h_source.html#l00040">svc_config_key_rados.h:40</a></div></div>
+<div class="ttc" id="asvc__config__key__rados_8h_html"><div class="ttname"><a href="svc__config__key__rados_8h.html">svc_config_key_rados.h</a></div></div>
+<div class="ttc" id="asvc__rados_8h_html"><div class="ttname"><a href="svc__rados_8h.html">svc_rados.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__config__key__rados_8cc.html">svc_config_key_rados.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_otp.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__otp_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_otp.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__otp_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef CEPH_RGW_OTP_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define CEPH_RGW_OTP_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw.html">rgw</a> { <span class="keyword">namespace </span>sal {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>Store;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>} }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;cls/otp/cls_otp_types.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="svc__meta__be__otp_8h.html">services/svc_meta_be_otp.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__basic__types_8h.html">rgw_basic_types.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__metadata_8h.html">rgw_metadata.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_metadata_handler.html">RGWMetadataHandler</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_o_t_p_metadata_handler.html">RGWOTPMetadataHandler</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___o_t_p.html">RGWSI_OTP</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_metadata_handler_base.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_o_t_p_metadata_handler_base.html">RGWOTPMetadataHandlerBase</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_metadata_handler___generic_meta_b_e.html">RGWMetadataHandler_GenericMetaBE</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_metadata_handler_base.html#a528e56d5294b8eda84b4999c18280931">   27</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_r_g_w_o_t_p_metadata_handler_base.html#a528e56d5294b8eda84b4999c18280931">~RGWOTPMetadataHandlerBase</a>() {}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_metadata_handler_base.html#a3737076036d31308a2915008ab082009">   28</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_o_t_p_metadata_handler_base.html#a3737076036d31308a2915008ab082009">init</a>(<a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *zone,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>           <a class="code hl_class" href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a> *_meta_be,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>           <a class="code hl_class" href="class_r_g_w_s_i___o_t_p.html">RGWSI_OTP</a> *_otp) = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_meta_handler_allocator.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_o_t_p_meta_handler_allocator.html">RGWOTPMetaHandlerAllocator</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">static</span> <a class="code hl_class" href="class_r_g_w_metadata_handler.html">RGWMetadataHandler</a> *<a class="code hl_function" href="class_r_g_w_o_t_p_meta_handler_allocator.html#a1fce5c862d557cd0b1528dabb1373b14">alloc</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_info.html">   38</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_o_t_p_info.html">RGWOTPInfo</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_info.html#aaeef8c00d6fef0161f5db4471183922b">   39</a></span>  <a class="code hl_struct" href="structrgw__user.html">rgw_user</a> <a class="code hl_variable" href="struct_r_g_w_o_t_p_info.html#aaeef8c00d6fef0161f5db4471183922b">uid</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_info.html#ab652ada77c977690e23087f66acef125">   40</a></span>  <a class="code hl_typedef" href="svc__meta__be__otp_8h.html#a996174e31d20ca46655aff329105f518">otp_devices_list_t</a> <a class="code hl_variable" href="struct_r_g_w_o_t_p_info.html#ab652ada77c977690e23087f66acef125">devices</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_ctl.html">   44</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_o_t_p_ctl.html">RGWOTPCtl</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_svc.html">   46</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_svc.html">Svc</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_svc.html#ac1f30d6a54ec0754d29af53fbbd5922f">   47</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *<a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_svc.html#ac1f30d6a54ec0754d29af53fbbd5922f">zone</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_svc.html#a0cefeb3dddb75076d03597f4393ec401">   48</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___o_t_p.html">RGWSI_OTP</a> *<a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_svc.html#a0cefeb3dddb75076d03597f4393ec401">otp</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_ctl.html#ab77930e59c33ee5e37bd3376e85d7277">   49</a></span>  } <a class="code hl_variable" href="class_r_g_w_o_t_p_ctl.html#ab77930e59c33ee5e37bd3376e85d7277">svc</a>;</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_ctl.html#aeca0378944fb05b987a77dbf1d8eeea7">   51</a></span>  <a class="code hl_class" href="class_r_g_w_o_t_p_metadata_handler.html">RGWOTPMetadataHandler</a> *<a class="code hl_variable" href="class_r_g_w_o_t_p_ctl.html#aeca0378944fb05b987a77dbf1d8eeea7">meta_handler</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_o_t_p_ctl.html#acb6ccc5620f725be613b992d4bc0515e">   52</a></span>  <a class="code hl_class" href="class_r_g_w_s_i___meta_backend___handler.html">RGWSI_MetaBackend_Handler</a> *<a class="code hl_variable" href="class_r_g_w_o_t_p_ctl.html#acb6ccc5620f725be613b992d4bc0515e">be_handler</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_class" href="class_r_g_w_o_t_p_ctl.html">RGWOTPCtl</a>(<a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *zone_svc,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_class" href="class_r_g_w_s_i___o_t_p.html">RGWSI_OTP</a> *otp_svc);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_o_t_p_ctl.html#a0cac1f24b3e82cc8c5235b49717e9fec">init</a>(<a class="code hl_class" href="class_r_g_w_o_t_p_metadata_handler.html">RGWOTPMetadataHandler</a> *_meta_handler);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html">   60</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html">GetParams</a> {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#a403d7a2b6b2bf2831820a4b6e16340dd">   61</a></span>    <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *<a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#a403d7a2b6b2bf2831820a4b6e16340dd">objv_tracker</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#aa8afa9715053e3dd2614e20138753fcb">   62</a></span>    ceph::real_time *<a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#aa8afa9715053e3dd2614e20138753fcb">mtime</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#aefb3733bc6312e0b528593f14c1dfba0">   64</a></span>    <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#aefb3733bc6312e0b528593f14c1dfba0">GetParams</a>() {}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#ae06eeca58cba75cf0f3cf0b8a39469a4">   66</a></span>    <a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html">GetParams</a>&amp; <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#ae06eeca58cba75cf0f3cf0b8a39469a4">set_objv_tracker</a>(<a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *_objv_tracker) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#a403d7a2b6b2bf2831820a4b6e16340dd">objv_tracker</a> = _objv_tracker;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#a581909e48dbe7dcf2ba9ee859eef9651">   71</a></span>    <a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html">GetParams</a>&amp; <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#a581909e48dbe7dcf2ba9ee859eef9651">set_mtime</a>(ceph::real_time *_mtime) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#aa8afa9715053e3dd2614e20138753fcb">mtime</a> = _mtime;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  };</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="};">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html">   77</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html">PutParams</a> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#af92dbd260f2f1d9eeec347ee246f34ca">   78</a></span>    <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *<a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#af92dbd260f2f1d9eeec347ee246f34ca">objv_tracker</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a5740996dbc6256129589d3ca8a05d544">   79</a></span>    ceph::real_time <a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a5740996dbc6256129589d3ca8a05d544">mtime</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#aa93c145e5cc6144138d590e2a8780792">   81</a></span>    <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#aa93c145e5cc6144138d590e2a8780792">PutParams</a>() {}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a0ca00b7851986c2a0fa2b32929b8a533">   83</a></span>    <a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html">PutParams</a>&amp; <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a0ca00b7851986c2a0fa2b32929b8a533">set_objv_tracker</a>(<a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *_objv_tracker) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#af92dbd260f2f1d9eeec347ee246f34ca">objv_tracker</a> = _objv_tracker;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a6c7e3c63e6c0c6befa2ecc9fcb3957b2">   88</a></span>    <a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html">PutParams</a>&amp; <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a6c7e3c63e6c0c6befa2ecc9fcb3957b2">set_mtime</a>(<span class="keyword">const</span> ceph::real_time&amp; _mtime) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a5740996dbc6256129589d3ca8a05d544">mtime</a> = _mtime;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  };</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="};">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html">   94</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html">RemoveParams</a> {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a51de33dc51383272f813ce795edf800c">   95</a></span>    <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *<a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a51de33dc51383272f813ce795edf800c">objv_tracker</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a92450f599a220994c686ad5b777c03a9">   97</a></span>    <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a92450f599a220994c686ad5b777c03a9">RemoveParams</a>() {}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a5f635800febe7cb8967d027b17d43904">   99</a></span>    <a class="code hl_struct" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html">RemoveParams</a>&amp; <a class="code hl_function" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a5f635800febe7cb8967d027b17d43904">set_objv_tracker</a>(<a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *_objv_tracker) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <a class="code hl_variable" href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a51de33dc51383272f813ce795edf800c">objv_tracker</a> = _objv_tracker;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  };</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_o_t_p_ctl.html#a7b07b486c2f825d1c5692fc816a3d2fb">read_all</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; uid, <a class="code hl_struct" href="struct_r_g_w_o_t_p_info.html">RGWOTPInfo</a> *info, optional_yield y,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>               <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>               <span class="keyword">const</span> GetParams&amp; params = {});</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_o_t_p_ctl.html#a0d3fb33686bbc00911da29e6460076c9">store_all</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_o_t_p_info.html">RGWOTPInfo</a>&amp; info, optional_yield y,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keyword">const</span> PutParams&amp; params = {});</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_o_t_p_ctl.html#ac367814bdcdf4483505c09f140944e74">remove_all</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                 <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, optional_yield y,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                 <span class="keyword">const</span> RemoveParams&amp; params = {});</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>};</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="ttc" id="aclass_r_g_w_metadata_handler___generic_meta_b_e_html"><div class="ttname"><a href="class_r_g_w_metadata_handler___generic_meta_b_e.html">RGWMetadataHandler_GenericMetaBE</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__metadata_8h_source.html#l00105">rgw_metadata.h:105</a></div></div>
+<div class="ttc" id="aclass_r_g_w_metadata_handler_html"><div class="ttname"><a href="class_r_g_w_metadata_handler.html">RGWMetadataHandler</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__metadata_8h_source.html#l00057">rgw_metadata.h:57</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html">RGWOTPCtl</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00044">rgw_otp.h:45</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html_a0cac1f24b3e82cc8c5235b49717e9fec"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html#a0cac1f24b3e82cc8c5235b49717e9fec">RGWOTPCtl::init</a></div><div class="ttdeci">void init(RGWOTPMetadataHandler *_meta_handler)</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8cc_source.html#l00169">rgw_otp.cc:169</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html_a0d3fb33686bbc00911da29e6460076c9"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html#a0d3fb33686bbc00911da29e6460076c9">RGWOTPCtl::store_all</a></div><div class="ttdeci">int store_all(const DoutPrefixProvider *dpp, const RGWOTPInfo &amp;info, optional_yield y, const PutParams &amp;params={})</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8cc_source.html#l00187">rgw_otp.cc:187</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html_a7b07b486c2f825d1c5692fc816a3d2fb"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html#a7b07b486c2f825d1c5692fc816a3d2fb">RGWOTPCtl::read_all</a></div><div class="ttdeci">int read_all(const rgw_user &amp;uid, RGWOTPInfo *info, optional_yield y, const DoutPrefixProvider *dpp, const GetParams &amp;params={})</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8cc_source.html#l00175">rgw_otp.cc:175</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html_ab77930e59c33ee5e37bd3376e85d7277"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html#ab77930e59c33ee5e37bd3376e85d7277">RGWOTPCtl::svc</a></div><div class="ttdeci">struct RGWOTPCtl::Svc svc</div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html_ac367814bdcdf4483505c09f140944e74"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html#ac367814bdcdf4483505c09f140944e74">RGWOTPCtl::remove_all</a></div><div class="ttdeci">int remove_all(const DoutPrefixProvider *dpp, const rgw_user &amp;user, optional_yield y, const RemoveParams &amp;params={})</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8cc_source.html#l00197">rgw_otp.cc:197</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html_acb6ccc5620f725be613b992d4bc0515e"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html#acb6ccc5620f725be613b992d4bc0515e">RGWOTPCtl::be_handler</a></div><div class="ttdeci">RGWSI_MetaBackend_Handler * be_handler</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00052">rgw_otp.h:52</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_ctl_html_aeca0378944fb05b987a77dbf1d8eeea7"><div class="ttname"><a href="class_r_g_w_o_t_p_ctl.html#aeca0378944fb05b987a77dbf1d8eeea7">RGWOTPCtl::meta_handler</a></div><div class="ttdeci">RGWOTPMetadataHandler * meta_handler</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00051">rgw_otp.h:51</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_meta_handler_allocator_html"><div class="ttname"><a href="class_r_g_w_o_t_p_meta_handler_allocator.html">RGWOTPMetaHandlerAllocator</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00033">rgw_otp.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_meta_handler_allocator_html_a1fce5c862d557cd0b1528dabb1373b14"><div class="ttname"><a href="class_r_g_w_o_t_p_meta_handler_allocator.html#a1fce5c862d557cd0b1528dabb1373b14">RGWOTPMetaHandlerAllocator::alloc</a></div><div class="ttdeci">static RGWMetadataHandler * alloc()</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8cc_source.html#l00208">rgw_otp.cc:208</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_metadata_handler_base_html"><div class="ttname"><a href="class_r_g_w_o_t_p_metadata_handler_base.html">RGWOTPMetadataHandlerBase</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00025">rgw_otp.h:25</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_metadata_handler_base_html_a3737076036d31308a2915008ab082009"><div class="ttname"><a href="class_r_g_w_o_t_p_metadata_handler_base.html#a3737076036d31308a2915008ab082009">RGWOTPMetadataHandlerBase::init</a></div><div class="ttdeci">virtual int init(RGWSI_Zone *zone, RGWSI_MetaBackend *_meta_be, RGWSI_OTP *_otp)=0</div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_metadata_handler_base_html_a528e56d5294b8eda84b4999c18280931"><div class="ttname"><a href="class_r_g_w_o_t_p_metadata_handler_base.html#a528e56d5294b8eda84b4999c18280931">RGWOTPMetadataHandlerBase::~RGWOTPMetadataHandlerBase</a></div><div class="ttdeci">virtual ~RGWOTPMetadataHandlerBase()</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00027">rgw_otp.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_o_t_p_metadata_handler_html"><div class="ttname"><a href="class_r_g_w_o_t_p_metadata_handler.html">RGWOTPMetadataHandler</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8cc_source.html#l00057">rgw_otp.cc:57</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend___handler_html"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend___handler.html">RGWSI_MetaBackend_Handler</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be_8h_source.html#l00214">svc_meta_be.h:214</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___meta_backend_html"><div class="ttname"><a href="class_r_g_w_s_i___meta_backend.html">RGWSI_MetaBackend</a></div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be_8h_source.html#l00032">svc_meta_be.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___o_t_p_html"><div class="ttname"><a href="class_r_g_w_s_i___o_t_p.html">RGWSI_OTP</a></div><div class="ttdef"><b>Definition</b> <a href="svc__otp_8h_source.html#l00029">svc_otp.h:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html"><div class="ttname"><a href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a></div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8h_source.html#l00027">svc_zone.h:28</a></div></div>
+<div class="ttc" id="anamespacergw_html"><div class="ttname"><a href="namespacergw.html">rgw</a></div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00038">cls_fifo_legacy.cc:38</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__basic__types_8h_html"><div class="ttname"><a href="rgw__basic__types_8h.html">rgw_basic_types.h</a></div></div>
+<div class="ttc" id="argw__metadata_8h_html"><div class="ttname"><a href="rgw__metadata_8h.html">rgw_metadata.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_get_params_html"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html">RGWOTPCtl::GetParams</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00060">rgw_otp.h:60</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_get_params_html_a403d7a2b6b2bf2831820a4b6e16340dd"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#a403d7a2b6b2bf2831820a4b6e16340dd">RGWOTPCtl::GetParams::objv_tracker</a></div><div class="ttdeci">RGWObjVersionTracker * objv_tracker</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00061">rgw_otp.h:61</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_get_params_html_a581909e48dbe7dcf2ba9ee859eef9651"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#a581909e48dbe7dcf2ba9ee859eef9651">RGWOTPCtl::GetParams::set_mtime</a></div><div class="ttdeci">GetParams &amp; set_mtime(ceph::real_time *_mtime)</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00071">rgw_otp.h:71</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_get_params_html_aa8afa9715053e3dd2614e20138753fcb"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#aa8afa9715053e3dd2614e20138753fcb">RGWOTPCtl::GetParams::mtime</a></div><div class="ttdeci">ceph::real_time * mtime</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00062">rgw_otp.h:62</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_get_params_html_ae06eeca58cba75cf0f3cf0b8a39469a4"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#ae06eeca58cba75cf0f3cf0b8a39469a4">RGWOTPCtl::GetParams::set_objv_tracker</a></div><div class="ttdeci">GetParams &amp; set_objv_tracker(RGWObjVersionTracker *_objv_tracker)</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00066">rgw_otp.h:66</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_get_params_html_aefb3733bc6312e0b528593f14c1dfba0"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_get_params.html#aefb3733bc6312e0b528593f14c1dfba0">RGWOTPCtl::GetParams::GetParams</a></div><div class="ttdeci">GetParams()</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00064">rgw_otp.h:64</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_put_params_html"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html">RGWOTPCtl::PutParams</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00077">rgw_otp.h:77</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_put_params_html_a0ca00b7851986c2a0fa2b32929b8a533"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a0ca00b7851986c2a0fa2b32929b8a533">RGWOTPCtl::PutParams::set_objv_tracker</a></div><div class="ttdeci">PutParams &amp; set_objv_tracker(RGWObjVersionTracker *_objv_tracker)</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00083">rgw_otp.h:83</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_put_params_html_a5740996dbc6256129589d3ca8a05d544"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a5740996dbc6256129589d3ca8a05d544">RGWOTPCtl::PutParams::mtime</a></div><div class="ttdeci">ceph::real_time mtime</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00079">rgw_otp.h:79</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_put_params_html_a6c7e3c63e6c0c6befa2ecc9fcb3957b2"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#a6c7e3c63e6c0c6befa2ecc9fcb3957b2">RGWOTPCtl::PutParams::set_mtime</a></div><div class="ttdeci">PutParams &amp; set_mtime(const ceph::real_time &amp;_mtime)</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00088">rgw_otp.h:88</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_put_params_html_aa93c145e5cc6144138d590e2a8780792"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#aa93c145e5cc6144138d590e2a8780792">RGWOTPCtl::PutParams::PutParams</a></div><div class="ttdeci">PutParams()</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00081">rgw_otp.h:81</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_put_params_html_af92dbd260f2f1d9eeec347ee246f34ca"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_put_params.html#af92dbd260f2f1d9eeec347ee246f34ca">RGWOTPCtl::PutParams::objv_tracker</a></div><div class="ttdeci">RGWObjVersionTracker * objv_tracker</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00078">rgw_otp.h:78</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_remove_params_html"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html">RGWOTPCtl::RemoveParams</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00094">rgw_otp.h:94</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_remove_params_html_a51de33dc51383272f813ce795edf800c"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a51de33dc51383272f813ce795edf800c">RGWOTPCtl::RemoveParams::objv_tracker</a></div><div class="ttdeci">RGWObjVersionTracker * objv_tracker</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00095">rgw_otp.h:95</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_remove_params_html_a5f635800febe7cb8967d027b17d43904"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a5f635800febe7cb8967d027b17d43904">RGWOTPCtl::RemoveParams::set_objv_tracker</a></div><div class="ttdeci">RemoveParams &amp; set_objv_tracker(RGWObjVersionTracker *_objv_tracker)</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00099">rgw_otp.h:99</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_remove_params_html_a92450f599a220994c686ad5b777c03a9"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_remove_params.html#a92450f599a220994c686ad5b777c03a9">RGWOTPCtl::RemoveParams::RemoveParams</a></div><div class="ttdeci">RemoveParams()</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00097">rgw_otp.h:97</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_svc_html"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_svc.html">RGWOTPCtl::Svc</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00046">rgw_otp.h:46</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_svc_html_a0cefeb3dddb75076d03597f4393ec401"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_svc.html#a0cefeb3dddb75076d03597f4393ec401">RGWOTPCtl::Svc::otp</a></div><div class="ttdeci">RGWSI_OTP * otp</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00048">rgw_otp.h:48</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_ctl_1_1_svc_html_ac1f30d6a54ec0754d29af53fbbd5922f"><div class="ttname"><a href="struct_r_g_w_o_t_p_ctl_1_1_svc.html#ac1f30d6a54ec0754d29af53fbbd5922f">RGWOTPCtl::Svc::zone</a></div><div class="ttdeci">RGWSI_Zone * zone</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00047">rgw_otp.h:47</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_info_html"><div class="ttname"><a href="struct_r_g_w_o_t_p_info.html">RGWOTPInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00038">rgw_otp.h:38</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_info_html_aaeef8c00d6fef0161f5db4471183922b"><div class="ttname"><a href="struct_r_g_w_o_t_p_info.html#aaeef8c00d6fef0161f5db4471183922b">RGWOTPInfo::uid</a></div><div class="ttdeci">rgw_user uid</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00039">rgw_otp.h:39</a></div></div>
+<div class="ttc" id="astruct_r_g_w_o_t_p_info_html_ab652ada77c977690e23087f66acef125"><div class="ttname"><a href="struct_r_g_w_o_t_p_info.html#ab652ada77c977690e23087f66acef125">RGWOTPInfo::devices</a></div><div class="ttdeci">otp_devices_list_t devices</div><div class="ttdef"><b>Definition</b> <a href="rgw__otp_8h_source.html#l00040">rgw_otp.h:40</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01004">rgw_common.h:1004</a></div></div>
+<div class="ttc" id="astructrgw__user_html"><div class="ttname"><a href="structrgw__user.html">rgw_user</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00014">rgw_basic_types.h:14</a></div></div>
+<div class="ttc" id="asvc__meta__be__otp_8h_html"><div class="ttname"><a href="svc__meta__be__otp_8h.html">svc_meta_be_otp.h</a></div></div>
+<div class="ttc" id="asvc__meta__be__otp_8h_html_a996174e31d20ca46655aff329105f518"><div class="ttname"><a href="svc__meta__be__otp_8h.html#a996174e31d20ca46655aff329105f518">otp_devices_list_t</a></div><div class="ttdeci">std::list&lt; rados::cls::otp::otp_info_t &gt; otp_devices_list_t</div><div class="ttdef"><b>Definition</b> <a href="svc__meta__be__otp_8h_source.html#l00032">svc_meta_be_otp.h:32</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__otp_8h.html">rgw_otp.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

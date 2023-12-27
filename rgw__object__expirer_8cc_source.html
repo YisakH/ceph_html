@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_object_expirer.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__object__expirer_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_object_expirer.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__object__expirer_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;auth/Crypto.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;common/armor.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;common/ceph_json.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;common/config.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;common/ceph_argparse.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;common/Formatter.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;common/errno.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;global/global_init.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;include/utime.h&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;include/str_list.h&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__user_8h.html">rgw_user.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__bucket_8h.html">rgw_bucket.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__acl_8h.html">rgw_acl.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__acl__s3_8h.html">rgw_acl_s3.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__log_8h.html">rgw_log.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__formats_8h.html">rgw_formats.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__usage_8h.html">rgw_usage.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__object__expirer__core_8h.html">rgw_object_expirer_core.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="rgw__object__expirer_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   33</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="rgw__object__expirer_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">   35</a></span><span class="keyword">static</span> <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__object__expirer_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a> = NULL;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">class </span><a class="code hl_class" href="class_store_destructor.html">StoreDestructor</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="class_store_destructor.html#a947a0d46c6ad3ff07e82b38fdc85bd23">store</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_store_destructor.html#ad2732fb791a7b8847efef5d1258ec707">   41</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_store_destructor.html#ad2732fb791a7b8847efef5d1258ec707">StoreDestructor</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* _s) : <a class="code hl_variable" href="class_store_destructor.html#a947a0d46c6ad3ff07e82b38fdc85bd23">store</a>(_s) {}</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_store_destructor.html#a3d2034186fc407f9f80c8646d9982420">   42</a></span>  <a class="code hl_function" href="class_store_destructor.html#a3d2034186fc407f9f80c8646d9982420">~StoreDestructor</a>() {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_store_destructor.html#a947a0d46c6ad3ff07e82b38fdc85bd23">store</a>) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <a class="code hl_function" href="class_store_manager.html#a5ab8535e378d2b8472c6b2d241d34feb">StoreManager::close_storage</a>(<a class="code hl_variable" href="class_store_destructor.html#a947a0d46c6ad3ff07e82b38fdc85bd23">store</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="rgw__object__expirer_8cc.html#a64a6014565bb3e03294ec4a952d5add0">   49</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__object__expirer_8cc.html#a64a6014565bb3e03294ec4a952d5add0">usage</a>()</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  generic_server_usage();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="rgw__object__expirer_8cc.html#ac762d48b889bd832ec0d42abcbc50624">   54</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="rgw__object__expirer_8cc.html#ac762d48b889bd832ec0d42abcbc50624">main</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span> **argv)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">auto</span> <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a> = argv_to_vec(argc, argv);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>.empty()) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    cerr &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot;: -h or --help for usage&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    exit(1);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">if</span> (ceph_argparse_need_usage(<a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>)) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="rgw__object__expirer_8cc.html#a64a6014565bb3e03294ec4a952d5add0">usage</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    exit(0);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">auto</span> <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a> = global_init(NULL, <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>, CEPH_ENTITY_TYPE_CLIENT,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>             CODE_ENVIRONMENT_DAEMON,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>             CINIT_FLAG_UNPRIVILEGED_DAEMON_DEFAULTS);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">for</span> (std::vector&lt;const char *&gt;::iterator i = <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>.begin(); i != <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>.end(); ) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (ceph_argparse_double_dash(<a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>, i)) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">if</span> (g_conf()-&gt;daemonize) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    global_init_daemonize(g_ceph_context);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  common_init_finish(g_ceph_context);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">const</span> DoutPrefix dp(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>.get(), <a class="code hl_define" href="rgw__object__expirer_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>, <span class="stringliteral">&quot;rgw object expirer: &quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_variable" href="rgw__object__expirer_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a> = <a class="code hl_function" href="class_store_manager.html#a6016d182f49b4faa12cd67e0d1e0f90b">StoreManager::get_storage</a>(&amp;dp, g_ceph_context, <span class="stringliteral">&quot;rados&quot;</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="rgw__object__expirer_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;couldn&#39;t init storage provider&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> EIO;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="comment">/* Guard to not forget about closing the rados store. */</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_class" href="class_store_destructor.html">StoreDestructor</a> store_dtor(<a class="code hl_variable" href="rgw__object__expirer_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <a class="code hl_class" href="class_r_g_w_object_expirer.html">RGWObjectExpirer</a> objexp(<a class="code hl_variable" href="rgw__object__expirer_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  objexp.<a class="code hl_function" href="class_r_g_w_object_expirer.html#a2d8d78c2114d069cf23e89b5890bceb7">start_processor</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keyword">const</span> utime_t interval(g_ceph_context-&gt;_conf-&gt;rgw_objexp_gc_interval, 0);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    interval.sleep();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="comment">/* unreachable */</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_html"><div class="ttname"><a href="class_r_g_w_object_expirer.html">RGWObjectExpirer</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8h_source.html#l00076">rgw_object_expirer_core.h:76</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_expirer_html_a2d8d78c2114d069cf23e89b5890bceb7"><div class="ttname"><a href="class_r_g_w_object_expirer.html#a2d8d78c2114d069cf23e89b5890bceb7">RGWObjectExpirer::start_processor</a></div><div class="ttdeci">void start_processor()</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8cc_source.html#l00376">rgw_object_expirer_core.cc:376</a></div></div>
+<div class="ttc" id="aclass_store_destructor_html"><div class="ttname"><a href="class_store_destructor.html">StoreDestructor</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l01162">rgw_admin.cc:1162</a></div></div>
+<div class="ttc" id="aclass_store_destructor_html_a3d2034186fc407f9f80c8646d9982420"><div class="ttname"><a href="class_store_destructor.html#a3d2034186fc407f9f80c8646d9982420">StoreDestructor::~StoreDestructor</a></div><div class="ttdeci">~StoreDestructor()</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer_8cc_source.html#l00042">rgw_object_expirer.cc:42</a></div></div>
+<div class="ttc" id="aclass_store_destructor_html_a947a0d46c6ad3ff07e82b38fdc85bd23"><div class="ttname"><a href="class_store_destructor.html#a947a0d46c6ad3ff07e82b38fdc85bd23">StoreDestructor::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l01163">rgw_admin.cc:1163</a></div></div>
+<div class="ttc" id="aclass_store_destructor_html_ad2732fb791a7b8847efef5d1258ec707"><div class="ttname"><a href="class_store_destructor.html#ad2732fb791a7b8847efef5d1258ec707">StoreDestructor::StoreDestructor</a></div><div class="ttdeci">StoreDestructor(rgw::sal::Store *_s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer_8cc_source.html#l00041">rgw_object_expirer.cc:41</a></div></div>
+<div class="ttc" id="aclass_store_manager_html_a5ab8535e378d2b8472c6b2d241d34feb"><div class="ttname"><a href="class_store_manager.html#a5ab8535e378d2b8472c6b2d241d34feb">StoreManager::close_storage</a></div><div class="ttdeci">static void close_storage(rgw::sal::Store *store)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8cc_source.html#l00139">rgw_sal.cc:139</a></div></div>
+<div class="ttc" id="aclass_store_manager_html_a6016d182f49b4faa12cd67e0d1e0f90b"><div class="ttname"><a href="class_store_manager.html#a6016d182f49b4faa12cd67e0d1e0f90b">StoreManager::get_storage</a></div><div class="ttdeci">static rgw::sal::Store * get_storage(const DoutPrefixProvider *dpp, CephContext *cct, const std::string svc, bool use_gc_thread, bool use_lc_thread, bool quota_threads, bool run_sync_thread, bool run_reshard_thread, bool use_cache=true, bool use_gc=true)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l01460">rgw_sal.h:1460</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="adbstore__tests_8cc_html_a3284f7a2d0ea04744ec7605cbacce0de"><div class="ttname"><a href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a></div><div class="ttdeci">vector&lt; const char * &gt; args</div><div class="ttdef"><b>Definition</b> <a href="dbstore__tests_8cc_source.html#l00014">dbstore_tests.cc:14</a></div></div>
+<div class="ttc" id="argw__acl_8h_html"><div class="ttname"><a href="rgw__acl_8h.html">rgw_acl.h</a></div></div>
+<div class="ttc" id="argw__acl__s3_8h_html"><div class="ttname"><a href="rgw__acl__s3_8h.html">rgw_acl_s3.h</a></div></div>
+<div class="ttc" id="argw__bucket_8h_html"><div class="ttname"><a href="rgw__bucket_8h.html">rgw_bucket.h</a></div></div>
+<div class="ttc" id="argw__formats_8h_html"><div class="ttname"><a href="rgw__formats_8h.html">rgw_formats.h</a></div></div>
+<div class="ttc" id="argw__log_8h_html"><div class="ttname"><a href="rgw__log_8h.html">rgw_log.h</a></div></div>
+<div class="ttc" id="argw__object__expirer_8cc_html_a5580a2b7c4743669bb9ca22b07e84324"><div class="ttname"><a href="rgw__object__expirer_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a></div><div class="ttdeci">#define dout_subsys</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer_8cc_source.html#l00033">rgw_object_expirer.cc:33</a></div></div>
+<div class="ttc" id="argw__object__expirer_8cc_html_a64a6014565bb3e03294ec4a952d5add0"><div class="ttname"><a href="rgw__object__expirer_8cc.html#a64a6014565bb3e03294ec4a952d5add0">usage</a></div><div class="ttdeci">static void usage()</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer_8cc_source.html#l00049">rgw_object_expirer.cc:49</a></div></div>
+<div class="ttc" id="argw__object__expirer_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__object__expirer_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer_8cc_source.html#l00035">rgw_object_expirer.cc:35</a></div></div>
+<div class="ttc" id="argw__object__expirer_8cc_html_ac762d48b889bd832ec0d42abcbc50624"><div class="ttname"><a href="rgw__object__expirer_8cc.html#ac762d48b889bd832ec0d42abcbc50624">main</a></div><div class="ttdeci">int main(const int argc, const char **argv)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer_8cc_source.html#l00054">rgw_object_expirer.cc:54</a></div></div>
+<div class="ttc" id="argw__object__expirer__core_8h_html"><div class="ttname"><a href="rgw__object__expirer__core_8h.html">rgw_object_expirer_core.h</a></div></div>
+<div class="ttc" id="argw__usage_8h_html"><div class="ttname"><a href="rgw__usage_8h.html">rgw_usage.h</a></div></div>
+<div class="ttc" id="argw__user_8h_html"><div class="ttname"><a href="rgw__user_8h.html">rgw_user.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__object__expirer_8cc.html">rgw_object_expirer.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

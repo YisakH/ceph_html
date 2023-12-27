@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_cors.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__cors_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_cors.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__cors_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*- </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Copyright (C) 2013 eNovance SAS &lt;licensing@enovance.com&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * License version 2.1, as published by the Free Software</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Foundation. See file COPYING.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifndef CEPH_RGW_CORS_H</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define CEPH_RGW_CORS_H</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;include/types.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#a0dc5c217bda31fe72985ef275f3ad0cc">   23</a></span><span class="preprocessor">#define RGW_CORS_GET    0x1</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#aaee71e6abcc387b2fa6059bd967e786a">   24</a></span><span class="preprocessor">#define RGW_CORS_PUT    0x2</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#a1aee2ca1cb47ea9ba5fb2fc3d2e4262d">   25</a></span><span class="preprocessor">#define RGW_CORS_HEAD   0x4</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#ae3a8e4cf4c152d9ba758f91e6e35eafc">   26</a></span><span class="preprocessor">#define RGW_CORS_POST   0x8</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#af148167a491ba48635fbd6165f625fa0">   27</a></span><span class="preprocessor">#define RGW_CORS_DELETE 0x10</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#a7e5cab0f112f3a7e2a47af63ba0cfa39">   28</a></span><span class="preprocessor">#define RGW_CORS_COPY   0x20</span></div>
+<div class="foldopen" id="foldopen00029" data-start="" data-end="">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#add64e059dd5132b25452483bd7486899">   29</a></span><span class="preprocessor">#define RGW_CORS_ALL    (RGW_CORS_GET    |  \</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">                         RGW_CORS_PUT    |  \</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">                         RGW_CORS_HEAD   |  \</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">                         RGW_CORS_POST   |  \</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">                         RGW_CORS_DELETE |  \</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">                         RGW_CORS_COPY)</span></div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#a6487ef5fd13c00e1604960908d6d1127">   36</a></span><span class="preprocessor">#define CORS_MAX_AGE_INVALID ((uint32_t)-1)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html">   38</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_c_o_r_s_rule.html">RGWCORSRule</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">   41</a></span>  uint32_t       <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">max_age</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">   42</a></span>  uint8_t        <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">allowed_methods</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a483289f07cf6d18cc32144728966c115">   43</a></span>  std::string         <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a483289f07cf6d18cc32144728966c115">id</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#af1766069d72888ef01b0dcd9b4bf5c5f">   44</a></span>  std::set&lt;std::string&gt; <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#af1766069d72888ef01b0dcd9b4bf5c5f">allowed_hdrs</a>; <span class="comment">/* If you change this, you need to discard lowercase_allowed_hdrs */</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a8bb4477625eabea4da645432aaed142f">   45</a></span>  std::set&lt;std::string&gt; <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a8bb4477625eabea4da645432aaed142f">lowercase_allowed_hdrs</a>; <span class="comment">/* Not built until needed in RGWCORSRule::is_header_allowed */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a8650b52b021bdaebc8fb92b594ef7315">   46</a></span>  std::set&lt;std::string&gt; <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a8650b52b021bdaebc8fb92b594ef7315">allowed_origins</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#ace1dda9df2f87cf34bbd33d81576e5a1">   47</a></span>  std::list&lt;std::string&gt; <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ace1dda9df2f87cf34bbd33d81576e5a1">exposable_hdrs</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a79de7018e9331d70c145b99971f53dc4">   50</a></span>  <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a79de7018e9331d70c145b99971f53dc4">RGWCORSRule</a>() : <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">max_age</a>(<a class="code hl_define" href="rgw__cors_8h.html#a6487ef5fd13c00e1604960908d6d1127">CORS_MAX_AGE_INVALID</a>),<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">allowed_methods</a>(0) {}</div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a55e8f9386703f11da017dd6e5f8b6d7b">   51</a></span>  <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a55e8f9386703f11da017dd6e5f8b6d7b">RGWCORSRule</a>(std::set&lt;std::string&gt;&amp; o, std::set&lt;std::string&gt;&amp; <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a68310108dc1113b2ef0e243d11e5b10d">h</a>,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>              std::list&lt;std::string&gt;&amp; e, uint8_t f, uint32_t a)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      :<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">max_age</a>(a),</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>       <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">allowed_methods</a>(f),</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>       <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#af1766069d72888ef01b0dcd9b4bf5c5f">allowed_hdrs</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a68310108dc1113b2ef0e243d11e5b10d">h</a>),</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>       <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a8650b52b021bdaebc8fb92b594ef7315">allowed_origins</a>(o),</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>       <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ace1dda9df2f87cf34bbd33d81576e5a1">exposable_hdrs</a>(e) {}</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a479fc7b3c7847b78387e24205ab8cb04">   58</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a479fc7b3c7847b78387e24205ab8cb04">~RGWCORSRule</a>() {}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#aa1368a3f046a196fd8fa1b5d570a076c">   60</a></span>  std::string&amp; <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#aa1368a3f046a196fd8fa1b5d570a076c">get_id</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a483289f07cf6d18cc32144728966c115">id</a>; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a209998f70f18bc041ee2cc42489d14d5">   61</a></span>  uint32_t <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a209998f70f18bc041ee2cc42489d14d5">get_max_age</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">max_age</a>; }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a5c835c04152898e4ccda92c57f19d16e">   62</a></span>  uint8_t <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a5c835c04152898e4ccda92c57f19d16e">get_allowed_methods</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">allowed_methods</a>; }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">   64</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">encode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">max_age</a>, bl);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">encode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">allowed_methods</a>, bl);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">encode</a>(<span class="keywordtype">id</span>, bl);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">encode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#af1766069d72888ef01b0dcd9b4bf5c5f">allowed_hdrs</a>, bl);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">encode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a8650b52b021bdaebc8fb92b594ef7315">allowed_origins</a>, bl);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">encode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ace1dda9df2f87cf34bbd33d81576e5a1">exposable_hdrs</a>, bl);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">   74</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">decode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">max_age</a>, bl);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">decode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">allowed_methods</a>, bl);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">decode</a>(<span class="keywordtype">id</span>, bl);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">decode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#af1766069d72888ef01b0dcd9b4bf5c5f">allowed_hdrs</a>, bl);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">decode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#a8650b52b021bdaebc8fb92b594ef7315">allowed_origins</a>, bl);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">decode</a>(<a class="code hl_variable" href="class_r_g_w_c_o_r_s_rule.html#ace1dda9df2f87cf34bbd33d81576e5a1">exposable_hdrs</a>, bl);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a296839db405fe34e545b10cfb76382fa">has_wildcard_origin</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#ad2d3b167abd721830ce03ab23654c057">is_origin_present</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *o);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a67621eece0c573974793658ef34954c5">format_exp_headers</a>(std::string&amp; s);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a433e27d352eb725b82cee86ba8271ae5">erase_origin_if_present</a>(std::string&amp; origin, <span class="keywordtype">bool</span> *rule_empty);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a61e7be78a63f68bd7e290152b6b9d3cc">dump_origins</a>(); </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_rule.html#aa21b0fdcb87352a43e126d3d42de6a6f">   89</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#aa21b0fdcb87352a43e126d3d42de6a6f">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_rule.html#a1300044dbbc29c8f0c9b458ac5c13baf">is_header_allowed</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *hdr, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_class" href="class_r_g_w_c_o_r_s_rule.html">RGWCORSRule</a>)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="};">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html">   94</a></span>class <a class="code hl_class" href="class_r_g_w_c_o_r_s_configuration.html">RGWCORSConfiguration</a></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#a10732164b6934759f546f524cb5da34f">   97</a></span>    std::list&lt;RGWCORSRule&gt; <a class="code hl_variable" href="class_r_g_w_c_o_r_s_configuration.html#a10732164b6934759f546f524cb5da34f">rules</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#a69c03ab78a643c75ef0a192ef48d22e9">   99</a></span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#a69c03ab78a643c75ef0a192ef48d22e9">RGWCORSConfiguration</a>() {}</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#aeef14ef8030fad150871dd262ab61352">  100</a></span>    <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#aeef14ef8030fad150871dd262ab61352">~RGWCORSConfiguration</a>() {}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#a34e0790fd43d68bf6c812755df487378">  102</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#a34e0790fd43d68bf6c812755df487378">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a>(rules, bl);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#adb5ceb67eb100e22b703f5d95a7f5ade">  107</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#adb5ceb67eb100e22b703f5d95a7f5ade">decode</a>(bufferlist::const_iterator&amp; bl) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    DECODE_START(1, bl);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(rules, bl);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    DECODE_FINISH(bl);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#a5142f3e8a2b35227505566d00691d7c4">  112</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#a5142f3e8a2b35227505566d00691d7c4">dump</a>(Formatter *f) <span class="keyword">const</span>;</div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#a58b20c3e5091af31f87e86445c70fee5">  113</a></span>  std::list&lt;RGWCORSRule&gt;&amp; <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#a58b20c3e5091af31f87e86445c70fee5">get_rules</a>() {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> rules;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#a65a77ed6d0847492db80d921efe73181">  116</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#a65a77ed6d0847492db80d921efe73181">is_empty</a>() {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> rules.empty();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#af63c7fa50a91e6958ddc58efdd9a955b">  119</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#af63c7fa50a91e6958ddc58efdd9a955b">get_origins_list</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *origin, std::list&lt;std::string&gt;&amp; origins);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <a class="code hl_class" href="class_r_g_w_c_o_r_s_rule.html">RGWCORSRule</a> * host_name_rule(<span class="keyword">const</span> <span class="keywordtype">char</span> *origin);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordtype">void</span> erase_host_name_rule(std::string&amp; origin);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a>();</div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_r_g_w_c_o_r_s_configuration.html#afa8888f012b644cef0a0b249288f1bb4">  123</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_c_o_r_s_configuration.html#afa8888f012b644cef0a0b249288f1bb4">stack_rule</a>(<a class="code hl_class" href="class_r_g_w_c_o_r_s_rule.html">RGWCORSRule</a>&amp; <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    rules.push_front(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>);    </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>};</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><a class="code hl_function" href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a>(<a class="code hl_class" href="class_r_g_w_c_o_r_s_configuration.html">RGWCORSConfiguration</a>)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="rgw__cors_8h.html#a5857fb8d9c316f2ce61bc359f92b9de6">  129</a></span>static inline <span class="keywordtype">int</span> <a class="code hl_function" href="rgw__cors_8h.html#a5857fb8d9c316f2ce61bc359f92b9de6">validate_name_string</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::string_view o) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordflow">if</span> (o.length() == 0)</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordflow">if</span> (o.find_first_of(<span class="stringliteral">&quot;*&quot;</span>) != o.find_last_of(<span class="stringliteral">&quot;*&quot;</span>))</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif </span><span class="comment">/*CEPH_RGW_CORS_H*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html">RGWCORSConfiguration</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00094">rgw_cors.h:95</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_a10732164b6934759f546f524cb5da34f"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#a10732164b6934759f546f524cb5da34f">RGWCORSConfiguration::rules</a></div><div class="ttdeci">std::list&lt; RGWCORSRule &gt; rules</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00097">rgw_cors.h:97</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_a34e0790fd43d68bf6c812755df487378"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#a34e0790fd43d68bf6c812755df487378">RGWCORSConfiguration::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00102">rgw_cors.h:102</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_a5142f3e8a2b35227505566d00691d7c4"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#a5142f3e8a2b35227505566d00691d7c4">RGWCORSConfiguration::dump</a></div><div class="ttdeci">void dump(Formatter *f) const</div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_a58b20c3e5091af31f87e86445c70fee5"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#a58b20c3e5091af31f87e86445c70fee5">RGWCORSConfiguration::get_rules</a></div><div class="ttdeci">std::list&lt; RGWCORSRule &gt; &amp; get_rules()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00113">rgw_cors.h:113</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_a65a77ed6d0847492db80d921efe73181"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#a65a77ed6d0847492db80d921efe73181">RGWCORSConfiguration::is_empty</a></div><div class="ttdeci">bool is_empty()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00116">rgw_cors.h:116</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_a69c03ab78a643c75ef0a192ef48d22e9"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#a69c03ab78a643c75ef0a192ef48d22e9">RGWCORSConfiguration::RGWCORSConfiguration</a></div><div class="ttdeci">RGWCORSConfiguration()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00099">rgw_cors.h:99</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_adb5ceb67eb100e22b703f5d95a7f5ade"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#adb5ceb67eb100e22b703f5d95a7f5ade">RGWCORSConfiguration::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00107">rgw_cors.h:107</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_aeef14ef8030fad150871dd262ab61352"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#aeef14ef8030fad150871dd262ab61352">RGWCORSConfiguration::~RGWCORSConfiguration</a></div><div class="ttdeci">~RGWCORSConfiguration()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00100">rgw_cors.h:100</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_af63c7fa50a91e6958ddc58efdd9a955b"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#af63c7fa50a91e6958ddc58efdd9a955b">RGWCORSConfiguration::get_origins_list</a></div><div class="ttdeci">void get_origins_list(const char *origin, std::list&lt; std::string &gt; &amp;origins)</div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_configuration_html_afa8888f012b644cef0a0b249288f1bb4"><div class="ttname"><a href="class_r_g_w_c_o_r_s_configuration.html#afa8888f012b644cef0a0b249288f1bb4">RGWCORSConfiguration::stack_rule</a></div><div class="ttdeci">void stack_rule(RGWCORSRule &amp;r)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00123">rgw_cors.h:123</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html">RGWCORSRule</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00038">rgw_cors.h:39</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a0e91c5635f14665bdedc40c70d7780d7"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a0e91c5635f14665bdedc40c70d7780d7">RGWCORSRule::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00064">rgw_cors.h:64</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a1300044dbbc29c8f0c9b458ac5c13baf"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a1300044dbbc29c8f0c9b458ac5c13baf">RGWCORSRule::is_header_allowed</a></div><div class="ttdeci">bool is_header_allowed(const char *hdr, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8cc_source.html#l00134">rgw_cors.cc:134</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a209998f70f18bc041ee2cc42489d14d5"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a209998f70f18bc041ee2cc42489d14d5">RGWCORSRule::get_max_age</a></div><div class="ttdeci">uint32_t get_max_age()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00061">rgw_cors.h:61</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a296839db405fe34e545b10cfb76382fa"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a296839db405fe34e545b10cfb76382fa">RGWCORSRule::has_wildcard_origin</a></div><div class="ttdeci">bool has_wildcard_origin()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8cc_source.html#l00122">rgw_cors.cc:122</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a433e27d352eb725b82cee86ba8271ae5"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a433e27d352eb725b82cee86ba8271ae5">RGWCORSRule::erase_origin_if_present</a></div><div class="ttdeci">void erase_origin_if_present(std::string &amp;origin, bool *rule_empty)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8cc_source.html#l00043">rgw_cors.cc:43</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a479fc7b3c7847b78387e24205ab8cb04"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a479fc7b3c7847b78387e24205ab8cb04">RGWCORSRule::~RGWCORSRule</a></div><div class="ttdeci">virtual ~RGWCORSRule()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00058">rgw_cors.h:58</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a483289f07cf6d18cc32144728966c115"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a483289f07cf6d18cc32144728966c115">RGWCORSRule::id</a></div><div class="ttdeci">std::string id</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00043">rgw_cors.h:43</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a55e8f9386703f11da017dd6e5f8b6d7b"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a55e8f9386703f11da017dd6e5f8b6d7b">RGWCORSRule::RGWCORSRule</a></div><div class="ttdeci">RGWCORSRule(std::set&lt; std::string &gt; &amp;o, std::set&lt; std::string &gt; &amp;h, std::list&lt; std::string &gt; &amp;e, uint8_t f, uint32_t a)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00051">rgw_cors.h:51</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a5c835c04152898e4ccda92c57f19d16e"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a5c835c04152898e4ccda92c57f19d16e">RGWCORSRule::get_allowed_methods</a></div><div class="ttdeci">uint8_t get_allowed_methods()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00062">rgw_cors.h:62</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a61e7be78a63f68bd7e290152b6b9d3cc"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a61e7be78a63f68bd7e290152b6b9d3cc">RGWCORSRule::dump_origins</a></div><div class="ttdeci">void dump_origins()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8cc_source.html#l00035">rgw_cors.cc:35</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a67621eece0c573974793658ef34954c5"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a67621eece0c573974793658ef34954c5">RGWCORSRule::format_exp_headers</a></div><div class="ttdeci">void format_exp_headers(std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8cc_source.html#l00145">rgw_cors.cc:145</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a79de7018e9331d70c145b99971f53dc4"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a79de7018e9331d70c145b99971f53dc4">RGWCORSRule::RGWCORSRule</a></div><div class="ttdeci">RGWCORSRule()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00050">rgw_cors.h:50</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a8650b52b021bdaebc8fb92b594ef7315"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a8650b52b021bdaebc8fb92b594ef7315">RGWCORSRule::allowed_origins</a></div><div class="ttdeci">std::set&lt; std::string &gt; allowed_origins</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00046">rgw_cors.h:46</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a8bb4477625eabea4da645432aaed142f"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a8bb4477625eabea4da645432aaed142f">RGWCORSRule::lowercase_allowed_hdrs</a></div><div class="ttdeci">std::set&lt; std::string &gt; lowercase_allowed_hdrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00045">rgw_cors.h:45</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_a9b88418ca28c83274ca666f8e82e474a"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#a9b88418ca28c83274ca666f8e82e474a">RGWCORSRule::max_age</a></div><div class="ttdeci">uint32_t max_age</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00041">rgw_cors.h:41</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_aa1368a3f046a196fd8fa1b5d570a076c"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#aa1368a3f046a196fd8fa1b5d570a076c">RGWCORSRule::get_id</a></div><div class="ttdeci">std::string &amp; get_id()</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00060">rgw_cors.h:60</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_aa21b0fdcb87352a43e126d3d42de6a6f"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#aa21b0fdcb87352a43e126d3d42de6a6f">RGWCORSRule::dump</a></div><div class="ttdeci">void dump(Formatter *f) const</div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_ab26264bd2c505ea005868d2e9e22d0df"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#ab26264bd2c505ea005868d2e9e22d0df">RGWCORSRule::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00074">rgw_cors.h:74</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_ace1dda9df2f87cf34bbd33d81576e5a1"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#ace1dda9df2f87cf34bbd33d81576e5a1">RGWCORSRule::exposable_hdrs</a></div><div class="ttdeci">std::list&lt; std::string &gt; exposable_hdrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00047">rgw_cors.h:47</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_ad2d3b167abd721830ce03ab23654c057"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#ad2d3b167abd721830ce03ab23654c057">RGWCORSRule::is_origin_present</a></div><div class="ttdeci">bool is_origin_present(const char *o)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8cc_source.html#l00129">rgw_cors.cc:129</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_ad7f8961cd243d6a694ac485866a9d85d"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#ad7f8961cd243d6a694ac485866a9d85d">RGWCORSRule::allowed_methods</a></div><div class="ttdeci">uint8_t allowed_methods</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00042">rgw_cors.h:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_c_o_r_s_rule_html_af1766069d72888ef01b0dcd9b4bf5c5f"><div class="ttname"><a href="class_r_g_w_c_o_r_s_rule.html#af1766069d72888ef01b0dcd9b4bf5c5f">RGWCORSRule::allowed_hdrs</a></div><div class="ttdeci">std::set&lt; std::string &gt; allowed_hdrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00044">rgw_cors.h:44</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_a68310108dc1113b2ef0e243d11e5b10d"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#a68310108dc1113b2ef0e243d11e5b10d">h</a></div><div class="ttdeci">fifo::part_header * h</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00340">cls_fifo_legacy.cc:340</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a8eac2e87b3dc3f857f25414b0dc742e6"><div class="ttname"><a href="rgw__common_8cc.html#a8eac2e87b3dc3f857f25414b0dc742e6">dump</a></div><div class="ttdeci">void dump(struct req_state *s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00360">rgw_common.cc:360</a></div></div>
+<div class="ttc" id="argw__cors_8h_html_a5857fb8d9c316f2ce61bc359f92b9de6"><div class="ttname"><a href="rgw__cors_8h.html#a5857fb8d9c316f2ce61bc359f92b9de6">validate_name_string</a></div><div class="ttdeci">static int validate_name_string(std::string_view o)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00129">rgw_cors.h:129</a></div></div>
+<div class="ttc" id="argw__cors_8h_html_a6487ef5fd13c00e1604960908d6d1127"><div class="ttname"><a href="rgw__cors_8h.html#a6487ef5fd13c00e1604960908d6d1127">CORS_MAX_AGE_INVALID</a></div><div class="ttdeci">#define CORS_MAX_AGE_INVALID</div><div class="ttdef"><b>Definition</b> <a href="rgw__cors_8h_source.html#l00036">rgw_cors.h:36</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc46efdde31cf790f3b383cb9e6f198e"><div class="ttname"><a href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a></div><div class="ttdeci">void decode(log_type &amp;type, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00049">rgw_log_backing.h:49</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc91400029fb575818b2a0ccf89e7928"><div class="ttname"><a href="rgw__log__backing_8h.html#adc91400029fb575818b2a0ccf89e7928">encode</a></div><div class="ttdeci">void encode(const log_type &amp;type, ceph::buffer::list &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00044">rgw_log_backing.h:44</a></div></div>
+<div class="ttc" id="argw__trim__bilog_8cc_html_ab76037c8d5c69ab3ecb59d45e42eddbc"><div class="ttname"><a href="rgw__trim__bilog_8cc.html#ab76037c8d5c69ab3ecb59d45e42eddbc">WRITE_CLASS_ENCODER</a></div><div class="ttdeci">WRITE_CLASS_ENCODER(TrimCounters::BucketCounter)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__cors_8h.html">rgw_cors.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_frontend.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__frontend_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_frontend.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__frontend_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef RGW_FRONTEND_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define RGW_FRONTEND_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;common/RWLock.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__request_8h.html">rgw_request.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__process_8h.html">rgw_process.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__realm__reloader_8h.html">rgw_realm_reloader.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__auth__registry_8h.html">rgw_auth_registry.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__sal__rados_8h.html">rgw_sal_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="rgw__frontend_8h.html#ac9f1b8ed4aca7999d392b2d432030e30">   19</a></span><span class="preprocessor">#define dout_context g_ceph_context</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw_1_1dmclock.html">rgw::dmclock</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">class </span>SyncScheduler;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">class </span>ClientConfig;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">class </span>SchedulerCtx;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html">   27</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">   28</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">config</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#ad26c228bf3affd79fb64c9b26261dfa3">   29</a></span>  std::multimap&lt;std::string, std::string&gt; <a class="code hl_variable" href="class_r_g_w_frontend_config.html#ad26c228bf3affd79fb64c9b26261dfa3">config_map</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a9493ce74eec769114508b73820f4389c">   30</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_frontend_config.html#a9493ce74eec769114508b73820f4389c">framework</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_frontend_config.html#abc634fe41134d31d49c13605eecd1ac2">parse_config</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">config</a>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                   std::multimap&lt;std::string, std::string&gt;&amp; <a class="code hl_variable" href="class_r_g_w_frontend_config.html#ad26c228bf3affd79fb64c9b26261dfa3">config_map</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a0c9434e6199a4c9fc47396307738540e">   36</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_frontend_config.html#a0c9434e6199a4c9fc47396307738540e">RGWFrontendConfig</a>(<span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">config</a>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    : <a class="code hl_variable" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">config</a>(<a class="code hl_variable" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">config</a>) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a7f37f7253cb83b3b8f41892182614e2c">   40</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_frontend_config.html#a7f37f7253cb83b3b8f41892182614e2c">init</a>() {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> ret = <a class="code hl_function" href="class_r_g_w_frontend_config.html#abc634fe41134d31d49c13605eecd1ac2">parse_config</a>(<a class="code hl_variable" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">config</a>, <a class="code hl_variable" href="class_r_g_w_frontend_config.html#ad26c228bf3affd79fb64c9b26261dfa3">config_map</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> ret &lt; 0 ? ret : 0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_frontend_config.html#a116b675edb2fc45643fd6b6068bf3918">set_default_config</a>(<a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>&amp; def_conf);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  std::optional&lt;std::string&gt; <a class="code hl_function" href="class_r_g_w_frontend_config.html#ae524a6d258f959df5659e63b2e8298cf">get_val</a>(<span class="keyword">const</span> std::string&amp; key);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a484faf52f537341de37cb7637e251d05">   49</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_frontend_config.html#a484faf52f537341de37cb7637e251d05">get_val</a>(<span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>               <span class="keyword">const</span> std::string&amp; def_val,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>               std::string* out);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#ab906302525482bd24bc2d16ad426271f">   52</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_frontend_config.html#ab906302525482bd24bc2d16ad426271f">get_val</a>(<span class="keyword">const</span> std::string&amp; key, <span class="keywordtype">int</span> def_val, <span class="keywordtype">int</span> *out);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a15f4ae0d221dff8296d5491632c7ae25">   54</a></span>  std::string <a class="code hl_function" href="class_r_g_w_frontend_config.html#a15f4ae0d221dff8296d5491632c7ae25">get_val</a>(<span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                      <span class="keyword">const</span> std::string&amp; def_val) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::string out;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="class_r_g_w_frontend_config.html#ae524a6d258f959df5659e63b2e8298cf">get_val</a>(key, def_val, &amp;out);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a9461f5958dee7a13187735bb8bb548e0">   61</a></span>  <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_r_g_w_frontend_config.html#a9461f5958dee7a13187735bb8bb548e0">get_config</a>() {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">config</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#ac2dd24645a4d1afcfaa86c8bb106addd">   65</a></span>  std::multimap&lt;std::string, std::string&gt;&amp; <a class="code hl_function" href="class_r_g_w_frontend_config.html#ac2dd24645a4d1afcfaa86c8bb106addd">get_config_map</a>() {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_frontend_config.html#ad26c228bf3affd79fb64c9b26261dfa3">config_map</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_config.html#a57c31c05343d1b6c57267d5b480cdb44">   69</a></span>  std::string <a class="code hl_function" href="class_r_g_w_frontend_config.html#a57c31c05343d1b6c57267d5b480cdb44">get_framework</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_frontend_config.html#a9493ce74eec769114508b73820f4389c">framework</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> }</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html">   74</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_frontend.html">RGWFrontend</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html#a138a4105a5c600f3e9d57027436ff9b4">   76</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_r_g_w_frontend.html#a138a4105a5c600f3e9d57027436ff9b4">~RGWFrontend</a>() {}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html#a0d5f398acf27ad57a708ac562b3515b0">   78</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_frontend.html#a0d5f398acf27ad57a708ac562b3515b0">init</a>() = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html#ab4a9587537880aee08239b6832cd0d38">   80</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_frontend.html#ab4a9587537880aee08239b6832cd0d38">run</a>() = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html#a55d89f359e256d70dd9c3b5f5e168b97">   81</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_frontend.html#a55d89f359e256d70dd9c3b5f5e168b97">stop</a>() = 0;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html#a198415252e31de329780dc48999629fb">   82</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_frontend.html#a198415252e31de329780dc48999629fb">join</a>() = 0;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html#a18080ba940cd70ed1562ba04fd8f4df9">   84</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_frontend.html#a18080ba940cd70ed1562ba04fd8f4df9">pause_for_new_config</a>() = 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend.html#a6caadd3fda2c815beb478ef187d29a00">   85</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_frontend.html#a6caadd3fda2c815beb478ef187d29a00">unpause_with_new_config</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                                       <a class="code hl_typedef" href="rgw__auth__registry_8h.html#a499ab786bfdab791755bcaef80f67526">rgw_auth_registry_ptr_t</a> auth_registry) = 0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="};">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html">   90</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_process_frontend.html">RGWProcessFrontend</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_frontend.html">RGWFrontend</a> {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#acf724c779574969c9cb94cb4d563e7a7">   92</a></span>  <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>* <a class="code hl_variable" href="class_r_g_w_process_frontend.html#acf724c779574969c9cb94cb4d563e7a7">conf</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">   93</a></span>  <a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a>* <a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">   94</a></span>  <a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a> <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">env</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">   95</a></span>  <a class="code hl_class" href="class_r_g_w_process_control_thread.html">RGWProcessControlThread</a>* <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">thread</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#a19e7d1918be7f739ce489b9f5c2f205d">   98</a></span>  <a class="code hl_function" href="class_r_g_w_process_frontend.html#a19e7d1918be7f739ce489b9f5c2f205d">RGWProcessFrontend</a>(<a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a>&amp; pe, <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>* _conf)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    : <a class="code hl_variable" href="class_r_g_w_process_frontend.html#acf724c779574969c9cb94cb4d563e7a7">conf</a>(_conf), <a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>(nullptr), <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">env</a>(pe), <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">thread</a>(nullptr) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#a78ba8fe98a2b2fd2d721a3eef2ea2092">  102</a></span>  <a class="code hl_function" href="class_r_g_w_process_frontend.html#a78ba8fe98a2b2fd2d721a3eef2ea2092">~RGWProcessFrontend</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">thread</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#a237c110d899d8552382e0ffbbedb16e7">  107</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_process_frontend.html#a237c110d899d8552382e0ffbbedb16e7">run</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    ceph_assert(<a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>); <span class="comment">/* should have initialized by init() */</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">thread</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_process_control_thread.html">RGWProcessControlThread</a>(<a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">thread</a>-&gt;create(<span class="stringliteral">&quot;rgw_frontend&quot;</span>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process_frontend.html#afe1d464d43773a45aea5dea5682a2e5a">stop</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#a9aeb531d84b61140c81e319c4a8c879c">  116</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process_frontend.html#a9aeb531d84b61140c81e319c4a8c879c">join</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">thread</a>-&gt;join();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#af94ea217541b5843ed71189940816855">  120</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process_frontend.html#af94ea217541b5843ed71189940816855">pause_for_new_config</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>-&gt;<a class="code hl_function" href="class_r_g_w_process.html#a44bbc6bb88fecc6419e64a1b9f4a7c5c">pause</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_r_g_w_process_frontend.html#ab465f93d5bc6859bde87f6a91fc7b2d8">  124</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process_frontend.html#ab465f93d5bc6859bde87f6a91fc7b2d8">unpause_with_new_config</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <span class="keyword">const</span> <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                               <a class="code hl_typedef" href="rgw__auth__registry_8h.html#a499ab786bfdab791755bcaef80f67526">rgw_auth_registry_ptr_t</a> auth_registry)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">env</a>.<a class="code hl_variable" href="struct_r_g_w_process_env.html#a63229c37b2c5134bd4ac1102748fafa0">store</a> = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">env</a>.<a class="code hl_variable" href="struct_r_g_w_process_env.html#a354503a866e48459d2d0e8ef00ce4fb5">auth_registry</a> = auth_registry;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>-&gt;<a class="code hl_function" href="class_r_g_w_process.html#a827d547a4a7f7af91ed753005ebb3fd5">unpause_with_new_config</a>(<a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, std::move(auth_registry));</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}; <span class="comment">/* RGWProcessFrontend */</span></div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="};">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_frontend.html">  132</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_load_gen_frontend.html">RGWLoadGenFrontend</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_process_frontend.html">RGWProcessFrontend</a>, <span class="keyword">public</span> DoutPrefixProvider {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_frontend.html#af2f7e12e42fdd664f337ba37f4be1991">  134</a></span>  <a class="code hl_function" href="class_r_g_w_load_gen_frontend.html#af2f7e12e42fdd664f337ba37f4be1991">RGWLoadGenFrontend</a>(<a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a>&amp; pe, <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a> *_conf)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    : <a class="code hl_class" href="class_r_g_w_process_frontend.html">RGWProcessFrontend</a>(pe, _conf) {}</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_frontend.html#aaa8f9eb6d2309a1571cd6ea22f7ac151">  137</a></span>  CephContext *<a class="code hl_function" href="class_r_g_w_load_gen_frontend.html#aaa8f9eb6d2309a1571cd6ea22f7ac151">get_cct</a>()<span class="keyword"> const </span>{ </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">env</a>.<a class="code hl_variable" href="struct_r_g_w_process_env.html#a63229c37b2c5134bd4ac1102748fafa0">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e">ctx</a>(); </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_frontend.html#af3e924c0aef9ef99eb4e8563df10a8d4">  141</a></span>  <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_r_g_w_load_gen_frontend.html#af3e924c0aef9ef99eb4e8563df10a8d4">get_subsys</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">return</span> ceph_subsys_rgw;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  }</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_frontend.html#a3a7d48ddfd011a1ced50761b1700a667">  146</a></span>  std::ostream&amp; <a class="code hl_function" href="class_r_g_w_load_gen_frontend.html#a3a7d48ddfd011a1ced50761b1700a667">gen_prefix</a>(std::ostream&amp; out)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">return</span> out &lt;&lt; <span class="stringliteral">&quot;rgw loadgen frontend: &quot;</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  }</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_frontend.html#a3cace9840a1e805798bba37c99cfbd70">  151</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_load_gen_frontend.html#a3cace9840a1e805798bba37c99cfbd70">init</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">int</span> num_threads;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#acf724c779574969c9cb94cb4d563e7a7">conf</a>-&gt;<a class="code hl_function" href="class_r_g_w_frontend_config.html#ae524a6d258f959df5659e63b2e8298cf">get_val</a>(<span class="stringliteral">&quot;num_threads&quot;</span>, g_conf()-&gt;rgw_thread_pool_size, &amp;num_threads);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_class" href="class_r_g_w_load_gen_process.html">RGWLoadGenProcess</a> *pp = <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_load_gen_process.html">RGWLoadGenProcess</a>(g_ceph_context, &amp;<a class="code hl_variable" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">env</a>,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                          num_threads, <a class="code hl_variable" href="class_r_g_w_process_frontend.html#acf724c779574969c9cb94cb4d563e7a7">conf</a>);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a> = pp;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    std::string uid_str;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_variable" href="class_r_g_w_process_frontend.html#acf724c779574969c9cb94cb4d563e7a7">conf</a>-&gt;<a class="code hl_function" href="class_r_g_w_frontend_config.html#ae524a6d258f959df5659e63b2e8298cf">get_val</a>(<span class="stringliteral">&quot;uid&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, &amp;uid_str);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">if</span> (uid_str.empty()) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      derr &lt;&lt; <span class="stringliteral">&quot;ERROR: uid param must be specified for loadgen frontend&quot;</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>       &lt;&lt; dendl;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_struct" href="structrgw__user.html">rgw_user</a> uid(uid_str);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    std::unique_ptr&lt;rgw::sal::User&gt; user = <a class="code hl_variable" href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">env</a>.<a class="code hl_variable" href="struct_r_g_w_process_env.html#a63229c37b2c5134bd4ac1102748fafa0">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_store.html#a583f96473bf50c30d8fcca23b63de948">get_user</a>(uid);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">int</span> ret = user-&gt;load_user(<span class="keyword">this</span>, null_yield);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      derr &lt;&lt; <span class="stringliteral">&quot;ERROR: failed reading user info: uid=&quot;</span> &lt;&lt; uid &lt;&lt; <span class="stringliteral">&quot; ret=&quot;</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>       &lt;&lt; ret &lt;&lt; dendl;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keyword">auto</span> aiter = user-&gt;get_info().access_keys.begin();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (aiter == user-&gt;get_info().access_keys.end()) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      derr &lt;&lt; <span class="stringliteral">&quot;ERROR: user has no S3 access keys set&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    pp-&gt;<a class="code hl_function" href="class_r_g_w_load_gen_process.html#a37b2ab1fe1f47cefa240a5893a230aed">set_access_key</a>(aiter-&gt;second);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}; <span class="comment">/* RGWLoadGenFrontend */</span></div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">// FrontendPauser implementation for RGWRealmReloader</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="};">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_pauser.html">  190</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_frontend_pauser.html">RGWFrontendPauser</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_realm_reloader_1_1_pauser.html">RGWRealmReloader::Pauser</a> {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">  191</a></span>  std::list&lt;RGWFrontend*&gt; &amp;<a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">frontends</a>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">  192</a></span>  <a class="code hl_class" href="class_r_g_w_realm_reloader_1_1_pauser.html">RGWRealmReloader::Pauser</a>* <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_pauser.html#a52e42cd1ca605e1a37ddef9527b60391">  193</a></span>  <a class="code hl_class" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a>&amp; <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a52e42cd1ca605e1a37ddef9527b60391">implicit_tenants</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_pauser.html#a12c36e26c9fd70b9d201fc923e7be0b7">  196</a></span>  <a class="code hl_function" href="class_r_g_w_frontend_pauser.html#a12c36e26c9fd70b9d201fc923e7be0b7">RGWFrontendPauser</a>(std::list&lt;RGWFrontend*&gt; &amp;<a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">frontends</a>,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                    <a class="code hl_class" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a>&amp; <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a52e42cd1ca605e1a37ddef9527b60391">implicit_tenants</a>,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                    <a class="code hl_class" href="class_r_g_w_realm_reloader_1_1_pauser.html">RGWRealmReloader::Pauser</a>* <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    : <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">frontends</a>(<a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">frontends</a>),</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a>(<a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a>),</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a52e42cd1ca605e1a37ddef9527b60391">implicit_tenants</a>(<a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a52e42cd1ca605e1a37ddef9527b60391">implicit_tenants</a>) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  }</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_pauser.html#a80d5da478be071e474ede3f33e6f2ffe">  204</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_frontend_pauser.html#a80d5da478be071e474ede3f33e6f2ffe">pause</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> frontend : <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">frontends</a>)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      frontend-&gt;pause_for_new_config();</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a>)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a>-&gt;<a class="code hl_function" href="class_r_g_w_realm_reloader_1_1_pauser.html#a9d630809f65fdbb3c2e194f3f99d0d80">pause</a>();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="class_r_g_w_frontend_pauser.html#a32e50443b90ea7fa57413abb40e81ea9">  210</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_frontend_pauser.html#a32e50443b90ea7fa57413abb40e81ea9">resume</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="comment">/* Initialize the registry of auth strategies which will coordinate</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">     * the dynamic reconfiguration. */</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keyword">auto</span> auth_registry = \</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      rgw::auth::StrategyRegistry::create(g_ceph_context, <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a52e42cd1ca605e1a37ddef9527b60391">implicit_tenants</a>, <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> frontend : <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">frontends</a>)</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      frontend-&gt;unpause_with_new_config(<a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, auth_registry);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a>)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      <a class="code hl_variable" href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">pauser</a>-&gt;<a class="code hl_function" href="class_r_g_w_realm_reloader_1_1_pauser.html#a23321a4ce5f4d0110ec01bd661818926">resume</a>(<a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  }</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>};</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="preprocessor">#endif </span><span class="comment">/* RGW_FRONTEND_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html"><div class="ttname"><a href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00027">rgw_frontend.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a0c9434e6199a4c9fc47396307738540e"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a0c9434e6199a4c9fc47396307738540e">RGWFrontendConfig::RGWFrontendConfig</a></div><div class="ttdeci">RGWFrontendConfig(const std::string &amp;config)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00036">rgw_frontend.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a116b675edb2fc45643fd6b6068bf3918"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a116b675edb2fc45643fd6b6068bf3918">RGWFrontendConfig::set_default_config</a></div><div class="ttdeci">void set_default_config(RGWFrontendConfig &amp;def_conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8cc_source.html#l00050">rgw_frontend.cc:50</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a15f4ae0d221dff8296d5491632c7ae25"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a15f4ae0d221dff8296d5491632c7ae25">RGWFrontendConfig::get_val</a></div><div class="ttdeci">std::string get_val(const std::string &amp;key, const std::string &amp;def_val)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00054">rgw_frontend.h:54</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a3cd6ce4af70d72db7b47180a07dff0bb"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a3cd6ce4af70d72db7b47180a07dff0bb">RGWFrontendConfig::config</a></div><div class="ttdeci">std::string config</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00028">rgw_frontend.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a484faf52f537341de37cb7637e251d05"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a484faf52f537341de37cb7637e251d05">RGWFrontendConfig::get_val</a></div><div class="ttdeci">bool get_val(const std::string &amp;key, const std::string &amp;def_val, std::string *out)</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a57c31c05343d1b6c57267d5b480cdb44"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a57c31c05343d1b6c57267d5b480cdb44">RGWFrontendConfig::get_framework</a></div><div class="ttdeci">std::string get_framework() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00069">rgw_frontend.h:69</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a7f37f7253cb83b3b8f41892182614e2c"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a7f37f7253cb83b3b8f41892182614e2c">RGWFrontendConfig::init</a></div><div class="ttdeci">int init()</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00040">rgw_frontend.h:40</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a9461f5958dee7a13187735bb8bb548e0"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a9461f5958dee7a13187735bb8bb548e0">RGWFrontendConfig::get_config</a></div><div class="ttdeci">const std::string &amp; get_config()</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00061">rgw_frontend.h:61</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_a9493ce74eec769114508b73820f4389c"><div class="ttname"><a href="class_r_g_w_frontend_config.html#a9493ce74eec769114508b73820f4389c">RGWFrontendConfig::framework</a></div><div class="ttdeci">std::string framework</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00030">rgw_frontend.h:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_ab906302525482bd24bc2d16ad426271f"><div class="ttname"><a href="class_r_g_w_frontend_config.html#ab906302525482bd24bc2d16ad426271f">RGWFrontendConfig::get_val</a></div><div class="ttdeci">bool get_val(const std::string &amp;key, int def_val, int *out)</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_abc634fe41134d31d49c13605eecd1ac2"><div class="ttname"><a href="class_r_g_w_frontend_config.html#abc634fe41134d31d49c13605eecd1ac2">RGWFrontendConfig::parse_config</a></div><div class="ttdeci">int parse_config(const std::string &amp;config, std::multimap&lt; std::string, std::string &gt; &amp;config_map)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8cc_source.html#l00017">rgw_frontend.cc:17</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_ac2dd24645a4d1afcfaa86c8bb106addd"><div class="ttname"><a href="class_r_g_w_frontend_config.html#ac2dd24645a4d1afcfaa86c8bb106addd">RGWFrontendConfig::get_config_map</a></div><div class="ttdeci">std::multimap&lt; std::string, std::string &gt; &amp; get_config_map()</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00065">rgw_frontend.h:65</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_ad26c228bf3affd79fb64c9b26261dfa3"><div class="ttname"><a href="class_r_g_w_frontend_config.html#ad26c228bf3affd79fb64c9b26261dfa3">RGWFrontendConfig::config_map</a></div><div class="ttdeci">std::multimap&lt; std::string, std::string &gt; config_map</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00029">rgw_frontend.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html_ae524a6d258f959df5659e63b2e8298cf"><div class="ttname"><a href="class_r_g_w_frontend_config.html#ae524a6d258f959df5659e63b2e8298cf">RGWFrontendConfig::get_val</a></div><div class="ttdeci">std::optional&lt; std::string &gt; get_val(const std::string &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8cc_source.html#l00061">rgw_frontend.cc:61</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html"><div class="ttname"><a href="class_r_g_w_frontend.html">RGWFrontend</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00074">rgw_frontend.h:74</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html_a0d5f398acf27ad57a708ac562b3515b0"><div class="ttname"><a href="class_r_g_w_frontend.html#a0d5f398acf27ad57a708ac562b3515b0">RGWFrontend::init</a></div><div class="ttdeci">virtual int init()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html_a138a4105a5c600f3e9d57027436ff9b4"><div class="ttname"><a href="class_r_g_w_frontend.html#a138a4105a5c600f3e9d57027436ff9b4">RGWFrontend::~RGWFrontend</a></div><div class="ttdeci">virtual ~RGWFrontend()</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00076">rgw_frontend.h:76</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html_a18080ba940cd70ed1562ba04fd8f4df9"><div class="ttname"><a href="class_r_g_w_frontend.html#a18080ba940cd70ed1562ba04fd8f4df9">RGWFrontend::pause_for_new_config</a></div><div class="ttdeci">virtual void pause_for_new_config()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html_a198415252e31de329780dc48999629fb"><div class="ttname"><a href="class_r_g_w_frontend.html#a198415252e31de329780dc48999629fb">RGWFrontend::join</a></div><div class="ttdeci">virtual void join()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html_a55d89f359e256d70dd9c3b5f5e168b97"><div class="ttname"><a href="class_r_g_w_frontend.html#a55d89f359e256d70dd9c3b5f5e168b97">RGWFrontend::stop</a></div><div class="ttdeci">virtual void stop()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html_a6caadd3fda2c815beb478ef187d29a00"><div class="ttname"><a href="class_r_g_w_frontend.html#a6caadd3fda2c815beb478ef187d29a00">RGWFrontend::unpause_with_new_config</a></div><div class="ttdeci">virtual void unpause_with_new_config(rgw::sal::Store *store, rgw_auth_registry_ptr_t auth_registry)=0</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_html_ab4a9587537880aee08239b6832cd0d38"><div class="ttname"><a href="class_r_g_w_frontend.html#ab4a9587537880aee08239b6832cd0d38">RGWFrontend::run</a></div><div class="ttdeci">virtual int run()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_pauser_html"><div class="ttname"><a href="class_r_g_w_frontend_pauser.html">RGWFrontendPauser</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00190">rgw_frontend.h:190</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_pauser_html_a12c36e26c9fd70b9d201fc923e7be0b7"><div class="ttname"><a href="class_r_g_w_frontend_pauser.html#a12c36e26c9fd70b9d201fc923e7be0b7">RGWFrontendPauser::RGWFrontendPauser</a></div><div class="ttdeci">RGWFrontendPauser(std::list&lt; RGWFrontend * &gt; &amp;frontends, rgw::auth::ImplicitTenants &amp;implicit_tenants, RGWRealmReloader::Pauser *pauser=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00196">rgw_frontend.h:196</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_pauser_html_a32e50443b90ea7fa57413abb40e81ea9"><div class="ttname"><a href="class_r_g_w_frontend_pauser.html#a32e50443b90ea7fa57413abb40e81ea9">RGWFrontendPauser::resume</a></div><div class="ttdeci">void resume(rgw::sal::Store *store) override</div><div class="ttdoc">resume all frontends with the given RGWRados instance</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00210">rgw_frontend.h:210</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_pauser_html_a52e42cd1ca605e1a37ddef9527b60391"><div class="ttname"><a href="class_r_g_w_frontend_pauser.html#a52e42cd1ca605e1a37ddef9527b60391">RGWFrontendPauser::implicit_tenants</a></div><div class="ttdeci">rgw::auth::ImplicitTenants &amp; implicit_tenants</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00193">rgw_frontend.h:193</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_pauser_html_a80d5da478be071e474ede3f33e6f2ffe"><div class="ttname"><a href="class_r_g_w_frontend_pauser.html#a80d5da478be071e474ede3f33e6f2ffe">RGWFrontendPauser::pause</a></div><div class="ttdeci">void pause() override</div><div class="ttdoc">pause all frontends while realm reconfiguration is in progress</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00204">rgw_frontend.h:204</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_pauser_html_a81e3d703f0b24fccca7f0dece46d7db3"><div class="ttname"><a href="class_r_g_w_frontend_pauser.html#a81e3d703f0b24fccca7f0dece46d7db3">RGWFrontendPauser::frontends</a></div><div class="ttdeci">std::list&lt; RGWFrontend * &gt; &amp; frontends</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00191">rgw_frontend.h:191</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_pauser_html_aa4c54e3b24cba271acf360cf0e4933f1"><div class="ttname"><a href="class_r_g_w_frontend_pauser.html#aa4c54e3b24cba271acf360cf0e4933f1">RGWFrontendPauser::pauser</a></div><div class="ttdeci">RGWRealmReloader::Pauser * pauser</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00192">rgw_frontend.h:192</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_frontend_html"><div class="ttname"><a href="class_r_g_w_load_gen_frontend.html">RGWLoadGenFrontend</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00132">rgw_frontend.h:132</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_frontend_html_a3a7d48ddfd011a1ced50761b1700a667"><div class="ttname"><a href="class_r_g_w_load_gen_frontend.html#a3a7d48ddfd011a1ced50761b1700a667">RGWLoadGenFrontend::gen_prefix</a></div><div class="ttdeci">std::ostream &amp; gen_prefix(std::ostream &amp;out) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00146">rgw_frontend.h:146</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_frontend_html_a3cace9840a1e805798bba37c99cfbd70"><div class="ttname"><a href="class_r_g_w_load_gen_frontend.html#a3cace9840a1e805798bba37c99cfbd70">RGWLoadGenFrontend::init</a></div><div class="ttdeci">int init() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00151">rgw_frontend.h:151</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_frontend_html_aaa8f9eb6d2309a1571cd6ea22f7ac151"><div class="ttname"><a href="class_r_g_w_load_gen_frontend.html#aaa8f9eb6d2309a1571cd6ea22f7ac151">RGWLoadGenFrontend::get_cct</a></div><div class="ttdeci">CephContext * get_cct() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00137">rgw_frontend.h:137</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_frontend_html_af2f7e12e42fdd664f337ba37f4be1991"><div class="ttname"><a href="class_r_g_w_load_gen_frontend.html#af2f7e12e42fdd664f337ba37f4be1991">RGWLoadGenFrontend::RGWLoadGenFrontend</a></div><div class="ttdeci">RGWLoadGenFrontend(RGWProcessEnv &amp;pe, RGWFrontendConfig *_conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00134">rgw_frontend.h:134</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_frontend_html_af3e924c0aef9ef99eb4e8563df10a8d4"><div class="ttname"><a href="class_r_g_w_load_gen_frontend.html#af3e924c0aef9ef99eb4e8563df10a8d4">RGWLoadGenFrontend::get_subsys</a></div><div class="ttdeci">unsigned get_subsys() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00141">rgw_frontend.h:141</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html"><div class="ttname"><a href="class_r_g_w_load_gen_process.html">RGWLoadGenProcess</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00153">rgw_process.h:153</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_a37b2ab1fe1f47cefa240a5893a230aed"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#a37b2ab1fe1f47cefa240a5893a230aed">RGWLoadGenProcess::set_access_key</a></div><div class="ttdeci">void set_access_key(RGWAccessKey &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00165">rgw_process.h:165</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_control_thread_html"><div class="ttname"><a href="class_r_g_w_process_control_thread.html">RGWProcessControlThread</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00142">rgw_process.h:142</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html"><div class="ttname"><a href="class_r_g_w_process_frontend.html">RGWProcessFrontend</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00090">rgw_frontend.h:90</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_a1535a584bda35524a4861b47b907b55f"><div class="ttname"><a href="class_r_g_w_process_frontend.html#a1535a584bda35524a4861b47b907b55f">RGWProcessFrontend::thread</a></div><div class="ttdeci">RGWProcessControlThread * thread</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00095">rgw_frontend.h:95</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_a19e7d1918be7f739ce489b9f5c2f205d"><div class="ttname"><a href="class_r_g_w_process_frontend.html#a19e7d1918be7f739ce489b9f5c2f205d">RGWProcessFrontend::RGWProcessFrontend</a></div><div class="ttdeci">RGWProcessFrontend(RGWProcessEnv &amp;pe, RGWFrontendConfig *_conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00098">rgw_frontend.h:98</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_a237c110d899d8552382e0ffbbedb16e7"><div class="ttname"><a href="class_r_g_w_process_frontend.html#a237c110d899d8552382e0ffbbedb16e7">RGWProcessFrontend::run</a></div><div class="ttdeci">int run() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00107">rgw_frontend.h:107</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_a778cf2165f305251ade4cc817fee0f81"><div class="ttname"><a href="class_r_g_w_process_frontend.html#a778cf2165f305251ade4cc817fee0f81">RGWProcessFrontend::env</a></div><div class="ttdeci">RGWProcessEnv env</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00094">rgw_frontend.h:94</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_a78ba8fe98a2b2fd2d721a3eef2ea2092"><div class="ttname"><a href="class_r_g_w_process_frontend.html#a78ba8fe98a2b2fd2d721a3eef2ea2092">RGWProcessFrontend::~RGWProcessFrontend</a></div><div class="ttdeci">~RGWProcessFrontend() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00102">rgw_frontend.h:102</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_a9aeb531d84b61140c81e319c4a8c879c"><div class="ttname"><a href="class_r_g_w_process_frontend.html#a9aeb531d84b61140c81e319c4a8c879c">RGWProcessFrontend::join</a></div><div class="ttdeci">void join() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00116">rgw_frontend.h:116</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_ab465f93d5bc6859bde87f6a91fc7b2d8"><div class="ttname"><a href="class_r_g_w_process_frontend.html#ab465f93d5bc6859bde87f6a91fc7b2d8">RGWProcessFrontend::unpause_with_new_config</a></div><div class="ttdeci">void unpause_with_new_config(rgw::sal::Store *const store, rgw_auth_registry_ptr_t auth_registry) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00124">rgw_frontend.h:124</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_ac572abf782d790be0e0a890c5fe400cf"><div class="ttname"><a href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">RGWProcessFrontend::pprocess</a></div><div class="ttdeci">RGWProcess * pprocess</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00093">rgw_frontend.h:93</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_acf724c779574969c9cb94cb4d563e7a7"><div class="ttname"><a href="class_r_g_w_process_frontend.html#acf724c779574969c9cb94cb4d563e7a7">RGWProcessFrontend::conf</a></div><div class="ttdeci">RGWFrontendConfig * conf</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00092">rgw_frontend.h:92</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_af94ea217541b5843ed71189940816855"><div class="ttname"><a href="class_r_g_w_process_frontend.html#af94ea217541b5843ed71189940816855">RGWProcessFrontend::pause_for_new_config</a></div><div class="ttdeci">void pause_for_new_config() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00120">rgw_frontend.h:120</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_afe1d464d43773a45aea5dea5682a2e5a"><div class="ttname"><a href="class_r_g_w_process_frontend.html#afe1d464d43773a45aea5dea5682a2e5a">RGWProcessFrontend::stop</a></div><div class="ttdeci">void stop() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8cc_source.html#l00101">rgw_frontend.cc:101</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html"><div class="ttname"><a href="class_r_g_w_process.html">RGWProcess</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00048">rgw_process.h:48</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a44bbc6bb88fecc6419e64a1b9f4a7c5c"><div class="ttname"><a href="class_r_g_w_process.html#a44bbc6bb88fecc6419e64a1b9f4a7c5c">RGWProcess::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00123">rgw_process.h:123</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a827d547a4a7f7af91ed753005ebb3fd5"><div class="ttname"><a href="class_r_g_w_process.html#a827d547a4a7f7af91ed753005ebb3fd5">RGWProcess::unpause_with_new_config</a></div><div class="ttdeci">void unpause_with_new_config(rgw::sal::Store *const store, rgw_auth_registry_ptr_t auth_registry)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00127">rgw_process.h:127</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_reloader_1_1_pauser_html"><div class="ttname"><a href="class_r_g_w_realm_reloader_1_1_pauser.html">RGWRealmReloader::Pauser</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__reloader_8h_source.html#l00029">rgw_realm_reloader.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_reloader_1_1_pauser_html_a23321a4ce5f4d0110ec01bd661818926"><div class="ttname"><a href="class_r_g_w_realm_reloader_1_1_pauser.html#a23321a4ce5f4d0110ec01bd661818926">RGWRealmReloader::Pauser::resume</a></div><div class="ttdeci">virtual void resume(rgw::sal::Store *store)=0</div><div class="ttdoc">resume all frontends with the given RGWRados instance</div></div>
+<div class="ttc" id="aclass_r_g_w_realm_reloader_1_1_pauser_html_a9d630809f65fdbb3c2e194f3f99d0d80"><div class="ttname"><a href="class_r_g_w_realm_reloader_1_1_pauser.html#a9d630809f65fdbb3c2e194f3f99d0d80">RGWRealmReloader::Pauser::pause</a></div><div class="ttdeci">virtual void pause()=0</div><div class="ttdoc">pause all frontends while realm reconfiguration is in progress</div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_implicit_tenants_html"><div class="ttname"><a href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00495">rgw_auth.h:495</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html_a583f96473bf50c30d8fcca23b63de948"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html#a583f96473bf50c30d8fcca23b63de948">rgw::sal::Store::get_user</a></div><div class="ttdeci">virtual std::unique_ptr&lt; User &gt; get_user(const rgw_user &amp;u)=0</div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html_aca84a6ff80011b26fcd2fa8526c1152e"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e">rgw::sal::Store::ctx</a></div><div class="ttdeci">virtual CephContext * ctx(void)=0</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html"><div class="ttname"><a href="namespacergw_1_1dmclock.html">rgw::dmclock</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock_8h_source.html#l00021">rgw_dmclock.h:21</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__auth__registry_8h_html"><div class="ttname"><a href="rgw__auth__registry_8h.html">rgw_auth_registry.h</a></div></div>
+<div class="ttc" id="argw__auth__registry_8h_html_a499ab786bfdab791755bcaef80f67526"><div class="ttname"><a href="rgw__auth__registry_8h.html#a499ab786bfdab791755bcaef80f67526">rgw_auth_registry_ptr_t</a></div><div class="ttdeci">std::shared_ptr&lt; rgw_auth_registry_t &gt; rgw_auth_registry_ptr_t</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__registry_8h_source.html#l00099">rgw_auth_registry.h:99</a></div></div>
+<div class="ttc" id="argw__process_8h_html"><div class="ttname"><a href="rgw__process_8h.html">rgw_process.h</a></div></div>
+<div class="ttc" id="argw__realm__reloader_8h_html"><div class="ttname"><a href="rgw__realm__reloader_8h.html">rgw_realm_reloader.h</a></div></div>
+<div class="ttc" id="argw__request_8h_html"><div class="ttname"><a href="rgw__request_8h.html">rgw_request.h</a></div></div>
+<div class="ttc" id="argw__sal__rados_8h_html"><div class="ttname"><a href="rgw__sal__rados_8h.html">rgw_sal_rados.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html"><div class="ttname"><a href="struct_r_g_w_process_env.html">RGWProcessEnv</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00034">rgw_process.h:34</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_a354503a866e48459d2d0e8ef00ce4fb5"><div class="ttname"><a href="struct_r_g_w_process_env.html#a354503a866e48459d2d0e8ef00ce4fb5">RGWProcessEnv::auth_registry</a></div><div class="ttdeci">std::shared_ptr&lt; rgw::auth::StrategyRegistry &gt; auth_registry</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00040">rgw_process.h:40</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_a63229c37b2c5134bd4ac1102748fafa0"><div class="ttname"><a href="struct_r_g_w_process_env.html#a63229c37b2c5134bd4ac1102748fafa0">RGWProcessEnv::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00035">rgw_process.h:35</a></div></div>
+<div class="ttc" id="astructrgw__user_html"><div class="ttname"><a href="structrgw__user.html">rgw_user</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00014">rgw_basic_types.h:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__frontend_8h.html">rgw_frontend.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

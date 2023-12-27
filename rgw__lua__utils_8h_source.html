@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_lua_utils.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__lua__utils_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_lua_utils.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__lua__utils_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;lua.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;include/common_fwd.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw_1_1lua.html">rgw::lua</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// push ceph time in string format: &quot;%Y-%m-%d %H:%M:%S&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> CephTime&gt;</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#aef8668de9351eab0e3d8ba86aa3c8825">   15</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#aef8668de9351eab0e3d8ba86aa3c8825">pushtime</a>(lua_State* L, <span class="keyword">const</span> CephTime&amp; tp)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">const</span> <span class="keyword">auto</span> tt = CephTime::clock::to_time_t(tp);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">const</span> <span class="keyword">auto</span> tm = *std::localtime(&amp;tt);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">char</span> buff[64];</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::strftime(buff, <span class="keyword">sizeof</span>(buff), <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, &amp;tm);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  lua_pushstring(L, buff);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a0e579801b8b5cf50797b0bab4c8d7565">   24</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#a0e579801b8b5cf50797b0bab4c8d7565">pushstring</a>(lua_State* L, std::string_view str)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  lua_pushlstring(L, str.data(), str.size());</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a57ca63ef94b64e6d14e3a0f7925cfd4c">   29</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#a57ca63ef94b64e6d14e3a0f7925cfd4c">unsetglobal</a>(lua_State* L, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  lua_pushnil(L);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  lua_setglobal(L, name);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// dump the lua stack to stdout</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#a5d3defcfe8a1fe4f5eb4010fbe4f4205">stack_dump</a>(lua_State* L);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classrgw_1_1lua_1_1lua__state__guard.html">   38</a></span><span class="keyword">class </span><a class="code hl_class" href="classrgw_1_1lua_1_1lua__state__guard.html">lua_state_guard</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classrgw_1_1lua_1_1lua__state__guard.html#a311b5113eb20818de94bb1d7e4fb2597">   39</a></span>  lua_State* <a class="code hl_variable" href="classrgw_1_1lua_1_1lua__state__guard.html#a311b5113eb20818de94bb1d7e4fb2597">l</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classrgw_1_1lua_1_1lua__state__guard.html#a0f5eec188c36ba679a59c4a6bc5fa029">   41</a></span>  <a class="code hl_function" href="classrgw_1_1lua_1_1lua__state__guard.html#a0f5eec188c36ba679a59c4a6bc5fa029">lua_state_guard</a>(lua_State* _l) : <a class="code hl_variable" href="classrgw_1_1lua_1_1lua__state__guard.html#a311b5113eb20818de94bb1d7e4fb2597">l</a>(_l) {}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classrgw_1_1lua_1_1lua__state__guard.html#a0ded827039b29809ec790a8c6f060a77">   42</a></span>  <a class="code hl_function" href="classrgw_1_1lua_1_1lua__state__guard.html#a0ded827039b29809ec790a8c6f060a77">~lua_state_guard</a>() {lua_close(<a class="code hl_variable" href="classrgw_1_1lua_1_1lua__state__guard.html#a311b5113eb20818de94bb1d7e4fb2597">l</a>);}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classrgw_1_1lua_1_1lua__state__guard.html#a74f5209a4b518530d227a98335d80d97">   43</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1lua_1_1lua__state__guard.html#a74f5209a4b518530d227a98335d80d97">reset</a>(lua_State* _l=<span class="keyword">nullptr</span>) {<a class="code hl_variable" href="classrgw_1_1lua_1_1lua__state__guard.html#a311b5113eb20818de94bb1d7e4fb2597">l</a> = _l;}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a2b6ac0d8193adfc9fc3fdd0727ee6349">   46</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a2b6ac0d8193adfc9fc3fdd0727ee6349">ONE_UPVAL</a>    = 1;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a0d3bd29d4fccad9c3e745911aa8dc9c6">   47</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a0d3bd29d4fccad9c3e745911aa8dc9c6">TWO_UPVALS</a>   = 2;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#ab8f6200d9a75a8123c61a515eddaad19">   48</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#ab8f6200d9a75a8123c61a515eddaad19">THREE_UPVALS</a> = 3;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a1bf9dc55a67b929c76fcc156ed1c7d3e">   49</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a1bf9dc55a67b929c76fcc156ed1c7d3e">FOUR_UPVALS</a>  = 4;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a663d8304afde57c6ec6ee66a731ff65d">   50</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a663d8304afde57c6ec6ee66a731ff65d">FIVE_UPVALS</a>  = 5;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a682ef5b1f00cf74814ff9ee871be35c9">   52</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a682ef5b1f00cf74814ff9ee871be35c9">NO_RETURNVAL</a>    = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a8d7f87c607babe858687cad5c5e45f5d">   53</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a8d7f87c607babe858687cad5c5e45f5d">ONE_RETURNVAL</a>    = 1;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a592647da283f085ea2a541cc73784d61">   54</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a592647da283f085ea2a541cc73784d61">TWO_RETURNVALS</a>   = 2;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a3efe1a55a504dd79ee46383cabb9d9c9">   55</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a3efe1a55a504dd79ee46383cabb9d9c9">THREE_RETURNVALS</a> = 3;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a91d3e18343c624645912857d79d8241c">   56</a></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="namespacergw_1_1lua.html#a91d3e18343c624645912857d79d8241c">FOUR_RETURNVALS</a>  = 4;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// utility functions to create a metatable</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// and tie it to an unnamed table</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">// add an __index method to it, to allow reading values</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// if &quot;readonly&quot; parameter is set to &quot;false&quot;, it will also add</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">// a __newindex method to it, to allow writing values</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// if the &quot;toplevel&quot; parameter is set to &quot;true&quot;, it will name the</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// table as well as the metatable, this would allow direct access from</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// the lua script.</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">//</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">// The MetaTable is expected to be a class with the following members:</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">// Name (static function returning the unique name of the metatable)</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// TableName (static function returning the unique name of the table - needed only for &quot;toplevel&quot; tables)</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">// Type (typename) - the type of the &quot;upvalue&quot; (the type that the meta table represent)</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">// IndexClosure (static function return &quot;int&quot; and accept &quot;lua_State*&quot;) </span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">// NewIndexClosure (static function return &quot;int&quot; and accept &quot;lua_State*&quot;) </span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">// e.g.</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">// struct MyStructMetaTable {</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">//   static std::string TableName() {</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">//     return &quot;MyStruct&quot;;</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//   }</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">//</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">//   using Type = MyStruct;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">//</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">//   static int IndexClosure(lua_State* L) {</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">//     const auto value = reinterpret_cast&lt;const Type*&gt;(lua_touserdata(L, lua_upvalueindex(1)));</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">//     ...</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">//   }</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">//   static int NewIndexClosure(lua_State* L) {</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">//     auto value = reinterpret_cast&lt;Type*&gt;(lua_touserdata(L, lua_upvalueindex(1)));</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//     ...</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">//   }</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">// };</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> MetaTable, <span class="keyword">typename</span>... Upvalues&gt;</div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#ae28b46ca7f5bb7e6f882b97db69eb595">   94</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#ae28b46ca7f5bb7e6f882b97db69eb595">create_metatable</a>(lua_State* L, <span class="keywordtype">bool</span> toplevel, Upvalues... upvalues)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> upvals_size = <span class="keyword">sizeof</span>...(upvalues);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">const</span> std::array&lt;void*, upvals_size&gt; upvalue_arr = {upvalues...};</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">// create table</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  lua_newtable(L);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">if</span> (toplevel) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// duplicate the table to make sure it remain in the stack</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    lua_pushvalue(L, -1);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// give table a name (in cae of &quot;toplevel&quot;)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    lua_setglobal(L, MetaTable::TableName().c_str());</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="comment">// create metatable</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> rc = luaL_newmetatable(L, MetaTable::Name().c_str());</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  lua_pushliteral(L, <span class="stringliteral">&quot;__index&quot;</span>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> upvalue : upvalue_arr) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    lua_pushlightuserdata(L, upvalue);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  lua_pushcclosure(L, MetaTable::IndexClosure, upvals_size);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  lua_rawset(L, -3);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  lua_pushliteral(L, <span class="stringliteral">&quot;__newindex&quot;</span>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> upvalue : upvalue_arr) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    lua_pushlightuserdata(L, upvalue);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  lua_pushcclosure(L, MetaTable::NewIndexClosure, upvals_size);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  lua_rawset(L, -3);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  lua_pushliteral(L, <span class="stringliteral">&quot;__pairs&quot;</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> upvalue : upvalue_arr) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    lua_pushlightuserdata(L, upvalue);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  lua_pushcclosure(L, MetaTable::PairsClosure, upvals_size);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  lua_rawset(L, -3);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  lua_pushliteral(L, <span class="stringliteral">&quot;__len&quot;</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> upvalue : upvalue_arr) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    lua_pushlightuserdata(L, upvalue);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  lua_pushcclosure(L, MetaTable::LenClosure, upvals_size);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  lua_rawset(L, -3);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="comment">// tie metatable and table</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  lua_setmetatable(L, -2);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> MetaTable&gt;</div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="namespacergw_1_1lua.html#a16e9314bc6a5925aa5e91258b5c86b2d">  137</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#ae28b46ca7f5bb7e6f882b97db69eb595">create_metatable</a>(lua_State* L, <span class="keywordtype">bool</span> toplevel, std::unique_ptr&lt;typename MetaTable::Type&gt;&amp; ptr)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>{</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordflow">if</span> (ptr) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    create_metatable&lt;MetaTable&gt;(L, toplevel, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ptr.get()));</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    lua_pushnil(L);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">// following struct may be used as a base class for other MetaTable classes</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">// note, however, this is not mandatory to use it as a base</span></div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="};">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="structrgw_1_1lua_1_1_empty_meta_table.html">  148</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw_1_1lua_1_1_empty_meta_table.html">EmptyMetaTable</a> {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="comment">// by default everythinmg is &quot;readonly&quot;</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="comment">// to change, overload this function in the derived</span></div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="structrgw_1_1lua_1_1_empty_meta_table.html#afaf0de1a09d2b841693c2969a71cc470">  151</a></span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structrgw_1_1lua_1_1_empty_meta_table.html#afaf0de1a09d2b841693c2969a71cc470">NewIndexClosure</a>(lua_State* L) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">return</span> luaL_error(L, <span class="stringliteral">&quot;trying to write to readonly field&quot;</span>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  }</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="comment">// by default nothing is iterable</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="comment">// to change, overload this function in the derived</span></div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="structrgw_1_1lua_1_1_empty_meta_table.html#a805cbe9342175e0d15fb9cef3ed46123">  157</a></span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structrgw_1_1lua_1_1_empty_meta_table.html#a805cbe9342175e0d15fb9cef3ed46123">PairsClosure</a>(lua_State* L) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> luaL_error(L, <span class="stringliteral">&quot;trying to iterate over non-iterable field&quot;</span>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  }</div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="comment">// by default nothing is iterable</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="comment">// to change, overload this function in the derived</span></div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="structrgw_1_1lua_1_1_empty_meta_table.html#a7bd895ee0e1f8fe6a04ea90c622a8df8">  163</a></span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structrgw_1_1lua_1_1_empty_meta_table.html#a7bd895ee0e1f8fe6a04ea90c622a8df8">LenClosure</a>(lua_State* L) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">return</span> luaL_error(L, <span class="stringliteral">&quot;trying to get length of non-iterable field&quot;</span>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  }</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="structrgw_1_1lua_1_1_empty_meta_table.html#a0c8c6456ff8ccefd4320c73f0a669ef7">  167</a></span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="structrgw_1_1lua_1_1_empty_meta_table.html#a0c8c6456ff8ccefd4320c73f0a669ef7">error_unknown_field</a>(lua_State* L, <span class="keyword">const</span> std::string&amp; index, <span class="keyword">const</span> std::string&amp; table) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">return</span> luaL_error(L, <span class="stringliteral">&quot;unknown field name: %s provided to: %s&quot;</span>,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                      index.c_str(), table.c_str());</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  }</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>};</div>
+</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">// create a debug log action</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">// it expects CephContext to be captured</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">// it expects one string parameter, which is the message to log</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">// could be executed from any context that has CephContext</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">// e.g.</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">//    RGWDebugLog(&quot;hello world from lua&quot;)</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">//</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#a1edb862de59e113633a808ff1e7e84dd">create_debug_action</a>(lua_State* L, CephContext* <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">// set the packages search path according to:</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="comment">// package.path = &quot;&lt;install_dir&gt;/share/lua/5.3/?.lua&quot;                                                                         │                         LuaRocks.</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment">// package.cpath= &quot;&lt;install_dir&gt;/lib/lua/5.3/?.so&quot;</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#a94d31d4eb1c44b3493c7d0c7df9f9b8e">set_package_path</a>(lua_State* L, <span class="keyword">const</span> std::string&amp; install_dir);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">// open standard lua libs and remove the following functions:</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">// os.exit()</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">// load()</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">// loadfile()</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">// loadstring()</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">// dofile()</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">// and the &quot;debug&quot; library</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw_1_1lua.html#ac9857bc980903b7a1857429bc9ccd9ca">open_standard_libs</a>(lua_State* L);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="ttc" id="aclassrgw_1_1lua_1_1lua__state__guard_html"><div class="ttname"><a href="classrgw_1_1lua_1_1lua__state__guard.html">rgw::lua::lua_state_guard</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00038">rgw_lua_utils.h:38</a></div></div>
+<div class="ttc" id="aclassrgw_1_1lua_1_1lua__state__guard_html_a0ded827039b29809ec790a8c6f060a77"><div class="ttname"><a href="classrgw_1_1lua_1_1lua__state__guard.html#a0ded827039b29809ec790a8c6f060a77">rgw::lua::lua_state_guard::~lua_state_guard</a></div><div class="ttdeci">~lua_state_guard()</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00042">rgw_lua_utils.h:42</a></div></div>
+<div class="ttc" id="aclassrgw_1_1lua_1_1lua__state__guard_html_a0f5eec188c36ba679a59c4a6bc5fa029"><div class="ttname"><a href="classrgw_1_1lua_1_1lua__state__guard.html#a0f5eec188c36ba679a59c4a6bc5fa029">rgw::lua::lua_state_guard::lua_state_guard</a></div><div class="ttdeci">lua_state_guard(lua_State *_l)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00041">rgw_lua_utils.h:41</a></div></div>
+<div class="ttc" id="aclassrgw_1_1lua_1_1lua__state__guard_html_a311b5113eb20818de94bb1d7e4fb2597"><div class="ttname"><a href="classrgw_1_1lua_1_1lua__state__guard.html#a311b5113eb20818de94bb1d7e4fb2597">rgw::lua::lua_state_guard::l</a></div><div class="ttdeci">lua_State * l</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00039">rgw_lua_utils.h:39</a></div></div>
+<div class="ttc" id="aclassrgw_1_1lua_1_1lua__state__guard_html_a74f5209a4b518530d227a98335d80d97"><div class="ttname"><a href="classrgw_1_1lua_1_1lua__state__guard.html#a74f5209a4b518530d227a98335d80d97">rgw::lua::lua_state_guard::reset</a></div><div class="ttdeci">void reset(lua_State *_l=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00043">rgw_lua_utils.h:43</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html"><div class="ttname"><a href="namespacergw_1_1lua.html">rgw::lua</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lua_8cc_source.html#l00016">rgw_lua.cc:16</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a0d3bd29d4fccad9c3e745911aa8dc9c6"><div class="ttname"><a href="namespacergw_1_1lua.html#a0d3bd29d4fccad9c3e745911aa8dc9c6">rgw::lua::TWO_UPVALS</a></div><div class="ttdeci">constexpr auto TWO_UPVALS</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00047">rgw_lua_utils.h:47</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a0e579801b8b5cf50797b0bab4c8d7565"><div class="ttname"><a href="namespacergw_1_1lua.html#a0e579801b8b5cf50797b0bab4c8d7565">rgw::lua::pushstring</a></div><div class="ttdeci">static void pushstring(lua_State *L, std::string_view str)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00024">rgw_lua_utils.h:24</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a1bf9dc55a67b929c76fcc156ed1c7d3e"><div class="ttname"><a href="namespacergw_1_1lua.html#a1bf9dc55a67b929c76fcc156ed1c7d3e">rgw::lua::FOUR_UPVALS</a></div><div class="ttdeci">constexpr auto FOUR_UPVALS</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00049">rgw_lua_utils.h:49</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a1edb862de59e113633a808ff1e7e84dd"><div class="ttname"><a href="namespacergw_1_1lua.html#a1edb862de59e113633a808ff1e7e84dd">rgw::lua::create_debug_action</a></div><div class="ttdeci">void create_debug_action(lua_State *L, CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8cc_source.html#l00028">rgw_lua_utils.cc:28</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a2b6ac0d8193adfc9fc3fdd0727ee6349"><div class="ttname"><a href="namespacergw_1_1lua.html#a2b6ac0d8193adfc9fc3fdd0727ee6349">rgw::lua::ONE_UPVAL</a></div><div class="ttdeci">constexpr auto ONE_UPVAL</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00046">rgw_lua_utils.h:46</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a3efe1a55a504dd79ee46383cabb9d9c9"><div class="ttname"><a href="namespacergw_1_1lua.html#a3efe1a55a504dd79ee46383cabb9d9c9">rgw::lua::THREE_RETURNVALS</a></div><div class="ttdeci">constexpr auto THREE_RETURNVALS</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00055">rgw_lua_utils.h:55</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a57ca63ef94b64e6d14e3a0f7925cfd4c"><div class="ttname"><a href="namespacergw_1_1lua.html#a57ca63ef94b64e6d14e3a0f7925cfd4c">rgw::lua::unsetglobal</a></div><div class="ttdeci">static void unsetglobal(lua_State *L, const char *name)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00029">rgw_lua_utils.h:29</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a592647da283f085ea2a541cc73784d61"><div class="ttname"><a href="namespacergw_1_1lua.html#a592647da283f085ea2a541cc73784d61">rgw::lua::TWO_RETURNVALS</a></div><div class="ttdeci">constexpr auto TWO_RETURNVALS</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00054">rgw_lua_utils.h:54</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a5d3defcfe8a1fe4f5eb4010fbe4f4205"><div class="ttname"><a href="namespacergw_1_1lua.html#a5d3defcfe8a1fe4f5eb4010fbe4f4205">rgw::lua::stack_dump</a></div><div class="ttdeci">void stack_dump(lua_State *L)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8cc_source.html#l00034">rgw_lua_utils.cc:34</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a663d8304afde57c6ec6ee66a731ff65d"><div class="ttname"><a href="namespacergw_1_1lua.html#a663d8304afde57c6ec6ee66a731ff65d">rgw::lua::FIVE_UPVALS</a></div><div class="ttdeci">constexpr auto FIVE_UPVALS</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00050">rgw_lua_utils.h:50</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a682ef5b1f00cf74814ff9ee871be35c9"><div class="ttname"><a href="namespacergw_1_1lua.html#a682ef5b1f00cf74814ff9ee871be35c9">rgw::lua::NO_RETURNVAL</a></div><div class="ttdeci">constexpr auto NO_RETURNVAL</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00052">rgw_lua_utils.h:52</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a8d7f87c607babe858687cad5c5e45f5d"><div class="ttname"><a href="namespacergw_1_1lua.html#a8d7f87c607babe858687cad5c5e45f5d">rgw::lua::ONE_RETURNVAL</a></div><div class="ttdeci">constexpr auto ONE_RETURNVAL</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00053">rgw_lua_utils.h:53</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a91d3e18343c624645912857d79d8241c"><div class="ttname"><a href="namespacergw_1_1lua.html#a91d3e18343c624645912857d79d8241c">rgw::lua::FOUR_RETURNVALS</a></div><div class="ttdeci">constexpr auto FOUR_RETURNVALS</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00056">rgw_lua_utils.h:56</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_a94d31d4eb1c44b3493c7d0c7df9f9b8e"><div class="ttname"><a href="namespacergw_1_1lua.html#a94d31d4eb1c44b3493c7d0c7df9f9b8e">rgw::lua::set_package_path</a></div><div class="ttdeci">void set_package_path(lua_State *L, const std::string &amp;install_dir)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8cc_source.html#l00045">rgw_lua_utils.cc:45</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_ab8f6200d9a75a8123c61a515eddaad19"><div class="ttname"><a href="namespacergw_1_1lua.html#ab8f6200d9a75a8123c61a515eddaad19">rgw::lua::THREE_UPVALS</a></div><div class="ttdeci">constexpr auto THREE_UPVALS</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00048">rgw_lua_utils.h:48</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_ac9857bc980903b7a1857429bc9ccd9ca"><div class="ttname"><a href="namespacergw_1_1lua.html#ac9857bc980903b7a1857429bc9ccd9ca">rgw::lua::open_standard_libs</a></div><div class="ttdeci">void open_standard_libs(lua_State *L)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8cc_source.html#l00062">rgw_lua_utils.cc:62</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_ae28b46ca7f5bb7e6f882b97db69eb595"><div class="ttname"><a href="namespacergw_1_1lua.html#ae28b46ca7f5bb7e6f882b97db69eb595">rgw::lua::create_metatable</a></div><div class="ttdeci">void create_metatable(lua_State *L, bool toplevel, Upvalues... upvalues)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00094">rgw_lua_utils.h:94</a></div></div>
+<div class="ttc" id="anamespacergw_1_1lua_html_aef8668de9351eab0e3d8ba86aa3c8825"><div class="ttname"><a href="namespacergw_1_1lua.html#aef8668de9351eab0e3d8ba86aa3c8825">rgw::lua::pushtime</a></div><div class="ttdeci">void pushtime(lua_State *L, const CephTime &amp;tp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00015">rgw_lua_utils.h:15</a></div></div>
+<div class="ttc" id="astructrgw_1_1lua_1_1_empty_meta_table_html"><div class="ttname"><a href="structrgw_1_1lua_1_1_empty_meta_table.html">rgw::lua::EmptyMetaTable</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00148">rgw_lua_utils.h:148</a></div></div>
+<div class="ttc" id="astructrgw_1_1lua_1_1_empty_meta_table_html_a0c8c6456ff8ccefd4320c73f0a669ef7"><div class="ttname"><a href="structrgw_1_1lua_1_1_empty_meta_table.html#a0c8c6456ff8ccefd4320c73f0a669ef7">rgw::lua::EmptyMetaTable::error_unknown_field</a></div><div class="ttdeci">static int error_unknown_field(lua_State *L, const std::string &amp;index, const std::string &amp;table)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00167">rgw_lua_utils.h:167</a></div></div>
+<div class="ttc" id="astructrgw_1_1lua_1_1_empty_meta_table_html_a7bd895ee0e1f8fe6a04ea90c622a8df8"><div class="ttname"><a href="structrgw_1_1lua_1_1_empty_meta_table.html#a7bd895ee0e1f8fe6a04ea90c622a8df8">rgw::lua::EmptyMetaTable::LenClosure</a></div><div class="ttdeci">static int LenClosure(lua_State *L)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00163">rgw_lua_utils.h:163</a></div></div>
+<div class="ttc" id="astructrgw_1_1lua_1_1_empty_meta_table_html_a805cbe9342175e0d15fb9cef3ed46123"><div class="ttname"><a href="structrgw_1_1lua_1_1_empty_meta_table.html#a805cbe9342175e0d15fb9cef3ed46123">rgw::lua::EmptyMetaTable::PairsClosure</a></div><div class="ttdeci">static int PairsClosure(lua_State *L)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00157">rgw_lua_utils.h:157</a></div></div>
+<div class="ttc" id="astructrgw_1_1lua_1_1_empty_meta_table_html_afaf0de1a09d2b841693c2969a71cc470"><div class="ttname"><a href="structrgw_1_1lua_1_1_empty_meta_table.html#afaf0de1a09d2b841693c2969a71cc470">rgw::lua::EmptyMetaTable::NewIndexClosure</a></div><div class="ttdeci">static int NewIndexClosure(lua_State *L)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lua__utils_8h_source.html#l00151">rgw_lua_utils.h:151</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__lua__utils_8h.html">rgw_lua_utils.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::BucketTrimManager::Impl 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrgw_1_1_bucket_trim_manager_1_1_impl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 타입</a> &#124;
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-attribs">Public 속성</a> &#124;
+<a href="classrgw_1_1_bucket_trim_manager_1_1_impl-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::BucketTrimManager::Impl 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+rgw::BucketTrimManager::Impl에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1_bucket_trim_manager_1_1_impl__inherit__graph.png" border="0" usemap="#argw_1_1_bucket_trim_manager_1_1_impl_inherit__map" alt="Inheritance graph"/></div>
+<map name="argw_1_1_bucket_trim_manager_1_1_impl_inherit__map" id="argw_1_1_bucket_trim_manager_1_1_impl_inherit__map">
+<area shape="rect" title=" " alt="" coords="97,165,261,464"/>
+<area shape="rect" href="struct_trim_counters_1_1_server.html" title="server interface to query the hottest buckets" alt="" coords="5,5,169,117"/>
+<area shape="poly" title=" " alt="" coords="115,130,128,165,123,166,110,132"/>
+<area shape="rect" href="struct_bucket_trim_observer.html" title="Interface to communicate with the trim manager about completed operations" alt="" coords="193,5,349,117"/>
+<area shape="poly" title=" " alt="" coords="249,132,236,166,231,165,244,130"/>
+</map>
+</div>
+<div class="dynheader">
+rgw::BucketTrimManager::Impl에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1_bucket_trim_manager_1_1_impl__coll__graph.png" border="0" usemap="#argw_1_1_bucket_trim_manager_1_1_impl_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1_bucket_trim_manager_1_1_impl_coll__map" id="argw_1_1_bucket_trim_manager_1_1_impl_coll__map">
+<area shape="rect" title=" " alt="" coords="763,3659,927,3851"/>
+<area shape="rect" href="struct_trim_counters_1_1_server.html" title="server interface to query the hottest buckets" alt="" coords="1225,3285,1389,3397"/>
+<area shape="poly" title=" " alt="" coords="1296,3413,1284,3454,1267,3498,1245,3542,1215,3580,1184,3610,1149,3637,1073,3681,997,3713,928,3736,926,3731,995,3708,1071,3676,1146,3632,1180,3606,1211,3577,1240,3539,1263,3496,1279,3452,1291,3411"/>
+<area shape="rect" href="struct_bucket_trim_observer.html" title="Interface to communicate with the trim manager about completed operations" alt="" coords="1045,3285,1201,3397"/>
+<area shape="poly" title=" " alt="" coords="1108,3413,1080,3495,1060,3539,1036,3580,985,3642,929,3694,925,3690,981,3638,1031,3577,1055,3537,1075,3494,1103,3411"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_store.html" title=" " alt="" coords="1360,680,1523,979"/>
+<area shape="poly" title=" " alt="" coords="1362,865,1229,930,1150,975,1069,1028,989,1090,914,1160,848,1238,820,1280,796,1324,781,1370,775,1430,774,1499,777,1574,789,1721,796,1835,794,2325,789,2707,793,3089,802,3313,817,3578,825,3642,819,3643,812,3579,797,3314,788,3089,784,2707,789,2325,791,1835,783,1721,771,1574,768,1499,769,1429,776,1369,791,1322,816,1277,844,1235,910,1156,985,1086,1066,1024,1147,970,1226,925,1359,861"/>
+<area shape="rect" href="class_r_g_w_rados.html" title=" " alt="" coords="2013,1915,2197,3040"/>
+<area shape="poly" title=" " alt="" coords="1467,978,1477,1058,1491,1190,1501,1323,1505,1436,1506,1582,1515,1726,1524,1787,1537,1834,1581,1922,1634,2007,1693,2087,1757,2162,1822,2232,1887,2294,2002,2394,1999,2398,1883,2298,1819,2235,1753,2166,1689,2091,1629,2010,1576,1925,1533,1836,1518,1788,1509,1727,1501,1582,1499,1436,1496,1323,1486,1191,1472,1059,1461,979"/>
+<area shape="rect" href="class_r_g_w_sync_log_trim_thread.html" title=" " alt="" coords="2076,3900,2255,4119"/>
+<area shape="poly" title=" " alt="" coords="1361,834,1207,844,1112,858,1011,878,907,907,804,946,707,997,661,1027,619,1061,588,1091,566,1120,551,1148,540,1177,525,1242,507,1323,489,1400,480,1466,475,1581,473,1636,468,1695,454,1761,430,1836,418,1860,404,1876,391,1892,380,1916,355,2004,337,2085,324,2161,315,2231,309,2361,315,2484,344,2742,356,2894,361,3071,361,3756,364,3786,371,3809,382,3827,396,3840,415,3849,436,3855,488,3858,614,3847,683,3843,751,3848,861,3863,955,3871,1115,3878,1276,3881,1276,3887,1115,3883,955,3877,861,3868,750,3853,683,3849,615,3852,488,3863,436,3860,413,3854,394,3845,378,3831,366,3811,359,3787,356,3756,356,3071,351,2894,338,2743,310,2485,304,2361,310,2231,318,2160,332,2084,350,2002,375,1914,386,1889,400,1873,413,1857,426,1834,449,1759,462,1694,468,1636,470,1581,474,1465,483,1399,501,1322,520,1241,535,1175,546,1146,562,1117,584,1087,616,1057,658,1023,704,992,802,941,905,902,1010,873,1112,852,1207,839,1360,828"/>
+<area shape="poly" title=" " alt="" coords="1276,3881,1370,3887,1482,3897,1797,3941,2059,3986,2059,3991,1796,3946,1481,3903,1370,3892,1276,3887"/>
+<area shape="rect" href="class_r_g_w_reshard.html" title=" " alt="" coords="1685,1333,1859,1824"/>
+<area shape="poly" title=" " alt="" coords="1525,936,1559,995,1588,1058,1597,1094,1599,1127,1594,1184,1591,1211,1593,1238,1601,1266,1618,1297,1629,1306,1641,1309,1654,1312,1667,1321,1676,1331,1672,1334,1664,1325,1652,1317,1639,1314,1626,1311,1614,1300,1596,1268,1588,1239,1586,1211,1588,1184,1594,1127,1592,1095,1583,1060,1555,997,1520,939"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_zone.html" title=" " alt="" coords="1330,1427,1486,1731"/>
+<area shape="poly" title=" " alt="" coords="1437,979,1418,1410,1413,1410,1432,979"/>
+<area shape="rect" href="class_bucket_trim_watcher.html" title="rados watcher for bucket trim notifications" alt="" coords="509,3243,664,3440"/>
+<area shape="poly" title=" " alt="" coords="1361,840,1232,859,1154,876,1071,898,986,927,903,963,823,1007,751,1061,718,1091,693,1120,674,1148,660,1176,639,1241,617,1323,598,1403,586,1470,580,1531,579,1587,582,1707,582,1859,579,1875,581,1890,588,1897,597,1900,606,1904,614,1913,633,1960,648,2016,658,2080,664,2149,667,2303,661,2467,635,2790,615,3040,601,3226,596,3225,609,3040,630,2790,656,2467,662,2303,659,2150,652,2080,642,2017,628,1962,610,1916,603,1909,594,1905,585,1901,577,1892,574,1875,576,1858,576,1707,573,1587,575,1530,581,1470,593,1401,612,1322,634,1239,655,1174,670,1145,689,1117,714,1088,748,1057,820,1003,900,958,984,922,1069,893,1152,871,1231,854,1360,835"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html" title="Base singleton representing a Store or stacking layer" alt="" coords="2711,245,2873,544"/>
+<area shape="poly" title=" " alt="" coords="2703,525,2655,569,2628,587,2600,602,2573,610,2533,614,2419,619,2112,614,1805,610,1692,614,1652,619,1626,626,1598,642,1571,662,1524,708,1521,704,1568,658,1595,638,1624,622,1651,614,1691,609,1805,605,2112,609,2419,613,2532,609,2572,604,2598,598,2626,583,2652,565,2699,521"/>
+<area shape="rect" href="class_r_g_w_l_c.html" title=" " alt="" coords="2697,624,2887,1035"/>
+<area shape="poly" title=" " alt="" coords="2795,543,2795,607,2789,607,2789,543"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html" title=" " alt="" coords="2992,1437,3152,1720"/>
+<area shape="poly" title=" " alt="" coords="2869,543,2901,623,2918,686,2925,743,2925,842,2928,888,2937,934,2958,982,2994,1033,3007,1042,3022,1043,3038,1046,3053,1057,3066,1084,3076,1120,3087,1211,3089,1316,3086,1420,3081,1420,3084,1316,3082,1212,3071,1121,3061,1086,3049,1060,3036,1051,3022,1049,3006,1047,2990,1037,2953,985,2932,936,2923,889,2920,842,2919,743,2913,687,2896,625,2864,545"/>
+<area shape="poly" title=" " alt="" coords="2012,2387,1917,2283,1812,2151,1760,2077,1711,1999,1667,1918,1631,1836,1610,1777,1595,1723,1579,1624,1575,1535,1579,1450,1584,1365,1585,1275,1575,1175,1549,1059,1526,995,1531,993,1555,1058,1580,1174,1590,1275,1589,1366,1584,1451,1580,1535,1584,1624,1600,1722,1615,1776,1636,1834,1672,1916,1716,1996,1764,2074,1816,2148,1921,2280,2015,2383"/>
+<area shape="rect" href="class_r_g_w_g_c.html" title=" " alt="" coords="2858,3128,3014,3555"/>
+<area shape="poly" title=" " alt="" coords="2199,2544,2320,2638,2467,2761,2623,2906,2699,2983,2769,3062,2812,3119,2852,3179,2847,3182,2808,3122,2765,3066,2695,2987,2620,2910,2464,2765,2316,2642,2195,2548"/>
+<area shape="rect" href="class_r_g_w_rados_thread.html" title=" " alt="" coords="1465,3200,1613,3483"/>
+<area shape="poly" title=" " alt="" coords="2016,2580,1926,2684,1824,2811,1720,2955,1672,3030,1628,3105,1591,3185,1586,3183,1623,3103,1667,3027,1716,2952,1819,2808,1922,2680,2011,2576"/>
+<area shape="rect" href="class_r_g_w_meta_notifier_manager.html" title=" " alt="" coords="2066,3296,2249,3387"/>
+<area shape="poly" title=" " alt="" coords="2200,2814,2215,2947,2217,3014,2213,3080,2197,3187,2176,3280,2171,3279,2192,3186,2208,3080,2212,3014,2210,2947,2195,2815"/>
+<area shape="rect" href="class_r_g_w_data_notifier_manager.html" title=" " alt="" coords="2530,3296,2710,3387"/>
+<area shape="poly" title=" " alt="" coords="2199,2606,2353,2834,2436,2967,2514,3103,2561,3195,2598,3280,2593,3282,2556,3197,2510,3105,2431,2970,2348,2837,2195,2609"/>
+<area shape="rect" href="class_r_g_w_index_completion_manager.html" title=" " alt="" coords="1637,3136,1854,3547"/>
+<area shape="poly" title=" " alt="" coords="2016,2693,1859,3065,1836,3121,1831,3119,1854,3063,2011,2691"/>
+<area shape="poly" title=" " alt="" coords="2881,3129,2846,3065,2776,2976,2697,2892,2613,2814,2525,2743,2438,2679,2354,2623,2211,2537,2213,2533,2357,2619,2441,2675,2528,2739,2616,2810,2701,2888,2780,2973,2850,3063,2885,3127"/>
+<area shape="rect" href="class_r_g_w_g_c_1_1_g_c_worker.html" title=" " alt="" coords="2869,3667,3003,3843"/>
+<area shape="poly" title=" " alt="" coords="2909,3554,2911,3634,2913,3650,2908,3651,2906,3635,2903,3555"/>
+<area shape="rect" title=" " alt="" coords="3181,360,3299,429"/>
+<area shape="poly" title=" " alt="" coords="3249,443,3267,613,3274,720,3277,828,3277,2479,3270,2586,3251,2693,3221,2798,3184,2899,3143,2994,3099,3081,3016,3225,3012,3223,3094,3079,3138,2991,3179,2897,3216,2796,3245,2692,3265,2585,3272,2479,3272,828,3269,720,3262,613,3244,444"/>
+<area shape="poly" title=" " alt="" coords="3179,440,3069,522,3008,572,2951,626,2888,697,2884,694,2947,622,3005,568,3066,518,3176,436"/>
+<area shape="rect" href="class_r_g_w_object_expirer_1_1_o_e_worker.html" title=" " alt="" coords="3043,720,3237,939"/>
+<area shape="poly" title=" " alt="" coords="3231,445,3168,721,3162,720,3226,443"/>
+<area shape="poly" title=" " alt="" coords="3258,443,3280,516,3302,611,3321,719,3328,828,3328,3756,3326,3777,3319,3796,3292,3831,3251,3862,3197,3890,3132,3913,3059,3933,2892,3965,2713,3987,2537,4000,2255,4010,2254,4005,2536,3995,2712,3982,2891,3960,3058,3928,3131,3908,3195,3885,3248,3858,3289,3828,3314,3794,3320,3775,3323,3756,3323,828,3315,719,3297,612,3274,517,3253,444"/>
+<area shape="rect" title=" " alt="" coords="2452,795,2511,864"/>
+<area shape="poly" title=" " alt="" coords="2485,864,2492,1053,2496,1336,2495,1485,2489,1625,2479,1745,2463,1835,2440,1906,2413,1976,2348,2111,2277,2235,2209,2340,2205,2337,2273,2232,2344,2109,2408,1974,2435,1904,2457,1834,2474,1745,2484,1625,2489,1485,2491,1336,2487,1053,2480,864"/>
+<area shape="poly" title=" " alt="" coords="2480,864,2479,904,2484,950,2498,996,2510,1015,2526,1033,2540,1041,2558,1047,2605,1051,2662,1048,2723,1042,2784,1036,2841,1034,2888,1039,2906,1046,2921,1057,2933,1087,2943,1144,2957,1331,2964,1592,2965,1901,2958,2563,2945,3111,2940,3111,2952,2563,2960,1901,2958,1592,2951,1331,2938,1145,2928,1088,2917,1060,2904,1051,2886,1044,2841,1039,2785,1041,2724,1047,2662,1053,2605,1056,2557,1052,2538,1046,2522,1037,2506,1019,2493,998,2478,951,2474,904,2475,864"/>
+<area shape="rect" href="struct_d3n_data_cache.html" title=" " alt="" coords="2233,1323,2447,1835"/>
+<area shape="poly" title=" " alt="" coords="2479,864,2471,903,2456,949,2434,995,2403,1037,2387,1046,2371,1048,2357,1050,2345,1060,2329,1101,2319,1159,2316,1229,2317,1306,2312,1306,2311,1229,2314,1159,2323,1099,2341,1057,2355,1045,2370,1043,2385,1041,2400,1033,2430,993,2451,947,2466,902,2474,863"/>
+<area shape="rect" href="structrgw_1_1_bucket_trim_config.html" title="Configuration for BucketTrimManager" alt="" coords="1883,1493,2037,1664"/>
+<area shape="poly" title=" " alt="" coords="2482,864,2475,905,2462,953,2438,999,2422,1020,2403,1037,2370,1046,2312,1049,2156,1046,2001,1045,1946,1050,1927,1055,1917,1061,1907,1079,1902,1105,1903,1173,1918,1298,1928,1390,1943,1476,1937,1477,1923,1390,1913,1299,1897,1173,1897,1105,1902,1077,1913,1057,1925,1050,1945,1045,2001,1040,2156,1041,2312,1044,2369,1041,2400,1032,2418,1016,2434,996,2457,951,2470,904,2476,863"/>
+<area shape="poly" title=" " alt="" coords="2484,864,2494,945,2506,990,2526,1033,2547,1063,2568,1087,2613,1125,2661,1151,2709,1172,2757,1194,2803,1223,2845,1263,2864,1290,2881,1322,2912,1394,2930,1458,2939,1517,2939,1573,2932,1630,2919,1691,2881,1835,2784,2226,2737,2387,2710,2462,2680,2533,2646,2601,2607,2666,2561,2730,2509,2792,2449,2854,2379,2916,2301,2979,2211,3042,2193,3050,2170,3056,2115,3062,2015,3067,1957,3076,1899,3083,1705,3085,1383,3083,1062,3087,942,3095,873,3107,818,3132,767,3165,719,3203,678,3241,674,3237,716,3199,764,3161,816,3127,871,3101,942,3089,1061,3082,1383,3078,1705,3079,1898,3077,1956,3070,2014,3061,2114,3056,2169,3051,2191,3045,2208,3038,2297,2974,2376,2912,2445,2851,2505,2789,2557,2727,2602,2663,2641,2598,2675,2530,2705,2460,2732,2386,2779,2225,2876,1834,2914,1690,2927,1630,2934,1573,2934,1517,2925,1459,2907,1396,2876,1324,2859,1293,2841,1267,2800,1227,2755,1199,2707,1177,2658,1156,2610,1129,2564,1091,2542,1066,2522,1036,2501,992,2489,946,2479,864"/>
+<area shape="poly" title=" " alt="" coords="2933,3667,2933,3572,2939,3572,2939,3667"/>
+<area shape="poly" title=" " alt="" coords="2729,1035,2689,1176,2655,1323,2644,1401,2640,1468,2642,1583,2642,1639,2636,1697,2622,1762,2597,1836,2573,1885,2535,1944,2435,2083,2319,2229,2210,2359,2206,2356,2315,2226,2431,2080,2531,1941,2568,1882,2592,1834,2617,1760,2631,1696,2636,1638,2636,1583,2634,1468,2638,1400,2650,1322,2684,1175,2724,1033"/>
+<area shape="rect" title=" " alt="" coords="1632,360,1677,429"/>
+<area shape="poly" title=" " alt="" coords="1635,429,1593,493,1549,569,1505,666,1500,663,1545,567,1588,490,1630,427"/>
+<area shape="poly" title=" " alt="" coords="1679,417,1711,454,1748,503,1784,560,1812,623,1818,671,1819,752,1816,967,1815,1080,1818,1180,1826,1256,1832,1282,1840,1297,1864,1314,1889,1319,1916,1316,1943,1308,1971,1300,1998,1297,2025,1302,2051,1321,2066,1348,2079,1394,2096,1527,2107,1702,2112,1898,2107,1898,2102,1703,2091,1528,2073,1395,2061,1350,2047,1324,2023,1307,1998,1302,1972,1306,1944,1313,1917,1321,1889,1325,1862,1319,1836,1300,1827,1284,1820,1257,1813,1180,1810,1080,1811,967,1814,752,1813,671,1807,625,1779,563,1744,506,1707,457,1675,421"/>
+<area shape="poly" title=" " alt="" coords="1678,404,1746,432,1846,471,1964,510,2087,541,2147,551,2199,555,2287,555,2376,554,2428,557,2488,565,2591,578,2635,591,2686,622,2683,627,2633,596,2590,583,2488,571,2427,562,2376,559,2287,560,2198,561,2147,556,2086,547,1962,515,1844,476,1744,437,1676,409"/>
+<area shape="poly" title=" " alt="" coords="1633,408,1484,482,1373,543,1247,620,1114,711,982,815,919,872,859,932,803,995,752,1060,710,1126,689,1183,677,1244,666,1323,638,1468,627,1529,619,1585,618,1640,624,1697,639,1761,666,1833,671,1840,677,1844,684,1849,690,1857,708,1909,718,1970,723,2040,724,2117,715,2288,702,2468,692,2646,691,2730,694,2809,702,2881,717,2944,738,2997,767,3038,799,3047,871,3055,1082,3072,1293,3087,1367,3094,1403,3102,1445,3139,1479,3184,1475,3187,1442,3142,1400,3106,1366,3099,1293,3092,1081,3077,871,3061,798,3052,764,3042,733,2999,712,2945,697,2882,689,2809,686,2730,687,2646,697,2468,710,2287,718,2117,718,2040,713,1971,702,1910,686,1860,680,1853,674,1849,667,1844,661,1836,634,1762,618,1698,612,1640,614,1584,622,1528,633,1468,661,1322,672,1244,684,1182,706,1124,747,1057,799,991,855,928,915,868,979,811,1111,706,1244,615,1370,538,1482,477,1631,404"/>
+<area shape="rect" href="class_r_g_w_coroutines_manager_registry.html" title=" " alt="" coords="2045,1059,2277,1299"/>
+<area shape="poly" title=" " alt="" coords="1678,409,1762,472,1811,517,1855,566,1898,624,1937,685,2008,811,2068,934,2114,1042,2109,1044,2063,936,2004,814,1933,688,1893,627,1851,570,1807,520,1758,476,1675,413"/>
+<area shape="poly" title=" " alt="" coords="1655,429,1650,568,1650,783,1654,908,1663,1038,1677,1170,1697,1298,1701,1317,1696,1318,1692,1299,1672,1171,1658,1039,1649,908,1645,783,1645,568,1650,429"/>
+<area shape="poly" title=" " alt="" coords="1678,400,1737,421,1819,455,1908,504,1951,533,1989,566,2000,572,2006,568,2016,540,2025,503,2031,489,2040,482,2052,486,2067,504,2111,592,2180,768,2281,1058,2297,1149,2315,1305,2310,1306,2292,1150,2276,1059,2175,770,2106,594,2063,507,2049,491,2041,487,2035,492,2030,505,2021,541,2010,571,2000,577,1987,570,1947,537,1905,508,1816,460,1735,426,1676,405"/>
+<area shape="rect" href="structrgw__raw__obj.html" title=" " alt="" coords="174,1427,330,1731"/>
+<area shape="poly" title=" " alt="" coords="1633,401,1484,418,1237,452,935,503,779,535,626,571,580,585,534,603,510,607,491,608,474,612,458,626,449,641,442,660,435,707,433,765,434,827,436,948,430,998,417,1036,408,1045,397,1049,388,1053,379,1060,365,1086,351,1120,324,1208,301,1309,281,1411,276,1410,295,1308,319,1206,346,1118,360,1083,375,1057,385,1048,395,1044,405,1041,412,1033,425,997,431,947,429,827,428,765,429,707,437,658,444,638,454,622,472,608,490,603,510,602,533,597,578,580,625,565,778,529,934,498,1236,447,1484,413,1632,396"/>
+<area shape="rect" href="structrgw__pool.html" title=" " alt="" coords="154,688,310,971"/>
+<area shape="poly" title=" " alt="" coords="1633,400,1423,415,1087,448,907,471,737,499,594,532,536,551,491,570,482,577,476,585,470,594,460,602,441,610,423,613,392,612,362,612,347,616,331,626,307,649,288,675,283,672,303,645,328,622,345,611,361,607,392,606,423,608,440,605,457,598,466,591,472,582,478,574,488,566,534,546,593,527,736,494,906,466,1086,442,1423,410,1632,395"/>
+<area shape="poly" title=" " alt="" coords="2995,1721,2943,1784,2913,1812,2880,1837,2853,1848,2829,1850,2805,1852,2778,1861,2762,1875,2747,1893,2458,2163,2212,2385,2208,2381,2455,2159,2743,1889,2758,1871,2776,1856,2804,1846,2828,1845,2851,1843,2877,1832,2909,1808,2939,1780,2991,1718"/>
+<area shape="poly" title=" " alt="" coords="3077,1437,3090,1257,3107,1058,3120,955,3125,956,3113,1059,3095,1257,3083,1438"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html" title=" " alt="" coords="2535,763,2673,896"/>
+<area shape="poly" title=" " alt="" coords="2615,895,2624,932,2638,969,2659,1004,2687,1032,2709,1042,2741,1045,2820,1042,2899,1040,2931,1045,2954,1057,2966,1076,2974,1104,2980,1173,2981,1244,2985,1298,3019,1421,3014,1422,2980,1299,2976,1244,2975,1173,2969,1105,2962,1079,2950,1061,2929,1050,2899,1045,2821,1047,2741,1050,2708,1047,2684,1037,2655,1007,2633,972,2619,933,2609,896"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_zone.html" title="Abstraction of a Zone" alt="" coords="2098,253,2254,536"/>
+<area shape="poly" title=" " alt="" coords="2256,473,2335,539,2380,571,2427,598,2454,605,2477,606,2500,608,2524,622,2549,649,2568,680,2582,713,2593,746,2587,747,2577,715,2563,682,2545,652,2521,626,2498,613,2477,611,2453,611,2425,602,2377,575,2332,544,2252,477"/>
+<area shape="poly" title=" " alt="" coords="2090,523,2043,568,1989,602,1956,611,1912,614,1810,609,1710,607,1670,613,1642,626,1567,927,1447,1428,1441,1426,1562,926,1638,622,1668,607,1709,601,1810,603,1912,608,1955,606,1987,598,2040,563,2086,519"/>
+<area shape="poly" title=" " alt="" coords="3149,938,3151,1108,3148,1204,3140,1299,3118,1421,3113,1420,3135,1298,3143,1204,3146,1108,3144,938"/>
+<area shape="rect" href="class_r_g_w_meta_notifier.html" title=" " alt="" coords="1993,3688,2125,3821"/>
+<area shape="poly" title=" " alt="" coords="2123,3715,2161,3690,2199,3658,2233,3620,2259,3577,2288,3505,2305,3441,2311,3383,2309,3327,2301,3271,2287,3210,2251,3065,2199,2848,2204,2847,2256,3063,2292,3209,2306,3270,2315,3327,2317,3383,2310,3442,2293,3507,2264,3580,2237,3623,2202,3662,2164,3694,2126,3720"/>
+<area shape="poly" title=" " alt="" coords="1576,3495,1598,3539,1627,3577,1668,3613,1714,3644,1763,3670,1813,3692,1911,3723,1993,3741,1992,3746,1909,3728,1811,3697,1760,3675,1711,3648,1665,3617,1623,3580,1594,3542,1572,3498"/>
+<area shape="rect" href="class_r_g_w_data_notifier.html" title=" " alt="" coords="2363,3688,2493,3821"/>
+<area shape="poly" title=" " alt="" coords="1571,3495,1594,3540,1627,3576,1659,3589,1717,3602,1877,3625,2040,3643,2138,3656,2259,3690,2364,3726,2362,3731,2257,3695,2137,3661,2040,3648,1877,3630,1716,3607,1657,3595,1624,3581,1590,3543,1566,3497"/>
+<area shape="rect" href="class_r_g_w_sync_processor_thread.html" title=" " alt="" coords="1189,3677,1389,3832"/>
+<area shape="poly" title=" " alt="" coords="1459,3486,1404,3580,1341,3679,1337,3676,1399,3577,1455,3484"/>
+<area shape="poly" title=" " alt="" coords="2149,3387,2081,3672,2076,3671,2144,3386"/>
+<area shape="rect" href="class_r_g_w_metadata_log.html" title=" " alt="" coords="1879,3104,2041,3579"/>
+<area shape="poly" title=" " alt="" coords="2019,3578,2042,3671,2036,3672,2014,3579"/>
+<area shape="poly" title=" " alt="" coords="2431,3688,2436,3576,2436,3430,2424,3267,2413,3185,2396,3105,2359,2981,2310,2860,2257,2747,2203,2647,2208,2644,2261,2744,2315,2858,2364,2980,2401,3103,2418,3184,2430,3266,2441,3430,2441,3576,2436,3688"/>
+<area shape="poly" title=" " alt="" coords="2603,3387,2514,3580,2469,3674,2465,3672,2510,3578,2598,3385"/>
+<area shape="rect" href="class_r_g_w_meta_sync_processor_thread.html" title=" " alt="" coords="1249,3911,1469,4108"/>
+<area shape="poly" title=" " alt="" coords="1386,3910,1399,3850,1406,3778,1409,3686,1409,3472,1411,3363,1417,3261,1429,3172,1439,3135,1451,3103,1503,3009,1566,2921,1637,2838,1712,2763,1790,2695,1865,2635,1998,2541,2001,2546,1868,2639,1793,2699,1716,2767,1641,2842,1570,2924,1507,3012,1456,3105,1444,3136,1435,3173,1422,3261,1416,3363,1414,3472,1414,3686,1411,3778,1404,3851,1391,3911"/>
+<area shape="poly" title=" " alt="" coords="1317,3845,1334,3910,1329,3911,1312,3847"/>
+<area shape="poly" title=" " alt="" coords="1404,3786,2077,3980,2076,3985,1403,3791"/>
+<area shape="rect" href="class_r_g_w_sync_trace_manager.html" title=" " alt="" coords="2683,1395,2867,1763"/>
+<area shape="poly" title=" " alt="" coords="2713,1763,2678,1842,2660,1872,2642,1893,2619,1905,2597,1907,2576,1908,2553,1917,2500,1956,2449,1999,2401,2047,2356,2097,2275,2199,2208,2298,2204,2295,2271,2196,2352,2093,2397,2043,2445,1996,2497,1952,2551,1912,2575,1903,2597,1902,2617,1900,2638,1889,2655,1869,2673,1839,2709,1761"/>
+<area shape="poly" title=" " alt="" coords="2254,3977,2313,3954,2377,3925,2443,3890,2504,3849,2582,3786,2638,3732,2661,3702,2682,3668,2720,3578,2761,3447,2772,3392,2776,3340,2774,3288,2764,3233,2746,3173,2720,3105,2675,3013,2618,2926,2552,2845,2482,2770,2409,2702,2337,2642,2210,2548,2213,2544,2341,2638,2413,2698,2485,2766,2556,2841,2622,2923,2679,3010,2725,3103,2751,3171,2769,3232,2779,3287,2782,3340,2777,3393,2766,3449,2725,3580,2687,3671,2666,3705,2642,3735,2585,3790,2507,3853,2446,3895,2380,3930,2315,3959,2256,3982"/>
+<area shape="rect" href="class_r_g_w_chained_cache_impl.html" title=" " alt="" coords="805,1437,989,1720"/>
+<area shape="poly" title=" " alt="" coords="943,1719,970,1778,1003,1833,1033,1864,1069,1888,1194,1972,1324,2053,1583,2203,1818,2329,2000,2422,1997,2426,1816,2334,1581,2208,1321,2057,1191,1976,1067,1893,1030,1868,999,1836,965,1780,938,1721"/>
+<area shape="rect" href="classlru__map.html" title=" " alt="" coords="1013,1544,1123,1613"/>
+<area shape="poly" title=" " alt="" coords="1073,1613,1079,1659,1090,1716,1109,1777,1138,1833,1181,1893,1228,1949,1280,2003,1334,2053,1451,2146,1572,2227,1693,2296,1808,2354,1912,2400,1999,2435,1997,2440,1910,2405,1806,2359,1690,2301,1569,2231,1447,2150,1331,2057,1276,2006,1224,1953,1177,1896,1134,1836,1104,1779,1085,1718,1073,1660,1068,1614"/>
+<area shape="rect" href="class_r_g_w_quota_handler.html" title=" " alt="" coords="1147,1480,1306,1677"/>
+<area shape="poly" title=" " alt="" coords="1251,1676,1279,1756,1298,1796,1321,1833,1397,1930,1482,2021,1574,2106,1668,2185,1761,2255,1850,2317,2000,2413,1997,2418,1847,2322,1758,2260,1665,2189,1570,2110,1479,2025,1393,1933,1316,1836,1293,1799,1274,1758,1246,1678"/>
+<area shape="poly" title=" " alt="" coords="2154,1298,2152,1323,2125,1898,2120,1898,2147,1323,2148,1298"/>
+<area shape="poly" title=" " alt="" coords="1840,3135,1865,3102,1881,3090,1897,3078,1928,3031,1957,2980,2005,2873,2010,2875,1962,2982,1933,3033,1901,3082,1885,3094,1869,3106,1844,3138"/>
+<area shape="rect" href="struct_r_g_w_services.html" title=" " alt="" coords="497,763,591,896"/>
+<area shape="poly" title=" " alt="" coords="540,896,522,1106,514,1243,511,1386,515,1527,527,1655,537,1711,550,1760,566,1801,586,1833,606,1849,627,1852,652,1852,682,1856,763,1882,842,1912,1176,2050,1503,2193,1999,2422,1997,2427,1501,2198,1174,2055,840,1917,761,1887,681,1861,652,1857,627,1858,604,1854,582,1836,561,1804,545,1762,531,1712,521,1656,509,1527,506,1386,509,1242,516,1106,534,895"/>
+<area shape="rect" href="struct_r_g_w_ctl.html" title=" " alt="" coords="355,1544,416,1613"/>
+<area shape="poly" title=" " alt="" coords="541,896,534,932,522,969,505,1005,480,1037,460,1048,440,1048,421,1049,413,1053,406,1060,397,1085,391,1130,385,1261,387,1527,381,1527,380,1261,386,1130,392,1084,401,1057,410,1048,420,1044,440,1043,459,1042,477,1033,500,1002,517,967,529,930,536,895"/>
+<area shape="poly" title=" " alt="" coords="391,1613,399,1663,416,1723,444,1783,464,1810,487,1833,504,1843,519,1848,551,1848,584,1846,603,1848,623,1856,633,1865,639,1873,644,1881,654,1888,680,1899,703,1905,745,1906,788,1904,842,1912,1012,1965,1183,2027,1350,2095,1510,2166,1793,2303,2000,2413,1998,2418,1790,2308,1508,2171,1348,2100,1181,2032,1011,1970,841,1917,788,1909,745,1911,702,1910,678,1904,651,1893,641,1885,635,1876,629,1868,620,1861,601,1854,584,1851,551,1853,519,1853,501,1848,484,1837,460,1813,440,1785,411,1725,394,1664,386,1614"/>
+<area shape="rect" href="class_r_g_w_user_ctl.html" title=" " alt="" coords="302,245,458,544"/>
+<area shape="poly" title=" " alt="" coords="377,543,388,573,406,598,421,607,443,613,499,618,558,619,603,621,812,664,1017,712,1345,798,1343,803,1016,717,811,669,602,627,558,624,499,623,442,618,419,612,403,602,383,575,372,545"/>
+<area shape="poly" title=" " alt="" coords="381,544,380,624,378,961,380,1299,386,1527,381,1527,375,1299,373,961,375,624,376,544"/>
+<area shape="rect" href="struct_r_g_w_user_ctl_1_1_svc.html" title=" " alt="" coords="96,59,213,128"/>
+<area shape="poly" title=" " alt="" coords="182,126,294,275,290,278,178,129"/>
+<area shape="rect" href="struct_r_g_w_user_ctl_1_1_ctl.html" title=" " alt="" coords="237,59,349,128"/>
+<area shape="poly" title=" " alt="" coords="306,127,335,228,330,230,300,129"/>
+<area shape="rect" href="class_r_g_w_user_metadata_handler.html" title=" " alt="" coords="374,5,562,181"/>
+<area shape="poly" title=" " alt="" coords="445,182,431,230,426,228,440,180"/>
+<area shape="rect" href="class_r_g_w_s_i___meta_backend___handler.html" title=" " alt="" coords="587,19,800,168"/>
+<area shape="poly" title=" " alt="" coords="619,170,472,310,468,306,615,166"/>
+<area shape="poly" title=" " alt="" coords="1862,1813,2010,2212,2005,2214,1857,1815"/>
+<area shape="poly" title=" " alt="" coords="2276,1835,2204,2109,2199,2108,2271,1834"/>
+<area shape="poly" title=" " alt="" coords="1380,1427,1371,1343,1365,1250,1365,1153,1373,1058,1386,995,1391,996,1379,1059,1371,1154,1371,1250,1376,1343,1385,1427"/>
+<area shape="poly" title=" " alt="" coords="1941,1665,1913,1749,1874,1836,1809,1947,1743,2044,1675,2130,1607,2206,1540,2275,1472,2338,1338,2455,1209,2574,1147,2640,1087,2712,1029,2792,975,2883,923,2987,875,3105,853,3174,838,3245,828,3318,823,3391,824,3527,832,3642,827,3642,818,3527,818,3390,823,3318,833,3245,848,3172,869,3103,918,2985,970,2881,1025,2789,1083,2708,1143,2636,1205,2571,1334,2451,1468,2334,1536,2271,1604,2202,1671,2126,1738,2041,1805,1944,1870,1833,1908,1747,1936,1663"/>
+<area shape="rect" title=" " alt="" coords="1749,795,1797,864"/>
+<area shape="poly" title=" " alt="" coords="1771,864,1757,943,1733,1036,1722,1059,1712,1113,1705,1183,1706,1251,1711,1278,1721,1297,1738,1311,1755,1316,1773,1315,1792,1311,1832,1305,1853,1309,1874,1321,1904,1354,1926,1393,1942,1435,1953,1476,1947,1477,1937,1436,1922,1395,1900,1357,1870,1325,1851,1314,1832,1310,1793,1316,1774,1320,1754,1321,1735,1315,1717,1300,1706,1280,1700,1252,1699,1183,1707,1112,1717,1058,1728,1034,1752,942,1766,863"/>
+<area shape="poly" title=" " alt="" coords="251,1730,246,2073,242,2490,245,2865,251,2999,260,3080,296,3234,315,3296,336,3352,362,3406,397,3459,442,3515,499,3577,557,3625,621,3665,687,3697,748,3721,746,3726,685,3702,619,3670,553,3629,495,3581,438,3518,393,3462,358,3408,331,3355,309,3298,291,3235,255,3080,246,3000,240,2865,237,2490,240,2073,246,1730"/>
+<area shape="poly" title=" " alt="" coords="267,1730,293,2037,333,2415,356,2604,381,2778,407,2927,435,3039,473,3137,519,3226,515,3229,468,3139,430,3041,402,2928,376,2779,351,2604,327,2415,288,2037,261,1731"/>
+<area shape="rect" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html" title=" " alt="" coords="48,2443,219,2512"/>
+<area shape="poly" title=" " alt="" coords="230,1731,211,1859,170,2183,141,2427,136,2426,164,2182,206,1858,225,1730"/>
+<area shape="poly" title=" " alt="" coords="238,970,250,1410,245,1410,233,970"/>
+<area shape="rect" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html" title=" " alt="" coords="5,1437,149,1720"/>
+<area shape="poly" title=" " alt="" coords="206,971,112,1422,107,1421,200,970"/>
+<area shape="rect" href="class_recent_event_list.html" title=" " alt="" coords="883,3256,1021,3427"/>
+<area shape="poly" title=" " alt="" coords="933,3427,877,3643,872,3642,928,3426"/>
+<area shape="poly" title=" " alt="" coords="622,3439,664,3536,691,3586,721,3633,754,3672,750,3675,717,3636,686,3589,659,3538,617,3441"/>
+<area shape="rect" title=" " alt="" coords="469,2443,600,2512"/>
+<area shape="poly" title=" " alt="" coords="540,2527,583,3243,578,3243,535,2527"/>
+<area shape="poly" title=" " alt="" coords="131,2512,121,2615,119,2684,121,2761,129,2842,145,2925,170,3004,207,3079,235,3118,267,3154,303,3186,342,3216,421,3265,495,3302,493,3306,419,3270,339,3220,300,3190,263,3157,230,3121,202,3081,166,3006,140,2926,124,2843,116,2762,114,2684,116,2615,126,2512"/>
+<area shape="poly" title=" " alt="" coords="89,1720,133,2425,128,2426,83,1720"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 타입</h2></td></tr>
+<tr class="memitem:aa69db2fa1c60754c982db0c9fff03a76" id="r_aa69db2fa1c60754c982db0c9fff03a76"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#aa69db2fa1c60754c982db0c9fff03a76">RecentlyTrimmedBucketList</a> = <a class="el" href="class_recent_event_list.html">RecentEventList</a>&lt; std::string &gt;</td></tr>
+<tr class="separator:aa69db2fa1c60754c982db0c9fff03a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb29390c16be0f2dd8ccbcd506d099a8" id="r_aeb29390c16be0f2dd8ccbcd506d099a8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#aeb29390c16be0f2dd8ccbcd506d099a8">clock_type</a> = <a class="el" href="class_recent_event_list.html#ac9b9b847b9ebe63d4035ccb30f295bd2">RecentlyTrimmedBucketList::clock_type</a></td></tr>
+<tr class="separator:aeb29390c16be0f2dd8ccbcd506d099a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:aad435ff91aa7dfb2768eeb776ab5b5e0" id="r_aad435ff91aa7dfb2768eeb776ab5b5e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#aad435ff91aa7dfb2768eeb776ab5b5e0">Impl</a> (<a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *<a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>, const <a class="el" href="structrgw_1_1_bucket_trim_config.html">BucketTrimConfig</a> &amp;<a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">config</a>)</td></tr>
+<tr class="separator:aad435ff91aa7dfb2768eeb776ab5b5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5509fe3a03267850678c7fd9aa5f6d1e" id="r_a5509fe3a03267850678c7fd9aa5f6d1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a5509fe3a03267850678c7fd9aa5f6d1e">get_bucket_counters</a> (int count, <a class="el" href="struct_trim_counters.html#aa6e4c3d542b804551abbfc2740e2a431">TrimCounters::Vector</a> &amp;buckets)</td></tr>
+<tr class="memdesc:a5509fe3a03267850678c7fd9aa5f6d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_trim_counters_1_1_server.html" title="server interface to query the hottest buckets">TrimCounters::Server</a> interface for watch/notify api  <br /></td></tr>
+<tr class="separator:a5509fe3a03267850678c7fd9aa5f6d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966fe23e033c1738b503dce5e7b27774" id="r_a966fe23e033c1738b503dce5e7b27774"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a966fe23e033c1738b503dce5e7b27774">reset_bucket_counters</a> () override</td></tr>
+<tr class="separator:a966fe23e033c1738b503dce5e7b27774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3afbc79aaf2cb2d5433337be820120" id="r_a7c3afbc79aaf2cb2d5433337be820120"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a7c3afbc79aaf2cb2d5433337be820120">on_bucket_trimmed</a> (std::string &amp;&amp;bucket_instance) override</td></tr>
+<tr class="memdesc:a7c3afbc79aaf2cb2d5433337be820120"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_bucket_trim_observer.html" title="Interface to communicate with the trim manager about completed operations">BucketTrimObserver</a> interface to remember successfully-trimmed buckets  <br /></td></tr>
+<tr class="separator:a7c3afbc79aaf2cb2d5433337be820120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace70dc67c0e4dbafdb1f40d868a692b5" id="r_ace70dc67c0e4dbafdb1f40d868a692b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#ace70dc67c0e4dbafdb1f40d868a692b5">trimmed_recently</a> (const std::string_view &amp;bucket_instance) override</td></tr>
+<tr class="separator:ace70dc67c0e4dbafdb1f40d868a692b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_struct_trim_counters_1_1_server"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_struct_trim_counters_1_1_server')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="struct_trim_counters_1_1_server.html">TrimCounters::Server</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:a715e83a63b84b72af3f56e972d42f7ef inherit pub_methods_struct_trim_counters_1_1_server" id="r_a715e83a63b84b72af3f56e972d42f7ef"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_trim_counters_1_1_server.html#a715e83a63b84b72af3f56e972d42f7ef">~Server</a> ()=default</td></tr>
+<tr class="separator:a715e83a63b84b72af3f56e972d42f7ef inherit pub_methods_struct_trim_counters_1_1_server"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_struct_bucket_trim_observer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_struct_bucket_trim_observer')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="struct_bucket_trim_observer.html">BucketTrimObserver</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:a8ce4d326e2cbb9584d3d977c621f66be inherit pub_methods_struct_bucket_trim_observer" id="r_a8ce4d326e2cbb9584d3d977c621f66be"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bucket_trim_observer.html#a8ce4d326e2cbb9584d3d977c621f66be">~BucketTrimObserver</a> ()=default</td></tr>
+<tr class="separator:a8ce4d326e2cbb9584d3d977c621f66be inherit pub_methods_struct_bucket_trim_observer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 속성</h2></td></tr>
+<tr class="memitem:abd9599059206013accdc30c910339c0d" id="r_abd9599059206013accdc30c910339c0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a></td></tr>
+<tr class="separator:abd9599059206013accdc30c910339c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a09c75ff8d0f2939eef3c2f97aa7beb" id="r_a3a09c75ff8d0f2939eef3c2f97aa7beb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgw_1_1_bucket_trim_config.html">BucketTrimConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">config</a></td></tr>
+<tr class="separator:a3a09c75ff8d0f2939eef3c2f97aa7beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0225ad13e024f42fd5b63675be6ed5b0" id="r_a0225ad13e024f42fd5b63675be6ed5b0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structrgw__raw__obj.html">rgw_raw_obj</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a0225ad13e024f42fd5b63675be6ed5b0">status_obj</a></td></tr>
+<tr class="separator:a0225ad13e024f42fd5b63675be6ed5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3448bdf86a642ac90d5db5380a8e5d5e" id="r_a3448bdf86a642ac90d5db5380a8e5d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="rgw__trim__bilog_8cc.html#ac9eac48006df5e3fcbcb23b167ec6704">BucketChangeCounter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3448bdf86a642ac90d5db5380a8e5d5e">counter</a></td></tr>
+<tr class="memdesc:a3448bdf86a642ac90d5db5380a8e5d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">count frequency of bucket instance entries in the data changes log  <br /></td></tr>
+<tr class="separator:a3448bdf86a642ac90d5db5380a8e5d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f14a03be0ac54a4c35dc1ced276cac" id="r_a00f14a03be0ac54a4c35dc1ced276cac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#aa69db2fa1c60754c982db0c9fff03a76">RecentlyTrimmedBucketList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a00f14a03be0ac54a4c35dc1ced276cac">trimmed</a></td></tr>
+<tr class="memdesc:a00f14a03be0ac54a4c35dc1ced276cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">track recently trimmed buckets to focus trim activity elsewhere  <br /></td></tr>
+<tr class="separator:a00f14a03be0ac54a4c35dc1ced276cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fca26989541ac854ffe39858ca361cd" id="r_a9fca26989541ac854ffe39858ca361cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bucket_trim_watcher.html">BucketTrimWatcher</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a9fca26989541ac854ffe39858ca361cd">watcher</a></td></tr>
+<tr class="memdesc:a9fca26989541ac854ffe39858ca361cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">serve the bucket trim watch/notify api  <br /></td></tr>
+<tr class="separator:a9fca26989541ac854ffe39858ca361cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a459784cdca37e00adab580acc90d4b4d" id="r_a459784cdca37e00adab580acc90d4b4d"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a459784cdca37e00adab580acc90d4b4d">mutex</a></td></tr>
+<tr class="memdesc:a459784cdca37e00adab580acc90d4b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">protect data shared between data sync, trim, and watch/notify threads  <br /></td></tr>
+<tr class="separator:a459784cdca37e00adab580acc90d4b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01064">1064</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">멤버 타입정의 문서화</h2>
+<a id="aeb29390c16be0f2dd8ccbcd506d099a8" name="aeb29390c16be0f2dd8ccbcd506d099a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb29390c16be0f2dd8ccbcd506d099a8">&#9670;&#160;</a></span>clock_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#aeb29390c16be0f2dd8ccbcd506d099a8">rgw::BucketTrimManager::Impl::clock_type</a> =  <a class="el" href="class_recent_event_list.html#ac9b9b847b9ebe63d4035ccb30f295bd2">RecentlyTrimmedBucketList::clock_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01076">1076</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa69db2fa1c60754c982db0c9fff03a76" name="aa69db2fa1c60754c982db0c9fff03a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa69db2fa1c60754c982db0c9fff03a76">&#9670;&#160;</a></span>RecentlyTrimmedBucketList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#aa69db2fa1c60754c982db0c9fff03a76">rgw::BucketTrimManager::Impl::RecentlyTrimmedBucketList</a> =  <a class="el" href="class_recent_event_list.html">RecentEventList</a>&lt;std::string&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01075">1075</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="aad435ff91aa7dfb2768eeb776ab5b5e0" name="aad435ff91aa7dfb2768eeb776ab5b5e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad435ff91aa7dfb2768eeb776ab5b5e0">&#9670;&#160;</a></span>Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::BucketTrimManager::Impl::Impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *&#160;</td>
+          <td class="paramname"><em>store</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw_1_1_bucket_trim_config.html">BucketTrimConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01086">1086</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1087</span>    : <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>), <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">config</a>(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">config</a>),</div>
+<div class="line"><span class="lineno"> 1088</span>      <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a0225ad13e024f42fd5b63675be6ed5b0">status_obj</a>(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_rados_store.html#aaecd01256c4639f8b8c31231022baef0">get_zone</a>()-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_zone.html#aad5682df06309df9be7bc8fdab823b50">get_params</a>().<a class="code hl_variable" href="struct_r_g_w_zone_params.html#a802daf944c39f049022b963570ebfaa0">log_pool</a>, <a class="code hl_variable" href="structrgw_1_1_bucket_trim_status.html#a3e49f348f7d843b179f73a708025e944">BucketTrimStatus::oid</a>),</div>
+<div class="line"><span class="lineno"> 1089</span>      <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3448bdf86a642ac90d5db5380a8e5d5e">counter</a>(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">config</a>.<a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#ac079c9458b2715b555f7dc482d5dac34">counter_size</a>),</div>
+<div class="line"><span class="lineno"> 1090</span>      <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a00f14a03be0ac54a4c35dc1ced276cac">trimmed</a>(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">config</a>.<a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#a4e244c88efdd802f41ed4607b8988762">recent_size</a>, <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">config</a>.<a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#ad8066de5d6a5faa13b5fe2681d55683d">recent_duration</a>),</div>
+<div class="line"><span class="lineno"> 1091</span>      <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a9fca26989541ac854ffe39858ca361cd">watcher</a>(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>, <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a0225ad13e024f42fd5b63675be6ed5b0">status_obj</a>, <span class="keyword">this</span>)</div>
+<div class="line"><span class="lineno"> 1092</span>  {}</div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html_a00f14a03be0ac54a4c35dc1ced276cac"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a00f14a03be0ac54a4c35dc1ced276cac">rgw::BucketTrimManager::Impl::trimmed</a></div><div class="ttdeci">RecentlyTrimmedBucketList trimmed</div><div class="ttdoc">track recently trimmed buckets to focus trim activity elsewhere</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01078">rgw_trim_bilog.cc:1078</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html_a0225ad13e024f42fd5b63675be6ed5b0"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a0225ad13e024f42fd5b63675be6ed5b0">rgw::BucketTrimManager::Impl::status_obj</a></div><div class="ttdeci">const rgw_raw_obj status_obj</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01070">rgw_trim_bilog.cc:1070</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html_a3448bdf86a642ac90d5db5380a8e5d5e"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3448bdf86a642ac90d5db5380a8e5d5e">rgw::BucketTrimManager::Impl::counter</a></div><div class="ttdeci">BucketChangeCounter counter</div><div class="ttdoc">count frequency of bucket instance entries in the data changes log</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01073">rgw_trim_bilog.cc:1073</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html_a3a09c75ff8d0f2939eef3c2f97aa7beb"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3a09c75ff8d0f2939eef3c2f97aa7beb">rgw::BucketTrimManager::Impl::config</a></div><div class="ttdeci">const BucketTrimConfig config</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01068">rgw_trim_bilog.cc:1068</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html_a9fca26989541ac854ffe39858ca361cd"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a9fca26989541ac854ffe39858ca361cd">rgw::BucketTrimManager::Impl::watcher</a></div><div class="ttdeci">BucketTrimWatcher watcher</div><div class="ttdoc">serve the bucket trim watch/notify api</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01081">rgw_trim_bilog.cc:1081</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html_abd9599059206013accdc30c910339c0d"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">rgw::BucketTrimManager::Impl::store</a></div><div class="ttdeci">rgw::sal::RadosStore *const store</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01067">rgw_trim_bilog.cc:1067</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_rados_store_html_aaecd01256c4639f8b8c31231022baef0"><div class="ttname"><a href="classrgw_1_1sal_1_1_rados_store.html#aaecd01256c4639f8b8c31231022baef0">rgw::sal::RadosStore::get_zone</a></div><div class="ttdeci">virtual Zone * get_zone()</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal__rados_8h_source.html#l00399">rgw_sal_rados.h:399</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_zone_html_aad5682df06309df9be7bc8fdab823b50"><div class="ttname"><a href="classrgw_1_1sal_1_1_zone.html#aad5682df06309df9be7bc8fdab823b50">rgw::sal::Zone::get_params</a></div><div class="ttdeci">virtual const RGWZoneParams &amp; get_params()=0</div></div>
+<div class="ttc" id="astruct_r_g_w_zone_params_html_a802daf944c39f049022b963570ebfaa0"><div class="ttname"><a href="struct_r_g_w_zone_params.html#a802daf944c39f049022b963570ebfaa0">RGWZoneParams::log_pool</a></div><div class="ttdeci">rgw_pool log_pool</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l00375">rgw_zone.h:375</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_a4e244c88efdd802f41ed4607b8988762"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#a4e244c88efdd802f41ed4607b8988762">rgw::BucketTrimConfig::recent_size</a></div><div class="ttdeci">size_t recent_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00060">rgw_trim_bilog.h:60</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_ac079c9458b2715b555f7dc482d5dac34"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#ac079c9458b2715b555f7dc482d5dac34">rgw::BucketTrimConfig::counter_size</a></div><div class="ttdeci">size_t counter_size</div><div class="ttdoc">maximum number of buckets to track with BucketChangeObserver</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00049">rgw_trim_bilog.h:49</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_ad8066de5d6a5faa13b5fe2681d55683d"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#ad8066de5d6a5faa13b5fe2681d55683d">rgw::BucketTrimConfig::recent_duration</a></div><div class="ttdeci">ceph::timespan recent_duration</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00063">rgw_trim_bilog.h:63</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_status_html_a3e49f348f7d843b179f73a708025e944"><div class="ttname"><a href="structrgw_1_1_bucket_trim_status.html#a3e49f348f7d843b179f73a708025e944">rgw::BucketTrimStatus::oid</a></div><div class="ttdeci">static const std::string oid</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00112">rgw_trim_bilog.h:112</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a5509fe3a03267850678c7fd9aa5f6d1e" name="a5509fe3a03267850678c7fd9aa5f6d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5509fe3a03267850678c7fd9aa5f6d1e">&#9670;&#160;</a></span>get_bucket_counters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::BucketTrimManager::Impl::get_bucket_counters </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_trim_counters.html#aa6e4c3d542b804551abbfc2740e2a431">TrimCounters::Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>buckets</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_trim_counters_1_1_server.html" title="server interface to query the hottest buckets">TrimCounters::Server</a> interface for watch/notify api </p>
+
+<p><a class="el" href="struct_trim_counters_1_1_server.html#aefbdc82f856fd5dabc89fc79290adc2e">TrimCounters::Server</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01095">1095</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1095</span>                                                                   {</div>
+<div class="line"><span class="lineno"> 1096</span>    buckets.reserve(count);</div>
+<div class="line"><span class="lineno"> 1097</span>    std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a459784cdca37e00adab580acc90d4b4d">mutex</a>);</div>
+<div class="line"><span class="lineno"> 1098</span>    <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3448bdf86a642ac90d5db5380a8e5d5e">counter</a>.get_highest(count, [&amp;buckets] (<span class="keyword">const</span> std::string&amp; key, <span class="keywordtype">int</span> count) {</div>
+<div class="line"><span class="lineno"> 1099</span>                          buckets.emplace_back(key, count);</div>
+<div class="line"><span class="lineno"> 1100</span>                        });</div>
+<div class="line"><span class="lineno"> 1101</span>    ldout(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_rados_store.html#aabf846e99f9f01172f86ce5e7fb1ed5b">ctx</a>(), 20) &lt;&lt; <span class="stringliteral">&quot;get_bucket_counters: &quot;</span> &lt;&lt; buckets &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 1102</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html_a459784cdca37e00adab580acc90d4b4d"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a459784cdca37e00adab580acc90d4b4d">rgw::BucketTrimManager::Impl::mutex</a></div><div class="ttdeci">std::mutex mutex</div><div class="ttdoc">protect data shared between data sync, trim, and watch/notify threads</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01084">rgw_trim_bilog.cc:1084</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_rados_store_html_aabf846e99f9f01172f86ce5e7fb1ed5b"><div class="ttname"><a href="classrgw_1_1sal_1_1_rados_store.html#aabf846e99f9f01172f86ce5e7fb1ed5b">rgw::sal::RadosStore::ctx</a></div><div class="ttdeci">virtual CephContext * ctx(void) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal__rados_8h_source.html#l00480">rgw_sal_rados.h:480</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1_bucket_trim_manager_1_1_impl_a5509fe3a03267850678c7fd9aa5f6d1e_cgraph.png" border="0" usemap="#aclassrgw_1_1_bucket_trim_manager_1_1_impl_a5509fe3a03267850678c7fd9aa5f6d1e_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1_bucket_trim_manager_1_1_impl_a5509fe3a03267850678c7fd9aa5f6d1e_cgraph" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_a5509fe3a03267850678c7fd9aa5f6d1e_cgraph">
+<area shape="rect" title="TrimCounters::Server interface for watch/notify api" alt="" coords="5,5,188,48"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e" title=" " alt="" coords="236,13,367,40"/>
+<area shape="poly" title=" " alt="" coords="188,24,220,24,220,29,188,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c3afbc79aaf2cb2d5433337be820120" name="a7c3afbc79aaf2cb2d5433337be820120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3afbc79aaf2cb2d5433337be820120">&#9670;&#160;</a></span>on_bucket_trimmed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::BucketTrimManager::Impl::on_bucket_trimmed </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>bucket_instance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_bucket_trim_observer.html" title="Interface to communicate with the trim manager about completed operations">BucketTrimObserver</a> interface to remember successfully-trimmed buckets </p>
+
+<p><a class="el" href="struct_bucket_trim_observer.html#ab78bb94c0282bed77c0a3f1652970118">BucketTrimObserver</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01112">1112</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1112</span>                                                               {</div>
+<div class="line"><span class="lineno"> 1113</span>    ldout(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_rados_store.html#aabf846e99f9f01172f86ce5e7fb1ed5b">ctx</a>(), 20) &lt;&lt; <span class="stringliteral">&quot;trimmed bucket instance &quot;</span> &lt;&lt; bucket_instance &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 1114</span>    std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a459784cdca37e00adab580acc90d4b4d">mutex</a>);</div>
+<div class="line"><span class="lineno"> 1115</span>    <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a00f14a03be0ac54a4c35dc1ced276cac">trimmed</a>.<a class="code hl_function" href="class_recent_event_list.html#a3cf3e21d6a48eebae4a6dc65aad32c9b">insert</a>(std::move(bucket_instance), clock_type::now());</div>
+<div class="line"><span class="lineno"> 1116</span>  }</div>
+<div class="ttc" id="aclass_recent_event_list_html_a3cf3e21d6a48eebae4a6dc65aad32c9b"><div class="ttname"><a href="class_recent_event_list.html#a3cf3e21d6a48eebae4a6dc65aad32c9b">RecentEventList::insert</a></div><div class="ttdeci">void insert(T &amp;&amp;value, const time_point &amp;now)</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01009">rgw_trim_bilog.cc:1009</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1_bucket_trim_manager_1_1_impl_a7c3afbc79aaf2cb2d5433337be820120_cgraph.png" border="0" usemap="#aclassrgw_1_1_bucket_trim_manager_1_1_impl_a7c3afbc79aaf2cb2d5433337be820120_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1_bucket_trim_manager_1_1_impl_a7c3afbc79aaf2cb2d5433337be820120_cgraph" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_a7c3afbc79aaf2cb2d5433337be820120_cgraph">
+<area shape="rect" title="BucketTrimObserver interface to remember successfully&#45;trimmed buckets" alt="" coords="5,23,181,65"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e" title=" " alt="" coords="241,5,372,32"/>
+<area shape="poly" title=" " alt="" coords="181,31,225,26,225,31,182,36"/>
+<area shape="rect" href="class_recent_event_list.html#a3cf3e21d6a48eebae4a6dc65aad32c9b" title=" " alt="" coords="229,56,384,83"/>
+<area shape="poly" title=" " alt="" coords="182,52,214,56,213,61,181,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a966fe23e033c1738b503dce5e7b27774" name="a966fe23e033c1738b503dce5e7b27774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a966fe23e033c1738b503dce5e7b27774">&#9670;&#160;</a></span>reset_bucket_counters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::BucketTrimManager::Impl::reset_bucket_counters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_trim_counters_1_1_server.html#a17ad8616828aa75bdf7304c66659d23b">TrimCounters::Server</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01104">1104</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1104</span>                                        {</div>
+<div class="line"><span class="lineno"> 1105</span>    ldout(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#abd9599059206013accdc30c910339c0d">store</a>-&gt;<a class="code hl_function" href="classrgw_1_1sal_1_1_rados_store.html#aabf846e99f9f01172f86ce5e7fb1ed5b">ctx</a>(), 20) &lt;&lt; <span class="stringliteral">&quot;bucket trim completed&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno"> 1106</span>    std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a459784cdca37e00adab580acc90d4b4d">mutex</a>);</div>
+<div class="line"><span class="lineno"> 1107</span>    <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a3448bdf86a642ac90d5db5380a8e5d5e">counter</a>.clear();</div>
+<div class="line"><span class="lineno"> 1108</span>    <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a00f14a03be0ac54a4c35dc1ced276cac">trimmed</a>.<a class="code hl_function" href="class_recent_event_list.html#a3b6730c4efb484616d22bbbe8062fe0c">expire_old</a>(clock_type::now());</div>
+<div class="line"><span class="lineno"> 1109</span>  }</div>
+<div class="ttc" id="aclass_recent_event_list_html_a3b6730c4efb484616d22bbbe8062fe0c"><div class="ttname"><a href="class_recent_event_list.html#a3b6730c4efb484616d22bbbe8062fe0c">RecentEventList::expire_old</a></div><div class="ttdeci">void expire_old(const time_point &amp;now)</div><div class="ttdoc">remove events that are no longer recent compared to the given point in time</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01027">rgw_trim_bilog.cc:1027</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1_bucket_trim_manager_1_1_impl_a966fe23e033c1738b503dce5e7b27774_cgraph.png" border="0" usemap="#aclassrgw_1_1_bucket_trim_manager_1_1_impl_a966fe23e033c1738b503dce5e7b27774_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1_bucket_trim_manager_1_1_impl_a966fe23e033c1738b503dce5e7b27774_cgraph" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_a966fe23e033c1738b503dce5e7b27774_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,199,65"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html#aca84a6ff80011b26fcd2fa8526c1152e" title=" " alt="" coords="272,5,404,32"/>
+<area shape="poly" title=" " alt="" coords="199,31,256,25,257,30,199,36"/>
+<area shape="rect" href="class_recent_event_list.html#a3b6730c4efb484616d22bbbe8062fe0c" title="remove events that are no longer recent compared to the given point in time" alt="" coords="247,56,429,83"/>
+<area shape="poly" title=" " alt="" coords="199,52,232,55,231,61,199,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace70dc67c0e4dbafdb1f40d868a692b5" name="ace70dc67c0e4dbafdb1f40d868a692b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace70dc67c0e4dbafdb1f40d868a692b5">&#9670;&#160;</a></span>trimmed_recently()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::BucketTrimManager::Impl::trimmed_recently </td>
+          <td>(</td>
+          <td class="paramtype">const std::string_view &amp;&#160;</td>
+          <td class="paramname"><em>bucket_instance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_bucket_trim_observer.html#afaa8a7c7384225ab64805b680ab9206f">BucketTrimObserver</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01118">1118</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1118</span>                                                                        {</div>
+<div class="line"><span class="lineno"> 1119</span>    std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a459784cdca37e00adab580acc90d4b4d">mutex</a>);</div>
+<div class="line"><span class="lineno"> 1120</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#a00f14a03be0ac54a4c35dc1ced276cac">trimmed</a>.<a class="code hl_function" href="class_recent_event_list.html#aa871ee9d373ef74ae7c693bc93ce2882">lookup</a>(bucket_instance);</div>
+<div class="line"><span class="lineno"> 1121</span>  }</div>
+<div class="ttc" id="aclass_recent_event_list_html_aa871ee9d373ef74ae7c693bc93ce2882"><div class="ttname"><a href="class_recent_event_list.html#aa871ee9d373ef74ae7c693bc93ce2882">RecentEventList::lookup</a></div><div class="ttdeci">bool lookup(const U &amp;key) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01017">rgw_trim_bilog.cc:1017</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1_bucket_trim_manager_1_1_impl_ace70dc67c0e4dbafdb1f40d868a692b5_cgraph.png" border="0" usemap="#aclassrgw_1_1_bucket_trim_manager_1_1_impl_ace70dc67c0e4dbafdb1f40d868a692b5_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1_bucket_trim_manager_1_1_impl_ace70dc67c0e4dbafdb1f40d868a692b5_cgraph" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_ace70dc67c0e4dbafdb1f40d868a692b5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,171,48"/>
+<area shape="rect" href="class_recent_event_list.html#aa871ee9d373ef74ae7c693bc93ce2882" title=" " alt="" coords="219,13,380,40"/>
+<area shape="poly" title=" " alt="" coords="171,24,203,24,203,29,171,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="a3a09c75ff8d0f2939eef3c2f97aa7beb" name="a3a09c75ff8d0f2939eef3c2f97aa7beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a09c75ff8d0f2939eef3c2f97aa7beb">&#9670;&#160;</a></span>config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgw_1_1_bucket_trim_config.html">BucketTrimConfig</a> rgw::BucketTrimManager::Impl::config</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01068">1068</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a3448bdf86a642ac90d5db5380a8e5d5e" name="a3448bdf86a642ac90d5db5380a8e5d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3448bdf86a642ac90d5db5380a8e5d5e">&#9670;&#160;</a></span>counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="rgw__trim__bilog_8cc.html#ac9eac48006df5e3fcbcb23b167ec6704">BucketChangeCounter</a> rgw::BucketTrimManager::Impl::counter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>count frequency of bucket instance entries in the data changes log </p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01073">1073</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a459784cdca37e00adab580acc90d4b4d" name="a459784cdca37e00adab580acc90d4b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a459784cdca37e00adab580acc90d4b4d">&#9670;&#160;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex rgw::BucketTrimManager::Impl::mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>protect data shared between data sync, trim, and watch/notify threads </p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01084">1084</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0225ad13e024f42fd5b63675be6ed5b0" name="a0225ad13e024f42fd5b63675be6ed5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0225ad13e024f42fd5b63675be6ed5b0">&#9670;&#160;</a></span>status_obj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structrgw__raw__obj.html">rgw_raw_obj</a> rgw::BucketTrimManager::Impl::status_obj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01070">1070</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="abd9599059206013accdc30c910339c0d" name="abd9599059206013accdc30c910339c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd9599059206013accdc30c910339c0d">&#9670;&#160;</a></span>store</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a>* const rgw::BucketTrimManager::Impl::store</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01067">1067</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a00f14a03be0ac54a4c35dc1ced276cac" name="a00f14a03be0ac54a4c35dc1ced276cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f14a03be0ac54a4c35dc1ced276cac">&#9670;&#160;</a></span>trimmed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html#aa69db2fa1c60754c982db0c9fff03a76">RecentlyTrimmedBucketList</a> rgw::BucketTrimManager::Impl::trimmed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>track recently trimmed buckets to focus trim activity elsewhere </p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01078">1078</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9fca26989541ac854ffe39858ca361cd" name="a9fca26989541ac854ffe39858ca361cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fca26989541ac854ffe39858ca361cd">&#9670;&#160;</a></span>watcher</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_bucket_trim_watcher.html">BucketTrimWatcher</a> rgw::BucketTrimManager::Impl::watcher</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>serve the bucket trim watch/notify api </p>
+
+<p class="definition"><a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a> 파일의 <a class="el" href="rgw__trim__bilog_8cc_source.html#l01081">1081</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__trim__bilog_8cc_source.html">rgw_trim_bilog.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="classrgw_1_1_bucket_trim_manager.html">BucketTrimManager</a></li><li class="navelem"><a class="el" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html">Impl</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

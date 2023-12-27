@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_sys_obj_cache.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__sys__obj__cache_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_sys_obj_cache.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__sys__obj__cache_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;common/RWLock.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__service_8h.html">rgw/rgw_service.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__cache_8h.html">rgw/rgw_cache.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="svc__sys__obj__core_8h.html">svc_sys_obj_core.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___notify.html">RGWSI_Notify</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache___c_b.html">RGWSI_SysObj_Cache_CB</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache___a_socket_hook.html">RGWSI_SysObj_Cache_ASocketHook</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___core.html">RGWSI_SysObj_Core</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#ad9035da0c1948ea9eb63ab02fd748b97">   19</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache___c_b.html">RGWSI_SysObj_Cache_CB</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#aeae45803ba37c302289550622877eeb2">   20</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_struct" href="struct_r_g_w_services___def.html">RGWServices_Def</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#ac2162d1d1c8ace48799a612a06d2150a">   21</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html">ASocketHandler</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#ab934bc30a4ece1ca730df6cb1ba75ce8">   23</a></span>  <a class="code hl_class" href="class_r_g_w_s_i___notify.html">RGWSI_Notify</a> *<a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache.html#ab934bc30a4ece1ca730df6cb1ba75ce8">notify_svc</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#a0e3b1094c6a9b260f2481adb0e9bea76">   24</a></span>  <a class="code hl_class" href="class_object_cache.html">ObjectCache</a> <a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache.html#a0e3b1094c6a9b260f2481adb0e9bea76">cache</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#a8a3094547c2f16976020fc446b272661">   26</a></span>  std::shared_ptr&lt;RGWSI_SysObj_Cache_CB&gt; <a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache.html#a8a3094547c2f16976020fc446b272661">cb</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#aadb6ba48e03b76779f9a3db7229126b0">normalize_pool_and_obj</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrgw__pool.html">rgw_pool</a>&amp; src_pool, <span class="keyword">const</span> std::string&amp; src_obj, <a class="code hl_struct" href="structrgw__pool.html">rgw_pool</a>&amp; dst_pool, std::string&amp; dst_obj);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#ad5d26722dd2354dc929b1a578fd01bc8">   30</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#ad5d26722dd2354dc929b1a578fd01bc8">init</a>(<a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s.html">RGWSI_RADOS</a> *_rados_svc,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_class" href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a> *_zone_svc,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <a class="code hl_class" href="class_r_g_w_s_i___notify.html">RGWSI_Notify</a> *_notify_svc) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___core.html#a59b96e19d74d539bd4fecac30da11ec6">core_init</a>(_rados_svc, _zone_svc);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache.html#ab934bc30a4ece1ca730df6cb1ba75ce8">notify_svc</a> = _notify_svc;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#aa75cd2a1d80dafc981602da90f803823">do_start</a>(optional_yield, <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a92391bf90207db48895171620bf7c878">shutdown</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a78c2a51797510be80b0a111ec881a88f">raw_stat</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj, uint64_t *psize, real_time *pmtime, uint64_t *epoch,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>               std::map&lt;std::string, bufferlist&gt; *attrs, bufferlist *first_chunk,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>               <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>               optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a72085a239aa29db1c85dd1dd2049f753">read</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>           <a class="code hl_class" href="class_r_g_w_sys_object_ctx_base.html">RGWSysObjectCtxBase</a>&amp; obj_ctx,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>           <a class="code hl_struct" href="struct_r_g_w_s_i___sys_obj___obj___get_obj_state.html">RGWSI_SysObj_Obj_GetObjState</a>&amp; read_state,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>           <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>           <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>           bufferlist *bl, off_t ofs, off_t end,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>           std::map&lt;std::string, bufferlist&gt; *attrs,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>       <span class="keywordtype">bool</span> raw_attrs,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>           <a class="code hl_struct" href="structrgw__cache__entry__info.html">rgw_cache_entry_info</a> *cache_info,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>           boost::optional&lt;obj_version&gt;,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>           optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a59e2850eedf026dcad005d908dc9c7ee">get_attr</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, bufferlist *dest,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>               optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a9a09c7c6c66bebf77e7fb1719be0c648">set_attrs</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj, </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                std::map&lt;std::string, bufferlist&gt;&amp; attrs,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                std::map&lt;std::string, bufferlist&gt; *rmattrs,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                optional_yield y);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#ac766cdd3c81d95fab4ade908fced1701">remove</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>             <a class="code hl_class" href="class_r_g_w_sys_object_ctx_base.html">RGWSysObjectCtxBase</a>&amp; obj_ctx,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>             <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>             <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>             optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a26e9dee20d9a78aaa66bf4fc805c37bb">write</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            real_time *pmtime,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            std::map&lt;std::string, bufferlist&gt;&amp; attrs,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordtype">bool</span> exclusive,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keyword">const</span> bufferlist&amp; data,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            real_time set_mtime,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            optional_yield y) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a298575ed7b84d3145ff0019f26ca4f17">write_data</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                 <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                 <span class="keyword">const</span> bufferlist&amp; bl,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                 <span class="keywordtype">bool</span> exclusive,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                 <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                 optional_yield y);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a6e8d05bc8221ad7ebb8899053a0919f7">distribute_cache</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="svc__sys__obj__cache_8cc.html#a3a3ac8eb60c1a4f45e2d233168cee000">normal_name</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                       <a class="code hl_struct" href="struct_object_cache_info.html">ObjectCacheInfo</a>&amp; obj_info, <span class="keywordtype">int</span> op,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                       optional_yield y);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a06ed48bbc2e08d51ffe94d31990c229d">watch_cb</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>               uint64_t notify_id,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>               uint64_t cookie,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>               uint64_t notifier_id,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>               bufferlist&amp; bl);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#adc6fa4d27c79cf5014becf1c964fde16">set_enabled</a>(<span class="keywordtype">bool</span> status);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#a10c85587fa47f641587d6feecd7d4357">  103</a></span>  <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a10c85587fa47f641587d6feecd7d4357">RGWSI_SysObj_Cache</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, CephContext *<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>) : <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___core.html">RGWSI_SysObj_Core</a>(<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>), <a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache.html#a217fcc177f3bc02973a45ccd5384f63e">asocket</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, this) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache.html#a0e3b1094c6a9b260f2481adb0e9bea76">cache</a>.<a class="code hl_function" href="class_object_cache.html#a8ecf733f4e7897d522f81103639f8706">set_ctx</a>(<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#acb46bb5b9d06a0a7349288f631bd564c">chain_cache_entry</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                         std::initializer_list&lt;rgw_cache_entry_info *&gt; cache_info_entries,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                         <a class="code hl_struct" href="struct_r_g_w_chained_cache_1_1_entry.html">RGWChainedCache::Entry</a> *chained_entry);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a6d434086ee13c8d17285ad359aa48531">register_chained_cache</a>(<a class="code hl_class" href="class_r_g_w_chained_cache.html">RGWChainedCache</a> *cc);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a61e2709d7535b601b9e8a26f0126beff">unregister_chained_cache</a>(<a class="code hl_class" href="class_r_g_w_chained_cache.html">RGWChainedCache</a> *cc);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="};">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html">  113</a></span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html">ASocketHandler</a> {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a02162fc566cc03e0dd0f08fc460c7830">  114</a></span>    <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a02162fc566cc03e0dd0f08fc460c7830">dpp</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a310414e353e46fccacd8061a44b909f6">  115</a></span>    <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> *<a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a310414e353e46fccacd8061a44b909f6">svc</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a8fab3ed900d95ec7e259f028b6c51dda">  117</a></span>    std::unique_ptr&lt;RGWSI_SysObj_Cache_ASocketHook&gt; <a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a8fab3ed900d95ec7e259f028b6c51dda">hook</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html">ASocketHandler</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a02162fc566cc03e0dd0f08fc460c7830">dpp</a>, <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> *_svc);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a168a3f8a1a5673713f4da39f807caefb">~ASocketHandler</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a966f1ec5888a66ba927bf7aed752f0e0">start</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a467bc3a49544a1ed6b54482c62ad77df">shutdown</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="comment">// `call_list` must iterate over all cache entries and call</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">// `cache_list_dump_helper` with the supplied Formatter on any that</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">// include `filter` as a substd::string.</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a0659c9e652c3af327849ba345718f0ef">call_list</a>(<span class="keyword">const</span> std::optional&lt;std::string&gt;&amp; filter, Formatter* f);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">// `call_inspect` must look up the requested target and, if found,</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="comment">// dump it to the supplied Formatter and return true. If not found,</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">// it must return false.</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#ac481cd908b8c03b291808a4c9d6250d5">call_inspect</a>(<span class="keyword">const</span> std::string&amp; target, Formatter* f);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">// `call_erase` must erase the requested target and return true. If</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="comment">// the requested target does not exist, it should return false.</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#af808601f086bec67f452c81f6aa5065c">call_erase</a>(<span class="keyword">const</span> std::string&amp; target);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="comment">// `call_zap` must erase the cache.</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a4570d5dc5802c285d56c796d4d4f3eb3">call_zap</a>();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___sys_obj___cache.html#a217fcc177f3bc02973a45ccd5384f63e">  144</a></span>  } <a class="code hl_variable" href="class_r_g_w_s_i___sys_obj___cache.html#a217fcc177f3bc02973a45ccd5384f63e">asocket</a>;</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>};</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="};">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html">  148</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_chained_cache_impl.html">RGWChainedCacheImpl</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_chained_cache.html">RGWChainedCache</a> {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">  149</a></span>  <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> *<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#aa0ea6517083907bbef2241c0ee5ef69a">  150</a></span>  ceph::timespan <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#aa0ea6517083907bbef2241c0ee5ef69a">expiry</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">  151</a></span>  RWLock <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">lock</a>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">  153</a></span>  std::unordered_map&lt;std::string, std::pair&lt;T, ceph::coarse_mono_time&gt;&gt; <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">entries</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#a112d2cd4928116fa74ca95f4ad2e441f">  156</a></span>  <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#a112d2cd4928116fa74ca95f4ad2e441f">RGWChainedCacheImpl</a>() : <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">lock</a>(<span class="stringliteral">&quot;RGWChainedCacheImpl::lock&quot;</span>) {}</div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#ad7f3bf73148536aea58fce6e719c7568">  157</a></span>  <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#ad7f3bf73148536aea58fce6e719c7568">~RGWChainedCacheImpl</a>() {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a61e2709d7535b601b9e8a26f0126beff">unregister_chained_cache</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  }</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#ae361b401189da1ab4b09be1433da0cf4">  164</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#ae361b401189da1ab4b09be1433da0cf4">unregistered</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  }</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="}">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#aefed72134533f056b35e6cfcc1f25e8e">  168</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#aefed72134533f056b35e6cfcc1f25e8e">init</a>(<a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> *_svc) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">if</span> (!_svc) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a> = _svc;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#a6d434086ee13c8d17285ad359aa48531">register_chained_cache</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#aa0ea6517083907bbef2241c0ee5ef69a">expiry</a> = std::chrono::seconds(<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">ctx</a>()-&gt;_conf.get_val&lt;uint64_t&gt;(</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    <span class="stringliteral">&quot;rgw_cache_expiry_interval&quot;</span>));</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  }</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#a39d72d4b39d347ea49bf02a04a514019">  178</a></span>  boost::optional&lt;T&gt; <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#a39d72d4b39d347ea49bf02a04a514019">find</a>(<span class="keyword">const</span> std::string&amp; key) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    std::shared_lock rl{<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">lock</a>};</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keyword">auto</span> iter = <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">entries</a>.find(key);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span> (iter == <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">entries</a>.end()) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>      <span class="keywordflow">return</span> boost::none;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#aa0ea6517083907bbef2241c0ee5ef69a">expiry</a>.count() &amp;&amp;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    (ceph::coarse_mono_clock::now() - iter-&gt;second.second) &gt; <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#aa0ea6517083907bbef2241c0ee5ef69a">expiry</a>) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      <span class="keywordflow">return</span> boost::none;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">return</span> iter-&gt;second.first;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  }</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#a5e040f24fefb4870b894e66028cfa1ad">  192</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#a5e040f24fefb4870b894e66028cfa1ad">put</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_class" href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a> *<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>, <span class="keyword">const</span> std::string&amp; key, T *entry,</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>       std::initializer_list&lt;rgw_cache_entry_info *&gt; cache_info_entries) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <a class="code hl_struct" href="struct_r_g_w_chained_cache_1_1_entry.html">Entry</a> chain_entry(<span class="keyword">this</span>, key, entry);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="comment">/* we need the svc cache to call us under its lock to maintain lock ordering */</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___sys_obj___cache.html#acb46bb5b9d06a0a7349288f631bd564c">chain_cache_entry</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, cache_info_entries, &amp;chain_entry);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  }</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#aeaafda5c81fa5f3e0957892b4bd1bd63">  204</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#aeaafda5c81fa5f3e0957892b4bd1bd63">chain_cb</a>(<span class="keyword">const</span> std::string&amp; key, <span class="keywordtype">void</span> *data)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    T *entry = <span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(data);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    std::unique_lock wl{<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">lock</a>};</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">entries</a>[key].first = *entry;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#aa0ea6517083907bbef2241c0ee5ef69a">expiry</a>.count() &gt; 0) {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">entries</a>[key].second = ceph::coarse_mono_clock::now();</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  }</div>
+</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#a3db1750c4998ef34a99ff0eaa707cfba">  213</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#a3db1750c4998ef34a99ff0eaa707cfba">invalidate</a>(<span class="keyword">const</span> std::string&amp; key)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    std::unique_lock wl{<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">lock</a>};</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">entries</a>.erase(key);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  }</div>
+</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="foldopen" id="foldopen00218" data-start="{" data-end="}">
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="class_r_g_w_chained_cache_impl.html#a1da66951795e6033d086bacfba8bdcdd">  218</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_chained_cache_impl.html#a1da66951795e6033d086bacfba8bdcdd">invalidate_all</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    std::unique_lock wl{<a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">lock</a>};</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_variable" href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">entries</a>.clear();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  }</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}; <span class="comment">/* RGWChainedCacheImpl */</span></div>
+</div>
+<div class="ttc" id="aclass_object_cache_html"><div class="ttname"><a href="class_object_cache.html">ObjectCache</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cache_8h_source.html#l00162">rgw_cache.h:162</a></div></div>
+<div class="ttc" id="aclass_object_cache_html_a8ecf733f4e7897d522f81103639f8706"><div class="ttname"><a href="class_object_cache.html#a8ecf733f4e7897d522f81103639f8706">ObjectCache::set_ctx</a></div><div class="ttdeci">void set_ctx(CephContext *_cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__cache_8h_source.html#l00208">rgw_cache.h:208</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_html"><div class="ttname"><a href="class_r_g_w_chained_cache.html">RGWChainedCache</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cache_8h_source.html#l00134">rgw_cache.h:134</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html">RGWChainedCacheImpl</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00148">svc_sys_obj_cache.h:148</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_a112d2cd4928116fa74ca95f4ad2e441f"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#a112d2cd4928116fa74ca95f4ad2e441f">RGWChainedCacheImpl::RGWChainedCacheImpl</a></div><div class="ttdeci">RGWChainedCacheImpl()</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00156">svc_sys_obj_cache.h:156</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_a1da66951795e6033d086bacfba8bdcdd"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#a1da66951795e6033d086bacfba8bdcdd">RGWChainedCacheImpl::invalidate_all</a></div><div class="ttdeci">void invalidate_all() override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00218">svc_sys_obj_cache.h:218</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_a39d72d4b39d347ea49bf02a04a514019"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#a39d72d4b39d347ea49bf02a04a514019">RGWChainedCacheImpl::find</a></div><div class="ttdeci">boost::optional&lt; T &gt; find(const std::string &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00178">svc_sys_obj_cache.h:178</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_a3ca4109dbb67d0ee433e6abee02ead60"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#a3ca4109dbb67d0ee433e6abee02ead60">RGWChainedCacheImpl::entries</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::pair&lt; T, ceph::coarse_mono_time &gt; &gt; entries</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00153">svc_sys_obj_cache.h:153</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_a3d95e9977fb8f85c030dc6c6e6f2c957"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#a3d95e9977fb8f85c030dc6c6e6f2c957">RGWChainedCacheImpl::svc</a></div><div class="ttdeci">RGWSI_SysObj_Cache * svc</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00149">svc_sys_obj_cache.h:149</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_a3db1750c4998ef34a99ff0eaa707cfba"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#a3db1750c4998ef34a99ff0eaa707cfba">RGWChainedCacheImpl::invalidate</a></div><div class="ttdeci">void invalidate(const std::string &amp;key) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00213">svc_sys_obj_cache.h:213</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_a5e040f24fefb4870b894e66028cfa1ad"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#a5e040f24fefb4870b894e66028cfa1ad">RGWChainedCacheImpl::put</a></div><div class="ttdeci">bool put(const DoutPrefixProvider *dpp, RGWSI_SysObj_Cache *svc, const std::string &amp;key, T *entry, std::initializer_list&lt; rgw_cache_entry_info * &gt; cache_info_entries)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00192">svc_sys_obj_cache.h:192</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_aa0ea6517083907bbef2241c0ee5ef69a"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#aa0ea6517083907bbef2241c0ee5ef69a">RGWChainedCacheImpl::expiry</a></div><div class="ttdeci">ceph::timespan expiry</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00150">svc_sys_obj_cache.h:150</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_ad7f3bf73148536aea58fce6e719c7568"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#ad7f3bf73148536aea58fce6e719c7568">RGWChainedCacheImpl::~RGWChainedCacheImpl</a></div><div class="ttdeci">~RGWChainedCacheImpl()</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00157">svc_sys_obj_cache.h:157</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_addb6f310fec437049b2e66db2ae2aa6d"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#addb6f310fec437049b2e66db2ae2aa6d">RGWChainedCacheImpl::lock</a></div><div class="ttdeci">RWLock lock</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00151">svc_sys_obj_cache.h:151</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_ae361b401189da1ab4b09be1433da0cf4"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#ae361b401189da1ab4b09be1433da0cf4">RGWChainedCacheImpl::unregistered</a></div><div class="ttdeci">void unregistered() override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00164">svc_sys_obj_cache.h:164</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_aeaafda5c81fa5f3e0957892b4bd1bd63"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#aeaafda5c81fa5f3e0957892b4bd1bd63">RGWChainedCacheImpl::chain_cb</a></div><div class="ttdeci">void chain_cb(const std::string &amp;key, void *data) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00204">svc_sys_obj_cache.h:204</a></div></div>
+<div class="ttc" id="aclass_r_g_w_chained_cache_impl_html_aefed72134533f056b35e6cfcc1f25e8e"><div class="ttname"><a href="class_r_g_w_chained_cache_impl.html#aefed72134533f056b35e6cfcc1f25e8e">RGWChainedCacheImpl::init</a></div><div class="ttdeci">void init(RGWSI_SysObj_Cache *_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00168">svc_sys_obj_cache.h:168</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___notify_html"><div class="ttname"><a href="class_r_g_w_s_i___notify.html">RGWSI_Notify</a></div><div class="ttdef"><b>Definition</b> <a href="svc__notify_8h_source.html#l00020">svc_notify.h:21</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_html"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s.html">RGWSI_RADOS</a></div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00028">svc_rados.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html">RGWSI_SysObj_Cache::ASocketHandler</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00113">svc_sys_obj_cache.h:113</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a02162fc566cc03e0dd0f08fc460c7830"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a02162fc566cc03e0dd0f08fc460c7830">RGWSI_SysObj_Cache::ASocketHandler::dpp</a></div><div class="ttdeci">const DoutPrefixProvider * dpp</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00114">svc_sys_obj_cache.h:114</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a0659c9e652c3af327849ba345718f0ef"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a0659c9e652c3af327849ba345718f0ef">RGWSI_SysObj_Cache::ASocketHandler::call_list</a></div><div class="ttdeci">void call_list(const std::optional&lt; std::string &gt; &amp;filter, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00614">svc_sys_obj_cache.cc:614</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a168a3f8a1a5673713f4da39f807caefb"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a168a3f8a1a5673713f4da39f807caefb">RGWSI_SysObj_Cache::ASocketHandler::~ASocketHandler</a></div><div class="ttdeci">~ASocketHandler()</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00600">svc_sys_obj_cache.cc:600</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a310414e353e46fccacd8061a44b909f6"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a310414e353e46fccacd8061a44b909f6">RGWSI_SysObj_Cache::ASocketHandler::svc</a></div><div class="ttdeci">RGWSI_SysObj_Cache * svc</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00115">svc_sys_obj_cache.h:115</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a4570d5dc5802c285d56c796d4d4f3eb3"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a4570d5dc5802c285d56c796d4d4f3eb3">RGWSI_SysObj_Cache::ASocketHandler::call_zap</a></div><div class="ttdeci">int call_zap()</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00643">svc_sys_obj_cache.cc:643</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a467bc3a49544a1ed6b54482c62ad77df"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a467bc3a49544a1ed6b54482c62ad77df">RGWSI_SysObj_Cache::ASocketHandler::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00609">svc_sys_obj_cache.cc:609</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a8fab3ed900d95ec7e259f028b6c51dda"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a8fab3ed900d95ec7e259f028b6c51dda">RGWSI_SysObj_Cache::ASocketHandler::hook</a></div><div class="ttdeci">std::unique_ptr&lt; RGWSI_SysObj_Cache_ASocketHook &gt; hook</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00117">svc_sys_obj_cache.h:117</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_a966f1ec5888a66ba927bf7aed752f0e0"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#a966f1ec5888a66ba927bf7aed752f0e0">RGWSI_SysObj_Cache::ASocketHandler::start</a></div><div class="ttdeci">int start()</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00604">svc_sys_obj_cache.cc:604</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_ac481cd908b8c03b291808a4c9d6250d5"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#ac481cd908b8c03b291808a4c9d6250d5">RGWSI_SysObj_Cache::ASocketHandler::call_inspect</a></div><div class="ttdeci">int call_inspect(const std::string &amp;target, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00625">svc_sys_obj_cache.cc:625</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler_html_af808601f086bec67f452c81f6aa5065c"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache_1_1_a_socket_handler.html#af808601f086bec67f452c81f6aa5065c">RGWSI_SysObj_Cache::ASocketHandler::call_erase</a></div><div class="ttdeci">int call_erase(const std::string &amp;target)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00638">svc_sys_obj_cache.cc:638</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache___a_socket_hook_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache___a_socket_hook.html">RGWSI_SysObj_Cache_ASocketHook</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00509">svc_sys_obj_cache.cc:509</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache___c_b_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache___c_b.html">RGWSI_SysObj_Cache_CB</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00018">svc_sys_obj_cache.cc:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html">RGWSI_SysObj_Cache</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00017">svc_sys_obj_cache.h:18</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a06ed48bbc2e08d51ffe94d31990c229d"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a06ed48bbc2e08d51ffe94d31990c229d">RGWSI_SysObj_Cache::watch_cb</a></div><div class="ttdeci">int watch_cb(const DoutPrefixProvider *dpp, uint64_t notify_id, uint64_t cookie, uint64_t notifier_id, bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00438">svc_sys_obj_cache.cc:438</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a0e3b1094c6a9b260f2481adb0e9bea76"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a0e3b1094c6a9b260f2481adb0e9bea76">RGWSI_SysObj_Cache::cache</a></div><div class="ttdeci">ObjectCache cache</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00024">svc_sys_obj_cache.h:24</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a10c85587fa47f641587d6feecd7d4357"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a10c85587fa47f641587d6feecd7d4357">RGWSI_SysObj_Cache::RGWSI_SysObj_Cache</a></div><div class="ttdeci">RGWSI_SysObj_Cache(const DoutPrefixProvider *dpp, CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00103">svc_sys_obj_cache.h:103</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a217fcc177f3bc02973a45ccd5384f63e"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a217fcc177f3bc02973a45ccd5384f63e">RGWSI_SysObj_Cache::asocket</a></div><div class="ttdeci">class RGWSI_SysObj_Cache::ASocketHandler asocket</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a26e9dee20d9a78aaa66bf4fc805c37bb"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a26e9dee20d9a78aaa66bf4fc805c37bb">RGWSI_SysObj_Cache::write</a></div><div class="ttdeci">int write(const DoutPrefixProvider *dpp, const rgw_raw_obj &amp;obj, real_time *pmtime, std::map&lt; std::string, bufferlist &gt; &amp;attrs, bool exclusive, const bufferlist &amp;data, RGWObjVersionTracker *objv_tracker, real_time set_mtime, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00281">svc_sys_obj_cache.cc:281</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a298575ed7b84d3145ff0019f26ca4f17"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a298575ed7b84d3145ff0019f26ca4f17">RGWSI_SysObj_Cache::write_data</a></div><div class="ttdeci">int write_data(const DoutPrefixProvider *dpp, const rgw_raw_obj &amp;obj, const bufferlist &amp;bl, bool exclusive, RGWObjVersionTracker *objv_tracker, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00325">svc_sys_obj_cache.cc:325</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a59e2850eedf026dcad005d908dc9c7ee"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a59e2850eedf026dcad005d908dc9c7ee">RGWSI_SysObj_Cache::get_attr</a></div><div class="ttdeci">int get_attr(const DoutPrefixProvider *dpp, const rgw_raw_obj &amp;obj, const char *name, bufferlist *dest, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00211">svc_sys_obj_cache.cc:211</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a61e2709d7535b601b9e8a26f0126beff"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a61e2709d7535b601b9e8a26f0126beff">RGWSI_SysObj_Cache::unregister_chained_cache</a></div><div class="ttdeci">void unregister_chained_cache(RGWChainedCache *cc)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00494">svc_sys_obj_cache.cc:494</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a6d434086ee13c8d17285ad359aa48531"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a6d434086ee13c8d17285ad359aa48531">RGWSI_SysObj_Cache::register_chained_cache</a></div><div class="ttdeci">void register_chained_cache(RGWChainedCache *cc)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00489">svc_sys_obj_cache.cc:489</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a6e8d05bc8221ad7ebb8899053a0919f7"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a6e8d05bc8221ad7ebb8899053a0919f7">RGWSI_SysObj_Cache::distribute_cache</a></div><div class="ttdeci">int distribute_cache(const DoutPrefixProvider *dpp, const std::string &amp;normal_name, const rgw_raw_obj &amp;obj, ObjectCacheInfo &amp;obj_info, int op, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00425">svc_sys_obj_cache.cc:425</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a72085a239aa29db1c85dd1dd2049f753"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a72085a239aa29db1c85dd1dd2049f753">RGWSI_SysObj_Cache::read</a></div><div class="ttdeci">int read(const DoutPrefixProvider *dpp, RGWSysObjectCtxBase &amp;obj_ctx, RGWSI_SysObj_Obj_GetObjState &amp;read_state, RGWObjVersionTracker *objv_tracker, const rgw_raw_obj &amp;obj, bufferlist *bl, off_t ofs, off_t end, std::map&lt; std::string, bufferlist &gt; *attrs, bool raw_attrs, rgw_cache_entry_info *cache_info, boost::optional&lt; obj_version &gt;, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00110">svc_sys_obj_cache.cc:110</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a78c2a51797510be80b0a111ec881a88f"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a78c2a51797510be80b0a111ec881a88f">RGWSI_SysObj_Cache::raw_stat</a></div><div class="ttdeci">int raw_stat(const DoutPrefixProvider *dpp, const rgw_raw_obj &amp;obj, uint64_t *psize, real_time *pmtime, uint64_t *epoch, std::map&lt; std::string, bufferlist &gt; *attrs, bufferlist *first_chunk, RGWObjVersionTracker *objv_tracker, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00360">svc_sys_obj_cache.cc:360</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a8a3094547c2f16976020fc446b272661"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a8a3094547c2f16976020fc446b272661">RGWSI_SysObj_Cache::cb</a></div><div class="ttdeci">std::shared_ptr&lt; RGWSI_SysObj_Cache_CB &gt; cb</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00026">svc_sys_obj_cache.h:26</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a92391bf90207db48895171620bf7c878"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a92391bf90207db48895171620bf7c878">RGWSI_SysObj_Cache::shutdown</a></div><div class="ttdeci">void shutdown() override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00062">svc_sys_obj_cache.cc:62</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_a9a09c7c6c66bebf77e7fb1719be0c648"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#a9a09c7c6c66bebf77e7fb1719be0c648">RGWSI_SysObj_Cache::set_attrs</a></div><div class="ttdeci">int set_attrs(const DoutPrefixProvider *dpp, const rgw_raw_obj &amp;obj, std::map&lt; std::string, bufferlist &gt; &amp;attrs, std::map&lt; std::string, bufferlist &gt; *rmattrs, RGWObjVersionTracker *objv_tracker, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00246">svc_sys_obj_cache.cc:246</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_aa75cd2a1d80dafc981602da90f803823"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#aa75cd2a1d80dafc981602da90f803823">RGWSI_SysObj_Cache::do_start</a></div><div class="ttdeci">int do_start(optional_yield, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00036">svc_sys_obj_cache.cc:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_aadb6ba48e03b76779f9a3db7229126b0"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#aadb6ba48e03b76779f9a3db7229126b0">RGWSI_SysObj_Cache::normalize_pool_and_obj</a></div><div class="ttdeci">void normalize_pool_and_obj(const rgw_pool &amp;src_pool, const std::string &amp;src_obj, rgw_pool &amp;dst_pool, std::string &amp;dst_obj)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00075">svc_sys_obj_cache.cc:75</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_ab934bc30a4ece1ca730df6cb1ba75ce8"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#ab934bc30a4ece1ca730df6cb1ba75ce8">RGWSI_SysObj_Cache::notify_svc</a></div><div class="ttdeci">RGWSI_Notify * notify_svc</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00023">svc_sys_obj_cache.h:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_ac766cdd3c81d95fab4ade908fced1701"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#ac766cdd3c81d95fab4ade908fced1701">RGWSI_SysObj_Cache::remove</a></div><div class="ttdeci">int remove(const DoutPrefixProvider *dpp, RGWSysObjectCtxBase &amp;obj_ctx, RGWObjVersionTracker *objv_tracker, const rgw_raw_obj &amp;obj, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00087">svc_sys_obj_cache.cc:87</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_acb46bb5b9d06a0a7349288f631bd564c"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#acb46bb5b9d06a0a7349288f631bd564c">RGWSI_SysObj_Cache::chain_cache_entry</a></div><div class="ttdeci">bool chain_cache_entry(const DoutPrefixProvider *dpp, std::initializer_list&lt; rgw_cache_entry_info * &gt; cache_info_entries, RGWChainedCache::Entry *chained_entry)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00482">svc_sys_obj_cache.cc:482</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_ad5d26722dd2354dc929b1a578fd01bc8"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#ad5d26722dd2354dc929b1a578fd01bc8">RGWSI_SysObj_Cache::init</a></div><div class="ttdeci">void init(RGWSI_RADOS *_rados_svc, RGWSI_Zone *_zone_svc, RGWSI_Notify *_notify_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8h_source.html#l00030">svc_sys_obj_cache.h:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___cache_html_adc6fa4d27c79cf5014becf1c964fde16"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___cache.html#adc6fa4d27c79cf5014becf1c964fde16">RGWSI_SysObj_Cache::set_enabled</a></div><div class="ttdeci">void set_enabled(bool status)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00477">svc_sys_obj_cache.cc:477</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___core_html"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___core.html">RGWSI_SysObj_Core</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__core_8h_source.html#l00017">svc_sys_obj_core.h:18</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___sys_obj___core_html_a59b96e19d74d539bd4fecac30da11ec6"><div class="ttname"><a href="class_r_g_w_s_i___sys_obj___core.html#a59b96e19d74d539bd4fecac30da11ec6">RGWSI_SysObj_Core::core_init</a></div><div class="ttdeci">void core_init(RGWSI_RADOS *_rados_svc, RGWSI_Zone *_zone_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__core_8h_source.html#l00029">svc_sys_obj_core.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html"><div class="ttname"><a href="class_r_g_w_s_i___zone.html">RGWSI_Zone</a></div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8h_source.html#l00027">svc_zone.h:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_a6f26e063fbffe66b7ae464699883ee7d"><div class="ttname"><a href="class_r_g_w_service_instance.html#a6f26e063fbffe66b7ae464699883ee7d">RGWServiceInstance::ctx</a></div><div class="ttdeci">CephContext * ctx()</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00044">rgw_service.h:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_ab329eb7534d92dadb1c4232a6a617937"><div class="ttname"><a href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">RGWServiceInstance::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00023">rgw_service.h:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_sys_object_ctx_base_html"><div class="ttname"><a href="class_r_g_w_sys_object_ctx_base.html">RGWSysObjectCtxBase</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__core__types_8h_source.html#l00075">svc_sys_obj_core_types.h:75</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__cache_8h_html"><div class="ttname"><a href="rgw__cache_8h.html">rgw_cache.h</a></div></div>
+<div class="ttc" id="argw__service_8h_html"><div class="ttname"><a href="rgw__service_8h.html">rgw_service.h</a></div></div>
+<div class="ttc" id="astruct_object_cache_info_html"><div class="ttname"><a href="struct_object_cache_info.html">ObjectCacheInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cache_8h_source.html#l00052">rgw_cache.h:52</a></div></div>
+<div class="ttc" id="astruct_r_g_w_chained_cache_1_1_entry_html"><div class="ttname"><a href="struct_r_g_w_chained_cache_1_1_entry.html">RGWChainedCache::Entry</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__cache_8h_source.html#l00142">rgw_cache.h:142</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01004">rgw_common.h:1004</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___sys_obj___obj___get_obj_state_html"><div class="ttname"><a href="struct_r_g_w_s_i___sys_obj___obj___get_obj_state.html">RGWSI_SysObj_Obj_GetObjState</a></div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__types_8h_source.html#l00011">svc_sys_obj_types.h:11</a></div></div>
+<div class="ttc" id="astruct_r_g_w_services___def_html"><div class="ttname"><a href="struct_r_g_w_services___def.html">RGWServices_Def</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00080">rgw_service.h:81</a></div></div>
+<div class="ttc" id="astructrgw__cache__entry__info_html"><div class="ttname"><a href="structrgw__cache__entry__info.html">rgw_cache_entry_info</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01931">rgw_common.h:1931</a></div></div>
+<div class="ttc" id="astructrgw__pool_html"><div class="ttname"><a href="structrgw__pool.html">rgw_pool</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00146">rgw_basic_types.h:146</a></div></div>
+<div class="ttc" id="astructrgw__raw__obj_html"><div class="ttname"><a href="structrgw__raw__obj.html">rgw_raw_obj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00922">rgw_common.h:922</a></div></div>
+<div class="ttc" id="asvc__sys__obj__cache_8cc_html_a3a3ac8eb60c1a4f45e2d233168cee000"><div class="ttname"><a href="svc__sys__obj__cache_8cc.html#a3a3ac8eb60c1a4f45e2d233168cee000">normal_name</a></div><div class="ttdeci">static string normal_name(rgw_pool &amp;pool, const std::string &amp;oid)</div><div class="ttdef"><b>Definition</b> <a href="svc__sys__obj__cache_8cc_source.html#l00068">svc_sys_obj_cache.cc:68</a></div></div>
+<div class="ttc" id="asvc__sys__obj__core_8h_html"><div class="ttname"><a href="svc__sys__obj__core_8h.html">svc_sys_obj_core.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__sys__obj__cache_8h.html">svc_sys_obj_cache.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+var rgw__zone_8h =
+[
+    [ "RGWNameToId", "struct_r_g_w_name_to_id.html", "struct_r_g_w_name_to_id" ],
+    [ "RGWDefaultSystemMetaObjInfo", "struct_r_g_w_default_system_meta_obj_info.html", "struct_r_g_w_default_system_meta_obj_info" ],
+    [ "RGWSystemMetaObj", "class_r_g_w_system_meta_obj.html", "class_r_g_w_system_meta_obj" ],
+    [ "RGWZoneStorageClass", "struct_r_g_w_zone_storage_class.html", "struct_r_g_w_zone_storage_class" ],
+    [ "RGWZoneStorageClasses", "class_r_g_w_zone_storage_classes.html", "class_r_g_w_zone_storage_classes" ],
+    [ "RGWZonePlacementInfo", "struct_r_g_w_zone_placement_info.html", "struct_r_g_w_zone_placement_info" ],
+    [ "RGWZoneParams", "struct_r_g_w_zone_params.html", "struct_r_g_w_zone_params" ],
+    [ "RGWZone", "struct_r_g_w_zone.html", "struct_r_g_w_zone" ],
+    [ "RGWDefaultZoneGroupInfo", "struct_r_g_w_default_zone_group_info.html", "struct_r_g_w_default_zone_group_info" ],
+    [ "RGWTierACLMapping", "struct_r_g_w_tier_a_c_l_mapping.html", "struct_r_g_w_tier_a_c_l_mapping" ],
+    [ "RGWZoneGroupPlacementTierS3", "struct_r_g_w_zone_group_placement_tier_s3.html", "struct_r_g_w_zone_group_placement_tier_s3" ],
+    [ "RGWZoneGroupPlacementTier", "struct_r_g_w_zone_group_placement_tier.html", "struct_r_g_w_zone_group_placement_tier" ],
+    [ "RGWZoneGroupPlacementTier::_tier", "struct_r_g_w_zone_group_placement_tier_1_1__tier.html", "struct_r_g_w_zone_group_placement_tier_1_1__tier" ],
+    [ "RGWZoneGroupPlacementTarget", "struct_r_g_w_zone_group_placement_target.html", "struct_r_g_w_zone_group_placement_target" ],
+    [ "RGWZoneGroup", "struct_r_g_w_zone_group.html", "struct_r_g_w_zone_group" ],
+    [ "RGWPeriodMap", "struct_r_g_w_period_map.html", "struct_r_g_w_period_map" ],
+    [ "RGWPeriodConfig", "struct_r_g_w_period_config.html", "struct_r_g_w_period_config" ],
+    [ "RGWRegionMap", "struct_r_g_w_region_map.html", "struct_r_g_w_region_map" ],
+    [ "RGWZoneGroupMap", "struct_r_g_w_zone_group_map.html", "struct_r_g_w_zone_group_map" ],
+    [ "RGWRealm", "class_r_g_w_realm.html", "class_r_g_w_realm" ],
+    [ "RGWPeriodLatestEpochInfo", "struct_r_g_w_period_latest_epoch_info.html", "struct_r_g_w_period_latest_epoch_info" ],
+    [ "RGWPeriod", "class_r_g_w_period.html", "class_r_g_w_period" ],
+    [ "DEFAULT_MULTIPART_SYNC_PART_SIZE", "rgw__zone_8h.html#ad8724cf92fce2756b28f64c90241803c", null ]
+];

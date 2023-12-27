@@ -1,0 +1,28 @@
+var structrgw__bucket =
+[
+    [ "rgw_bucket", "structrgw__bucket.html#ace719a3d352af33359fb0d7b274bfc2d", null ],
+    [ "rgw_bucket", "structrgw__bucket.html#a516afbe4cfcc1630339895e84c8525e2", null ],
+    [ "rgw_bucket", "structrgw__bucket.html#aaea7ac7f12cd514e2d15c1b121f9cc1c", null ],
+    [ "rgw_bucket", "structrgw__bucket.html#a0a929de63c56e76ba9359877cf7b1497", null ],
+    [ "rgw_bucket", "structrgw__bucket.html#ab9c2cb72a465538554adb5ebf850941a", null ],
+    [ "rgw_bucket", "structrgw__bucket.html#a566b4f318d3702d6e5e5ace86b805694", null ],
+    [ "convert", "structrgw__bucket.html#a78cf4fc0aa9db2c4efecde039966c71d", null ],
+    [ "decode", "structrgw__bucket.html#a6f90dc6df27b6867eea3583bf630f33e", null ],
+    [ "decode_json", "structrgw__bucket.html#ad19913a71a9724ceacc436f5d06c145b", null ],
+    [ "dump", "structrgw__bucket.html#ab185bdb0ff29f9ebcc971e70438e203f", null ],
+    [ "encode", "structrgw__bucket.html#af940d18de0ef66573dc255a7366d0ddd", null ],
+    [ "generate_test_instances", "structrgw__bucket.html#aded5ca6ab874fce1bd800814ce3f2ee9", null ],
+    [ "get_data_extra_pool", "structrgw__bucket.html#a048c4bb2394ae502fd09087c26f0319c", null ],
+    [ "get_key", "structrgw__bucket.html#ad369d093e39599e8eea191882fcdc6a9", null ],
+    [ "match", "structrgw__bucket.html#a794696e101e6233aa266c24e4fc56344", null ],
+    [ "operator!=", "structrgw__bucket.html#ae6535b0ed7db5b45d07d0cebc972b87a", null ],
+    [ "operator<", "structrgw__bucket.html#ac2b7c6baf2e1dfae0c8b87e53b4e9afc", null ],
+    [ "operator=", "structrgw__bucket.html#a42185ce6622527f3b260257b7c7754e4", null ],
+    [ "operator==", "structrgw__bucket.html#a4816e6d0832510d3d8ffe1afdd4d3988", null ],
+    [ "update_bucket_id", "structrgw__bucket.html#a17cb61b508dacf724ca7671277579929", null ],
+    [ "bucket_id", "structrgw__bucket.html#adaba18504e183a1e80d861533a81c2a1", null ],
+    [ "explicit_placement", "structrgw__bucket.html#a11f10462641700b4b58956f0c40cb407", null ],
+    [ "marker", "structrgw__bucket.html#a5962c0ff0060efdd9f869d3264521e06", null ],
+    [ "name", "structrgw__bucket.html#a32d3529f5b0c53051c856a7abe867a6b", null ],
+    [ "tenant", "structrgw__bucket.html#ac2d65e02c9242ad2ea2ad31da15d8836", null ]
+];

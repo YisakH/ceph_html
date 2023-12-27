@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_finisher.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__finisher_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_finisher.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__finisher_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__service_8h.html">rgw/rgw_service.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>Context;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span>Finisher;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___finisher.html">RGWSI_Finisher</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_service_instance.html">RGWServiceInstance</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html#ae10c3477d45e19a018a227ed3fd01dac">   13</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_services___def.html">RGWServices_Def</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html">ShutdownCB</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html#a9b15ff0dec640346442f99f8498fa109">   18</a></span>  Finisher *<a class="code hl_variable" href="class_r_g_w_s_i___finisher.html#a9b15ff0dec640346442f99f8498fa109">finisher</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html#a758df321770b0d3073be2b47130d7159">   19</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_r_g_w_s_i___finisher.html#a758df321770b0d3073be2b47130d7159">finalized</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#a604c927676b62f4feea7b42038e53033">shutdown</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html#a5f534cb9901c2eedb7058c94213b194a">   23</a></span>  std::map&lt;int, ShutdownCB *&gt; <a class="code hl_variable" href="class_r_g_w_s_i___finisher.html#a5f534cb9901c2eedb7058c94213b194a">shutdown_cbs</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html#a68f04d050b35c4dd92aefa4d29c40a2b">   24</a></span>  std::atomic&lt;int&gt; <a class="code hl_variable" href="class_r_g_w_s_i___finisher.html#a68f04d050b35c4dd92aefa4d29c40a2b">handles_counter</a>{0};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html#ae0167980c7698e9f1e0eddb42c5ea41c">   27</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#ae0167980c7698e9f1e0eddb42c5ea41c">init</a>() {}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#a1f0ad252cff50b8d6bfa389eac705a3d">do_start</a>(optional_yield y, <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher.html#a48e4830784909b4e575ac798bead48b0">   31</a></span>  <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#a48e4830784909b4e575ac798bead48b0">RGWSI_Finisher</a>(CephContext *<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>): <a class="code hl_class" href="class_r_g_w_service_instance.html">RGWServiceInstance</a>(<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>) {}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#a4dbf19243c59230f83bf2a52399493c9">~RGWSI_Finisher</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html">   34</a></span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html">ShutdownCB</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html#ac4cc9cfbfe504147361b5fbf96108d33">   36</a></span>      <span class="keyword">virtual</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html#ac4cc9cfbfe504147361b5fbf96108d33">~ShutdownCB</a>() {}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html#a7593b46564d3cf9f8efa442d9be8f6f2">   37</a></span>      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html#a7593b46564d3cf9f8efa442d9be8f6f2">call</a>() = 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  };</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#a7e7e88ea9b7313618a0793ce97624928">register_caller</a>(<a class="code hl_class" href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html">ShutdownCB</a> *cb, <span class="keywordtype">int</span> *phandle);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#ad52f216bb080502dbb78e1be7b45725a">unregister_caller</a>(<span class="keywordtype">int</span> handle);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___finisher.html#aa7339b87f455928d53ba8a14c6bd9f4e">schedule_context</a>(Context *<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_1_1_shutdown_c_b_html"><div class="ttname"><a href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html">RGWSI_Finisher::ShutdownCB</a></div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00034">svc_finisher.h:34</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_1_1_shutdown_c_b_html_a7593b46564d3cf9f8efa442d9be8f6f2"><div class="ttname"><a href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html#a7593b46564d3cf9f8efa442d9be8f6f2">RGWSI_Finisher::ShutdownCB::call</a></div><div class="ttdeci">virtual void call()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_1_1_shutdown_c_b_html_ac4cc9cfbfe504147361b5fbf96108d33"><div class="ttname"><a href="class_r_g_w_s_i___finisher_1_1_shutdown_c_b.html#ac4cc9cfbfe504147361b5fbf96108d33">RGWSI_Finisher::ShutdownCB::~ShutdownCB</a></div><div class="ttdeci">virtual ~ShutdownCB()</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00036">svc_finisher.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html">RGWSI_Finisher</a></div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00011">svc_finisher.h:12</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a1f0ad252cff50b8d6bfa389eac705a3d"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a1f0ad252cff50b8d6bfa389eac705a3d">RGWSI_Finisher::do_start</a></div><div class="ttdeci">int do_start(optional_yield y, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8cc_source.html#l00010">svc_finisher.cc:10</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a48e4830784909b4e575ac798bead48b0"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a48e4830784909b4e575ac798bead48b0">RGWSI_Finisher::RGWSI_Finisher</a></div><div class="ttdeci">RGWSI_Finisher(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00031">svc_finisher.h:31</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a4dbf19243c59230f83bf2a52399493c9"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a4dbf19243c59230f83bf2a52399493c9">RGWSI_Finisher::~RGWSI_Finisher</a></div><div class="ttdeci">~RGWSI_Finisher()</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8cc_source.html#l00038">svc_finisher.cc:38</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a5f534cb9901c2eedb7058c94213b194a"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a5f534cb9901c2eedb7058c94213b194a">RGWSI_Finisher::shutdown_cbs</a></div><div class="ttdeci">std::map&lt; int, ShutdownCB * &gt; shutdown_cbs</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00023">svc_finisher.h:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a604c927676b62f4feea7b42038e53033"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a604c927676b62f4feea7b42038e53033">RGWSI_Finisher::shutdown</a></div><div class="ttdeci">void shutdown() override</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8cc_source.html#l00018">svc_finisher.cc:18</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a68f04d050b35c4dd92aefa4d29c40a2b"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a68f04d050b35c4dd92aefa4d29c40a2b">RGWSI_Finisher::handles_counter</a></div><div class="ttdeci">std::atomic&lt; int &gt; handles_counter</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00024">svc_finisher.h:24</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a758df321770b0d3073be2b47130d7159"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a758df321770b0d3073be2b47130d7159">RGWSI_Finisher::finalized</a></div><div class="ttdeci">bool finalized</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00019">svc_finisher.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a7e7e88ea9b7313618a0793ce97624928"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a7e7e88ea9b7313618a0793ce97624928">RGWSI_Finisher::register_caller</a></div><div class="ttdeci">void register_caller(ShutdownCB *cb, int *phandle)</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8cc_source.html#l00043">svc_finisher.cc:43</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_a9b15ff0dec640346442f99f8498fa109"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#a9b15ff0dec640346442f99f8498fa109">RGWSI_Finisher::finisher</a></div><div class="ttdeci">Finisher * finisher</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00018">svc_finisher.h:18</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_aa7339b87f455928d53ba8a14c6bd9f4e"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#aa7339b87f455928d53ba8a14c6bd9f4e">RGWSI_Finisher::schedule_context</a></div><div class="ttdeci">void schedule_context(Context *c)</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8cc_source.html#l00054">svc_finisher.cc:54</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_ad52f216bb080502dbb78e1be7b45725a"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#ad52f216bb080502dbb78e1be7b45725a">RGWSI_Finisher::unregister_caller</a></div><div class="ttdeci">void unregister_caller(int handle)</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8cc_source.html#l00049">svc_finisher.cc:49</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___finisher_html_ae0167980c7698e9f1e0eddb42c5ea41c"><div class="ttname"><a href="class_r_g_w_s_i___finisher.html#ae0167980c7698e9f1e0eddb42c5ea41c">RGWSI_Finisher::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> <a href="svc__finisher_8h_source.html#l00027">svc_finisher.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html"><div class="ttname"><a href="class_r_g_w_service_instance.html">RGWServiceInstance</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00018">rgw_service.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_ab329eb7534d92dadb1c4232a6a617937"><div class="ttname"><a href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">RGWServiceInstance::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00023">rgw_service.h:23</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_af3997c9b015c5696191674621076ae50"><div class="ttname"><a href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a></div><div class="ttdeci">librados::AioCompletion * c</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00031">rgw_aio.cc:31</a></div></div>
+<div class="ttc" id="argw__service_8h_html"><div class="ttname"><a href="rgw__service_8h.html">rgw_service.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_services___def_html"><div class="ttname"><a href="struct_r_g_w_services___def.html">RGWServices_Def</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00080">rgw_service.h:81</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__finisher_8h.html">svc_finisher.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::auth::s3::ExternalAuthStrategy 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pri-types">Private 타입</a> &#124;
+<a href="#pri-methods">Private 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
+<a href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::auth::s3::ExternalAuthStrategy 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a>&gt;</code></p>
+<div class="dynheader">
+rgw::auth::s3::ExternalAuthStrategy에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy__inherit__graph.png" border="0" usemap="#argw_1_1auth_1_1s3_1_1_external_auth_strategy_inherit__map" alt="Inheritance graph"/></div>
+<map name="argw_1_1auth_1_1s3_1_1_external_auth_strategy_inherit__map" id="argw_1_1auth_1_1s3_1_1_external_auth_strategy_inherit__map">
+<area shape="rect" title=" " alt="" coords="64,347,235,539"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html" title=" " alt="" coords="5,165,128,299"/>
+<area shape="poly" title=" " alt="" coords="101,312,114,346,109,348,96,314"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine.html" title=" " alt="" coords="10,5,123,117"/>
+<area shape="poly" title=" " alt="" coords="69,133,69,166,64,166,64,133"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html" title=" " alt="" coords="153,179,311,285"/>
+<area shape="poly" title=" " alt="" coords="208,300,189,348,184,346,203,298"/>
+</map>
+</div>
+<div class="dynheader">
+rgw::auth::s3::ExternalAuthStrategy에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy__coll__graph.png" border="0" usemap="#argw_1_1auth_1_1s3_1_1_external_auth_strategy_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1auth_1_1s3_1_1_external_auth_strategy_coll__map" id="argw_1_1auth_1_1s3_1_1_external_auth_strategy_coll__map">
+<area shape="rect" title=" " alt="" coords="368,1152,539,1280"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html" title=" " alt="" coords="5,669,128,803"/>
+<area shape="poly" title=" " alt="" coords="88,816,112,889,146,972,193,1054,221,1092,252,1126,279,1147,308,1165,370,1191,367,1196,306,1170,276,1152,249,1130,217,1095,189,1057,142,974,107,891,83,818"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine.html" title=" " alt="" coords="37,171,150,283"/>
+<area shape="poly" title=" " alt="" coords="64,297,49,347,37,430,35,495,40,561,49,645,53,669,48,670,44,646,34,562,29,495,32,430,44,346,59,295"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_engine.html" title=" " alt="" coords="246,440,413,552"/>
+<area shape="poly" title=" " alt="" coords="163,277,200,309,235,345,271,392,302,439,297,442,267,395,231,348,197,313,160,281"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html" title=" " alt="" coords="574,443,733,549"/>
+<area shape="poly" title=" " alt="" coords="655,564,649,676,633,803,616,885,598,948,552,1089,547,1110,538,1129,521,1154,516,1151,534,1127,542,1108,547,1087,593,946,611,884,628,802,644,676,650,564"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine.html" title=" " alt="" coords="369,827,538,1088"/>
+<area shape="poly" title=" " alt="" coords="623,551,591,607,559,670,534,736,512,804,509,811,504,810,507,802,529,734,554,668,586,605,619,548"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html" title="Base singleton representing a Store or stacking layer" alt="" coords="59,347,221,645"/>
+<area shape="poly" title=" " alt="" coords="165,645,188,747,221,861,265,977,291,1033,321,1087,341,1114,363,1139,359,1142,337,1117,317,1089,286,1036,260,980,216,863,183,748,160,646"/>
+<area shape="poly" title=" " alt="" coords="223,632,235,643,249,651,262,654,276,657,290,667,303,685,311,701,318,732,322,764,336,802,361,843,357,845,331,804,317,766,313,733,306,703,299,687,286,671,274,662,261,659,247,656,232,647,219,636"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_implicit_tenants.html" title=" " alt="" coords="708,880,873,1035"/>
+<area shape="poly" title=" " alt="" coords="751,1036,715,1086,670,1130,614,1164,556,1189,554,1184,612,1160,666,1126,711,1082,747,1033"/>
+<area shape="rect" title=" " alt="" coords="757,461,867,531"/>
+<area shape="poly" title=" " alt="" coords="812,546,797,880,792,880,807,545"/>
+<area shape="poly" title=" " alt="" coords="456,1088,456,1135,451,1135,451,1088"/>
+<area shape="poly" title=" " alt="" coords="352,566,381,669,423,826,418,827,376,670,347,567"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_engine_1_1_version_abstractor.html" title=" " alt="" coords="246,173,413,280"/>
+<area shape="poly" title=" " alt="" coords="332,279,332,423,327,423,327,279"/>
+<area shape="rect" title=" " alt="" coords="305,5,353,75"/>
+<area shape="poly" title=" " alt="" coords="332,75,332,156,327,156,327,75"/>
+<area shape="rect" href="classrgw_1_1_l_d_a_p_helper.html" title=" " alt="" coords="437,419,549,573"/>
+<area shape="poly" title=" " alt="" coords="489,573,469,810,463,809,484,573"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a4935999d52f0537da4ab874d84e39b9f" id="r_a4935999d52f0537da4ab874d84e39b9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4935999d52f0537da4ab874d84e39b9f">ExternalAuthStrategy</a> (CephContext *const <a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *<a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">store</a>, <a class="el" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a> &amp;<a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a45a6a4b7ba0b80db1c3dd5d85e1ad05d">implicit_tenant_context</a>, <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_engine_1_1_version_abstractor.html">AWSEngine::VersionAbstractor</a> *const ver_abstractor)</td></tr>
+<tr class="separator:a4935999d52f0537da4ab874d84e39b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97e7ee54e113c56fb6fc64224892788" id="r_ac97e7ee54e113c56fb6fc64224892788"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac97e7ee54e113c56fb6fc64224892788">get_name</a> () const noexcept override</td></tr>
+<tr class="separator:ac97e7ee54e113c56fb6fc64224892788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:a70ce7c14f24b1c462bf76e7398a91c21 inherit pub_methods_classrgw_1_1auth_1_1_strategy" id="r_a70ce7c14f24b1c462bf76e7398a91c21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1_engine.html#a1655e1082e3318b00d0121d2bc54e214">Engine::result_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#a70ce7c14f24b1c462bf76e7398a91c21">authenticate</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const <a class="el" href="structreq__state.html">req_state</a> *s, optional_yield y) const override final</td></tr>
+<tr class="separator:a70ce7c14f24b1c462bf76e7398a91c21 inherit pub_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc12953910b66cba2372f3bef497ac41 inherit pub_methods_classrgw_1_1auth_1_1_strategy" id="r_abc12953910b66cba2372f3bef497ac41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#abc12953910b66cba2372f3bef497ac41">is_empty</a> () const</td></tr>
+<tr class="separator:abc12953910b66cba2372f3bef497ac41 inherit pub_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1auth_1_1_engine"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1auth_1_1_engine')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_engine.html">rgw::auth::Engine</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:af7d8cbe5dcab2f0e690ebaa1e8a7c511 inherit pub_methods_classrgw_1_1auth_1_1_engine" id="r_af7d8cbe5dcab2f0e690ebaa1e8a7c511"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_engine.html#af7d8cbe5dcab2f0e690ebaa1e8a7c511">~Engine</a> ()=default</td></tr>
+<tr class="separator:af7d8cbe5dcab2f0e690ebaa1e8a7c511 inherit pub_methods_classrgw_1_1auth_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structrgw_1_1auth_1_1_remote_applier_1_1_factory"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structrgw_1_1auth_1_1_remote_applier_1_1_factory')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html">rgw::auth::RemoteApplier::Factory</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:a6dfdbcce4c13cafa91153324ccc52191 inherit pub_methods_structrgw_1_1auth_1_1_remote_applier_1_1_factory" id="r_a6dfdbcce4c13cafa91153324ccc52191"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html#a6dfdbcce4c13cafa91153324ccc52191">~Factory</a> ()</td></tr>
+<tr class="separator:a6dfdbcce4c13cafa91153324ccc52191 inherit pub_methods_structrgw_1_1auth_1_1_remote_applier_1_1_factory"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 타입</h2></td></tr>
+<tr class="memitem:af07bac7506ebaad87cb4c7c94ee94888" id="r_af07bac7506ebaad87cb4c7c94ee94888"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classrgw_1_1auth_1_1_identity_applier.html#adc7532a01c60ae8f3fdb0b53ad7b1394">rgw::auth::IdentityApplier::aplptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#af07bac7506ebaad87cb4c7c94ee94888">aplptr_t</a></td></tr>
+<tr class="separator:af07bac7506ebaad87cb4c7c94ee94888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff90c9b606ad80e6f0361d00428a30c" id="r_acff90c9b606ad80e6f0361d00428a30c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#acff90c9b606ad80e6f0361d00428a30c">keystone_config_t</a> = <a class="el" href="classrgw_1_1keystone_1_1_ceph_ctx_config.html">rgw::keystone::CephCtxConfig</a></td></tr>
+<tr class="separator:acff90c9b606ad80e6f0361d00428a30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac48eda7a75143549d9a70fd5abf76279" id="r_ac48eda7a75143549d9a70fd5abf76279"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac48eda7a75143549d9a70fd5abf76279">keystone_cache_t</a> = <a class="el" href="classrgw_1_1keystone_1_1_token_cache.html">rgw::keystone::TokenCache</a></td></tr>
+<tr class="separator:ac48eda7a75143549d9a70fd5abf76279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b371a9debf633d2a54601e7098bc26" id="r_aa7b371a9debf633d2a54601e7098bc26"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#aa7b371a9debf633d2a54601e7098bc26">secret_cache_t</a> = <a class="el" href="classrgw_1_1auth_1_1keystone_1_1_secret_cache.html">rgw::auth::keystone::SecretCache</a></td></tr>
+<tr class="separator:aa7b371a9debf633d2a54601e7098bc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfca2de41505723ec865fce8ce85fd4a" id="r_acfca2de41505723ec865fce8ce85fd4a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#acfca2de41505723ec865fce8ce85fd4a">EC2Engine</a> = <a class="el" href="classrgw_1_1auth_1_1keystone_1_1_e_c2_engine.html">rgw::auth::keystone::EC2Engine</a></td></tr>
+<tr class="separator:acfca2de41505723ec865fce8ce85fd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 멤버 함수</h2></td></tr>
+<tr class="memitem:a2efc5e660e6930ad8b5b66649bbe3ef9" id="r_a2efc5e660e6930ad8b5b66649bbe3ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#af07bac7506ebaad87cb4c7c94ee94888">aplptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a2efc5e660e6930ad8b5b66649bbe3ef9">create_apl_remote</a> (CephContext *const <a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, const <a class="el" href="structreq__state.html">req_state</a> *const s, <a class="el" href="classrgw_1_1auth_1_1_remote_applier.html#a6c69970586e35d57ff86348469400a73">rgw::auth::RemoteApplier::acl_strategy_t</a> &amp;&amp;acl_alg, const <a class="el" href="classrgw_1_1auth_1_1_remote_applier_1_1_auth_info.html">rgw::auth::RemoteApplier::AuthInfo</a> &amp;info) const override</td></tr>
+<tr class="separator:a2efc5e660e6930ad8b5b66649bbe3ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a4a32ddf400f648370693f2f81394219f" id="r_a4a32ddf400f648370693f2f81394219f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">store</a></td></tr>
+<tr class="separator:a4a32ddf400f648370693f2f81394219f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a6a4b7ba0b80db1c3dd5d85e1ad05d" id="r_a45a6a4b7ba0b80db1c3dd5d85e1ad05d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a45a6a4b7ba0b80db1c3dd5d85e1ad05d">implicit_tenant_context</a></td></tr>
+<tr class="separator:a45a6a4b7ba0b80db1c3dd5d85e1ad05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5ee3b74206e2ae7d957a69cb52fb9f" id="r_a7f5ee3b74206e2ae7d957a69cb52fb9f"><td class="memItemLeft" align="right" valign="top">boost::optional&lt; <a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#acfca2de41505723ec865fce8ce85fd4a">EC2Engine</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a7f5ee3b74206e2ae7d957a69cb52fb9f">keystone_engine</a></td></tr>
+<tr class="separator:a7f5ee3b74206e2ae7d957a69cb52fb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3395d2485de924848871764e8066cb4" id="r_ac3395d2485de924848871764e8066cb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine.html">LDAPEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac3395d2485de924848871764e8066cb4">ldap_engine</a></td></tr>
+<tr class="separator:ac3395d2485de924848871764e8066cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+추가로 상속된 멤버들</h2></td></tr>
+<tr class="inherit_header pub_types_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 Public 타입</td></tr>
+<tr class="memitem:a94baf04961abcbee644ed465eb78d620 inherit pub_types_classrgw_1_1auth_1_1_strategy" id="r_a94baf04961abcbee644ed465eb78d620"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620">Control</a> { <a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a4f734c0bf8fbabab912be8e80d34dd8f">REQUISITE</a>
+, <a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">SUFFICIENT</a>
+, <a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620af35b388d8d4adeab05bce916c73d7a72">FALLBACK</a>
+ }</td></tr>
+<tr class="separator:a94baf04961abcbee644ed465eb78d620 inherit pub_types_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classrgw_1_1auth_1_1_engine"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrgw_1_1auth_1_1_engine')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_engine.html">rgw::auth::Engine</a>(으)로부터 상속된 Public 타입</td></tr>
+<tr class="memitem:a1655e1082e3318b00d0121d2bc54e214 inherit pub_types_classrgw_1_1auth_1_1_engine" id="r_a1655e1082e3318b00d0121d2bc54e214"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_engine.html#a1655e1082e3318b00d0121d2bc54e214">result_t</a> = <a class="el" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html">AuthResult</a></td></tr>
+<tr class="separator:a1655e1082e3318b00d0121d2bc54e214 inherit pub_types_classrgw_1_1auth_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 정적 Public 멤버 함수</td></tr>
+<tr class="memitem:ab660ca4429a3c8fb0ece18baebd0d6b8 inherit pub_static_methods_classrgw_1_1auth_1_1_strategy" id="r_ab660ca4429a3c8fb0ece18baebd0d6b8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#ab660ca4429a3c8fb0ece18baebd0d6b8">apply</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const <a class="el" href="classrgw_1_1auth_1_1_strategy.html">Strategy</a> &amp;auth_strategy, <a class="el" href="structreq__state.html">req_state</a> *s, optional_yield y) noexcept</td></tr>
+<tr class="separator:ab660ca4429a3c8fb0ece18baebd0d6b8 inherit pub_static_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 Protected 멤버 함수</td></tr>
+<tr class="memitem:ab4b0c53b993b4157103cabe717d3208e inherit pro_methods_classrgw_1_1auth_1_1_strategy" id="r_ab4b0c53b993b4157103cabe717d3208e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">add_engine</a> (<a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620">Control</a> ctrl_flag, const <a class="el" href="classrgw_1_1auth_1_1_engine.html">Engine</a> &amp;engine) noexcept</td></tr>
+<tr class="separator:ab4b0c53b993b4157103cabe717d3208e inherit pro_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00095">95</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">멤버 타입정의 문서화</h2>
+<a id="af07bac7506ebaad87cb4c7c94ee94888" name="af07bac7506ebaad87cb4c7c94ee94888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07bac7506ebaad87cb4c7c94ee94888">&#9670;&#160;</a></span>aplptr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classrgw_1_1auth_1_1_identity_applier.html#adc7532a01c60ae8f3fdb0b53ad7b1394">rgw::auth::IdentityApplier::aplptr_t</a> <a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#af07bac7506ebaad87cb4c7c94ee94888">rgw::auth::s3::ExternalAuthStrategy::aplptr_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00097">97</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="acfca2de41505723ec865fce8ce85fd4a" name="acfca2de41505723ec865fce8ce85fd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfca2de41505723ec865fce8ce85fd4a">&#9670;&#160;</a></span>EC2Engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#acfca2de41505723ec865fce8ce85fd4a">rgw::auth::s3::ExternalAuthStrategy::EC2Engine</a> =  <a class="el" href="classrgw_1_1auth_1_1keystone_1_1_e_c2_engine.html">rgw::auth::keystone::EC2Engine</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00104">104</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac48eda7a75143549d9a70fd5abf76279" name="ac48eda7a75143549d9a70fd5abf76279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac48eda7a75143549d9a70fd5abf76279">&#9670;&#160;</a></span>keystone_cache_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac48eda7a75143549d9a70fd5abf76279">rgw::auth::s3::ExternalAuthStrategy::keystone_cache_t</a> =  <a class="el" href="classrgw_1_1keystone_1_1_token_cache.html">rgw::keystone::TokenCache</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00102">102</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="acff90c9b606ad80e6f0361d00428a30c" name="acff90c9b606ad80e6f0361d00428a30c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff90c9b606ad80e6f0361d00428a30c">&#9670;&#160;</a></span>keystone_config_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#acff90c9b606ad80e6f0361d00428a30c">rgw::auth::s3::ExternalAuthStrategy::keystone_config_t</a> =  <a class="el" href="classrgw_1_1keystone_1_1_ceph_ctx_config.html">rgw::keystone::CephCtxConfig</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00101">101</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa7b371a9debf633d2a54601e7098bc26" name="aa7b371a9debf633d2a54601e7098bc26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b371a9debf633d2a54601e7098bc26">&#9670;&#160;</a></span>secret_cache_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#aa7b371a9debf633d2a54601e7098bc26">rgw::auth::s3::ExternalAuthStrategy::secret_cache_t</a> =  <a class="el" href="classrgw_1_1auth_1_1keystone_1_1_secret_cache.html">rgw::auth::keystone::SecretCache</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00103">103</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a4935999d52f0537da4ab874d84e39b9f" name="a4935999d52f0537da4ab874d84e39b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4935999d52f0537da4ab874d84e39b9f">&#9670;&#160;</a></span>ExternalAuthStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::auth::s3::ExternalAuthStrategy::ExternalAuthStrategy </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *const&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *&#160;</td>
+          <td class="paramname"><em>store</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a> &amp;&#160;</td>
+          <td class="paramname"><em>implicit_tenant_context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_engine_1_1_version_abstractor.html">AWSEngine::VersionAbstractor</a> *const&#160;</td>
+          <td class="paramname"><em>ver_abstractor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00122">122</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>    : <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">store</a>(<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">store</a>),</div>
+<div class="line"><span class="lineno">  127</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a45a6a4b7ba0b80db1c3dd5d85e1ad05d">implicit_tenant_context</a>(<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a45a6a4b7ba0b80db1c3dd5d85e1ad05d">implicit_tenant_context</a>),</div>
+<div class="line"><span class="lineno">  128</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac3395d2485de924848871764e8066cb4">ldap_engine</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">store</a>, *ver_abstractor,</div>
+<div class="line"><span class="lineno">  129</span>                  <span class="keyword">static_cast&lt;</span><a class="code hl_struct" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html">rgw::auth::RemoteApplier::Factory</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)) {</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;_conf-&gt;rgw_s3_auth_use_keystone &amp;&amp;</div>
+<div class="line"><span class="lineno">  132</span>        ! <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;_conf-&gt;rgw_keystone_url.empty()) {</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a7f5ee3b74206e2ae7d957a69cb52fb9f">keystone_engine</a>.emplace(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, ver_abstractor,</div>
+<div class="line"><span class="lineno">  135</span>                              <span class="keyword">static_cast&lt;</span><a class="code hl_struct" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html">rgw::auth::RemoteApplier::Factory</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>),</div>
+<div class="line"><span class="lineno">  136</span>                              <a class="code hl_function" href="classrgw_1_1keystone_1_1_ceph_ctx_config.html#ae56f927fe1a679ce4560f45b7f0fba7d">keystone_config_t::get_instance</a>(),</div>
+<div class="line"><span class="lineno">  137</span>                              keystone_cache_t::get_instance&lt;keystone_config_t&gt;(),</div>
+<div class="line"><span class="lineno">  138</span>                  <a class="code hl_function" href="classrgw_1_1auth_1_1keystone_1_1_secret_cache.html#aa5b49bade2ef68a305a2c7b875c25586">secret_cache_t::get_instance</a>());</div>
+<div class="line"><span class="lineno">  139</span>      <a class="code hl_function" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">add_engine</a>(<a class="code hl_enumvalue" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">Control::SUFFICIENT</a>, *<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a7f5ee3b74206e2ae7d957a69cb52fb9f">keystone_engine</a>);</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac3395d2485de924848871764e8066cb4">ldap_engine</a>.<a class="code hl_function" href="classrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine.html#a7c5f57dcbb33d87637c383b03ea4bc9a">valid</a>()) {</div>
+<div class="line"><span class="lineno">  144</span>      <a class="code hl_function" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">add_engine</a>(<a class="code hl_enumvalue" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">Control::SUFFICIENT</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac3395d2485de924848871764e8066cb4">ldap_engine</a>);</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_html_a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">rgw::auth::Strategy::Control::SUFFICIENT</a></div><div class="ttdeci">@ SUFFICIENT</div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_html_ab4b0c53b993b4157103cabe717d3208e"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">rgw::auth::Strategy::add_engine</a></div><div class="ttdeci">void add_engine(Control ctrl_flag, const Engine &amp;engine) noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8cc_source.html#l00347">rgw_auth.cc:347</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1keystone_1_1_secret_cache_html_aa5b49bade2ef68a305a2c7b875c25586"><div class="ttname"><a href="classrgw_1_1auth_1_1keystone_1_1_secret_cache.html#aa5b49bade2ef68a305a2c7b875c25586">rgw::auth::keystone::SecretCache::get_instance</a></div><div class="ttdeci">static SecretCache &amp; get_instance()</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__keystone_8h_source.html#l00109">rgw_auth_keystone.h:109</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_html_a45a6a4b7ba0b80db1c3dd5d85e1ad05d"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a45a6a4b7ba0b80db1c3dd5d85e1ad05d">rgw::auth::s3::ExternalAuthStrategy::implicit_tenant_context</a></div><div class="ttdeci">rgw::auth::ImplicitTenants &amp; implicit_tenant_context</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00099">rgw_auth_s3.h:99</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_html_a4a32ddf400f648370693f2f81394219f"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">rgw::auth::s3::ExternalAuthStrategy::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00098">rgw_auth_s3.h:98</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_html_a7f5ee3b74206e2ae7d957a69cb52fb9f"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a7f5ee3b74206e2ae7d957a69cb52fb9f">rgw::auth::s3::ExternalAuthStrategy::keystone_engine</a></div><div class="ttdeci">boost::optional&lt; EC2Engine &gt; keystone_engine</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00106">rgw_auth_s3.h:106</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_html_ac3395d2485de924848871764e8066cb4"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#ac3395d2485de924848871764e8066cb4">rgw::auth::s3::ExternalAuthStrategy::ldap_engine</a></div><div class="ttdeci">LDAPEngine ldap_engine</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00107">rgw_auth_s3.h:107</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine_html_a7c5f57dcbb33d87637c383b03ea4bc9a"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine.html#a7c5f57dcbb33d87637c383b03ea4bc9a">rgw::auth::s3::LDAPEngine::valid</a></div><div class="ttdeci">static bool valid()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05966">rgw_rest_s3.cc:5966</a></div></div>
+<div class="ttc" id="aclassrgw_1_1keystone_1_1_ceph_ctx_config_html_ae56f927fe1a679ce4560f45b7f0fba7d"><div class="ttname"><a href="classrgw_1_1keystone_1_1_ceph_ctx_config.html#ae56f927fe1a679ce4560f45b7f0fba7d">rgw::keystone::CephCtxConfig::get_instance</a></div><div class="ttdeci">static CephCtxConfig &amp; get_instance()</div><div class="ttdef"><b>Definition</b> <a href="rgw__keystone_8h_source.html#l00063">rgw_keystone.h:63</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="astructrgw_1_1auth_1_1_remote_applier_1_1_factory_html"><div class="ttname"><a href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html">rgw::auth::RemoteApplier::Factory</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00629">rgw_auth.h:629</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a4935999d52f0537da4ab874d84e39b9f_cgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a4935999d52f0537da4ab874d84e39b9f_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a4935999d52f0537da4ab874d84e39b9f_cgraph" id="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a4935999d52f0537da4ab874d84e39b9f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,105,208,148"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e" title=" " alt="" coords="288,5,420,48"/>
+<area shape="poly" title=" " alt="" coords="152,102,255,58,273,51,274,56,257,62,154,107"/>
+<area shape="rect" href="classrgw_1_1auth_1_1keystone_1_1_secret_cache.html#aa5b49bade2ef68a305a2c7b875c25586" title=" " alt="" coords="261,72,447,115"/>
+<area shape="poly" title=" " alt="" coords="208,110,245,105,246,111,208,116"/>
+<area shape="rect" href="classrgw_1_1keystone_1_1_ceph_ctx_config.html#ae56f927fe1a679ce4560f45b7f0fba7d" title=" " alt="" coords="256,139,452,181"/>
+<area shape="poly" title=" " alt="" coords="208,138,241,142,240,147,208,143"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine.html#a7c5f57dcbb33d87637c383b03ea4bc9a" title=" " alt="" coords="265,205,443,248"/>
+<area shape="poly" title=" " alt="" coords="154,146,257,191,273,197,271,202,255,196,152,151"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a2efc5e660e6930ad8b5b66649bbe3ef9" name="a2efc5e660e6930ad8b5b66649bbe3ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2efc5e660e6930ad8b5b66649bbe3ef9">&#9670;&#160;</a></span>create_apl_remote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#af07bac7506ebaad87cb4c7c94ee94888">aplptr_t</a> rgw::auth::s3::ExternalAuthStrategy::create_apl_remote </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *const&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structreq__state.html">req_state</a> *const&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1auth_1_1_remote_applier.html#a6c69970586e35d57ff86348469400a73">rgw::auth::RemoteApplier::acl_strategy_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>acl_alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classrgw_1_1auth_1_1_remote_applier_1_1_auth_info.html">rgw::auth::RemoteApplier::AuthInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html#aa026553b9ee44aca78f2111f2d14d490">rgw::auth::RemoteApplier::Factory</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00109">109</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>                                                                                      {</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keyword">auto</span> apl = <a class="code hl_function" href="namespacergw_1_1auth.html#ae2070ad64ca636bd0ce3882dfab0386a">rgw::auth::add_sysreq</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">store</a>, s,</div>
+<div class="line"><span class="lineno">  114</span>      <a class="code hl_class" href="classrgw_1_1auth_1_1_remote_applier.html">rgw::auth::RemoteApplier</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a4a32ddf400f648370693f2f81394219f">store</a>, std::move(acl_alg), info,</div>
+<div class="line"><span class="lineno">  115</span>                               <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#a45a6a4b7ba0b80db1c3dd5d85e1ad05d">implicit_tenant_context</a>,</div>
+<div class="line"><span class="lineno">  116</span>                               <a class="code hl_enumvalue" href="classrgw_1_1auth_1_1_implicit_tenants.html#a1a2298eaa646c48c612b274d413a7f23add4dc53a9be0dad30f46284bb4517fb7">rgw::auth::ImplicitTenants::IMPLICIT_TENANTS_S3</a>));</div>
+<div class="line"><span class="lineno">  117</span>    <span class="comment">/* TODO(rzarzynski): replace with static_ptr. */</span></div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#af07bac7506ebaad87cb4c7c94ee94888">aplptr_t</a>(<span class="keyword">new</span> <span class="keyword">decltype</span>(apl)(std::move(apl)));</div>
+<div class="line"><span class="lineno">  119</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_implicit_tenants_html_a1a2298eaa646c48c612b274d413a7f23add4dc53a9be0dad30f46284bb4517fb7"><div class="ttname"><a href="classrgw_1_1auth_1_1_implicit_tenants.html#a1a2298eaa646c48c612b274d413a7f23add4dc53a9be0dad30f46284bb4517fb7">rgw::auth::ImplicitTenants::IMPLICIT_TENANTS_S3</a></div><div class="ttdeci">@ IMPLICIT_TENANTS_S3</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00498">rgw_auth.h:498</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_remote_applier_html"><div class="ttname"><a href="classrgw_1_1auth_1_1_remote_applier.html">rgw::auth::RemoteApplier</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00539">rgw_auth.h:539</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_html_af07bac7506ebaad87cb4c7c94ee94888"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#af07bac7506ebaad87cb4c7c94ee94888">rgw::auth::s3::ExternalAuthStrategy::aplptr_t</a></div><div class="ttdeci">rgw::auth::IdentityApplier::aplptr_t aplptr_t</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00097">rgw_auth_s3.h:97</a></div></div>
+<div class="ttc" id="anamespacergw_1_1auth_html_ae2070ad64ca636bd0ce3882dfab0386a"><div class="ttname"><a href="namespacergw_1_1auth.html#ae2070ad64ca636bd0ce3882dfab0386a">rgw::auth::add_sysreq</a></div><div class="ttdeci">static SysReqApplier&lt; T &gt; add_sysreq(CephContext *const cct, rgw::sal::Store *store, const req_state *const s, T &amp;&amp;t)</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__filters_8h_source.html#l00295">rgw_auth_filters.h:295</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a2efc5e660e6930ad8b5b66649bbe3ef9_cgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a2efc5e660e6930ad8b5b66649bbe3ef9_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a2efc5e660e6930ad8b5b66649bbe3ef9_cgraph" id="aclassrgw_1_1auth_1_1s3_1_1_external_auth_strategy_a2efc5e660e6930ad8b5b66649bbe3ef9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,191,48"/>
+<area shape="rect" href="namespacergw_1_1auth.html#ae2070ad64ca636bd0ce3882dfab0386a" title=" " alt="" coords="239,13,388,40"/>
+<area shape="poly" title=" " alt="" coords="191,24,224,24,224,29,191,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac97e7ee54e113c56fb6fc64224892788" name="ac97e7ee54e113c56fb6fc64224892788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97e7ee54e113c56fb6fc64224892788">&#9670;&#160;</a></span>get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * rgw::auth::s3::ExternalAuthStrategy::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1auth_1_1_engine.html#aad7a0f7c3737f8b43c09eed62be6d76b">rgw::auth::Engine</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00148">148</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>                                                 {</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;rgw::auth::s3::AWSv2ExternalAuthStrategy&quot;</span>;</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="a45a6a4b7ba0b80db1c3dd5d85e1ad05d" name="a45a6a4b7ba0b80db1c3dd5d85e1ad05d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a6a4b7ba0b80db1c3dd5d85e1ad05d">&#9670;&#160;</a></span>implicit_tenant_context</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a>&amp; rgw::auth::s3::ExternalAuthStrategy::implicit_tenant_context</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00099">99</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a7f5ee3b74206e2ae7d957a69cb52fb9f" name="a7f5ee3b74206e2ae7d957a69cb52fb9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5ee3b74206e2ae7d957a69cb52fb9f">&#9670;&#160;</a></span>keystone_engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::optional&lt;<a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html#acfca2de41505723ec865fce8ce85fd4a">EC2Engine</a>&gt; rgw::auth::s3::ExternalAuthStrategy::keystone_engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00106">106</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac3395d2485de924848871764e8066cb4" name="ac3395d2485de924848871764e8066cb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3395d2485de924848871764e8066cb4">&#9670;&#160;</a></span>ldap_engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine.html">LDAPEngine</a> rgw::auth::s3::ExternalAuthStrategy::ldap_engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00107">107</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4a32ddf400f648370693f2f81394219f" name="a4a32ddf400f648370693f2f81394219f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a32ddf400f648370693f2f81394219f">&#9670;&#160;</a></span>store</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* rgw::auth::s3::ExternalAuthStrategy::store</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00098">98</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1auth.html">auth</a></li><li class="navelem"><a class="el" href="namespacergw_1_1auth_1_1s3.html">s3</a></li><li class="navelem"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html">ExternalAuthStrategy</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

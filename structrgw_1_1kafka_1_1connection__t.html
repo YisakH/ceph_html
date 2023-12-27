@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::kafka::connection_t 구조체 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structrgw_1_1kafka_1_1connection__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-attribs">Public 속성</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="structrgw_1_1kafka_1_1connection__t-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::kafka::connection_t 구조체 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+rgw::kafka::connection_t에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrgw_1_1kafka_1_1connection__t__coll__graph.png" border="0" usemap="#argw_1_1kafka_1_1connection__t_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1kafka_1_1connection__t_coll__map" id="argw_1_1kafka_1_1connection__t_coll__map">
+<area shape="rect" title=" " alt="" coords="5,139,159,549"/>
+<area shape="rect" title=" " alt="" coords="53,5,111,75"/>
+<area shape="poly" title=" " alt="" coords="85,74,85,122,79,122,79,74"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a2881c404105d49d41675d42b03e57a05" id="r_a2881c404105d49d41675d42b03e57a05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a2881c404105d49d41675d42b03e57a05">destroy</a> (int s)</td></tr>
+<tr class="separator:a2881c404105d49d41675d42b03e57a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e30c11ff9d8d818206e83a9aaac2c0" id="r_a13e30c11ff9d8d818206e83a9aaac2c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a13e30c11ff9d8d818206e83a9aaac2c0">is_ok</a> () const</td></tr>
+<tr class="separator:a13e30c11ff9d8d818206e83a9aaac2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a4076acd9cd13fd0b081b8d40b2a78" id="r_a21a4076acd9cd13fd0b081b8d40b2a78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a21a4076acd9cd13fd0b081b8d40b2a78">connection_t</a> (CephContext *_cct, const std::string &amp;_broker, bool _use_ssl, bool _verify_ssl, const boost::optional&lt; const std::string &amp; &gt; &amp;_ca_location, const std::string &amp;_user, const std::string &amp;_password)</td></tr>
+<tr class="separator:a21a4076acd9cd13fd0b081b8d40b2a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab827a0ab174d21248fb17c6f5a21cf8d" id="r_ab827a0ab174d21248fb17c6f5a21cf8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#ab827a0ab174d21248fb17c6f5a21cf8d">~connection_t</a> ()</td></tr>
+<tr class="separator:ab827a0ab174d21248fb17c6f5a21cf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 속성</h2></td></tr>
+<tr class="memitem:a228e92e8899133ea06b77b10e38d95be" id="r_a228e92e8899133ea06b77b10e38d95be"><td class="memItemLeft" align="right" valign="top">rd_kafka_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a228e92e8899133ea06b77b10e38d95be">producer</a> = nullptr</td></tr>
+<tr class="separator:a228e92e8899133ea06b77b10e38d95be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa09b9aba7d45e7be674532d426d084f" id="r_aaa09b9aba7d45e7be674532d426d084f"><td class="memItemLeft" align="right" valign="top">rd_kafka_conf_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#aaa09b9aba7d45e7be674532d426d084f">temp_conf</a> = nullptr</td></tr>
+<tr class="separator:aaa09b9aba7d45e7be674532d426d084f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f461e4f3827e9a5d8518fb499740b1b" id="r_a0f461e4f3827e9a5d8518fb499740b1b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; rd_kafka_topic_t * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a0f461e4f3827e9a5d8518fb499740b1b">topics</a></td></tr>
+<tr class="separator:a0f461e4f3827e9a5d8518fb499740b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa071a080a71e765a189acb514cc583ab" id="r_aa071a080a71e765a189acb514cc583ab"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#aa071a080a71e765a189acb514cc583ab">delivery_tag</a> = 1</td></tr>
+<tr class="separator:aa071a080a71e765a189acb514cc583ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05304336dcbeca3a44717966a908a71" id="r_ae05304336dcbeca3a44717966a908a71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#ae05304336dcbeca3a44717966a908a71">status</a> = <a class="el" href="namespacergw_1_1kafka.html#ae6950957f590676bbd62fdd2a65b7771">STATUS_OK</a></td></tr>
+<tr class="separator:ae05304336dcbeca3a44717966a908a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63547ab7dc80cb0c72f2ff91fdc4265f" id="r_a63547ab7dc80cb0c72f2ff91fdc4265f"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a63547ab7dc80cb0c72f2ff91fdc4265f">ref_count</a> = 0</td></tr>
+<tr class="separator:a63547ab7dc80cb0c72f2ff91fdc4265f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787def5ba8d6b02b899bf078404a4564" id="r_a787def5ba8d6b02b899bf078404a4564"><td class="memItemLeft" align="right" valign="top">CephContext *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a787def5ba8d6b02b899bf078404a4564">cct</a></td></tr>
+<tr class="separator:a787def5ba8d6b02b899bf078404a4564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0aa37d35a4f58ca52276f02c383412" id="r_afb0aa37d35a4f58ca52276f02c383412"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1kafka.html#a76d49f9675b351deaf58f6b146798077">CallbackList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#afb0aa37d35a4f58ca52276f02c383412">callbacks</a></td></tr>
+<tr class="separator:afb0aa37d35a4f58ca52276f02c383412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08684de3be81560ff05d267adf7adb7" id="r_aa08684de3be81560ff05d267adf7adb7"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#aa08684de3be81560ff05d267adf7adb7">broker</a></td></tr>
+<tr class="separator:aa08684de3be81560ff05d267adf7adb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287bfb05c7f0da6de03b55928f18590a" id="r_a287bfb05c7f0da6de03b55928f18590a"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a287bfb05c7f0da6de03b55928f18590a">use_ssl</a></td></tr>
+<tr class="separator:a287bfb05c7f0da6de03b55928f18590a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59dd0f211ef04e68730b88dceb3faab1" id="r_a59dd0f211ef04e68730b88dceb3faab1"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a59dd0f211ef04e68730b88dceb3faab1">verify_ssl</a></td></tr>
+<tr class="separator:a59dd0f211ef04e68730b88dceb3faab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad5b38bd8d99b7a17c8596f90ce905b" id="r_a2ad5b38bd8d99b7a17c8596f90ce905b"><td class="memItemLeft" align="right" valign="top">const boost::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a2ad5b38bd8d99b7a17c8596f90ce905b">ca_location</a></td></tr>
+<tr class="separator:a2ad5b38bd8d99b7a17c8596f90ce905b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06497cefcaa83d979c78c1033607f697" id="r_a06497cefcaa83d979c78c1033607f697"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a06497cefcaa83d979c78c1033607f697">user</a></td></tr>
+<tr class="separator:a06497cefcaa83d979c78c1033607f697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d6dd07ec755f944251ea1904f20858" id="r_a58d6dd07ec755f944251ea1904f20858"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a58d6dd07ec755f944251ea1904f20858">password</a></td></tr>
+<tr class="separator:a58d6dd07ec755f944251ea1904f20858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0959da64a7128f71d37a048fbc2255da" id="r_a0959da64a7128f71d37a048fbc2255da"><td class="memItemLeft" align="right" valign="top">utime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a0959da64a7128f71d37a048fbc2255da">timestamp</a> = ceph_clock_now()</td></tr>
+<tr class="separator:a0959da64a7128f71d37a048fbc2255da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a862fac43247096134afc8f455d3ff302" id="r_a862fac43247096134afc8f455d3ff302"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a862fac43247096134afc8f455d3ff302">intrusive_ptr_add_ref</a> (const <a class="el" href="structrgw_1_1kafka_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:a862fac43247096134afc8f455d3ff302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b2b75189c5c619e270edfb2cee7f3f" id="r_a28b2b75189c5c619e270edfb2cee7f3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html#a28b2b75189c5c619e270edfb2cee7f3f">intrusive_ptr_release</a> (const <a class="el" href="structrgw_1_1kafka_1_1connection__t.html">connection_t</a> *p)</td></tr>
+<tr class="separator:a28b2b75189c5c619e270edfb2cee7f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00061">61</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a21a4076acd9cd13fd0b081b8d40b2a78" name="a21a4076acd9cd13fd0b081b8d40b2a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a4076acd9cd13fd0b081b8d40b2a78">&#9670;&#160;</a></span>connection_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::kafka::connection_t::connection_t </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *&#160;</td>
+          <td class="paramname"><em>_cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_broker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_use_ssl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_verify_ssl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::optional&lt; const std::string &amp; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>_ca_location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>_password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00108">108</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                                              :</div>
+<div class="line"><span class="lineno">  111</span>      <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a787def5ba8d6b02b899bf078404a4564">cct</a>(_cct), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#aa08684de3be81560ff05d267adf7adb7">broker</a>(_broker), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a287bfb05c7f0da6de03b55928f18590a">use_ssl</a>(_use_ssl), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a59dd0f211ef04e68730b88dceb3faab1">verify_ssl</a>(_verify_ssl), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a2ad5b38bd8d99b7a17c8596f90ce905b">ca_location</a>(_ca_location), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a06497cefcaa83d979c78c1033607f697">user</a>(_user), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a58d6dd07ec755f944251ea1904f20858">password</a>(_password) {}</div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a06497cefcaa83d979c78c1033607f697"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a06497cefcaa83d979c78c1033607f697">rgw::kafka::connection_t::user</a></div><div class="ttdeci">const std::string user</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00074">rgw_kafka.cc:74</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a287bfb05c7f0da6de03b55928f18590a"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a287bfb05c7f0da6de03b55928f18590a">rgw::kafka::connection_t::use_ssl</a></div><div class="ttdeci">const bool use_ssl</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00071">rgw_kafka.cc:71</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a2ad5b38bd8d99b7a17c8596f90ce905b"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a2ad5b38bd8d99b7a17c8596f90ce905b">rgw::kafka::connection_t::ca_location</a></div><div class="ttdeci">const boost::optional&lt; std::string &gt; ca_location</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00073">rgw_kafka.cc:73</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a58d6dd07ec755f944251ea1904f20858"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a58d6dd07ec755f944251ea1904f20858">rgw::kafka::connection_t::password</a></div><div class="ttdeci">const std::string password</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00075">rgw_kafka.cc:75</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a59dd0f211ef04e68730b88dceb3faab1"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a59dd0f211ef04e68730b88dceb3faab1">rgw::kafka::connection_t::verify_ssl</a></div><div class="ttdeci">const bool verify_ssl</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00072">rgw_kafka.cc:72</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a787def5ba8d6b02b899bf078404a4564"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a787def5ba8d6b02b899bf078404a4564">rgw::kafka::connection_t::cct</a></div><div class="ttdeci">CephContext *const cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00068">rgw_kafka.cc:68</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_aa08684de3be81560ff05d267adf7adb7"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#aa08684de3be81560ff05d267adf7adb7">rgw::kafka::connection_t::broker</a></div><div class="ttdeci">const std::string broker</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00070">rgw_kafka.cc:70</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab827a0ab174d21248fb17c6f5a21cf8d" name="ab827a0ab174d21248fb17c6f5a21cf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab827a0ab174d21248fb17c6f5a21cf8d">&#9670;&#160;</a></span>~connection_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::kafka::connection_t::~connection_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00114">114</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>                  {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="structrgw_1_1kafka_1_1connection__t.html#a2881c404105d49d41675d42b03e57a05">destroy</a>(<a class="code hl_variable" href="namespacergw_1_1kafka.html#ad8f8b6a4794772e7b5023d2b644871be">STATUS_CONNECTION_CLOSED</a>);</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+<div class="ttc" id="anamespacergw_1_1kafka_html_ad8f8b6a4794772e7b5023d2b644871be"><div class="ttname"><a href="namespacergw_1_1kafka.html#ad8f8b6a4794772e7b5023d2b644871be">rgw::kafka::STATUS_CONNECTION_CLOSED</a></div><div class="ttdeci">static const int STATUS_CONNECTION_CLOSED</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00035">rgw_kafka.cc:35</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a2881c404105d49d41675d42b03e57a05"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a2881c404105d49d41675d42b03e57a05">rgw::kafka::connection_t::destroy</a></div><div class="ttdeci">void destroy(int s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00081">rgw_kafka.cc:81</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrgw_1_1kafka_1_1connection__t_ab827a0ab174d21248fb17c6f5a21cf8d_cgraph.png" border="0" usemap="#astructrgw_1_1kafka_1_1connection__t_ab827a0ab174d21248fb17c6f5a21cf8d_cgraph" alt=""/></div>
+<map name="astructrgw_1_1kafka_1_1connection__t_ab827a0ab174d21248fb17c6f5a21cf8d_cgraph" id="astructrgw_1_1kafka_1_1connection__t_ab827a0ab174d21248fb17c6f5a21cf8d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,157,48"/>
+<area shape="rect" href="structrgw_1_1kafka_1_1connection__t.html#a2881c404105d49d41675d42b03e57a05" title=" " alt="" coords="205,5,356,48"/>
+<area shape="poly" title=" " alt="" coords="157,24,189,24,189,29,157,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a2881c404105d49d41675d42b03e57a05" name="a2881c404105d49d41675d42b03e57a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2881c404105d49d41675d42b03e57a05">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::kafka::connection_t::destroy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00081">81</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                      {</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#ae05304336dcbeca3a44717966a908a71">status</a> = s;</div>
+<div class="line"><span class="lineno">   83</span>    <span class="comment">// destroy temporary conf (if connection was never established)</span></div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#aaa09b9aba7d45e7be674532d426d084f">temp_conf</a>) {</div>
+<div class="line"><span class="lineno">   85</span>        rd_kafka_conf_destroy(<a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#aaa09b9aba7d45e7be674532d426d084f">temp_conf</a>);</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">// wait for all remaining acks/nacks</span></div>
+<div class="line"><span class="lineno">   89</span>    rd_kafka_flush(<a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a228e92e8899133ea06b77b10e38d95be">producer</a>, 5*1000 <span class="comment">/* wait for max 5 seconds */</span>);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="comment">// destroy all topics</span></div>
+<div class="line"><span class="lineno">   91</span>    std::for_each(<a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a0f461e4f3827e9a5d8518fb499740b1b">topics</a>.begin(), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a0f461e4f3827e9a5d8518fb499740b1b">topics</a>.end(), [](<span class="keyword">auto</span> topic) {rd_kafka_topic_destroy(topic);});</div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">// destroy producer</span></div>
+<div class="line"><span class="lineno">   93</span>    rd_kafka_destroy(<a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a228e92e8899133ea06b77b10e38d95be">producer</a>);</div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">// fire all remaining callbacks (if not fired by rd_kafka_flush)</span></div>
+<div class="line"><span class="lineno">   95</span>    std::for_each(<a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#afb0aa37d35a4f58ca52276f02c383412">callbacks</a>.begin(), <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#afb0aa37d35a4f58ca52276f02c383412">callbacks</a>.end(), [<span class="keyword">this</span>](<span class="keyword">auto</span>&amp; cb_tag) {</div>
+<div class="line"><span class="lineno">   96</span>        cb_tag.cb(status);</div>
+<div class="line"><span class="lineno">   97</span>        ldout(cct, 20) &lt;&lt; <span class="stringliteral">&quot;Kafka destroy: invoking callback with tag=&quot;</span> &lt;&lt; cb_tag.tag &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">   98</span>      });</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#afb0aa37d35a4f58ca52276f02c383412">callbacks</a>.clear();</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#aa071a080a71e765a189acb514cc583ab">delivery_tag</a> = 1;</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a0f461e4f3827e9a5d8518fb499740b1b"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a0f461e4f3827e9a5d8518fb499740b1b">rgw::kafka::connection_t::topics</a></div><div class="ttdeci">std::vector&lt; rd_kafka_topic_t * &gt; topics</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00064">rgw_kafka.cc:64</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_a228e92e8899133ea06b77b10e38d95be"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#a228e92e8899133ea06b77b10e38d95be">rgw::kafka::connection_t::producer</a></div><div class="ttdeci">rd_kafka_t * producer</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00062">rgw_kafka.cc:62</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_aa071a080a71e765a189acb514cc583ab"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#aa071a080a71e765a189acb514cc583ab">rgw::kafka::connection_t::delivery_tag</a></div><div class="ttdeci">uint64_t delivery_tag</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00065">rgw_kafka.cc:65</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_aaa09b9aba7d45e7be674532d426d084f"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#aaa09b9aba7d45e7be674532d426d084f">rgw::kafka::connection_t::temp_conf</a></div><div class="ttdeci">rd_kafka_conf_t * temp_conf</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00063">rgw_kafka.cc:63</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_ae05304336dcbeca3a44717966a908a71"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#ae05304336dcbeca3a44717966a908a71">rgw::kafka::connection_t::status</a></div><div class="ttdeci">int status</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00066">rgw_kafka.cc:66</a></div></div>
+<div class="ttc" id="astructrgw_1_1kafka_1_1connection__t_html_afb0aa37d35a4f58ca52276f02c383412"><div class="ttname"><a href="structrgw_1_1kafka_1_1connection__t.html#afb0aa37d35a4f58ca52276f02c383412">rgw::kafka::connection_t::callbacks</a></div><div class="ttdeci">CallbackList callbacks</div><div class="ttdef"><b>Definition</b> <a href="rgw__kafka_8cc_source.html#l00069">rgw_kafka.cc:69</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrgw_1_1kafka_1_1connection__t_a2881c404105d49d41675d42b03e57a05_icgraph.png" border="0" usemap="#astructrgw_1_1kafka_1_1connection__t_a2881c404105d49d41675d42b03e57a05_icgraph" alt=""/></div>
+<map name="astructrgw_1_1kafka_1_1connection__t_a2881c404105d49d41675d42b03e57a05_icgraph" id="astructrgw_1_1kafka_1_1connection__t_a2881c404105d49d41675d42b03e57a05_icgraph">
+<area shape="rect" title=" " alt="" coords="205,5,356,48"/>
+<area shape="rect" href="structrgw_1_1kafka_1_1connection__t.html#ab827a0ab174d21248fb17c6f5a21cf8d" title=" " alt="" coords="5,5,157,48"/>
+<area shape="poly" title=" " alt="" coords="189,29,157,29,157,24,189,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a13e30c11ff9d8d818206e83a9aaac2c0" name="a13e30c11ff9d8d818206e83a9aaac2c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13e30c11ff9d8d818206e83a9aaac2c0">&#9670;&#160;</a></span>is_ok()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rgw::kafka::connection_t::is_ok </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00103">103</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>                     {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="structrgw_1_1kafka_1_1connection__t.html#a228e92e8899133ea06b77b10e38d95be">producer</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friend, 그리고 관련된 함수 문서화</h2>
+<a id="a862fac43247096134afc8f455d3ff302" name="a862fac43247096134afc8f455d3ff302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a862fac43247096134afc8f455d3ff302">&#9670;&#160;</a></span>intrusive_ptr_add_ref</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void intrusive_ptr_add_ref </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw_1_1kafka_1_1connection__t.html">connection_t</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00130">130</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>                                                  {</div>
+<div class="line"><span class="lineno">  131</span>  ++p-&gt;ref_count;</div>
+<div class="line"><span class="lineno">  132</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a28b2b75189c5c619e270edfb2cee7f3f" name="a28b2b75189c5c619e270edfb2cee7f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b2b75189c5c619e270edfb2cee7f3f">&#9670;&#160;</a></span>intrusive_ptr_release</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void intrusive_ptr_release </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw_1_1kafka_1_1connection__t.html">connection_t</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00133">133</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>                                                  {</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keywordflow">if</span> (--p-&gt;ref_count == 0) {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keyword">delete</span> p;</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
+<div class="line"><span class="lineno">  137</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="aa08684de3be81560ff05d267adf7adb7" name="aa08684de3be81560ff05d267adf7adb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08684de3be81560ff05d267adf7adb7">&#9670;&#160;</a></span>broker</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string rgw::kafka::connection_t::broker</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00070">70</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a2ad5b38bd8d99b7a17c8596f90ce905b" name="a2ad5b38bd8d99b7a17c8596f90ce905b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad5b38bd8d99b7a17c8596f90ce905b">&#9670;&#160;</a></span>ca_location</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const boost::optional&lt;std::string&gt; rgw::kafka::connection_t::ca_location</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00073">73</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="afb0aa37d35a4f58ca52276f02c383412" name="afb0aa37d35a4f58ca52276f02c383412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0aa37d35a4f58ca52276f02c383412">&#9670;&#160;</a></span>callbacks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacergw_1_1kafka.html#a76d49f9675b351deaf58f6b146798077">CallbackList</a> rgw::kafka::connection_t::callbacks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00069">69</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a787def5ba8d6b02b899bf078404a4564" name="a787def5ba8d6b02b899bf078404a4564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787def5ba8d6b02b899bf078404a4564">&#9670;&#160;</a></span>cct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CephContext* const rgw::kafka::connection_t::cct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00068">68</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aa071a080a71e765a189acb514cc583ab" name="aa071a080a71e765a189acb514cc583ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa071a080a71e765a189acb514cc583ab">&#9670;&#160;</a></span>delivery_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t rgw::kafka::connection_t::delivery_tag = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00065">65</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a58d6dd07ec755f944251ea1904f20858" name="a58d6dd07ec755f944251ea1904f20858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d6dd07ec755f944251ea1904f20858">&#9670;&#160;</a></span>password</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string rgw::kafka::connection_t::password</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00075">75</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a228e92e8899133ea06b77b10e38d95be" name="a228e92e8899133ea06b77b10e38d95be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228e92e8899133ea06b77b10e38d95be">&#9670;&#160;</a></span>producer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rd_kafka_t* rgw::kafka::connection_t::producer = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00062">62</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a63547ab7dc80cb0c72f2ff91fdc4265f" name="a63547ab7dc80cb0c72f2ff91fdc4265f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63547ab7dc80cb0c72f2ff91fdc4265f">&#9670;&#160;</a></span>ref_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;int&gt; rgw::kafka::connection_t::ref_count = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00067">67</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae05304336dcbeca3a44717966a908a71" name="ae05304336dcbeca3a44717966a908a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05304336dcbeca3a44717966a908a71">&#9670;&#160;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::kafka::connection_t::status = <a class="el" href="namespacergw_1_1kafka.html#ae6950957f590676bbd62fdd2a65b7771">STATUS_OK</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00066">66</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aaa09b9aba7d45e7be674532d426d084f" name="aaa09b9aba7d45e7be674532d426d084f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa09b9aba7d45e7be674532d426d084f">&#9670;&#160;</a></span>temp_conf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rd_kafka_conf_t* rgw::kafka::connection_t::temp_conf = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00063">63</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0959da64a7128f71d37a048fbc2255da" name="a0959da64a7128f71d37a048fbc2255da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0959da64a7128f71d37a048fbc2255da">&#9670;&#160;</a></span>timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">utime_t rgw::kafka::connection_t::timestamp = ceph_clock_now()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00076">76</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0f461e4f3827e9a5d8518fb499740b1b" name="a0f461e4f3827e9a5d8518fb499740b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f461e4f3827e9a5d8518fb499740b1b">&#9670;&#160;</a></span>topics</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;rd_kafka_topic_t*&gt; rgw::kafka::connection_t::topics</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00064">64</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a287bfb05c7f0da6de03b55928f18590a" name="a287bfb05c7f0da6de03b55928f18590a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287bfb05c7f0da6de03b55928f18590a">&#9670;&#160;</a></span>use_ssl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool rgw::kafka::connection_t::use_ssl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00071">71</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a06497cefcaa83d979c78c1033607f697" name="a06497cefcaa83d979c78c1033607f697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06497cefcaa83d979c78c1033607f697">&#9670;&#160;</a></span>user</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string rgw::kafka::connection_t::user</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00074">74</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a59dd0f211ef04e68730b88dceb3faab1" name="a59dd0f211ef04e68730b88dceb3faab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59dd0f211ef04e68730b88dceb3faab1">&#9670;&#160;</a></span>verify_ssl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool rgw::kafka::connection_t::verify_ssl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a> 파일의 <a class="el" href="rgw__kafka_8cc_source.html#l00072">72</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__kafka_8cc_source.html">rgw_kafka.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1kafka.html">kafka</a></li><li class="navelem"><a class="el" href="structrgw_1_1kafka_1_1connection__t.html">connection_t</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

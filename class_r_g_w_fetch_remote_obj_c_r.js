@@ -1,0 +1,26 @@
+var class_r_g_w_fetch_remote_obj_c_r =
+[
+    [ "RGWFetchRemoteObjCR", "class_r_g_w_fetch_remote_obj_c_r.html#a24a14415087f83e4206cd8f4dbfbd41e", null ],
+    [ "~RGWFetchRemoteObjCR", "class_r_g_w_fetch_remote_obj_c_r.html#a2eb75d591895571e6df521546a6324e7", null ],
+    [ "request_cleanup", "class_r_g_w_fetch_remote_obj_c_r.html#a033af62b26f7d09d62ffa3d83133ddf0", null ],
+    [ "request_complete", "class_r_g_w_fetch_remote_obj_c_r.html#a82c62339b6858fd6ad7504668718ebeb", null ],
+    [ "send_request", "class_r_g_w_fetch_remote_obj_c_r.html#a208e7fc589efe78c46c993a8c51ee0c3", null ],
+    [ "async_rados", "class_r_g_w_fetch_remote_obj_c_r.html#a9a437d54a1c145c01b5b235c944985e9", null ],
+    [ "cct", "class_r_g_w_fetch_remote_obj_c_r.html#af4f38b40862759402e8c237463b2b799", null ],
+    [ "copy_if_newer", "class_r_g_w_fetch_remote_obj_c_r.html#a95e256ced7751234b9e02874b649aa3e", null ],
+    [ "counters", "class_r_g_w_fetch_remote_obj_c_r.html#a5f450bab219c8bfe42dc3bcd3e0b38b6", null ],
+    [ "dest_bucket_info", "class_r_g_w_fetch_remote_obj_c_r.html#acd44663387cdb90e07c6919a3b27fa1a", null ],
+    [ "dest_key", "class_r_g_w_fetch_remote_obj_c_r.html#a6b7bea0da0e9d9ab3288512412952f4b", null ],
+    [ "dest_placement_rule", "class_r_g_w_fetch_remote_obj_c_r.html#aaf89de8f50cd779f7ca55e757e52c843", null ],
+    [ "dpp", "class_r_g_w_fetch_remote_obj_c_r.html#a7075eee8fb819a1b55c38807050a694c", null ],
+    [ "filter", "class_r_g_w_fetch_remote_obj_c_r.html#ac2c5f38e146423cdc686cc7afcce90f1", null ],
+    [ "key", "class_r_g_w_fetch_remote_obj_c_r.html#a017e4873c87f5efcf894e337054dc142", null ],
+    [ "req", "class_r_g_w_fetch_remote_obj_c_r.html#a9b87700b0f974a9add168ad0d7d3bbe1", null ],
+    [ "source_zone", "class_r_g_w_fetch_remote_obj_c_r.html#ac2b8570b017e7b8c7a7a5d31dc2de085", null ],
+    [ "src_bucket", "class_r_g_w_fetch_remote_obj_c_r.html#afb60e8961c0a30e0153949e5ca2d098c", null ],
+    [ "src_mtime", "class_r_g_w_fetch_remote_obj_c_r.html#a1e99306db0c5f22bff7ab20136d865e2", null ],
+    [ "store", "class_r_g_w_fetch_remote_obj_c_r.html#a491abd34a520b8140374c938d4ba281b", null ],
+    [ "user_id", "class_r_g_w_fetch_remote_obj_c_r.html#a9d41a37414112c27fd39436dd905f517", null ],
+    [ "versioned_epoch", "class_r_g_w_fetch_remote_obj_c_r.html#add23e1274e31e5d8969b4ab9e083f74e", null ],
+    [ "zones_trace", "class_r_g_w_fetch_remote_obj_c_r.html#a2be63c017c89c1ec8e25c3b0dc93b9af", null ]
+];

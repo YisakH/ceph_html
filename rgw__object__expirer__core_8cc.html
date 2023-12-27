@@ -1,0 +1,865 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_object_expirer_core.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__object__expirer__core_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_object_expirer_core.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;auth/Crypto.h&quot;</code><br />
+<code>#include &quot;common/armor.h&quot;</code><br />
+<code>#include &quot;common/ceph_json.h&quot;</code><br />
+<code>#include &quot;common/config.h&quot;</code><br />
+<code>#include &quot;common/ceph_argparse.h&quot;</code><br />
+<code>#include &quot;common/Formatter.h&quot;</code><br />
+<code>#include &quot;common/errno.h&quot;</code><br />
+<code>#include &quot;global/global_init.h&quot;</code><br />
+<code>#include &quot;include/utime.h&quot;</code><br />
+<code>#include &quot;include/str_list.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__user_8h_source.html">rgw_user.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__bucket_8h_source.html">rgw_bucket.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__acl_8h_source.html">rgw_acl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__acl__s3_8h_source.html">rgw_acl_s3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__log_8h_source.html">rgw_log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__formats_8h_source.html">rgw_formats.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__usage_8h_source.html">rgw_usage.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__object__expirer__core_8h_source.html">rgw_object_expirer_core.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__zone_8h_source.html">rgw_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal__rados_8h_source.html">rgw_sal_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__rados_8h_source.html">services/svc_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__zone_8h_source.html">services/svc_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__sys__obj_8h_source.html">services/svc_sys_obj.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__bi__rados_8h_source.html">services/svc_bi_rados.h</a>&quot;</code><br />
+<code>#include &quot;cls/lock/cls_lock_client.h&quot;</code><br />
+<code>#include &quot;cls/timeindex/cls_timeindex_client.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_object_expirer_core.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__object__expirer__core_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__object__expirer__core_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__object__expirer__core_8cc">
+<area shape="rect" title=" " alt="" coords="1707,5,1840,64"/>
+<area shape="rect" title=" " alt="" coords="964,683,1025,709"/>
+<area shape="poly" title=" " alt="" coords="1707,40,1331,48,799,64,311,86,147,100,95,107,69,114,41,134,22,155,11,181,8,215,8,547,16,564,39,579,76,594,126,608,253,631,404,651,719,677,948,690,948,695,718,683,403,656,252,637,125,613,75,599,37,584,12,567,3,549,3,215,6,179,17,152,37,130,67,110,94,102,146,94,311,81,799,58,1331,43,1706,35"/>
+<area shape="rect" title=" " alt="" coords="144,203,216,229"/>
+<area shape="poly" title=" " alt="" coords="1706,39,1433,41,1049,51,849,61,663,74,503,92,383,115,335,131,288,153,212,196,209,192,285,148,333,126,382,109,502,87,662,69,849,56,1049,46,1433,36,1706,33"/>
+<area shape="rect" title=" " alt="" coords="239,203,308,229"/>
+<area shape="poly" title=" " alt="" coords="1706,40,1454,45,1106,57,757,79,612,95,503,115,448,132,395,153,309,197,306,192,393,148,447,127,502,109,611,90,756,74,1106,52,1454,39,1706,34"/>
+<area shape="rect" title=" " alt="" coords="2040,683,2093,709"/>
+<area shape="poly" title=" " alt="" coords="1706,38,1357,39,860,47,612,56,393,70,224,89,166,101,129,114,98,134,76,154,63,180,59,215,59,547,63,556,76,564,129,581,213,596,323,610,602,635,931,654,1594,680,2024,691,2024,697,1594,686,931,660,602,640,322,616,212,602,128,586,74,569,59,559,53,549,53,215,58,178,72,151,95,129,127,110,165,96,224,84,392,65,612,51,860,42,1356,34,1706,33"/>
+<area shape="rect" title=" " alt="" coords="332,203,431,229"/>
+<area shape="poly" title=" " alt="" coords="1706,40,1478,48,1168,62,858,84,730,98,634,115,574,132,515,154,420,198,417,193,513,149,572,127,633,109,730,93,858,78,1167,56,1478,42,1706,35"/>
+<area shape="rect" title=" " alt="" coords="455,203,574,229"/>
+<area shape="poly" title=" " alt="" coords="1706,41,1502,49,1229,64,959,86,847,99,763,115,704,132,646,154,552,198,550,193,644,149,702,127,762,109,847,94,958,81,1229,59,1502,44,1706,36"/>
+<area shape="rect" title=" " alt="" coords="598,203,743,229"/>
+<area shape="poly" title=" " alt="" coords="1706,41,1521,49,1278,63,1039,85,941,99,867,115,821,132,775,153,702,196,700,192,773,148,818,127,866,109,940,93,1039,79,1277,58,1520,43,1706,36"/>
+<area shape="rect" title=" " alt="" coords="768,203,888,229"/>
+<area shape="poly" title=" " alt="" coords="1706,39,1530,41,1301,52,1186,61,1080,75,991,92,925,114,901,130,879,150,846,191,842,188,875,146,897,126,923,110,989,87,1079,69,1185,56,1301,46,1529,36,1706,33"/>
+<area shape="rect" title=" " alt="" coords="1114,203,1286,229"/>
+<area shape="poly" title=" " alt="" coords="1707,56,1501,115,1250,199,1248,194,1499,109,1705,51"/>
+<area shape="rect" title=" " alt="" coords="1353,533,1495,560"/>
+<area shape="poly" title=" " alt="" coords="1778,65,1777,103,1770,149,1754,194,1741,214,1724,231,1700,246,1670,255,1634,261,1594,263,1504,259,1408,251,1312,244,1224,242,1186,245,1153,252,1125,263,1105,279,1091,299,1084,318,1084,336,1089,355,1100,373,1116,391,1158,425,1210,457,1267,484,1371,525,1369,530,1265,489,1208,461,1155,430,1112,395,1096,376,1084,357,1078,337,1079,317,1086,296,1101,275,1123,259,1151,247,1185,240,1224,237,1312,238,1408,246,1505,254,1594,257,1634,255,1669,250,1698,241,1721,227,1737,211,1749,191,1765,147,1772,103,1773,65"/>
+<area shape="rect" title=" " alt="" coords="1310,203,1426,229"/>
+<area shape="poly" title=" " alt="" coords="1709,67,1601,114,1411,198,1409,194,1599,110,1707,62"/>
+<area shape="rect" title=" " alt="" coords="1449,203,1578,229"/>
+<area shape="poly" title=" " alt="" coords="1734,67,1545,196,1542,192,1731,62"/>
+<area shape="rect" title=" " alt="" coords="1601,203,1711,229"/>
+<area shape="poly" title=" " alt="" coords="1757,66,1675,191,1670,188,1753,63"/>
+<area shape="rect" title=" " alt="" coords="822,608,938,635"/>
+<area shape="poly" title=" " alt="" coords="1706,40,1386,48,940,64,518,86,365,99,275,115,214,129,160,143,139,153,123,167,113,187,109,215,109,473,114,485,130,497,190,520,278,542,384,561,616,592,807,611,806,616,615,597,384,566,277,547,188,525,127,501,110,488,104,474,104,214,108,185,119,164,136,148,158,138,213,124,274,109,364,94,518,81,939,58,1386,43,1706,35"/>
+<area shape="rect" href="rgw__user_8h.html" title=" " alt="" coords="1862,376,1946,403"/>
+<area shape="poly" title=" " alt="" coords="1841,44,1956,69,2006,88,2025,99,2038,110,2063,149,2076,179,2078,204,2070,223,2053,236,2030,244,1969,251,1825,251,1764,259,1741,267,1725,279,1716,295,1717,310,1728,324,1745,336,1794,358,1847,373,1846,379,1792,363,1742,341,1724,327,1712,312,1711,294,1721,276,1738,262,1763,253,1825,246,1969,245,2029,239,2051,231,2066,219,2073,203,2071,181,2059,151,2034,114,2022,103,2004,93,1955,74,1840,49"/>
+<area shape="rect" href="rgw__acl_8h.html" title=" " alt="" coords="2549,608,2625,635"/>
+<area shape="poly" title=" " alt="" coords="1840,35,2013,41,2235,54,2451,76,2540,91,2606,110,2624,120,2636,131,2647,142,2664,152,2705,166,2743,171,2811,168,2843,167,2877,170,2913,180,2952,200,2983,225,3003,253,3010,284,3001,321,2976,370,2949,409,2921,440,2890,465,2819,509,2728,562,2684,586,2640,605,2638,600,2681,581,2725,558,2816,505,2887,461,2918,436,2945,406,2971,368,2996,319,3005,284,2999,255,2979,229,2949,205,2911,185,2876,175,2843,172,2811,174,2743,176,2704,171,2662,157,2644,146,2632,135,2621,124,2604,114,2539,96,2451,81,2235,59,2013,46,1840,40"/>
+<area shape="rect" href="rgw__formats_8h.html" title=" " alt="" coords="1458,459,1561,485"/>
+<area shape="poly" title=" " alt="" coords="1838,62,1897,95,1950,137,1969,159,1979,183,1979,207,1965,231,1943,248,1914,259,1879,265,1840,268,1751,265,1654,256,1557,247,1468,244,1429,247,1396,253,1368,264,1347,279,1334,302,1335,325,1345,349,1365,372,1418,415,1472,449,1470,453,1415,420,1361,376,1341,351,1329,326,1329,300,1343,276,1365,259,1394,248,1429,241,1468,239,1557,242,1654,251,1751,260,1840,263,1879,260,1912,254,1940,243,1961,228,1974,206,1974,184,1965,162,1947,140,1894,100,1836,67"/>
+<area shape="rect" href="rgw__bucket_8h.html" title=" " alt="" coords="2179,203,2277,229"/>
+<area shape="poly" title=" " alt="" coords="1840,39,1900,47,1968,61,2040,81,2109,110,2138,127,2166,148,2209,189,2205,193,2162,152,2135,132,2107,114,2039,86,1967,66,1899,53,1840,44"/>
+<area shape="rect" href="rgw__acl__s3_8h.html" title=" " alt="" coords="2790,533,2887,560"/>
+<area shape="poly" title=" " alt="" coords="1841,35,2161,43,2602,58,3002,81,3135,94,3177,102,3199,110,3227,137,3244,165,3253,195,3253,225,3247,256,3235,286,3199,344,3154,396,3108,439,3047,488,3013,508,2975,523,2903,541,2902,536,2974,518,3010,503,3044,483,3104,435,3150,392,3195,340,3231,283,3242,254,3248,225,3247,196,3239,167,3222,140,3196,114,3176,107,3135,99,3001,86,2602,64,2161,48,1840,40"/>
+<area shape="rect" href="rgw__log_8h.html" title=" " alt="" coords="2862,203,2938,229"/>
+<area shape="poly" title=" " alt="" coords="1840,36,2003,43,2210,57,2411,79,2494,93,2556,110,2575,119,2589,131,2601,142,2620,152,2679,173,2740,189,2847,207,2846,212,2738,194,2677,178,2618,157,2598,146,2585,135,2572,124,2554,114,2492,98,2410,84,2210,63,2002,49,1840,41"/>
+<area shape="rect" href="rgw__usage_8h.html" title=" " alt="" coords="1357,285,1451,312"/>
+<area shape="poly" title=" " alt="" coords="1841,35,1885,42,1931,55,1974,77,1993,92,2009,110,2027,142,2034,172,2028,202,2009,231,1996,240,1975,246,1913,257,1742,268,1567,273,1463,280,1452,283,1451,278,1462,275,1567,268,1741,263,1912,251,1973,241,1993,235,2005,227,2023,200,2029,172,2022,144,2005,114,1989,96,1971,81,1929,60,1884,47,1840,40"/>
+<area shape="rect" href="rgw__object__expirer__core_8h.html" title=" " alt="" coords="937,112,1066,155"/>
+<area shape="poly" title=" " alt="" coords="1707,47,1082,125,1081,119,1706,42"/>
+<area shape="rect" href="rgw__sal__rados_8h.html" title=" " alt="" coords="1836,203,1951,229"/>
+<area shape="poly" title=" " alt="" coords="1795,63,1879,188,1874,191,1790,66"/>
+<area shape="rect" title=" " alt="" coords="1115,285,1282,312"/>
+<area shape="poly" title=" " alt="" coords="1785,64,1794,101,1797,146,1791,191,1782,213,1769,231,1752,244,1731,255,1679,269,1616,277,1546,279,1407,277,1348,277,1302,280,1274,285,1273,279,1301,275,1348,271,1407,271,1546,273,1615,271,1678,264,1730,250,1749,240,1765,228,1777,210,1786,190,1792,146,1788,102,1780,65"/>
+<area shape="rect" href="rgw__zone_8h.html" title=" " alt="" coords="2470,376,2557,403"/>
+<area shape="poly" title=" " alt="" coords="1841,42,1987,67,2073,86,2157,109,2220,126,2277,137,2377,155,2421,169,2463,192,2503,226,2542,276,2550,298,2549,321,2542,344,2532,364,2528,361,2537,342,2544,320,2545,299,2538,279,2500,230,2460,196,2419,174,2376,160,2276,142,2219,131,2155,115,2071,92,1986,73,1840,48"/>
+<area shape="rect" href="svc__rados_8h.html" title=" " alt="" coords="3122,203,3212,229"/>
+<area shape="poly" title=" " alt="" coords="1840,34,2157,41,2592,55,2803,65,2984,78,3114,92,3155,101,3175,110,3186,128,3188,149,3181,189,3175,188,3183,149,3181,130,3172,114,3153,106,3114,98,2984,83,2803,71,2591,61,2157,47,1840,40"/>
+<area shape="rect" href="svc__zone_8h.html" title=" " alt="" coords="3023,120,3161,147"/>
+<area shape="poly" title=" " alt="" coords="1841,33,2040,36,2330,46,2669,69,2842,86,3012,109,3034,113,3033,119,3012,115,2842,92,2668,74,2330,51,2040,41,1841,38"/>
+<area shape="rect" href="svc__sys__obj_8h.html" title=" " alt="" coords="2856,112,3000,155"/>
+<area shape="poly" title=" " alt="" coords="1840,34,2013,39,2259,51,2546,73,2695,89,2841,109,2841,114,2694,95,2545,79,2259,57,2013,45,1840,40"/>
+<area shape="rect" href="svc__bi__rados_8h.html" title=" " alt="" coords="2674,120,2833,147"/>
+<area shape="poly" title=" " alt="" coords="1841,36,2191,59,2422,80,2656,109,2683,114,2682,119,2656,115,2422,86,2190,65,1840,42"/>
+<area shape="rect" title=" " alt="" coords="3286,112,3469,155"/>
+<area shape="poly" title=" " alt="" coords="1841,34,2076,37,2428,48,2843,71,3058,88,3268,109,3271,110,3270,115,3268,115,3058,93,2843,76,2428,53,2076,43,1841,39"/>
+<area shape="poly" title=" " alt="" coords="1928,401,1961,424,1993,457,2061,667,2056,669,1988,460,1958,428,1925,405"/>
+<area shape="poly" title=" " alt="" coords="1862,400,1753,423,1687,440,1624,461,1598,474,1573,488,1473,530,1471,525,1571,483,1596,469,1622,456,1686,435,1751,418,1861,395"/>
+<area shape="rect" title=" " alt="" coords="1634,459,1806,485"/>
+<area shape="poly" title=" " alt="" coords="1876,406,1764,455,1761,450,1874,401"/>
+<area shape="rect" title=" " alt="" coords="1830,459,1978,485"/>
+<area shape="poly" title=" " alt="" coords="1907,403,1907,443,1901,443,1901,403"/>
+<area shape="rect" title=" " alt="" coords="2836,683,2945,709"/>
+<area shape="poly" title=" " alt="" coords="1947,391,2403,424,2642,443,2763,456,2856,477,2892,495,2926,532,2941,558,2946,581,2943,606,2935,636,2926,655,2915,672,2910,669,2921,652,2929,634,2937,605,2940,582,2936,560,2922,535,2889,500,2854,482,2762,461,2642,448,2402,429,1946,396"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="2232,533,2341,560"/>
+<area shape="poly" title=" " alt="" coords="1947,397,2036,421,2137,456,2202,489,2257,522,2254,527,2200,494,2135,461,2034,426,1946,403"/>
+<area shape="rect" href="rgw__string_8h.html" title=" " alt="" coords="2113,608,2204,635"/>
+<area shape="poly" title=" " alt="" coords="1939,401,1987,424,2036,457,2071,490,2102,527,2146,593,2142,596,2097,530,2067,494,2033,461,1984,428,1936,406"/>
+<area shape="rect" href="rgw__tools_8h.html" title=" " alt="" coords="2663,459,2750,485"/>
+<area shape="poly" title=" " alt="" coords="1947,391,2287,419,2490,437,2648,456,2648,461,2489,443,2287,424,1946,396"/>
+<area shape="poly" title=" " alt="" coords="1862,402,1576,460,1575,455,1861,397"/>
+<area shape="rect" href="rgw__metadata_8h.html" title=" " alt="" coords="2526,459,2639,485"/>
+<area shape="poly" title=" " alt="" coords="1947,393,2510,459,2510,465,1946,398"/>
+<area shape="rect" title=" " alt="" coords="2245,683,2329,709"/>
+<area shape="poly" title=" " alt="" coords="2289,561,2289,667,2284,667,2284,561"/>
+<area shape="poly" title=" " alt="" coords="2340,558,2534,605,2533,610,2339,563"/>
+<area shape="poly" title=" " alt="" coords="2266,563,2196,602,2193,598,2263,558"/>
+<area shape="poly" title=" " alt="" coords="2548,631,2109,691,2108,686,2548,625"/>
+<area shape="poly" title=" " alt="" coords="2626,629,2823,676,2822,681,2625,634"/>
+<area shape="poly" title=" " alt="" coords="2549,635,2345,683,2344,678,2547,629"/>
+<area shape="rect" title=" " alt="" coords="3004,683,3050,709"/>
+<area shape="poly" title=" " alt="" coords="2626,626,2958,680,2989,685,2988,691,2957,685,2625,631"/>
+<area shape="rect" title=" " alt="" coords="2484,683,2612,709"/>
+<area shape="poly" title=" " alt="" coords="2582,636,2564,670,2559,668,2578,634"/>
+<area shape="poly" title=" " alt="" coords="2113,628,1041,694,1040,689,2113,623"/>
+<area shape="poly" title=" " alt="" coords="2144,637,2096,675,2093,671,2141,633"/>
+<area shape="poly" title=" " alt="" coords="2182,633,2252,672,2250,677,2180,638"/>
+<area shape="poly" title=" " alt="" coords="2675,488,2500,554,2264,637,2109,685,2107,680,2262,632,2498,549,2673,483"/>
+<area shape="poly" title=" " alt="" coords="2751,470,2789,474,2831,484,2870,502,2887,516,2902,532,2911,548,2917,566,2919,603,2913,638,2904,669,2899,667,2908,637,2914,602,2912,567,2906,550,2898,535,2884,520,2867,507,2829,489,2788,480,2751,476"/>
+<area shape="poly" title=" " alt="" coords="2663,486,2652,488,2357,538,2356,532,2652,483,2662,481"/>
+<area shape="rect" title=" " alt="" coords="2568,533,2715,560"/>
+<area shape="poly" title=" " alt="" coords="2697,488,2665,524,2661,520,2693,484"/>
+<area shape="poly" title=" " alt="" coords="1542,483,2027,676,2025,681,1540,488"/>
+<area shape="poly" title=" " alt="" coords="1496,488,1452,525,1448,521,1493,484"/>
+<area shape="poly" title=" " alt="" coords="2555,488,2217,637,2109,681,2107,676,2215,632,2553,483"/>
+<area shape="poly" title=" " alt="" coords="2575,487,2556,521,2553,541,2558,559,2571,569,2596,582,2671,614,2840,675,2838,680,2669,619,2593,587,2568,573,2554,561,2547,541,2551,520,2570,484"/>
+<area shape="poly" title=" " alt="" coords="2531,489,2354,532,2353,527,2530,483"/>
+<area shape="poly" title=" " alt="" coords="2530,488,2493,506,2477,519,2464,535,2456,552,2456,571,2460,589,2469,608,2494,642,2522,670,2519,674,2490,646,2464,610,2455,591,2450,571,2451,551,2459,532,2473,515,2490,502,2528,483"/>
+<area shape="poly" title=" " alt="" coords="2595,484,2624,519,2620,523,2591,488"/>
+<area shape="poly" title=" " alt="" coords="2178,225,1934,251,1821,266,1784,274,1768,279,1762,289,1760,298,1769,318,1789,338,1810,347,1833,349,1856,348,1907,346,1933,351,1960,366,1993,397,2019,435,2038,476,2052,520,2066,603,2070,667,2065,667,2061,603,2047,521,2033,478,2014,437,1989,401,1957,370,1931,356,1906,351,1857,353,1832,355,1809,352,1786,342,1764,322,1755,299,1757,287,1765,275,1783,268,1820,261,1933,245,2178,219"/>
+<area shape="poly" title=" " alt="" coords="2179,223,1884,247,1735,264,1682,272,1652,280,1582,314,1533,350,1492,395,1449,460,1436,489,1430,518,1424,517,1431,487,1444,457,1488,392,1529,346,1580,309,1650,275,1681,267,1734,258,1883,242,2178,218"/>
+<area shape="poly" title=" " alt="" coords="2278,216,2357,221,2459,230,2572,248,2683,275,2765,304,2899,359,2966,389,3024,420,3064,447,3076,459,3080,470,3080,548,3077,573,3067,595,3053,614,3035,632,2992,660,2949,679,2947,674,2990,655,3031,627,3049,611,3062,592,3071,571,3075,548,3075,471,3071,462,3061,451,3021,424,2964,394,2896,363,2763,309,2682,280,2570,253,2458,236,2356,226,2277,221"/>
+<area shape="poly" title=" " alt="" coords="2278,218,2343,224,2416,234,2480,251,2504,262,2521,276,2527,287,2529,298,2521,321,2508,339,2493,349,2477,357,2459,370,2375,453,2310,523,2306,519,2371,449,2456,366,2474,353,2491,345,2504,335,2516,319,2524,298,2522,289,2517,279,2501,267,2478,256,2414,240,2342,229,2277,223"/>
+<area shape="poly" title=" " alt="" coords="2238,229,2249,250,2257,277,2260,299,2257,320,2243,378,2219,454,2171,594,2166,592,2214,453,2238,376,2252,320,2255,299,2252,278,2244,252,2233,231"/>
+<area shape="poly" title=" " alt="" coords="2278,218,2357,224,2449,236,2535,252,2569,263,2593,275,2615,293,2634,313,2665,359,2687,405,2701,443,2696,445,2682,407,2660,361,2630,316,2611,296,2591,280,2567,268,2533,257,2448,241,2356,230,2278,223"/>
+<area shape="poly" title=" " alt="" coords="2278,217,2365,224,2469,235,2566,251,2605,262,2633,275,2701,319,2731,342,2756,366,2774,393,2782,421,2780,453,2765,487,2741,512,2711,530,2708,525,2738,508,2760,484,2775,451,2777,422,2769,395,2752,370,2728,346,2698,323,2631,280,2603,267,2565,257,2468,240,2364,229,2277,223"/>
+<area shape="poly" title=" " alt="" coords="2179,224,1922,249,1795,265,1724,280,1662,316,1607,362,1562,409,1530,448,1526,445,1558,406,1604,359,1659,312,1722,275,1794,260,1921,244,2178,219"/>
+<area shape="poly" title=" " alt="" coords="2278,216,2352,222,2438,232,2515,249,2544,261,2565,275,2578,294,2588,316,2597,361,2597,406,2592,444,2586,443,2591,406,2592,362,2583,317,2574,297,2561,279,2542,266,2513,254,2437,237,2352,227,2277,222"/>
+<area shape="rect" title=" " alt="" coords="1779,285,1848,312"/>
+<area shape="poly" title=" " alt="" coords="2179,224,2034,243,1947,259,1861,280,1854,282,1853,277,1859,275,1946,253,2034,237,2178,219"/>
+<area shape="rect" title=" " alt="" coords="1872,285,1931,312"/>
+<area shape="poly" title=" " alt="" coords="2179,227,2070,246,2006,261,1944,280,1940,281,1938,276,1942,275,2005,256,2069,241,2178,221"/>
+<area shape="rect" title=" " alt="" coords="2834,277,2966,320"/>
+<area shape="poly" title=" " alt="" coords="2278,218,2511,236,2663,252,2816,275,2819,275,2818,280,2816,280,2662,258,2510,241,2277,223"/>
+<area shape="rect" title=" " alt="" coords="1954,277,2086,320"/>
+<area shape="poly" title=" " alt="" coords="2196,232,2089,274,2087,269,2195,227"/>
+<area shape="rect" href="rgw__sal_8h.html" title="Base abstractions and API for SAL" alt="" coords="1475,285,1552,312"/>
+<area shape="poly" title=" " alt="" coords="2179,224,1844,251,1671,267,1571,280,1560,283,1559,278,1570,275,1670,262,1843,246,2178,218"/>
+<area shape="rect" title=" " alt="" coords="2110,285,2242,312"/>
+<area shape="poly" title=" " alt="" coords="2222,231,2194,274,2190,271,2218,228"/>
+<area shape="rect" href="svc__bucket__types_8h.html" title=" " alt="" coords="2257,368,2394,411"/>
+<area shape="poly" title=" " alt="" coords="2251,228,2277,248,2301,276,2317,314,2325,352,2320,353,2312,315,2296,279,2273,252,2247,232"/>
+<area shape="rect" href="svc__bucket__sync_8h.html" title=" " alt="" coords="2369,277,2506,320"/>
+<area shape="poly" title=" " alt="" coords="2262,227,2370,269,2368,274,2260,232"/>
+<area shape="poly" title=" " alt="" coords="1552,306,1847,373,1846,378,1551,311"/>
+<area shape="poly" title=" " alt="" coords="2413,323,2365,360,2362,356,2410,318"/>
+<area shape="poly" title=" " alt="" coords="2790,560,2537,611,2429,637,2251,670,2109,691,2108,686,2250,664,2427,632,2535,605,2789,554"/>
+<area shape="poly" title=" " alt="" coords="2790,557,2727,563,2195,592,1676,610,1240,619,954,622,954,617,1239,614,1676,604,2194,587,2726,557,2789,551"/>
+<area shape="poly" title=" " alt="" coords="2846,560,2884,667,2879,669,2841,561"/>
+<area shape="poly" title=" " alt="" coords="2796,563,2640,608,2639,602,2794,558"/>
+<area shape="poly" title=" " alt="" coords="2856,558,3001,671,2997,675,2853,563"/>
+<area shape="poly" title=" " alt="" coords="2928,228,2957,247,2980,276,2987,299,2986,310,2979,322,2964,337,2945,352,2893,376,2830,395,2761,411,2621,437,2562,449,2515,461,2333,530,2331,525,2514,456,2560,444,2620,432,2760,406,2829,390,2891,371,2942,347,2961,333,2975,318,2981,308,2982,300,2975,279,2953,251,2925,232"/>
+<area shape="poly" title=" " alt="" coords="2903,230,2903,262,2897,262,2897,230"/>
+<area shape="poly" title=" " alt="" coords="1394,314,1372,341,1347,378,1327,423,1321,447,1319,471,1319,548,1325,572,1342,594,1369,614,1405,630,1449,645,1499,657,1611,674,1731,685,1847,691,2025,693,2025,698,1847,696,1731,691,1611,680,1498,662,1448,650,1404,635,1367,618,1338,598,1320,575,1313,548,1313,471,1316,446,1322,421,1343,376,1368,338,1390,311"/>
+<area shape="poly" title=" " alt="" coords="1405,312,1400,386,1400,435,1405,485,1415,518,1410,520,1400,486,1395,435,1394,386,1400,312"/>
+<area shape="poly" title=" " alt="" coords="1439,310,1463,317,1568,340,1674,358,1847,380,1846,385,1673,363,1567,345,1462,323,1437,315"/>
+<area shape="poly" title=" " alt="" coords="1437,310,1463,317,1601,341,1710,349,1819,353,1959,365,2102,387,2246,408,2335,415,2412,417,2544,414,2607,415,2674,420,2749,433,2835,456,2921,480,2989,502,3019,518,3047,539,3073,568,3098,607,3103,626,3096,645,3081,662,3064,676,3061,672,3078,658,3091,642,3097,626,3094,609,3069,572,3043,543,3016,523,2987,507,2919,485,2834,461,2747,438,2673,425,2607,420,2544,419,2412,423,2335,421,2245,413,2102,392,1958,371,1819,358,1709,354,1600,346,1462,323,1436,315"/>
+<area shape="poly" title=" " alt="" coords="1430,310,1463,333,1479,349,1493,367,1507,405,1512,443,1507,443,1502,406,1488,369,1475,352,1460,337,1427,315"/>
+<area shape="poly" title=" " alt="" coords="936,139,635,157,436,176,232,205,231,200,435,171,635,152,936,134"/>
+<area shape="poly" title=" " alt="" coords="936,141,672,160,500,179,323,205,322,200,500,174,672,155,936,135"/>
+<area shape="poly" title=" " alt="" coords="999,156,986,219,979,297,979,548,981,557,987,565,1014,583,1056,598,1112,613,1256,637,1426,656,1605,671,1777,681,2025,691,2025,696,1777,686,1605,676,1425,662,1255,643,1111,618,1055,604,1012,587,984,569,976,559,973,548,973,297,981,218,993,155"/>
+<area shape="poly" title=" " alt="" coords="936,144,723,167,447,205,446,200,722,162,936,138"/>
+<area shape="poly" title=" " alt="" coords="937,148,590,205,589,199,936,143"/>
+<area shape="poly" title=" " alt="" coords="937,153,738,201,737,196,935,148"/>
+<area shape="poly" title=" " alt="" coords="958,158,870,198,868,193,956,153"/>
+<area shape="poly" title=" " alt="" coords="1053,153,1156,194,1154,199,1051,158"/>
+<area shape="poly" title=" " alt="" coords="1009,155,1022,218,1029,297,1029,391,1030,420,1033,443,1042,463,1060,483,1080,495,1107,505,1178,521,1260,532,1337,539,1337,544,1259,537,1177,527,1105,510,1077,500,1057,487,1037,466,1027,445,1024,420,1024,391,1024,297,1017,219,1004,156"/>
+<area shape="poly" title=" " alt="" coords="1067,146,1296,196,1295,201,1066,151"/>
+<area shape="poly" title=" " alt="" coords="1067,142,1434,199,1433,205,1066,147"/>
+<area shape="poly" title=" " alt="" coords="1067,138,1292,162,1586,200,1586,205,1292,167,1066,143"/>
+<area shape="poly" title=" " alt="" coords="987,157,968,184,949,218,934,257,928,298,928,473,925,507,917,540,896,595,891,593,912,539,920,506,923,473,923,297,929,255,944,215,964,181,982,154"/>
+<area shape="poly" title=" " alt="" coords="1019,153,1055,192,1078,211,1104,227,1154,247,1199,258,1240,261,1279,261,1361,260,1409,264,1463,275,1471,277,1470,282,1462,280,1408,269,1361,265,1279,267,1239,267,1198,263,1153,252,1101,232,1075,216,1051,196,1015,157"/>
+<area shape="poly" title=" " alt="" coords="1067,138,1820,205,1820,211,1066,143"/>
+<area shape="poly" title=" " alt="" coords="1836,230,1692,255,1571,280,1562,283,1560,278,1570,275,1691,250,1835,224"/>
+<area shape="poly" title=" " alt="" coords="1836,230,1818,232,1673,247,1559,254,1446,263,1302,280,1273,285,1273,279,1301,275,1446,257,1559,249,1672,242,1817,227,1835,224"/>
+<area shape="poly" title=" " alt="" coords="2503,405,2462,444,2407,488,2331,529,2329,524,2404,483,2459,440,2500,401"/>
+<area shape="poly" title=" " alt="" coords="2990,153,3115,195,3114,200,2989,158"/>
+<area shape="poly" title=" " alt="" coords="2811,145,2892,169,2934,186,2974,206,3006,230,3028,257,3034,272,3035,288,3032,304,3024,321,2999,353,2970,380,2937,402,2901,421,2830,448,2766,464,2765,459,2828,443,2899,416,2934,398,2966,376,2995,349,3019,319,3027,303,3030,287,3029,273,3023,259,3003,234,2971,211,2932,191,2890,174,2809,150"/>
+<area shape="poly" title=" " alt="" coords="2809,145,2845,152,3103,200,3106,201,3106,206,3102,205,2843,157,2808,150"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__object__expirer__core_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:ac9f1b8ed4aca7999d392b2d432030e30" id="r_ac9f1b8ed4aca7999d392b2d432030e30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#ac9f1b8ed4aca7999d392b2d432030e30">dout_context</a>&#160;&#160;&#160;g_ceph_context</td></tr>
+<tr class="separator:ac9f1b8ed4aca7999d392b2d432030e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:ad5341fdc2ffe21d8ec08267756d02b20" id="r_ad5341fdc2ffe21d8ec08267756d02b20"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#ad5341fdc2ffe21d8ec08267756d02b20">objexp_hint_get_shardname</a> (int shard_num)</td></tr>
+<tr class="separator:ad5341fdc2ffe21d8ec08267756d02b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87a7a40b6be3e3b5bdb3bc0e4da7810" id="r_af87a7a40b6be3e3b5bdb3bc0e4da7810"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#af87a7a40b6be3e3b5bdb3bc0e4da7810">objexp_key_shard</a> (const <a class="el" href="rgw__common_8h.html#a7020478e92d985c3f78e2ae9e5481f0a">rgw_obj_index_key</a> &amp;key, int num_shards)</td></tr>
+<tr class="separator:af87a7a40b6be3e3b5bdb3bc0e4da7810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128e3f477a77aeec51ac81401c04562a" id="r_a128e3f477a77aeec51ac81401c04562a"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#a128e3f477a77aeec51ac81401c04562a">objexp_hint_get_keyext</a> (const string &amp;tenant_name, const string &amp;bucket_name, const string &amp;bucket_id, const <a class="el" href="structrgw__obj__key.html">rgw_obj_key</a> &amp;obj_key)</td></tr>
+<tr class="separator:a128e3f477a77aeec51ac81401c04562a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63bca91f0f7e66edaf3d5bfc3546d2e" id="r_ad63bca91f0f7e66edaf3d5bfc3546d2e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#ad63bca91f0f7e66edaf3d5bfc3546d2e">objexp_get_shard</a> (int shard_num, string *shard)</td></tr>
+<tr class="separator:ad63bca91f0f7e66edaf3d5bfc3546d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981e851198e85dc81f7887b42980e9e3" id="r_a981e851198e85dc81f7887b42980e9e3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#a981e851198e85dc81f7887b42980e9e3">objexp_hint_parse</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, cls_timeindex_entry &amp;ti_entry, <a class="el" href="structobjexp__hint__entry.html">objexp_hint_entry</a> *hint_entry)</td></tr>
+<tr class="separator:a981e851198e85dc81f7887b42980e9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d79c7ba9910d4fe28d139144803191" id="r_ad1d79c7ba9910d4fe28d139144803191"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#ad1d79c7ba9910d4fe28d139144803191">cls_timeindex_trim_repeat</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="el" href="svc__rados_8h.html#a0bb34463503512e095830708dd65ca44">rgw_rados_ref</a> ref, const string &amp;oid, const utime_t &amp;from_time, const utime_t &amp;to_time, const string &amp;from_marker, const string &amp;to_marker)</td></tr>
+<tr class="separator:ad1d79c7ba9910d4fe28d139144803191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:a3058572aa7430c9527c3f16a5969e498" id="r_a3058572aa7430c9527c3f16a5969e498"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__object__expirer__core_8cc.html#a3058572aa7430c9527c3f16a5969e498">objexp_lock_name</a> = &quot;gc_process&quot;</td></tr>
+<tr class="separator:a3058572aa7430c9527c3f16a5969e498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="ac9f1b8ed4aca7999d392b2d432030e30" name="ac9f1b8ed4aca7999d392b2d432030e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9f1b8ed4aca7999d392b2d432030e30">&#9670;&#160;</a></span>dout_context</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_context&#160;&#160;&#160;g_ceph_context</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00043">43</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00044">44</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="ad1d79c7ba9910d4fe28d139144803191" name="ad1d79c7ba9910d4fe28d139144803191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d79c7ba9910d4fe28d139144803191">&#9670;&#160;</a></span>cls_timeindex_trim_repeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cls_timeindex_trim_repeat </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="svc__rados_8h.html#a0bb34463503512e095830708dd65ca44">rgw_rados_ref</a>&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>oid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const utime_t &amp;&#160;</td>
+          <td class="paramname"><em>from_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const utime_t &amp;&#160;</td>
+          <td class="paramname"><em>to_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>from_marker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>to_marker</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00154">154</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>{</div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordtype">bool</span> done = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  163</span>  <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  164</span>    librados::ObjectWriteOperation op;</div>
+<div class="line"><span class="lineno">  165</span>    cls_timeindex_trim(op, from_time, to_time, from_marker, to_marker);</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_function" href="rgw__tools_8cc.html#ac8fd9a95626d93661d7280c9455eba5c">rgw_rados_operate</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">pool</a>.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), oid, &amp;op, null_yield);</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> == -ENODATA)</div>
+<div class="line"><span class="lineno">  168</span>      done = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><span class="lineno">  170</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><span class="lineno">  171</span>  } <span class="keywordflow">while</span> (!done);</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  174</span>}</div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_pool_html_a93e7513947d59965733e309d18e7b192"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">RGWSI_RADOS::Pool::ioctx</a></div><div class="ttdeci">librados::IoCtx &amp; ioctx()</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00111">svc_rados.h:111</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__tools_8cc_html_ac8fd9a95626d93661d7280c9455eba5c"><div class="ttname"><a href="rgw__tools_8cc.html#ac8fd9a95626d93661d7280c9455eba5c">rgw_rados_operate</a></div><div class="ttdeci">int rgw_rados_operate(const DoutPrefixProvider *dpp, librados::IoCtx &amp;ioctx, const std::string &amp;oid, librados::ObjectReadOperation *op, bufferlist *pbl, optional_yield y, int flags)</div><div class="ttdoc">perform the rados operation, using the yield context when given</div><div class="ttdef"><b>Definition</b> <a href="rgw__tools_8cc_source.html#l00254">rgw_tools.cc:254</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref_html_a25cd45ad8361eb5da9c0a90d17d9b5ae"><div class="ttname"><a href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">RGWSI_RADOS::rados_ref::pool</a></div><div class="ttdeci">RGWSI_RADOS::Pool pool</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00145">svc_rados.h:145</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_cgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_cgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_cgraph" id="argw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_cgraph">
+<area shape="rect" title=" " alt="" coords="5,28,136,70"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="392,36,434,62"/>
+<area shape="poly" title=" " alt="" coords="133,24,183,13,264,3,300,5,345,13,379,26,377,31,343,18,299,10,264,8,184,18,134,30"/>
+<area shape="rect" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192" title=" " alt="" coords="184,28,344,70"/>
+<area shape="poly" title=" " alt="" coords="136,46,168,46,168,52,136,52"/>
+<area shape="rect" href="rgw__tools_8cc.html#ac8fd9a95626d93661d7280c9455eba5c" title="perform the rados operation, using the yield context when given" alt="" coords="199,94,329,121"/>
+<area shape="poly" title=" " alt="" coords="137,66,204,87,202,92,135,71"/>
+<area shape="poly" title=" " alt="" coords="311,91,343,80,377,64,379,69,345,85,313,96"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_icgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_icgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_icgraph" id="argw__object__expirer__core_8cc_ad1d79c7ba9910d4fe28d139144803191_icgraph">
+<area shape="rect" title=" " alt="" coords="1151,5,1281,48"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html#a649346b03be48861b6b02366aa6fc072" title=" " alt="" coords="930,5,1103,48"/>
+<area shape="poly" title=" " alt="" coords="1136,29,1104,29,1104,24,1136,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#aac3aff1fb07f538b029388a37e7b943e" title=" " alt="" coords="719,5,882,48"/>
+<area shape="poly" title=" " alt="" coords="914,29,882,29,882,24,914,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a7c6737558e3f66f25974964d4ff977ac" title=" " alt="" coords="485,5,671,48"/>
+<area shape="poly" title=" " alt="" coords="704,29,672,29,672,24,704,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#afb521a81c0eb82006883b73071dabc22" title=" " alt="" coords="255,5,437,48"/>
+<area shape="poly" title=" " alt="" coords="470,29,437,29,437,24,470,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#afba591fe43f344c6e162b5dbad5737a1" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad63bca91f0f7e66edaf3d5bfc3546d2e" name="ad63bca91f0f7e66edaf3d5bfc3546d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad63bca91f0f7e66edaf3d5bfc3546d2e">&#9670;&#160;</a></span>objexp_get_shard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void objexp_get_shard </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shard_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string *&#160;</td>
+          <td class="paramname"><em>shard</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00071">71</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
+<div class="line"><span class="lineno">   74</span>  *shard = <a class="code hl_function" href="rgw__object__expirer__core_8cc.html#ad5341fdc2ffe21d8ec08267756d02b20">objexp_hint_get_shardname</a>(shard_num);</div>
+<div class="line"><span class="lineno">   75</span>}</div>
+<div class="ttc" id="argw__object__expirer__core_8cc_html_ad5341fdc2ffe21d8ec08267756d02b20"><div class="ttname"><a href="rgw__object__expirer__core_8cc.html#ad5341fdc2ffe21d8ec08267756d02b20">objexp_hint_get_shardname</a></div><div class="ttdeci">static string objexp_hint_get_shardname(int shard_num)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__expirer__core_8cc_source.html#l00050">rgw_object_expirer_core.cc:50</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_cgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_cgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_cgraph" id="argw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,129,32"/>
+<area shape="rect" href="rgw__object__expirer__core_8cc.html#ad5341fdc2ffe21d8ec08267756d02b20" title=" " alt="" coords="177,5,360,32"/>
+<area shape="poly" title=" " alt="" coords="129,16,161,16,161,21,129,21"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_icgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_icgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_icgraph" id="argw__object__expirer__core_8cc_ad63bca91f0f7e66edaf3d5bfc3546d2e_icgraph">
+<area shape="rect" title=" " alt="" coords="485,13,608,40"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#afb521a81c0eb82006883b73071dabc22" title=" " alt="" coords="255,5,437,48"/>
+<area shape="poly" title=" " alt="" coords="470,29,438,29,438,24,470,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#afba591fe43f344c6e162b5dbad5737a1" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a128e3f477a77aeec51ac81401c04562a" name="a128e3f477a77aeec51ac81401c04562a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a128e3f477a77aeec51ac81401c04562a">&#9670;&#160;</a></span>objexp_hint_get_keyext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string objexp_hint_get_keyext </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>tenant_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>bucket_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>bucket_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__obj__key.html">rgw_obj_key</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj_key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00063">63</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                                 {</div>
+<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">return</span> tenant_name + (tenant_name.empty() ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;:&quot;</span>) + bucket_name + <span class="stringliteral">&quot;:&quot;</span> + bucket_id +</div>
+<div class="line"><span class="lineno">   68</span>    <span class="stringliteral">&quot;:&quot;</span> + obj_key.<a class="code hl_variable" href="structrgw__obj__key.html#a009cbe657bf6a001d40af0a80e533186">name</a> + <span class="stringliteral">&quot;:&quot;</span> + obj_key.<a class="code hl_variable" href="structrgw__obj__key.html#aa73e7ab93fad1f34c58dc9e87917213c">instance</a>;</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="astructrgw__obj__key_html_a009cbe657bf6a001d40af0a80e533186"><div class="ttname"><a href="structrgw__obj__key.html#a009cbe657bf6a001d40af0a80e533186">rgw_obj_key::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01249">rgw_common.h:1249</a></div></div>
+<div class="ttc" id="astructrgw__obj__key_html_aa73e7ab93fad1f34c58dc9e87917213c"><div class="ttname"><a href="structrgw__obj__key.html#aa73e7ab93fad1f34c58dc9e87917213c">rgw_obj_key::instance</a></div><div class="ttdeci">std::string instance</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01250">rgw_common.h:1250</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_a128e3f477a77aeec51ac81401c04562a_icgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_a128e3f477a77aeec51ac81401c04562a_icgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_a128e3f477a77aeec51ac81401c04562a_icgraph" id="argw__object__expirer__core_8cc_a128e3f477a77aeec51ac81401c04562a_icgraph">
+<area shape="rect" title=" " alt="" coords="687,13,846,40"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html#a1db88bd2ce60248615f47635f804e6e1" title=" " alt="" coords="466,5,639,48"/>
+<area shape="poly" title=" " alt="" coords="672,29,640,29,640,24,672,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a01426881b8fa67e220e4745e82e65401" title=" " alt="" coords="229,13,418,40"/>
+<area shape="poly" title=" " alt="" coords="451,29,418,29,418,24,451,24"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_write.html#af1ba1d592dced1cf54563315fa0a0066" title=" " alt="" coords="5,5,181,48"/>
+<area shape="poly" title=" " alt="" coords="213,29,181,29,181,24,213,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad5341fdc2ffe21d8ec08267756d02b20" name="ad5341fdc2ffe21d8ec08267756d02b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5341fdc2ffe21d8ec08267756d02b20">&#9670;&#160;</a></span>objexp_hint_get_shardname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string objexp_hint_get_shardname </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shard_num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00050">50</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>  <span class="keywordtype">char</span> buf[64];</div>
+<div class="line"><span class="lineno">   53</span>  snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;obj_delete_at_hint.%010u&quot;</span>, (<span class="keywordtype">unsigned</span>)shard_num);</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">return</span> buf;</div>
+<div class="line"><span class="lineno">   55</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_ad5341fdc2ffe21d8ec08267756d02b20_icgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_ad5341fdc2ffe21d8ec08267756d02b20_icgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_ad5341fdc2ffe21d8ec08267756d02b20_icgraph" id="argw__object__expirer__core_8cc_ad5341fdc2ffe21d8ec08267756d02b20_icgraph">
+<area shape="rect" title=" " alt="" coords="713,45,897,72"/>
+<area shape="rect" href="rgw__object__expirer__core_8cc.html#ad63bca91f0f7e66edaf3d5bfc3546d2e" title=" " alt="" coords="517,15,640,41"/>
+<area shape="poly" title=" " alt="" coords="697,47,640,39,641,34,698,42"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html#a1db88bd2ce60248615f47635f804e6e1" title=" " alt="" coords="492,67,665,109"/>
+<area shape="poly" title=" " alt="" coords="698,75,666,79,665,74,697,70"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#afb521a81c0eb82006883b73071dabc22" title=" " alt="" coords="258,7,441,49"/>
+<area shape="poly" title=" " alt="" coords="501,31,441,31,441,25,501,25"/>
+<area shape="rect" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#afba591fe43f344c6e162b5dbad5737a1" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="242,30,207,30,207,25,242,25"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a01426881b8fa67e220e4745e82e65401" title=" " alt="" coords="255,76,444,103"/>
+<area shape="poly" title=" " alt="" coords="477,91,444,91,444,86,477,86"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_write.html#af1ba1d592dced1cf54563315fa0a0066" title=" " alt="" coords="18,72,194,115"/>
+<area shape="poly" title=" " alt="" coords="239,94,194,95,194,89,239,88"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a981e851198e85dc81f7887b42980e9e3" name="a981e851198e85dc81f7887b42980e9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a981e851198e85dc81f7887b42980e9e3">&#9670;&#160;</a></span>objexp_hint_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int objexp_hint_parse </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CephContext *&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cls_timeindex_entry &amp;&#160;</td>
+          <td class="paramname"><em>ti_entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structobjexp__hint__entry.html">objexp_hint_entry</a> *&#160;</td>
+          <td class="paramname"><em>hint_entry</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00077">77</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keyword">auto</span> iter = ti_entry.value.cbegin();</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(*hint_entry, iter);</div>
+<div class="line"><span class="lineno">   83</span>  } <span class="keywordflow">catch</span> (buffer::error&amp; err) {</div>
+<div class="line"><span class="lineno">   84</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: couldn&#39;t decode avail_pools&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   88</span>}</div>
+<div class="ttc" id="argw__log__backing_8h_html_adc46efdde31cf790f3b383cb9e6f198e"><div class="ttname"><a href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a></div><div class="ttdeci">void decode(log_type &amp;type, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00049">rgw_log_backing.h:49</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_cgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_cgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_cgraph" id="argw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,132,81"/>
+<area shape="rect" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e" title=" " alt="" coords="180,29,243,56"/>
+<area shape="poly" title=" " alt="" coords="132,54,164,48,165,54,133,59"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="190,80,233,107"/>
+<area shape="poly" title=" " alt="" coords="133,77,175,84,174,90,132,82"/>
+<area shape="poly" title=" " alt="" coords="186,30,182,21,185,11,195,5,211,3,229,5,238,12,235,16,227,10,211,8,197,10,189,14,187,20,191,28"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_icgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_icgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_icgraph" id="argw__object__expirer__core_8cc_a981e851198e85dc81f7887b42980e9e3_icgraph">
+<area shape="rect" title=" " alt="" coords="954,13,1080,40"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a1c7df10d5a771f56b9ac65598a8d5b8a" title=" " alt="" coords="719,5,906,48"/>
+<area shape="poly" title=" " alt="" coords="938,29,906,29,906,24,938,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a7c6737558e3f66f25974964d4ff977ac" title=" " alt="" coords="485,5,671,48"/>
+<area shape="poly" title=" " alt="" coords="704,29,672,29,672,24,704,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#afb521a81c0eb82006883b73071dabc22" title=" " alt="" coords="255,5,437,48"/>
+<area shape="poly" title=" " alt="" coords="470,29,437,29,437,24,470,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer_1_1_o_e_worker.html#afba591fe43f344c6e162b5dbad5737a1" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af87a7a40b6be3e3b5bdb3bc0e4da7810" name="af87a7a40b6be3e3b5bdb3bc0e4da7810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87a7a40b6be3e3b5bdb3bc0e4da7810">&#9670;&#160;</a></span>objexp_key_shard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int objexp_key_shard </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="rgw__common_8h.html#a7020478e92d985c3f78e2ae9e5481f0a">rgw_obj_index_key</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_shards</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00057">57</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordtype">string</span> obj_key = key.name + key.instance;</div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#a2c992f89e3850bd2c979c0969a6b9b74">RGWSI_BucketIndex_RADOS::bucket_shard_index</a>(obj_key, num_shards);</div>
+<div class="line"><span class="lineno">   61</span>}</div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket_index___r_a_d_o_s_html_a2c992f89e3850bd2c979c0969a6b9b74"><div class="ttname"><a href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#a2c992f89e3850bd2c979c0969a6b9b74">RGWSI_BucketIndex_RADOS::bucket_shard_index</a></div><div class="ttdeci">static uint32_t bucket_shard_index(const std::string &amp;key, int num_shards)</div><div class="ttdef"><b>Definition</b> <a href="svc__bi__rados_8h_source.html#l00092">svc_bi_rados.h:92</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_cgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_cgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_cgraph" id="argw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,132,40"/>
+<area shape="rect" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#a2c992f89e3850bd2c979c0969a6b9b74" title=" " alt="" coords="180,5,377,48"/>
+<area shape="poly" title=" " alt="" coords="132,24,164,24,164,29,132,29"/>
+<area shape="rect" href="rgw__tools_8h.html#aea3ee39e1b99a0ab0f7e4e57ddaa06f2" title=" " alt="" coords="425,13,544,40"/>
+<area shape="poly" title=" " alt="" coords="377,24,409,24,409,29,377,29"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_icgraph.png" border="0" usemap="#argw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_icgraph" alt=""/></div>
+<map name="argw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_icgraph" id="argw__object__expirer__core_8cc_af87a7a40b6be3e3b5bdb3bc0e4da7810_icgraph">
+<area shape="rect" title=" " alt="" coords="687,13,814,40"/>
+<area shape="rect" href="class_r_g_w_obj_exp_store.html#a1db88bd2ce60248615f47635f804e6e1" title=" " alt="" coords="466,5,639,48"/>
+<area shape="poly" title=" " alt="" coords="672,29,640,29,640,24,672,24"/>
+<area shape="rect" href="class_r_g_w_object_expirer.html#a01426881b8fa67e220e4745e82e65401" title=" " alt="" coords="229,13,418,40"/>
+<area shape="poly" title=" " alt="" coords="451,29,418,29,418,24,451,24"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_write.html#af1ba1d592dced1cf54563315fa0a0066" title=" " alt="" coords="5,5,181,48"/>
+<area shape="poly" title=" " alt="" coords="213,29,181,29,181,24,213,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">변수 문서화</h2>
+<a id="a3058572aa7430c9527c3f16a5969e498" name="a3058572aa7430c9527c3f16a5969e498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3058572aa7430c9527c3f16a5969e498">&#9670;&#160;</a></span>objexp_lock_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string objexp_lock_name = &quot;gc_process&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__object__expirer__core_8cc_source.html">rgw_object_expirer_core.cc</a> 파일의 <a class="el" href="rgw__object__expirer__core_8cc_source.html#l00048">48</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__object__expirer__core_8cc.html">rgw_object_expirer_core.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_period_pusher.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__period__pusher_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_period_pusher.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__period__pusher_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef RGW_PERIOD_PUSHER_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define RGW_PERIOD_PUSHER_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;common/async/yield_context.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__realm__reloader_8h.html">rgw_realm_reloader.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw.html">rgw</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>sal {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>Store;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// RGWRealmNotify payload for push coordination</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="rgw__period__pusher_8h.html#acd37df85e0e0d5edc49798d733660f77">   23</a></span><span class="keyword">using </span><a class="code hl_class" href="class_r_g_w_period.html">RGWZonesNeedPeriod</a> = <a class="code hl_function" href="class_r_g_w_period.html#a88d7fa3cf9d136d7f95d3aa85dc2475d">RGWPeriod</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_pusher.html">RGWPeriodPusher</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_realm_watcher_1_1_watcher.html">RGWRealmWatcher::Watcher</a>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                              <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_realm_reloader_1_1_pauser.html">RGWRealmReloader::Pauser</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="class_r_g_w_period_pusher.html">RGWPeriodPusher</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="class_r_g_w_period_pusher.html#a4842c1aa0ff7c89ec6caa2a622b5d0ae">store</a>, optional_yield y);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#a695d9de8c1b74797787949e8ad049985">   33</a></span>  <a class="code hl_function" href="class_r_g_w_period_pusher.html#a695d9de8c1b74797787949e8ad049985">~RGWPeriodPusher</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_period_pusher.html#afef6c4923b71dcff90f7008cf36b6826">handle_notify</a>(<a class="code hl_enumeration" href="rgw__realm__watcher_8h.html#afbacd22e94d464ca47daa4d7f68fddf0">RGWRealmNotify</a> type, bufferlist::const_iterator&amp; p) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_period_pusher.html#aee91e582d28baae297b77ac6385e2925">pause</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_period_pusher.html#aa206c0a9a972790fff7d77db126f4c83">resume</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="class_r_g_w_period_pusher.html#a4842c1aa0ff7c89ec6caa2a622b5d0ae">store</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_period_pusher.html#afef6c4923b71dcff90f7008cf36b6826">handle_notify</a>(<a class="code hl_class" href="class_r_g_w_period.html">RGWZonesNeedPeriod</a>&amp;&amp; period);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#a8354577e91b9990d192d9bfd1691c916">   48</a></span>  CephContext *<span class="keyword">const</span> <a class="code hl_variable" href="class_r_g_w_period_pusher.html#a8354577e91b9990d192d9bfd1691c916">cct</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#a4842c1aa0ff7c89ec6caa2a622b5d0ae">   49</a></span>  <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="class_r_g_w_period_pusher.html#a4842c1aa0ff7c89ec6caa2a622b5d0ae">store</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#a5fc04de0dafa193ae1d356e563b2ddda">   51</a></span>  std::mutex <a class="code hl_variable" href="class_r_g_w_period_pusher.html#a5fc04de0dafa193ae1d356e563b2ddda">mutex</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#a4df7f144eaeb93524833bc0c267c83fb">   52</a></span>  epoch_t <a class="code hl_variable" href="class_r_g_w_period_pusher.html#a4df7f144eaeb93524833bc0c267c83fb">realm_epoch</a>{0}; <span class="comment">//&lt; the current realm epoch being sent</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#ac72de265ec01b2dbeb6b68ce67358eac">   53</a></span>  epoch_t <a class="code hl_variable" href="class_r_g_w_period_pusher.html#ac72de265ec01b2dbeb6b68ce67358eac">period_epoch</a>{0}; <span class="comment">//&lt; the current period epoch being sent</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#aaecd9fe4a222a853ccf453ba6e138665">   56</a></span>  std::vector&lt;RGWZonesNeedPeriod&gt; <a class="code hl_variable" href="class_r_g_w_period_pusher.html#aaecd9fe4a222a853ccf453ba6e138665">pending_periods</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_pusher_1_1_c_r_thread.html">CRThread</a>; <span class="comment">//&lt; contains thread, coroutine manager, http manager</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_r_g_w_period_pusher.html#abbcaa4eed766a413da78851d216aec2d">   59</a></span>  std::unique_ptr&lt;CRThread&gt; <a class="code hl_variable" href="class_r_g_w_period_pusher.html#abbcaa4eed766a413da78851d216aec2d">cr_thread</a>; <span class="comment">//&lt; thread to run the push coroutines</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif </span><span class="comment">// RGW_PERIOD_PUSHER_H</span></div>
+<div class="ttc" id="aclass_r_g_w_period_html"><div class="ttname"><a href="class_r_g_w_period.html">RGWPeriod</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01231">rgw_zone.h:1232</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html_a88d7fa3cf9d136d7f95d3aa85dc2475d"><div class="ttname"><a href="class_r_g_w_period.html#a88d7fa3cf9d136d7f95d3aa85dc2475d">RGWPeriod::RGWPeriod</a></div><div class="ttdeci">RGWPeriod()</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01267">rgw_zone.h:1267</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_1_1_c_r_thread_html"><div class="ttname"><a href="class_r_g_w_period_pusher_1_1_c_r_thread.html">RGWPeriodPusher::CRThread</a></div><div class="ttdoc">A background thread to run the PushAllCR coroutine and exit.</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8cc_source.html#l00133">rgw_period_pusher.cc:133</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html"><div class="ttname"><a href="class_r_g_w_period_pusher.html">RGWPeriodPusher</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00029">rgw_period_pusher.h:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_a4842c1aa0ff7c89ec6caa2a622b5d0ae"><div class="ttname"><a href="class_r_g_w_period_pusher.html#a4842c1aa0ff7c89ec6caa2a622b5d0ae">RGWPeriodPusher::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00049">rgw_period_pusher.h:49</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_a4df7f144eaeb93524833bc0c267c83fb"><div class="ttname"><a href="class_r_g_w_period_pusher.html#a4df7f144eaeb93524833bc0c267c83fb">RGWPeriodPusher::realm_epoch</a></div><div class="ttdeci">epoch_t realm_epoch</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00052">rgw_period_pusher.h:52</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_a5fc04de0dafa193ae1d356e563b2ddda"><div class="ttname"><a href="class_r_g_w_period_pusher.html#a5fc04de0dafa193ae1d356e563b2ddda">RGWPeriodPusher::mutex</a></div><div class="ttdeci">std::mutex mutex</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00051">rgw_period_pusher.h:51</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_a695d9de8c1b74797787949e8ad049985"><div class="ttname"><a href="class_r_g_w_period_pusher.html#a695d9de8c1b74797787949e8ad049985">RGWPeriodPusher::~RGWPeriodPusher</a></div><div class="ttdeci">~RGWPeriodPusher() override</div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_a8354577e91b9990d192d9bfd1691c916"><div class="ttname"><a href="class_r_g_w_period_pusher.html#a8354577e91b9990d192d9bfd1691c916">RGWPeriodPusher::cct</a></div><div class="ttdeci">CephContext *const cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00048">rgw_period_pusher.h:48</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_aa206c0a9a972790fff7d77db126f4c83"><div class="ttname"><a href="class_r_g_w_period_pusher.html#aa206c0a9a972790fff7d77db126f4c83">RGWPeriodPusher::resume</a></div><div class="ttdeci">void resume(rgw::sal::Store *store) override</div><div class="ttdoc">continue processing notifications with a new RGWRados instance</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8cc_source.html#l00303">rgw_period_pusher.cc:303</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_aaecd9fe4a222a853ccf453ba6e138665"><div class="ttname"><a href="class_r_g_w_period_pusher.html#aaecd9fe4a222a853ccf453ba6e138665">RGWPeriodPusher::pending_periods</a></div><div class="ttdeci">std::vector&lt; RGWZonesNeedPeriod &gt; pending_periods</div><div class="ttdoc">while paused for reconfiguration, we need to queue up notifications</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00056">rgw_period_pusher.h:56</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_abbcaa4eed766a413da78851d216aec2d"><div class="ttname"><a href="class_r_g_w_period_pusher.html#abbcaa4eed766a413da78851d216aec2d">RGWPeriodPusher::cr_thread</a></div><div class="ttdeci">std::unique_ptr&lt; CRThread &gt; cr_thread</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00059">rgw_period_pusher.h:59</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_ac72de265ec01b2dbeb6b68ce67358eac"><div class="ttname"><a href="class_r_g_w_period_pusher.html#ac72de265ec01b2dbeb6b68ce67358eac">RGWPeriodPusher::period_epoch</a></div><div class="ttdeci">epoch_t period_epoch</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8h_source.html#l00053">rgw_period_pusher.h:53</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_aee91e582d28baae297b77ac6385e2925"><div class="ttname"><a href="class_r_g_w_period_pusher.html#aee91e582d28baae297b77ac6385e2925">RGWPeriodPusher::pause</a></div><div class="ttdeci">void pause() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8cc_source.html#l00296">rgw_period_pusher.cc:296</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_pusher_html_afef6c4923b71dcff90f7008cf36b6826"><div class="ttname"><a href="class_r_g_w_period_pusher.html#afef6c4923b71dcff90f7008cf36b6826">RGWPeriodPusher::handle_notify</a></div><div class="ttdeci">void handle_notify(RGWRealmNotify type, bufferlist::const_iterator &amp;p) override</div><div class="ttdoc">respond to realm notifications by pushing new periods to other zones</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__pusher_8cc_source.html#l00191">rgw_period_pusher.cc:191</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_reloader_1_1_pauser_html"><div class="ttname"><a href="class_r_g_w_realm_reloader_1_1_pauser.html">RGWRealmReloader::Pauser</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__reloader_8h_source.html#l00029">rgw_realm_reloader.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_1_1_watcher_html"><div class="ttname"><a href="class_r_g_w_realm_watcher_1_1_watcher.html">RGWRealmWatcher::Watcher</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00031">rgw_realm_watcher.h:31</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="anamespacergw_html"><div class="ttname"><a href="namespacergw.html">rgw</a></div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00038">cls_fifo_legacy.cc:38</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__realm__reloader_8h_html"><div class="ttname"><a href="rgw__realm__reloader_8h.html">rgw_realm_reloader.h</a></div></div>
+<div class="ttc" id="argw__realm__watcher_8h_html_afbacd22e94d464ca47daa4d7f68fddf0"><div class="ttname"><a href="rgw__realm__watcher_8h.html#afbacd22e94d464ca47daa4d7f68fddf0">RGWRealmNotify</a></div><div class="ttdeci">RGWRealmNotify</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00015">rgw_realm_watcher.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__period__pusher_8h.html">rgw_period_pusher.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

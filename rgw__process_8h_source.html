@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_process.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__process_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_process.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__process_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef RGW_PROCESS_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define RGW_PROCESS_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__common_8h.html">rgw_common.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__acl_8h.html">rgw_acl.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__auth__registry_8h.html">rgw_auth_registry.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__user_8h.html">rgw_user.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__op_8h.html">rgw_op.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest_8h.html">rgw_rest.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__ratelimit_8h.html">rgw_ratelimit.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;include/ceph_assert.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;common/WorkQueue.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;common/Throttle.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#if !defined(dout_subsys)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define def_dout_subsys</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="rgw__process_8h.html#ac9f1b8ed4aca7999d392b2d432030e30">   26</a></span><span class="preprocessor">#define dout_context g_ceph_context</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="rgw__process_8h.html#a80876c3df4dfb0c5d793cb641c884600">signal_shutdown</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw_1_1dmclock.html">rgw::dmclock</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">class </span>Scheduler;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html">   34</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html#a63229c37b2c5134bd4ac1102748fafa0">   35</a></span>  <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="struct_r_g_w_process_env.html#a63229c37b2c5134bd4ac1102748fafa0">store</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html#a30b3972373ad55d00954e9eff9ff281a">   36</a></span>  <a class="code hl_class" href="class_r_g_w_r_e_s_t.html">RGWREST</a> *<a class="code hl_variable" href="struct_r_g_w_process_env.html#a30b3972373ad55d00954e9eff9ff281a">rest</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html#af588e03f1ad48a29a122c595d11b1fb1">   37</a></span>  <a class="code hl_class" href="class_ops_log_sink.html">OpsLogSink</a> *<a class="code hl_variable" href="struct_r_g_w_process_env.html#af588e03f1ad48a29a122c595d11b1fb1">olog</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html#ab4cf0c5174c6060382742086d365becb">   38</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_r_g_w_process_env.html#ab4cf0c5174c6060382742086d365becb">port</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html#a7424c0d14f4ff82b95d8d083f18457b7">   39</a></span>  std::string <a class="code hl_variable" href="struct_r_g_w_process_env.html#a7424c0d14f4ff82b95d8d083f18457b7">uri_prefix</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html#a354503a866e48459d2d0e8ef00ce4fb5">   40</a></span>  std::shared_ptr&lt;rgw::auth::StrategyRegistry&gt; <a class="code hl_variable" href="struct_r_g_w_process_env.html#a354503a866e48459d2d0e8ef00ce4fb5">auth_registry</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="comment">//maybe there is a better place to store the rate limit data structure</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_env.html#a22528ab2a97de1dfbe6e863f8a39ff1e">   42</a></span>  <a class="code hl_class" href="class_active_rate_limiter.html">ActiveRateLimiter</a>* <a class="code hl_variable" href="struct_r_g_w_process_env.html#a22528ab2a97de1dfbe6e863f8a39ff1e">ratelimiting</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">class </span><a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html">   48</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#ade1941c4bd3f71388b64d1f9a47ce2bb">   49</a></span>  std::deque&lt;RGWRequest*&gt; <a class="code hl_variable" href="class_r_g_w_process.html#ade1941c4bd3f71388b64d1f9a47ce2bb">m_req_queue</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">   51</a></span>  CephContext *<a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a0ec11016edfcd3eadb5a4552e2d09203">   52</a></span>  <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="class_r_g_w_process.html#a0ec11016edfcd3eadb5a4552e2d09203">store</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a156b167faad4df6fe4981b77d949f622">   53</a></span>  <a class="code hl_typedef" href="rgw__auth__registry_8h.html#a499ab786bfdab791755bcaef80f67526">rgw_auth_registry_ptr_t</a> <a class="code hl_variable" href="class_r_g_w_process.html#a156b167faad4df6fe4981b77d949f622">auth_registry</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a76153d465963e7ee5c807fff6a6d070f">   54</a></span>  <a class="code hl_class" href="class_ops_log_sink.html">OpsLogSink</a>* <a class="code hl_variable" href="class_r_g_w_process.html#a76153d465963e7ee5c807fff6a6d070f">olog</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a2f4f23a5d1675b79d6d705e73e78c4b8">   55</a></span>  ThreadPool <a class="code hl_variable" href="class_r_g_w_process.html#a2f4f23a5d1675b79d6d705e73e78c4b8">m_tp</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#aad068dd3f2834a3240945734d0f1cd6c">   56</a></span>  Throttle <a class="code hl_variable" href="class_r_g_w_process.html#aad068dd3f2834a3240945734d0f1cd6c">req_throttle</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a552ed16e9e5086513b6990d4cce214ec">   57</a></span>  <a class="code hl_class" href="class_r_g_w_r_e_s_t.html">RGWREST</a>* <a class="code hl_variable" href="class_r_g_w_process.html#a552ed16e9e5086513b6990d4cce214ec">rest</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#aab15b8b5a1aedb23091ec570278003b6">   58</a></span>  <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>* <a class="code hl_variable" href="class_r_g_w_process.html#aab15b8b5a1aedb23091ec570278003b6">conf</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#aee61a7a9e12ffdfb403bac103cbc8533">   59</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_g_w_process.html#aee61a7a9e12ffdfb403bac103cbc8533">sock_fd</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a64e1526f947c88f7656b3db0cb57f522">   60</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_process.html#a64e1526f947c88f7656b3db0cb57f522">uri_prefix</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html">   62</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_g_w_process_1_1_r_g_w_w_q.html">RGWWQ</a> : <span class="keyword">public</span> DoutPrefixProvider, <span class="keyword">public</span> ThreadPool::WorkQueue&lt;RGWRequest&gt; {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#af2b1ea3b4b7233a88f8c093dd0e6bea6">   63</a></span>    <a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a>* <a class="code hl_variable" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#af2b1ea3b4b7233a88f8c093dd0e6bea6">process</a>;</div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a236791b92e09ac06b18ed94852abeda2">   64</a></span>    <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a236791b92e09ac06b18ed94852abeda2">RGWWQ</a>(<a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a>* p, ceph::timespan timeout, ceph::timespan suicide_timeout,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      ThreadPool* tp)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      : ThreadPool::WorkQueue&lt;<a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>&gt;(<span class="stringliteral">&quot;RGWWQ&quot;</span>, timeout, suicide_timeout,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                      tp), <a class="code hl_variable" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#af2b1ea3b4b7233a88f8c093dd0e6bea6">process</a>(p) {}</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a5a73fe49cc8bb026e08d68f5277e6b84">_enqueue</a>(<a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>* req) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a463f4ee8b581aff80a462037e1f81837">   71</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a463f4ee8b581aff80a462037e1f81837">_dequeue</a>(<a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>* req)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      ceph_abort();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a68f73e3acf003bb41b77d0d0a25c1697">   75</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a68f73e3acf003bb41b77d0d0a25c1697">_empty</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#af2b1ea3b4b7233a88f8c093dd0e6bea6">process</a>-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#ade1941c4bd3f71388b64d1f9a47ce2bb">m_req_queue</a>.empty();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>* <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a9ccca1881e171d095f9843c3da05f04e">_dequeue</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">using </span>ThreadPool::WorkQueue&lt;<a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>&gt;<a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ada3fd9e8591121209e5de1b565758e01">::_process</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ada3fd9e8591121209e5de1b565758e01">_process</a>(<a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a> *req, ThreadPool::TPHandle &amp;) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ad36498ee4aa5d594a5a48129b48d14b6">_dump_queue</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#aa4cf495395d02cb2003a7f6b8ab7c6f7">   87</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#aa4cf495395d02cb2003a7f6b8ab7c6f7">_clear</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      ceph_assert(<a class="code hl_variable" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#af2b1ea3b4b7233a88f8c093dd0e6bea6">process</a>-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#ade1941c4bd3f71388b64d1f9a47ce2bb">m_req_queue</a>.empty());</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a615b013c1412778f82e8e9c8289a84ec">   91</a></span>  CephContext *<a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a615b013c1412778f82e8e9c8289a84ec">get_cct</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#af2b1ea3b4b7233a88f8c093dd0e6bea6">process</a>-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a4ab6c2f5fccaefbe780f243c9766db43">   92</a></span>  <span class="keywordtype">unsigned</span> <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a4ab6c2f5fccaefbe780f243c9766db43">get_subsys</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ceph_subsys_rgw; }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ac9fec24629b0719cc313f43eb4f4f023">   93</a></span>  std::ostream&amp; <a class="code hl_function" href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ac9fec24629b0719cc313f43eb4f4f023">gen_prefix</a>(std::ostream&amp; out)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> out &lt;&lt; <span class="stringliteral">&quot;rgw request work queue: &quot;</span>;}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a459c167dec888d381eaedc2935821dff">   95</a></span>  } <a class="code hl_variable" href="class_r_g_w_process.html#a459c167dec888d381eaedc2935821dff">req_wq</a>;</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a862d9881f5b4563a364cd5c5631641f2">   98</a></span>  <a class="code hl_function" href="class_r_g_w_process.html#a862d9881f5b4563a364cd5c5631641f2">RGWProcess</a>(CephContext* <span class="keyword">const</span> <a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>             <a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a>* <span class="keyword">const</span> pe,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>             <span class="keyword">const</span> <span class="keywordtype">int</span> num_threads,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>             <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>* <span class="keyword">const</span> <a class="code hl_variable" href="class_r_g_w_process.html#aab15b8b5a1aedb23091ec570278003b6">conf</a>)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    : <a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>(<a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>),</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a0ec11016edfcd3eadb5a4552e2d09203">store</a>(pe-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#a0ec11016edfcd3eadb5a4552e2d09203">store</a>),</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a156b167faad4df6fe4981b77d949f622">auth_registry</a>(pe-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#a156b167faad4df6fe4981b77d949f622">auth_registry</a>),</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a76153d465963e7ee5c807fff6a6d070f">olog</a>(pe-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#a76153d465963e7ee5c807fff6a6d070f">olog</a>),</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a2f4f23a5d1675b79d6d705e73e78c4b8">m_tp</a>(<a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>, <span class="stringliteral">&quot;RGWProcess::m_tp&quot;</span>, <span class="stringliteral">&quot;tp_rgw_process&quot;</span>, num_threads),</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <a class="code hl_variable" href="class_r_g_w_process.html#aad068dd3f2834a3240945734d0f1cd6c">req_throttle</a>(<a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>, <span class="stringliteral">&quot;rgw_ops&quot;</span>, num_threads * 2),</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a552ed16e9e5086513b6990d4cce214ec">rest</a>(pe-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#a552ed16e9e5086513b6990d4cce214ec">rest</a>),</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <a class="code hl_variable" href="class_r_g_w_process.html#aab15b8b5a1aedb23091ec570278003b6">conf</a>(<a class="code hl_variable" href="class_r_g_w_process.html#aab15b8b5a1aedb23091ec570278003b6">conf</a>),</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <a class="code hl_variable" href="class_r_g_w_process.html#aee61a7a9e12ffdfb403bac103cbc8533">sock_fd</a>(-1),</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a64e1526f947c88f7656b3db0cb57f522">uri_prefix</a>(pe-&gt;<a class="code hl_variable" href="class_r_g_w_process.html#a64e1526f947c88f7656b3db0cb57f522">uri_prefix</a>),</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a459c167dec888d381eaedc2935821dff">req_wq</a>(this,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>         <a class="code hl_namespace" href="namespaceceph.html">ceph</a>::make_timespan(g_conf()-&gt;rgw_op_thread_timeout),</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>         <a class="code hl_namespace" href="namespaceceph.html">ceph</a>::make_timespan(g_conf()-&gt;rgw_op_thread_suicide_timeout),</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>         &amp;<a class="code hl_variable" href="class_r_g_w_process.html#a2f4f23a5d1675b79d6d705e73e78c4b8">m_tp</a>) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a8d31698dbf218d1384f12e3334a7a32f">  118</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_r_g_w_process.html#a8d31698dbf218d1384f12e3334a7a32f">~RGWProcess</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a23eaabc40e7f0121c084ce19a377d388">  120</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process.html#a23eaabc40e7f0121c084ce19a377d388">run</a>() = 0;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a3d06f2153716dcd0677ab264e1b90b6a">  121</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process.html#a3d06f2153716dcd0677ab264e1b90b6a">handle_request</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a> *req) = 0;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a44bbc6bb88fecc6419e64a1b9f4a7c5c">  123</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process.html#a44bbc6bb88fecc6419e64a1b9f4a7c5c">pause</a>() {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_variable" href="class_r_g_w_process.html#a2f4f23a5d1675b79d6d705e73e78c4b8">m_tp</a>.pause();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a827d547a4a7f7af91ed753005ebb3fd5">  127</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process.html#a827d547a4a7f7af91ed753005ebb3fd5">unpause_with_new_config</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <span class="keyword">const</span> <a class="code hl_variable" href="class_r_g_w_process.html#a0ec11016edfcd3eadb5a4552e2d09203">store</a>,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                               <a class="code hl_typedef" href="rgw__auth__registry_8h.html#a499ab786bfdab791755bcaef80f67526">rgw_auth_registry_ptr_t</a> <a class="code hl_variable" href="class_r_g_w_process.html#a156b167faad4df6fe4981b77d949f622">auth_registry</a>) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    this-&gt;store = <a class="code hl_variable" href="class_r_g_w_process.html#a0ec11016edfcd3eadb5a4552e2d09203">store</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    this-&gt;auth_registry = std::move(<a class="code hl_variable" href="class_r_g_w_process.html#a156b167faad4df6fe4981b77d949f622">auth_registry</a>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_variable" href="class_r_g_w_process.html#a2f4f23a5d1675b79d6d705e73e78c4b8">m_tp</a>.unpause();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="class_r_g_w_process.html#a12116a7c79570aec9d6393eb41512ed5">  134</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_process.html#a12116a7c79570aec9d6393eb41512ed5">close_fd</a>() {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_process.html#aee61a7a9e12ffdfb403bac103cbc8533">sock_fd</a> &gt;= 0) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      ::close(<a class="code hl_variable" href="class_r_g_w_process.html#aee61a7a9e12ffdfb403bac103cbc8533">sock_fd</a>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <a class="code hl_variable" href="class_r_g_w_process.html#aee61a7a9e12ffdfb403bac103cbc8533">sock_fd</a> = -1;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}; <span class="comment">/* RGWProcess */</span></div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="};">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_r_g_w_process_control_thread.html">  142</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_process_control_thread.html">RGWProcessControlThread</a> : <span class="keyword">public</span> Thread {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="class_r_g_w_process_control_thread.html#ab50499a31900a2323441a391843ff0fe">  143</a></span>  <a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a> *<a class="code hl_variable" href="class_r_g_w_process_control_thread.html#ab50499a31900a2323441a391843ff0fe">pprocess</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_r_g_w_process_control_thread.html#a4be185638863978de84fab0586279193">  145</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_process_control_thread.html#a4be185638863978de84fab0586279193">RGWProcessControlThread</a>(<a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a> *_pprocess) : <a class="code hl_variable" href="class_r_g_w_process_control_thread.html#ab50499a31900a2323441a391843ff0fe">pprocess</a>(_pprocess) {}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_r_g_w_process_control_thread.html#ab9a1aeedcc2c20b58416a4c540fdb107">  147</a></span>  <span class="keywordtype">void</span> *<a class="code hl_function" href="class_r_g_w_process_control_thread.html#ab9a1aeedcc2c20b58416a4c540fdb107">entry</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_variable" href="class_r_g_w_process_control_thread.html#ab50499a31900a2323441a391843ff0fe">pprocess</a>-&gt;<a class="code hl_function" href="class_r_g_w_process.html#a23eaabc40e7f0121c084ce19a377d388">run</a>();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>};</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="};">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_process.html">  153</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_load_gen_process.html">RGWLoadGenProcess</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a> {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_process.html#a54e1d3cda2f8644e0e6f9b17215a25b0">  154</a></span>  <a class="code hl_struct" href="struct_r_g_w_access_key.html">RGWAccessKey</a> <a class="code hl_variable" href="class_r_g_w_load_gen_process.html#a54e1d3cda2f8644e0e6f9b17215a25b0">access_key</a>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_process.html#ad3276225fab69ee60d86232231c9de48">  156</a></span>  <a class="code hl_function" href="class_r_g_w_load_gen_process.html#ad3276225fab69ee60d86232231c9de48">RGWLoadGenProcess</a>(CephContext* <a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>, <a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a>* pe, <span class="keywordtype">int</span> num_threads,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>          <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>* _conf) :</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a>(<a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>, pe, num_threads, _conf) {}</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_load_gen_process.html#a1fab15f2885f6f601d7371e752bd08d5">run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_load_gen_process.html#a8ff8be09aa3803dc60e0b8f54439d788">checkpoint</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_load_gen_process.html#a5fcd0772d59d1b3b801d61f36fbb2b47">handle_request</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>* req) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_load_gen_process.html#a6cb77e113d31ebf02ba2d27e74590107">gen_request</a>(<span class="keyword">const</span> std::string&amp; method, <span class="keyword">const</span> std::string&amp; resource,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          <span class="keywordtype">int</span> content_length, std::atomic&lt;bool&gt;* fail_flag);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="class_r_g_w_load_gen_process.html#a37b2ab1fe1f47cefa240a5893a230aed">  165</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_load_gen_process.html#a37b2ab1fe1f47cefa240a5893a230aed">set_access_key</a>(<a class="code hl_struct" href="struct_r_g_w_access_key.html">RGWAccessKey</a>&amp; key) { <a class="code hl_variable" href="class_r_g_w_load_gen_process.html#a54e1d3cda2f8644e0e6f9b17215a25b0">access_key</a> = key; }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>};</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment">/* process stream request */</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="rgw__process_8h.html#a63095beabebdda3b062deb3cbc6a138e">  168</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_function" href="rgw__process_8h.html#a63095beabebdda3b062deb3cbc6a138e">process_request</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                           <a class="code hl_class" href="class_r_g_w_r_e_s_t.html">RGWREST</a>* rest,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                           <a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>* req,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                           <span class="keyword">const</span> std::string&amp; frontend_prefix,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                           <span class="keyword">const</span> <a class="code hl_class" href="classrgw_1_1auth_1_1_strategy_registry.html">rgw_auth_registry_t</a>&amp; auth_registry,</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                           <a class="code hl_class" href="class_r_g_w_restful_i_o.html">RGWRestfulIO</a>* client_io,</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                           <a class="code hl_class" href="class_ops_log_sink.html">OpsLogSink</a>* olog,</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                           optional_yield y,</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                           <a class="code hl_class" href="classrgw_1_1dmclock_1_1_scheduler.html">rgw::dmclock::Scheduler</a> *scheduler,</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                           std::string* user,</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                           ceph::coarse_real_clock::duration* latency,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                           std::shared_ptr&lt;RateLimiter&gt; ratelimit,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                           <span class="keywordtype">int</span>* http_ret = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_function" href="rgw__process_8h.html#aa55ffaa2591f5637ce397689f2a08d29">rgw_process_authenticated</a>(<a class="code hl_class" href="class_r_g_w_handler___r_e_s_t.html">RGWHandler_REST</a>* handler,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                                     <a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a>*&amp; op,</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                                     <a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>* req,</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                                     <a class="code hl_struct" href="structreq__state.html">req_state</a>* s,</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                                             optional_yield y,</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                                     <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                                     <span class="keywordtype">bool</span> skip_retarget = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="preprocessor">#if defined(def_dout_subsys)</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#undef def_dout_subsys</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#undef dout_subsys</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">#undef dout_context</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">#endif </span><span class="comment">/* RGW_PROCESS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_active_rate_limiter_html"><div class="ttname"><a href="class_active_rate_limiter.html">ActiveRateLimiter</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__ratelimit_8h_source.html#l00233">rgw_ratelimit.h:233</a></div></div>
+<div class="ttc" id="aclass_ops_log_sink_html"><div class="ttname"><a href="class_ops_log_sink.html">OpsLogSink</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__log_8h_source.html#l00215">rgw_log.h:215</a></div></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html"><div class="ttname"><a href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00027">rgw_frontend.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t.html">RGWHandler_REST</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8h_source.html#l00537">rgw_rest.h:537</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html"><div class="ttname"><a href="class_r_g_w_load_gen_process.html">RGWLoadGenProcess</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00153">rgw_process.h:153</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_a1fab15f2885f6f601d7371e752bd08d5"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#a1fab15f2885f6f601d7371e752bd08d5">RGWLoadGenProcess::run</a></div><div class="ttdeci">void run() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__loadgen__process_8cc_source.html#l00028">rgw_loadgen_process.cc:28</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_a37b2ab1fe1f47cefa240a5893a230aed"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#a37b2ab1fe1f47cefa240a5893a230aed">RGWLoadGenProcess::set_access_key</a></div><div class="ttdeci">void set_access_key(RGWAccessKey &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00165">rgw_process.h:165</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_a54e1d3cda2f8644e0e6f9b17215a25b0"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#a54e1d3cda2f8644e0e6f9b17215a25b0">RGWLoadGenProcess::access_key</a></div><div class="ttdeci">RGWAccessKey access_key</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00154">rgw_process.h:154</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_a5fcd0772d59d1b3b801d61f36fbb2b47"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#a5fcd0772d59d1b3b801d61f36fbb2b47">RGWLoadGenProcess::handle_request</a></div><div class="ttdeci">void handle_request(const DoutPrefixProvider *dpp, RGWRequest *req) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__loadgen__process_8cc_source.html#l00118">rgw_loadgen_process.cc:118</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_a6cb77e113d31ebf02ba2d27e74590107"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#a6cb77e113d31ebf02ba2d27e74590107">RGWLoadGenProcess::gen_request</a></div><div class="ttdeci">void gen_request(const std::string &amp;method, const std::string &amp;resource, int content_length, std::atomic&lt; bool &gt; *fail_flag)</div><div class="ttdef"><b>Definition</b> <a href="rgw__loadgen__process_8cc_source.html#l00106">rgw_loadgen_process.cc:106</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_a8ff8be09aa3803dc60e0b8f54439d788"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#a8ff8be09aa3803dc60e0b8f54439d788">RGWLoadGenProcess::checkpoint</a></div><div class="ttdeci">void checkpoint()</div><div class="ttdef"><b>Definition</b> <a href="rgw__loadgen__process_8cc_source.html#l00023">rgw_loadgen_process.cc:23</a></div></div>
+<div class="ttc" id="aclass_r_g_w_load_gen_process_html_ad3276225fab69ee60d86232231c9de48"><div class="ttname"><a href="class_r_g_w_load_gen_process.html#ad3276225fab69ee60d86232231c9de48">RGWLoadGenProcess::RGWLoadGenProcess</a></div><div class="ttdeci">RGWLoadGenProcess(CephContext *cct, RGWProcessEnv *pe, int num_threads, RGWFrontendConfig *_conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00156">rgw_process.h:156</a></div></div>
+<div class="ttc" id="aclass_r_g_w_op_html"><div class="ttname"><a href="class_r_g_w_op.html">RGWOp</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00175">rgw_op.h:175</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_control_thread_html"><div class="ttname"><a href="class_r_g_w_process_control_thread.html">RGWProcessControlThread</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00142">rgw_process.h:142</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_control_thread_html_a4be185638863978de84fab0586279193"><div class="ttname"><a href="class_r_g_w_process_control_thread.html#a4be185638863978de84fab0586279193">RGWProcessControlThread::RGWProcessControlThread</a></div><div class="ttdeci">RGWProcessControlThread(RGWProcess *_pprocess)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00145">rgw_process.h:145</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_control_thread_html_ab50499a31900a2323441a391843ff0fe"><div class="ttname"><a href="class_r_g_w_process_control_thread.html#ab50499a31900a2323441a391843ff0fe">RGWProcessControlThread::pprocess</a></div><div class="ttdeci">RGWProcess * pprocess</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00143">rgw_process.h:143</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_control_thread_html_ab9a1aeedcc2c20b58416a4c540fdb107"><div class="ttname"><a href="class_r_g_w_process_control_thread.html#ab9a1aeedcc2c20b58416a4c540fdb107">RGWProcessControlThread::entry</a></div><div class="ttdeci">void * entry() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00147">rgw_process.h:147</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html"><div class="ttname"><a href="class_r_g_w_process.html">RGWProcess</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00048">rgw_process.h:48</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a0ec11016edfcd3eadb5a4552e2d09203"><div class="ttname"><a href="class_r_g_w_process.html#a0ec11016edfcd3eadb5a4552e2d09203">RGWProcess::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00052">rgw_process.h:52</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a12116a7c79570aec9d6393eb41512ed5"><div class="ttname"><a href="class_r_g_w_process.html#a12116a7c79570aec9d6393eb41512ed5">RGWProcess::close_fd</a></div><div class="ttdeci">void close_fd()</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00134">rgw_process.h:134</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a156b167faad4df6fe4981b77d949f622"><div class="ttname"><a href="class_r_g_w_process.html#a156b167faad4df6fe4981b77d949f622">RGWProcess::auth_registry</a></div><div class="ttdeci">rgw_auth_registry_ptr_t auth_registry</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00053">rgw_process.h:53</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a23eaabc40e7f0121c084ce19a377d388"><div class="ttname"><a href="class_r_g_w_process.html#a23eaabc40e7f0121c084ce19a377d388">RGWProcess::run</a></div><div class="ttdeci">virtual void run()=0</div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a2724c5ba30d37ae9eedaee8843992022"><div class="ttname"><a href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">RGWProcess::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00051">rgw_process.h:51</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a2f4f23a5d1675b79d6d705e73e78c4b8"><div class="ttname"><a href="class_r_g_w_process.html#a2f4f23a5d1675b79d6d705e73e78c4b8">RGWProcess::m_tp</a></div><div class="ttdeci">ThreadPool m_tp</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00055">rgw_process.h:55</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a3d06f2153716dcd0677ab264e1b90b6a"><div class="ttname"><a href="class_r_g_w_process.html#a3d06f2153716dcd0677ab264e1b90b6a">RGWProcess::handle_request</a></div><div class="ttdeci">virtual void handle_request(const DoutPrefixProvider *dpp, RGWRequest *req)=0</div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a44bbc6bb88fecc6419e64a1b9f4a7c5c"><div class="ttname"><a href="class_r_g_w_process.html#a44bbc6bb88fecc6419e64a1b9f4a7c5c">RGWProcess::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00123">rgw_process.h:123</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a459c167dec888d381eaedc2935821dff"><div class="ttname"><a href="class_r_g_w_process.html#a459c167dec888d381eaedc2935821dff">RGWProcess::req_wq</a></div><div class="ttdeci">RGWProcess::RGWWQ req_wq</div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a552ed16e9e5086513b6990d4cce214ec"><div class="ttname"><a href="class_r_g_w_process.html#a552ed16e9e5086513b6990d4cce214ec">RGWProcess::rest</a></div><div class="ttdeci">RGWREST * rest</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00057">rgw_process.h:57</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a64e1526f947c88f7656b3db0cb57f522"><div class="ttname"><a href="class_r_g_w_process.html#a64e1526f947c88f7656b3db0cb57f522">RGWProcess::uri_prefix</a></div><div class="ttdeci">std::string uri_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00060">rgw_process.h:60</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a76153d465963e7ee5c807fff6a6d070f"><div class="ttname"><a href="class_r_g_w_process.html#a76153d465963e7ee5c807fff6a6d070f">RGWProcess::olog</a></div><div class="ttdeci">OpsLogSink * olog</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00054">rgw_process.h:54</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a827d547a4a7f7af91ed753005ebb3fd5"><div class="ttname"><a href="class_r_g_w_process.html#a827d547a4a7f7af91ed753005ebb3fd5">RGWProcess::unpause_with_new_config</a></div><div class="ttdeci">void unpause_with_new_config(rgw::sal::Store *const store, rgw_auth_registry_ptr_t auth_registry)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00127">rgw_process.h:127</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a862d9881f5b4563a364cd5c5631641f2"><div class="ttname"><a href="class_r_g_w_process.html#a862d9881f5b4563a364cd5c5631641f2">RGWProcess::RGWProcess</a></div><div class="ttdeci">RGWProcess(CephContext *const cct, RGWProcessEnv *const pe, const int num_threads, RGWFrontendConfig *const conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00098">rgw_process.h:98</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a8d31698dbf218d1384f12e3334a7a32f"><div class="ttname"><a href="class_r_g_w_process.html#a8d31698dbf218d1384f12e3334a7a32f">RGWProcess::~RGWProcess</a></div><div class="ttdeci">virtual ~RGWProcess()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_aab15b8b5a1aedb23091ec570278003b6"><div class="ttname"><a href="class_r_g_w_process.html#aab15b8b5a1aedb23091ec570278003b6">RGWProcess::conf</a></div><div class="ttdeci">RGWFrontendConfig * conf</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00058">rgw_process.h:58</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_aad068dd3f2834a3240945734d0f1cd6c"><div class="ttname"><a href="class_r_g_w_process.html#aad068dd3f2834a3240945734d0f1cd6c">RGWProcess::req_throttle</a></div><div class="ttdeci">Throttle req_throttle</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00056">rgw_process.h:56</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_ade1941c4bd3f71388b64d1f9a47ce2bb"><div class="ttname"><a href="class_r_g_w_process.html#ade1941c4bd3f71388b64d1f9a47ce2bb">RGWProcess::m_req_queue</a></div><div class="ttdeci">std::deque&lt; RGWRequest * &gt; m_req_queue</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00049">rgw_process.h:49</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_aee61a7a9e12ffdfb403bac103cbc8533"><div class="ttname"><a href="class_r_g_w_process.html#aee61a7a9e12ffdfb403bac103cbc8533">RGWProcess::sock_fd</a></div><div class="ttdeci">int sock_fd</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00059">rgw_process.h:59</a></div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_html"><div class="ttname"><a href="class_r_g_w_r_e_s_t.html">RGWREST</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8h_source.html#l00642">rgw_rest.h:642</a></div></div>
+<div class="ttc" id="aclass_r_g_w_restful_i_o_html"><div class="ttname"><a href="class_r_g_w_restful_i_o.html">RGWRestfulIO</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__client__io_8h_source.html#l00335">rgw_client_io.h:335</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_registry_html"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy_registry.html">rgw::auth::StrategyRegistry</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__registry_8h_source.html#l00024">rgw_auth_registry.h:24</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_scheduler_html"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_scheduler.html">rgw::dmclock::Scheduler</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler_8h_source.html#l00069">rgw_dmclock_scheduler.h:69</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="anamespaceceph_html"><div class="ttname"><a href="namespaceceph.html">ceph</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00045">rgw_common.h:45</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html"><div class="ttname"><a href="namespacergw_1_1dmclock.html">rgw::dmclock</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock_8h_source.html#l00021">rgw_dmclock.h:21</a></div></div>
+<div class="ttc" id="argw__acl_8h_html"><div class="ttname"><a href="rgw__acl_8h.html">rgw_acl.h</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__auth__registry_8h_html"><div class="ttname"><a href="rgw__auth__registry_8h.html">rgw_auth_registry.h</a></div></div>
+<div class="ttc" id="argw__auth__registry_8h_html_a499ab786bfdab791755bcaef80f67526"><div class="ttname"><a href="rgw__auth__registry_8h.html#a499ab786bfdab791755bcaef80f67526">rgw_auth_registry_ptr_t</a></div><div class="ttdeci">std::shared_ptr&lt; rgw_auth_registry_t &gt; rgw_auth_registry_ptr_t</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__registry_8h_source.html#l00099">rgw_auth_registry.h:99</a></div></div>
+<div class="ttc" id="argw__common_8h_html"><div class="ttname"><a href="rgw__common_8h.html">rgw_common.h</a></div></div>
+<div class="ttc" id="argw__op_8h_html"><div class="ttname"><a href="rgw__op_8h.html">rgw_op.h</a></div></div>
+<div class="ttc" id="argw__process_8h_html_a63095beabebdda3b062deb3cbc6a138e"><div class="ttname"><a href="rgw__process_8h.html#a63095beabebdda3b062deb3cbc6a138e">process_request</a></div><div class="ttdeci">int process_request(rgw::sal::Store *store, RGWREST *rest, RGWRequest *req, const std::string &amp;frontend_prefix, const rgw_auth_registry_t &amp;auth_registry, RGWRestfulIO *client_io, OpsLogSink *olog, optional_yield y, rgw::dmclock::Scheduler *scheduler, std::string *user, ceph::coarse_real_clock::duration *latency, std::shared_ptr&lt; RateLimiter &gt; ratelimit, int *http_ret=nullptr)</div></div>
+<div class="ttc" id="argw__process_8h_html_a80876c3df4dfb0c5d793cb641c884600"><div class="ttname"><a href="rgw__process_8h.html#a80876c3df4dfb0c5d793cb641c884600">signal_shutdown</a></div><div class="ttdeci">void signal_shutdown()</div><div class="ttdef"><b>Definition</b> <a href="rgw__main_8cc_source.html#l00085">rgw_main.cc:85</a></div></div>
+<div class="ttc" id="argw__process_8h_html_aa55ffaa2591f5637ce397689f2a08d29"><div class="ttname"><a href="rgw__process_8h.html#aa55ffaa2591f5637ce397689f2a08d29">rgw_process_authenticated</a></div><div class="ttdeci">int rgw_process_authenticated(RGWHandler_REST *handler, RGWOp *&amp;op, RGWRequest *req, req_state *s, optional_yield y, rgw::sal::Store *store, bool skip_retarget=false)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8cc_source.html#l00164">rgw_process.cc:164</a></div></div>
+<div class="ttc" id="argw__ratelimit_8h_html"><div class="ttname"><a href="rgw__ratelimit_8h.html">rgw_ratelimit.h</a></div></div>
+<div class="ttc" id="argw__rest_8h_html"><div class="ttname"><a href="rgw__rest_8h.html">rgw_rest.h</a></div></div>
+<div class="ttc" id="argw__user_8h_html"><div class="ttname"><a href="rgw__user_8h.html">rgw_user.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_access_key_html"><div class="ttname"><a href="struct_r_g_w_access_key.html">RGWAccessKey</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00478">rgw_common.h:478</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html">RGWProcess::RGWWQ</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00062">rgw_process.h:62</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_a236791b92e09ac06b18ed94852abeda2"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a236791b92e09ac06b18ed94852abeda2">RGWProcess::RGWWQ::RGWWQ</a></div><div class="ttdeci">RGWWQ(RGWProcess *p, ceph::timespan timeout, ceph::timespan suicide_timeout, ThreadPool *tp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00064">rgw_process.h:64</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_a463f4ee8b581aff80a462037e1f81837"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a463f4ee8b581aff80a462037e1f81837">RGWProcess::RGWWQ::_dequeue</a></div><div class="ttdeci">void _dequeue(RGWRequest *req) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00071">rgw_process.h:71</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_a4ab6c2f5fccaefbe780f243c9766db43"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a4ab6c2f5fccaefbe780f243c9766db43">RGWProcess::RGWWQ::get_subsys</a></div><div class="ttdeci">unsigned get_subsys() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00092">rgw_process.h:92</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_a5a73fe49cc8bb026e08d68f5277e6b84"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a5a73fe49cc8bb026e08d68f5277e6b84">RGWProcess::RGWWQ::_enqueue</a></div><div class="ttdeci">bool _enqueue(RGWRequest *req) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8cc_source.html#l00068">rgw_process.cc:68</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_a615b013c1412778f82e8e9c8289a84ec"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a615b013c1412778f82e8e9c8289a84ec">RGWProcess::RGWWQ::get_cct</a></div><div class="ttdeci">CephContext * get_cct() const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00091">rgw_process.h:91</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_a68f73e3acf003bb41b77d0d0a25c1697"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a68f73e3acf003bb41b77d0d0a25c1697">RGWProcess::RGWWQ::_empty</a></div><div class="ttdeci">bool _empty() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00075">rgw_process.h:75</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_a9ccca1881e171d095f9843c3da05f04e"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#a9ccca1881e171d095f9843c3da05f04e">RGWProcess::RGWWQ::_dequeue</a></div><div class="ttdeci">RGWRequest * _dequeue() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8cc_source.html#l00076">rgw_process.cc:76</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_aa4cf495395d02cb2003a7f6b8ab7c6f7"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#aa4cf495395d02cb2003a7f6b8ab7c6f7">RGWProcess::RGWWQ::_clear</a></div><div class="ttdeci">void _clear() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00087">rgw_process.h:87</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_ac9fec24629b0719cc313f43eb4f4f023"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ac9fec24629b0719cc313f43eb4f4f023">RGWProcess::RGWWQ::gen_prefix</a></div><div class="ttdeci">std::ostream &amp; gen_prefix(std::ostream &amp;out) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00093">rgw_process.h:93</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_ad36498ee4aa5d594a5a48129b48d14b6"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ad36498ee4aa5d594a5a48129b48d14b6">RGWProcess::RGWWQ::_dump_queue</a></div><div class="ttdeci">void _dump_queue()</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8cc_source.html#l00031">rgw_process.cc:31</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_ada3fd9e8591121209e5de1b565758e01"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#ada3fd9e8591121209e5de1b565758e01">RGWProcess::RGWWQ::_process</a></div><div class="ttdeci">void _process(RGWRequest *req, ThreadPool::TPHandle &amp;) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8cc_source.html#l00087">rgw_process.cc:87</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_1_1_r_g_w_w_q_html_af2b1ea3b4b7233a88f8c093dd0e6bea6"><div class="ttname"><a href="struct_r_g_w_process_1_1_r_g_w_w_q.html#af2b1ea3b4b7233a88f8c093dd0e6bea6">RGWProcess::RGWWQ::process</a></div><div class="ttdeci">RGWProcess * process</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00063">rgw_process.h:63</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html"><div class="ttname"><a href="struct_r_g_w_process_env.html">RGWProcessEnv</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00034">rgw_process.h:34</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_a22528ab2a97de1dfbe6e863f8a39ff1e"><div class="ttname"><a href="struct_r_g_w_process_env.html#a22528ab2a97de1dfbe6e863f8a39ff1e">RGWProcessEnv::ratelimiting</a></div><div class="ttdeci">ActiveRateLimiter * ratelimiting</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00042">rgw_process.h:42</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_a30b3972373ad55d00954e9eff9ff281a"><div class="ttname"><a href="struct_r_g_w_process_env.html#a30b3972373ad55d00954e9eff9ff281a">RGWProcessEnv::rest</a></div><div class="ttdeci">RGWREST * rest</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00036">rgw_process.h:36</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_a354503a866e48459d2d0e8ef00ce4fb5"><div class="ttname"><a href="struct_r_g_w_process_env.html#a354503a866e48459d2d0e8ef00ce4fb5">RGWProcessEnv::auth_registry</a></div><div class="ttdeci">std::shared_ptr&lt; rgw::auth::StrategyRegistry &gt; auth_registry</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00040">rgw_process.h:40</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_a63229c37b2c5134bd4ac1102748fafa0"><div class="ttname"><a href="struct_r_g_w_process_env.html#a63229c37b2c5134bd4ac1102748fafa0">RGWProcessEnv::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00035">rgw_process.h:35</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_a7424c0d14f4ff82b95d8d083f18457b7"><div class="ttname"><a href="struct_r_g_w_process_env.html#a7424c0d14f4ff82b95d8d083f18457b7">RGWProcessEnv::uri_prefix</a></div><div class="ttdeci">std::string uri_prefix</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00039">rgw_process.h:39</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_ab4cf0c5174c6060382742086d365becb"><div class="ttname"><a href="struct_r_g_w_process_env.html#ab4cf0c5174c6060382742086d365becb">RGWProcessEnv::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00038">rgw_process.h:38</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html_af588e03f1ad48a29a122c595d11b1fb1"><div class="ttname"><a href="struct_r_g_w_process_env.html#af588e03f1ad48a29a122c595d11b1fb1">RGWProcessEnv::olog</a></div><div class="ttdeci">OpsLogSink * olog</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00037">rgw_process.h:37</a></div></div>
+<div class="ttc" id="astruct_r_g_w_request_html"><div class="ttname"><a href="struct_r_g_w_request.html">RGWRequest</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__request_8h_source.html#l00016">rgw_request.h:17</a></div></div>
+<div class="ttc" id="astructreq__state_html"><div class="ttname"><a href="structreq__state.html">req_state</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01551">rgw_common.h:1551</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__process_8h.html">rgw_process.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

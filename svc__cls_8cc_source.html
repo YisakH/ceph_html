@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_cls.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__cls_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_cls.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__cls_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="svc__cls_8h.html">svc_cls.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="svc__rados_8h.html">svc_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="svc__zone_8h.html">svc_zone.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__zone_8h.html">rgw/rgw_zone.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;cls/otp/cls_otp_client.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;cls/log/cls_log_client.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;cls/lock/cls_lock_client.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="svc__cls_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   16</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="svc__cls_8cc.html#abcf14ca34146310ea5033d089736cdda">   20</a></span><span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="svc__cls_8cc.html#abcf14ca34146310ea5033d089736cdda">log_lock_name</a> = <span class="stringliteral">&quot;rgw_log_lock&quot;</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls.html#a5bf80e748ff57403e932001bc394651c">   22</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls.html#a5bf80e748ff57403e932001bc394651c">RGWSI_Cls::do_start</a>(optional_yield y, <span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a3b5255e797c1c4c75b53feef2ad25e63">mfa</a>.<a class="code hl_function" href="class_r_g_w_service_instance.html#a5db2c44dd962a85afd1855a2386d6fd1">do_start</a>(y, <a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to start mfa service&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a7b35024c3a9a2a8f265809a7dc8a3097">   33</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a7b35024c3a9a2a8f265809a7dc8a3097">RGWSI_Cls::MFA::get_mfa_obj</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, std::optional&lt;RGWSI_RADOS::Obj&gt; *obj)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">string</span> oid = <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a87ccdb9aaf737976329d2b91a901ab64">get_mfa_oid</a>(user);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a> o(<a class="code hl_variable" href="class_r_g_w_s_i___cls_1_1_cls_sub_service.html#a64f6227ea19e5fce99f8ee39fe212efc">zone_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___zone.html#a0ade599544ff866a0e9292f49c1ad179">get_zone_params</a>().<a class="code hl_variable" href="struct_r_g_w_zone_params.html#a4152752920fce25221c8a6f2f55c9318">otp_pool</a>, oid);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  obj-&gt;emplace(<a class="code hl_variable" href="class_r_g_w_s_i___cls_1_1_cls_sub_service.html#a1e1987fd8434c9e3ff4d8a57ab5f4d63">rados_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#ad7d4a82ecd8081a59c37e3730345711d">obj</a>(o));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = (*obj)-&gt;open(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 4) &lt;&lt; <span class="stringliteral">&quot;failed to open rados context for &quot;</span> &lt;&lt; o &lt;&lt; dendl;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a4920030862dbd3369122c52ad5c0f160">   48</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a4920030862dbd3369122c52ad5c0f160">RGWSI_Cls::MFA::get_mfa_ref</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, <a class="code hl_struct" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html">rgw_rados_ref</a> *ref)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  std::optional&lt;RGWSI_RADOS::Obj&gt; obj;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = get_mfa_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, &amp;obj);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  *ref = obj-&gt;get_ref();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a69f3ca9b6acf6d630f22f80be752aaf7">   59</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a69f3ca9b6acf6d630f22f80be752aaf7">RGWSI_Cls::MFA::check_mfa</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; otp_id, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; pin, optional_yield y)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_struct" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html">rgw_rados_ref</a> ref;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = get_mfa_ref(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, &amp;ref);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  rados::cls::otp::otp_check_t result;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = rados::cls::otp::OTP::check(<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>, ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">pool</a>.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a540a66ab713e8fc1b5c38707c34d7521">obj</a>.<a class="code hl_variable" href="structrgw__raw__obj.html#a9c0fa84426035c85585d240c56a65d82">oid</a>, otp_id, pin, &amp;result);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;OTP check, otp_id=&quot;</span> &lt;&lt; otp_id &lt;&lt; <span class="stringliteral">&quot; result=&quot;</span> &lt;&lt; (int)result.result &lt;&lt; dendl;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordflow">return</span> (result.result == rados::cls::otp::OTP_CHECK_SUCCESS ? 0 : -EACCES);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a8041febd0149925c55e3cc43ff91cf27">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a8041febd0149925c55e3cc43ff91cf27">RGWSI_Cls::MFA::prepare_mfa_write</a>(librados::ObjectWriteOperation *op,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                                 <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                                 <span class="keyword">const</span> ceph::real_time&amp; mtime)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> ot;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordflow">if</span> (objv_tracker) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    ot = *objv_tracker;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">if</span> (ot.<a class="code hl_variable" href="struct_r_g_w_obj_version_tracker.html#a4f52d63809261203a818a7ba7a2df446">write_version</a>.tag.empty()) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span> (ot.<a class="code hl_variable" href="struct_r_g_w_obj_version_tracker.html#a431b0a1cb0d7ebd40d1529aa7d6415eb">read_version</a>.tag.empty()) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      ot.<a class="code hl_function" href="struct_r_g_w_obj_version_tracker.html#a4105c5a178e987014ada66f9808906df">generate_new_write_ver</a>(<a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      ot.<a class="code hl_variable" href="struct_r_g_w_obj_version_tracker.html#a4f52d63809261203a818a7ba7a2df446">write_version</a> = ot.<a class="code hl_variable" href="struct_r_g_w_obj_version_tracker.html#a431b0a1cb0d7ebd40d1529aa7d6415eb">read_version</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      ot.<a class="code hl_variable" href="struct_r_g_w_obj_version_tracker.html#a4f52d63809261203a818a7ba7a2df446">write_version</a>.ver++;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  ot.<a class="code hl_function" href="struct_r_g_w_obj_version_tracker.html#a07f0139225ff6468705175885707d415">prepare_op_for_write</a>(op);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">struct </span>timespec mtime_ts = real_clock::to_timespec(mtime);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  op-&gt;mtime2(&amp;mtime_ts);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#ae3046120f33337ca9311aaf260d883bf">  102</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#ae3046120f33337ca9311aaf260d883bf">RGWSI_Cls::MFA::create_mfa</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, <span class="keyword">const</span> rados::cls::otp::otp_info_t&amp; config,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                         <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker, <span class="keyword">const</span> ceph::real_time&amp; mtime, optional_yield y)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  std::optional&lt;RGWSI_RADOS::Obj&gt; obj;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = get_mfa_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, &amp;obj);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  librados::ObjectWriteOperation op;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  prepare_mfa_write(&amp;op, objv_tracker, mtime);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  rados::cls::otp::OTP::create(&amp;op, config);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj-&gt;operate(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, y);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;OTP create, otp_id=&quot;</span> &lt;&lt; config.id &lt;&lt; <span class="stringliteral">&quot; result=&quot;</span> &lt;&lt; (int)<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a16c9ee9f9f0ef407288682e6e56ae2d7">  123</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a16c9ee9f9f0ef407288682e6e56ae2d7">RGWSI_Cls::MFA::remove_mfa</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                         <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>,</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                         <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                         <span class="keyword">const</span> ceph::real_time&amp; mtime,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                         optional_yield y)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>{</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  std::optional&lt;RGWSI_RADOS::Obj&gt; obj;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = get_mfa_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, &amp;obj);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  librados::ObjectWriteOperation op;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  prepare_mfa_write(&amp;op, objv_tracker, mtime);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  rados::cls::otp::OTP::remove(&amp;op, <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj-&gt;operate(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, y);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;OTP remove, otp_id=&quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot; result=&quot;</span> &lt;&lt; (int)<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#acf657c17a38f26aebee7b6a513bedf87">  147</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#acf657c17a38f26aebee7b6a513bedf87">RGWSI_Cls::MFA::get_mfa</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>, rados::cls::otp::otp_info_t *result,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                optional_yield y)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>{</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <a class="code hl_struct" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html">rgw_rados_ref</a> ref;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = get_mfa_ref(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, &amp;ref);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = rados::cls::otp::OTP::get(<span class="keyword">nullptr</span>, ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">pool</a>.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a540a66ab713e8fc1b5c38707c34d7521">obj</a>.<a class="code hl_variable" href="structrgw__raw__obj.html#a9c0fa84426035c85585d240c56a65d82">oid</a>, <span class="keywordtype">id</span>, result);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>}</div>
+</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#ad16c66cf6cb07fca411f4e0ecf67c059">RGWSI_Cls::MFA::list_mfa</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, list&lt;rados::cls::otp::otp_info_t&gt; *result,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                 optional_yield y)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <a class="code hl_struct" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html">rgw_rados_ref</a> ref;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = get_mfa_ref(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, &amp;ref);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = rados::cls::otp::OTP::get_all(<span class="keyword">nullptr</span>, ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">pool</a>.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a540a66ab713e8fc1b5c38707c34d7521">obj</a>.<a class="code hl_variable" href="structrgw__raw__obj.html#a9c0fa84426035c85585d240c56a65d82">oid</a>, result);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>}</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a92811064f0aba25982a392457c5e5164">  183</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a92811064f0aba25982a392457c5e5164">RGWSI_Cls::MFA::otp_get_current_time</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; user, ceph::real_time *result,</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                     optional_yield y)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>{</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <a class="code hl_struct" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html">rgw_rados_ref</a> ref;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = get_mfa_ref(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, user, &amp;ref);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = rados::cls::otp::OTP::get_current_time(ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">pool</a>.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a540a66ab713e8fc1b5c38707c34d7521">obj</a>.<a class="code hl_variable" href="structrgw__raw__obj.html#a9c0fa84426035c85585d240c56a65d82">oid</a>, result);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a4e0671cd7255aa536c9d925c47fe4c24">  201</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a4e0671cd7255aa536c9d925c47fe4c24">RGWSI_Cls::MFA::set_mfa</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid, <span class="keyword">const</span> list&lt;rados::cls::otp::otp_info_t&gt;&amp; <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a>,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                <span class="keywordtype">bool</span> reset_obj, <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker,</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                <span class="keyword">const</span> real_time&amp; mtime,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                optional_yield y)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>{</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a> o(<a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a13894a99f51ab5a884fb75a1702331f4">zone_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___zone.html#a0ade599544ff866a0e9292f49c1ad179">get_zone_params</a>().<a class="code hl_variable" href="struct_r_g_w_zone_params.html#a4152752920fce25221c8a6f2f55c9318">otp_pool</a>, oid);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keyword">auto</span> obj = <a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a145d526bb940c8e9ff5fb0cdea6ac7af">rados_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#ad7d4a82ecd8081a59c37e3730345711d">obj</a>(o);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#adc703eaa1aad5a55504ce25bea09836a">open</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 4) &lt;&lt; <span class="stringliteral">&quot;failed to open rados context for &quot;</span> &lt;&lt; o &lt;&lt; dendl;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  librados::ObjectWriteOperation op;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keywordflow">if</span> (reset_obj) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    op.remove();</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    op.set_op_flags2(LIBRADOS_OP_FLAG_FAILOK);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    op.create(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  prepare_mfa_write(&amp;op, objv_tracker, mtime);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  rados::cls::otp::OTP::set(&amp;op, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a>);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj.operate(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, y);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 20) &lt;&lt; <span class="stringliteral">&quot;OTP set entries.size()=&quot;</span> &lt;&lt; <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a>.size() &lt;&lt; <span class="stringliteral">&quot; result=&quot;</span> &lt;&lt; (int)<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>}</div>
+</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_m_f_a.html#ad16c66cf6cb07fca411f4e0ecf67c059">RGWSI_Cls::MFA::list_mfa</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid, list&lt;rados::cls::otp::otp_info_t&gt; *result,</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                 <a class="code hl_struct" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> *objv_tracker, ceph::real_time *pmtime,</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                 optional_yield y)</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>{</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a> o(<a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a13894a99f51ab5a884fb75a1702331f4">zone_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___zone.html#a0ade599544ff866a0e9292f49c1ad179">get_zone_params</a>().<a class="code hl_variable" href="struct_r_g_w_zone_params.html#a4152752920fce25221c8a6f2f55c9318">otp_pool</a>, oid);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keyword">auto</span> obj = <a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a145d526bb940c8e9ff5fb0cdea6ac7af">rados_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#ad7d4a82ecd8081a59c37e3730345711d">obj</a>(o);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#adc703eaa1aad5a55504ce25bea09836a">open</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 4) &lt;&lt; <span class="stringliteral">&quot;failed to open rados context for &quot;</span> &lt;&lt; o &lt;&lt; dendl;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keyword">auto</span>&amp; ref = obj.get_ref();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  librados::ObjectReadOperation op;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="keyword">struct </span>timespec mtime_ts;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordflow">if</span> (pmtime) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    op.stat2(<span class="keyword">nullptr</span>, &amp;mtime_ts, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  objv_tracker-&gt;<a class="code hl_function" href="struct_r_g_w_obj_version_tracker.html#a00fa9eb065d43718c02325862a0d1df7">prepare_op_for_read</a>(&amp;op);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = rados::cls::otp::OTP::get_all(&amp;op, ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">pool</a>.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), ref.<a class="code hl_variable" href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a540a66ab713e8fc1b5c38707c34d7521">obj</a>.<a class="code hl_variable" href="structrgw__raw__obj.html#a9c0fa84426035c85585d240c56a65d82">oid</a>, result);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="keywordflow">if</span> (pmtime) {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    *pmtime = ceph::real_clock::from_timespec(mtime_ts);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="foldopen" id="foldopen00259" data-start="{" data-end="}">
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_time_log.html#aae1e4caefe96d5a610bd5f392fb2d392">  259</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#aae1e4caefe96d5a610bd5f392fb2d392">RGWSI_Cls::TimeLog::prepare_entry</a>(cls_log_entry&amp; entry,</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                                       <span class="keyword">const</span> real_time&amp; ut,</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                                       <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; section,</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                                       <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; key,</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                                       bufferlist&amp; bl)</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>{</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  cls_log_add_prepare_entry(entry, utime_t(ut), section, key, bl);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
+</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_time_log.html#aaf8637d58c584e96608786ada56a8419">  268</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#aaf8637d58c584e96608786ada56a8419">RGWSI_Cls::TimeLog::init_obj</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid, <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a>&amp; obj)</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>{</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a> o(<a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a13894a99f51ab5a884fb75a1702331f4">zone_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___zone.html#a0ade599544ff866a0e9292f49c1ad179">get_zone_params</a>().<a class="code hl_variable" href="struct_r_g_w_zone_params.html#a802daf944c39f049022b963570ebfaa0">log_pool</a>, oid);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  obj = <a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a145d526bb940c8e9ff5fb0cdea6ac7af">rados_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#ad7d4a82ecd8081a59c37e3730345711d">obj</a>(o);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordflow">return</span> obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#adc703eaa1aad5a55504ce25bea09836a">open</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>}</div>
+</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#a9c50e2177f35e9851c1a1891b4615867">RGWSI_Cls::TimeLog::add</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                            <span class="keyword">const</span> real_time&amp; ut,</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; section,</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; key,</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                            bufferlist&amp; bl,</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                optional_yield y)</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>{</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a> obj;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = init_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, oid, obj);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  librados::ObjectWriteOperation op;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  utime_t t(ut);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  cls_log_add(op, t, section, key, bl);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keywordflow">return</span> obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a7cf0358834aa8caa78893cc5d4d98f2b">operate</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, y);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#a9c50e2177f35e9851c1a1891b4615867">RGWSI_Cls::TimeLog::add</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                            std::list&lt;cls_log_entry&gt;&amp; <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a>,</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                            librados::AioCompletion *completion,</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                            <span class="keywordtype">bool</span> monotonic_inc,</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                            optional_yield y)</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>{</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a> obj;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = init_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, oid, obj);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  librados::ObjectWriteOperation op;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  cls_log_add(op, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a>, monotonic_inc);</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="keywordflow">if</span> (!completion) {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a7cf0358834aa8caa78893cc5d4d98f2b">operate</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, y);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a6dd8262345fb52e90e8d47c187b6110e">aio_operate</a>(completion, &amp;op);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  }</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>}</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="foldopen" id="foldopen00322" data-start="{" data-end="}">
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_time_log.html#a9d67df5a4630580eb584204467d0107e">  322</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#a9d67df5a4630580eb584204467d0107e">RGWSI_Cls::TimeLog::list</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                             <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>                             <span class="keyword">const</span> real_time&amp; start_time,</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                             <span class="keyword">const</span> real_time&amp; end_time,</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                             <span class="keywordtype">int</span> max_entries, std::list&lt;cls_log_entry&gt;&amp; <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a>,</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                             <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; marker,</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                             <span class="keywordtype">string</span> *out_marker,</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                             <span class="keywordtype">bool</span> *truncated,</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                             optional_yield y)</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>{</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a> obj;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = init_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, oid, obj);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  }</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  librados::ObjectReadOperation op;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  utime_t st(start_time);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  utime_t et(end_time);</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  cls_log_list(op, st, et, marker, max_entries, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a>,</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>           out_marker, truncated);</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  bufferlist obl;</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  <span class="keywordtype">int</span> ret = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a7cf0358834aa8caa78893cc5d4d98f2b">operate</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, &amp;obl, y);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  <span class="keywordflow">if</span> (ret &lt; 0)</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>}</div>
+</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="foldopen" id="foldopen00356" data-start="{" data-end="}">
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_time_log.html#a82c53107543c4529f4bca3aa4211d971">  356</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#a82c53107543c4529f4bca3aa4211d971">RGWSI_Cls::TimeLog::info</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                             <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                             cls_log_header *header,</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                             optional_yield y)</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>{</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a> obj;</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = init_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, oid, obj);</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  }</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  librados::ObjectReadOperation op;</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  cls_log_info(op, header);</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>  bufferlist obl;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  <span class="keywordtype">int</span> ret = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a7cf0358834aa8caa78893cc5d4d98f2b">operate</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, &amp;obl, y);</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="keywordflow">if</span> (ret &lt; 0)</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>}</div>
+</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
+<div class="foldopen" id="foldopen00381" data-start="{" data-end="}">
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_time_log.html#a5ac885efb699d0d37149dc9fdb8b1d9b">  381</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#a5ac885efb699d0d37149dc9fdb8b1d9b">RGWSI_Cls::TimeLog::info_async</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>                                   <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a>&amp; obj,</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>                                   <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                                   cls_log_header *header,</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                                   librados::AioCompletion *completion)</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>{</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = init_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, oid, obj);</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  }</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>  librados::ObjectReadOperation op;</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span> </div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>  cls_log_info(op, header);</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <span class="keywordtype">int</span> ret = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a6dd8262345fb52e90e8d47c187b6110e">aio_operate</a>(completion, &amp;op, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>  <span class="keywordflow">if</span> (ret &lt; 0)</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>}</div>
+</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
+<div class="foldopen" id="foldopen00403" data-start="{" data-end="}">
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_time_log.html#a67061874df4288bbde1a4dbe27239e02">  403</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_time_log.html#a67061874df4288bbde1a4dbe27239e02">RGWSI_Cls::TimeLog::trim</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, </div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                             <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                             <span class="keyword">const</span> real_time&amp; start_time,</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>                             <span class="keyword">const</span> real_time&amp; end_time,</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>                             <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; from_marker,</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>                             <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; to_marker,</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>                             librados::AioCompletion *completion,</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>                             optional_yield y)</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>{</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a> obj;</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = init_obj(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, oid, obj);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  }</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  utime_t st(start_time);</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  utime_t et(end_time);</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  librados::ObjectWriteOperation op;</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  cls_log_trim(op, st, et, from_marker, to_marker);</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  <span class="keywordflow">if</span> (!completion) {</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a7cf0358834aa8caa78893cc5d4d98f2b">operate</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;op, y);</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = obj.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a6dd8262345fb52e90e8d47c187b6110e">aio_operate</a>(completion, &amp;op);</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>  }</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}</div>
+</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="foldopen" id="foldopen00433" data-start="{" data-end="}">
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_lock.html#a890f1b556f4de33817c6dd84ddf35dd8">  433</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_lock.html#a890f1b556f4de33817c6dd84ddf35dd8">RGWSI_Cls::Lock::lock_exclusive</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>                                    <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__pool.html">rgw_pool</a>&amp; pool,</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>                                    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>                                    timespan&amp; duration,</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>                                    <span class="keywordtype">string</span>&amp; zone_id,</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>                                    <span class="keywordtype">string</span>&amp; owner_id,</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>                                    std::optional&lt;string&gt; lock_name)</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>{</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>  <span class="keyword">auto</span> p = <a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a145d526bb940c8e9ff5fb0cdea6ac7af">rados_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#af78c1c9ce7ee893056d411ff925755d4">pool</a>(pool);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = p.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a009a580ee1e47a5d2a1ad7817e395611">open</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  }</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>  uint64_t msec = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(duration).count();</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>  utime_t ut(msec / 1000, msec % 1000);</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>  </div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>  rados::cls::lock::Lock l(lock_name.value_or(<a class="code hl_variable" href="svc__cls_8cc.html#abcf14ca34146310ea5033d089736cdda">log_lock_name</a>));</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>  l.set_duration(ut);</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>  l.set_cookie(owner_id);</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>  l.set_tag(zone_id);</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>  l.set_may_renew(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>  </div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>  <span class="keywordflow">return</span> l.lock_exclusive(&amp;p.ioctx(), oid);</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>}</div>
+</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span> </div>
+<div class="foldopen" id="foldopen00459" data-start="{" data-end="}">
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___cls_1_1_lock.html#a2d65e9c107c12f9596f65d85cccaf77b">  459</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___cls_1_1_lock.html#a2d65e9c107c12f9596f65d85cccaf77b">RGWSI_Cls::Lock::unlock</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>                            <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__pool.html">rgw_pool</a>&amp; pool,</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>                            <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; oid,</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>                            <span class="keywordtype">string</span>&amp; zone_id,</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>                            <span class="keywordtype">string</span>&amp; owner_id,</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>                            std::optional&lt;string&gt; lock_name)</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>{</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>  <span class="keyword">auto</span> p = <a class="code hl_variable" href="class_r_g_w_s_i___cls.html#a145d526bb940c8e9ff5fb0cdea6ac7af">rados_svc</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s.html#af78c1c9ce7ee893056d411ff925755d4">pool</a>(pool);</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = p.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a009a580ee1e47a5d2a1ad7817e395611">open</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>  }</div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>  </div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>  rados::cls::lock::Lock l(lock_name.value_or(<a class="code hl_variable" href="svc__cls_8cc.html#abcf14ca34146310ea5033d089736cdda">log_lock_name</a>));</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>  l.set_tag(zone_id);</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>  l.set_cookie(owner_id);</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>  </div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  <span class="keywordflow">return</span> l.unlock(&amp;p.ioctx(), oid);</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>}</div>
+</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span> </div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_cls_sub_service_html_a1e1987fd8434c9e3ff4d8a57ab5f4d63"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_cls_sub_service.html#a1e1987fd8434c9e3ff4d8a57ab5f4d63">RGWSI_Cls::ClsSubService::rados_svc</a></div><div class="ttdeci">RGWSI_RADOS * rados_svc</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8h_source.html#l00037">svc_cls.h:37</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_cls_sub_service_html_a64f6227ea19e5fce99f8ee39fe212efc"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_cls_sub_service.html#a64f6227ea19e5fce99f8ee39fe212efc">RGWSI_Cls::ClsSubService::zone_svc</a></div><div class="ttdeci">RGWSI_Zone * zone_svc</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8h_source.html#l00036">svc_cls.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_lock_html_a2d65e9c107c12f9596f65d85cccaf77b"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_lock.html#a2d65e9c107c12f9596f65d85cccaf77b">RGWSI_Cls::Lock::unlock</a></div><div class="ttdeci">int unlock(const DoutPrefixProvider *dpp, const rgw_pool &amp;pool, const std::string &amp;oid, std::string &amp;zone_id, std::string &amp;owner_id, std::optional&lt; std::string &gt; lock_name=std::nullopt)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00459">svc_cls.cc:459</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_lock_html_a890f1b556f4de33817c6dd84ddf35dd8"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_lock.html#a890f1b556f4de33817c6dd84ddf35dd8">RGWSI_Cls::Lock::lock_exclusive</a></div><div class="ttdeci">int lock_exclusive(const DoutPrefixProvider *dpp, const rgw_pool &amp;pool, const std::string &amp;oid, timespan &amp;duration, std::string &amp;zone_id, std::string &amp;owner_id, std::optional&lt; std::string &gt; lock_name=std::nullopt)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00433">svc_cls.cc:433</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a16c9ee9f9f0ef407288682e6e56ae2d7"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a16c9ee9f9f0ef407288682e6e56ae2d7">RGWSI_Cls::MFA::remove_mfa</a></div><div class="ttdeci">int remove_mfa(const DoutPrefixProvider *dpp, const rgw_user &amp;user, const std::string &amp;id, RGWObjVersionTracker *objv_tracker, const ceph::real_time &amp;mtime, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00123">svc_cls.cc:123</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a4920030862dbd3369122c52ad5c0f160"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a4920030862dbd3369122c52ad5c0f160">RGWSI_Cls::MFA::get_mfa_ref</a></div><div class="ttdeci">int get_mfa_ref(const DoutPrefixProvider *dpp, const rgw_user &amp;user, rgw_rados_ref *ref)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00048">svc_cls.cc:48</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a4e0671cd7255aa536c9d925c47fe4c24"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a4e0671cd7255aa536c9d925c47fe4c24">RGWSI_Cls::MFA::set_mfa</a></div><div class="ttdeci">int set_mfa(const DoutPrefixProvider *dpp, const std::string &amp;oid, const std::list&lt; rados::cls::otp::otp_info_t &gt; &amp;entries, bool reset_obj, RGWObjVersionTracker *objv_tracker, const real_time &amp;mtime, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00201">svc_cls.cc:201</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a69f3ca9b6acf6d630f22f80be752aaf7"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a69f3ca9b6acf6d630f22f80be752aaf7">RGWSI_Cls::MFA::check_mfa</a></div><div class="ttdeci">int check_mfa(const DoutPrefixProvider *dpp, const rgw_user &amp;user, const std::string &amp;otp_id, const std::string &amp;pin, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00059">svc_cls.cc:59</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a7b35024c3a9a2a8f265809a7dc8a3097"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a7b35024c3a9a2a8f265809a7dc8a3097">RGWSI_Cls::MFA::get_mfa_obj</a></div><div class="ttdeci">int get_mfa_obj(const DoutPrefixProvider *dpp, const rgw_user &amp;user, std::optional&lt; RGWSI_RADOS::Obj &gt; *obj)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00033">svc_cls.cc:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a8041febd0149925c55e3cc43ff91cf27"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a8041febd0149925c55e3cc43ff91cf27">RGWSI_Cls::MFA::prepare_mfa_write</a></div><div class="ttdeci">void prepare_mfa_write(librados::ObjectWriteOperation *op, RGWObjVersionTracker *objv_tracker, const ceph::real_time &amp;mtime)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00078">svc_cls.cc:78</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a87ccdb9aaf737976329d2b91a901ab64"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a87ccdb9aaf737976329d2b91a901ab64">RGWSI_Cls::MFA::get_mfa_oid</a></div><div class="ttdeci">std::string get_mfa_oid(const rgw_user &amp;user)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8h_source.html#l00061">svc_cls.h:61</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_a92811064f0aba25982a392457c5e5164"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#a92811064f0aba25982a392457c5e5164">RGWSI_Cls::MFA::otp_get_current_time</a></div><div class="ttdeci">int otp_get_current_time(const DoutPrefixProvider *dpp, const rgw_user &amp;user, ceph::real_time *result, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00183">svc_cls.cc:183</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_acf657c17a38f26aebee7b6a513bedf87"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#acf657c17a38f26aebee7b6a513bedf87">RGWSI_Cls::MFA::get_mfa</a></div><div class="ttdeci">int get_mfa(const DoutPrefixProvider *dpp, const rgw_user &amp;user, const std::string &amp;id, rados::cls::otp::otp_info_t *result, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00147">svc_cls.cc:147</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_ad16c66cf6cb07fca411f4e0ecf67c059"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#ad16c66cf6cb07fca411f4e0ecf67c059">RGWSI_Cls::MFA::list_mfa</a></div><div class="ttdeci">int list_mfa(const DoutPrefixProvider *dpp, const rgw_user &amp;user, std::list&lt; rados::cls::otp::otp_info_t &gt; *result, optional_yield y)</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_m_f_a_html_ae3046120f33337ca9311aaf260d883bf"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_m_f_a.html#ae3046120f33337ca9311aaf260d883bf">RGWSI_Cls::MFA::create_mfa</a></div><div class="ttdeci">int create_mfa(const DoutPrefixProvider *dpp, const rgw_user &amp;user, const rados::cls::otp::otp_info_t &amp;config, RGWObjVersionTracker *objv_tracker, const ceph::real_time &amp;mtime, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00102">svc_cls.cc:102</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_time_log_html_a5ac885efb699d0d37149dc9fdb8b1d9b"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_time_log.html#a5ac885efb699d0d37149dc9fdb8b1d9b">RGWSI_Cls::TimeLog::info_async</a></div><div class="ttdeci">int info_async(const DoutPrefixProvider *dpp, RGWSI_RADOS::Obj &amp;obj, const std::string &amp;oid, cls_log_header *header, librados::AioCompletion *completion)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00381">svc_cls.cc:381</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_time_log_html_a67061874df4288bbde1a4dbe27239e02"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_time_log.html#a67061874df4288bbde1a4dbe27239e02">RGWSI_Cls::TimeLog::trim</a></div><div class="ttdeci">int trim(const DoutPrefixProvider *dpp, const std::string &amp;oid, const real_time &amp;start_time, const real_time &amp;end_time, const std::string &amp;from_marker, const std::string &amp;to_marker, librados::AioCompletion *completion, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00403">svc_cls.cc:403</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_time_log_html_a82c53107543c4529f4bca3aa4211d971"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_time_log.html#a82c53107543c4529f4bca3aa4211d971">RGWSI_Cls::TimeLog::info</a></div><div class="ttdeci">int info(const DoutPrefixProvider *dpp, const std::string &amp;oid, cls_log_header *header, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00356">svc_cls.cc:356</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_time_log_html_a9c50e2177f35e9851c1a1891b4615867"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_time_log.html#a9c50e2177f35e9851c1a1891b4615867">RGWSI_Cls::TimeLog::add</a></div><div class="ttdeci">int add(const DoutPrefixProvider *dpp, const std::string &amp;oid, const real_time &amp;ut, const std::string &amp;section, const std::string &amp;key, bufferlist &amp;bl, optional_yield y)</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_time_log_html_a9d67df5a4630580eb584204467d0107e"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_time_log.html#a9d67df5a4630580eb584204467d0107e">RGWSI_Cls::TimeLog::list</a></div><div class="ttdeci">int list(const DoutPrefixProvider *dpp, const std::string &amp;oid, const real_time &amp;start_time, const real_time &amp;end_time, int max_entries, std::list&lt; cls_log_entry &gt; &amp;entries, const std::string &amp;marker, std::string *out_marker, bool *truncated, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00322">svc_cls.cc:322</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_time_log_html_aae1e4caefe96d5a610bd5f392fb2d392"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_time_log.html#aae1e4caefe96d5a610bd5f392fb2d392">RGWSI_Cls::TimeLog::prepare_entry</a></div><div class="ttdeci">void prepare_entry(cls_log_entry &amp;entry, const real_time &amp;ut, const std::string &amp;section, const std::string &amp;key, bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00259">svc_cls.cc:259</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_1_1_time_log_html_aaf8637d58c584e96608786ada56a8419"><div class="ttname"><a href="class_r_g_w_s_i___cls_1_1_time_log.html#aaf8637d58c584e96608786ada56a8419">RGWSI_Cls::TimeLog::init_obj</a></div><div class="ttdeci">int init_obj(const DoutPrefixProvider *dpp, const std::string &amp;oid, RGWSI_RADOS::Obj &amp;obj)</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00268">svc_cls.cc:268</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_html_a13894a99f51ab5a884fb75a1702331f4"><div class="ttname"><a href="class_r_g_w_s_i___cls.html#a13894a99f51ab5a884fb75a1702331f4">RGWSI_Cls::zone_svc</a></div><div class="ttdeci">RGWSI_Zone * zone_svc</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8h_source.html#l00029">svc_cls.h:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_html_a145d526bb940c8e9ff5fb0cdea6ac7af"><div class="ttname"><a href="class_r_g_w_s_i___cls.html#a145d526bb940c8e9ff5fb0cdea6ac7af">RGWSI_Cls::rados_svc</a></div><div class="ttdeci">RGWSI_RADOS * rados_svc</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8h_source.html#l00030">svc_cls.h:30</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_html_a3b5255e797c1c4c75b53feef2ad25e63"><div class="ttname"><a href="class_r_g_w_s_i___cls.html#a3b5255e797c1c4c75b53feef2ad25e63">RGWSI_Cls::mfa</a></div><div class="ttdeci">RGWSI_Cls::MFA mfa</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___cls_html_a5bf80e748ff57403e932001bc394651c"><div class="ttname"><a href="class_r_g_w_s_i___cls.html#a5bf80e748ff57403e932001bc394651c">RGWSI_Cls::do_start</a></div><div class="ttdeci">int do_start(optional_yield, const DoutPrefixProvider *dpp) override</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00022">svc_cls.cc:22</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_obj_html"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html">RGWSI_RADOS::Obj</a></div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00149">svc_rados.h:149</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_obj_html_a6dd8262345fb52e90e8d47c187b6110e"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a6dd8262345fb52e90e8d47c187b6110e">RGWSI_RADOS::Obj::aio_operate</a></div><div class="ttdeci">int aio_operate(librados::AioCompletion *c, librados::ObjectWriteOperation *op)</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8cc_source.html#l00143">svc_rados.cc:143</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_obj_html_a7cf0358834aa8caa78893cc5d4d98f2b"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#a7cf0358834aa8caa78893cc5d4d98f2b">RGWSI_RADOS::Obj::operate</a></div><div class="ttdeci">int operate(const DoutPrefixProvider *dpp, librados::ObjectWriteOperation *op, optional_yield y, int flags=0)</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8cc_source.html#l00131">svc_rados.cc:131</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_obj_html_adc703eaa1aad5a55504ce25bea09836a"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_obj.html#adc703eaa1aad5a55504ce25bea09836a">RGWSI_RADOS::Obj::open</a></div><div class="ttdeci">int open(const DoutPrefixProvider *dpp)</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8cc_source.html#l00119">svc_rados.cc:119</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_pool_html_a009a580ee1e47a5d2a1ad7817e395611"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a009a580ee1e47a5d2a1ad7817e395611">RGWSI_RADOS::Pool::open</a></div><div class="ttdeci">int open(const DoutPrefixProvider *dpp, const OpenParams &amp;params={})</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8cc_source.html#l00299">svc_rados.cc:299</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_pool_html_a93e7513947d59965733e309d18e7b192"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">RGWSI_RADOS::Pool::ioctx</a></div><div class="ttdeci">librados::IoCtx &amp; ioctx()</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00111">svc_rados.h:111</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_html_ad7d4a82ecd8081a59c37e3730345711d"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s.html#ad7d4a82ecd8081a59c37e3730345711d">RGWSI_RADOS::obj</a></div><div class="ttdeci">Obj obj(const rgw_raw_obj &amp;o)</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00222">svc_rados.h:222</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_html_af78c1c9ce7ee893056d411ff925755d4"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s.html#af78c1c9ce7ee893056d411ff925755d4">RGWSI_RADOS::pool</a></div><div class="ttdeci">Pool pool()</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00230">svc_rados.h:230</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___zone_html_a0ade599544ff866a0e9292f49c1ad179"><div class="ttname"><a href="class_r_g_w_s_i___zone.html#a0ade599544ff866a0e9292f49c1ad179">RGWSI_Zone::get_zone_params</a></div><div class="ttdeci">const RGWZoneParams &amp; get_zone_params() const</div><div class="ttdef"><b>Definition</b> <a href="svc__zone_8cc_source.html#l00945">svc_zone.cc:945</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_a5db2c44dd962a85afd1855a2386d6fd1"><div class="ttname"><a href="class_r_g_w_service_instance.html#a5db2c44dd962a85afd1855a2386d6fd1">RGWServiceInstance::do_start</a></div><div class="ttdeci">virtual int do_start(optional_yield, const DoutPrefixProvider *dpp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00032">rgw_service.h:32</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_ab329eb7534d92dadb1c4232a6a617937"><div class="ttname"><a href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">RGWServiceInstance::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00023">rgw_service.h:23</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_a0341b0ec09e77f9d6274d5b1517f7711"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#a0341b0ec09e77f9d6274d5b1517f7711">entries</a></div><div class="ttdeci">std::vector&lt; fifo::part_list_entry &gt; * entries</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00249">cls_fifo_legacy.cc:249</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__zone_8h_html"><div class="ttname"><a href="rgw__zone_8h.html">rgw_zone.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01004">rgw_common.h:1004</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html_a00fa9eb065d43718c02325862a0d1df7"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html#a00fa9eb065d43718c02325862a0d1df7">RGWObjVersionTracker::prepare_op_for_read</a></div><div class="ttdeci">void prepare_op_for_read(librados::ObjectReadOperation *op)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rados_8cc_source.html#l00163">rgw_rados.cc:163</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html_a07f0139225ff6468705175885707d415"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html#a07f0139225ff6468705175885707d415">RGWObjVersionTracker::prepare_op_for_write</a></div><div class="ttdeci">void prepare_op_for_write(librados::ObjectWriteOperation *op)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rados_8cc_source.html#l00174">rgw_rados.cc:174</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html_a4105c5a178e987014ada66f9808906df"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html#a4105c5a178e987014ada66f9808906df">RGWObjVersionTracker::generate_new_write_ver</a></div><div class="ttdeci">void generate_new_write_ver(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rados_8cc_source.html#l00295">rgw_rados.cc:295</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html_a431b0a1cb0d7ebd40d1529aa7d6415eb"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html#a431b0a1cb0d7ebd40d1529aa7d6415eb">RGWObjVersionTracker::read_version</a></div><div class="ttdeci">obj_version read_version</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01005">rgw_common.h:1005</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_version_tracker_html_a4f52d63809261203a818a7ba7a2df446"><div class="ttname"><a href="struct_r_g_w_obj_version_tracker.html#a4f52d63809261203a818a7ba7a2df446">RGWObjVersionTracker::write_version</a></div><div class="ttdeci">obj_version write_version</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01006">rgw_common.h:1006</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref_html"><div class="ttname"><a href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html">RGWSI_RADOS::rados_ref</a></div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00144">svc_rados.h:144</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref_html_a25cd45ad8361eb5da9c0a90d17d9b5ae"><div class="ttname"><a href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a25cd45ad8361eb5da9c0a90d17d9b5ae">RGWSI_RADOS::rados_ref::pool</a></div><div class="ttdeci">RGWSI_RADOS::Pool pool</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00145">svc_rados.h:145</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref_html_a540a66ab713e8fc1b5c38707c34d7521"><div class="ttname"><a href="struct_r_g_w_s_i___r_a_d_o_s_1_1rados__ref.html#a540a66ab713e8fc1b5c38707c34d7521">RGWSI_RADOS::rados_ref::obj</a></div><div class="ttdeci">rgw_raw_obj obj</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00146">svc_rados.h:146</a></div></div>
+<div class="ttc" id="astruct_r_g_w_zone_params_html_a4152752920fce25221c8a6f2f55c9318"><div class="ttname"><a href="struct_r_g_w_zone_params.html#a4152752920fce25221c8a6f2f55c9318">RGWZoneParams::otp_pool</a></div><div class="ttdeci">rgw_pool otp_pool</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l00385">rgw_zone.h:385</a></div></div>
+<div class="ttc" id="astruct_r_g_w_zone_params_html_a802daf944c39f049022b963570ebfaa0"><div class="ttname"><a href="struct_r_g_w_zone_params.html#a802daf944c39f049022b963570ebfaa0">RGWZoneParams::log_pool</a></div><div class="ttdeci">rgw_pool log_pool</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l00375">rgw_zone.h:375</a></div></div>
+<div class="ttc" id="astructrgw__pool_html"><div class="ttname"><a href="structrgw__pool.html">rgw_pool</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00146">rgw_basic_types.h:146</a></div></div>
+<div class="ttc" id="astructrgw__raw__obj_html"><div class="ttname"><a href="structrgw__raw__obj.html">rgw_raw_obj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00922">rgw_common.h:922</a></div></div>
+<div class="ttc" id="astructrgw__raw__obj_html_a9c0fa84426035c85585d240c56a65d82"><div class="ttname"><a href="structrgw__raw__obj.html#a9c0fa84426035c85585d240c56a65d82">rgw_raw_obj::oid</a></div><div class="ttdeci">std::string oid</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00924">rgw_common.h:924</a></div></div>
+<div class="ttc" id="astructrgw__user_html"><div class="ttname"><a href="structrgw__user.html">rgw_user</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00014">rgw_basic_types.h:14</a></div></div>
+<div class="ttc" id="asvc__cls_8cc_html_abcf14ca34146310ea5033d089736cdda"><div class="ttname"><a href="svc__cls_8cc.html#abcf14ca34146310ea5033d089736cdda">log_lock_name</a></div><div class="ttdeci">static string log_lock_name</div><div class="ttdef"><b>Definition</b> <a href="svc__cls_8cc_source.html#l00020">svc_cls.cc:20</a></div></div>
+<div class="ttc" id="asvc__cls_8h_html"><div class="ttname"><a href="svc__cls_8h.html">svc_cls.h</a></div></div>
+<div class="ttc" id="asvc__rados_8h_html"><div class="ttname"><a href="svc__rados_8h.html">svc_rados.h</a></div></div>
+<div class="ttc" id="asvc__zone_8h_html"><div class="ttname"><a href="svc__zone_8h.html">svc_zone.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__cls_8cc.html">svc_cls.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

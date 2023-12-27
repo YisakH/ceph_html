@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_kmip_client_impl.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__kmip__client__impl_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a> &#124;
+<a href="#var-members">변수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_kmip_client_impl.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;boost/intrusive/list.hpp&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;include/compat.h&quot;</code><br />
+<code>#include &quot;common/errno.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__common_8h_source.html">rgw_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__kmip__client_8h_source.html">rgw_kmip_client.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__kmip__client__impl_8h_source.html">rgw_kmip_client_impl.h</a>&quot;</code><br />
+<code>#include &lt;openssl/err.h&gt;</code><br />
+<code>#include &lt;openssl/ssl.h&gt;</code><br />
+<code>#include &quot;kmip.h&quot;</code><br />
+<code>#include &quot;kmip_bio.h&quot;</code><br />
+<code>#include &quot;kmip_memset.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_kmip_client_impl.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__kmip__client__impl_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__kmip__client__impl_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__kmip__client__impl_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__kmip__client__impl_8cc">
+<area shape="rect" title=" " alt="" coords="1694,5,1862,48"/>
+<area shape="rect" title=" " alt="" coords="5,96,156,123"/>
+<area shape="poly" title=" " alt="" coords="1694,32,1437,37,1062,48,623,68,174,99,171,99,171,94,174,93,622,62,1062,43,1437,31,1694,26"/>
+<area shape="rect" title=" " alt="" coords="609,269,669,296"/>
+<area shape="poly" title=" " alt="" coords="1694,32,1357,42,1135,52,904,65,682,84,490,107,410,121,346,137,298,154,270,173,264,182,262,192,264,202,270,211,295,228,331,239,375,245,424,248,522,250,564,253,597,259,603,261,601,266,596,264,564,258,522,255,424,253,375,250,330,244,292,233,267,215,259,204,256,192,259,180,267,169,296,149,344,132,409,116,489,102,682,78,903,60,1135,46,1357,37,1694,27"/>
+<area shape="rect" title=" " alt="" coords="1335,96,1392,123"/>
+<area shape="poly" title=" " alt="" coords="1694,43,1563,66,1408,98,1407,93,1562,61,1693,38"/>
+<area shape="rect" title=" " alt="" coords="1416,96,1481,123"/>
+<area shape="poly" title=" " alt="" coords="1695,50,1497,98,1495,93,1693,45"/>
+<area shape="rect" title=" " alt="" coords="1504,96,1625,123"/>
+<area shape="poly" title=" " alt="" coords="1724,51,1613,93,1611,88,1722,46"/>
+<area shape="rect" title=" " alt="" coords="1648,96,1764,123"/>
+<area shape="poly" title=" " alt="" coords="1761,50,1729,86,1725,82,1757,47"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="1201,96,1310,123"/>
+<area shape="poly" title=" " alt="" coords="1694,43,1326,98,1325,93,1693,37"/>
+<area shape="rect" href="rgw__kmip__client_8h.html" title=" " alt="" coords="1787,96,1913,123"/>
+<area shape="poly" title=" " alt="" coords="1798,47,1830,82,1826,86,1794,50"/>
+<area shape="rect" href="rgw__kmip__client__impl_8h.html" title=" " alt="" coords="1937,96,2093,123"/>
+<area shape="poly" title=" " alt="" coords="1840,46,1964,88,1962,93,1838,51"/>
+<area shape="rect" title=" " alt="" coords="2118,96,2214,123"/>
+<area shape="poly" title=" " alt="" coords="1863,43,2103,92,2102,98,1861,48"/>
+<area shape="rect" title=" " alt="" coords="2238,96,2336,123"/>
+<area shape="poly" title=" " alt="" coords="1862,37,2223,93,2222,98,1861,42"/>
+<area shape="rect" title=" " alt="" coords="2361,96,2421,123"/>
+<area shape="poly" title=" " alt="" coords="1862,31,2078,52,2210,70,2346,93,2345,98,2209,75,2077,58,1862,37"/>
+<area shape="rect" title=" " alt="" coords="2445,96,2529,123"/>
+<area shape="poly" title=" " alt="" coords="1862,31,2113,52,2269,70,2430,93,2429,98,2269,75,2112,58,1862,36"/>
+<area shape="rect" title=" " alt="" coords="2554,96,2668,123"/>
+<area shape="poly" title=" " alt="" coords="1862,31,2157,53,2345,71,2539,93,2538,98,2344,76,2156,58,1862,36"/>
+<area shape="poly" title=" " alt="" coords="1200,114,1084,117,942,126,807,144,754,157,715,173,694,190,676,212,652,256,647,253,672,209,690,186,712,168,752,152,806,138,942,120,1084,111,1200,108"/>
+<area shape="rect" title=" " alt="" coords="281,179,331,205"/>
+<area shape="poly" title=" " alt="" coords="1200,114,1019,119,772,130,528,147,426,159,350,173,344,175,343,170,349,168,426,154,527,142,772,125,1018,114,1200,109"/>
+<area shape="rect" title=" " alt="" coords="1485,360,1569,387"/>
+<area shape="poly" title=" " alt="" coords="1256,123,1256,167,1262,191,1275,212,1295,229,1316,237,1337,240,1360,239,1406,239,1431,245,1457,259,1478,278,1495,300,1519,344,1514,347,1491,303,1474,282,1454,264,1429,250,1406,244,1360,245,1337,245,1315,243,1292,233,1270,215,1257,193,1251,167,1251,123"/>
+<area shape="rect" title=" " alt="" coords="1368,179,1478,205"/>
+<area shape="poly" title=" " alt="" coords="1283,121,1385,169,1382,174,1280,126"/>
+<area shape="rect" title=" " alt="" coords="1502,179,1659,205"/>
+<area shape="poly" title=" " alt="" coords="1307,121,1515,172,1514,177,1306,126"/>
+<area shape="rect" title=" " alt="" coords="1683,179,1851,205"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1324,120,1498,143,1672,168,1696,173,1695,178,1671,173,1497,148,1323,125,1310,123"/>
+<area shape="rect" href="rgw__acl_8h.html" title=" " alt="" coords="1012,269,1088,296"/>
+<area shape="poly" title=" " alt="" coords="1200,114,1164,119,1126,129,1090,147,1061,172,1051,191,1046,212,1047,254,1042,254,1041,211,1046,189,1057,169,1088,142,1124,124,1163,114,1200,109"/>
+<area shape="rect" href="rgw__bucket__layout_8h.html" title=" " alt="" coords="2897,179,3037,205"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1323,120,1561,139,1762,144,1940,142,2105,135,2271,130,2449,131,2650,142,2886,168,2909,172,2908,177,2885,173,2649,147,2448,136,2271,136,2106,141,1940,147,1762,150,1560,144,1323,125,1310,124"/>
+<area shape="rect" href="rgw__cors_8h.html" title=" " alt="" coords="320,360,404,387"/>
+<area shape="poly" title=" " alt="" coords="1200,115,1026,120,801,131,595,149,523,160,482,173,459,190,440,210,408,258,385,306,371,346,366,345,380,304,403,255,436,207,456,186,479,168,521,155,595,143,801,126,1026,115,1200,109"/>
+<area shape="rect" href="rgw__iam__policy_8h.html" title=" " alt="" coords="1071,179,1192,205"/>
+<area shape="poly" title=" " alt="" coords="1237,125,1164,172,1162,168,1234,121"/>
+<area shape="rect" href="rgw__string_8h.html" title=" " alt="" coords="1528,269,1620,296"/>
+<area shape="poly" title=" " alt="" coords="1261,122,1279,167,1294,191,1314,211,1339,228,1362,238,1406,246,1453,249,1510,259,1521,262,1520,267,1509,264,1452,254,1405,251,1361,243,1337,232,1311,215,1290,194,1274,169,1256,124"/>
+<area shape="rect" href="rgw__quota_8h.html" title=" " alt="" coords="726,179,817,205"/>
+<area shape="poly" title=" " alt="" coords="1200,119,1039,139,841,173,826,177,825,172,840,168,1038,134,1200,114"/>
+<area shape="rect" title=" " alt="" coords="745,261,886,304"/>
+<area shape="poly" title=" " alt="" coords="1201,117,1085,133,1019,149,956,173,925,190,896,211,847,253,843,248,893,206,922,186,954,168,1018,144,1084,128,1200,111"/>
+<area shape="rect" href="rgw__website_8h.html" title=" " alt="" coords="736,360,839,387"/>
+<area shape="poly" title=" " alt="" coords="1201,121,1122,139,1079,154,1039,173,996,204,967,235,940,269,899,306,825,355,822,350,896,302,936,265,963,232,992,200,1036,168,1077,149,1120,134,1199,116"/>
+<area shape="rect" href="rgw__object__lock_8h.html" title=" " alt="" coords="1643,269,1769,296"/>
+<area shape="poly" title=" " alt="" coords="1269,121,1358,211,1396,228,1429,239,1490,246,1553,248,1632,259,1647,262,1646,268,1631,264,1552,253,1489,252,1428,244,1394,233,1355,216,1265,125"/>
+<area shape="rect" href="rgw__tag_8h.html" title=" " alt="" coords="429,360,506,387"/>
+<area shape="poly" title=" " alt="" coords="1200,115,1063,121,887,132,716,149,646,160,593,173,545,188,506,202,475,224,447,263,441,283,441,304,455,345,450,347,436,305,435,282,442,260,471,220,504,197,543,183,592,168,645,155,715,144,887,127,1063,116,1200,110"/>
+<area shape="rect" href="rgw__op__type_8h.html" title=" " alt="" coords="1876,179,1981,205"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1323,120,1475,134,1594,139,1713,145,1864,168,1878,171,1877,177,1863,173,1712,151,1594,144,1475,140,1323,125,1310,123"/>
+<area shape="rect" href="rgw__sync__policy_8h.html" title=" " alt="" coords="456,269,585,296"/>
+<area shape="poly" title=" " alt="" coords="1200,115,1077,121,922,132,774,149,713,160,668,173,632,191,598,214,545,260,541,256,595,210,629,187,666,168,712,155,773,144,922,127,1077,116,1200,110"/>
+<area shape="rect" title=" " alt="" coords="2005,171,2156,213"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1323,120,1509,137,1656,141,1803,147,1889,155,1990,168,1990,173,1888,160,1802,152,1655,147,1509,142,1323,125,1310,124"/>
+<area shape="rect" title=" " alt="" coords="2179,179,2350,205"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1323,120,1452,133,1560,139,1745,142,1931,146,2039,154,2168,168,2196,172,2195,178,2167,173,2039,159,1930,151,1745,147,1560,144,1451,138,1323,125,1310,124"/>
+<area shape="rect" title=" " alt="" coords="2374,179,2534,205"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1323,120,1481,134,1615,141,1843,141,1953,140,2071,142,2205,151,2362,168,2389,172,2388,178,2361,173,2204,156,2071,148,1953,145,1843,146,1615,146,1481,140,1323,125,1310,124"/>
+<area shape="rect" title=" " alt="" coords="2558,179,2731,205"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1323,120,1509,136,1666,143,1805,144,1935,141,2064,140,2203,141,2361,150,2546,168,2576,173,2575,178,2545,173,2360,155,2203,147,2064,145,1935,147,1805,149,1666,148,1509,141,1323,125,1310,124"/>
+<area shape="rect" href="rgw__public__access_8h.html" title=" " alt="" coords="153,360,296,387"/>
+<area shape="poly" title=" " alt="" coords="1200,113,981,113,687,120,543,127,417,138,321,153,289,162,270,173,254,190,242,211,227,258,223,305,224,344,219,344,217,305,222,257,237,209,250,187,267,169,287,157,320,148,416,133,542,122,687,115,981,108,1200,108"/>
+<area shape="rect" title=" " alt="" coords="2754,179,2874,205"/>
+<area shape="poly" title=" " alt="" coords="1311,118,1323,120,1539,137,1722,142,1884,138,2035,132,2185,127,2346,129,2529,141,2744,168,2762,172,2761,177,2743,173,2529,146,2346,134,2185,133,2035,137,1884,144,1722,147,1539,142,1323,125,1310,124"/>
+<area shape="rect" href="rgw__auth_8h.html" title=" " alt="" coords="3061,179,3145,205"/>
+<area shape="poly" title=" " alt="" coords="1311,120,1311,120,1480,130,1689,133,2176,131,2427,131,2663,135,2871,146,2961,156,3038,168,3050,171,3048,176,3037,173,2960,161,2871,152,2663,140,2427,136,2176,136,1689,139,1479,136,1311,125,1310,125"/>
+<area shape="poly" title=" " alt="" coords="1079,294,1101,301,1190,321,1260,330,1331,337,1422,349,1470,358,1469,363,1421,355,1331,342,1260,336,1189,327,1100,307,1078,299"/>
+<area shape="rect" title=" " alt="" coords="495,443,541,469"/>
+<area shape="poly" title=" " alt="" coords="1018,299,963,323,905,354,880,377,869,387,852,397,773,426,691,443,616,453,557,457,556,451,615,447,690,438,771,420,850,392,866,383,876,373,902,350,961,318,1016,294"/>
+<area shape="rect" title=" " alt="" coords="1047,443,1101,469"/>
+<area shape="poly" title=" " alt="" coords="1054,296,1073,427,1067,427,1049,297"/>
+<area shape="rect" title=" " alt="" coords="362,443,471,469"/>
+<area shape="poly" title=" " alt="" coords="1012,296,962,307,894,317,840,322,787,330,724,354,709,364,700,375,690,386,674,397,600,417,487,443,486,437,599,412,671,392,686,382,696,371,706,360,722,350,786,325,839,316,893,312,961,301,1011,290"/>
+<area shape="rect" title=" " alt="" coords="1282,360,1410,387"/>
+<area shape="poly" title=" " alt="" coords="1081,294,1101,301,1284,353,1283,358,1100,307,1079,299"/>
+<area shape="rect" title=" " alt="" coords="1111,352,1258,395"/>
+<area shape="poly" title=" " alt="" coords="1071,294,1142,341,1139,345,1068,299"/>
+<area shape="rect" title=" " alt="" coords="915,360,1036,387"/>
+<area shape="poly" title=" " alt="" coords="1041,298,998,350,994,346,1037,295"/>
+<area shape="rect" href="rgw__basic__types_8h.html" title=" " alt="" coords="531,360,660,387"/>
+<area shape="poly" title=" " alt="" coords="1012,294,942,307,811,330,680,355,661,359,660,353,679,349,810,324,941,301,1011,289"/>
+<area shape="poly" title=" " alt="" coords="661,383,1033,445,1032,450,660,388"/>
+<area shape="poly" title=" " alt="" coords="568,390,459,438,457,434,566,385"/>
+<area shape="poly" title=" " alt="" coords="2920,209,2886,216,2540,280,2270,321,1649,397,1343,432,1116,454,1116,448,1343,426,1648,392,2269,315,2539,274,2885,211,2919,203"/>
+<area shape="rect" title=" " alt="" coords="3062,269,3128,296"/>
+<area shape="poly" title=" " alt="" coords="2987,204,3066,258,3063,262,2984,208"/>
+<area shape="rect" title=" " alt="" coords="2903,269,3032,296"/>
+<area shape="poly" title=" " alt="" coords="2970,206,2970,254,2965,254,2965,206"/>
+<area shape="poly" title=" " alt="" coords="387,385,482,433,480,438,385,390"/>
+<area shape="poly" title=" " alt="" coords="393,385,417,392,505,409,594,423,770,441,923,449,1032,452,1032,457,923,455,770,446,594,428,504,415,416,397,391,390"/>
+<area shape="poly" title=" " alt="" coords="373,386,402,429,398,432,368,389"/>
+<area shape="poly" title=" " alt="" coords="1182,203,1212,211,1268,221,1313,227,1357,236,1410,259,1440,278,1467,301,1510,346,1506,350,1464,305,1437,283,1407,264,1356,241,1312,232,1267,227,1211,216,1181,209"/>
+<area shape="poly" title=" " alt="" coords="1121,208,1074,260,1070,256,1118,204"/>
+<area shape="poly" title=" " alt="" coords="1181,203,1248,226,1319,259,1370,288,1414,319,1430,336,1438,354,1436,375,1424,396,1402,413,1370,425,1286,443,1194,453,1116,457,1116,451,1194,447,1285,438,1369,420,1400,408,1420,393,1431,373,1432,355,1425,339,1411,323,1367,292,1317,264,1246,231,1180,208"/>
+<area shape="poly" title=" " alt="" coords="1181,203,1234,225,1262,240,1286,259,1304,279,1319,301,1339,344,1334,346,1314,304,1300,282,1283,263,1259,245,1232,230,1179,208"/>
+<area shape="poly" title=" " alt="" coords="1185,204,1229,224,1249,240,1266,260,1272,282,1266,305,1252,327,1234,344,1230,340,1248,323,1261,303,1267,282,1261,263,1246,244,1226,229,1182,208"/>
+<area shape="poly" title=" " alt="" coords="1108,208,1000,262,899,307,838,325,790,334,680,355,663,358,662,353,679,349,789,329,837,319,897,301,997,257,1105,204"/>
+<area shape="rect" title=" " alt="" coords="1113,269,1166,296"/>
+<area shape="poly" title=" " alt="" coords="1135,206,1139,253,1134,254,1130,206"/>
+<area shape="rect" title=" " alt="" coords="1190,269,1251,296"/>
+<area shape="poly" title=" " alt="" coords="1146,204,1199,256,1195,260,1142,208"/>
+<area shape="poly" title=" " alt="" coords="1193,203,1513,267,1512,272,1192,208"/>
+<area shape="poly" title=" " alt="" coords="1570,298,1543,347,1539,345,1565,295"/>
+<area shape="poly" title=" " alt="" coords="1582,296,1590,317,1596,343,1596,372,1584,397,1559,409,1513,420,1381,437,1234,449,1116,456,1116,450,1233,444,1381,432,1512,415,1557,404,1580,393,1591,370,1591,344,1585,318,1577,297"/>
+<area shape="poly" title=" " alt="" coords="754,208,672,263,669,258,751,204"/>
+<area shape="poly" title=" " alt="" coords="765,207,731,252,684,306,627,353,624,349,680,302,727,249,760,204"/>
+<area shape="poly" title=" " alt="" coords="780,205,801,246,796,249,775,207"/>
+<area shape="poly" title=" " alt="" coords="833,385,1033,440,1031,446,831,390"/>
+<area shape="poly" title=" " alt="" coords="1701,298,1666,348,1639,375,1607,397,1566,412,1509,425,1371,442,1227,452,1116,456,1116,451,1227,447,1370,437,1508,419,1564,407,1605,392,1635,371,1662,344,1697,295"/>
+<area shape="poly" title=" " alt="" coords="477,386,504,428,500,431,473,389"/>
+<area shape="poly" title=" " alt="" coords="496,385,519,392,665,421,811,438,939,448,1032,451,1032,457,938,453,810,443,664,426,517,397,494,390"/>
+<area shape="poly" title=" " alt="" coords="462,389,435,431,430,428,457,386"/>
+<area shape="poly" title=" " alt="" coords="533,295,577,346,573,350,529,298"/>
+<area shape="poly" title=" " alt="" coords="515,298,485,348,480,345,511,295"/>
+<area shape="poly" title=" " alt="" coords="256,385,374,434,372,439,253,390"/>
+<area shape="poly" title=" " alt="" coords="3086,181,3061,173,2984,161,2895,152,2687,140,2451,136,2200,136,1713,139,1503,136,1335,125,1325,124,1326,119,1335,120,1504,130,1713,133,2200,131,2451,131,2687,135,2895,146,2985,156,3062,168,3087,176"/>
+<area shape="poly" title=" " alt="" coords="3105,206,3100,254,3095,253,3099,206"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__kmip__client__impl_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_kmip_handle.html">RGWKmipHandle</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_kmip_worker.html">RGWKmipWorker</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_kmip_handle_builder.html">RGWKmipHandleBuilder</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_kmip_handles.html">RGWKmipHandles</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:ac9f1b8ed4aca7999d392b2d432030e30" id="r_ac9f1b8ed4aca7999d392b2d432030e30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kmip__client__impl_8cc.html#ac9f1b8ed4aca7999d392b2d432030e30">dout_context</a>&#160;&#160;&#160;g_ceph_context</td></tr>
+<tr class="separator:ac9f1b8ed4aca7999d392b2d432030e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kmip__client__impl_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b91e81f919bc7ce3b5473b6a09f676" id="r_ab1b91e81f919bc7ce3b5473b6a09f676"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kmip__client__impl_8cc.html#ab1b91e81f919bc7ce3b5473b6a09f676">MAXIDLE</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:ab1b91e81f919bc7ce3b5473b6a09f676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a7b1ed9733fdf7f5fb20b1610ed274ce6" id="r_a7b1ed9733fdf7f5fb20b1610ed274ce6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kmip__client__impl_8cc.html#a7b1ed9733fdf7f5fb20b1610ed274ce6">kmip_free_handle_stuff</a> (<a class="el" href="struct_r_g_w_kmip_handle.html">RGWKmipHandle</a> *kmip)</td></tr>
+<tr class="separator:a7b1ed9733fdf7f5fb20b1610ed274ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4164dbd869830d8ce6edf34b61af41a5" id="r_a4164dbd869830d8ce6edf34b61af41a5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kmip__client__impl_8cc.html#a4164dbd869830d8ce6edf34b61af41a5">kmip_write_an_error_helper</a> (const char *s, size_t l, void *u)</td></tr>
+<tr class="separator:a4164dbd869830d8ce6edf34b61af41a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d426953ac398971c354ab05497b4ef" id="r_ad5d426953ac398971c354ab05497b4ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kmip__client__impl_8cc.html#ad5d426953ac398971c354ab05497b4ef">ERR_print_errors_ceph</a> (CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</td></tr>
+<tr class="separator:ad5d426953ac398971c354ab05497b4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+변수</h2></td></tr>
+<tr class="memitem:a5365eb8cfc4fbe1c949180cb9e87ead6" id="r_a5365eb8cfc4fbe1c949180cb9e87ead6"><td class="memItemLeft" align="right" valign="top">static enum kmip_version&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__kmip__client__impl_8cc.html#a5365eb8cfc4fbe1c949180cb9e87ead6">protocol_version</a> = KMIP_1_0</td></tr>
+<tr class="separator:a5365eb8cfc4fbe1c949180cb9e87ead6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="ac9f1b8ed4aca7999d392b2d432030e30" name="ac9f1b8ed4aca7999d392b2d432030e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9f1b8ed4aca7999d392b2d432030e30">&#9670;&#160;</a></span>dout_context</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_context&#160;&#160;&#160;g_ceph_context</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kmip__client__impl_8cc_source.html">rgw_kmip_client_impl.cc</a> 파일의 <a class="el" href="rgw__kmip__client__impl_8cc_source.html#l00023">23</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kmip__client__impl_8cc_source.html">rgw_kmip_client_impl.cc</a> 파일의 <a class="el" href="rgw__kmip__client__impl_8cc_source.html#l00024">24</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ab1b91e81f919bc7ce3b5473b6a09f676" name="ab1b91e81f919bc7ce3b5473b6a09f676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b91e81f919bc7ce3b5473b6a09f676">&#9670;&#160;</a></span>MAXIDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAXIDLE&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kmip__client__impl_8cc_source.html">rgw_kmip_client_impl.cc</a> 파일의 <a class="el" href="rgw__kmip__client__impl_8cc_source.html#l00316">316</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="ad5d426953ac398971c354ab05497b4ef" name="ad5d426953ac398971c354ab05497b4ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d426953ac398971c354ab05497b4ef">&#9670;&#160;</a></span>ERR_print_errors_ceph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ERR_print_errors_ceph </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *&#160;</td>
+          <td class="paramname"><em>cct</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kmip__client__impl_8cc_source.html">rgw_kmip_client_impl.cc</a> 파일의 <a class="el" href="rgw__kmip__client__impl_8cc_source.html#l00147">147</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{</div>
+<div class="line"><span class="lineno">  149</span>  ERR_print_errors_cb(<a class="code hl_function" href="rgw__kmip__client__impl_8cc.html#a4164dbd869830d8ce6edf34b61af41a5">kmip_write_an_error_helper</a>, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>);</div>
+<div class="line"><span class="lineno">  150</span>}</div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="argw__kmip__client__impl_8cc_html_a4164dbd869830d8ce6edf34b61af41a5"><div class="ttname"><a href="rgw__kmip__client__impl_8cc.html#a4164dbd869830d8ce6edf34b61af41a5">kmip_write_an_error_helper</a></div><div class="ttdeci">static int kmip_write_an_error_helper(const char *s, size_t l, void *u)</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client__impl_8cc_source.html#l00139">rgw_kmip_client_impl.cc:139</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_cgraph.png" border="0" usemap="#argw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_cgraph" alt=""/></div>
+<map name="argw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_cgraph" id="argw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,161,40"/>
+<area shape="rect" href="rgw__kmip__client__impl_8cc.html#a4164dbd869830d8ce6edf34b61af41a5" title=" " alt="" coords="209,5,346,48"/>
+<area shape="poly" title=" " alt="" coords="161,24,193,24,193,29,161,29"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_icgraph.png" border="0" usemap="#argw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_icgraph" alt=""/></div>
+<map name="argw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_icgraph" id="argw__kmip__client__impl_8cc_ad5d426953ac398971c354ab05497b4ef_icgraph">
+<area shape="rect" title=" " alt="" coords="621,13,777,40"/>
+<area shape="rect" href="class_r_g_w_kmip_handle_builder.html#acf28df923cf9e1b67a8374c3a06e4b9d" title=" " alt="" coords="410,5,573,48"/>
+<area shape="poly" title=" " alt="" coords="606,29,574,29,574,24,606,24"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#a49289f8ce926f64144168c33aa9c1737" title=" " alt="" coords="206,5,362,48"/>
+<area shape="poly" title=" " alt="" coords="395,29,362,29,362,24,395,24"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#ae34cee04aa60bfb14cc5a708e7fa3a3d" title=" " alt="" coords="5,5,158,48"/>
+<area shape="poly" title=" " alt="" coords="190,29,158,29,158,24,190,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7b1ed9733fdf7f5fb20b1610ed274ce6" name="a7b1ed9733fdf7f5fb20b1610ed274ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1ed9733fdf7f5fb20b1610ed274ce6">&#9670;&#160;</a></span>kmip_free_handle_stuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void kmip_free_handle_stuff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_g_w_kmip_handle.html">RGWKmipHandle</a> *&#160;</td>
+          <td class="paramname"><em>kmip</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kmip__client__impl_8cc_source.html">rgw_kmip_client_impl.cc</a> 파일의 <a class="el" href="rgw__kmip__client__impl_8cc_source.html#l00064">64</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
+<div class="line"><span class="lineno">   66</span>  <span class="keywordflow">if</span> (kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#aace001e74a31fa5e8d54f7555d348ef0">encoding</a>) {</div>
+<div class="line"><span class="lineno">   67</span>    kmip_free_buffer(kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#a72f63be5bf554e9dcea6e99a2a789bf2">kmip_ctx</a>,</div>
+<div class="line"><span class="lineno">   68</span>      kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#aace001e74a31fa5e8d54f7555d348ef0">encoding</a>,</div>
+<div class="line"><span class="lineno">   69</span>      kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#a39d40f7dcd8f43a1f41c11d6477dc1e9">buffer_total_size</a>);</div>
+<div class="line"><span class="lineno">   70</span>    kmip_set_buffer(kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#a72f63be5bf554e9dcea6e99a2a789bf2">kmip_ctx</a>, NULL, 0);</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#aac0ce30a4d292a50738f58972effa90f">need_to_free_kmip</a>)</div>
+<div class="line"><span class="lineno">   73</span>    kmip_destroy(kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#a72f63be5bf554e9dcea6e99a2a789bf2">kmip_ctx</a>);</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">if</span> (kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#a29df1ff9d63b6245b5adb8b3f3192c58">bio</a>)</div>
+<div class="line"><span class="lineno">   75</span>    BIO_free_all(kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#a29df1ff9d63b6245b5adb8b3f3192c58">bio</a>);</div>
+<div class="line"><span class="lineno">   76</span>  <span class="keywordflow">if</span> (kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#ae1cba3a7f5837e3ecf20a8b7a277a8ca">ctx</a>)</div>
+<div class="line"><span class="lineno">   77</span>    SSL_CTX_free(kmip-&gt;<a class="code hl_variable" href="struct_r_g_w_kmip_handle.html#ae1cba3a7f5837e3ecf20a8b7a277a8ca">ctx</a>);</div>
+<div class="line"><span class="lineno">   78</span>}</div>
+<div class="ttc" id="astruct_r_g_w_kmip_handle_html_a29df1ff9d63b6245b5adb8b3f3192c58"><div class="ttname"><a href="struct_r_g_w_kmip_handle.html#a29df1ff9d63b6245b5adb8b3f3192c58">RGWKmipHandle::bio</a></div><div class="ttdeci">BIO * bio</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client__impl_8cc_source.html#l00033">rgw_kmip_client_impl.cc:33</a></div></div>
+<div class="ttc" id="astruct_r_g_w_kmip_handle_html_a39d40f7dcd8f43a1f41c11d6477dc1e9"><div class="ttname"><a href="struct_r_g_w_kmip_handle.html#a39d40f7dcd8f43a1f41c11d6477dc1e9">RGWKmipHandle::buffer_total_size</a></div><div class="ttdeci">size_t buffer_total_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client__impl_8cc_source.html#l00039">rgw_kmip_client_impl.cc:39</a></div></div>
+<div class="ttc" id="astruct_r_g_w_kmip_handle_html_a72f63be5bf554e9dcea6e99a2a789bf2"><div class="ttname"><a href="struct_r_g_w_kmip_handle.html#a72f63be5bf554e9dcea6e99a2a789bf2">RGWKmipHandle::kmip_ctx</a></div><div class="ttdeci">KMIP kmip_ctx[1]</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client__impl_8cc_source.html#l00034">rgw_kmip_client_impl.cc:34</a></div></div>
+<div class="ttc" id="astruct_r_g_w_kmip_handle_html_aac0ce30a4d292a50738f58972effa90f"><div class="ttname"><a href="struct_r_g_w_kmip_handle.html#aac0ce30a4d292a50738f58972effa90f">RGWKmipHandle::need_to_free_kmip</a></div><div class="ttdeci">int need_to_free_kmip</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client__impl_8cc_source.html#l00038">rgw_kmip_client_impl.cc:38</a></div></div>
+<div class="ttc" id="astruct_r_g_w_kmip_handle_html_aace001e74a31fa5e8d54f7555d348ef0"><div class="ttname"><a href="struct_r_g_w_kmip_handle.html#aace001e74a31fa5e8d54f7555d348ef0">RGWKmipHandle::encoding</a></div><div class="ttdeci">uint8 * encoding</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client__impl_8cc_source.html#l00040">rgw_kmip_client_impl.cc:40</a></div></div>
+<div class="ttc" id="astruct_r_g_w_kmip_handle_html_ae1cba3a7f5837e3ecf20a8b7a277a8ca"><div class="ttname"><a href="struct_r_g_w_kmip_handle.html#ae1cba3a7f5837e3ecf20a8b7a277a8ca">RGWKmipHandle::ctx</a></div><div class="ttdeci">SSL_CTX * ctx</div><div class="ttdef"><b>Definition</b> <a href="rgw__kmip__client__impl_8cc_source.html#l00031">rgw_kmip_client_impl.cc:31</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__kmip__client__impl_8cc_a7b1ed9733fdf7f5fb20b1610ed274ce6_icgraph.png" border="0" usemap="#argw__kmip__client__impl_8cc_a7b1ed9733fdf7f5fb20b1610ed274ce6_icgraph" alt=""/></div>
+<map name="argw__kmip__client__impl_8cc_a7b1ed9733fdf7f5fb20b1610ed274ce6_icgraph" id="argw__kmip__client__impl_8cc_a7b1ed9733fdf7f5fb20b1610ed274ce6_icgraph">
+<area shape="rect" title=" " alt="" coords="662,47,816,73"/>
+<area shape="rect" href="class_r_g_w_kmip_handle_builder.html#acf28df923cf9e1b67a8374c3a06e4b9d" title=" " alt="" coords="443,5,606,48"/>
+<area shape="poly" title=" " alt="" coords="646,48,606,42,607,37,647,43"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#a7f193840617583a75e2772c138eda3d1" title=" " alt="" coords="434,72,614,115"/>
+<area shape="poly" title=" " alt="" coords="647,77,615,82,614,77,646,72"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#a49289f8ce926f64144168c33aa9c1737" title=" " alt="" coords="218,5,374,48"/>
+<area shape="poly" title=" " alt="" coords="427,29,374,29,374,24,427,24"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#ae34cee04aa60bfb14cc5a708e7fa3a3d" title=" " alt="" coords="5,64,158,107"/>
+<area shape="poly" title=" " alt="" coords="203,55,159,67,157,62,202,50"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#a76b27d68a87b3568eb97230dc5c140d6" title=" " alt="" coords="212,72,380,99"/>
+<area shape="poly" title=" " alt="" coords="418,92,380,91,380,86,419,87"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#a564195420a9fd3f9b3ccb5df2f3cf46b" title=" " alt="" coords="206,123,386,165"/>
+<area shape="poly" title=" " alt="" coords="420,119,387,127,386,121,418,114"/>
+<area shape="poly" title=" " alt="" coords="200,121,157,109,159,104,202,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4164dbd869830d8ce6edf34b61af41a5" name="a4164dbd869830d8ce6edf34b61af41a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4164dbd869830d8ce6edf34b61af41a5">&#9670;&#160;</a></span>kmip_write_an_error_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int kmip_write_an_error_helper </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>u</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kmip__client__impl_8cc_source.html">rgw_kmip_client_impl.cc</a> 파일의 <a class="el" href="rgw__kmip__client__impl_8cc_source.html#l00139">139</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                                             {</div>
+<div class="line"><span class="lineno">  140</span>  CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a> = (CephContext *)u;</div>
+<div class="line"><span class="lineno">  141</span>  std::string_view <a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a12470fe406d44017d96eab37dd65fc14">es</a>(s, l);</div>
+<div class="line"><span class="lineno">  142</span>  lderr(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>) &lt;&lt; <a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a12470fe406d44017d96eab37dd65fc14">es</a> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">return</span> l;</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+<div class="ttc" id="anamespacergw_html_aa74ef6030865b86d25300c7309e8b191a12470fe406d44017d96eab37dd65fc14"><div class="ttname"><a href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a12470fe406d44017d96eab37dd65fc14">rgw::Service::es</a></div><div class="ttdeci">@ es</div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__kmip__client__impl_8cc_a4164dbd869830d8ce6edf34b61af41a5_icgraph.png" border="0" usemap="#argw__kmip__client__impl_8cc_a4164dbd869830d8ce6edf34b61af41a5_icgraph" alt=""/></div>
+<map name="argw__kmip__client__impl_8cc_a4164dbd869830d8ce6edf34b61af41a5_icgraph" id="argw__kmip__client__impl_8cc_a4164dbd869830d8ce6edf34b61af41a5_icgraph">
+<area shape="rect" title=" " alt="" coords="825,5,962,48"/>
+<area shape="rect" href="rgw__kmip__client__impl_8cc.html#ad5d426953ac398971c354ab05497b4ef" title=" " alt="" coords="621,13,777,40"/>
+<area shape="poly" title=" " alt="" coords="809,29,777,29,777,24,809,24"/>
+<area shape="rect" href="class_r_g_w_kmip_handle_builder.html#acf28df923cf9e1b67a8374c3a06e4b9d" title=" " alt="" coords="410,5,573,48"/>
+<area shape="poly" title=" " alt="" coords="606,29,574,29,574,24,606,24"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#a49289f8ce926f64144168c33aa9c1737" title=" " alt="" coords="206,5,362,48"/>
+<area shape="poly" title=" " alt="" coords="395,29,362,29,362,24,395,24"/>
+<area shape="rect" href="struct_r_g_w_kmip_handles.html#ae34cee04aa60bfb14cc5a708e7fa3a3d" title=" " alt="" coords="5,5,158,48"/>
+<area shape="poly" title=" " alt="" coords="190,29,158,29,158,24,190,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">변수 문서화</h2>
+<a id="a5365eb8cfc4fbe1c949180cb9e87ead6" name="a5365eb8cfc4fbe1c949180cb9e87ead6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5365eb8cfc4fbe1c949180cb9e87ead6">&#9670;&#160;</a></span>protocol_version</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum kmip_version protocol_version = KMIP_1_0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__kmip__client__impl_8cc_source.html">rgw_kmip_client_impl.cc</a> 파일의 <a class="el" href="rgw__kmip__client__impl_8cc_source.html#l00026">26</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__kmip__client__impl_8cc.html">rgw_kmip_client_impl.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

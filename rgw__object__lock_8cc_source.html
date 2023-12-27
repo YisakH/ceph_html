@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_object_lock.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__object__lock_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_object_lock.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__object__lock_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__object__lock_8h.html">rgw_object_lock.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_default_retention.html#a75c86beb1b98430604b184256dd7bee3">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_default_retention.html#a75c86beb1b98430604b184256dd7bee3">DefaultRetention::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;Mode&quot;</span>, <a class="code hl_variable" href="class_default_retention.html#a3f8ab09831a509adfcad11f0ff37ffad">mode</a>, obj, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_default_retention.html#a3f8ab09831a509adfcad11f0ff37ffad">mode</a>.compare(<span class="stringliteral">&quot;GOVERNANCE&quot;</span>) != 0 &amp;&amp; <a class="code hl_variable" href="class_default_retention.html#a3f8ab09831a509adfcad11f0ff37ffad">mode</a>.compare(<span class="stringliteral">&quot;COMPLIANCE&quot;</span>) != 0) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">throw</span> <a class="code hl_struct" href="struct_r_g_w_x_m_l_decoder_1_1err.html">RGWXMLDecoder::err</a>(<span class="stringliteral">&quot;bad Mode in lock rule&quot;</span>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keywordtype">bool</span> days_exist = <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;Days&quot;</span>, <a class="code hl_variable" href="class_default_retention.html#a50a0893692a80029976908d6d2c752bf">days</a>, obj);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordtype">bool</span> years_exist = <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;Years&quot;</span>, <a class="code hl_variable" href="class_default_retention.html#aa98867eeec465a8304ad4ed2982703e4">years</a>, obj);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordflow">if</span> ((days_exist &amp;&amp; years_exist) || (!days_exist &amp;&amp; !years_exist)) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">throw</span> <a class="code hl_struct" href="struct_r_g_w_x_m_l_decoder_1_1err.html">RGWXMLDecoder::err</a>(<span class="stringliteral">&quot;either Days or Years must be specified, but not both&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_default_retention.html#a94a214d8faa435561aa9242801278264">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_default_retention.html#a94a214d8faa435561aa9242801278264">DefaultRetention::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;Mode&quot;</span>, <a class="code hl_variable" href="class_default_retention.html#a3f8ab09831a509adfcad11f0ff37ffad">mode</a>, f);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_default_retention.html#a50a0893692a80029976908d6d2c752bf">days</a> &gt; 0) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;Days&quot;</span>, <a class="code hl_variable" href="class_default_retention.html#a50a0893692a80029976908d6d2c752bf">days</a>, f);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;Years&quot;</span>, <a class="code hl_variable" href="class_default_retention.html#aa98867eeec465a8304ad4ed2982703e4">years</a>, f);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_object_lock_rule.html#a479752b9213c7b1d8572245a63b215bf">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_object_lock_rule.html#a479752b9213c7b1d8572245a63b215bf">ObjectLockRule::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;DefaultRetention&quot;</span>, <a class="code hl_variable" href="class_object_lock_rule.html#a15e412abe7c475b1ddf4c7c02df0697e">defaultRetention</a>, obj, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_object_lock_rule.html#a2cc581f30255829bf8eb638b78d68dc9">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_object_lock_rule.html#a2cc581f30255829bf8eb638b78d68dc9">ObjectLockRule::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;DefaultRetention&quot;</span>, <a class="code hl_variable" href="class_object_lock_rule.html#a15e412abe7c475b1ddf4c7c02df0697e">defaultRetention</a>, f);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_r_g_w_object_lock.html#a155ddb244c6a665dbf0c0ef7dadd9196">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_object_lock.html#a155ddb244c6a665dbf0c0ef7dadd9196">RGWObjectLock::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">string</span> enabled_str;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;ObjectLockEnabled&quot;</span>, enabled_str, obj, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">if</span> (enabled_str.compare(<span class="stringliteral">&quot;Enabled&quot;</span>) != 0) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">throw</span> <a class="code hl_struct" href="struct_r_g_w_x_m_l_decoder_1_1err.html">RGWXMLDecoder::err</a>(<span class="stringliteral">&quot;invalid ObjectLockEnabled value&quot;</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_variable" href="class_r_g_w_object_lock.html#a6154738d3acee28b90f2fc66e5a0d246">enabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_variable" href="class_r_g_w_object_lock.html#a971ed1cd48a426566c1352773d4bd63c">rule_exist</a> = <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;Rule&quot;</span>, <a class="code hl_variable" href="class_r_g_w_object_lock.html#a39de8c0c4a8c8d5e906f3247345ea786">rule</a>, obj);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_r_g_w_object_lock.html#a24f13fb339e5f1db713b4f79061b9c13">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_object_lock.html#a24f13fb339e5f1db713b4f79061b9c13">RGWObjectLock::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_object_lock.html#a6154738d3acee28b90f2fc66e5a0d246">enabled</a>) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;ObjectLockEnabled&quot;</span>, <span class="stringliteral">&quot;Enabled&quot;</span>, f);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_object_lock.html#a971ed1cd48a426566c1352773d4bd63c">rule_exist</a>) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;Rule&quot;</span>, <a class="code hl_variable" href="class_r_g_w_object_lock.html#a39de8c0c4a8c8d5e906f3247345ea786">rule</a>, f);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_r_g_w_object_lock.html#ae3a5fb013637f128ebbbcdba2410f196">   57</a></span>ceph::real_time <a class="code hl_function" href="class_r_g_w_object_lock.html#ae3a5fb013637f128ebbbcdba2410f196">RGWObjectLock::get_lock_until_date</a>(<span class="keyword">const</span> ceph::real_time&amp; mtime)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_g_w_object_lock.html#a971ed1cd48a426566c1352773d4bd63c">rule_exist</a>) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> ceph::real_time();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">int</span> days = <a class="code hl_function" href="class_r_g_w_object_lock.html#a3386a6532ea1d2ca708c096143a07b29">get_days</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">if</span> (days &lt;= 0) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    days = <a class="code hl_function" href="class_r_g_w_object_lock.html#a97e30232afdf995b66e03043a28a4a07">get_years</a>()*365;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">return</span> mtime + make_timespan(days*24*60*60);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_r_g_w_object_retention.html#a9c641d2ec34705f77b15a577c2226dea">   68</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_object_retention.html#a9c641d2ec34705f77b15a577c2226dea">RGWObjectRetention::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;Mode&quot;</span>, <a class="code hl_variable" href="class_r_g_w_object_retention.html#a594c372c294fa03dc6140921ec2502b9">mode</a>, obj, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_object_retention.html#a594c372c294fa03dc6140921ec2502b9">mode</a>.compare(<span class="stringliteral">&quot;GOVERNANCE&quot;</span>) != 0 &amp;&amp; <a class="code hl_variable" href="class_r_g_w_object_retention.html#a594c372c294fa03dc6140921ec2502b9">mode</a>.compare(<span class="stringliteral">&quot;COMPLIANCE&quot;</span>) != 0) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">throw</span> <a class="code hl_struct" href="struct_r_g_w_x_m_l_decoder_1_1err.html">RGWXMLDecoder::err</a>(<span class="stringliteral">&quot;bad Mode in retention&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">string</span> date_str;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;RetainUntilDate&quot;</span>, date_str, obj, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  boost::optional&lt;ceph::real_time&gt; date = ceph::from_iso_8601(date_str);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">if</span> (boost::none == date) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">throw</span> <a class="code hl_struct" href="struct_r_g_w_x_m_l_decoder_1_1err.html">RGWXMLDecoder::err</a>(<span class="stringliteral">&quot;invalid RetainUntilDate value&quot;</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <a class="code hl_variable" href="class_r_g_w_object_retention.html#aa61bbae71f7306aac8cffe03634eb288">retain_until_date</a> = *date;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_r_g_w_object_retention.html#a30fe8a13025f9d9bfc2b5463648116b0">   82</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_object_retention.html#a30fe8a13025f9d9bfc2b5463648116b0">RGWObjectRetention::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;Mode&quot;</span>, <a class="code hl_variable" href="class_r_g_w_object_retention.html#a594c372c294fa03dc6140921ec2502b9">mode</a>, f);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">string</span> date = ceph::to_iso_8601(<a class="code hl_variable" href="class_r_g_w_object_retention.html#aa61bbae71f7306aac8cffe03634eb288">retain_until_date</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;RetainUntilDate&quot;</span>, date, f);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_r_g_w_object_legal_hold.html#a6c06ca32d4a10a2c101cc55fbae1a65d">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_object_legal_hold.html#a6c06ca32d4a10a2c101cc55fbae1a65d">RGWObjectLegalHold::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;Status&quot;</span>, <a class="code hl_variable" href="class_r_g_w_object_legal_hold.html#ab8af48bacd7a1dffabb811ee2bb6fd96">status</a>, obj, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_object_legal_hold.html#ab8af48bacd7a1dffabb811ee2bb6fd96">status</a>.compare(<span class="stringliteral">&quot;ON&quot;</span>) != 0 &amp;&amp; <a class="code hl_variable" href="class_r_g_w_object_legal_hold.html#ab8af48bacd7a1dffabb811ee2bb6fd96">status</a>.compare(<span class="stringliteral">&quot;OFF&quot;</span>) != 0) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">throw</span> <a class="code hl_struct" href="struct_r_g_w_x_m_l_decoder_1_1err.html">RGWXMLDecoder::err</a>(<span class="stringliteral">&quot;bad status in legal hold&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_r_g_w_object_legal_hold.html#abe6cbd8d2ed5682df23358d8e32fc4bd">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_object_legal_hold.html#abe6cbd8d2ed5682df23358d8e32fc4bd">RGWObjectLegalHold::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;Status&quot;</span>, <a class="code hl_variable" href="class_r_g_w_object_legal_hold.html#ab8af48bacd7a1dffabb811ee2bb6fd96">status</a>, f);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_r_g_w_object_legal_hold.html#a225fe69f31c7e284857c72a26f5c52a2">   99</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_object_legal_hold.html#a225fe69f31c7e284857c72a26f5c52a2">RGWObjectLegalHold::is_enabled</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_object_legal_hold.html#ab8af48bacd7a1dffabb811ee2bb6fd96">status</a>.compare(<span class="stringliteral">&quot;ON&quot;</span>) == 0;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+</div>
+<div class="ttc" id="aclass_default_retention_html_a3f8ab09831a509adfcad11f0ff37ffad"><div class="ttname"><a href="class_default_retention.html#a3f8ab09831a509adfcad11f0ff37ffad">DefaultRetention::mode</a></div><div class="ttdeci">std::string mode</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00015">rgw_object_lock.h:15</a></div></div>
+<div class="ttc" id="aclass_default_retention_html_a50a0893692a80029976908d6d2c752bf"><div class="ttname"><a href="class_default_retention.html#a50a0893692a80029976908d6d2c752bf">DefaultRetention::days</a></div><div class="ttdeci">int days</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00016">rgw_object_lock.h:16</a></div></div>
+<div class="ttc" id="aclass_default_retention_html_a75c86beb1b98430604b184256dd7bee3"><div class="ttname"><a href="class_default_retention.html#a75c86beb1b98430604b184256dd7bee3">DefaultRetention::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00008">rgw_object_lock.cc:8</a></div></div>
+<div class="ttc" id="aclass_default_retention_html_a94a214d8faa435561aa9242801278264"><div class="ttname"><a href="class_default_retention.html#a94a214d8faa435561aa9242801278264">DefaultRetention::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00020">rgw_object_lock.cc:20</a></div></div>
+<div class="ttc" id="aclass_default_retention_html_aa98867eeec465a8304ad4ed2982703e4"><div class="ttname"><a href="class_default_retention.html#aa98867eeec465a8304ad4ed2982703e4">DefaultRetention::years</a></div><div class="ttdeci">int years</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00017">rgw_object_lock.h:17</a></div></div>
+<div class="ttc" id="aclass_object_lock_rule_html_a15e412abe7c475b1ddf4c7c02df0697e"><div class="ttname"><a href="class_object_lock_rule.html#a15e412abe7c475b1ddf4c7c02df0697e">ObjectLockRule::defaultRetention</a></div><div class="ttdeci">DefaultRetention defaultRetention</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00058">rgw_object_lock.h:58</a></div></div>
+<div class="ttc" id="aclass_object_lock_rule_html_a2cc581f30255829bf8eb638b78d68dc9"><div class="ttname"><a href="class_object_lock_rule.html#a2cc581f30255829bf8eb638b78d68dc9">ObjectLockRule::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00033">rgw_object_lock.cc:33</a></div></div>
+<div class="ttc" id="aclass_object_lock_rule_html_a479752b9213c7b1d8572245a63b215bf"><div class="ttname"><a href="class_object_lock_rule.html#a479752b9213c7b1d8572245a63b215bf">ObjectLockRule::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00029">rgw_object_lock.cc:29</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_legal_hold_html_a225fe69f31c7e284857c72a26f5c52a2"><div class="ttname"><a href="class_r_g_w_object_legal_hold.html#a225fe69f31c7e284857c72a26f5c52a2">RGWObjectLegalHold::is_enabled</a></div><div class="ttdeci">bool is_enabled() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00099">rgw_object_lock.cc:99</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_legal_hold_html_a6c06ca32d4a10a2c101cc55fbae1a65d"><div class="ttname"><a href="class_r_g_w_object_legal_hold.html#a6c06ca32d4a10a2c101cc55fbae1a65d">RGWObjectLegalHold::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00088">rgw_object_lock.cc:88</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_legal_hold_html_ab8af48bacd7a1dffabb811ee2bb6fd96"><div class="ttname"><a href="class_r_g_w_object_legal_hold.html#ab8af48bacd7a1dffabb811ee2bb6fd96">RGWObjectLegalHold::status</a></div><div class="ttdeci">std::string status</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00195">rgw_object_lock.h:195</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_legal_hold_html_abe6cbd8d2ed5682df23358d8e32fc4bd"><div class="ttname"><a href="class_r_g_w_object_legal_hold.html#abe6cbd8d2ed5682df23358d8e32fc4bd">RGWObjectLegalHold::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00095">rgw_object_lock.cc:95</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_a155ddb244c6a665dbf0c0ef7dadd9196"><div class="ttname"><a href="class_r_g_w_object_lock.html#a155ddb244c6a665dbf0c0ef7dadd9196">RGWObjectLock::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00037">rgw_object_lock.cc:37</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_a24f13fb339e5f1db713b4f79061b9c13"><div class="ttname"><a href="class_r_g_w_object_lock.html#a24f13fb339e5f1db713b4f79061b9c13">RGWObjectLock::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00048">rgw_object_lock.cc:48</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_a3386a6532ea1d2ca708c096143a07b29"><div class="ttname"><a href="class_r_g_w_object_lock.html#a3386a6532ea1d2ca708c096143a07b29">RGWObjectLock::get_days</a></div><div class="ttdeci">int get_days() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00099">rgw_object_lock.h:99</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_a39de8c0c4a8c8d5e906f3247345ea786"><div class="ttname"><a href="class_r_g_w_object_lock.html#a39de8c0c4a8c8d5e906f3247345ea786">RGWObjectLock::rule</a></div><div class="ttdeci">ObjectLockRule rule</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00094">rgw_object_lock.h:94</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_a6154738d3acee28b90f2fc66e5a0d246"><div class="ttname"><a href="class_r_g_w_object_lock.html#a6154738d3acee28b90f2fc66e5a0d246">RGWObjectLock::enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00092">rgw_object_lock.h:92</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_a971ed1cd48a426566c1352773d4bd63c"><div class="ttname"><a href="class_r_g_w_object_lock.html#a971ed1cd48a426566c1352773d4bd63c">RGWObjectLock::rule_exist</a></div><div class="ttdeci">bool rule_exist</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00093">rgw_object_lock.h:93</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_a97e30232afdf995b66e03043a28a4a07"><div class="ttname"><a href="class_r_g_w_object_lock.html#a97e30232afdf995b66e03043a28a4a07">RGWObjectLock::get_years</a></div><div class="ttdeci">int get_years() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00103">rgw_object_lock.h:103</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_lock_html_ae3a5fb013637f128ebbbcdba2410f196"><div class="ttname"><a href="class_r_g_w_object_lock.html#ae3a5fb013637f128ebbbcdba2410f196">RGWObjectLock::get_lock_until_date</a></div><div class="ttdeci">ceph::real_time get_lock_until_date(const ceph::real_time &amp;mtime) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00057">rgw_object_lock.cc:57</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_retention_html_a30fe8a13025f9d9bfc2b5463648116b0"><div class="ttname"><a href="class_r_g_w_object_retention.html#a30fe8a13025f9d9bfc2b5463648116b0">RGWObjectRetention::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00082">rgw_object_lock.cc:82</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_retention_html_a594c372c294fa03dc6140921ec2502b9"><div class="ttname"><a href="class_r_g_w_object_retention.html#a594c372c294fa03dc6140921ec2502b9">RGWObjectRetention::mode</a></div><div class="ttdeci">std::string mode</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00151">rgw_object_lock.h:151</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_retention_html_a9c641d2ec34705f77b15a577c2226dea"><div class="ttname"><a href="class_r_g_w_object_retention.html#a9c641d2ec34705f77b15a577c2226dea">RGWObjectRetention::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8cc_source.html#l00068">rgw_object_lock.cc:68</a></div></div>
+<div class="ttc" id="aclass_r_g_w_object_retention_html_aa61bbae71f7306aac8cffe03634eb288"><div class="ttname"><a href="class_r_g_w_object_retention.html#aa61bbae71f7306aac8cffe03634eb288">RGWObjectRetention::retain_until_date</a></div><div class="ttdeci">ceph::real_time retain_until_date</div><div class="ttdef"><b>Definition</b> <a href="rgw__object__lock_8h_source.html#l00152">rgw_object_lock.h:152</a></div></div>
+<div class="ttc" id="aclass_x_m_l_obj_html"><div class="ttname"><a href="class_x_m_l_obj.html">XMLObj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00039">rgw_xml.h:40</a></div></div>
+<div class="ttc" id="anamespace_r_g_w_x_m_l_decoder_html_afd109a7a9a8e6466d3365860e0b2426f"><div class="ttname"><a href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a></div><div class="ttdeci">bool decode_xml(const char *name, T &amp;val, XMLObj *obj, bool mandatory=false)</div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00218">rgw_xml.h:218</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__basic__types_8cc_html_a0a8bb5599abd436eaa39a31634f1f5e3"><div class="ttname"><a href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a></div><div class="ttdeci">void encode_xml(const char *name, const rgw_user &amp;val, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8cc_source.html#l00033">rgw_basic_types.cc:33</a></div></div>
+<div class="ttc" id="argw__object__lock_8h_html"><div class="ttname"><a href="rgw__object__lock_8h.html">rgw_object_lock.h</a></div></div>
+<div class="ttc" id="astruct_r_g_w_x_m_l_decoder_1_1err_html"><div class="ttname"><a href="struct_r_g_w_x_m_l_decoder_1_1err.html">RGWXMLDecoder::err</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00149">rgw_xml.h:149</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__object__lock_8cc.html">rgw_object_lock.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

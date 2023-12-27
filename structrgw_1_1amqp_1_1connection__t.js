@@ -1,0 +1,27 @@
+var structrgw_1_1amqp_1_1connection__t =
+[
+    [ "connection_t", "structrgw_1_1amqp_1_1connection__t.html#a4643b68fef2c0b5618068ea0f29f391d", null ],
+    [ "~connection_t", "structrgw_1_1amqp_1_1connection__t.html#abf453fb6dc99ba14d96511b5a5e00d26", null ],
+    [ "destroy", "structrgw_1_1amqp_1_1connection__t.html#af19d97553087dd5df4611e79b576a254", null ],
+    [ "is_ok", "structrgw_1_1amqp_1_1connection__t.html#ad72fcb95f774ee228d7634a27eb4d882", null ],
+    [ "intrusive_ptr_add_ref", "structrgw_1_1amqp_1_1connection__t.html#a862fac43247096134afc8f455d3ff302", null ],
+    [ "intrusive_ptr_release", "structrgw_1_1amqp_1_1connection__t.html#a28b2b75189c5c619e270edfb2cee7f3f", null ],
+    [ "ca_location", "structrgw_1_1amqp_1_1connection__t.html#aa9ef1d2d718f6592df520e44438c9b90", null ],
+    [ "callbacks", "structrgw_1_1amqp_1_1connection__t.html#a22f22922e328f1788e6ef206ead7a9ce", null ],
+    [ "cct", "structrgw_1_1amqp_1_1connection__t.html#ab21e4faef1dc0816b966ec920e3cc9e1", null ],
+    [ "delivery_tag", "structrgw_1_1amqp_1_1connection__t.html#aa02762fdc326dd71e3ccb76a6301e9ab", null ],
+    [ "exchange", "structrgw_1_1amqp_1_1connection__t.html#afafa2dc723699dd916982da8f7d8262f", null ],
+    [ "mandatory", "structrgw_1_1amqp_1_1connection__t.html#ab293c913d09c81a015555ff158c03d3e", null ],
+    [ "next_reconnect", "structrgw_1_1amqp_1_1connection__t.html#ae5a4a8c3df69b5a6b765740f83ce3d7c", null ],
+    [ "password", "structrgw_1_1amqp_1_1connection__t.html#a929568f6e5761382f4d2207722287103", null ],
+    [ "ref_count", "structrgw_1_1amqp_1_1connection__t.html#ad37cab94faa84f34a9005bb3b60633ae", null ],
+    [ "reply_code", "structrgw_1_1amqp_1_1connection__t.html#afcab662de5d3f20e621c0ca8de76064b", null ],
+    [ "reply_to_queue", "structrgw_1_1amqp_1_1connection__t.html#af1dd3df389389f4418fef44e01134a3d", null ],
+    [ "reply_type", "structrgw_1_1amqp_1_1connection__t.html#ad00b95a7185a1de7823b45ba83f13868", null ],
+    [ "state", "structrgw_1_1amqp_1_1connection__t.html#a01532db27f9c31fa45a6ab37a68dbe79", null ],
+    [ "status", "structrgw_1_1amqp_1_1connection__t.html#acb6c38ac33dd2170b9c901370f7b2756", null ],
+    [ "timestamp", "structrgw_1_1amqp_1_1connection__t.html#ab71f2a5fd6d07adbcbe13d2712afa705", null ],
+    [ "use_ssl", "structrgw_1_1amqp_1_1connection__t.html#a57191ec618d24ffefa171be2621c17c5", null ],
+    [ "user", "structrgw_1_1amqp_1_1connection__t.html#ac14e4d9b4c6a79f59c2b115dbc711972", null ],
+    [ "verify_ssl", "structrgw_1_1amqp_1_1connection__t.html#a5053510ba4965bd589a6209aa9683357", null ]
+];

@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_trim_bilog.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__trim__bilog_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_trim_bilog.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__trim__bilog_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Copyright (C) 2017 Red Hat, Inc</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * Author: Casey Bodley &lt;cbodley@redhat.com&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * License version 2.1, as published by the Free Software</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Foundation.  See file COPYING.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifndef RGW_SYNC_LOG_TRIM_H</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define RGW_SYNC_LOG_TRIM_H</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;include/common_fwd.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;include/encoding.h&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;common/ceph_time.h&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;common/dout.h&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_h_t_t_p_manager.html">RGWHTTPManager</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw.html">rgw</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span>sal {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">class </span>RadosStore;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_change_observer.html">   38</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw_1_1_bucket_change_observer.html">BucketChangeObserver</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_change_observer.html#a2ccbf7006e5e3a6179811da28d5c5de8">   39</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="structrgw_1_1_bucket_change_observer.html#a2ccbf7006e5e3a6179811da28d5c5de8">~BucketChangeObserver</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_change_observer.html#ab593244fe5094cb4f466457cb1e47c60">   41</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw_1_1_bucket_change_observer.html#ab593244fe5094cb4f466457cb1e47c60">on_bucket_changed</a>(<span class="keyword">const</span> std::string_view&amp; bucket_instance) = 0;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html">   45</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw_1_1_bucket_trim_config.html">BucketTrimConfig</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#a793101d6fe209c861a23c82ec87fb5be">   47</a></span>  uint32_t <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#a793101d6fe209c861a23c82ec87fb5be">trim_interval_sec</a>{0};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#ac079c9458b2715b555f7dc482d5dac34">   49</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#ac079c9458b2715b555f7dc482d5dac34">counter_size</a>{0};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#a7758e4ae037a65f5c69b4eff2793f76c">   51</a></span>  uint32_t <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#a7758e4ae037a65f5c69b4eff2793f76c">buckets_per_interval</a>{0};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#a9d00c7062e4f32bfc4393b2968413d11">   53</a></span>  uint32_t <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#a9d00c7062e4f32bfc4393b2968413d11">min_cold_buckets_per_interval</a>{0};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#aad37bf3da0e4033c80b1a13223d2c6a6">   55</a></span>  uint32_t <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#aad37bf3da0e4033c80b1a13223d2c6a6">concurrent_buckets</a>{0};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#a5d671fffb7ea7d32f432874a54238217">   57</a></span>  uint64_t <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#a5d671fffb7ea7d32f432874a54238217">notify_timeout_ms</a>{0};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#a4e244c88efdd802f41ed4607b8988762">   60</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#a4e244c88efdd802f41ed4607b8988762">recent_size</a>{0};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_config.html#ad8066de5d6a5faa13b5fe2681d55683d">   63</a></span>  ceph::timespan <a class="code hl_variable" href="structrgw_1_1_bucket_trim_config.html#ad8066de5d6a5faa13b5fe2681d55683d">recent_duration</a>{0};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacergw.html#a83553f9b1722162143166d58a77ba679">configure_bucket_trim</a>(CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, BucketTrimConfig&amp; <a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a2245023265ae4cf87d02c8b6ba991139">config</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classrgw_1_1_bucket_trim_manager.html">   73</a></span><span class="keyword">class </span><a class="code hl_class" href="classrgw_1_1_bucket_trim_manager.html">BucketTrimManager</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structrgw_1_1_bucket_change_observer.html">BucketChangeObserver</a>, <span class="keyword">public</span> DoutPrefixProvider {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">class </span><a class="code hl_class" href="classrgw_1_1_bucket_trim_manager_1_1_impl.html">Impl</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classrgw_1_1_bucket_trim_manager.html#a5dc4f6af742e5525d60bf8a26e6b657f">   75</a></span>  std::unique_ptr&lt;Impl&gt; <a class="code hl_variable" href="classrgw_1_1_bucket_trim_manager.html#a5dc4f6af742e5525d60bf8a26e6b657f">impl</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_class" href="classrgw_1_1_bucket_trim_manager.html">BucketTrimManager</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_rados_store.html">sal::RadosStore</a> *<a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, <span class="keyword">const</span> <a class="code hl_struct" href="structrgw_1_1_bucket_trim_config.html">BucketTrimConfig</a>&amp; <a class="code hl_enumvalue" href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a2245023265ae4cf87d02c8b6ba991139">config</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classrgw_1_1_bucket_trim_manager.html#aeb24ab29de1bbf2a3c0f1f49fa24a99d">   78</a></span>  <a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#aeb24ab29de1bbf2a3c0f1f49fa24a99d">~BucketTrimManager</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#ae8d9a4d7c1a801df88b62d664e27dbaa">init</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#a31fc074b69088b65f68d67394a5fb283">on_bucket_changed</a>(<span class="keyword">const</span> std::string_view&amp; bucket_instance) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a>* <a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#a61110a8b2eba6e7f120023f07cbc54df">create_bucket_trim_cr</a>(<a class="code hl_class" href="class_r_g_w_h_t_t_p_manager.html">RGWHTTPManager</a> *http);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a>* <a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#a359c77f41d24cd9dfa499d157ffc692f">create_admin_bucket_trim_cr</a>(<a class="code hl_class" href="class_r_g_w_h_t_t_p_manager.html">RGWHTTPManager</a> *http);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  CephContext *<a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#a2b7af46a43ec0a1b3b3970f72f21cfa4">get_cct</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">unsigned</span> <a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#a6dd381a74487fd80aa534c5121036118">get_subsys</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  std::ostream&amp; <a class="code hl_function" href="classrgw_1_1_bucket_trim_manager.html#af78684b20feeaab024795f06e00cfe41">gen_prefix</a>(std::ostream&amp; out) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="};">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_status.html">   98</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw_1_1_bucket_trim_status.html">BucketTrimStatus</a> {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_status.html#a8dde17ba0eb18de206f6c9563dcdc7ac">   99</a></span>  std::string <a class="code hl_variable" href="structrgw_1_1_bucket_trim_status.html#a8dde17ba0eb18de206f6c9563dcdc7ac">marker</a>; <span class="comment">//&lt; metadata key of current bucket instance</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_status.html#a67a044e359fcce51265627fc1fb337a8">  101</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw_1_1_bucket_trim_status.html#a67a044e359fcce51265627fc1fb337a8">encode</a>(bufferlist&amp; bl)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    ENCODE_START(1, 1, bl);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_function" href="structrgw_1_1_bucket_trim_status.html#a67a044e359fcce51265627fc1fb337a8">encode</a>(<a class="code hl_variable" href="structrgw_1_1_bucket_trim_status.html#a8dde17ba0eb18de206f6c9563dcdc7ac">marker</a>, bl);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    ENCODE_FINISH(bl);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_status.html#a920a276e15df7c798020a09ec81727aa">  106</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structrgw_1_1_bucket_trim_status.html#a920a276e15df7c798020a09ec81727aa">decode</a>(bufferlist::const_iterator&amp; p) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    DECODE_START(1, p);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_function" href="structrgw_1_1_bucket_trim_status.html#a920a276e15df7c798020a09ec81727aa">decode</a>(<a class="code hl_variable" href="structrgw_1_1_bucket_trim_status.html#a8dde17ba0eb18de206f6c9563dcdc7ac">marker</a>, p);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    DECODE_FINISH(p);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structrgw_1_1_bucket_trim_status.html#a3e49f348f7d843b179f73a708025e944">  112</a></span>  <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code hl_variable" href="structrgw_1_1_bucket_trim_status.html#a3e49f348f7d843b179f73a708025e944">oid</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>} <span class="comment">// namespace rgw</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="rgw__trim__bilog_8h.html#abace20a2d8f3fbdae6ba52b4b7f670a1">  117</a></span><a class="code hl_function" href="rgw__trim__bilog_8h.html#abace20a2d8f3fbdae6ba52b4b7f670a1">WRITE_CLASS_ENCODER</a>(<a class="code hl_struct" href="structrgw_1_1_bucket_trim_status.html">rgw::BucketTrimStatus</a>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#endif </span><span class="comment">// RGW_SYNC_LOG_TRIM_H</span></div>
+<div class="ttc" id="aclass_r_g_w_coroutine_html"><div class="ttname"><a href="class_r_g_w_coroutine.html">RGWCoroutine</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__coroutine_8h_source.html#l00186">rgw_coroutine.h:186</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_manager_html"><div class="ttname"><a href="class_r_g_w_h_t_t_p_manager.html">RGWHTTPManager</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__http__client_8h_source.html#l00282">rgw_http_client.h:282</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_1_1_impl_html"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager_1_1_impl.html">rgw::BucketTrimManager::Impl</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01064">rgw_trim_bilog.cc:1065</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html">rgw::BucketTrimManager</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00073">rgw_trim_bilog.h:73</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_a2b7af46a43ec0a1b3b3970f72f21cfa4"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#a2b7af46a43ec0a1b3b3970f72f21cfa4">rgw::BucketTrimManager::get_cct</a></div><div class="ttdeci">CephContext * get_cct() const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01159">rgw_trim_bilog.cc:1159</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_a31fc074b69088b65f68d67394a5fb283"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#a31fc074b69088b65f68d67394a5fb283">rgw::BucketTrimManager::on_bucket_changed</a></div><div class="ttdeci">void on_bucket_changed(const std::string_view &amp;bucket_instance) override</div><div class="ttdoc">increment a counter for the given bucket instance</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01136">rgw_trim_bilog.cc:1136</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_a359c77f41d24cd9dfa499d157ffc692f"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#a359c77f41d24cd9dfa499d157ffc692f">rgw::BucketTrimManager::create_admin_bucket_trim_cr</a></div><div class="ttdeci">RGWCoroutine * create_admin_bucket_trim_cr(RGWHTTPManager *http)</div><div class="ttdoc">create a coroutine to trim buckets directly via radosgw-admin</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01152">rgw_trim_bilog.cc:1152</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_a5dc4f6af742e5525d60bf8a26e6b657f"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#a5dc4f6af742e5525d60bf8a26e6b657f">rgw::BucketTrimManager::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00075">rgw_trim_bilog.h:75</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_a61110a8b2eba6e7f120023f07cbc54df"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#a61110a8b2eba6e7f120023f07cbc54df">rgw::BucketTrimManager::create_bucket_trim_cr</a></div><div class="ttdeci">RGWCoroutine * create_bucket_trim_cr(RGWHTTPManager *http)</div><div class="ttdoc">create a coroutine to run the bucket trim process every trim interval</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01146">rgw_trim_bilog.cc:1146</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_a6dd381a74487fd80aa534c5121036118"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#a6dd381a74487fd80aa534c5121036118">rgw::BucketTrimManager::get_subsys</a></div><div class="ttdeci">unsigned get_subsys() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01164">rgw_trim_bilog.cc:1164</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_ae8d9a4d7c1a801df88b62d664e27dbaa"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#ae8d9a4d7c1a801df88b62d664e27dbaa">rgw::BucketTrimManager::init</a></div><div class="ttdeci">int init()</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01131">rgw_trim_bilog.cc:1131</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_aeb24ab29de1bbf2a3c0f1f49fa24a99d"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#aeb24ab29de1bbf2a3c0f1f49fa24a99d">rgw::BucketTrimManager::~BucketTrimManager</a></div><div class="ttdeci">~BucketTrimManager()</div></div>
+<div class="ttc" id="aclassrgw_1_1_bucket_trim_manager_html_af78684b20feeaab024795f06e00cfe41"><div class="ttname"><a href="classrgw_1_1_bucket_trim_manager.html#af78684b20feeaab024795f06e00cfe41">rgw::BucketTrimManager::gen_prefix</a></div><div class="ttdeci">std::ostream &amp; gen_prefix(std::ostream &amp;out) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01169">rgw_trim_bilog.cc:1169</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_rados_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sal__rados_8h_source.html#l00363">rgw_sal_rados.h:363</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacergw_html"><div class="ttname"><a href="namespacergw.html">rgw</a></div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00038">cls_fifo_legacy.cc:38</a></div></div>
+<div class="ttc" id="anamespacergw_html_a83553f9b1722162143166d58a77ba679"><div class="ttname"><a href="namespacergw.html#a83553f9b1722162143166d58a77ba679">rgw::configure_bucket_trim</a></div><div class="ttdeci">void configure_bucket_trim(CephContext *cct, BucketTrimConfig &amp;config)</div><div class="ttdoc">fill out the BucketTrimConfig from the ceph context</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8cc_source.html#l01046">rgw_trim_bilog.cc:1046</a></div></div>
+<div class="ttc" id="anamespacergw_html_aa74ef6030865b86d25300c7309e8b191a2245023265ae4cf87d02c8b6ba991139"><div class="ttname"><a href="namespacergw.html#aa74ef6030865b86d25300c7309e8b191a2245023265ae4cf87d02c8b6ba991139">rgw::Service::config</a></div><div class="ttdeci">@ config</div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__trim__bilog_8h_html_abace20a2d8f3fbdae6ba52b4b7f670a1"><div class="ttname"><a href="rgw__trim__bilog_8h.html#abace20a2d8f3fbdae6ba52b4b7f670a1">WRITE_CLASS_ENCODER</a></div><div class="ttdeci">WRITE_CLASS_ENCODER(rgw::BucketTrimStatus)</div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_change_observer_html"><div class="ttname"><a href="structrgw_1_1_bucket_change_observer.html">rgw::BucketChangeObserver</a></div><div class="ttdoc">Interface to inform the trim process about which buckets are most active</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00038">rgw_trim_bilog.h:38</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_change_observer_html_a2ccbf7006e5e3a6179811da28d5c5de8"><div class="ttname"><a href="structrgw_1_1_bucket_change_observer.html#a2ccbf7006e5e3a6179811da28d5c5de8">rgw::BucketChangeObserver::~BucketChangeObserver</a></div><div class="ttdeci">virtual ~BucketChangeObserver()=default</div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_change_observer_html_ab593244fe5094cb4f466457cb1e47c60"><div class="ttname"><a href="structrgw_1_1_bucket_change_observer.html#ab593244fe5094cb4f466457cb1e47c60">rgw::BucketChangeObserver::on_bucket_changed</a></div><div class="ttdeci">virtual void on_bucket_changed(const std::string_view &amp;bucket_instance)=0</div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html">rgw::BucketTrimConfig</a></div><div class="ttdoc">Configuration for BucketTrimManager</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00045">rgw_trim_bilog.h:45</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_a4e244c88efdd802f41ed4607b8988762"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#a4e244c88efdd802f41ed4607b8988762">rgw::BucketTrimConfig::recent_size</a></div><div class="ttdeci">size_t recent_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00060">rgw_trim_bilog.h:60</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_a5d671fffb7ea7d32f432874a54238217"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#a5d671fffb7ea7d32f432874a54238217">rgw::BucketTrimConfig::notify_timeout_ms</a></div><div class="ttdeci">uint64_t notify_timeout_ms</div><div class="ttdoc">timeout in ms for bucket trim notify replies</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00057">rgw_trim_bilog.h:57</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_a7758e4ae037a65f5c69b4eff2793f76c"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#a7758e4ae037a65f5c69b4eff2793f76c">rgw::BucketTrimConfig::buckets_per_interval</a></div><div class="ttdeci">uint32_t buckets_per_interval</div><div class="ttdoc">maximum number of buckets to process each trim interval</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00051">rgw_trim_bilog.h:51</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_a793101d6fe209c861a23c82ec87fb5be"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#a793101d6fe209c861a23c82ec87fb5be">rgw::BucketTrimConfig::trim_interval_sec</a></div><div class="ttdeci">uint32_t trim_interval_sec</div><div class="ttdoc">time interval in seconds between bucket trim attempts</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00047">rgw_trim_bilog.h:47</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_a9d00c7062e4f32bfc4393b2968413d11"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#a9d00c7062e4f32bfc4393b2968413d11">rgw::BucketTrimConfig::min_cold_buckets_per_interval</a></div><div class="ttdeci">uint32_t min_cold_buckets_per_interval</div><div class="ttdoc">minimum number of buckets to choose from the global bucket instance list</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00053">rgw_trim_bilog.h:53</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_aad37bf3da0e4033c80b1a13223d2c6a6"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#aad37bf3da0e4033c80b1a13223d2c6a6">rgw::BucketTrimConfig::concurrent_buckets</a></div><div class="ttdeci">uint32_t concurrent_buckets</div><div class="ttdoc">maximum number of buckets to process in parallel</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00055">rgw_trim_bilog.h:55</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_ac079c9458b2715b555f7dc482d5dac34"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#ac079c9458b2715b555f7dc482d5dac34">rgw::BucketTrimConfig::counter_size</a></div><div class="ttdeci">size_t counter_size</div><div class="ttdoc">maximum number of buckets to track with BucketChangeObserver</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00049">rgw_trim_bilog.h:49</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_config_html_ad8066de5d6a5faa13b5fe2681d55683d"><div class="ttname"><a href="structrgw_1_1_bucket_trim_config.html#ad8066de5d6a5faa13b5fe2681d55683d">rgw::BucketTrimConfig::recent_duration</a></div><div class="ttdeci">ceph::timespan recent_duration</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00063">rgw_trim_bilog.h:63</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_status_html"><div class="ttname"><a href="structrgw_1_1_bucket_trim_status.html">rgw::BucketTrimStatus</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00098">rgw_trim_bilog.h:98</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_status_html_a3e49f348f7d843b179f73a708025e944"><div class="ttname"><a href="structrgw_1_1_bucket_trim_status.html#a3e49f348f7d843b179f73a708025e944">rgw::BucketTrimStatus::oid</a></div><div class="ttdeci">static const std::string oid</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00112">rgw_trim_bilog.h:112</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_status_html_a67a044e359fcce51265627fc1fb337a8"><div class="ttname"><a href="structrgw_1_1_bucket_trim_status.html#a67a044e359fcce51265627fc1fb337a8">rgw::BucketTrimStatus::encode</a></div><div class="ttdeci">void encode(bufferlist &amp;bl) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00101">rgw_trim_bilog.h:101</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_status_html_a8dde17ba0eb18de206f6c9563dcdc7ac"><div class="ttname"><a href="structrgw_1_1_bucket_trim_status.html#a8dde17ba0eb18de206f6c9563dcdc7ac">rgw::BucketTrimStatus::marker</a></div><div class="ttdeci">std::string marker</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00099">rgw_trim_bilog.h:99</a></div></div>
+<div class="ttc" id="astructrgw_1_1_bucket_trim_status_html_a920a276e15df7c798020a09ec81727aa"><div class="ttname"><a href="structrgw_1_1_bucket_trim_status.html#a920a276e15df7c798020a09ec81727aa">rgw::BucketTrimStatus::decode</a></div><div class="ttdeci">void decode(bufferlist::const_iterator &amp;p)</div><div class="ttdef"><b>Definition</b> <a href="rgw__trim__bilog_8h_source.html#l00106">rgw_trim_bilog.h:106</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__trim__bilog_8h.html">rgw_trim_bilog.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

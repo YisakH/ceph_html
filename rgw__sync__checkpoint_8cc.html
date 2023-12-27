@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_sync_checkpoint.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__sync__checkpoint_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">매크로</a> &#124;
+<a href="#func-members">함수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_sync_checkpoint.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;fmt/format.h&gt;</code><br />
+<code>#include &quot;common/errno.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__checkpoint_8h_source.html">rgw_sync_checkpoint.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal__rados_8h_source.html">rgw_sal_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__bucket__sync_8h_source.html">rgw_bucket_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__data__sync_8h_source.html">rgw_data_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__http__errors_8h_source.html">rgw_http_errors.h</a>&quot;</code><br />
+<code>#include &quot;cls/rgw/cls_rgw_client.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__sys__obj_8h_source.html">services/svc_sys_obj.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__zone_8h_source.html">services/svc_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__zone_8h_source.html">rgw_zone.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_sync_checkpoint.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__checkpoint_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__sync__checkpoint_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__sync__checkpoint_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__sync__checkpoint_8cc">
+<area shape="rect" title=" " alt="" coords="2321,5,2489,48"/>
+<area shape="rect" title=" " alt="" coords="2442,419,2533,445"/>
+<area shape="poly" title=" " alt="" coords="2320,36,2207,50,2148,62,2094,79,2050,100,2033,112,2021,126,2013,141,2010,158,2013,176,2023,196,2050,225,2092,256,2145,287,2206,317,2333,371,2438,411,2436,416,2331,376,2204,322,2143,291,2089,260,2046,229,2019,199,2008,177,2005,158,2008,139,2016,123,2030,108,2047,95,2093,74,2147,57,2206,45,2320,30"/>
+<area shape="rect" title=" " alt="" coords="3319,96,3435,123"/>
+<area shape="poly" title=" " alt="" coords="2489,29,2843,51,3071,70,3301,93,3304,94,3304,99,3301,99,3071,75,2843,57,2489,35"/>
+<area shape="rect" href="rgw__sync__checkpoint_8h.html" title=" " alt="" coords="602,253,760,280"/>
+<area shape="poly" title=" " alt="" coords="2320,38,2058,63,1734,99,1471,133,1209,173,990,208,772,248,751,252,750,247,771,243,989,203,1208,168,1471,128,1734,93,2058,58,2320,33"/>
+<area shape="rect" href="rgw__sal__rados_8h.html" title=" " alt="" coords="1221,171,1336,197"/>
+<area shape="poly" title=" " alt="" coords="2321,42,1351,175,1351,170,2320,37"/>
+<area shape="rect" href="rgw__bucket__sync_8h.html" title=" " alt="" coords="3112,171,3245,197"/>
+<area shape="poly" title=" " alt="" coords="2490,42,3101,164,3100,170,2489,48"/>
+<area shape="rect" href="rgw__data__sync_8h.html" title=" " alt="" coords="2345,96,2465,123"/>
+<area shape="poly" title=" " alt="" coords="2408,49,2408,80,2402,80,2402,49"/>
+<area shape="rect" href="rgw__zone_8h.html" title=" " alt="" coords="2861,501,2949,528"/>
+<area shape="poly" title=" " alt="" coords="2490,31,2706,51,2969,82,3090,102,3190,126,3229,138,3258,152,3278,166,3285,182,3285,268,3282,296,3275,321,3264,345,3249,367,3211,405,3164,436,3112,461,3059,481,2964,506,2963,501,3057,476,3110,456,3161,431,3208,400,3245,363,3260,342,3270,319,3277,295,3280,268,3280,183,3274,170,3256,156,3227,143,3188,131,3089,108,2968,87,2706,56,2489,37"/>
+<area shape="rect" href="rgw__http__errors_8h.html" title=" " alt="" coords="2966,171,3087,197"/>
+<area shape="poly" title=" " alt="" coords="2488,46,2962,164,2960,169,2487,51"/>
+<area shape="rect" title=" " alt="" coords="3459,96,3618,123"/>
+<area shape="poly" title=" " alt="" coords="2489,29,2896,51,3166,69,3443,93,3443,98,3165,75,2895,56,2489,34"/>
+<area shape="rect" href="svc__sys__obj_8h.html" title=" " alt="" coords="225,245,369,288"/>
+<area shape="poly" title=" " alt="" coords="2320,31,1990,36,1529,48,1065,68,872,82,727,99,651,112,593,126,536,144,465,173,399,205,342,239,339,234,397,201,462,168,534,139,591,120,650,107,726,93,872,76,1065,62,1529,42,1990,31,2320,26"/>
+<area shape="rect" href="svc__zone_8h.html" title=" " alt="" coords="739,96,876,123"/>
+<area shape="poly" title=" " alt="" coords="2320,33,1732,52,1326,71,913,99,892,101,891,95,913,93,1326,66,1731,46,2320,27"/>
+<area shape="rect" title=" " alt="" coords="786,336,853,363"/>
+<area shape="poly" title=" " alt="" coords="704,278,786,326,784,330,701,283"/>
+<area shape="rect" title=" " alt="" coords="888,419,1034,445"/>
+<area shape="poly" title=" " alt="" coords="692,278,726,318,750,341,776,360,834,390,894,411,892,416,832,395,773,365,746,345,722,322,688,282"/>
+<area shape="rect" href="rgw__basic__types_8h.html" title=" " alt="" coords="2664,725,2794,752"/>
+<area shape="poly" title=" " alt="" coords="677,281,662,314,648,360,645,384,645,408,650,431,661,451,689,468,751,492,952,555,1212,622,1349,651,1481,675,1586,687,1725,698,2060,715,2649,733,2648,738,2060,721,1725,703,1586,692,1480,680,1348,656,1211,627,950,560,749,497,687,473,658,455,645,433,640,409,639,384,643,358,657,313,672,279"/>
+<area shape="rect" title=" " alt="" coords="937,800,990,827"/>
+<area shape="poly" title=" " alt="" coords="2664,753,2645,755,2396,774,2141,789,1653,807,1251,814,1006,815,1006,809,1251,808,1653,801,2141,783,2395,769,2645,749,2664,747"/>
+<area shape="rect" title=" " alt="" coords="1861,800,1970,827"/>
+<area shape="poly" title=" " alt="" coords="2664,752,2645,755,2274,790,1986,810,1985,805,2273,784,2645,749,2663,747"/>
+<area shape="rect" href="rgw__sal_8h.html" title="Base abstractions and API for SAL" alt="" coords="1109,419,1186,445"/>
+<area shape="poly" title=" " alt="" coords="1274,199,1163,406,1159,404,1269,197"/>
+<area shape="rect" href="rgw__rados_8h.html" title=" " alt="" coords="1426,336,1517,363"/>
+<area shape="poly" title=" " alt="" coords="1287,196,1314,239,1334,264,1356,286,1390,309,1425,327,1422,332,1387,314,1352,290,1330,267,1310,242,1283,199"/>
+<area shape="rect" href="rgw__notify_8h.html" title=" " alt="" coords="520,336,610,363"/>
+<area shape="poly" title=" " alt="" coords="1220,189,1062,194,864,205,687,222,625,234,592,247,579,263,572,282,566,321,561,320,566,280,575,260,589,243,624,229,686,217,864,200,1062,189,1220,184"/>
+<area shape="rect" href="rgw__oidc__provider_8h.html" title=" " alt="" coords="1218,336,1352,363"/>
+<area shape="poly" title=" " alt="" coords="1281,197,1286,320,1281,320,1276,198"/>
+<area shape="rect" href="rgw__role_8h.html" title=" " alt="" coords="1366,253,1446,280"/>
+<area shape="poly" title=" " alt="" coords="1300,196,1375,243,1372,247,1297,200"/>
+<area shape="rect" href="rgw__multi_8h.html" title=" " alt="" coords="1471,253,1558,280"/>
+<area shape="poly" title=" " alt="" coords="1318,195,1459,243,1466,245,1464,250,1457,248,1316,200"/>
+<area shape="rect" href="rgw__putobj__processor_8h.html" title=" " alt="" coords="975,253,1133,280"/>
+<area shape="poly" title=" " alt="" coords="1244,200,1104,250,1103,245,1242,195"/>
+<area shape="rect" href="svc__tier__rados_8h.html" title=" " alt="" coords="927,336,1093,363"/>
+<area shape="poly" title=" " alt="" coords="1264,200,1146,290,1102,314,1059,332,1057,328,1100,309,1143,286,1261,195"/>
+<area shape="rect" title=" " alt="" coords="784,253,951,280"/>
+<area shape="poly" title=" " alt="" coords="1221,199,964,248,943,252,942,247,963,243,1220,193"/>
+<area shape="rect" href="rgw__user_8h.html" title=" " alt="" coords="1051,501,1135,528"/>
+<area shape="poly" title=" " alt="" coords="1141,447,1112,490,1107,487,1137,444"/>
+<area shape="rect" title=" " alt="" coords="1493,651,1613,677"/>
+<area shape="poly" title=" " alt="" coords="1171,444,1519,640,1516,645,1169,448"/>
+<area shape="rect" href="rgw__notify__event__type_8h.html" title=" " alt="" coords="571,501,730,528"/>
+<area shape="poly" title=" " alt="" coords="1116,448,1091,456,1000,475,908,490,746,509,745,503,907,484,999,470,1090,451,1114,443"/>
+<area shape="poly" title=" " alt="" coords="1083,530,1041,581,1017,615,998,652,986,687,977,723,968,785,963,784,972,722,980,685,993,650,1013,612,1036,578,1079,527"/>
+<area shape="poly" title=" " alt="" coords="1112,526,1178,570,1280,631,1404,695,1470,725,1536,749,1618,772,1701,788,1846,805,1845,811,1700,793,1617,777,1535,755,1468,730,1402,700,1278,635,1176,574,1109,531"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="2373,576,2482,603"/>
+<area shape="poly" title=" " alt="" coords="1136,513,1325,516,1623,524,1983,542,2171,555,2357,573,2357,579,2171,561,1983,547,1623,529,1325,521,1136,519"/>
+<area shape="rect" href="rgw__sync__policy_8h.html" title=" " alt="" coords="2793,651,2921,677"/>
+<area shape="poly" title=" " alt="" coords="2483,597,2778,647,2777,652,2482,603"/>
+<area shape="rect" title=" " alt="" coords="2188,651,2360,677"/>
+<area shape="poly" title=" " alt="" coords="2402,606,2316,646,2314,641,2400,601"/>
+<area shape="poly" title=" " alt="" coords="2373,604,2360,605,2153,627,1947,644,1628,662,1628,657,1947,639,2152,622,2359,600,2372,598"/>
+<area shape="poly" title=" " alt="" coords="2836,680,2766,720,2763,715,2833,676"/>
+<area shape="poly" title=" " alt="" coords="660,527,686,568,728,626,783,691,845,750,884,775,924,794,921,799,881,780,842,754,779,695,724,630,682,571,655,530"/>
+<area shape="poly" title=" " alt="" coords="1426,359,1261,381,1053,413,1031,418,1030,412,1052,408,1260,375,1425,354"/>
+<area shape="poly" title=" " alt="" coords="1426,365,1202,420,1200,415,1425,359"/>
+<area shape="poly" title=" " alt="" coords="1518,352,1638,369,1709,385,1778,408,1798,419,1812,430,1826,441,1846,451,1891,466,1931,474,2000,481,2070,484,2159,499,2280,533,2381,568,2379,573,2278,538,2158,504,2070,490,1999,486,1930,480,1890,471,1844,456,1823,446,1809,434,1795,423,1776,413,1707,391,1637,374,1517,357"/>
+<area shape="poly" title=" " alt="" coords="1518,356,1580,375,1613,390,1642,409,1659,424,1669,439,1683,469,1696,498,1707,512,1722,526,1762,550,1797,566,1831,575,1863,580,1934,586,2021,600,2206,644,2205,649,2020,605,1933,591,1863,585,1830,580,1796,571,1759,555,1719,530,1703,516,1691,501,1678,471,1665,441,1654,427,1639,413,1610,394,1578,380,1517,361"/>
+<area shape="rect" title=" " alt="" coords="1261,419,1338,445"/>
+<area shape="poly" title=" " alt="" coords="1446,366,1341,414,1339,409,1444,361"/>
+<area shape="rect" title=" " alt="" coords="2287,411,2419,453"/>
+<area shape="poly" title=" " alt="" coords="1518,349,1646,352,1830,361,2048,379,2272,408,2272,413,2047,384,1830,367,1645,357,1518,354"/>
+<area shape="rect" title=" " alt="" coords="1362,419,1485,445"/>
+<area shape="poly" title=" " alt="" coords="1466,365,1441,407,1436,404,1462,362"/>
+<area shape="rect" title=" " alt="" coords="1509,419,1629,445"/>
+<area shape="poly" title=" " alt="" coords="1488,361,1544,407,1541,411,1485,365"/>
+<area shape="rect" title=" " alt="" coords="2174,576,2348,603"/>
+<area shape="poly" title=" " alt="" coords="1518,356,1611,376,1718,408,1760,429,1801,451,1910,492,2023,525,2191,569,2190,574,2021,531,1908,497,1798,456,1757,434,1716,413,1610,381,1517,361"/>
+<area shape="rect" title=" " alt="" coords="2032,576,2151,603"/>
+<area shape="poly" title=" " alt="" coords="1518,351,1557,356,1601,367,1646,384,1686,409,1701,423,1710,439,1719,469,1727,499,1736,513,1750,526,1770,536,1797,546,1866,561,2017,580,2016,585,1865,566,1795,551,1768,541,1747,530,1732,516,1723,501,1714,471,1705,441,1697,427,1683,413,1644,389,1600,372,1556,362,1517,356"/>
+<area shape="rect" href="rgw__sync__module_8h.html" title=" " alt="" coords="2127,419,2264,445"/>
+<area shape="poly" title=" " alt="" coords="1518,353,2112,419,2111,424,1517,358"/>
+<area shape="rect" href="rgw__service_8h.html" title=" " alt="" coords="373,501,496,528"/>
+<area shape="poly" title=" " alt="" coords="1426,359,1237,386,1148,401,1098,413,1083,423,1074,434,1063,446,1047,456,512,509,511,503,1045,451,1060,442,1070,431,1080,419,1096,408,1147,396,1237,381,1425,354"/>
+<area shape="rect" href="svc__rados_8h.html" title=" " alt="" coords="672,419,762,445"/>
+<area shape="poly" title=" " alt="" coords="1426,359,1364,365,1120,389,876,413,778,425,778,420,875,408,1119,383,1363,360,1425,353"/>
+<area shape="poly" title=" " alt="" coords="2216,444,2398,565,2395,569,2213,448"/>
+<area shape="rect" href="rgw__coroutine_8h.html" title=" " alt="" coords="2034,501,2146,528"/>
+<area shape="poly" title=" " alt="" coords="2181,448,2120,494,2117,490,2177,444"/>
+<area shape="poly" title=" " alt="" coords="2147,525,2358,570,2357,576,2146,531"/>
+<area shape="poly" title=" " alt="" coords="2121,526,2218,567,2216,572,2119,531"/>
+<area shape="poly" title=" " alt="" coords="2093,528,2094,560,2088,560,2088,529"/>
+<area shape="poly" title=" " alt="" coords="437,528,440,571,450,632,460,665,474,697,492,725,516,750,546,767,590,780,704,798,824,806,921,809,921,815,824,812,703,803,589,785,544,772,513,754,488,729,469,699,455,667,445,634,434,572,431,528"/>
+<area shape="poly" title=" " alt="" coords="496,520,558,525,831,538,1062,542,1457,538,1647,536,1852,539,2084,551,2358,573,2357,579,2084,556,1852,545,1647,541,1457,543,1062,548,831,544,558,531,496,525"/>
+<area shape="poly" title=" " alt="" coords="753,443,879,484,958,506,1039,525,1198,555,1361,580,1682,619,1964,643,2173,656,2173,661,1964,648,1681,624,1361,586,1197,560,1038,531,957,511,877,489,752,448"/>
+<area shape="poly" title=" " alt="" coords="673,448,494,499,493,494,672,443"/>
+<area shape="poly" title=" " alt="" coords="611,357,884,412,883,418,610,363"/>
+<area shape="poly" title=" " alt="" coords="563,364,546,428,539,470,535,513,535,665,538,679,547,692,580,718,628,740,687,759,816,787,922,804,921,809,815,793,686,764,626,745,577,722,543,696,534,681,530,666,530,513,533,469,541,426,558,362"/>
+<area shape="poly" title=" " alt="" coords="573,362,618,452,637,487,633,489,613,455,568,364"/>
+<area shape="poly" title=" " alt="" coords="1218,358,1014,380,923,395,893,404,877,413,862,434,851,457,844,482,841,507,845,561,859,614,879,666,903,714,948,786,943,788,898,716,874,668,853,616,840,561,836,507,839,481,846,455,857,431,874,409,891,399,922,390,1013,374,1217,353"/>
+<area shape="poly" title=" " alt="" coords="1265,365,1183,413,1181,408,1262,361"/>
+<area shape="rect" title=" " alt="" coords="1856,419,2002,445"/>
+<area shape="poly" title=" " alt="" coords="1353,356,1841,417,1840,422,1352,362"/>
+<area shape="poly" title=" " alt="" coords="1406,281,1393,321,1382,344,1365,365,1336,384,1308,391,1280,397,1250,413,1221,442,1186,484,1107,592,981,788,977,785,1103,589,1181,481,1217,438,1247,409,1278,392,1307,386,1334,379,1362,361,1377,341,1388,319,1401,279"/>
+<area shape="poly" title=" " alt="" coords="1418,279,1454,323,1450,326,1414,282"/>
+<area shape="poly" title=" " alt="" coords="1439,278,1459,285,1685,358,1870,411,1868,417,1684,363,1457,291,1437,283"/>
+<area shape="poly" title=" " alt="" coords="1018,283,868,334,867,329,1017,278"/>
+<area shape="poly" title=" " alt="" coords="1067,279,1107,335,1140,404,1135,406,1103,337,1063,282"/>
+<area shape="poly" title=" " alt="" coords="1029,283,917,338,866,365,760,414,758,410,864,360,914,334,1027,278"/>
+<area shape="poly" title=" " alt="" coords="1050,282,1026,324,1022,321,1045,279"/>
+<area shape="poly" title=" " alt="" coords="960,366,898,385,833,413,816,424,805,435,793,446,775,456,726,471,658,485,512,507,511,501,657,479,725,465,773,451,790,441,801,431,813,420,830,408,896,380,958,361"/>
+<area shape="poly" title=" " alt="" coords="960,366,782,413,771,416,770,411,780,408,958,361"/>
+<area shape="poly" title=" " alt="" coords="3180,198,3172,247,3152,317,3137,356,3118,393,3093,427,3062,456,2890,495,2717,531,2498,576,2497,571,2716,525,2889,490,3060,451,3089,423,3113,390,3132,353,3147,316,3166,246,3174,197"/>
+<area shape="poly" title=" " alt="" coords="3185,197,3202,267,3210,319,3215,376,3214,437,3205,497,3185,554,3170,580,3151,605,3136,616,3116,626,3061,641,2998,652,2937,659,2936,654,2998,647,3060,636,3114,621,3133,611,3147,601,3165,577,3180,552,3200,496,3209,436,3210,376,3205,319,3197,268,3180,199"/>
+<area shape="poly" title=" " alt="" coords="2345,117,1351,181,1351,175,2344,112"/>
+<area shape="poly" title=" " alt="" coords="2465,112,2689,132,2805,148,2852,157,2887,168,2952,197,3033,241,3071,267,3103,294,3125,321,3133,348,3133,516,3128,548,3113,575,3092,597,3065,615,3034,630,3001,642,2937,656,2936,651,3000,636,3032,625,3062,611,3088,593,3109,571,3123,546,3128,516,3128,348,3120,323,3099,297,3068,271,3030,246,2949,202,2885,173,2850,163,2804,153,2689,137,2465,117"/>
+<area shape="poly" title=" " alt="" coords="2399,125,2214,407,2210,404,2394,122"/>
+<area shape="poly" title=" " alt="" coords="2345,117,2267,128,2225,138,2184,153,2148,173,2119,197,2100,228,2093,266,2093,351,2093,486,2088,486,2088,351,2088,265,2095,226,2115,194,2145,168,2182,148,2223,133,2266,123,2344,111"/>
+<area shape="poly" title=" " alt="" coords="2345,115,2261,121,2166,131,2079,148,2046,159,2022,173,1999,197,1979,226,1964,257,1952,290,1938,353,1932,403,1927,403,1933,352,1947,288,1959,255,1975,223,1994,194,2019,169,2044,154,2078,143,2165,126,2261,115,2345,110"/>
+<area shape="poly" title=" " alt="" coords="2465,112,2734,132,3096,168,3096,173,2734,137,2465,117"/>
+<area shape="rect" title=" " alt="" coords="2862,419,2991,445"/>
+<area shape="poly" title=" " alt="" coords="2427,121,2895,408,2892,413,2424,125"/>
+<area shape="rect" href="rgw__http__client_8h.html" title=" " alt="" coords="2755,171,2874,197"/>
+<area shape="poly" title=" " alt="" coords="2465,119,2740,167,2739,172,2464,124"/>
+<area shape="rect" href="rgw__datalog_8h.html" title=" " alt="" coords="2516,336,2641,363"/>
+<area shape="poly" title=" " alt="" coords="2416,121,2563,322,2558,325,2412,124"/>
+<area shape="rect" href="rgw__sync__trace_8h.html" title=" " alt="" coords="1547,725,1671,752"/>
+<area shape="poly" title=" " alt="" coords="2345,113,2253,120,2203,128,2154,142,2110,162,2074,188,2061,204,2051,222,2044,243,2042,265,2042,351,2039,388,2030,424,2017,457,1998,489,1951,546,1894,596,1832,639,1769,674,1661,722,1659,717,1766,669,1829,635,1891,592,1948,543,1994,486,2012,455,2025,422,2034,387,2037,351,2037,265,2039,242,2046,220,2057,201,2071,184,2107,157,2152,137,2202,123,2253,114,2344,107"/>
+<area shape="poly" title=" " alt="" coords="2837,196,2902,239,2940,270,2976,305,3005,342,3023,380,3026,399,3025,418,3018,437,3005,455,2992,467,2974,476,2928,488,2873,494,2813,496,2693,495,2642,497,2603,504,2525,535,2461,570,2459,565,2523,530,2601,499,2641,492,2693,490,2813,490,2873,489,2927,483,2972,471,2989,462,3002,452,3013,435,3019,417,3021,400,3018,381,3000,344,2972,308,2936,274,2898,244,2834,200"/>
+<area shape="poly" title=" " alt="" coords="2566,365,2514,411,2511,407,2562,361"/>
+<area shape="poly" title=" " alt="" coords="2515,354,2284,356,1934,365,1521,383,1307,396,1097,413,1050,419,1049,414,1097,408,1306,391,1520,377,1934,359,2284,351,2515,348"/>
+<area shape="poly" title=" " alt="" coords="2619,361,2658,380,2692,409,2710,434,2720,457,2724,482,2725,513,2725,591,2729,710,2724,710,2720,591,2720,513,2719,483,2715,459,2706,437,2688,412,2655,384,2617,366"/>
+<area shape="poly" title=" " alt="" coords="2586,363,2598,410,2601,444,2599,471,2591,498,2578,529,2560,564,2542,592,2521,614,2499,632,2444,658,2374,680,2246,707,2076,732,1877,753,1666,772,1268,799,1006,813,1006,807,1268,793,1666,766,1877,748,2075,727,2245,702,2372,675,2442,653,2496,627,2518,610,2537,588,2556,561,2573,527,2586,496,2594,470,2596,444,2593,411,2580,364"/>
+<area shape="poly" title=" " alt="" coords="2642,359,2694,378,2720,391,2743,409,2767,435,2787,464,2820,526,2842,587,2854,635,2849,636,2836,588,2815,528,2783,466,2763,438,2739,413,2717,396,2692,382,2641,364"/>
+<area shape="poly" title=" " alt="" coords="2582,363,2583,404,2577,454,2564,502,2551,539,2531,571,2496,605,2468,623,2438,637,2376,655,2375,650,2436,632,2466,618,2493,601,2527,568,2546,537,2559,500,2572,453,2578,403,2577,363"/>
+<area shape="poly" title=" " alt="" coords="2544,366,2426,408,2424,402,2542,361"/>
+<area shape="poly" title=" " alt="" coords="2580,364,2571,407,2562,432,2547,455,2499,498,2443,532,2385,557,2333,574,2331,569,2384,552,2440,527,2495,494,2543,452,2557,430,2566,406,2575,363"/>
+<area shape="poly" title=" " alt="" coords="2516,361,2017,422,2017,417,2515,356"/>
+<area shape="poly" title=" " alt="" coords="2635,361,2843,408,2859,412,2858,417,2842,413,2634,366"/>
+<area shape="poly" title=" " alt="" coords="2642,358,2716,377,2755,391,2793,408,2821,426,2846,447,2887,488,2883,492,2843,451,2817,431,2790,413,2753,396,2715,382,2641,363"/>
+<area shape="poly" title=" " alt="" coords="2861,525,2498,580,2497,575,2860,520"/>
+<area shape="poly" title=" " alt="" coords="2903,529,2868,637,2863,635,2898,528"/>
+<area shape="poly" title=" " alt="" coords="1547,750,1006,810,1005,805,1547,744"/>
+<area shape="poly" title=" " alt="" coords="3034,197,3050,244,3065,312,3067,350,3064,388,3053,423,3033,455,3012,471,2980,482,2901,493,2818,498,2755,504,2609,540,2485,574,2484,569,2607,534,2754,499,2817,492,2900,488,2979,477,3009,466,3030,452,3048,421,3058,387,3062,350,3059,313,3045,245,3029,199"/>
+<area shape="poly" title=" " alt="" coords="282,290,259,324,238,366,232,389,230,411,233,432,243,452,266,474,294,491,326,501,357,508,356,513,324,507,292,496,263,479,239,455,228,434,224,411,227,388,233,364,255,321,278,287"/>
+<area shape="poly" title=" " alt="" coords="369,269,427,275,492,287,559,306,623,334,647,349,668,368,701,405,697,408,664,371,644,353,621,338,558,311,491,292,426,280,368,274"/>
+<area shape="rect" title=" " alt="" coords="5,336,146,363"/>
+<area shape="poly" title=" " alt="" coords="241,291,125,333,124,328,239,286"/>
+<area shape="rect" href="svc__sys__obj__types_8h.html" title=" " alt="" coords="252,419,395,445"/>
+<area shape="poly" title=" " alt="" coords="282,290,263,324,259,343,262,362,277,386,296,407,292,410,272,390,257,364,254,343,258,322,277,287"/>
+<area shape="rect" href="svc__sys__obj__core__types_8h.html" title=" " alt="" coords="271,336,445,363"/>
+<area shape="poly" title=" " alt="" coords="315,287,341,322,337,325,311,290"/>
+<area shape="poly" title=" " alt="" coords="342,444,406,490,403,494,339,448"/>
+<area shape="poly" title=" " alt="" coords="373,361,391,383,409,409,424,448,432,485,427,486,418,450,404,412,387,386,369,365"/>
+<area shape="poly" title=" " alt="" coords="415,361,658,415,656,420,414,366"/>
+<area shape="poly" title=" " alt="" coords="355,364,337,406,332,404,350,362"/>
+<area shape="poly" title=" " alt="" coords="758,126,677,150,587,183,547,203,514,223,493,244,485,266,485,351,481,389,472,427,449,488,444,486,467,425,476,388,480,351,480,265,488,241,511,219,544,198,585,178,675,145,757,121"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__sync__checkpoint_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__checkpoint_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:aa1fa0f5bd4e808c295fa97226c7fb5ef" id="r_aa1fa0f5bd4e808c295fa97226c7fb5ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__checkpoint_8cc.html#aa1fa0f5bd4e808c295fa97226c7fb5ef">rgw_bucket_sync_checkpoint</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *<a class="el" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, const <a class="el" href="class_r_g_w_bucket_sync_policy_handler.html">RGWBucketSyncPolicyHandler</a> &amp;policy, const <a class="el" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> &amp;info, std::optional&lt; <a class="el" href="structrgw__zone__id.html">rgw_zone_id</a> &gt; opt_source_zone, std::optional&lt; <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &gt; opt_source_bucket, ceph::timespan retry_delay, ceph::coarse_mono_time timeout_at)</td></tr>
+<tr class="separator:aa1fa0f5bd4e808c295fa97226c7fb5ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__checkpoint_8cc_source.html">rgw_sync_checkpoint.cc</a> 파일의 <a class="el" href="rgw__sync__checkpoint_8cc_source.html#l00028">28</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="aa1fa0f5bd4e808c295fa97226c7fb5ef" name="aa1fa0f5bd4e808c295fa97226c7fb5ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1fa0f5bd4e808c295fa97226c7fb5ef">&#9670;&#160;</a></span>rgw_bucket_sync_checkpoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw_bucket_sync_checkpoint </td>
+          <td>(</td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_rados_store.html">rgw::sal::RadosStore</a> *&#160;</td>
+          <td class="paramname"><em>store</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_r_g_w_bucket_sync_policy_handler.html">RGWBucketSyncPolicyHandler</a> &amp;&#160;</td>
+          <td class="paramname"><em>policy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="structrgw__zone__id.html">rgw_zone_id</a> &gt;&#160;</td>
+          <td class="paramname"><em>opt_source_zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &gt;&#160;</td>
+          <td class="paramname"><em>opt_source_bucket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ceph::timespan&#160;</td>
+          <td class="paramname"><em>retry_delay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ceph::coarse_mono_time&#160;</td>
+          <td class="paramname"><em>timeout_at</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__checkpoint_8cc_source.html">rgw_sync_checkpoint.cc</a> 파일의 <a class="el" href="rgw__sync__checkpoint_8cc_source.html#l00149">149</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>{</div>
+<div class="line"><span class="lineno">  158</span>  <span class="keyword">struct </span>sync_source_entry {</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_struct" href="structrgw__sync__bucket__pipe.html">rgw_sync_bucket_pipe</a> pipe;</div>
+<div class="line"><span class="lineno">  160</span>    BucketIndexShardsManager remote_markers;</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a> source_bucket_info;</div>
+<div class="line"><span class="lineno">  162</span>  };</div>
+<div class="line"><span class="lineno">  163</span>  std::list&lt;sync_source_entry&gt; sources;</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>  <span class="comment">// fetch remote markers and bucket info in parallel</span></div>
+<div class="line"><span class="lineno">  166</span>  boost::asio::io_context ioctx;</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [source_zone_id, pipe] : policy.get_all_sources()) {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">// filter by source zone/bucket</span></div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">if</span> (opt_source_zone &amp;&amp; *opt_source_zone != *pipe.source.zone) {</div>
+<div class="line"><span class="lineno">  171</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  172</span>    }</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">if</span> (opt_source_bucket &amp;&amp; !opt_source_bucket-&gt;match(*pipe.source.bucket)) {</div>
+<div class="line"><span class="lineno">  174</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keyword">auto</span>&amp; entry = sources.emplace_back();</div>
+<div class="line"><span class="lineno">  177</span>    entry.pipe = pipe;</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    <span class="comment">// fetch remote markers</span></div>
+<div class="line"><span class="lineno">  180</span>    spawn::spawn(ioctx, [&amp;] (yield_context yield) {</div>
+<div class="line"><span class="lineno">  181</span>      <span class="keyword">auto</span> y = optional_yield{ioctx, yield};</div>
+<div class="line"><span class="lineno">  182</span>      <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = source_bilog_markers(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;svc()-&gt;zone, entry.pipe,</div>
+<div class="line"><span class="lineno">  183</span>                                   entry.remote_markers, y);</div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">  185</span>        ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;failed to fetch remote bilog markers: &quot;</span></div>
+<div class="line"><span class="lineno">  186</span>            &lt;&lt; cpp_strerror(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">throw</span> std::system_error(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>, std::system_category());</div>
+<div class="line"><span class="lineno">  188</span>      }</div>
+<div class="line"><span class="lineno">  189</span>    });</div>
+<div class="line"><span class="lineno">  190</span>    <span class="comment">// fetch source bucket info</span></div>
+<div class="line"><span class="lineno">  191</span>    spawn::spawn(ioctx, [&amp;] (yield_context yield) {</div>
+<div class="line"><span class="lineno">  192</span>      <span class="keyword">auto</span> y = optional_yield{ioctx, yield};</div>
+<div class="line"><span class="lineno">  193</span>      <span class="keyword">auto</span> obj_ctx = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;svc()-&gt;sysobj-&gt;init_obj_ctx();</div>
+<div class="line"><span class="lineno">  194</span>      <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>-&gt;getRados()-&gt;get_bucket_instance_info(</div>
+<div class="line"><span class="lineno">  195</span>          obj_ctx, *entry.pipe.source.bucket, entry.source_bucket_info,</div>
+<div class="line"><span class="lineno">  196</span>          <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, y, <a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><span class="lineno">  197</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">  198</span>        ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;failed to read source bucket info: &quot;</span></div>
+<div class="line"><span class="lineno">  199</span>            &lt;&lt; cpp_strerror(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">throw</span> std::system_error(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>, std::system_category());</div>
+<div class="line"><span class="lineno">  201</span>      }</div>
+<div class="line"><span class="lineno">  202</span>    });</div>
+<div class="line"><span class="lineno">  203</span>  }</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  206</span>    ioctx.run();</div>
+<div class="line"><span class="lineno">  207</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::system_error&amp; e) {</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">return</span> -e.code().value();</div>
+<div class="line"><span class="lineno">  209</span>  }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>  <span class="comment">// checkpoint each source sequentially</span></div>
+<div class="line"><span class="lineno">  212</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [pipe, remote_markers, source_bucket_info] : sources) {</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = bucket_source_sync_checkpoint(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>, info, source_bucket_info,</div>
+<div class="line"><span class="lineno">  214</span>                                          pipe, remote_markers,</div>
+<div class="line"><span class="lineno">  215</span>                                          retry_delay, timeout_at);</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">  217</span>      ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;bucket sync checkpoint failed: &quot;</span> &lt;&lt; cpp_strerror(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span>  }</div>
+<div class="line"><span class="lineno">  221</span>  ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 0) &lt;&lt; <span class="stringliteral">&quot;bucket checkpoint complete&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><span class="lineno">  222</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  223</span>}</div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_info_html"><div class="ttname"><a href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01062">rgw_common.h:1062</a></div></div>
+<div class="ttc" id="astructrgw__sync__bucket__pipe_html"><div class="ttname"><a href="structrgw__sync__bucket__pipe.html">rgw_sync_bucket_pipe</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__policy_8h_source.html#l00372">rgw_sync_policy.h:372</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_cgraph.png" border="0" usemap="#argw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_cgraph" alt=""/></div>
+<map name="argw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_cgraph" id="argw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,198,61"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="327,5,369,32"/>
+<area shape="poly" title=" " alt="" coords="198,34,311,20,312,26,198,39"/>
+<area shape="rect" href="class_r_g_w_bucket_sync_policy_handler.html#adbbf5f3f4c73cff9a87fb44a9bbdb0c4" title=" " alt="" coords="246,56,450,99"/>
+<area shape="poly" title=" " alt="" coords="198,57,230,61,230,66,198,62"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_icgraph.png" border="0" usemap="#argw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_icgraph" alt=""/></div>
+<map name="argw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_icgraph" id="argw__sync__checkpoint_8cc_aa1fa0f5bd4e808c295fa97226c7fb5ef_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,295,32"/>
+<area shape="rect" href="rgw__admin_8cc.html#a217dbf8b442f20279ea00b898af96f52" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__sync__checkpoint_8cc.html">rgw_sync_checkpoint.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

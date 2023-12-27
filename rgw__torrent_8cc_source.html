@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_torrent.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__torrent_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_torrent.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__torrent_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__torrent_8h.html">rgw_torrent.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__sal_8h.html">rgw_sal.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__sal__rados_8h.html">rgw_sal_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;include/str_list.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;include/rados/librados.hpp&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="svc__sys__obj_8h.html">services/svc_sys_obj.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="rgw__torrent_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   17</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using namespace </span>librados;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">using namespace </span>boost;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">using </span>ceph::crypto::SHA1;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classseed.html#a62b6981b66ef380c180afac5585ef00d">   24</a></span><a class="code hl_function" href="classseed.html#a62b6981b66ef380c180afac5585ef00d">seed::seed</a>()</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">seed::info</a>.piece_length = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">seed::info</a>.len = 0;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_variable" href="classseed.html#a0c91b0eb801b81333b5dbdec6351a080">sha_len</a> = 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_variable" href="classseed.html#ab2e733ef6aa4333e9d711b8b3f1e7064">is_torrent</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classseed.html#acab13d9e431a56786c8d4b7f50085ac8">   32</a></span><a class="code hl_function" href="classseed.html#acab13d9e431a56786c8d4b7f50085ac8">seed::~seed</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">seed::info</a>.sha1_bl.clear();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.clear();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a> = NULL;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_variable" href="classseed.html#ab4a96b4047fcd051bc52ef68e576b22e">store</a> = NULL;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classseed.html#ad12332478312add6fb44b843f2eaf8ee">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#ad12332478312add6fb44b843f2eaf8ee">seed::init</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structreq__state.html">req_state</a> *p_req, <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* p_store)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a> = p_req;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_variable" href="classseed.html#ab4a96b4047fcd051bc52ef68e576b22e">store</a> = p_store;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classseed.html#a2dfe9657133cef0d48b9153c74032a84">   46</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classseed.html#a2dfe9657133cef0d48b9153c74032a84">seed::get_torrent_file</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_object.html">rgw::sal::Object</a>* <span class="keywordtype">object</span>,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                           uint64_t &amp;total_len,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                           ceph::bufferlist &amp;bl_data,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                           <a class="code hl_struct" href="structrgw__obj.html">rgw_obj</a> &amp;obj)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">/* add other field if config is set */</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a17513b22859d11b29e72cea5cb9f01af">bencode_dict</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_function" href="classseed.html#ae1df4c9cddae703f9dff5b535b95b2c3">set_announce</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classseed.html#af3fea725a304a1ad13b0ce6a91cdffd9">comment</a>.empty())</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">bencode</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a180f5b3835bdbfc11b353fd2af5c8659">COMMENT</a>, <a class="code hl_variable" href="classseed.html#af3fea725a304a1ad13b0ce6a91cdffd9">comment</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classseed.html#a91a347e005d68d71b101ac046b1edcbf">create_by</a>.empty())</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">bencode</a>(<a class="code hl_define" href="rgw__torrent_8h.html#ad8a6b7a06c2a6f889678c52511aac9ca">CREATED_BY</a>, <a class="code hl_variable" href="classseed.html#a91a347e005d68d71b101ac046b1edcbf">create_by</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classseed.html#afe0f7442c147577b011ec3adb695aba1">encoding</a>.empty())</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">bencode</a>(<a class="code hl_define" href="rgw__torrent_8h.html#af633cf472c997492bd792041a794af5c">ENCODING</a>, <a class="code hl_variable" href="classseed.html#afe0f7442c147577b011ec3adb695aba1">encoding</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">string</span> oid, key;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_function" href="rgw__rados_8h.html#a33182a54c89c3d799bd2cc3ed782b3ae">get_obj_bucket_and_oid_loc</a>(obj, oid, key);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  ldpp_dout(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, 20) &lt;&lt; <span class="stringliteral">&quot;NOTICE: head obj oid= &quot;</span> &lt;&lt; oid &lt;&lt; dendl;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">const</span> set&lt;string&gt; obj_key{<a class="code hl_define" href="rgw__torrent_8h.html#a0d27506f0afdaa9ea96e731fcc44cc63">RGW_OBJ_TORRENT</a>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  map&lt;string, bufferlist&gt; m;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <span class="keywordtype">object</span>-&gt;omap_get_vals_by_keys(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, oid, obj_key, &amp;m);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    ldpp_dout(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: omap_get_vals_by_keys failed: &quot;</span> &lt;&lt; <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordflow">if</span> (m.size() != 1) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    ldpp_dout(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: omap key &quot;</span> <a class="code hl_define" href="rgw__torrent_8h.html#a0d27506f0afdaa9ea96e731fcc44cc63">RGW_OBJ_TORRENT</a> <span class="stringliteral">&quot; not found&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.append(std::move(m.begin()-&gt;second));</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#afa1a2d447f3bfa927d6851d6a08ad1a1">bencode_end</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  bl_data = <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  total_len = <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.length();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classseed.html#aaa78293cedcc87ade3cac7b4f876cfad">   90</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classseed.html#aaa78293cedcc87ade3cac7b4f876cfad">seed::get_flag</a>()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classseed.html#ab2e733ef6aa4333e9d711b8b3f1e7064">is_torrent</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classseed.html#a36bee38e071f26c447e4067b26c4160c">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#a36bee38e071f26c447e4067b26c4160c">seed::update</a>(bufferlist &amp;bl)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classseed.html#ab2e733ef6aa4333e9d711b8b3f1e7064">is_torrent</a>)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.len += <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.length();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <a class="code hl_function" href="classseed.html#ac42b0f0d89c95c78eff6117fdab96d78">sha1</a>(&amp;<a class="code hl_variable" href="classseed.html#a927c85e0ac5b033a71b69f1e87f87012">h</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.length());</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classseed.html#a3f3520efe44e85157bc6bc1e779ee3f4">  105</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classseed.html#a3f3520efe44e85157bc6bc1e779ee3f4">seed::complete</a>(optional_yield y)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  uint64_t remain = <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.len%<a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  uint8_t  remain_len = ((remain &gt; 0)? 1 : 0);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <a class="code hl_variable" href="classseed.html#a0c91b0eb801b81333b5dbdec6351a080">sha_len</a> = (<a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.len/<a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length + remain_len)*CEPH_CRYPTO_SHA1_DIGESTSIZE;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">int</span> ret = 0;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>   <span class="comment">/* produce torrent data */</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <a class="code hl_function" href="classseed.html#a24db6236130dceb5ce61042045b2fd2f">do_encode</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="comment">/* save torrent data into OMAP */</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  ret = <a class="code hl_function" href="classseed.html#ab3bbd9fc2f199b37c38a4fa0e4108715">save_torrent_file</a>(y);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">if</span> (0 != ret)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    ldpp_dout(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to save_torrent_file() ret= &quot;</span>&lt;&lt; ret &lt;&lt; dendl;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classseed.html#a72f32febaf267ad0cf1a18063e000886">  126</a></span>off_t <a class="code hl_function" href="classseed.html#a72f32febaf267ad0cf1a18063e000886">seed::get_data_len</a>()</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.len;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classseed.html#adf0c52448b484137874ae354cb336e1f">  131</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#adf0c52448b484137874ae354cb336e1f">seed::set_create_date</a>(ceph::real_time&amp; value)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  utime_t date = ceph::real_clock::to_timespec(value);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <a class="code hl_variable" href="classseed.html#a470d0e6e8d19c5958febe190fbda02c9">create_date</a> = date.sec();</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classseed.html#a9ec7c4b8defe8c298757a1e5959319a2">  137</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#a9ec7c4b8defe8c298757a1e5959319a2">seed::set_info_pieces</a>(<span class="keywordtype">char</span> *buff)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>{</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.sha1_bl.append(buff, CEPH_CRYPTO_SHA1_DIGESTSIZE);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classseed.html#ab6ba1304a772b33a30cf5de4cc51b4b9">  142</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#ab6ba1304a772b33a30cf5de4cc51b4b9">seed::set_info_name</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>{</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.name = value;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classseed.html#ac42b0f0d89c95c78eff6117fdab96d78">  147</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#ac42b0f0d89c95c78eff6117fdab96d78">seed::sha1</a>(SHA1 *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#a68310108dc1113b2ef0e243d11e5b10d">h</a>, bufferlist &amp;bl, off_t bl_len)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>{</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  off_t num = bl_len/<a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  off_t remain = 0;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  remain = bl_len%<a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordtype">char</span> *pstr = <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.c_str();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordtype">char</span> sha[25];</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="comment">/* get sha1 */</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordflow">for</span> (off_t i = 0; i &lt; num; i++)</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="comment">// FIPS zeroization audit 20191116: this memset is not intended to</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// wipe out a secret after use.</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    memset(sha, 0x00, <span class="keyword">sizeof</span>(sha));</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_variable" href="classseed.html#a927c85e0ac5b033a71b69f1e87f87012">h</a>-&gt;Update((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)pstr, <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_variable" href="classseed.html#a927c85e0ac5b033a71b69f1e87f87012">h</a>-&gt;Final((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)sha);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_function" href="classseed.html#a9ec7c4b8defe8c298757a1e5959319a2">set_info_pieces</a>(sha);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    pstr += <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="comment">/* process remain */</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordflow">if</span> (0 != remain)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="comment">// FIPS zeroization audit 20191116: this memset is not intended to</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="comment">// wipe out a secret after use.</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    memset(sha, 0x00, <span class="keyword">sizeof</span>(sha));</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_variable" href="classseed.html#a927c85e0ac5b033a71b69f1e87f87012">h</a>-&gt;Update((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)pstr, remain);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <a class="code hl_variable" href="classseed.html#a927c85e0ac5b033a71b69f1e87f87012">h</a>-&gt;Final((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)sha);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <a class="code hl_function" href="classseed.html#a9ec7c4b8defe8c298757a1e5959319a2">set_info_pieces</a>(sha);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  ::ceph::crypto::zeroize_for_security(sha, <span class="keyword">sizeof</span>(sha));</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
+</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="}">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classseed.html#a85e61203f27012550f15077a62035050">  181</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classseed.html#a85e61203f27012550f15077a62035050">seed::get_params</a>()</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>{</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <a class="code hl_variable" href="classseed.html#ab2e733ef6aa4333e9d711b8b3f1e7064">is_torrent</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length = g_conf()-&gt;rgw_torrent_sha_unit;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  <a class="code hl_variable" href="classseed.html#a91a347e005d68d71b101ac046b1edcbf">create_by</a> = g_conf()-&gt;rgw_torrent_createby;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <a class="code hl_variable" href="classseed.html#afe0f7442c147577b011ec3adb695aba1">encoding</a> = g_conf()-&gt;rgw_torrent_encoding;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <a class="code hl_variable" href="classseed.html#a1fcc0966b3c5b0b4cd730f4c6a105700">origin</a> = g_conf()-&gt;rgw_torrent_origin;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <a class="code hl_variable" href="classseed.html#af3fea725a304a1ad13b0ce6a91cdffd9">comment</a> = g_conf()-&gt;rgw_torrent_comment;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <a class="code hl_variable" href="classseed.html#a4189ca2fb0978bc8da4c919b8bd833d7">announce</a> = g_conf()-&gt;rgw_torrent_tracker;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="comment">/* tracker and tracker list is empty, set announce to origin */</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classseed.html#a4189ca2fb0978bc8da4c919b8bd833d7">announce</a>.empty() &amp;&amp; !<a class="code hl_variable" href="classseed.html#a1fcc0966b3c5b0b4cd730f4c6a105700">origin</a>.empty())</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_variable" href="classseed.html#a4189ca2fb0978bc8da4c919b8bd833d7">announce</a> = <a class="code hl_variable" href="classseed.html#a1fcc0966b3c5b0b4cd730f4c6a105700">origin</a>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classseed.html#ae1df4c9cddae703f9dff5b535b95b2c3">  200</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#ae1df4c9cddae703f9dff5b535b95b2c3">seed::set_announce</a>()</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>{</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  list&lt;string&gt; announce_list;  <span class="comment">// used to get announce list from conf</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  get_str_list(<a class="code hl_variable" href="classseed.html#a4189ca2fb0978bc8da4c919b8bd833d7">announce</a>, <span class="stringliteral">&quot;,&quot;</span>, announce_list);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keywordflow">if</span> (announce_list.empty())</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    ldpp_dout(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, 5) &lt;&lt; <span class="stringliteral">&quot;NOTICE: announce_list is empty &quot;</span> &lt;&lt; dendl;    </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  list&lt;string&gt;::iterator iter = announce_list.begin();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a08e5242fbb80a0a73d49085ad4dc00de">bencode_key</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a2387038a7388f10200c86bc137dff526">ANNOUNCE</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a08e5242fbb80a0a73d49085ad4dc00de">bencode_key</a>((*iter), <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a08e5242fbb80a0a73d49085ad4dc00de">bencode_key</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a88f909ee90bb1e294e4c2668bef3609d">ANNOUNCE_LIST</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a0c45267206d026acf4f0022b1188bbb3">bencode_list</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keywordflow">for</span> (; iter != announce_list.end(); ++iter)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a0c45267206d026acf4f0022b1188bbb3">bencode_list</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a08e5242fbb80a0a73d49085ad4dc00de">bencode_key</a>((*iter), <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#afa1a2d447f3bfa927d6851d6a08ad1a1">bencode_end</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  }</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#afa1a2d447f3bfa927d6851d6a08ad1a1">bencode_end</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>}</div>
+</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="classseed.html#a24db6236130dceb5ce61042045b2fd2f">  226</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classseed.html#a24db6236130dceb5ce61042045b2fd2f">seed::do_encode</a>()</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>{ </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="comment">/*Only encode create_date and sha1 info*/</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="comment">/*Other field will be added if confi is set when run get torrent*/</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">bencode</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a709c0985d3e1e6e85e47a32591316faf">CREATION_DATE</a>, <a class="code hl_variable" href="classseed.html#a470d0e6e8d19c5958febe190fbda02c9">create_date</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a08e5242fbb80a0a73d49085ad4dc00de">bencode_key</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a6b8d3281699db6cebe4f12e2c4f8d16a">INFO_PIECES</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a17513b22859d11b29e72cea5cb9f01af">bencode_dict</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);  </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">bencode</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a30362161c93e3f1a4ee4c673f535b5a8">LENGTH</a>, <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.len, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">bencode</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a47f2e62c0dbebc787052c165afcada0e">NAME</a>, <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.name, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">bencode</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a5b2500ca93a5100f73dc442d3cfea7d4">PIECE_LENGTH</a>, <a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.piece_length, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  <span class="keywordtype">char</span> info_sha[100] = { 0 };</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  sprintf(info_sha, <span class="stringliteral">&quot;%&quot;</span> PRIu64, <a class="code hl_variable" href="classseed.html#a0c91b0eb801b81333b5dbdec6351a080">sha_len</a>);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keywordtype">string</span> sha_len_str = info_sha;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#a08e5242fbb80a0a73d49085ad4dc00de">bencode_key</a>(<a class="code hl_define" href="rgw__torrent_8h.html#a818a7aec9c89ec6951d701e6bd4220ac">PIECES</a>, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.append(sha_len_str.c_str(), sha_len_str.length());</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.append(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>.append(<a class="code hl_variable" href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">info</a>.sha1_bl.c_str(), <a class="code hl_variable" href="classseed.html#a0c91b0eb801b81333b5dbdec6351a080">sha_len</a>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <a class="code hl_variable" href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">dencode</a>.<a class="code hl_function" href="class_torrent_bencode.html#afa1a2d447f3bfa927d6851d6a08ad1a1">bencode_end</a>(<a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>}</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="classseed.html#ab3bbd9fc2f199b37c38a4fa0e4108715">  248</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classseed.html#ab3bbd9fc2f199b37c38a4fa0e4108715">seed::save_torrent_file</a>(optional_yield y)</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>{</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordtype">int</span> op_ret = 0;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keywordtype">string</span> key = <a class="code hl_define" href="rgw__torrent_8h.html#a0d27506f0afdaa9ea96e731fcc44cc63">RGW_OBJ_TORRENT</a>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  op_ret = <a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a67c6558952757f16ddb49664ccc25a5c">object</a>-&gt;omap_set_val_by_key(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, key, <a class="code hl_variable" href="classseed.html#a545566988430356a89a8b01c37b26904">bl</a>, <span class="keyword">false</span>, y);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="keywordflow">if</span> (op_ret &lt; 0)</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    ldpp_dout(<a class="code hl_variable" href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">s</a>, 0) &lt;&lt; <span class="stringliteral">&quot;ERROR: failed to omap_set() op_ret = &quot;</span> &lt;&lt; op_ret &lt;&lt; dendl;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">return</span> op_ret;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keywordflow">return</span> op_ret;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>}</div>
+</div>
+<div class="ttc" id="aclass_torrent_bencode_html_a08e5242fbb80a0a73d49085ad4dc00de"><div class="ttname"><a href="class_torrent_bencode.html#a08e5242fbb80a0a73d49085ad4dc00de">TorrentBencode::bencode_key</a></div><div class="ttdeci">void bencode_key(const std::string &amp;key, bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00077">rgw_torrent.h:77</a></div></div>
+<div class="ttc" id="aclass_torrent_bencode_html_a0c45267206d026acf4f0022b1188bbb3"><div class="ttname"><a href="class_torrent_bencode.html#a0c45267206d026acf4f0022b1188bbb3">TorrentBencode::bencode_list</a></div><div class="ttdeci">void bencode_list(bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00043">rgw_torrent.h:43</a></div></div>
+<div class="ttc" id="aclass_torrent_bencode_html_a17513b22859d11b29e72cea5cb9f01af"><div class="ttname"><a href="class_torrent_bencode.html#a17513b22859d11b29e72cea5cb9f01af">TorrentBencode::bencode_dict</a></div><div class="ttdeci">void bencode_dict(bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00042">rgw_torrent.h:42</a></div></div>
+<div class="ttc" id="aclass_torrent_bencode_html_a759563404f070862560cb7c39ab91f6b"><div class="ttname"><a href="class_torrent_bencode.html#a759563404f070862560cb7c39ab91f6b">TorrentBencode::bencode</a></div><div class="ttdeci">void bencode(int value, bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00047">rgw_torrent.h:47</a></div></div>
+<div class="ttc" id="aclass_torrent_bencode_html_afa1a2d447f3bfa927d6851d6a08ad1a1"><div class="ttname"><a href="class_torrent_bencode.html#afa1a2d447f3bfa927d6851d6a08ad1a1">TorrentBencode::bencode_end</a></div><div class="ttdeci">void bencode_end(bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00044">rgw_torrent.h:44</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_object_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_object.html">rgw::sal::Object</a></div><div class="ttdoc">Object abstraction</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00859">rgw_sal.h:859</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="aclassseed_html_a0c91b0eb801b81333b5dbdec6351a080"><div class="ttname"><a href="classseed.html#a0c91b0eb801b81333b5dbdec6351a080">seed::sha_len</a></div><div class="ttdeci">uint64_t sha_len</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00105">rgw_torrent.h:105</a></div></div>
+<div class="ttc" id="aclassseed_html_a1fcc0966b3c5b0b4cd730f4c6a105700"><div class="ttname"><a href="classseed.html#a1fcc0966b3c5b0b4cd730f4c6a105700">seed::origin</a></div><div class="ttdeci">std::string origin</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00100">rgw_torrent.h:100</a></div></div>
+<div class="ttc" id="aclassseed_html_a24db6236130dceb5ce61042045b2fd2f"><div class="ttname"><a href="classseed.html#a24db6236130dceb5ce61042045b2fd2f">seed::do_encode</a></div><div class="ttdeci">void do_encode()</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00226">rgw_torrent.cc:226</a></div></div>
+<div class="ttc" id="aclassseed_html_a2dfe9657133cef0d48b9153c74032a84"><div class="ttname"><a href="classseed.html#a2dfe9657133cef0d48b9153c74032a84">seed::get_torrent_file</a></div><div class="ttdeci">int get_torrent_file(rgw::sal::Object *object, uint64_t &amp;total_len, ceph::bufferlist &amp;bl_data, rgw_obj &amp;obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00046">rgw_torrent.cc:46</a></div></div>
+<div class="ttc" id="aclassseed_html_a309b88e34e8449f704f2458dad75ff8f"><div class="ttname"><a href="classseed.html#a309b88e34e8449f704f2458dad75ff8f">seed::dencode</a></div><div class="ttdeci">TorrentBencode dencode</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00113">rgw_torrent.h:113</a></div></div>
+<div class="ttc" id="aclassseed_html_a36bee38e071f26c447e4067b26c4160c"><div class="ttname"><a href="classseed.html#a36bee38e071f26c447e4067b26c4160c">seed::update</a></div><div class="ttdeci">void update(bufferlist &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00095">rgw_torrent.cc:95</a></div></div>
+<div class="ttc" id="aclassseed_html_a3f3520efe44e85157bc6bc1e779ee3f4"><div class="ttname"><a href="classseed.html#a3f3520efe44e85157bc6bc1e779ee3f4">seed::complete</a></div><div class="ttdeci">int complete(optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00105">rgw_torrent.cc:105</a></div></div>
+<div class="ttc" id="aclassseed_html_a4189ca2fb0978bc8da4c919b8bd833d7"><div class="ttname"><a href="classseed.html#a4189ca2fb0978bc8da4c919b8bd833d7">seed::announce</a></div><div class="ttdeci">std::string announce</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00099">rgw_torrent.h:99</a></div></div>
+<div class="ttc" id="aclassseed_html_a45a2a03f7875d2a18f225320a6d8c82a"><div class="ttname"><a href="classseed.html#a45a2a03f7875d2a18f225320a6d8c82a">seed::info</a></div><div class="ttdeci">struct seed::@20 info</div></div>
+<div class="ttc" id="aclassseed_html_a470d0e6e8d19c5958febe190fbda02c9"><div class="ttname"><a href="classseed.html#a470d0e6e8d19c5958febe190fbda02c9">seed::create_date</a></div><div class="ttdeci">time_t create_date</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00101">rgw_torrent.h:101</a></div></div>
+<div class="ttc" id="aclassseed_html_a545566988430356a89a8b01c37b26904"><div class="ttname"><a href="classseed.html#a545566988430356a89a8b01c37b26904">seed::bl</a></div><div class="ttdeci">bufferlist bl</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00107">rgw_torrent.h:107</a></div></div>
+<div class="ttc" id="aclassseed_html_a62b6981b66ef380c180afac5585ef00d"><div class="ttname"><a href="classseed.html#a62b6981b66ef380c180afac5585ef00d">seed::seed</a></div><div class="ttdeci">seed()</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00024">rgw_torrent.cc:24</a></div></div>
+<div class="ttc" id="aclassseed_html_a72f32febaf267ad0cf1a18063e000886"><div class="ttname"><a href="classseed.html#a72f32febaf267ad0cf1a18063e000886">seed::get_data_len</a></div><div class="ttdeci">off_t get_data_len()</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00126">rgw_torrent.cc:126</a></div></div>
+<div class="ttc" id="aclassseed_html_a85e61203f27012550f15077a62035050"><div class="ttname"><a href="classseed.html#a85e61203f27012550f15077a62035050">seed::get_params</a></div><div class="ttdeci">int get_params()</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00181">rgw_torrent.cc:181</a></div></div>
+<div class="ttc" id="aclassseed_html_a91a347e005d68d71b101ac046b1edcbf"><div class="ttname"><a href="classseed.html#a91a347e005d68d71b101ac046b1edcbf">seed::create_by</a></div><div class="ttdeci">std::string create_by</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00103">rgw_torrent.h:103</a></div></div>
+<div class="ttc" id="aclassseed_html_a927c85e0ac5b033a71b69f1e87f87012"><div class="ttname"><a href="classseed.html#a927c85e0ac5b033a71b69f1e87f87012">seed::h</a></div><div class="ttdeci">SHA1 h</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00111">rgw_torrent.h:111</a></div></div>
+<div class="ttc" id="aclassseed_html_a9ec7c4b8defe8c298757a1e5959319a2"><div class="ttname"><a href="classseed.html#a9ec7c4b8defe8c298757a1e5959319a2">seed::set_info_pieces</a></div><div class="ttdeci">void set_info_pieces(char *buff)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00137">rgw_torrent.cc:137</a></div></div>
+<div class="ttc" id="aclassseed_html_aaa78293cedcc87ade3cac7b4f876cfad"><div class="ttname"><a href="classseed.html#aaa78293cedcc87ade3cac7b4f876cfad">seed::get_flag</a></div><div class="ttdeci">bool get_flag()</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00090">rgw_torrent.cc:90</a></div></div>
+<div class="ttc" id="aclassseed_html_ab2e733ef6aa4333e9d711b8b3f1e7064"><div class="ttname"><a href="classseed.html#ab2e733ef6aa4333e9d711b8b3f1e7064">seed::is_torrent</a></div><div class="ttdeci">bool is_torrent</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00106">rgw_torrent.h:106</a></div></div>
+<div class="ttc" id="aclassseed_html_ab3bbd9fc2f199b37c38a4fa0e4108715"><div class="ttname"><a href="classseed.html#ab3bbd9fc2f199b37c38a4fa0e4108715">seed::save_torrent_file</a></div><div class="ttdeci">int save_torrent_file(optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00248">rgw_torrent.cc:248</a></div></div>
+<div class="ttc" id="aclassseed_html_ab4a96b4047fcd051bc52ef68e576b22e"><div class="ttname"><a href="classseed.html#ab4a96b4047fcd051bc52ef68e576b22e">seed::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00110">rgw_torrent.h:110</a></div></div>
+<div class="ttc" id="aclassseed_html_ab6ba1304a772b33a30cf5de4cc51b4b9"><div class="ttname"><a href="classseed.html#ab6ba1304a772b33a30cf5de4cc51b4b9">seed::set_info_name</a></div><div class="ttdeci">void set_info_name(const std::string &amp;value)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00142">rgw_torrent.cc:142</a></div></div>
+<div class="ttc" id="aclassseed_html_ac42b0f0d89c95c78eff6117fdab96d78"><div class="ttname"><a href="classseed.html#ac42b0f0d89c95c78eff6117fdab96d78">seed::sha1</a></div><div class="ttdeci">void sha1(SHA1 *h, bufferlist &amp;bl, off_t bl_len)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00147">rgw_torrent.cc:147</a></div></div>
+<div class="ttc" id="aclassseed_html_acab13d9e431a56786c8d4b7f50085ac8"><div class="ttname"><a href="classseed.html#acab13d9e431a56786c8d4b7f50085ac8">seed::~seed</a></div><div class="ttdeci">~seed()</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00032">rgw_torrent.cc:32</a></div></div>
+<div class="ttc" id="aclassseed_html_ad12332478312add6fb44b843f2eaf8ee"><div class="ttname"><a href="classseed.html#ad12332478312add6fb44b843f2eaf8ee">seed::init</a></div><div class="ttdeci">void init(struct req_state *p_req, rgw::sal::Store *p_store)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00040">rgw_torrent.cc:40</a></div></div>
+<div class="ttc" id="aclassseed_html_adf0c52448b484137874ae354cb336e1f"><div class="ttname"><a href="classseed.html#adf0c52448b484137874ae354cb336e1f">seed::set_create_date</a></div><div class="ttdeci">void set_create_date(ceph::real_time &amp;value)</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00131">rgw_torrent.cc:131</a></div></div>
+<div class="ttc" id="aclassseed_html_ae1df4c9cddae703f9dff5b535b95b2c3"><div class="ttname"><a href="classseed.html#ae1df4c9cddae703f9dff5b535b95b2c3">seed::set_announce</a></div><div class="ttdeci">void set_announce()</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8cc_source.html#l00200">rgw_torrent.cc:200</a></div></div>
+<div class="ttc" id="aclassseed_html_ae3c774546d9cd93e81dbc89a5d98a82c"><div class="ttname"><a href="classseed.html#ae3c774546d9cd93e81dbc89a5d98a82c">seed::s</a></div><div class="ttdeci">struct req_state * s</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00109">rgw_torrent.h:109</a></div></div>
+<div class="ttc" id="aclassseed_html_af3fea725a304a1ad13b0ce6a91cdffd9"><div class="ttname"><a href="classseed.html#af3fea725a304a1ad13b0ce6a91cdffd9">seed::comment</a></div><div class="ttdeci">std::string comment</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00102">rgw_torrent.h:102</a></div></div>
+<div class="ttc" id="aclassseed_html_afe0f7442c147577b011ec3adb695aba1"><div class="ttname"><a href="classseed.html#afe0f7442c147577b011ec3adb695aba1">seed::encoding</a></div><div class="ttdeci">std::string encoding</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00104">rgw_torrent.h:104</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_a68310108dc1113b2ef0e243d11e5b10d"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#a68310108dc1113b2ef0e243d11e5b10d">h</a></div><div class="ttdeci">fifo::part_header * h</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00340">cls_fifo_legacy.cc:340</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__rados_8h_html_a33182a54c89c3d799bd2cc3ed782b3ae"><div class="ttname"><a href="rgw__rados_8h.html#a33182a54c89c3d799bd2cc3ed782b3ae">get_obj_bucket_and_oid_loc</a></div><div class="ttdeci">static void get_obj_bucket_and_oid_loc(const rgw_obj &amp;obj, std::string &amp;oid, std::string &amp;locator)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rados_8h_source.html#l00080">rgw_rados.h:80</a></div></div>
+<div class="ttc" id="argw__sal_8h_html"><div class="ttname"><a href="rgw__sal_8h.html">rgw_sal.h</a></div><div class="ttdoc">Base abstractions and API for SAL</div></div>
+<div class="ttc" id="argw__sal__rados_8h_html"><div class="ttname"><a href="rgw__sal__rados_8h.html">rgw_sal_rados.h</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html"><div class="ttname"><a href="rgw__torrent_8h.html">rgw_torrent.h</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a0d27506f0afdaa9ea96e731fcc44cc63"><div class="ttname"><a href="rgw__torrent_8h.html#a0d27506f0afdaa9ea96e731fcc44cc63">RGW_OBJ_TORRENT</a></div><div class="ttdeci">#define RGW_OBJ_TORRENT</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00020">rgw_torrent.h:20</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a180f5b3835bdbfc11b353fd2af5c8659"><div class="ttname"><a href="rgw__torrent_8h.html#a180f5b3835bdbfc11b353fd2af5c8659">COMMENT</a></div><div class="ttdeci">#define COMMENT</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00024">rgw_torrent.h:24</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a2387038a7388f10200c86bc137dff526"><div class="ttname"><a href="rgw__torrent_8h.html#a2387038a7388f10200c86bc137dff526">ANNOUNCE</a></div><div class="ttdeci">#define ANNOUNCE</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00022">rgw_torrent.h:22</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a30362161c93e3f1a4ee4c673f535b5a8"><div class="ttname"><a href="rgw__torrent_8h.html#a30362161c93e3f1a4ee4c673f535b5a8">LENGTH</a></div><div class="ttdeci">#define LENGTH</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00028">rgw_torrent.h:28</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a47f2e62c0dbebc787052c165afcada0e"><div class="ttname"><a href="rgw__torrent_8h.html#a47f2e62c0dbebc787052c165afcada0e">NAME</a></div><div class="ttdeci">#define NAME</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00029">rgw_torrent.h:29</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a5b2500ca93a5100f73dc442d3cfea7d4"><div class="ttname"><a href="rgw__torrent_8h.html#a5b2500ca93a5100f73dc442d3cfea7d4">PIECE_LENGTH</a></div><div class="ttdeci">#define PIECE_LENGTH</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00030">rgw_torrent.h:30</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a6b8d3281699db6cebe4f12e2c4f8d16a"><div class="ttname"><a href="rgw__torrent_8h.html#a6b8d3281699db6cebe4f12e2c4f8d16a">INFO_PIECES</a></div><div class="ttdeci">#define INFO_PIECES</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00032">rgw_torrent.h:32</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a709c0985d3e1e6e85e47a32591316faf"><div class="ttname"><a href="rgw__torrent_8h.html#a709c0985d3e1e6e85e47a32591316faf">CREATION_DATE</a></div><div class="ttdeci">#define CREATION_DATE</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00026">rgw_torrent.h:26</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a818a7aec9c89ec6951d701e6bd4220ac"><div class="ttname"><a href="rgw__torrent_8h.html#a818a7aec9c89ec6951d701e6bd4220ac">PIECES</a></div><div class="ttdeci">#define PIECES</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00031">rgw_torrent.h:31</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_a88f909ee90bb1e294e4c2668bef3609d"><div class="ttname"><a href="rgw__torrent_8h.html#a88f909ee90bb1e294e4c2668bef3609d">ANNOUNCE_LIST</a></div><div class="ttdeci">#define ANNOUNCE_LIST</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00023">rgw_torrent.h:23</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_ad8a6b7a06c2a6f889678c52511aac9ca"><div class="ttname"><a href="rgw__torrent_8h.html#ad8a6b7a06c2a6f889678c52511aac9ca">CREATED_BY</a></div><div class="ttdeci">#define CREATED_BY</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00025">rgw_torrent.h:25</a></div></div>
+<div class="ttc" id="argw__torrent_8h_html_af633cf472c997492bd792041a794af5c"><div class="ttname"><a href="rgw__torrent_8h.html#af633cf472c997492bd792041a794af5c">ENCODING</a></div><div class="ttdeci">#define ENCODING</div><div class="ttdef"><b>Definition</b> <a href="rgw__torrent_8h_source.html#l00027">rgw_torrent.h:27</a></div></div>
+<div class="ttc" id="astructreq__state_html"><div class="ttname"><a href="structreq__state.html">req_state</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01551">rgw_common.h:1551</a></div></div>
+<div class="ttc" id="astructreq__state_html_a67c6558952757f16ddb49664ccc25a5c"><div class="ttname"><a href="structreq__state.html#a67c6558952757f16ddb49664ccc25a5c">req_state::object</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::sal::Object &gt; object</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01586">rgw_common.h:1586</a></div></div>
+<div class="ttc" id="astructrgw__obj_html"><div class="ttname"><a href="structrgw__obj.html">rgw_obj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01802">rgw_common.h:1802</a></div></div>
+<div class="ttc" id="asvc__sys__obj_8h_html"><div class="ttname"><a href="svc__sys__obj_8h.html">svc_sys_obj.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__torrent_8cc.html">rgw_torrent.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

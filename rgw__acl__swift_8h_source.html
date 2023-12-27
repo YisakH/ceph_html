@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_acl_swift.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__acl__swift_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_acl_swift.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__acl__swift_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef CEPH_RGW_ACL_SWIFT_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define CEPH_RGW_ACL_SWIFT_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;include/types.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;boost/optional.hpp&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__acl_8h.html">rgw_acl.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_user_ctl.html">RGWUserCtl</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_r_g_w_access_control_policy___s_w_i_f_t.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_access_control_policy___s_w_i_f_t.html">RGWAccessControlPolicy_SWIFT</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_access_control_policy.html">RGWAccessControlPolicy</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a67726c2f614d9bda4dc88f9db98ab76d">add_grants</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                 <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; uids,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                 uint32_t perm);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a7c16ca5dab1992e6bdba514e208aa65d">   25</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a7c16ca5dab1992e6bdba514e208aa65d">RGWAccessControlPolicy_SWIFT</a>(CephContext* <span class="keyword">const</span> <a class="code hl_variable" href="class_r_g_w_access_control_policy.html#ade366766ad037bc6e119a06561e321ab">cct</a>)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    : <a class="code hl_class" href="class_r_g_w_access_control_policy.html">RGWAccessControlPolicy</a>(<a class="code hl_variable" href="class_r_g_w_access_control_policy.html#ade366766ad037bc6e119a06561e321ab">cct</a>) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  }</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a2f6f391956227097b5591386b79ed8b6">   28</a></span>  <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a2f6f391956227097b5591386b79ed8b6">~RGWAccessControlPolicy_SWIFT</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#ad91948a668cbe8a63252788ff962e584">create</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>         <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>             <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; <span class="keywordtype">id</span>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>             <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>             <span class="keyword">const</span> <span class="keywordtype">char</span>* read_list,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>             <span class="keyword">const</span> <span class="keywordtype">char</span>* write_list,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>             uint32_t&amp; rw_mask);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a204e1f3e28211296ffb5d3b395b52234">filter_merge</a>(uint32_t mask, <a class="code hl_class" href="class_r_g_w_access_control_policy___s_w_i_f_t.html">RGWAccessControlPolicy_SWIFT</a> *policy);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t.html#af1a688335c61db72c3ea316724f882d4">to_str</a>(std::string&amp; read, std::string&amp; write);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html">   41</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html">RGWAccessControlPolicy_SWIFTAcct</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_access_control_policy.html">RGWAccessControlPolicy</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#aa7da97195f8ebb6cd5f754ba1c7adfc9">   44</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#aa7da97195f8ebb6cd5f754ba1c7adfc9">RGWAccessControlPolicy_SWIFTAcct</a>(CephContext * <span class="keyword">const</span> <a class="code hl_variable" href="class_r_g_w_access_control_policy.html#ade366766ad037bc6e119a06561e321ab">cct</a>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    : <a class="code hl_class" href="class_r_g_w_access_control_policy.html">RGWAccessControlPolicy</a>(<a class="code hl_variable" href="class_r_g_w_access_control_policy.html#ade366766ad037bc6e119a06561e321ab">cct</a>) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#a333e3eac3d3cb6aaf1f05c9af442821c">   47</a></span>  <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#a333e3eac3d3cb6aaf1f05c9af442821c">~RGWAccessControlPolicy_SWIFTAcct</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#aae441fb0c5703ffd4edee0b4a65ca7d0">add_grants</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                  <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; uids,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                  uint32_t perm);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#af8767ec0afdaad0a76bb0085c8e1b577">create</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          <a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>              <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__user.html">rgw_user</a>&amp; <span class="keywordtype">id</span>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>              <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>              <span class="keyword">const</span> std::string&amp; acl_str);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  boost::optional&lt;std::string&gt; <a class="code hl_function" href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#ac897b12193c72ecef5291838225cb997">to_str</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_acct_html"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html">RGWAccessControlPolicy_SWIFTAcct</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8h_source.html#l00041">rgw_acl_swift.h:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_acct_html_a333e3eac3d3cb6aaf1f05c9af442821c"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#a333e3eac3d3cb6aaf1f05c9af442821c">RGWAccessControlPolicy_SWIFTAcct::~RGWAccessControlPolicy_SWIFTAcct</a></div><div class="ttdeci">~RGWAccessControlPolicy_SWIFTAcct() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8h_source.html#l00047">rgw_acl_swift.h:47</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_acct_html_aa7da97195f8ebb6cd5f754ba1c7adfc9"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#aa7da97195f8ebb6cd5f754ba1c7adfc9">RGWAccessControlPolicy_SWIFTAcct::RGWAccessControlPolicy_SWIFTAcct</a></div><div class="ttdeci">RGWAccessControlPolicy_SWIFTAcct(CephContext *const cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8h_source.html#l00044">rgw_acl_swift.h:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_acct_html_aae441fb0c5703ffd4edee0b4a65ca7d0"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#aae441fb0c5703ffd4edee0b4a65ca7d0">RGWAccessControlPolicy_SWIFTAcct::add_grants</a></div><div class="ttdeci">void add_grants(const DoutPrefixProvider *dpp, rgw::sal::Store *store, const std::vector&lt; std::string &gt; &amp;uids, uint32_t perm)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8cc_source.html#l00307">rgw_acl_swift.cc:307</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_acct_html_ac897b12193c72ecef5291838225cb997"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#ac897b12193c72ecef5291838225cb997">RGWAccessControlPolicy_SWIFTAcct::to_str</a></div><div class="ttdeci">boost::optional&lt; std::string &gt; to_str() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8cc_source.html#l00381">rgw_acl_swift.cc:381</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_acct_html_af8767ec0afdaad0a76bb0085c8e1b577"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t_acct.html#af8767ec0afdaad0a76bb0085c8e1b577">RGWAccessControlPolicy_SWIFTAcct::create</a></div><div class="ttdeci">bool create(const DoutPrefixProvider *dpp, rgw::sal::Store *store, const rgw_user &amp;id, const std::string &amp;name, const std::string &amp;acl_str)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8cc_source.html#l00334">rgw_acl_swift.cc:334</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_html"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t.html">RGWAccessControlPolicy_SWIFT</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8h_source.html#l00018">rgw_acl_swift.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_html_a204e1f3e28211296ffb5d3b395b52234"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a204e1f3e28211296ffb5d3b395b52234">RGWAccessControlPolicy_SWIFT::filter_merge</a></div><div class="ttdeci">void filter_merge(uint32_t mask, RGWAccessControlPolicy_SWIFT *policy)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8cc_source.html#l00232">rgw_acl_swift.cc:232</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_html_a2f6f391956227097b5591386b79ed8b6"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a2f6f391956227097b5591386b79ed8b6">RGWAccessControlPolicy_SWIFT::~RGWAccessControlPolicy_SWIFT</a></div><div class="ttdeci">~RGWAccessControlPolicy_SWIFT() override=default</div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_html_a67726c2f614d9bda4dc88f9db98ab76d"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a67726c2f614d9bda4dc88f9db98ab76d">RGWAccessControlPolicy_SWIFT::add_grants</a></div><div class="ttdeci">int add_grants(const DoutPrefixProvider *dpp, rgw::sal::Store *store, const std::vector&lt; std::string &gt; &amp;uids, uint32_t perm)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8cc_source.html#l00139">rgw_acl_swift.cc:139</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_html_a7c16ca5dab1992e6bdba514e208aa65d"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t.html#a7c16ca5dab1992e6bdba514e208aa65d">RGWAccessControlPolicy_SWIFT::RGWAccessControlPolicy_SWIFT</a></div><div class="ttdeci">RGWAccessControlPolicy_SWIFT(CephContext *const cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8h_source.html#l00025">rgw_acl_swift.h:25</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_html_ad91948a668cbe8a63252788ff962e584"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t.html#ad91948a668cbe8a63252788ff962e584">RGWAccessControlPolicy_SWIFT::create</a></div><div class="ttdeci">int create(const DoutPrefixProvider *dpp, rgw::sal::Store *store, const rgw_user &amp;id, const std::string &amp;name, const char *read_list, const char *write_list, uint32_t &amp;rw_mask)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8cc_source.html#l00182">rgw_acl_swift.cc:182</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy___s_w_i_f_t_html_af1a688335c61db72c3ea316724f882d4"><div class="ttname"><a href="class_r_g_w_access_control_policy___s_w_i_f_t.html#af1a688335c61db72c3ea316724f882d4">RGWAccessControlPolicy_SWIFT::to_str</a></div><div class="ttdeci">void to_str(std::string &amp;read, std::string &amp;write)</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl__swift_8cc_source.html#l00266">rgw_acl_swift.cc:266</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy_html"><div class="ttname"><a href="class_r_g_w_access_control_policy.html">RGWAccessControlPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__acl_8h_source.html#l00438">rgw_acl.h:439</a></div></div>
+<div class="ttc" id="aclass_r_g_w_access_control_policy_html_ade366766ad037bc6e119a06561e321ab"><div class="ttname"><a href="class_r_g_w_access_control_policy.html#ade366766ad037bc6e119a06561e321ab">RGWAccessControlPolicy::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__acl_8h_source.html#l00441">rgw_acl.h:441</a></div></div>
+<div class="ttc" id="aclass_r_g_w_user_ctl_html"><div class="ttname"><a href="class_r_g_w_user_ctl.html">RGWUserCtl</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__user_8h_source.html#l00736">rgw_user.h:737</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="argw__acl_8h_html"><div class="ttname"><a href="rgw__acl_8h.html">rgw_acl.h</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="astructrgw__user_html"><div class="ttname"><a href="structrgw__user.html">rgw_user</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00014">rgw_basic_types.h:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__acl__swift_8h.html">rgw_acl_swift.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

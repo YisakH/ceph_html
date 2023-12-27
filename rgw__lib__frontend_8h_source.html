@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_lib_frontend.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__lib__frontend_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_lib_frontend.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__lib__frontend_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef RGW_LIB_FRONTEND_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define RGW_LIB_FRONTEND_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;boost/container/flat_map.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__lib_8h.html">rgw_lib.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__file_8h.html">rgw_file.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw.html">rgw</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html">   14</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classrgw_1_1_r_g_w_lib_process.html">RGWLibProcess</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#abaf0e3a9ffd3ff5296e03cd3cb026305">   15</a></span>    <a class="code hl_struct" href="struct_r_g_w_access_key.html">RGWAccessKey</a> <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#abaf0e3a9ffd3ff5296e03cd3cb026305">access_key</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a915611ac7a34f46edd62e9b654379604">   16</a></span>    std::mutex <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a915611ac7a34f46edd62e9b654379604">mtx</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#ab2fee722b6be70c2f8c91300830000e0">   17</a></span>    std::condition_variable <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#ab2fee722b6be70c2f8c91300830000e0">cv</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a666d2cf1d618b410b7191e4582ddd219">   18</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a666d2cf1d618b410b7191e4582ddd219">gen</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#ae7416a6aad4784cb782b5f06fcd985d1">   19</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#ae7416a6aad4784cb782b5f06fcd985d1">shutdown</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a84359a69b7efc756b149d4d006584f35">   21</a></span>    <span class="keyword">typedef</span> flat_map&lt;RGWLibFS*, RGWLibFS*&gt; <a class="code hl_typedef" href="classrgw_1_1_r_g_w_lib_process.html#a84359a69b7efc756b149d4d006584f35">FSMAP</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">   22</a></span>    <a class="code hl_typedef" href="classrgw_1_1_r_g_w_lib_process.html#a84359a69b7efc756b149d4d006584f35">FSMAP</a> <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">mounted_fs</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a9396789a8fbf45b0f07e844096fce329">   24</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classrgw_1_1_r_g_w_lib_process.html#a9396789a8fbf45b0f07e844096fce329">lock_guard</a> = std::lock_guard&lt;std::mutex&gt;;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a3613d8d85d06a46fd7ee6b7eb7b49bc9">   25</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classrgw_1_1_r_g_w_lib_process.html#a3613d8d85d06a46fd7ee6b7eb7b49bc9">unique_lock</a> = std::unique_lock&lt;std::mutex&gt;;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a8e94b2d770fe19f2826c077e32385f57">   28</a></span>    <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a8e94b2d770fe19f2826c077e32385f57">RGWLibProcess</a>(CephContext* <a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>, <a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a>* pe, <span class="keywordtype">int</span> num_threads,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>          <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a>* _conf) :</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <a class="code hl_class" href="class_r_g_w_process.html">RGWProcess</a>(<a class="code hl_variable" href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">cct</a>, pe, num_threads, _conf), <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a666d2cf1d618b410b7191e4582ddd219">gen</a>(0), <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#ae7416a6aad4784cb782b5f06fcd985d1">shutdown</a>(false) {}</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a06355c9311a70d314a4a114001c38475">run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a3e60082b0b17a1227b01e3daf6c545ae">checkpoint</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a61fb1b5f07de600f0604e15c606e2361">   35</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a61fb1b5f07de600f0604e15c606e2361">stop</a>() {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#ae7416a6aad4784cb782b5f06fcd985d1">shutdown</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fs: <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">mounted_fs</a>) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    fs.second-&gt;stop();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#ab2fee722b6be70c2f8c91300830000e0">cv</a>.notify_all();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a7607afe222f3cdcfbb868f9d1f32637b">   43</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a7607afe222f3cdcfbb868f9d1f32637b">register_fs</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_f_s.html">RGWLibFS</a>* fs) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <a class="code hl_typedef" href="classrgw_1_1_r_g_w_lib_process.html#a9396789a8fbf45b0f07e844096fce329">lock_guard</a> guard(<a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a915611ac7a34f46edd62e9b654379604">mtx</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">mounted_fs</a>.insert(FSMAP::value_type(fs, fs));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      ++<a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a666d2cf1d618b410b7191e4582ddd219">gen</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a6ee7e893ea6aab2639704c631760ce2b">   49</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a6ee7e893ea6aab2639704c631760ce2b">unregister_fs</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_f_s.html">RGWLibFS</a>* fs) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <a class="code hl_typedef" href="classrgw_1_1_r_g_w_lib_process.html#a9396789a8fbf45b0f07e844096fce329">lock_guard</a> guard(<a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a915611ac7a34f46edd62e9b654379604">mtx</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      FSMAP::iterator it = <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">mounted_fs</a>.find(fs);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">mounted_fs</a>.end()) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">mounted_fs</a>.erase(it);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    ++<a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#a666d2cf1d618b410b7191e4582ddd219">gen</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a3a858b7a91baa28c8a16e378938a660f">   58</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a3a858b7a91baa28c8a16e378938a660f">enqueue_req</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_request.html">RGWLibRequest</a>* req) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      lsubdout(g_ceph_context, <a class="code hl_namespace" href="namespacergw.html">rgw</a>, 10)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot; enqueue request req=&quot;</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    &lt;&lt; std::hex &lt;&lt; req &lt;&lt; std::dec &lt;&lt; dendl;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <a class="code hl_variable" href="class_r_g_w_process.html#aad068dd3f2834a3240945734d0f1cd6c">req_throttle</a>.get(1);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <a class="code hl_variable" href="class_r_g_w_process.html#a459c167dec888d381eaedc2935821dff">req_wq</a>.queue(req);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    } <span class="comment">/* enqueue_req */</span></div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">/* &quot;regular&quot; requests */</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#abdc46ffe8aec6c1e754cdc2c808ceca8">handle_request</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_struct" href="struct_r_g_w_request.html">RGWRequest</a>* req) <span class="keyword">override</span>; <span class="comment">// async handler, deletes req</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#acb68a772f628fcf5ae25eb650ec5b409">process_request</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_request.html">RGWLibRequest</a>* req);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#acb68a772f628fcf5ae25eb650ec5b409">process_request</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_request.html">RGWLibRequest</a>* req, <a class="code hl_class" href="classrgw_1_1_r_g_w_lib_i_o.html">RGWLibIO</a>* io);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_process.html#a53e7fb44b61efa817522d869e92d692b">   72</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a53e7fb44b61efa817522d869e92d692b">set_access_key</a>(<a class="code hl_struct" href="struct_r_g_w_access_key.html">RGWAccessKey</a>&amp; key) { <a class="code hl_variable" href="classrgw_1_1_r_g_w_lib_process.html#abaf0e3a9ffd3ff5296e03cd3cb026305">access_key</a> = key; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">/* requests w/continue semantics */</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a974153fb85a7afade423503ef983ff71">start_request</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_continued_req.html">RGWLibContinuedReq</a>* req);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a63e3a67aa7cee54d3396fb3e41597b70">finish_request</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_continued_req.html">RGWLibContinuedReq</a>* req);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }; <span class="comment">/* RGWLibProcess */</span></div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html">   79</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classrgw_1_1_r_g_w_lib_frontend.html">RGWLibFrontend</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_r_g_w_process_frontend.html">RGWProcessFrontend</a> {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html#aae9ecde79ae5b3ce792c1a4d1a70949e">   81</a></span>    <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#aae9ecde79ae5b3ce792c1a4d1a70949e">RGWLibFrontend</a>(<a class="code hl_struct" href="struct_r_g_w_process_env.html">RGWProcessEnv</a>&amp; pe, <a class="code hl_class" href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a> *_conf)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      : <a class="code hl_class" href="class_r_g_w_process_frontend.html">RGWProcessFrontend</a>(pe, _conf) {}</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#a2cad8a0750df84f3d925f55be5dbd4c4">init</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html#a97c3bb8d65041d99b65483422c9a44fb">   86</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#a97c3bb8d65041d99b65483422c9a44fb">stop</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <a class="code hl_function" href="class_r_g_w_process_frontend.html#afe1d464d43773a45aea5dea5682a2e5a">RGWProcessFrontend::stop</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#a66bd79b54634291ef02e0606cf8e1c99">get_process</a>()-&gt;<a class="code hl_function" href="classrgw_1_1_r_g_w_lib_process.html#a61fb1b5f07de600f0604e15c606e2361">stop</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html#a66bd79b54634291ef02e0606cf8e1c99">   91</a></span>    <a class="code hl_class" href="classrgw_1_1_r_g_w_lib_process.html">RGWLibProcess</a>* <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#a66bd79b54634291ef02e0606cf8e1c99">get_process</a>() {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classrgw_1_1_r_g_w_lib_process.html">RGWLibProcess</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html#aaeaeced888d79ba4103a6a0212979ca0">   95</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#aaeaeced888d79ba4103a6a0212979ca0">enqueue_req</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_request.html">RGWLibRequest</a>* req) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classrgw_1_1_r_g_w_lib_process.html">RGWLibProcess</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>)-&gt;<a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#aaeaeced888d79ba4103a6a0212979ca0">enqueue_req</a>(req); <span class="comment">// async</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html#ade74767490b50fd7073b981e587a9120">   99</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#ade74767490b50fd7073b981e587a9120">execute_req</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_request.html">RGWLibRequest</a>* req) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classrgw_1_1_r_g_w_lib_process.html">RGWLibProcess</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>)-&gt;<a class="code hl_function" href="rgw__process_8cc.html#ae533d722f11022b49f42e1a20fff000b">process_request</a>(req); <span class="comment">// !async</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html#aa9be79aefc5f482de545faa1d971e701">  103</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#aa9be79aefc5f482de545faa1d971e701">start_req</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_continued_req.html">RGWLibContinuedReq</a>* req) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classrgw_1_1_r_g_w_lib_process.html">RGWLibProcess</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>)-&gt;start_request(req);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classrgw_1_1_r_g_w_lib_frontend.html#aafc03780e7292f71f7687de6d2067551">  107</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classrgw_1_1_r_g_w_lib_frontend.html#aafc03780e7292f71f7687de6d2067551">finish_req</a>(<a class="code hl_class" href="classrgw_1_1_r_g_w_lib_continued_req.html">RGWLibContinuedReq</a>* req) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classrgw_1_1_r_g_w_lib_process.html">RGWLibProcess</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">pprocess</a>)-&gt;finish_request(req);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }; <span class="comment">/* RGWLibFrontend */</span></div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>} <span class="comment">/* namespace rgw */</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif </span><span class="comment">/* RGW_LIB_FRONTEND_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_r_g_w_frontend_config_html"><div class="ttname"><a href="class_r_g_w_frontend_config.html">RGWFrontendConfig</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00027">rgw_frontend.h:27</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html"><div class="ttname"><a href="class_r_g_w_process_frontend.html">RGWProcessFrontend</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00090">rgw_frontend.h:90</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_ac572abf782d790be0e0a890c5fe400cf"><div class="ttname"><a href="class_r_g_w_process_frontend.html#ac572abf782d790be0e0a890c5fe400cf">RGWProcessFrontend::pprocess</a></div><div class="ttdeci">RGWProcess * pprocess</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8h_source.html#l00093">rgw_frontend.h:93</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_frontend_html_afe1d464d43773a45aea5dea5682a2e5a"><div class="ttname"><a href="class_r_g_w_process_frontend.html#afe1d464d43773a45aea5dea5682a2e5a">RGWProcessFrontend::stop</a></div><div class="ttdeci">void stop() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__frontend_8cc_source.html#l00101">rgw_frontend.cc:101</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html"><div class="ttname"><a href="class_r_g_w_process.html">RGWProcess</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00048">rgw_process.h:48</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a2724c5ba30d37ae9eedaee8843992022"><div class="ttname"><a href="class_r_g_w_process.html#a2724c5ba30d37ae9eedaee8843992022">RGWProcess::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00051">rgw_process.h:51</a></div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_a459c167dec888d381eaedc2935821dff"><div class="ttname"><a href="class_r_g_w_process.html#a459c167dec888d381eaedc2935821dff">RGWProcess::req_wq</a></div><div class="ttdeci">RGWProcess::RGWWQ req_wq</div></div>
+<div class="ttc" id="aclass_r_g_w_process_html_aad068dd3f2834a3240945734d0f1cd6c"><div class="ttname"><a href="class_r_g_w_process.html#aad068dd3f2834a3240945734d0f1cd6c">RGWProcess::req_throttle</a></div><div class="ttdeci">Throttle req_throttle</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00056">rgw_process.h:56</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_continued_req_html"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_continued_req.html">rgw::RGWLibContinuedReq</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lib_8h_source.html#l00191">rgw_lib.h:191</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_f_s_html"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_f_s.html">rgw::RGWLibFS</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__file_8h_source.html#l00859">rgw_file.h:860</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html">rgw::RGWLibFrontend</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00079">rgw_lib_frontend.h:79</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_a2cad8a0750df84f3d925f55be5dbd4c4"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#a2cad8a0750df84f3d925f55be5dbd4c4">rgw::RGWLibFrontend::init</a></div><div class="ttdeci">int init() override</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00484">librgw.cc:484</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_a66bd79b54634291ef02e0606cf8e1c99"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#a66bd79b54634291ef02e0606cf8e1c99">rgw::RGWLibFrontend::get_process</a></div><div class="ttdeci">RGWLibProcess * get_process()</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00091">rgw_lib_frontend.h:91</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_a97c3bb8d65041d99b65483422c9a44fb"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#a97c3bb8d65041d99b65483422c9a44fb">rgw::RGWLibFrontend::stop</a></div><div class="ttdeci">void stop() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00086">rgw_lib_frontend.h:86</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_aa9be79aefc5f482de545faa1d971e701"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#aa9be79aefc5f482de545faa1d971e701">rgw::RGWLibFrontend::start_req</a></div><div class="ttdeci">int start_req(RGWLibContinuedReq *req)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00103">rgw_lib_frontend.h:103</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_aae9ecde79ae5b3ce792c1a4d1a70949e"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#aae9ecde79ae5b3ce792c1a4d1a70949e">rgw::RGWLibFrontend::RGWLibFrontend</a></div><div class="ttdeci">RGWLibFrontend(RGWProcessEnv &amp;pe, RGWFrontendConfig *_conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00081">rgw_lib_frontend.h:81</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_aaeaeced888d79ba4103a6a0212979ca0"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#aaeaeced888d79ba4103a6a0212979ca0">rgw::RGWLibFrontend::enqueue_req</a></div><div class="ttdeci">void enqueue_req(RGWLibRequest *req)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00095">rgw_lib_frontend.h:95</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_aafc03780e7292f71f7687de6d2067551"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#aafc03780e7292f71f7687de6d2067551">rgw::RGWLibFrontend::finish_req</a></div><div class="ttdeci">int finish_req(RGWLibContinuedReq *req)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00107">rgw_lib_frontend.h:107</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_frontend_html_ade74767490b50fd7073b981e587a9120"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_frontend.html#ade74767490b50fd7073b981e587a9120">rgw::RGWLibFrontend::execute_req</a></div><div class="ttdeci">int execute_req(RGWLibRequest *req)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00099">rgw_lib_frontend.h:99</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_i_o_html"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_i_o.html">rgw::RGWLibIO</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lib_8h_source.html#l00062">rgw_lib.h:64</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html">rgw::RGWLibProcess</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00014">rgw_lib_frontend.h:14</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a06355c9311a70d314a4a114001c38475"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a06355c9311a70d314a4a114001c38475">rgw::RGWLibProcess::run</a></div><div class="ttdeci">void run() override</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00105">librgw.cc:105</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a3613d8d85d06a46fd7ee6b7eb7b49bc9"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a3613d8d85d06a46fd7ee6b7eb7b49bc9">rgw::RGWLibProcess::unique_lock</a></div><div class="ttdeci">std::unique_lock&lt; std::mutex &gt; unique_lock</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00025">rgw_lib_frontend.h:25</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a3a858b7a91baa28c8a16e378938a660f"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a3a858b7a91baa28c8a16e378938a660f">rgw::RGWLibProcess::enqueue_req</a></div><div class="ttdeci">void enqueue_req(RGWLibRequest *req)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00058">rgw_lib_frontend.h:58</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a3e60082b0b17a1227b01e3daf6c545ae"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a3e60082b0b17a1227b01e3daf6c545ae">rgw::RGWLibProcess::checkpoint</a></div><div class="ttdeci">void checkpoint()</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00098">librgw.cc:98</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a405dff4e545bafd2d6b2daa1161bbca4"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a405dff4e545bafd2d6b2daa1161bbca4">rgw::RGWLibProcess::mounted_fs</a></div><div class="ttdeci">FSMAP mounted_fs</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00022">rgw_lib_frontend.h:22</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a53e7fb44b61efa817522d869e92d692b"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a53e7fb44b61efa817522d869e92d692b">rgw::RGWLibProcess::set_access_key</a></div><div class="ttdeci">void set_access_key(RGWAccessKey &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00072">rgw_lib_frontend.h:72</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a61fb1b5f07de600f0604e15c606e2361"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a61fb1b5f07de600f0604e15c606e2361">rgw::RGWLibProcess::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00035">rgw_lib_frontend.h:35</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a63e3a67aa7cee54d3396fb3e41597b70"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a63e3a67aa7cee54d3396fb3e41597b70">rgw::RGWLibProcess::finish_request</a></div><div class="ttdeci">int finish_request(RGWLibContinuedReq *req)</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00463">librgw.cc:463</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a666d2cf1d618b410b7191e4582ddd219"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a666d2cf1d618b410b7191e4582ddd219">rgw::RGWLibProcess::gen</a></div><div class="ttdeci">int gen</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00018">rgw_lib_frontend.h:18</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a6ee7e893ea6aab2639704c631760ce2b"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a6ee7e893ea6aab2639704c631760ce2b">rgw::RGWLibProcess::unregister_fs</a></div><div class="ttdeci">void unregister_fs(RGWLibFS *fs)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00049">rgw_lib_frontend.h:49</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a7607afe222f3cdcfbb868f9d1f32637b"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a7607afe222f3cdcfbb868f9d1f32637b">rgw::RGWLibProcess::register_fs</a></div><div class="ttdeci">void register_fs(RGWLibFS *fs)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00043">rgw_lib_frontend.h:43</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a84359a69b7efc756b149d4d006584f35"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a84359a69b7efc756b149d4d006584f35">rgw::RGWLibProcess::FSMAP</a></div><div class="ttdeci">flat_map&lt; RGWLibFS *, RGWLibFS * &gt; FSMAP</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00021">rgw_lib_frontend.h:21</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a8e94b2d770fe19f2826c077e32385f57"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a8e94b2d770fe19f2826c077e32385f57">rgw::RGWLibProcess::RGWLibProcess</a></div><div class="ttdeci">RGWLibProcess(CephContext *cct, RGWProcessEnv *pe, int num_threads, RGWFrontendConfig *_conf)</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00028">rgw_lib_frontend.h:28</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a915611ac7a34f46edd62e9b654379604"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a915611ac7a34f46edd62e9b654379604">rgw::RGWLibProcess::mtx</a></div><div class="ttdeci">std::mutex mtx</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00016">rgw_lib_frontend.h:16</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a9396789a8fbf45b0f07e844096fce329"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a9396789a8fbf45b0f07e844096fce329">rgw::RGWLibProcess::lock_guard</a></div><div class="ttdeci">std::lock_guard&lt; std::mutex &gt; lock_guard</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00024">rgw_lib_frontend.h:24</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_a974153fb85a7afade423503ef983ff71"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#a974153fb85a7afade423503ef983ff71">rgw::RGWLibProcess::start_request</a></div><div class="ttdeci">int start_request(RGWLibContinuedReq *req)</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00358">librgw.cc:358</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_ab2fee722b6be70c2f8c91300830000e0"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#ab2fee722b6be70c2f8c91300830000e0">rgw::RGWLibProcess::cv</a></div><div class="ttdeci">std::condition_variable cv</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00017">rgw_lib_frontend.h:17</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_abaf0e3a9ffd3ff5296e03cd3cb026305"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#abaf0e3a9ffd3ff5296e03cd3cb026305">rgw::RGWLibProcess::access_key</a></div><div class="ttdeci">RGWAccessKey access_key</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00015">rgw_lib_frontend.h:15</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_abdc46ffe8aec6c1e754cdc2c808ceca8"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#abdc46ffe8aec6c1e754cdc2c808ceca8">rgw::RGWLibProcess::handle_request</a></div><div class="ttdeci">void handle_request(const DoutPrefixProvider *dpp, RGWRequest *req) override</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00145">librgw.cc:145</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_acb68a772f628fcf5ae25eb650ec5b409"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#acb68a772f628fcf5ae25eb650ec5b409">rgw::RGWLibProcess::process_request</a></div><div class="ttdeci">int process_request(RGWLibRequest *req)</div><div class="ttdef"><b>Definition</b> <a href="librgw_8cc_source.html#l00169">librgw.cc:169</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_process_html_ae7416a6aad4784cb782b5f06fcd985d1"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_process.html#ae7416a6aad4784cb782b5f06fcd985d1">rgw::RGWLibProcess::shutdown</a></div><div class="ttdeci">bool shutdown</div><div class="ttdef"><b>Definition</b> <a href="rgw__lib__frontend_8h_source.html#l00019">rgw_lib_frontend.h:19</a></div></div>
+<div class="ttc" id="aclassrgw_1_1_r_g_w_lib_request_html"><div class="ttname"><a href="classrgw_1_1_r_g_w_lib_request.html">rgw::RGWLibRequest</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__lib_8h_source.html#l00134">rgw_lib.h:135</a></div></div>
+<div class="ttc" id="anamespacergw_html"><div class="ttname"><a href="namespacergw.html">rgw</a></div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00038">cls_fifo_legacy.cc:38</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__file_8h_html"><div class="ttname"><a href="rgw__file_8h.html">rgw_file.h</a></div></div>
+<div class="ttc" id="argw__lib_8h_html"><div class="ttname"><a href="rgw__lib_8h.html">rgw_lib.h</a></div></div>
+<div class="ttc" id="argw__process_8cc_html_ae533d722f11022b49f42e1a20fff000b"><div class="ttname"><a href="rgw__process_8cc.html#ae533d722f11022b49f42e1a20fff000b">process_request</a></div><div class="ttdeci">int process_request(rgw::sal::Store *const store, RGWREST *const rest, RGWRequest *const req, const std::string &amp;frontend_prefix, const rgw_auth_registry_t &amp;auth_registry, RGWRestfulIO *const client_io, OpsLogSink *const olog, optional_yield yield, rgw::dmclock::Scheduler *scheduler, string *user, ceph::coarse_real_clock::duration *latency, std::shared_ptr&lt; RateLimiter &gt; ratelimit, int *http_ret)</div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8cc_source.html#l00264">rgw_process.cc:264</a></div></div>
+<div class="ttc" id="astruct_r_g_w_access_key_html"><div class="ttname"><a href="struct_r_g_w_access_key.html">RGWAccessKey</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00478">rgw_common.h:478</a></div></div>
+<div class="ttc" id="astruct_r_g_w_process_env_html"><div class="ttname"><a href="struct_r_g_w_process_env.html">RGWProcessEnv</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__process_8h_source.html#l00034">rgw_process.h:34</a></div></div>
+<div class="ttc" id="astruct_r_g_w_request_html"><div class="ttname"><a href="struct_r_g_w_request.html">RGWRequest</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__request_8h_source.html#l00016">rgw_request.h:17</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__lib__frontend_8h.html">rgw_lib_frontend.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

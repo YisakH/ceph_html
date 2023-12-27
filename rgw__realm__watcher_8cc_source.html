@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_realm_watcher.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__realm__watcher_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_realm_watcher.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__realm__watcher_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;common/errno.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__realm__watcher_8h.html">rgw_realm_watcher.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__tools_8h.html">rgw_tools.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__zone_8h.html">rgw_zone.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="rgw__realm__watcher_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   10</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#undef dout_prefix</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="rgw__realm__watcher_8cc.html#a7ce752e347fabcf5fa47c54cc22f9fb1">   13</a></span><span class="preprocessor">#define dout_prefix (*_dout &lt;&lt; &quot;rgw realm watcher: &quot;)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#ad6ba34b38f1704b7911429f3350a444a">   16</a></span><a class="code hl_function" href="class_r_g_w_realm_watcher.html#ad6ba34b38f1704b7911429f3350a444a">RGWRealmWatcher::RGWRealmWatcher</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, CephContext* <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_realm.html">RGWRealm</a>&amp; realm)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  : <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="comment">// no default realm, nothing to watch</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (realm.<a class="code hl_function" href="class_r_g_w_system_meta_obj.html#ab885e5d275a5396cc473703ab55f50b1">get_id</a>().empty()) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 4) &lt;&lt; <span class="stringliteral">&quot;No realm, disabling dynamic reconfiguration.&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">// establish the watch on RGWRealm</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_function" href="class_r_g_w_realm_watcher.html#af3bcfd1aedb59b8bbf379ce5b972755d">watch_start</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, realm);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;Failed to establish a watch on RGWRealm, &quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="stringliteral">&quot;disabling dynamic reconfiguration.&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#a159a88021b47585d835af9ec8d446d68">   34</a></span><a class="code hl_function" href="class_r_g_w_realm_watcher.html#a159a88021b47585d835af9ec8d446d68">RGWRealmWatcher::~RGWRealmWatcher</a>()</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_function" href="class_r_g_w_realm_watcher.html#afec78cf12b43c3519a20e4e91501488b">watch_stop</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#ad0fd62663209108ef5c20a9d5e78fc5d">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_realm_watcher.html#ad0fd62663209108ef5c20a9d5e78fc5d">RGWRealmWatcher::add_watcher</a>(<a class="code hl_enumeration" href="rgw__realm__watcher_8h.html#afbacd22e94d464ca47daa4d7f68fddf0">RGWRealmNotify</a> type, <a class="code hl_class" href="class_r_g_w_realm_watcher_1_1_watcher.html">Watcher</a>&amp; watcher)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a423d9aa99ef3261d2e24e74154453d3f">watchers</a>.emplace(type, watcher);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#a576e48c0e8791d576ee7063aac42f476">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_realm_watcher.html#a576e48c0e8791d576ee7063aac42f476">RGWRealmWatcher::handle_notify</a>(uint64_t notify_id, uint64_t cookie,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                                    uint64_t notifier_id, bufferlist&amp; bl)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">if</span> (cookie != <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a33fb60afe489266e9d2dba45292abfb2">watch_handle</a>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// send an empty notify ack</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  bufferlist reply;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.notify_ack(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a>, notify_id, cookie, reply);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">auto</span> p = bl.cbegin();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">while</span> (!p.end()) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      <a class="code hl_enumeration" href="rgw__realm__watcher_8h.html#afbacd22e94d464ca47daa4d7f68fddf0">RGWRealmNotify</a> notify;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <a class="code hl_function" href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a>(notify, p);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="keyword">auto</span> watcher = <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a423d9aa99ef3261d2e24e74154453d3f">watchers</a>.find(notify);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordflow">if</span> (watcher == <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a423d9aa99ef3261d2e24e74154453d3f">watchers</a>.end()) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        lderr(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">cct</a>) &lt;&lt; <span class="stringliteral">&quot;Failed to find a watcher for notify type &quot;</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(notify) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      watcher-&gt;second.handle_notify(notify, p);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> buffer::error &amp;e) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    lderr(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">cct</a>) &lt;&lt; <span class="stringliteral">&quot;Failed to decode realm notifications.&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#a4f262fc7a276725aba5fe74562cf6674">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_realm_watcher.html#a4f262fc7a276725aba5fe74562cf6674">RGWRealmWatcher::handle_error</a>(uint64_t cookie, <span class="keywordtype">int</span> err)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  lderr(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">cct</a>) &lt;&lt; <span class="stringliteral">&quot;RGWRealmWatcher::handle_error oid=&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a> &lt;&lt; <span class="stringliteral">&quot; err=&quot;</span> &lt;&lt; err &lt;&lt; dendl;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordflow">if</span> (cookie != <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a33fb60afe489266e9d2dba45292abfb2">watch_handle</a>)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_function" href="class_r_g_w_realm_watcher.html#a10a274c5d4b93a2c0d768ad4a198ed50">watch_restart</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#af3bcfd1aedb59b8bbf379ce5b972755d">   81</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_realm_watcher.html#af3bcfd1aedb59b8bbf379ce5b972755d">RGWRealmWatcher::watch_start</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_realm.html">RGWRealm</a>&amp; realm)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="comment">// initialize a Rados client</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a78fe527a631fd4dbcd7bd7a574a3b41d">rados</a>.init_with_context(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">cct</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;Rados client initialization failed with &quot;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        &lt;&lt; cpp_strerror(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a78fe527a631fd4dbcd7bd7a574a3b41d">rados</a>.connect();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;Rados client connection failed with &quot;</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        &lt;&lt; cpp_strerror(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="comment">// open an IoCtx for the realm&#39;s pool</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <a class="code hl_struct" href="structrgw__pool.html">rgw_pool</a> pool(realm.<a class="code hl_function" href="class_r_g_w_realm.html#a930114e4024c0d72b04374e9da33825b">get_pool</a>(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">cct</a>));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_function" href="rgw__tools_8cc.html#a1b991fc581ae47229ff5e44c3a5e5aac">rgw_init_ioctx</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, &amp;<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a78fe527a631fd4dbcd7bd7a574a3b41d">rados</a>, pool, <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;Failed to open pool &quot;</span> &lt;&lt; pool</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        &lt;&lt; <span class="stringliteral">&quot; with &quot;</span> &lt;&lt; cpp_strerror(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a78fe527a631fd4dbcd7bd7a574a3b41d">rados</a>.shutdown();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="comment">// register a watch on the realm&#39;s control object</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">auto</span> oid = realm.<a class="code hl_function" href="class_r_g_w_realm.html#aa4a35bf8e992c2be37b1dfe9f68afa9f">get_control_oid</a>();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.watch2(oid, &amp;<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a33fb60afe489266e9d2dba45292abfb2">watch_handle</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, -1) &lt;&lt; <span class="stringliteral">&quot;Failed to watch &quot;</span> &lt;&lt; oid</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        &lt;&lt; <span class="stringliteral">&quot; with &quot;</span> &lt;&lt; cpp_strerror(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.close();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a78fe527a631fd4dbcd7bd7a574a3b41d">rados</a>.shutdown();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 10) &lt;&lt; <span class="stringliteral">&quot;Watching &quot;</span> &lt;&lt; oid &lt;&lt; dendl;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <a class="code hl_function" href="namespacestd.html#abb7e41c7063536ff6eeee4bb5f66de6c">std::swap</a>(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a>, oid);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#a10a274c5d4b93a2c0d768ad4a198ed50">  123</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_realm_watcher.html#a10a274c5d4b93a2c0d768ad4a198ed50">RGWRealmWatcher::watch_restart</a>()</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  ceph_assert(!<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a>.empty());</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.unwatch2(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a33fb60afe489266e9d2dba45292abfb2">watch_handle</a>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    lderr(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">cct</a>) &lt;&lt; <span class="stringliteral">&quot;Failed to unwatch on &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        &lt;&lt; <span class="stringliteral">&quot; with &quot;</span> &lt;&lt; cpp_strerror(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.watch2(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a>, &amp;<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a33fb60afe489266e9d2dba45292abfb2">watch_handle</a>, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    lderr(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">cct</a>) &lt;&lt; <span class="stringliteral">&quot;Failed to restart watch on &quot;</span> &lt;&lt; <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        &lt;&lt; <span class="stringliteral">&quot; with &quot;</span> &lt;&lt; cpp_strerror(-<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>) &lt;&lt; dendl;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.close();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a>.clear();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="class_r_g_w_realm_watcher.html#afec78cf12b43c3519a20e4e91501488b">  141</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_realm_watcher.html#afec78cf12b43c3519a20e4e91501488b">RGWRealmWatcher::watch_stop</a>()</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>{</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a>.empty()) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.unwatch2(<a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a33fb60afe489266e9d2dba45292abfb2">watch_handle</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">pool_ctx</a>.close();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_variable" href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">watch_oid</a>.clear();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_realm_html"><div class="ttname"><a href="class_r_g_w_realm.html">RGWRealm</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01119">rgw_zone.h:1120</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_html_a930114e4024c0d72b04374e9da33825b"><div class="ttname"><a href="class_r_g_w_realm.html#a930114e4024c0d72b04374e9da33825b">RGWRealm::get_pool</a></div><div class="ttdeci">rgw_pool get_pool(CephContext *cct) const override</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8cc_source.html#l00828">rgw_zone.cc:828</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_html_aa4a35bf8e992c2be37b1dfe9f68afa9f"><div class="ttname"><a href="class_r_g_w_realm.html#aa4a35bf8e992c2be37b1dfe9f68afa9f">RGWRealm::get_control_oid</a></div><div class="ttdeci">std::string get_control_oid() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8cc_source.html#l00887">rgw_zone.cc:887</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_1_1_watcher_html"><div class="ttname"><a href="class_r_g_w_realm_watcher_1_1_watcher.html">RGWRealmWatcher::Watcher</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00031">rgw_realm_watcher.h:31</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a10a274c5d4b93a2c0d768ad4a198ed50"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a10a274c5d4b93a2c0d768ad4a198ed50">RGWRealmWatcher::watch_restart</a></div><div class="ttdeci">int watch_restart()</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00123">rgw_realm_watcher.cc:123</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a159a88021b47585d835af9ec8d446d68"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a159a88021b47585d835af9ec8d446d68">RGWRealmWatcher::~RGWRealmWatcher</a></div><div class="ttdeci">~RGWRealmWatcher() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00034">rgw_realm_watcher.cc:34</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a33fb60afe489266e9d2dba45292abfb2"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a33fb60afe489266e9d2dba45292abfb2">RGWRealmWatcher::watch_handle</a></div><div class="ttdeci">uint64_t watch_handle</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00059">rgw_realm_watcher.h:59</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a344018dcb322c01ec7099d8f7b1bfc1c"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a344018dcb322c01ec7099d8f7b1bfc1c">RGWRealmWatcher::watch_oid</a></div><div class="ttdeci">std::string watch_oid</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00060">rgw_realm_watcher.h:60</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a423d9aa99ef3261d2e24e74154453d3f"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a423d9aa99ef3261d2e24e74154453d3f">RGWRealmWatcher::watchers</a></div><div class="ttdeci">std::map&lt; RGWRealmNotify, Watcher &amp; &gt; watchers</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00066">rgw_realm_watcher.h:66</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a4f262fc7a276725aba5fe74562cf6674"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a4f262fc7a276725aba5fe74562cf6674">RGWRealmWatcher::handle_error</a></div><div class="ttdeci">void handle_error(uint64_t cookie, int err) override</div><div class="ttdoc">reestablish the watch if it gets disconnected</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00072">rgw_realm_watcher.cc:72</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a576e48c0e8791d576ee7063aac42f476"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a576e48c0e8791d576ee7063aac42f476">RGWRealmWatcher::handle_notify</a></div><div class="ttdeci">void handle_notify(uint64_t notify_id, uint64_t cookie, uint64_t notifier_id, bufferlist &amp;bl) override</div><div class="ttdoc">respond to realm notifications by calling the appropriate watcher</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00044">rgw_realm_watcher.cc:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_a78fe527a631fd4dbcd7bd7a574a3b41d"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#a78fe527a631fd4dbcd7bd7a574a3b41d">RGWRealmWatcher::rados</a></div><div class="ttdeci">librados::Rados rados</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00057">rgw_realm_watcher.h:57</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_ad0fd62663209108ef5c20a9d5e78fc5d"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#ad0fd62663209108ef5c20a9d5e78fc5d">RGWRealmWatcher::add_watcher</a></div><div class="ttdeci">void add_watcher(RGWRealmNotify type, Watcher &amp;watcher)</div><div class="ttdoc">register a watcher for the given notification type</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00039">rgw_realm_watcher.cc:39</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_ad6ba34b38f1704b7911429f3350a444a"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#ad6ba34b38f1704b7911429f3350a444a">RGWRealmWatcher::RGWRealmWatcher</a></div><div class="ttdeci">RGWRealmWatcher(const DoutPrefixProvider *dpp, CephContext *cct, const RGWRealm &amp;realm)</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00016">rgw_realm_watcher.cc:16</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_af3bcfd1aedb59b8bbf379ce5b972755d"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#af3bcfd1aedb59b8bbf379ce5b972755d">RGWRealmWatcher::watch_start</a></div><div class="ttdeci">int watch_start(const DoutPrefixProvider *dpp, const RGWRealm &amp;realm)</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00081">rgw_realm_watcher.cc:81</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_af6944eb49f8ca8adab9ddc3164eaacff"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#af6944eb49f8ca8adab9ddc3164eaacff">RGWRealmWatcher::pool_ctx</a></div><div class="ttdeci">librados::IoCtx pool_ctx</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00058">rgw_realm_watcher.h:58</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_afad09a4dfe96349169aaae65ef3aad5e"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#afad09a4dfe96349169aaae65ef3aad5e">RGWRealmWatcher::cct</a></div><div class="ttdeci">CephContext *const cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00053">rgw_realm_watcher.h:53</a></div></div>
+<div class="ttc" id="aclass_r_g_w_realm_watcher_html_afec78cf12b43c3519a20e4e91501488b"><div class="ttname"><a href="class_r_g_w_realm_watcher.html#afec78cf12b43c3519a20e4e91501488b">RGWRealmWatcher::watch_stop</a></div><div class="ttdeci">void watch_stop()</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8cc_source.html#l00141">rgw_realm_watcher.cc:141</a></div></div>
+<div class="ttc" id="aclass_r_g_w_system_meta_obj_html_ab885e5d275a5396cc473703ab55f50b1"><div class="ttname"><a href="class_r_g_w_system_meta_obj.html#ab885e5d275a5396cc473703ab55f50b1">RGWSystemMetaObj::get_id</a></div><div class="ttdeci">const std::string &amp; get_id() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l00112">rgw_zone.h:112</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacestd_html_abb7e41c7063536ff6eeee4bb5f66de6c"><div class="ttname"><a href="namespacestd.html#abb7e41c7063536ff6eeee4bb5f66de6c">std::swap</a></div><div class="ttdeci">void swap(picojson::value &amp;x, picojson::value &amp;y)</div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01153">picojson.h:1153</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__log__backing_8h_html_adc46efdde31cf790f3b383cb9e6f198e"><div class="ttname"><a href="rgw__log__backing_8h.html#adc46efdde31cf790f3b383cb9e6f198e">decode</a></div><div class="ttdeci">void decode(log_type &amp;type, bufferlist::const_iterator &amp;bl)</div><div class="ttdef"><b>Definition</b> <a href="rgw__log__backing_8h_source.html#l00049">rgw_log_backing.h:49</a></div></div>
+<div class="ttc" id="argw__realm__watcher_8h_html"><div class="ttname"><a href="rgw__realm__watcher_8h.html">rgw_realm_watcher.h</a></div></div>
+<div class="ttc" id="argw__realm__watcher_8h_html_afbacd22e94d464ca47daa4d7f68fddf0"><div class="ttname"><a href="rgw__realm__watcher_8h.html#afbacd22e94d464ca47daa4d7f68fddf0">RGWRealmNotify</a></div><div class="ttdeci">RGWRealmNotify</div><div class="ttdef"><b>Definition</b> <a href="rgw__realm__watcher_8h_source.html#l00015">rgw_realm_watcher.h:15</a></div></div>
+<div class="ttc" id="argw__tools_8cc_html_a1b991fc581ae47229ff5e44c3a5e5aac"><div class="ttname"><a href="rgw__tools_8cc.html#a1b991fc581ae47229ff5e44c3a5e5aac">rgw_init_ioctx</a></div><div class="ttdeci">int rgw_init_ioctx(const DoutPrefixProvider *dpp, librados::Rados *rados, const rgw_pool &amp;pool, librados::IoCtx &amp;ioctx, bool create, bool mostly_omap)</div><div class="ttdef"><b>Definition</b> <a href="rgw__tools_8cc_source.html#l00040">rgw_tools.cc:40</a></div></div>
+<div class="ttc" id="argw__tools_8h_html"><div class="ttname"><a href="rgw__tools_8h.html">rgw_tools.h</a></div></div>
+<div class="ttc" id="argw__zone_8h_html"><div class="ttname"><a href="rgw__zone_8h.html">rgw_zone.h</a></div></div>
+<div class="ttc" id="astructrgw__pool_html"><div class="ttname"><a href="structrgw__pool.html">rgw_pool</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00146">rgw_basic_types.h:146</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__realm__watcher_8cc.html">rgw_realm_watcher.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

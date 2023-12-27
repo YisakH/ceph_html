@@ -1,0 +1,1474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::dmclock::AsyncScheduler 클래스 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrgw_1_1dmclock_1_1_async_scheduler.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 타입</a> &#124;
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pri-types">Private 타입</a> &#124;
+<a href="#pri-methods">Private 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
+<a href="#pri-static-attribs">정적 Private 속성</a> &#124;
+<a href="classrgw_1_1dmclock_1_1_async_scheduler-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::dmclock::AsyncScheduler 클래스 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a>&gt;</code></p>
+<div class="dynheader">
+rgw::dmclock::AsyncScheduler에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler__inherit__graph.png" border="0" usemap="#argw_1_1dmclock_1_1_async_scheduler_inherit__map" alt="Inheritance graph"/></div>
+<map name="argw_1_1dmclock_1_1_async_scheduler_inherit__map" id="argw_1_1dmclock_1_1_async_scheduler_inherit__map">
+<area shape="rect" title=" " alt="" coords="44,187,237,640"/>
+<area shape="rect" title=" " alt="" coords="5,37,116,107"/>
+<area shape="poly" title=" " alt="" coords="75,120,90,186,85,187,69,122"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_scheduler.html" title=" " alt="" coords="140,5,304,139"/>
+<area shape="poly" title=" " alt="" coords="205,154,197,187,192,186,200,153"/>
+</map>
+</div>
+<div class="dynheader">
+rgw::dmclock::AsyncScheduler에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler__coll__graph.png" border="0" usemap="#argw_1_1dmclock_1_1_async_scheduler_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1dmclock_1_1_async_scheduler_coll__map" id="argw_1_1dmclock_1_1_async_scheduler_coll__map">
+<area shape="rect" title=" " alt="" coords="44,187,237,640"/>
+<area shape="rect" title=" " alt="" coords="5,37,116,107"/>
+<area shape="poly" title=" " alt="" coords="75,120,90,186,85,187,69,122"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_scheduler.html" title=" " alt="" coords="140,5,304,139"/>
+<area shape="poly" title=" " alt="" coords="205,154,197,187,192,186,200,153"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 타입</h2></td></tr>
+<tr class="memitem:a71518442ce2f0734ec0df44433390f15" id="r_a71518442ce2f0734ec0df44433390f15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a71518442ce2f0734ec0df44433390f15">executor_type</a> = boost::asio::io_context::executor_type</td></tr>
+<tr class="separator:a71518442ce2f0734ec0df44433390f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:a610211ed1083ab9e08b1f8411d4794be" id="r_a610211ed1083ab9e08b1f8411d4794be"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; </td></tr>
+<tr class="memitem:a610211ed1083ab9e08b1f8411d4794be"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a610211ed1083ab9e08b1f8411d4794be">AsyncScheduler</a> (CephContext *<a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">cct</a>, boost::asio::io_context &amp;context, <a class="el" href="namespacergw_1_1dmclock.html#a8589db3c776af7a8d3cbfc6adf83ab31">GetClientCounters</a> &amp;&amp;<a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>, md_config_obs_t *<a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>, Args &amp;&amp;...<a class="el" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>)</td></tr>
+<tr class="separator:a610211ed1083ab9e08b1f8411d4794be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad0cd98adc7588fa15de8ceb20dadd0" id="r_afad0cd98adc7588fa15de8ceb20dadd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afad0cd98adc7588fa15de8ceb20dadd0">~AsyncScheduler</a> ()</td></tr>
+<tr class="separator:afad0cd98adc7588fa15de8ceb20dadd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262372c9cbd80d8ef6929084409be4fb" id="r_a262372c9cbd80d8ef6929084409be4fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a71518442ce2f0734ec0df44433390f15">executor_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb">get_executor</a> () noexcept</td></tr>
+<tr class="memdesc:a262372c9cbd80d8ef6929084409be4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the default executor for <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56">async_request()</a> callbacks  <br /></td></tr>
+<tr class="separator:a262372c9cbd80d8ef6929084409be4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a662d744a03a07a8d8af2f93b9567ea56" id="r_a662d744a03a07a8d8af2f93b9567ea56"><td class="memTemplParams" colspan="2">template&lt;typename CompletionToken &gt; </td></tr>
+<tr class="memitem:a662d744a03a07a8d8af2f93b9567ea56"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56">async_request</a> (const <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> &amp;client, const ReqParams &amp;params, const Time &amp;time, Cost cost, CompletionToken &amp;&amp;token)</td></tr>
+<tr class="separator:a662d744a03a07a8d8af2f93b9567ea56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad4814435cceb4df0c40eb9bba28c30" id="r_afad4814435cceb4df0c40eb9bba28c30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afad4814435cceb4df0c40eb9bba28c30">request_complete</a> () override</td></tr>
+<tr class="memdesc:afad4814435cceb4df0c40eb9bba28c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a throttle unit granted by <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56">async_request()</a>  <br /></td></tr>
+<tr class="separator:afad4814435cceb4df0c40eb9bba28c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08089ce6b0b934dd2e9dd44dc68c57d9" id="r_a08089ce6b0b934dd2e9dd44dc68c57d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a08089ce6b0b934dd2e9dd44dc68c57d9">cancel</a> ()</td></tr>
+<tr class="separator:a08089ce6b0b934dd2e9dd44dc68c57d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af41af7d7061801256534b01bf14662" id="r_a1af41af7d7061801256534b01bf14662"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1af41af7d7061801256534b01bf14662">cancel</a> (const <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> &amp;client)</td></tr>
+<tr class="separator:a1af41af7d7061801256534b01bf14662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d9f33c152045e297a6553d36853e0d" id="r_ac2d9f33c152045e297a6553d36853e0d"><td class="memItemLeft" align="right" valign="top">const char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ac2d9f33c152045e297a6553d36853e0d">get_tracked_conf_keys</a> () const override</td></tr>
+<tr class="separator:ac2d9f33c152045e297a6553d36853e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e41dff15a16bc82631071e463daa76b" id="r_a4e41dff15a16bc82631071e463daa76b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4e41dff15a16bc82631071e463daa76b">handle_conf_change</a> (const ConfigProxy &amp;conf, const std::set&lt; std::string &gt; &amp;changed) override</td></tr>
+<tr class="separator:a4e41dff15a16bc82631071e463daa76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1dmclock_1_1_scheduler"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1dmclock_1_1_scheduler')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1dmclock_1_1_scheduler.html">rgw::dmclock::Scheduler</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:a555f126d187edc6145fa03d3b687c3cc inherit pub_methods_classrgw_1_1dmclock_1_1_scheduler" id="r_a555f126d187edc6145fa03d3b687c3cc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_scheduler.html#a555f126d187edc6145fa03d3b687c3cc">schedule_request</a> (const <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> &amp;client, const ReqParams &amp;params, const Time &amp;time, const Cost &amp;cost, optional_yield yield)</td></tr>
+<tr class="separator:a555f126d187edc6145fa03d3b687c3cc inherit pub_methods_classrgw_1_1dmclock_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07abe61d4b58406c92fb4b82d4ff67dc inherit pub_methods_classrgw_1_1dmclock_1_1_scheduler" id="r_a07abe61d4b58406c92fb4b82d4ff67dc"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_scheduler.html#a07abe61d4b58406c92fb4b82d4ff67dc">~Scheduler</a> ()</td></tr>
+<tr class="separator:a07abe61d4b58406c92fb4b82d4ff67dc inherit pub_methods_classrgw_1_1dmclock_1_1_scheduler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 타입</h2></td></tr>
+<tr class="memitem:acede1dd5cee68a01f78b59a9196ccb7f" id="r_acede1dd5cee68a01f78b59a9196ccb7f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#acede1dd5cee68a01f78b59a9196ccb7f">Queue</a> = crimson::dmclock::PullPriorityQueue&lt; <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a>, <a class="el" href="structrgw_1_1dmclock_1_1_request.html">Request</a>, <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afdfd0d49e38f6b9e03cc841e3fb82c1d">IsDelayed</a> &gt;</td></tr>
+<tr class="separator:acede1dd5cee68a01f78b59a9196ccb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae750ea78d430f433075b8c8733788dfc" id="r_ae750ea78d430f433075b8c8733788dfc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae750ea78d430f433075b8c8733788dfc">RequestRef</a> = typename Queue::RequestRef</td></tr>
+<tr class="separator:ae750ea78d430f433075b8c8733788dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ac4c4826d63ce49e517252148e8d1bb" id="r_a4ac4c4826d63ce49e517252148e8d1bb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4ac4c4826d63ce49e517252148e8d1bb">Signature</a> = void(boost::system::error_code, PhaseType)</td></tr>
+<tr class="separator:a4ac4c4826d63ce49e517252148e8d1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e60321c26d9561b78396d9865130491" id="r_a0e60321c26d9561b78396d9865130491"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a0e60321c26d9561b78396d9865130491">Completion</a> = async::Completion&lt; <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4ac4c4826d63ce49e517252148e8d1bb">Signature</a>, async::AsBase&lt; <a class="el" href="structrgw_1_1dmclock_1_1_request.html">Request</a> &gt; &gt;</td></tr>
+<tr class="separator:a0e60321c26d9561b78396d9865130491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac4a6d09b8c239ac90302d921ae700d" id="r_a5ac4a6d09b8c239ac90302d921ae700d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a5ac4a6d09b8c239ac90302d921ae700d">Clock</a> = ceph::coarse_real_clock</td></tr>
+<tr class="separator:a5ac4a6d09b8c239ac90302d921ae700d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ade08de94994d4fa50c90ffad14f8b8" id="r_a3ade08de94994d4fa50c90ffad14f8b8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a3ade08de94994d4fa50c90ffad14f8b8">Timer</a> = boost::asio::basic_waitable_timer&lt; <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a5ac4a6d09b8c239ac90302d921ae700d">Clock</a>, boost::asio::wait_traits&lt; <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a5ac4a6d09b8c239ac90302d921ae700d">Clock</a> &gt;, <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a71518442ce2f0734ec0df44433390f15">executor_type</a> &gt;</td></tr>
+<tr class="separator:a3ade08de94994d4fa50c90ffad14f8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 멤버 함수</h2></td></tr>
+<tr class="memitem:afe0778f3367b81e37b82ea697cc9a90a" id="r_afe0778f3367b81e37b82ea697cc9a90a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afe0778f3367b81e37b82ea697cc9a90a">schedule_request_impl</a> (const <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> &amp;client, const ReqParams &amp;params, const Time &amp;time, const Cost &amp;cost, optional_yield yield_ctx) override</td></tr>
+<tr class="separator:afe0778f3367b81e37b82ea697cc9a90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a32dc7d85d3e60616d73bf611dd9724" id="r_a4a32dc7d85d3e60616d73bf611dd9724"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724">schedule</a> (const Time &amp;time)</td></tr>
+<tr class="memdesc:a4a32dc7d85d3e60616d73bf611dd9724"><td class="mdescLeft">&#160;</td><td class="mdescRight">set a timer to process the next request  <br /></td></tr>
+<tr class="separator:a4a32dc7d85d3e60616d73bf611dd9724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e0314966a5af10c3b5f35e9d0ee06d" id="r_a21e0314966a5af10c3b5f35e9d0ee06d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d">process</a> (const Time &amp;now)</td></tr>
+<tr class="memdesc:a21e0314966a5af10c3b5f35e9d0ee06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">process ready requests, then schedule the next pending request  <br /></td></tr>
+<tr class="separator:a21e0314966a5af10c3b5f35e9d0ee06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a9a3ed0b49423aee2d87de2da55042a83" id="r_a9a3ed0b49423aee2d87de2da55042a83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#acede1dd5cee68a01f78b59a9196ccb7f">Queue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">queue</a></td></tr>
+<tr class="separator:a9a3ed0b49423aee2d87de2da55042a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df85007d9a5567e22859dc9da95d817" id="r_a1df85007d9a5567e22859dc9da95d817"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a3ade08de94994d4fa50c90ffad14f8b8">Timer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">timer</a></td></tr>
+<tr class="separator:a1df85007d9a5567e22859dc9da95d817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cba9a47415e52216081247a76a00593" id="r_a8cba9a47415e52216081247a76a00593"><td class="memItemLeft" align="right" valign="top">CephContext *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">cct</a></td></tr>
+<tr class="separator:a8cba9a47415e52216081247a76a00593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa72e50362096e242c3dbf624d8edb3" id="r_a6fa72e50362096e242c3dbf624d8edb3"><td class="memItemLeft" align="right" valign="top">md_config_obs_t *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a></td></tr>
+<tr class="separator:a6fa72e50362096e242c3dbf624d8edb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b1f58804f6bb86c98164053b2b0d7f" id="r_ae1b1f58804f6bb86c98164053b2b0d7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacergw_1_1dmclock.html#a8589db3c776af7a8d3cbfc6adf83ab31">GetClientCounters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a></td></tr>
+<tr class="separator:ae1b1f58804f6bb86c98164053b2b0d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02de5b274eb42977be1eab938b22a890" id="r_a02de5b274eb42977be1eab938b22a890"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">max_requests</a></td></tr>
+<tr class="memdesc:a02de5b274eb42977be1eab938b22a890"><td class="mdescLeft">&#160;</td><td class="mdescRight">max request throttle  <br /></td></tr>
+<tr class="separator:a02de5b274eb42977be1eab938b22a890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69f80535a9c7fac73f77debf873b76f" id="r_ae69f80535a9c7fac73f77debf873b76f"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae69f80535a9c7fac73f77debf873b76f">outstanding_requests</a> = 0</td></tr>
+<tr class="separator:ae69f80535a9c7fac73f77debf873b76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+정적 Private 속성</h2></td></tr>
+<tr class="memitem:afdfd0d49e38f6b9e03cc841e3fb82c1d" id="r_afdfd0d49e38f6b9e03cc841e3fb82c1d"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afdfd0d49e38f6b9e03cc841e3fb82c1d">IsDelayed</a> = false</td></tr>
+<tr class="separator:afdfd0d49e38f6b9e03cc841e3fb82c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00033">33</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">멤버 타입정의 문서화</h2>
+<a id="a5ac4a6d09b8c239ac90302d921ae700d" name="a5ac4a6d09b8c239ac90302d921ae700d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac4a6d09b8c239ac90302d921ae700d">&#9670;&#160;</a></span>Clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a5ac4a6d09b8c239ac90302d921ae700d">rgw::dmclock::AsyncScheduler::Clock</a> =  ceph::coarse_real_clock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00084">84</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a0e60321c26d9561b78396d9865130491" name="a0e60321c26d9561b78396d9865130491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e60321c26d9561b78396d9865130491">&#9670;&#160;</a></span>Completion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a0e60321c26d9561b78396d9865130491">rgw::dmclock::AsyncScheduler::Completion</a> =  async::Completion&lt;<a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4ac4c4826d63ce49e517252148e8d1bb">Signature</a>, async::AsBase&lt;<a class="el" href="structrgw_1_1dmclock_1_1_request.html">Request</a>&gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00082">82</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a71518442ce2f0734ec0df44433390f15" name="a71518442ce2f0734ec0df44433390f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71518442ce2f0734ec0df44433390f15">&#9670;&#160;</a></span>executor_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a71518442ce2f0734ec0df44433390f15">rgw::dmclock::AsyncScheduler::executor_type</a> =  boost::asio::io_context::executor_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00041">41</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="acede1dd5cee68a01f78b59a9196ccb7f" name="acede1dd5cee68a01f78b59a9196ccb7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acede1dd5cee68a01f78b59a9196ccb7f">&#9670;&#160;</a></span>Queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#acede1dd5cee68a01f78b59a9196ccb7f">rgw::dmclock::AsyncScheduler::Queue</a> =  crimson::dmclock::PullPriorityQueue&lt;<a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a>, <a class="el" href="structrgw_1_1dmclock_1_1_request.html">Request</a>, <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afdfd0d49e38f6b9e03cc841e3fb82c1d">IsDelayed</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00077">77</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae750ea78d430f433075b8c8733788dfc" name="ae750ea78d430f433075b8c8733788dfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae750ea78d430f433075b8c8733788dfc">&#9670;&#160;</a></span>RequestRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae750ea78d430f433075b8c8733788dfc">rgw::dmclock::AsyncScheduler::RequestRef</a> =  typename Queue::RequestRef</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00078">78</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a4ac4c4826d63ce49e517252148e8d1bb" name="a4ac4c4826d63ce49e517252148e8d1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac4c4826d63ce49e517252148e8d1bb">&#9670;&#160;</a></span>Signature</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4ac4c4826d63ce49e517252148e8d1bb">rgw::dmclock::AsyncScheduler::Signature</a> =  void(boost::system::error_code, PhaseType)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00081">81</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a3ade08de94994d4fa50c90ffad14f8b8" name="a3ade08de94994d4fa50c90ffad14f8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ade08de94994d4fa50c90ffad14f8b8">&#9670;&#160;</a></span>Timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a3ade08de94994d4fa50c90ffad14f8b8">rgw::dmclock::AsyncScheduler::Timer</a> =  boost::asio::basic_waitable_timer&lt;<a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a5ac4a6d09b8c239ac90302d921ae700d">Clock</a>, boost::asio::wait_traits&lt;<a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a5ac4a6d09b8c239ac90302d921ae700d">Clock</a>&gt;, <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a71518442ce2f0734ec0df44433390f15">executor_type</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00085">85</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a610211ed1083ab9e08b1f8411d4794be" name="a610211ed1083ab9e08b1f8411d4794be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a610211ed1083ab9e08b1f8411d4794be">&#9670;&#160;</a></span>AsyncScheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::dmclock::AsyncScheduler::AsyncScheduler </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::asio::io_context &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacergw_1_1dmclock.html#a8589db3c776af7a8d3cbfc6adf83ab31">GetClientCounters</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>counters</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">md_config_obs_t *&#160;</td>
+          <td class="paramname"><em>observer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00106">106</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>  : <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">queue</a>(std::forward&lt;Args&gt;(<a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>)...),</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">timer</a>(context), <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">cct</a>(<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">cct</a>), <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>(<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>),</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(std::move(<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>)),</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">max_requests</a>(<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">cct</a>-&gt;_conf.get_val&lt;int64_t&gt;(<span class="stringliteral">&quot;rgw_max_concurrent_requests&quot;</span>))</div>
+<div class="line"><span class="lineno">  113</span>{</div>
+<div class="line"><span class="lineno">  114</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">max_requests</a> &lt;= 0) {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">max_requests</a> = std::numeric_limits&lt;int64_t&gt;::max();</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+<div class="line"><span class="lineno">  117</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>) {</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">cct</a>-&gt;_conf.add_observer(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  119</span>  }</div>
+<div class="line"><span class="lineno">  120</span>}</div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a02de5b274eb42977be1eab938b22a890"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">rgw::dmclock::AsyncScheduler::max_requests</a></div><div class="ttdeci">std::atomic&lt; int64_t &gt; max_requests</div><div class="ttdoc">max request throttle</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00094">rgw_dmclock_async_scheduler.h:94</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a1df85007d9a5567e22859dc9da95d817"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">rgw::dmclock::AsyncScheduler::timer</a></div><div class="ttdeci">Timer timer</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00087">rgw_dmclock_async_scheduler.h:87</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a6fa72e50362096e242c3dbf624d8edb3"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">rgw::dmclock::AsyncScheduler::observer</a></div><div class="ttdeci">md_config_obs_t *const observer</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00090">rgw_dmclock_async_scheduler.h:90</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a8cba9a47415e52216081247a76a00593"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">rgw::dmclock::AsyncScheduler::cct</a></div><div class="ttdeci">CephContext *const cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00089">rgw_dmclock_async_scheduler.h:89</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a9a3ed0b49423aee2d87de2da55042a83"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">rgw::dmclock::AsyncScheduler::queue</a></div><div class="ttdeci">Queue queue</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00079">rgw_dmclock_async_scheduler.h:79</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_ae1b1f58804f6bb86c98164053b2b0d7f"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">rgw::dmclock::AsyncScheduler::counters</a></div><div class="ttdeci">GetClientCounters counters</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00091">rgw_dmclock_async_scheduler.h:91</a></div></div>
+<div class="ttc" id="adbstore__tests_8cc_html_a3284f7a2d0ea04744ec7605cbacce0de"><div class="ttname"><a href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a></div><div class="ttdeci">vector&lt; const char * &gt; args</div><div class="ttdef"><b>Definition</b> <a href="dbstore__tests_8cc_source.html#l00014">dbstore_tests.cc:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afad0cd98adc7588fa15de8ceb20dadd0" name="afad0cd98adc7588fa15de8ceb20dadd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afad0cd98adc7588fa15de8ceb20dadd0">&#9670;&#160;</a></span>~AsyncScheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rgw::dmclock::AsyncScheduler::~AsyncScheduler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00010">10</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>{</div>
+<div class="line"><span class="lineno">   12</span>  <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a08089ce6b0b934dd2e9dd44dc68c57d9">cancel</a>();</div>
+<div class="line"><span class="lineno">   13</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>) {</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a8cba9a47415e52216081247a76a00593">cct</a>-&gt;_conf.remove_observer(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   15</span>  }</div>
+<div class="line"><span class="lineno">   16</span>}</div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a08089ce6b0b934dd2e9dd44dc68c57d9"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a08089ce6b0b934dd2e9dd44dc68c57d9">rgw::dmclock::AsyncScheduler::cancel</a></div><div class="ttdeci">void cancel()</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8cc_source.html#l00071">rgw_dmclock_async_scheduler.cc:71</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_afad0cd98adc7588fa15de8ceb20dadd0_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_afad0cd98adc7588fa15de8ceb20dadd0_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_afad0cd98adc7588fa15de8ceb20dadd0_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_afad0cd98adc7588fa15de8ceb20dadd0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,207,65"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a08089ce6b0b934dd2e9dd44dc68c57d9" title=" " alt="" coords="255,23,456,65"/>
+<area shape="poly" title=" " alt="" coords="207,41,239,41,239,47,207,47"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="525,5,648,32"/>
+<area shape="poly" title=" " alt="" coords="456,30,509,24,510,30,457,36"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080" title=" " alt="" coords="504,56,669,83"/>
+<area shape="poly" title=" " alt="" coords="457,52,489,56,488,61,456,58"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a662d744a03a07a8d8af2f93b9567ea56" name="a662d744a03a07a8d8af2f93b9567ea56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a662d744a03a07a8d8af2f93b9567ea56">&#9670;&#160;</a></span>async_request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CompletionToken &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto rgw::dmclock::AsyncScheduler::async_request </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> &amp;&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ReqParams &amp;&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Time &amp;&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cost&#160;</td>
+          <td class="paramname"><em>cost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CompletionToken &amp;&amp;&#160;</td>
+          <td class="paramname"><em>token</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>submit an async request for dmclock scheduling. the given completion handler will be invoked with (error_code, PhaseType) when the request is ready or canceled. on success, this grants a throttle unit that must be returned with a call to <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afad4814435cceb4df0c40eb9bba28c30" title="returns a throttle unit granted by async_request()">request_complete()</a> </p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00123">123</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{</div>
+<div class="line"><span class="lineno">  128</span>  boost::asio::async_completion&lt;CompletionToken, Signature&gt; <a class="code hl_function" href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">init</a>(token);</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>  <span class="keyword">auto</span> ex1 = <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb">get_executor</a>();</div>
+<div class="line"><span class="lineno">  131</span>  <span class="keyword">auto</span>&amp; handler = <a class="code hl_function" href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">init</a>.completion_handler;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>  <span class="comment">// allocate the Request and add it to the queue</span></div>
+<div class="line"><span class="lineno">  134</span>  <span class="keyword">auto</span> completion = Completion::create(ex1, std::move(handler),</div>
+<div class="line"><span class="lineno">  135</span>                                       Request{client, time, cost});</div>
+<div class="line"><span class="lineno">  136</span>  <span class="comment">// cast to unique_ptr&lt;Request&gt;</span></div>
+<div class="line"><span class="lineno">  137</span>  <span class="keyword">auto</span> req = <a class="code hl_typedef" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae750ea78d430f433075b8c8733788dfc">RequestRef</a>{std::move(completion)};</div>
+<div class="line"><span class="lineno">  138</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">queue</a>.add_request(std::move(req), client, params, time, cost);</div>
+<div class="line"><span class="lineno">  139</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> == 0) {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="comment">// schedule an immediate call to process() on the executor</span></div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724">schedule</a>(crimson::dmclock::TimeZero);</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(client)) {</div>
+<div class="line"><span class="lineno">  143</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90">queue_counters::l_qlen</a>);</div>
+<div class="line"><span class="lineno">  144</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083">queue_counters::l_cost</a>, cost);</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  147</span>    <span class="comment">// post the error code</span></div>
+<div class="line"><span class="lineno">  148</span>    boost::system::error_code ec(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>, boost::system::system_category());</div>
+<div class="line"><span class="lineno">  149</span>    <span class="comment">// cast back to Completion</span></div>
+<div class="line"><span class="lineno">  150</span>    <span class="keyword">auto</span> completion = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a0e60321c26d9561b78396d9865130491">Completion</a>*<span class="keyword">&gt;</span>(req.release());</div>
+<div class="line"><span class="lineno">  151</span>    async::post(std::unique_ptr&lt;Completion&gt;{completion},</div>
+<div class="line"><span class="lineno">  152</span>                ec, PhaseType::priority);</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(client)) {</div>
+<div class="line"><span class="lineno">  154</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a72bb9d196cdef8c8bd940d64d8327032">queue_counters::l_limit</a>);</div>
+<div class="line"><span class="lineno">  155</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a9c0091ad989f37dfc68504dde2958975">queue_counters::l_limit_cost</a>, cost);</div>
+<div class="line"><span class="lineno">  156</span>    }</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">init</a>.result.get();</div>
+<div class="line"><span class="lineno">  160</span>}</div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a0e60321c26d9561b78396d9865130491"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a0e60321c26d9561b78396d9865130491">rgw::dmclock::AsyncScheduler::Completion</a></div><div class="ttdeci">async::Completion&lt; Signature, async::AsBase&lt; Request &gt; &gt; Completion</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00082">rgw_dmclock_async_scheduler.h:82</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a262372c9cbd80d8ef6929084409be4fb"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb">rgw::dmclock::AsyncScheduler::get_executor</a></div><div class="ttdeci">executor_type get_executor() noexcept</div><div class="ttdoc">return the default executor for async_request() callbacks</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00044">rgw_dmclock_async_scheduler.h:44</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a4a32dc7d85d3e60616d73bf611dd9724"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724">rgw::dmclock::AsyncScheduler::schedule</a></div><div class="ttdeci">void schedule(const Time &amp;time)</div><div class="ttdoc">set a timer to process the next request</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8cc_source.html#l00110">rgw_dmclock_async_scheduler.cc:110</a></div></div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_ae750ea78d430f433075b8c8733788dfc"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae750ea78d430f433075b8c8733788dfc">rgw::dmclock::AsyncScheduler::RequestRef</a></div><div class="ttdeci">typename Queue::RequestRef RequestRef</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00078">rgw_dmclock_async_scheduler.h:78</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a050a886f5de07a9480e4d57cf4151083">queue_counters::l_cost</a></div><div class="ttdeci">@ l_cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00017">rgw_dmclock_scheduler_ctx.h:17</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a1588ede3ac551a3abbeb7d3128f40a90">queue_counters::l_qlen</a></div><div class="ttdeci">@ l_qlen</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00016">rgw_dmclock_scheduler_ctx.h:16</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a72bb9d196cdef8c8bd940d64d8327032"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a72bb9d196cdef8c8bd940d64d8327032">queue_counters::l_limit</a></div><div class="ttdeci">@ l_limit</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00022">rgw_dmclock_scheduler_ctx.h:22</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a9c0091ad989f37dfc68504dde2958975"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a9c0091ad989f37dfc68504dde2958975">queue_counters::l_limit_cost</a></div><div class="ttdeci">@ l_limit_cost</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00023">rgw_dmclock_scheduler_ctx.h:23</a></div></div>
+<div class="ttc" id="anamespacergw_1_1amqp_html_aa3b5fbef4e5bf27745801f81c8d8b990"><div class="ttname"><a href="namespacergw_1_1amqp.html#aa3b5fbef4e5bf27745801f81c8d8b990">rgw::amqp::init</a></div><div class="ttdeci">bool init(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__amqp_8cc_source.html#l01031">rgw_amqp.cc:1031</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_af3997c9b015c5696191674621076ae50"><div class="ttname"><a href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a></div><div class="ttdeci">librados::AioCompletion * c</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00031">rgw_aio.cc:31</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,207,77"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb" title="return the default executor for async_request() callbacks" alt="" coords="753,5,955,48"/>
+<area shape="poly" title=" " alt="" coords="207,49,738,29,738,34,207,55"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="255,64,456,107"/>
+<area shape="poly" title=" " alt="" coords="208,65,240,69,239,74,207,71"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="504,64,705,107"/>
+<area shape="poly" title=" " alt="" coords="457,92,489,92,489,97,457,97"/>
+<area shape="poly" title=" " alt="" coords="698,61,745,50,746,55,699,66"/>
+<area shape="poly" title=" " alt="" coords="504,79,472,79,472,74,504,74"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="792,72,916,99"/>
+<area shape="poly" title=" " alt="" coords="706,83,777,83,777,88,706,88"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4" title=" " alt="" coords="767,123,941,149"/>
+<area shape="poly" title=" " alt="" coords="707,103,771,116,769,122,705,108"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_icgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_icgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a662d744a03a07a8d8af2f93b9567ea56_icgraph">
+<area shape="rect" title=" " alt="" coords="255,5,456,48"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afe0778f3367b81e37b82ea697cc9a90a" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08089ce6b0b934dd2e9dd44dc68c57d9" name="a08089ce6b0b934dd2e9dd44dc68c57d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08089ce6b0b934dd2e9dd44dc68c57d9">&#9670;&#160;</a></span>cancel() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::dmclock::AsyncScheduler::cancel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cancel all queued requests, invoking their completion handlers with an operation_aborted error and default-constructed result </p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00071">71</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
+<div class="line"><span class="lineno">   73</span>  <a class="code hl_typedef" href="namespacergw_1_1dmclock.html#a0eef7391c30fc6d357739f0c73de5003">ClientSums</a> sums;</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">queue</a>.remove_by_req_filter([&amp;] (<a class="code hl_typedef" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae750ea78d430f433075b8c8733788dfc">RequestRef</a>&amp;&amp; request) {</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_function" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053">inc</a>(sums, request-&gt;client, request-&gt;cost);</div>
+<div class="line"><span class="lineno">   77</span>      <span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a0e60321c26d9561b78396d9865130491">Completion</a>*<span class="keyword">&gt;</span>(request.release());</div>
+<div class="line"><span class="lineno">   78</span>      Completion::dispatch(std::unique_ptr&lt;Completion&gt;{<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>},</div>
+<div class="line"><span class="lineno">   79</span>                           boost::asio::error::operation_aborted,</div>
+<div class="line"><span class="lineno">   80</span>                           PhaseType::priority);</div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   82</span>    });</div>
+<div class="line"><span class="lineno">   83</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">timer</a>.cancel();</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="namespacergw_1_1dmclock.html#a43846c8379bbcae01f534731f8fc08c8">client_count</a>; i++) {</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a><span class="keyword">&gt;</span>(i))) {</div>
+<div class="line"><span class="lineno">   87</span>      <a class="code hl_function" href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080">on_cancel</a>(<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>, sums[i]);</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+<div class="line"><span class="lineno">   89</span>  }</div>
+<div class="line"><span class="lineno">   90</span>}</div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a0eef7391c30fc6d357739f0c73de5003"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a0eef7391c30fc6d357739f0c73de5003">rgw::dmclock::ClientSums</a></div><div class="ttdeci">std::array&lt; ClientSum, client_count &gt; ClientSums</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00079">rgw_dmclock_scheduler_ctx.h:79</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a1b5d437add788d929f2a90d2a204d080"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080">rgw::dmclock::on_cancel</a></div><div class="ttdeci">void on_cancel(PerfCounters *c, const ClientSum &amp;sum)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00097">rgw_dmclock_scheduler_ctx.cc:97</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a2cab2653c6565b382384c4875867e053"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053">rgw::dmclock::inc</a></div><div class="ttdeci">void inc(ClientSums &amp;sums, client_id client, Cost cost)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00090">rgw_dmclock_scheduler_ctx.cc:90</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a43846c8379bbcae01f534731f8fc08c8"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a43846c8379bbcae01f534731f8fc08c8">rgw::dmclock::client_count</a></div><div class="ttdeci">constexpr auto client_count</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00078">rgw_dmclock_scheduler_ctx.h:78</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">rgw::dmclock::client_id</a></div><div class="ttdeci">client_id</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock_8h_source.html#l00023">rgw_dmclock.h:23</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,207,65"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="276,5,399,32"/>
+<area shape="poly" title=" " alt="" coords="207,30,260,24,261,30,207,36"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080" title=" " alt="" coords="255,56,420,83"/>
+<area shape="poly" title=" " alt="" coords="207,52,240,56,239,61,207,58"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_icgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_icgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a08089ce6b0b934dd2e9dd44dc68c57d9_icgraph">
+<area shape="rect" title=" " alt="" coords="255,5,456,48"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afad0cd98adc7588fa15de8ceb20dadd0" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1af41af7d7061801256534b01bf14662" name="a1af41af7d7061801256534b01bf14662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af41af7d7061801256534b01bf14662">&#9670;&#160;</a></span>cancel() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::dmclock::AsyncScheduler::cancel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> &amp;&#160;</td>
+          <td class="paramname"><em>client</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cancel all queued requests for a given client, invoking their completion handler with an operation_aborted error and default-constructed result </p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00092">92</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
+<div class="line"><span class="lineno">   94</span>  ClientSum <a class="code hl_function" href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">sum</a>;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">queue</a>.remove_by_client(client, <span class="keyword">false</span>, [&amp;] (<a class="code hl_typedef" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae750ea78d430f433075b8c8733788dfc">RequestRef</a>&amp;&amp; request) {</div>
+<div class="line"><span class="lineno">   97</span>      <a class="code hl_function" href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">sum</a>.count++;</div>
+<div class="line"><span class="lineno">   98</span>      <a class="code hl_function" href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">sum</a>.cost += request-&gt;cost;</div>
+<div class="line"><span class="lineno">   99</span>      <span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a0e60321c26d9561b78396d9865130491">Completion</a>*<span class="keyword">&gt;</span>(request.release());</div>
+<div class="line"><span class="lineno">  100</span>      Completion::dispatch(std::unique_ptr&lt;Completion&gt;{<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>},</div>
+<div class="line"><span class="lineno">  101</span>                           boost::asio::error::operation_aborted,</div>
+<div class="line"><span class="lineno">  102</span>                           PhaseType::priority);</div>
+<div class="line"><span class="lineno">  103</span>    });</div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">if</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(client)) {</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_function" href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080">on_cancel</a>(<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>, sum);</div>
+<div class="line"><span class="lineno">  106</span>  }</div>
+<div class="line"><span class="lineno">  107</span>  <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724">schedule</a>(crimson::dmclock::TimeZero);</div>
+<div class="line"><span class="lineno">  108</span>}</div>
+<div class="ttc" id="anamespacedetail_html_a691d1aca9f9a55d0d2a9808488fab8b0"><div class="ttname"><a href="namespacedetail.html#a691d1aca9f9a55d0d2a9808488fab8b0">detail::sum</a></div><div class="ttdeci">constexpr size_t sum(size_t v, Args... args)</div><div class="ttdef"><b>Definition</b> <a href="rgw__string_8h_source.html#l00133">rgw_string.h:133</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a1af41af7d7061801256534b01bf14662_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a1af41af7d7061801256534b01bf14662_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a1af41af7d7061801256534b01bf14662_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a1af41af7d7061801256534b01bf14662_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,207,77"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a1b5d437add788d929f2a90d2a204d080" title=" " alt="" coords="273,13,438,40"/>
+<area shape="poly" title=" " alt="" coords="207,41,257,36,258,41,208,47"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="255,64,456,107"/>
+<area shape="poly" title=" " alt="" coords="208,65,240,69,239,74,207,71"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="504,64,705,107"/>
+<area shape="poly" title=" " alt="" coords="457,92,489,92,489,97,457,97"/>
+<area shape="poly" title=" " alt="" coords="504,79,472,79,472,74,504,74"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb" title="return the default executor for async_request() callbacks" alt="" coords="753,5,955,48"/>
+<area shape="poly" title=" " alt="" coords="698,61,745,50,746,55,699,66"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="792,72,916,99"/>
+<area shape="poly" title=" " alt="" coords="706,83,777,83,777,88,706,88"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4" title=" " alt="" coords="767,123,941,149"/>
+<area shape="poly" title=" " alt="" coords="707,103,771,116,769,122,705,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a262372c9cbd80d8ef6929084409be4fb" name="a262372c9cbd80d8ef6929084409be4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262372c9cbd80d8ef6929084409be4fb">&#9670;&#160;</a></span>get_executor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a71518442ce2f0734ec0df44433390f15">executor_type</a> rgw::dmclock::AsyncScheduler::get_executor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return the default executor for <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56">async_request()</a> callbacks </p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00044">44</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                        {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">timer</a>.get_executor();</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a262372c9cbd80d8ef6929084409be4fb_icgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a262372c9cbd80d8ef6929084409be4fb_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a262372c9cbd80d8ef6929084409be4fb_icgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a262372c9cbd80d8ef6929084409be4fb_icgraph">
+<area shape="rect" title="return the default executor for async_request() callbacks" alt="" coords="1003,43,1204,85"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56" title=" " alt="" coords="255,5,456,48"/>
+<area shape="poly" title=" " alt="" coords="987,61,456,34,457,29,987,56"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="753,72,955,115"/>
+<area shape="poly" title=" " alt="" coords="987,80,955,84,955,79,987,75"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afe0778f3367b81e37b82ea697cc9a90a" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="504,72,705,115"/>
+<area shape="poly" title=" " alt="" coords="738,105,706,105,706,100,738,100"/>
+<area shape="poly" title=" " alt="" coords="507,70,437,51,439,46,509,65"/>
+<area shape="poly" title=" " alt="" coords="721,82,753,82,753,87,721,87"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1af41af7d7061801256534b01bf14662" title=" " alt="" coords="255,72,456,115"/>
+<area shape="poly" title=" " alt="" coords="488,96,456,96,456,91,488,91"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4e41dff15a16bc82631071e463daa76b" title=" " alt="" coords="255,139,456,181"/>
+<area shape="poly" title=" " alt="" coords="509,122,439,141,437,135,507,117"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afad4814435cceb4df0c40eb9bba28c30" title="returns a throttle unit granted by async_request()" alt="" coords="255,205,456,248"/>
+<area shape="poly" title=" " alt="" coords="566,127,515,162,457,196,431,207,429,202,455,191,512,157,562,122"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac2d9f33c152045e297a6553d36853e0d" name="ac2d9f33c152045e297a6553d36853e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d9f33c152045e297a6553d36853e0d">&#9670;&#160;</a></span>get_tracked_conf_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ** rgw::dmclock::AsyncScheduler::get_tracked_conf_keys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00018">18</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
+<div class="line"><span class="lineno">   20</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>) {</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>-&gt;get_tracked_conf_keys();</div>
+<div class="line"><span class="lineno">   22</span>  }</div>
+<div class="line"><span class="lineno">   23</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* keys[] = { <span class="stringliteral">&quot;rgw_max_concurrent_requests&quot;</span>, <span class="keyword">nullptr</span> };</div>
+<div class="line"><span class="lineno">   24</span>  <span class="keywordflow">return</span> keys;</div>
+<div class="line"><span class="lineno">   25</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e41dff15a16bc82631071e463daa76b" name="a4e41dff15a16bc82631071e463daa76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e41dff15a16bc82631071e463daa76b">&#9670;&#160;</a></span>handle_conf_change()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::dmclock::AsyncScheduler::handle_conf_change </td>
+          <td>(</td>
+          <td class="paramtype">const ConfigProxy &amp;&#160;</td>
+          <td class="paramname"><em>conf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::set&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>changed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00027">27</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
+<div class="line"><span class="lineno">   30</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>) {</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a6fa72e50362096e242c3dbf624d8edb3">observer</a>-&gt;handle_conf_change(conf, changed);</div>
+<div class="line"><span class="lineno">   32</span>  }</div>
+<div class="line"><span class="lineno">   33</span>  <span class="keywordflow">if</span> (changed.count(<span class="stringliteral">&quot;rgw_max_concurrent_requests&quot;</span>)) {</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keyword">auto</span> new_max = conf.get_val&lt;int64_t&gt;(<span class="stringliteral">&quot;rgw_max_concurrent_requests&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">max_requests</a> = new_max &gt; 0 ? new_max : std::numeric_limits&lt;int64_t&gt;::max();</div>
+<div class="line"><span class="lineno">   36</span>  }</div>
+<div class="line"><span class="lineno">   37</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">queue</a>.update_client_infos();</div>
+<div class="line"><span class="lineno">   38</span>  <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724">schedule</a>(crimson::dmclock::TimeZero);</div>
+<div class="line"><span class="lineno">   39</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a4e41dff15a16bc82631071e463daa76b_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a4e41dff15a16bc82631071e463daa76b_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a4e41dff15a16bc82631071e463daa76b_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a4e41dff15a16bc82631071e463daa76b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,64,207,107"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="255,64,456,107"/>
+<area shape="poly" title=" " alt="" coords="207,83,239,83,239,88,207,88"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="504,64,705,107"/>
+<area shape="poly" title=" " alt="" coords="457,92,489,92,489,97,457,97"/>
+<area shape="poly" title=" " alt="" coords="504,79,472,79,472,74,504,74"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb" title="return the default executor for async_request() callbacks" alt="" coords="753,5,955,48"/>
+<area shape="poly" title=" " alt="" coords="698,61,745,50,746,55,699,66"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="792,72,916,99"/>
+<area shape="poly" title=" " alt="" coords="706,83,777,83,777,88,706,88"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4" title=" " alt="" coords="767,123,941,149"/>
+<area shape="poly" title=" " alt="" coords="707,103,771,116,769,122,705,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a21e0314966a5af10c3b5f35e9d0ee06d" name="a21e0314966a5af10c3b5f35e9d0ee06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e0314966a5af10c3b5f35e9d0ee06d">&#9670;&#160;</a></span>process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::dmclock::AsyncScheduler::process </td>
+          <td>(</td>
+          <td class="paramtype">const Time &amp;&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>process ready requests, then schedule the next pending request </p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00122">122</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>{</div>
+<div class="line"><span class="lineno">  124</span>  <span class="comment">// must run in the executor. we should only invoke completion handlers if the</span></div>
+<div class="line"><span class="lineno">  125</span>  <span class="comment">// executor is running</span></div>
+<div class="line"><span class="lineno">  126</span>  assert(<a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb">get_executor</a>().running_in_this_thread());</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>  <a class="code hl_typedef" href="namespacergw_1_1dmclock.html#a0eef7391c30fc6d357739f0c73de5003">ClientSums</a> rsums, psums;</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordflow">while</span> (<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae69f80535a9c7fac73f77debf873b76f">outstanding_requests</a> &lt; <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">max_requests</a>) {</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keyword">auto</span> pull = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a9a3ed0b49423aee2d87de2da55042a83">queue</a>.pull_request(now);</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> (pull.is_none()) {</div>
+<div class="line"><span class="lineno">  134</span>      <span class="comment">// no pending requests, cancel the timer</span></div>
+<div class="line"><span class="lineno">  135</span>      <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">timer</a>.cancel();</div>
+<div class="line"><span class="lineno">  136</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (pull.is_future()) {</div>
+<div class="line"><span class="lineno">  139</span>      <span class="comment">// update the timer based on the future time</span></div>
+<div class="line"><span class="lineno">  140</span>      <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724">schedule</a>(pull.getTime());</div>
+<div class="line"><span class="lineno">  141</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span>    ++<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae69f80535a9c7fac73f77debf873b76f">outstanding_requests</a>;</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span>(<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">client_id::count</a>)){</div>
+<div class="line"><span class="lineno">  145</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa8608773bfbc324abe8ae0dd0e16312dd">throttle_counters::l_outstanding</a>);</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <span class="comment">// complete the request</span></div>
+<div class="line"><span class="lineno">  149</span>    <span class="keyword">auto</span>&amp; <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = pull.get_retn();</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keyword">auto</span> client = <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>.client;</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keyword">auto</span> phase = <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>.phase;</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keyword">auto</span> started = <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>.request-&gt;started;</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keyword">auto</span> cost = <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>.request-&gt;cost;</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a0e60321c26d9561b78396d9865130491">Completion</a>*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>.request.release());</div>
+<div class="line"><span class="lineno">  155</span>    Completion::post(std::unique_ptr&lt;Completion&gt;{<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>},</div>
+<div class="line"><span class="lineno">  156</span>                     boost::system::error_code{}, phase);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(client)) {</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keyword">auto</span> lat = Clock::from_double(now) - Clock::from_double(started);</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">if</span> (phase == PhaseType::reservation) {</div>
+<div class="line"><span class="lineno">  161</span>        <a class="code hl_function" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053">inc</a>(rsums, client, cost);</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;tinc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2abfd1bdfc886ca5f882ebc40af07f10e7">queue_counters::l_res_latency</a>, lat);</div>
+<div class="line"><span class="lineno">  163</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_function" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053">inc</a>(psums, client, cost);</div>
+<div class="line"><span class="lineno">  165</span>        <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;tinc(<a class="code hl_enumvalue" href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a368102da1eeeeb76a28f683a91ec9549">queue_counters::l_prio_latency</a>, lat);</div>
+<div class="line"><span class="lineno">  166</span>      }</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span>  }</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae69f80535a9c7fac73f77debf873b76f">outstanding_requests</a> &gt;= <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a02de5b274eb42977be1eab938b22a890">max_requests</a>) {</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">if</span>(<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">client_id::count</a>)){</div>
+<div class="line"><span class="lineno">  172</span>      <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa48d8164ce7a94785b2aaed4342e400ec">throttle_counters::l_throttle</a>);</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
+<div class="line"><span class="lineno">  174</span>  }</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="namespacergw_1_1dmclock.html#a43846c8379bbcae01f534731f8fc08c8">client_count</a>; i++) {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a><span class="keyword">&gt;</span>(i))) {</div>
+<div class="line"><span class="lineno">  178</span>      <a class="code hl_function" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4">on_process</a>(<a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>, rsums[i], psums[i]);</div>
+<div class="line"><span class="lineno">  179</span>    }</div>
+<div class="line"><span class="lineno">  180</span>  }</div>
+<div class="line"><span class="lineno">  181</span>}</div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_ae69f80535a9c7fac73f77debf873b76f"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae69f80535a9c7fac73f77debf873b76f">rgw::dmclock::AsyncScheduler::outstanding_requests</a></div><div class="ttdeci">std::atomic&lt; int64_t &gt; outstanding_requests</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00095">rgw_dmclock_async_scheduler.h:95</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2a368102da1eeeeb76a28f683a91ec9549"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2a368102da1eeeeb76a28f683a91ec9549">queue_counters::l_prio_latency</a></div><div class="ttdeci">@ l_prio_latency</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00027">rgw_dmclock_scheduler_ctx.h:27</a></div></div>
+<div class="ttc" id="anamespacequeue__counters_html_afc841f011f3f877f575150854d2c88c2abfd1bdfc886ca5f882ebc40af07f10e7"><div class="ttname"><a href="namespacequeue__counters.html#afc841f011f3f877f575150854d2c88c2abfd1bdfc886ca5f882ebc40af07f10e7">queue_counters::l_res_latency</a></div><div class="ttdeci">@ l_res_latency</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00026">rgw_dmclock_scheduler_ctx.h:26</a></div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353"><div class="ttname"><a href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">rgw::dmclock::client_id::count</a></div><div class="ttdeci">@ count</div></div>
+<div class="ttc" id="anamespacergw_1_1dmclock_html_ad14cf8fe637e7307cd9186ace8767df4"><div class="ttname"><a href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4">rgw::dmclock::on_process</a></div><div class="ttdeci">void on_process(PerfCounters *c, const ClientSum &amp;rsum, const ClientSum &amp;psum)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8cc_source.html#l00109">rgw_dmclock_scheduler_ctx.cc:109</a></div></div>
+<div class="ttc" id="anamespacethrottle__counters_html_a7b61fa3a7daf7cf7a1af9c1074be2b6aa48d8164ce7a94785b2aaed4342e400ec"><div class="ttname"><a href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa48d8164ce7a94785b2aaed4342e400ec">throttle_counters::l_throttle</a></div><div class="ttdeci">@ l_throttle</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00038">rgw_dmclock_scheduler_ctx.h:38</a></div></div>
+<div class="ttc" id="anamespacethrottle__counters_html_a7b61fa3a7daf7cf7a1af9c1074be2b6aa8608773bfbc324abe8ae0dd0e16312dd"><div class="ttname"><a href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa8608773bfbc324abe8ae0dd0e16312dd">throttle_counters::l_outstanding</a></div><div class="ttdeci">@ l_outstanding</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__scheduler__ctx_8h_source.html#l00039">rgw_dmclock_scheduler_ctx.h:39</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_cgraph">
+<area shape="rect" title="process ready requests, then schedule the next pending request" alt="" coords="5,115,207,157"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb" title="return the default executor for async_request() callbacks" alt="" coords="255,5,456,48"/>
+<area shape="poly" title=" " alt="" coords="145,112,254,58,269,51,271,56,256,62,147,116"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="294,72,417,99"/>
+<area shape="poly" title=" " alt="" coords="207,113,278,98,279,103,208,118"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4" title=" " alt="" coords="269,123,442,149"/>
+<area shape="poly" title=" " alt="" coords="207,133,253,133,253,139,207,139"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="255,173,456,216"/>
+<area shape="poly" title=" " alt="" coords="167,155,240,174,239,179,166,160"/>
+<area shape="poly" title=" " alt="" coords="294,175,221,157,223,152,295,170"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_icgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_icgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a21e0314966a5af10c3b5f35e9d0ee06d_icgraph">
+<area shape="rect" title="process ready requests, then schedule the next pending request" alt="" coords="753,105,955,148"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="504,105,705,148"/>
+<area shape="poly" title=" " alt="" coords="738,138,706,138,706,133,738,133"/>
+<area shape="poly" title=" " alt="" coords="721,115,753,115,753,120,721,120"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56" title=" " alt="" coords="255,5,456,48"/>
+<area shape="poly" title=" " alt="" coords="543,101,455,62,424,51,426,46,457,58,545,96"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1af41af7d7061801256534b01bf14662" title=" " alt="" coords="255,72,456,115"/>
+<area shape="poly" title=" " alt="" coords="488,114,456,109,457,104,489,108"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4e41dff15a16bc82631071e463daa76b" title=" " alt="" coords="255,139,456,181"/>
+<area shape="poly" title=" " alt="" coords="489,145,457,149,456,144,488,140"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afad4814435cceb4df0c40eb9bba28c30" title="returns a throttle unit granted by async_request()" alt="" coords="255,205,456,248"/>
+<area shape="poly" title=" " alt="" coords="545,158,457,196,426,207,424,202,455,191,543,153"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afe0778f3367b81e37b82ea697cc9a90a" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afad4814435cceb4df0c40eb9bba28c30" name="afad4814435cceb4df0c40eb9bba28c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afad4814435cceb4df0c40eb9bba28c30">&#9670;&#160;</a></span>request_complete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::dmclock::AsyncScheduler::request_complete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns a throttle unit granted by <a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56">async_request()</a> </p>
+
+<p><a class="el" href="classrgw_1_1dmclock_1_1_scheduler.html#a377f447e892f8c77e3eccae81ec0243f">rgw::dmclock::Scheduler</a>(으)로부터 재구현되었습니다.</p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00062">62</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>{</div>
+<div class="line"><span class="lineno">   64</span>  --<a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae69f80535a9c7fac73f77debf873b76f">outstanding_requests</a>;</div>
+<div class="line"><span class="lineno">   65</span>  <span class="keywordflow">if</span>(<span class="keyword">auto</span> <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a> = <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#ae1b1f58804f6bb86c98164053b2b0d7f">counters</a>(<a class="code hl_enumvalue" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493ae2942a04780e223b215eb8b663cf5353">client_id::count</a>)){</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_variable" href="rgw__aio_8cc.html#af3997c9b015c5696191674621076ae50">c</a>-&gt;inc(<a class="code hl_enumvalue" href="namespacethrottle__counters.html#a7b61fa3a7daf7cf7a1af9c1074be2b6aa8608773bfbc324abe8ae0dd0e16312dd">throttle_counters::l_outstanding</a>, -1);</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="line"><span class="lineno">   68</span>  <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724">schedule</a>(crimson::dmclock::TimeZero);</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_afad4814435cceb4df0c40eb9bba28c30_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_afad4814435cceb4df0c40eb9bba28c30_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_afad4814435cceb4df0c40eb9bba28c30_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_afad4814435cceb4df0c40eb9bba28c30_cgraph">
+<area shape="rect" title="returns a throttle unit granted by async_request()" alt="" coords="5,64,207,107"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="255,64,456,107"/>
+<area shape="poly" title=" " alt="" coords="207,83,239,83,239,88,207,88"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="504,64,705,107"/>
+<area shape="poly" title=" " alt="" coords="457,92,489,92,489,97,457,97"/>
+<area shape="poly" title=" " alt="" coords="504,79,472,79,472,74,504,74"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb" title="return the default executor for async_request() callbacks" alt="" coords="753,5,955,48"/>
+<area shape="poly" title=" " alt="" coords="698,61,745,50,746,55,699,66"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="792,72,916,99"/>
+<area shape="poly" title=" " alt="" coords="706,83,777,83,777,88,706,88"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4" title=" " alt="" coords="767,123,941,149"/>
+<area shape="poly" title=" " alt="" coords="707,103,771,116,769,122,705,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a32dc7d85d3e60616d73bf611dd9724" name="a4a32dc7d85d3e60616d73bf611dd9724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a32dc7d85d3e60616d73bf611dd9724">&#9670;&#160;</a></span>schedule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rgw::dmclock::AsyncScheduler::schedule </td>
+          <td>(</td>
+          <td class="paramtype">const Time &amp;&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set a timer to process the next request </p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00110">110</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
+<div class="line"><span class="lineno">  112</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">timer</a>.expires_at(Clock::from_double(time));</div>
+<div class="line"><span class="lineno">  113</span>  <a class="code hl_variable" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1df85007d9a5567e22859dc9da95d817">timer</a>.async_wait([<span class="keyword">this</span>] (boost::system::error_code ec) {</div>
+<div class="line"><span class="lineno">  114</span>      <span class="comment">// process requests unless the wait was canceled. note that a canceled</span></div>
+<div class="line"><span class="lineno">  115</span>      <span class="comment">// wait may execute after this AsyncScheduler destructs</span></div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordflow">if</span> (ec != boost::asio::error::operation_aborted) {</div>
+<div class="line"><span class="lineno">  117</span>        <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d">process</a>(get_time());</div>
+<div class="line"><span class="lineno">  118</span>      }</div>
+<div class="line"><span class="lineno">  119</span>    });</div>
+<div class="line"><span class="lineno">  120</span>}</div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a21e0314966a5af10c3b5f35e9d0ee06d"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d">rgw::dmclock::AsyncScheduler::process</a></div><div class="ttdeci">void process(const Time &amp;now)</div><div class="ttdoc">process ready requests, then schedule the next pending request</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8cc_source.html#l00122">rgw_dmclock_async_scheduler.cc:122</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_cgraph">
+<area shape="rect" title="set a timer to process the next request" alt="" coords="5,64,207,107"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="255,64,456,107"/>
+<area shape="poly" title=" " alt="" coords="207,92,239,92,239,97,207,97"/>
+<area shape="poly" title=" " alt="" coords="254,79,222,79,222,74,254,74"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb" title="return the default executor for async_request() callbacks" alt="" coords="504,5,705,48"/>
+<area shape="poly" title=" " alt="" coords="448,61,495,50,497,55,449,66"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="543,72,666,99"/>
+<area shape="poly" title=" " alt="" coords="457,83,528,83,528,88,457,88"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4" title=" " alt="" coords="518,123,691,149"/>
+<area shape="poly" title=" " alt="" coords="457,103,521,116,520,122,456,108"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_icgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_icgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_a4a32dc7d85d3e60616d73bf611dd9724_icgraph">
+<area shape="rect" title="set a timer to process the next request" alt="" coords="504,172,705,215"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56" title=" " alt="" coords="255,5,456,48"/>
+<area shape="poly" title=" " alt="" coords="573,162,520,111,489,85,455,62,432,51,434,46,457,58,492,81,524,107,576,158"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a1af41af7d7061801256534b01bf14662" title=" " alt="" coords="255,72,456,115"/>
+<area shape="poly" title=" " alt="" coords="543,167,455,129,424,118,426,113,457,124,545,162"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4e41dff15a16bc82631071e463daa76b" title=" " alt="" coords="255,139,456,181"/>
+<area shape="poly" title=" " alt="" coords="488,180,456,176,457,171,489,175"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="255,205,456,248"/>
+<area shape="poly" title=" " alt="" coords="491,220,457,225,456,219,490,215"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afad4814435cceb4df0c40eb9bba28c30" title="returns a throttle unit granted by async_request()" alt="" coords="255,272,456,315"/>
+<area shape="poly" title=" " alt="" coords="545,224,457,262,426,274,424,269,455,258,543,219"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#afe0778f3367b81e37b82ea697cc9a90a" title=" " alt="" coords="5,5,207,48"/>
+<area shape="poly" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+<area shape="poly" title=" " alt="" coords="469,200,503,195,504,201,469,205"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe0778f3367b81e37b82ea697cc9a90a" name="afe0778f3367b81e37b82ea697cc9a90a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0778f3367b81e37b82ea697cc9a90a">&#9670;&#160;</a></span>schedule_request_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rgw::dmclock::AsyncScheduler::schedule_request_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacergw_1_1dmclock.html#a6ed0c6ad7f7fc29a06f52a0070d21493">client_id</a> &amp;&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ReqParams &amp;&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Time &amp;&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Cost &amp;&#160;</td>
+          <td class="paramname"><em>cost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">optional_yield&#160;</td>
+          <td class="paramname"><em>yield_ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1dmclock_1_1_scheduler.html#a1b1c216f6df6d323c2fe85ec2bfa8349">rgw::dmclock::Scheduler</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html#l00041">41</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
+<div class="line"><span class="lineno">   46</span>    ceph_assert(yield_ctx);</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="keyword">auto</span> &amp;yield = yield_ctx.get_yield_context();</div>
+<div class="line"><span class="lineno">   49</span>    boost::system::error_code ec;</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_function" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56">async_request</a>(client, params, time, cost, yield[ec]);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (ec){</div>
+<div class="line"><span class="lineno">   53</span>      <span class="keywordflow">if</span> (ec == boost::system::errc::resource_unavailable_try_again)</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> -EAGAIN;</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">return</span> -ec.value();</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+<div class="ttc" id="aclassrgw_1_1dmclock_1_1_async_scheduler_html_a662d744a03a07a8d8af2f93b9567ea56"><div class="ttname"><a href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56">rgw::dmclock::AsyncScheduler::async_request</a></div><div class="ttdeci">auto async_request(const client_id &amp;client, const ReqParams &amp;params, const Time &amp;time, Cost cost, CompletionToken &amp;&amp;token)</div><div class="ttdef"><b>Definition</b> <a href="rgw__dmclock__async__scheduler_8h_source.html#l00123">rgw_dmclock_async_scheduler.h:123</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1dmclock_1_1_async_scheduler_afe0778f3367b81e37b82ea697cc9a90a_cgraph.png" border="0" usemap="#aclassrgw_1_1dmclock_1_1_async_scheduler_afe0778f3367b81e37b82ea697cc9a90a_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1dmclock_1_1_async_scheduler_afe0778f3367b81e37b82ea697cc9a90a_cgraph" id="aclassrgw_1_1dmclock_1_1_async_scheduler_afe0778f3367b81e37b82ea697cc9a90a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,35,207,77"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a662d744a03a07a8d8af2f93b9567ea56" title=" " alt="" coords="255,35,456,77"/>
+<area shape="poly" title=" " alt="" coords="207,53,239,53,239,59,207,59"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a262372c9cbd80d8ef6929084409be4fb" title="return the default executor for async_request() callbacks" alt="" coords="1003,5,1204,48"/>
+<area shape="poly" title=" " alt="" coords="456,49,987,29,987,34,457,55"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a4a32dc7d85d3e60616d73bf611dd9724" title="set a timer to process the next request" alt="" coords="504,64,705,107"/>
+<area shape="poly" title=" " alt="" coords="457,65,489,69,488,74,456,71"/>
+<area shape="rect" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a21e0314966a5af10c3b5f35e9d0ee06d" title="process ready requests, then schedule the next pending request" alt="" coords="753,64,955,107"/>
+<area shape="poly" title=" " alt="" coords="706,92,738,92,738,97,706,97"/>
+<area shape="poly" title=" " alt="" coords="947,61,994,50,995,55,948,66"/>
+<area shape="poly" title=" " alt="" coords="753,79,721,79,721,74,753,74"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#a2cab2653c6565b382384c4875867e053" title=" " alt="" coords="1042,72,1165,99"/>
+<area shape="poly" title=" " alt="" coords="955,83,1026,83,1026,88,955,88"/>
+<area shape="rect" href="namespacergw_1_1dmclock.html#ad14cf8fe637e7307cd9186ace8767df4" title=" " alt="" coords="1017,123,1190,149"/>
+<area shape="poly" title=" " alt="" coords="956,103,1020,116,1019,122,955,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="a8cba9a47415e52216081247a76a00593" name="a8cba9a47415e52216081247a76a00593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cba9a47415e52216081247a76a00593">&#9670;&#160;</a></span>cct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CephContext* const rgw::dmclock::AsyncScheduler::cct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00089">89</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae1b1f58804f6bb86c98164053b2b0d7f" name="ae1b1f58804f6bb86c98164053b2b0d7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b1f58804f6bb86c98164053b2b0d7f">&#9670;&#160;</a></span>counters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacergw_1_1dmclock.html#a8589db3c776af7a8d3cbfc6adf83ab31">GetClientCounters</a> rgw::dmclock::AsyncScheduler::counters</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00091">91</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="afdfd0d49e38f6b9e03cc841e3fb82c1d" name="afdfd0d49e38f6b9e03cc841e3fb82c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdfd0d49e38f6b9e03cc841e3fb82c1d">&#9670;&#160;</a></span>IsDelayed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool rgw::dmclock::AsyncScheduler::IsDelayed = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00076">76</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a02de5b274eb42977be1eab938b22a890" name="a02de5b274eb42977be1eab938b22a890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02de5b274eb42977be1eab938b22a890">&#9670;&#160;</a></span>max_requests</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;int64_t&gt; rgw::dmclock::AsyncScheduler::max_requests</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>max request throttle </p>
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00094">94</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a6fa72e50362096e242c3dbf624d8edb3" name="a6fa72e50362096e242c3dbf624d8edb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa72e50362096e242c3dbf624d8edb3">&#9670;&#160;</a></span>observer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">md_config_obs_t* const rgw::dmclock::AsyncScheduler::observer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00090">90</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae69f80535a9c7fac73f77debf873b76f" name="ae69f80535a9c7fac73f77debf873b76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69f80535a9c7fac73f77debf873b76f">&#9670;&#160;</a></span>outstanding_requests</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;int64_t&gt; rgw::dmclock::AsyncScheduler::outstanding_requests = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00095">95</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9a3ed0b49423aee2d87de2da55042a83" name="a9a3ed0b49423aee2d87de2da55042a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3ed0b49423aee2d87de2da55042a83">&#9670;&#160;</a></span>queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#acede1dd5cee68a01f78b59a9196ccb7f">Queue</a> rgw::dmclock::AsyncScheduler::queue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00079">79</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1df85007d9a5567e22859dc9da95d817" name="a1df85007d9a5567e22859dc9da95d817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df85007d9a5567e22859dc9da95d817">&#9670;&#160;</a></span>timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html#a3ade08de94994d4fa50c90ffad14f8b8">Timer</a> rgw::dmclock::AsyncScheduler::timer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a> 파일의 <a class="el" href="rgw__dmclock__async__scheduler_8h_source.html#l00087">87</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__dmclock__async__scheduler_8h_source.html">rgw_dmclock_async_scheduler.h</a></li>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__dmclock__async__scheduler_8cc_source.html">rgw_dmclock_async_scheduler.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1dmclock.html">dmclock</a></li><li class="navelem"><a class="el" href="classrgw_1_1dmclock_1_1_async_scheduler.html">AsyncScheduler</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

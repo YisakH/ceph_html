@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: rgw::auth::s3::AWSAuthStrategy&lt; AbstractorT, AllowAnonAccessT &gt; 클래스 템플릿 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 타입</a> &#124;
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pri-types">Private 타입</a> &#124;
+<a href="#pri-methods">Private 멤버 함수</a> &#124;
+<a href="#pri-attribs">Private 속성</a> &#124;
+<a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">rgw::auth::s3::AWSAuthStrategy&lt; AbstractorT, AllowAnonAccessT &gt; 클래스 템플릿 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a>&gt;</code></p>
+<div class="dynheader">
+rgw::auth::s3::AWSAuthStrategy&lt; AbstractorT, AllowAnonAccessT &gt;에 대한 상속 다이어그램 : </div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy__inherit__graph.png" border="0" usemap="#argw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_3_01_abstractor_t_00_01_allow_anon_access_t_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="argw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_3_01_abstractor_t_00_01_allow_anon_access_t_01_4_inherit__map" id="argw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_3_01_abstractor_t_00_01_allow_anon_access_t_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="33,347,257,624"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html" title=" " alt="" coords="5,165,128,299"/>
+<area shape="poly" title=" " alt="" coords="94,312,105,346,100,348,89,314"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine.html" title=" " alt="" coords="10,5,123,117"/>
+<area shape="poly" title=" " alt="" coords="69,133,69,166,64,166,64,133"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html" title=" " alt="" coords="153,179,298,285"/>
+<area shape="poly" title=" " alt="" coords="207,300,192,348,187,346,202,299"/>
+</map>
+</div>
+<div class="dynheader">
+rgw::auth::s3::AWSAuthStrategy&lt; AbstractorT, AllowAnonAccessT &gt;에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy__coll__graph.png" border="0" usemap="#argw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_3_01_abstractor_t_00_01_allow_anon_access_t_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="argw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_3_01_abstractor_t_00_01_allow_anon_access_t_01_4_coll__map" id="argw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_3_01_abstractor_t_00_01_allow_anon_access_t_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="798,1253,1022,1424"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html" title=" " alt="" coords="1745,773,1867,907"/>
+<area shape="poly" title=" " alt="" coords="1798,922,1785,968,1764,1012,1723,1075,1683,1119,1635,1155,1569,1192,1500,1224,1428,1251,1354,1274,1280,1292,1140,1318,1022,1332,1022,1327,1139,1313,1279,1287,1352,1268,1426,1246,1498,1219,1566,1187,1632,1150,1679,1115,1719,1072,1760,1009,1780,966,1792,921"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html" title=" " alt="" coords="1385,1048,1555,1176"/>
+<area shape="poly" title=" " alt="" coords="1791,922,1771,970,1757,993,1740,1013,1698,1045,1651,1070,1602,1088,1556,1100,1554,1095,1600,1083,1649,1065,1695,1041,1736,1009,1753,989,1766,967,1786,920"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_s_t_s_auth_strategy.html" title=" " alt="" coords="811,1035,1009,1189"/>
+<area shape="poly" title=" " alt="" coords="1764,921,1723,972,1697,995,1669,1013,1641,1023,1606,1029,1523,1034,1438,1034,1373,1037,1179,1065,1009,1095,1008,1089,1178,1060,1372,1032,1438,1029,1523,1028,1606,1024,1640,1018,1666,1008,1694,990,1719,968,1760,917"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_engine.html" title=" " alt="" coords="687,171,800,283"/>
+<area shape="poly" title=" " alt="" coords="815,224,1016,226,1144,231,1277,241,1406,255,1524,277,1576,290,1621,306,1659,324,1688,345,1729,390,1760,443,1783,501,1799,561,1809,620,1814,677,1814,774,1809,774,1808,677,1803,621,1794,562,1778,502,1755,446,1725,394,1684,349,1656,329,1619,311,1574,296,1523,282,1406,261,1276,246,1143,237,1016,232,815,230"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_anonymous_engine.html" title=" " alt="" coords="135,773,317,907"/>
+<area shape="poly" title=" " alt="" coords="672,237,562,252,435,274,375,289,322,306,280,326,252,348,221,397,200,451,188,508,184,567,185,625,191,680,210,773,204,774,186,681,180,625,178,567,183,507,195,449,216,394,248,345,277,322,320,301,374,284,434,269,561,246,671,232"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_engine.html" title=" " alt="" coords="660,440,827,552"/>
+<area shape="poly" title=" " alt="" coords="746,298,746,440,741,440,741,298"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html" title=" " alt="" coords="263,443,408,549"/>
+<area shape="poly" title=" " alt="" coords="253,557,216,588,181,624,149,665,124,710,98,783,83,852,79,915,86,975,105,1032,137,1085,182,1137,241,1187,283,1211,341,1233,411,1253,489,1271,653,1300,798,1321,798,1327,652,1306,488,1276,410,1258,339,1238,280,1216,238,1192,179,1141,133,1089,101,1034,81,976,73,915,77,851,93,782,120,708,144,662,177,621,213,584,249,552"/>
+<area shape="poly" title=" " alt="" coords="304,550,274,607,248,670,238,713,232,757,227,756,233,712,243,669,269,604,300,548"/>
+<area shape="poly" title=" " alt="" coords="338,564,345,653,365,760,381,816,402,871,429,922,463,969,478,983,497,995,544,1013,598,1024,655,1030,756,1032,805,1032,813,1035,811,1040,804,1037,756,1037,655,1035,597,1029,542,1018,494,1000,475,987,459,972,424,925,397,873,376,818,360,761,340,654,333,565"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_s_t_s_engine.html" title=" " alt="" coords="761,731,923,949"/>
+<area shape="poly" title=" " alt="" coords="363,548,397,598,418,622,442,643,461,654,477,658,516,667,560,683,605,689,641,689,677,692,719,707,750,727,747,731,717,712,676,697,641,694,604,695,559,688,515,672,476,663,459,659,439,648,415,626,393,601,359,551"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_local_engine.html" title=" " alt="" coords="540,763,707,917"/>
+<area shape="poly" title=" " alt="" coords="360,548,395,615,441,684,483,728,529,768,525,772,479,732,437,687,390,618,355,550"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_store.html" title="Base singleton representing a Store or stacking layer" alt="" coords="935,347,1098,645"/>
+<area shape="poly" title=" " alt="" coords="1048,645,1062,765,1067,904,1064,976,1057,1049,1043,1121,1023,1190,998,1241,993,1238,1018,1188,1038,1120,1051,1048,1059,976,1062,904,1057,766,1043,645"/>
+<area shape="poly" title=" " alt="" coords="1100,571,1137,617,1167,668,1184,719,1189,765,1187,807,1181,848,1178,887,1180,926,1192,966,1219,1009,1250,1039,1287,1063,1328,1080,1369,1093,1367,1098,1326,1085,1285,1068,1247,1044,1215,1012,1187,968,1175,927,1172,887,1176,847,1181,807,1184,765,1179,720,1162,670,1132,620,1096,575"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_l_d_a_p_engine.html" title=" " alt="" coords="1311,709,1480,971"/>
+<area shape="poly" title=" " alt="" coords="1100,555,1168,608,1237,667,1301,730,1297,734,1234,671,1164,612,1096,559"/>
+<area shape="poly" title=" " alt="" coords="1001,645,955,1011,953,1019,948,1018,950,1010,996,645"/>
+<area shape="poly" title=" " alt="" coords="938,633,918,671,896,716,891,714,913,668,933,631"/>
+<area shape="poly" title=" " alt="" coords="937,568,840,647,785,688,750,711,706,753,702,749,747,707,782,683,836,643,934,564"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_s3_anonymous_engine.html" title=" " alt="" coords="251,1059,433,1165"/>
+<area shape="poly" title=" " alt="" coords="416,1163,470,1197,528,1227,592,1252,657,1274,782,1308,781,1313,656,1279,590,1257,526,1232,467,1201,413,1167"/>
+<area shape="poly" title=" " alt="" coords="263,920,322,1058,317,1060,258,922"/>
+<area shape="poly" title=" " alt="" coords="1386,1150,1039,1289,1037,1284,1384,1145"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_remote_applier_1_1_factory.html" title=" " alt="" coords="1243,443,1401,549"/>
+<area shape="poly" title=" " alt="" coords="1351,561,1378,606,1396,626,1415,643,1439,654,1472,661,1553,670,1632,681,1663,692,1684,708,1698,734,1706,771,1710,814,1710,861,1705,908,1697,951,1685,987,1669,1012,1644,1036,1616,1056,1556,1086,1554,1082,1613,1052,1641,1032,1665,1009,1680,984,1692,949,1700,907,1704,861,1705,815,1701,772,1693,736,1680,711,1660,697,1630,687,1552,675,1471,666,1437,659,1413,648,1392,630,1374,609,1346,564"/>
+<area shape="poly" title=" " alt="" coords="1336,549,1367,692,1361,694,1331,550"/>
+<area shape="poly" title=" " alt="" coords="1317,564,1284,802,1263,912,1253,950,1243,972,1212,993,1154,1019,1009,1077,1007,1072,1152,1014,1209,988,1239,969,1248,948,1258,911,1279,801,1312,564"/>
+<area shape="poly" title=" " alt="" coords="1258,551,1189,601,1111,648,1064,667,1024,676,986,687,944,712,931,721,928,717,940,707,984,682,1023,671,1062,662,1109,643,1186,596,1255,547"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_implicit_tenants.html" title=" " alt="" coords="1505,763,1670,917"/>
+<area shape="poly" title=" " alt="" coords="1557,918,1506,1034,1502,1031,1552,916"/>
+<area shape="poly" title=" " alt="" coords="1549,919,1524,949,1493,973,1462,988,1434,995,1383,996,1331,992,1301,992,1267,997,1141,1031,1025,1069,1024,1064,1140,1025,1266,992,1301,987,1331,986,1383,991,1433,990,1460,983,1490,968,1520,945,1545,915"/>
+<area shape="rect" title=" " alt="" coords="1563,461,1673,531"/>
+<area shape="poly" title=" " alt="" coords="1616,546,1597,763,1591,763,1611,545"/>
+<area shape="poly" title=" " alt="" coords="1410,970,1420,1010,1428,1032,1423,1033,1414,1011,1404,971"/>
+<area shape="poly" title=" " alt="" coords="813,560,866,603,925,643,972,668,1024,683,1085,691,1134,689,1183,690,1210,696,1242,707,1279,727,1313,751,1309,755,1276,731,1240,712,1209,701,1182,695,1134,695,1084,696,1023,688,970,673,922,648,863,608,810,564"/>
+<area shape="poly" title=" " alt="" coords="800,563,831,613,854,669,860,699,861,731,856,731,855,700,849,670,826,615,795,565"/>
+<area shape="poly" title=" " alt="" coords="697,565,655,609,606,648,582,656,560,656,541,658,524,671,514,693,516,717,526,741,542,765,538,768,521,744,511,718,509,692,520,668,539,653,560,651,581,651,603,643,652,605,693,562"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_engine_1_1_version_abstractor.html" title=" " alt="" coords="5,173,172,280"/>
+<area shape="poly" title=" " alt="" coords="172,230,265,240,377,260,495,294,552,317,606,344,655,381,696,425,693,429,652,385,603,349,550,322,493,299,376,265,265,245,172,235"/>
+<area shape="rect" title=" " alt="" coords="65,5,113,75"/>
+<area shape="poly" title=" " alt="" coords="91,75,91,156,86,156,86,75"/>
+<area shape="rect" href="classrgw_1_1_l_d_a_p_helper.html" title=" " alt="" coords="1426,419,1538,573"/>
+<area shape="poly" title=" " alt="" coords="1469,574,1443,686,1441,693,1436,692,1438,685,1464,572"/>
+<area shape="poly" title=" " alt="" coords="913,1189,913,1236,907,1236,907,1189"/>
+<area shape="rect" href="structrgw_1_1auth_1_1_role_applier_1_1_factory.html" title=" " alt="" coords="453,443,593,549"/>
+<area shape="poly" title=" " alt="" coords="503,564,481,654,473,706,469,762,471,818,480,872,499,923,529,969,559,997,590,1012,621,1017,653,1017,724,1014,764,1018,806,1032,813,1035,810,1040,804,1037,762,1023,724,1019,654,1022,620,1022,588,1017,556,1001,525,972,495,926,475,873,465,818,463,762,467,706,475,653,498,563"/>
+<area shape="poly" title=" " alt="" coords="563,547,619,615,686,683,720,707,751,736,747,740,716,711,683,687,615,618,559,551"/>
+<area shape="poly" title=" " alt="" coords="869,948,884,1010,886,1017,881,1019,879,1011,864,950"/>
+<area shape="poly" title=" " alt="" coords="633,917,643,979,660,1049,686,1121,722,1188,751,1225,787,1257,783,1261,748,1228,717,1191,681,1123,655,1051,638,980,628,917"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 타입</h2></td></tr>
+<tr class="memitem:a9e3337ade5d7273c0434af9dc249cd85" id="r_a9e3337ade5d7273c0434af9dc249cd85"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9e3337ade5d7273c0434af9dc249cd85">engine_map_t</a> = std::map&lt; std::string, std::reference_wrapper&lt; const <a class="el" href="classrgw_1_1auth_1_1_engine.html">Engine</a> &gt; &gt;</td></tr>
+<tr class="separator:a9e3337ade5d7273c0434af9dc249cd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 Public 타입</td></tr>
+<tr class="memitem:a94baf04961abcbee644ed465eb78d620 inherit pub_types_classrgw_1_1auth_1_1_strategy" id="r_a94baf04961abcbee644ed465eb78d620"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620">Control</a> { <a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a4f734c0bf8fbabab912be8e80d34dd8f">REQUISITE</a>
+, <a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">SUFFICIENT</a>
+, <a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620af35b388d8d4adeab05bce916c73d7a72">FALLBACK</a>
+ }</td></tr>
+<tr class="separator:a94baf04961abcbee644ed465eb78d620 inherit pub_types_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classrgw_1_1auth_1_1_engine"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classrgw_1_1auth_1_1_engine')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_engine.html">rgw::auth::Engine</a>(으)로부터 상속된 Public 타입</td></tr>
+<tr class="memitem:a1655e1082e3318b00d0121d2bc54e214 inherit pub_types_classrgw_1_1auth_1_1_engine" id="r_a1655e1082e3318b00d0121d2bc54e214"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_engine.html#a1655e1082e3318b00d0121d2bc54e214">result_t</a> = <a class="el" href="classrgw_1_1auth_1_1_engine_1_1_auth_result.html">AuthResult</a></td></tr>
+<tr class="separator:a1655e1082e3318b00d0121d2bc54e214 inherit pub_types_classrgw_1_1auth_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:ae3a94bd93c30c3e98846dbbf7abdd958" id="r_ae3a94bd93c30c3e98846dbbf7abdd958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#ae3a94bd93c30c3e98846dbbf7abdd958">add_engines</a> (const std::vector&lt; std::string &gt; &amp;auth_order, <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9e3337ade5d7273c0434af9dc249cd85">engine_map_t</a> eng_map)</td></tr>
+<tr class="separator:ae3a94bd93c30c3e98846dbbf7abdd958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700b79f69eafc254dc45494a8d8148fe" id="r_a700b79f69eafc254dc45494a8d8148fe"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a700b79f69eafc254dc45494a8d8148fe">parse_auth_order</a> (CephContext *const <a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</td></tr>
+<tr class="separator:a700b79f69eafc254dc45494a8d8148fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a291bd7d7d02b28433ea71e8e2c436c6e" id="r_a291bd7d7d02b28433ea71e8e2c436c6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a291bd7d7d02b28433ea71e8e2c436c6e">AWSAuthStrategy</a> (CephContext *const <a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="el" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a> &amp;implicit_tenant_context, <a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *<a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a>)</td></tr>
+<tr class="separator:a291bd7d7d02b28433ea71e8e2c436c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdac26853eb4e4bf422c1511368c8a77" id="r_acdac26853eb4e4bf422c1511368c8a77"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#acdac26853eb4e4bf422c1511368c8a77">get_name</a> () const noexcept override</td></tr>
+<tr class="separator:acdac26853eb4e4bf422c1511368c8a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:a70ce7c14f24b1c462bf76e7398a91c21 inherit pub_methods_classrgw_1_1auth_1_1_strategy" id="r_a70ce7c14f24b1c462bf76e7398a91c21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1_engine.html#a1655e1082e3318b00d0121d2bc54e214">Engine::result_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#a70ce7c14f24b1c462bf76e7398a91c21">authenticate</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const <a class="el" href="structreq__state.html">req_state</a> *s, optional_yield y) const override final</td></tr>
+<tr class="separator:a70ce7c14f24b1c462bf76e7398a91c21 inherit pub_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc12953910b66cba2372f3bef497ac41 inherit pub_methods_classrgw_1_1auth_1_1_strategy" id="r_abc12953910b66cba2372f3bef497ac41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#abc12953910b66cba2372f3bef497ac41">is_empty</a> () const</td></tr>
+<tr class="separator:abc12953910b66cba2372f3bef497ac41 inherit pub_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrgw_1_1auth_1_1_engine"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrgw_1_1auth_1_1_engine')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_engine.html">rgw::auth::Engine</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:af7d8cbe5dcab2f0e690ebaa1e8a7c511 inherit pub_methods_classrgw_1_1auth_1_1_engine" id="r_af7d8cbe5dcab2f0e690ebaa1e8a7c511"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_engine.html#af7d8cbe5dcab2f0e690ebaa1e8a7c511">~Engine</a> ()=default</td></tr>
+<tr class="separator:af7d8cbe5dcab2f0e690ebaa1e8a7c511 inherit pub_methods_classrgw_1_1auth_1_1_engine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_structrgw_1_1auth_1_1_local_applier_1_1_factory"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structrgw_1_1auth_1_1_local_applier_1_1_factory')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
+<tr class="memitem:a9f454a309c87914c7ccc3443f38df5d5 inherit pub_methods_structrgw_1_1auth_1_1_local_applier_1_1_factory" id="r_a9f454a309c87914c7ccc3443f38df5d5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html#a9f454a309c87914c7ccc3443f38df5d5">~Factory</a> ()</td></tr>
+<tr class="separator:a9f454a309c87914c7ccc3443f38df5d5 inherit pub_methods_structrgw_1_1auth_1_1_local_applier_1_1_factory"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 타입</h2></td></tr>
+<tr class="memitem:a9a3f4d8adfe004e538cb330d163d44d8" id="r_a9a3f4d8adfe004e538cb330d163d44d8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classrgw_1_1auth_1_1_identity_applier.html#adc7532a01c60ae8f3fdb0b53ad7b1394">rgw::auth::IdentityApplier::aplptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9a3f4d8adfe004e538cb330d163d44d8">aplptr_t</a></td></tr>
+<tr class="separator:a9a3f4d8adfe004e538cb330d163d44d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 멤버 함수</h2></td></tr>
+<tr class="memitem:a69a2c39067d2f297c32fe4014f75c6c4" id="r_a69a2c39067d2f297c32fe4014f75c6c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9a3f4d8adfe004e538cb330d163d44d8">aplptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a69a2c39067d2f297c32fe4014f75c6c4">create_apl_local</a> (CephContext *const <a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, const <a class="el" href="structreq__state.html">req_state</a> *const s, const <a class="el" href="struct_r_g_w_user_info.html">RGWUserInfo</a> &amp;user_info, const std::string &amp;subuser, const std::optional&lt; uint32_t &gt; &amp;perm_mask, const std::string &amp;access_key_id) const override</td></tr>
+<tr class="separator:a69a2c39067d2f297c32fe4014f75c6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 속성</h2></td></tr>
+<tr class="memitem:a8f760173a6a11ea1ffabec056611dc42" id="r_a8f760173a6a11ea1ffabec056611dc42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a></td></tr>
+<tr class="separator:a8f760173a6a11ea1ffabec056611dc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecbfa6195e18c8a1a4d6f8c771c0b99e" id="r_aecbfa6195e18c8a1a4d6f8c771c0b99e"><td class="memItemLeft" align="right" valign="top">AbstractorT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#aecbfa6195e18c8a1a4d6f8c771c0b99e">ver_abstractor</a></td></tr>
+<tr class="separator:aecbfa6195e18c8a1a4d6f8c771c0b99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825f6fce8640782867d1ad785efafb16" id="r_a825f6fce8640782867d1ad785efafb16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_s3_anonymous_engine.html">S3AnonymousEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a825f6fce8640782867d1ad785efafb16">anonymous_engine</a></td></tr>
+<tr class="separator:a825f6fce8640782867d1ad785efafb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715a311c50b271e8549f945d886397ab" id="r_a715a311c50b271e8549f945d886397ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html">ExternalAuthStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a715a311c50b271e8549f945d886397ab">external_engines</a></td></tr>
+<tr class="separator:a715a311c50b271e8549f945d886397ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e14971e358efb285d4201a6d601157c" id="r_a1e14971e358efb285d4201a6d601157c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_s_t_s_auth_strategy.html">STSAuthStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a1e14971e358efb285d4201a6d601157c">sts_engine</a></td></tr>
+<tr class="separator:a1e14971e358efb285d4201a6d601157c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c9885cb781d855286409165719bb15" id="r_a10c9885cb781d855286409165719bb15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_local_engine.html">LocalEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a10c9885cb781d855286409165719bb15">local_engine</a></td></tr>
+<tr class="separator:a10c9885cb781d855286409165719bb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+추가로 상속된 멤버들</h2></td></tr>
+<tr class="inherit_header pub_static_methods_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 정적 Public 멤버 함수</td></tr>
+<tr class="memitem:ab660ca4429a3c8fb0ece18baebd0d6b8 inherit pub_static_methods_classrgw_1_1auth_1_1_strategy" id="r_ab660ca4429a3c8fb0ece18baebd0d6b8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#ab660ca4429a3c8fb0ece18baebd0d6b8">apply</a> (const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, const <a class="el" href="classrgw_1_1auth_1_1_strategy.html">Strategy</a> &amp;auth_strategy, <a class="el" href="structreq__state.html">req_state</a> *s, optional_yield y) noexcept</td></tr>
+<tr class="separator:ab660ca4429a3c8fb0ece18baebd0d6b8 inherit pub_static_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classrgw_1_1auth_1_1_strategy"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classrgw_1_1auth_1_1_strategy')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classrgw_1_1auth_1_1_strategy.html">rgw::auth::Strategy</a>(으)로부터 상속된 Protected 멤버 함수</td></tr>
+<tr class="memitem:ab4b0c53b993b4157103cabe717d3208e inherit pro_methods_classrgw_1_1auth_1_1_strategy" id="r_ab4b0c53b993b4157103cabe717d3208e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">add_engine</a> (<a class="el" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620">Control</a> ctrl_flag, const <a class="el" href="classrgw_1_1auth_1_1_engine.html">Engine</a> &amp;engine) noexcept</td></tr>
+<tr class="separator:ab4b0c53b993b4157103cabe717d3208e inherit pro_methods_classrgw_1_1auth_1_1_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class AbstractorT, bool AllowAnonAccessT = false&gt;<br />
+class rgw::auth::s3::AWSAuthStrategy&lt; AbstractorT, AllowAnonAccessT &gt;</div>
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00156">156</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">멤버 타입정의 문서화</h2>
+<a id="a9a3f4d8adfe004e538cb330d163d44d8" name="a9a3f4d8adfe004e538cb330d163d44d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3f4d8adfe004e538cb330d163d44d8">&#9670;&#160;</a></span>aplptr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classrgw_1_1auth_1_1_identity_applier.html#adc7532a01c60ae8f3fdb0b53ad7b1394">rgw::auth::IdentityApplier::aplptr_t</a> <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::aplptr_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00158">158</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9e3337ade5d7273c0434af9dc249cd85" name="a9e3337ade5d7273c0434af9dc249cd85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e3337ade5d7273c0434af9dc249cd85">&#9670;&#160;</a></span>engine_map_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::engine_map_t =  std::map &lt;std::string, std::reference_wrapper&lt;const <a class="el" href="classrgw_1_1auth_1_1_engine.html">Engine</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00185">185</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="a291bd7d7d02b28433ea71e8e2c436c6e" name="a291bd7d7d02b28433ea71e8e2c436c6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291bd7d7d02b28433ea71e8e2c436c6e">&#9670;&#160;</a></span>AWSAuthStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::AWSAuthStrategy </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *const&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1auth_1_1_implicit_tenants.html">rgw::auth::ImplicitTenants</a> &amp;&#160;</td>
+          <td class="paramname"><em>implicit_tenant_context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a> *&#160;</td>
+          <td class="paramname"><em>store</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00221">221</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>    : <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a>(<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a>),</div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#aecbfa6195e18c8a1a4d6f8c771c0b99e">ver_abstractor</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>),</div>
+<div class="line"><span class="lineno">  226</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a825f6fce8640782867d1ad785efafb16">anonymous_engine</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>,</div>
+<div class="line"><span class="lineno">  227</span>                       <span class="keyword">static_cast&lt;</span><a class="code hl_struct" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)),</div>
+<div class="line"><span class="lineno">  228</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a715a311c50b271e8549f945d886397ab">external_engines</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a>, implicit_tenant_context, &amp;<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#aecbfa6195e18c8a1a4d6f8c771c0b99e">ver_abstractor</a>),</div>
+<div class="line"><span class="lineno">  229</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a1e14971e358efb285d4201a6d601157c">sts_engine</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a>, implicit_tenant_context, &amp;<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#aecbfa6195e18c8a1a4d6f8c771c0b99e">ver_abstractor</a>),</div>
+<div class="line"><span class="lineno">  230</span>      <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a10c9885cb781d855286409165719bb15">local_engine</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#aecbfa6195e18c8a1a4d6f8c771c0b99e">ver_abstractor</a>,</div>
+<div class="line"><span class="lineno">  231</span>                   <span class="keyword">static_cast&lt;</span><a class="code hl_struct" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)) {</div>
+<div class="line"><span class="lineno">  232</span>    <span class="comment">/* The anonymous auth. */</span></div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">if</span> (AllowAnonAccessT) {</div>
+<div class="line"><span class="lineno">  234</span>      <a class="code hl_function" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">add_engine</a>(<a class="code hl_enumvalue" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">Control::SUFFICIENT</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a825f6fce8640782867d1ad785efafb16">anonymous_engine</a>);</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    <span class="keyword">auto</span> auth_order = <a class="code hl_function" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a700b79f69eafc254dc45494a8d8148fe">parse_auth_order</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>);</div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_typedef" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9e3337ade5d7273c0434af9dc249cd85">engine_map_t</a> engine_map;</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    <span class="comment">/* STS Auth*/</span></div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">if</span> (! <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a1e14971e358efb285d4201a6d601157c">sts_engine</a>.<a class="code hl_function" href="classrgw_1_1auth_1_1_strategy.html#abc12953910b66cba2372f3bef497ac41">is_empty</a>()) {</div>
+<div class="line"><span class="lineno">  242</span>      engine_map.insert(std::make_pair(<span class="stringliteral">&quot;sts&quot;</span>, std::cref(<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a1e14971e358efb285d4201a6d601157c">sts_engine</a>)));</div>
+<div class="line"><span class="lineno">  243</span>    }</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <span class="comment">/* The external auth. */</span></div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">if</span> (! <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a715a311c50b271e8549f945d886397ab">external_engines</a>.<a class="code hl_function" href="classrgw_1_1auth_1_1_strategy.html#abc12953910b66cba2372f3bef497ac41">is_empty</a>()) {</div>
+<div class="line"><span class="lineno">  247</span>      engine_map.insert(std::make_pair(<span class="stringliteral">&quot;external&quot;</span>, std::cref(<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a715a311c50b271e8549f945d886397ab">external_engines</a>)));</div>
+<div class="line"><span class="lineno">  248</span>    }</div>
+<div class="line"><span class="lineno">  249</span>    <span class="comment">/* The local auth. */</span></div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;_conf-&gt;rgw_s3_auth_use_rados) {</div>
+<div class="line"><span class="lineno">  251</span>      engine_map.insert(std::make_pair(<span class="stringliteral">&quot;local&quot;</span>, std::cref(<a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a10c9885cb781d855286409165719bb15">local_engine</a>)));</div>
+<div class="line"><span class="lineno">  252</span>    }</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    <a class="code hl_function" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#ae3a94bd93c30c3e98846dbbf7abdd958">add_engines</a>(auth_order, engine_map);</div>
+<div class="line"><span class="lineno">  255</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_html_a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">rgw::auth::Strategy::Control::SUFFICIENT</a></div><div class="ttdeci">@ SUFFICIENT</div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_html_ab4b0c53b993b4157103cabe717d3208e"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">rgw::auth::Strategy::add_engine</a></div><div class="ttdeci">void add_engine(Control ctrl_flag, const Engine &amp;engine) noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8cc_source.html#l00347">rgw_auth.cc:347</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_html_abc12953910b66cba2372f3bef497ac41"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy.html#abc12953910b66cba2372f3bef497ac41">rgw::auth::Strategy::is_empty</a></div><div class="ttdeci">bool is_empty() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00346">rgw_auth.h:346</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a10c9885cb781d855286409165719bb15"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a10c9885cb781d855286409165719bb15">rgw::auth::s3::AWSAuthStrategy::local_engine</a></div><div class="ttdeci">LocalEngine local_engine</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00170">rgw_auth_s3.h:170</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a1e14971e358efb285d4201a6d601157c"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a1e14971e358efb285d4201a6d601157c">rgw::auth::s3::AWSAuthStrategy::sts_engine</a></div><div class="ttdeci">STSAuthStrategy sts_engine</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00169">rgw_auth_s3.h:169</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a700b79f69eafc254dc45494a8d8148fe"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a700b79f69eafc254dc45494a8d8148fe">rgw::auth::s3::AWSAuthStrategy::parse_auth_order</a></div><div class="ttdeci">auto parse_auth_order(CephContext *const cct)</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00203">rgw_auth_s3.h:203</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a715a311c50b271e8549f945d886397ab"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a715a311c50b271e8549f945d886397ab">rgw::auth::s3::AWSAuthStrategy::external_engines</a></div><div class="ttdeci">ExternalAuthStrategy external_engines</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00168">rgw_auth_s3.h:168</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a825f6fce8640782867d1ad785efafb16"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a825f6fce8640782867d1ad785efafb16">rgw::auth::s3::AWSAuthStrategy::anonymous_engine</a></div><div class="ttdeci">S3AnonymousEngine anonymous_engine</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00167">rgw_auth_s3.h:167</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a8f760173a6a11ea1ffabec056611dc42"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">rgw::auth::s3::AWSAuthStrategy::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00164">rgw_auth_s3.h:164</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a9e3337ade5d7273c0434af9dc249cd85"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9e3337ade5d7273c0434af9dc249cd85">rgw::auth::s3::AWSAuthStrategy::engine_map_t</a></div><div class="ttdeci">std::map&lt; std::string, std::reference_wrapper&lt; const Engine &gt; &gt; engine_map_t</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00185">rgw_auth_s3.h:185</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_ae3a94bd93c30c3e98846dbbf7abdd958"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#ae3a94bd93c30c3e98846dbbf7abdd958">rgw::auth::s3::AWSAuthStrategy::add_engines</a></div><div class="ttdeci">void add_engines(const std::vector&lt; std::string &gt; &amp;auth_order, engine_map_t eng_map)</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00186">rgw_auth_s3.h:186</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_aecbfa6195e18c8a1a4d6f8c771c0b99e"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#aecbfa6195e18c8a1a4d6f8c771c0b99e">rgw::auth::s3::AWSAuthStrategy::ver_abstractor</a></div><div class="ttdeci">AbstractorT ver_abstractor</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00165">rgw_auth_s3.h:165</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="astructrgw_1_1auth_1_1_local_applier_1_1_factory_html"><div class="ttname"><a href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html">rgw::auth::LocalApplier::Factory</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00692">rgw_auth.h:692</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a291bd7d7d02b28433ea71e8e2c436c6e_cgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a291bd7d7d02b28433ea71e8e2c436c6e_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a291bd7d7d02b28433ea71e8e2c436c6e_cgraph" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a291bd7d7d02b28433ea71e8e2c436c6e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,68,217,111"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e" title=" " alt="" coords="524,5,655,48"/>
+<area shape="poly" title=" " alt="" coords="149,65,202,40,264,20,328,11,393,8,509,13,509,19,393,13,328,16,265,25,204,45,151,70"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#ae3a94bd93c30c3e98846dbbf7abdd958" title=" " alt="" coords="265,35,476,77"/>
+<area shape="poly" title=" " alt="" coords="217,73,249,69,249,74,217,78"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html#abc12953910b66cba2372f3bef497ac41" title=" " alt="" coords="305,101,436,144"/>
+<area shape="poly" title=" " alt="" coords="217,100,290,110,289,115,217,106"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a700b79f69eafc254dc45494a8d8148fe" title=" " alt="" coords="265,168,476,211"/>
+<area shape="poly" title=" " alt="" coords="160,109,266,154,283,160,282,165,264,158,158,114"/>
+<area shape="poly" title=" " alt="" coords="476,39,508,35,509,40,477,44"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="ae3a94bd93c30c3e98846dbbf7abdd958" name="ae3a94bd93c30c3e98846dbbf7abdd958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a94bd93c30c3e98846dbbf7abdd958">&#9670;&#160;</a></span>add_engines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::add_engines </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>auth_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9e3337ade5d7273c0434af9dc249cd85">engine_map_t</a>&#160;</td>
+          <td class="paramname"><em>eng_map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00186">186</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>  {</div>
+<div class="line"><span class="lineno">  189</span>    <span class="keyword">auto</span> ctrl_flag = <a class="code hl_enumvalue" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620a28bc8a08ba03c52bc8f800ab409d229d">Control::SUFFICIENT</a>;</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;eng : auth_order) {</div>
+<div class="line"><span class="lineno">  191</span>      <span class="comment">// fallback to the last engine, in case of multiple engines, since ctrl</span></div>
+<div class="line"><span class="lineno">  192</span>      <span class="comment">// flag is sufficient for others, error from earlier engine is returned</span></div>
+<div class="line"><span class="lineno">  193</span>      <span class="keywordflow">if</span> (&amp;eng == &amp;auth_order.back() &amp;&amp; eng_map.size() &gt; 1) {</div>
+<div class="line"><span class="lineno">  194</span>        ctrl_flag = <a class="code hl_enumvalue" href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620af35b388d8d4adeab05bce916c73d7a72">Control::FALLBACK</a>;</div>
+<div class="line"><span class="lineno">  195</span>      }</div>
+<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> kv = eng_map.find(eng);</div>
+<div class="line"><span class="lineno">  197</span>          kv != eng_map.end()) {</div>
+<div class="line"><span class="lineno">  198</span>        <a class="code hl_function" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e">add_engine</a>(ctrl_flag, kv-&gt;second);</div>
+<div class="line"><span class="lineno">  199</span>      }</div>
+<div class="line"><span class="lineno">  200</span>    }</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_html_a94baf04961abcbee644ed465eb78d620af35b388d8d4adeab05bce916c73d7a72"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy.html#a94baf04961abcbee644ed465eb78d620af35b388d8d4adeab05bce916c73d7a72">rgw::auth::Strategy::Control::FALLBACK</a></div><div class="ttdeci">@ FALLBACK</div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_cgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_cgraph" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,217,48"/>
+<area shape="rect" href="classrgw_1_1auth_1_1_strategy.html#ab4b0c53b993b4157103cabe717d3208e" title=" " alt="" coords="265,5,396,48"/>
+<area shape="poly" title=" " alt="" coords="217,24,249,24,249,29,217,29"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_icgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_icgraph" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_ae3a94bd93c30c3e98846dbbf7abdd958_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,476,48"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a291bd7d7d02b28433ea71e8e2c436c6e" title=" " alt="" coords="5,5,217,48"/>
+<area shape="poly" title=" " alt="" coords="249,29,217,29,217,24,249,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a69a2c39067d2f297c32fe4014f75c6c4" name="a69a2c39067d2f297c32fe4014f75c6c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a2c39067d2f297c32fe4014f75c6c4">&#9670;&#160;</a></span>create_apl_local()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9a3f4d8adfe004e538cb330d163d44d8">aplptr_t</a> <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::create_apl_local </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *const&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structreq__state.html">req_state</a> *const&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_r_g_w_user_info.html">RGWUserInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>user_info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>subuser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>perm_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>access_key_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structrgw_1_1auth_1_1_local_applier_1_1_factory.html#a8036db83ca2afe2beccd761b8010f389">rgw::auth::LocalApplier::Factory</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00172">172</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>                                                                           {</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keyword">auto</span> apl = <a class="code hl_function" href="namespacergw_1_1auth.html#ae2070ad64ca636bd0ce3882dfab0386a">rgw::auth::add_sysreq</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_variable" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a8f760173a6a11ea1ffabec056611dc42">store</a>, s,</div>
+<div class="line"><span class="lineno">  179</span>      <a class="code hl_class" href="classrgw_1_1auth_1_1_local_applier.html">rgw::auth::LocalApplier</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, user_info, subuser, perm_mask, access_key_id));</div>
+<div class="line"><span class="lineno">  180</span>    <span class="comment">/* TODO(rzarzynski): replace with static_ptr. */</span></div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9a3f4d8adfe004e538cb330d163d44d8">aplptr_t</a>(<span class="keyword">new</span> <span class="keyword">decltype</span>(apl)(std::move(apl)));</div>
+<div class="line"><span class="lineno">  182</span>  }</div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_local_applier_html"><div class="ttname"><a href="classrgw_1_1auth_1_1_local_applier.html">rgw::auth::LocalApplier</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__auth_8h_source.html#l00646">rgw_auth.h:646</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_html_a9a3f4d8adfe004e538cb330d163d44d8"><div class="ttname"><a href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a9a3f4d8adfe004e538cb330d163d44d8">rgw::auth::s3::AWSAuthStrategy::aplptr_t</a></div><div class="ttdeci">rgw::auth::IdentityApplier::aplptr_t aplptr_t</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00158">rgw_auth_s3.h:158</a></div></div>
+<div class="ttc" id="anamespacergw_1_1auth_html_ae2070ad64ca636bd0ce3882dfab0386a"><div class="ttname"><a href="namespacergw_1_1auth.html#ae2070ad64ca636bd0ce3882dfab0386a">rgw::auth::add_sysreq</a></div><div class="ttdeci">static SysReqApplier&lt; T &gt; add_sysreq(CephContext *const cct, rgw::sal::Store *store, const req_state *const s, T &amp;&amp;t)</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__filters_8h_source.html#l00295">rgw_auth_filters.h:295</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a69a2c39067d2f297c32fe4014f75c6c4_cgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a69a2c39067d2f297c32fe4014f75c6c4_cgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a69a2c39067d2f297c32fe4014f75c6c4_cgraph" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a69a2c39067d2f297c32fe4014f75c6c4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,217,48"/>
+<area shape="rect" href="namespacergw_1_1auth.html#ae2070ad64ca636bd0ce3882dfab0386a" title=" " alt="" coords="265,13,414,40"/>
+<area shape="poly" title=" " alt="" coords="217,24,249,24,249,29,217,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acdac26853eb4e4bf422c1511368c8a77" name="acdac26853eb4e4bf422c1511368c8a77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdac26853eb4e4bf422c1511368c8a77">&#9670;&#160;</a></span>get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classrgw_1_1auth_1_1_engine.html#aad7a0f7c3737f8b43c09eed62be6d76b">rgw::auth::Engine</a>를 구현.</p>
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00257">257</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  257</span>                                                 {</div>
+<div class="line"><span class="lineno">  258</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;rgw::auth::s3::AWSAuthStrategy&quot;</span>;</div>
+<div class="line"><span class="lineno">  259</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a700b79f69eafc254dc45494a8d8148fe" name="a700b79f69eafc254dc45494a8d8148fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a700b79f69eafc254dc45494a8d8148fe">&#9670;&#160;</a></span>parse_auth_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::parse_auth_order </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *const&#160;</td>
+          <td class="paramname"><em>cct</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00203">203</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>  {</div>
+<div class="line"><span class="lineno">  205</span>    std::vector &lt;std::string&gt; result;</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="keyword">const</span> std::set &lt;std::string_view&gt; allowed_auth = { <span class="stringliteral">&quot;sts&quot;</span>, <span class="stringliteral">&quot;external&quot;</span>, <span class="stringliteral">&quot;local&quot;</span> };</div>
+<div class="line"><span class="lineno">  208</span>    std::vector &lt;std::string&gt; default_order = { <span class="stringliteral">&quot;sts&quot;</span>, <span class="stringliteral">&quot;external&quot;</span>, <span class="stringliteral">&quot;local&quot;</span> };</div>
+<div class="line"><span class="lineno">  209</span>    <span class="comment">// supplied strings may contain a space, so let&#39;s bypass that</span></div>
+<div class="line"><span class="lineno">  210</span>    boost::split(result, <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>-&gt;_conf-&gt;rgw_s3_auth_order,</div>
+<div class="line"><span class="lineno">  211</span>         boost::is_any_of(<span class="stringliteral">&quot;, &quot;</span>), boost::token_compress_on);</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (std::any_of(result.begin(), result.end(),</div>
+<div class="line"><span class="lineno">  214</span>            [allowed_auth](std::string_view s)</div>
+<div class="line"><span class="lineno">  215</span>            { return allowed_auth.find(s) == allowed_auth.end();})){</div>
+<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">return</span> default_order;</div>
+<div class="line"><span class="lineno">  217</span>    }</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  219</span>  }</div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a700b79f69eafc254dc45494a8d8148fe_icgraph.png" border="0" usemap="#aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a700b79f69eafc254dc45494a8d8148fe_icgraph" alt=""/></div>
+<map name="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a700b79f69eafc254dc45494a8d8148fe_icgraph" id="aclassrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy_a700b79f69eafc254dc45494a8d8148fe_icgraph">
+<area shape="rect" title=" " alt="" coords="265,5,476,48"/>
+<area shape="rect" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html#a291bd7d7d02b28433ea71e8e2c436c6e" title=" " alt="" coords="5,5,217,48"/>
+<area shape="poly" title=" " alt="" coords="249,29,217,29,217,24,249,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="a825f6fce8640782867d1ad785efafb16" name="a825f6fce8640782867d1ad785efafb16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825f6fce8640782867d1ad785efafb16">&#9670;&#160;</a></span>anonymous_engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_s3_anonymous_engine.html">S3AnonymousEngine</a> <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::anonymous_engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00167">167</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a715a311c50b271e8549f945d886397ab" name="a715a311c50b271e8549f945d886397ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715a311c50b271e8549f945d886397ab">&#9670;&#160;</a></span>external_engines</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_external_auth_strategy.html">ExternalAuthStrategy</a> <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::external_engines</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00168">168</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a10c9885cb781d855286409165719bb15" name="a10c9885cb781d855286409165719bb15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c9885cb781d855286409165719bb15">&#9670;&#160;</a></span>local_engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_local_engine.html">LocalEngine</a> <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::local_engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00170">170</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8f760173a6a11ea1ffabec056611dc42" name="a8f760173a6a11ea1ffabec056611dc42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f760173a6a11ea1ffabec056611dc42">&#9670;&#160;</a></span>store</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::store</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00164">164</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a1e14971e358efb285d4201a6d601157c" name="a1e14971e358efb285d4201a6d601157c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e14971e358efb285d4201a6d601157c">&#9670;&#160;</a></span>sts_engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_s_t_s_auth_strategy.html">STSAuthStrategy</a> <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::sts_engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00169">169</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aecbfa6195e18c8a1a4d6f8c771c0b99e" name="aecbfa6195e18c8a1a4d6f8c771c0b99e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecbfa6195e18c8a1a4d6f8c771c0b99e">&#9670;&#160;</a></span>ver_abstractor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class AbstractorT , bool AllowAnonAccessT = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AbstractorT <a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">rgw::auth::s3::AWSAuthStrategy</a>&lt; AbstractorT, AllowAnonAccessT &gt;::ver_abstractor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a> 파일의 <a class="el" href="rgw__auth__s3_8h_source.html#l00165">165</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<hr/>이 클래스에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__auth__s3_8h_source.html">rgw_auth_s3.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacergw.html">rgw</a></li><li class="navelem"><a class="el" href="namespacergw_1_1auth.html">auth</a></li><li class="navelem"><a class="el" href="namespacergw_1_1auth_1_1s3.html">s3</a></li><li class="navelem"><a class="el" href="classrgw_1_1auth_1_1s3_1_1_a_w_s_auth_strategy.html">AWSAuthStrategy</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

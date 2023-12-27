@@ -1,0 +1,28 @@
+var class_r_g_w_run_bucket_sources_sync_c_r =
+[
+    [ "RGWRunBucketSourcesSyncCR", "class_r_g_w_run_bucket_sources_sync_c_r.html#abdc708dd5d14be5321cf3e81bb160714", null ],
+    [ "handle_complete_stack", "class_r_g_w_run_bucket_sources_sync_c_r.html#a9bfe3f1840f45711cd948c64d57ff674", null ],
+    [ "operate", "class_r_g_w_run_bucket_sources_sync_c_r.html#a25cb444be91d021307fee5846cfb670d", null ],
+    [ "again", "class_r_g_w_run_bucket_sources_sync_c_r.html#a4af0b7932207d0827cb353376725f5ac", null ],
+    [ "conn", "class_r_g_w_run_bucket_sources_sync_c_r.html#a608bba4e94718e2dfb39db65dd6f3e18", null ],
+    [ "cur_progress", "class_r_g_w_run_bucket_sources_sync_c_r.html#a4e981e28b3fed2d193ea7a5682ddbf2b", null ],
+    [ "cur_shard", "class_r_g_w_run_bucket_sources_sync_c_r.html#ae06d08345adaf352b8ed55086141eb95", null ],
+    [ "last_zone", "class_r_g_w_run_bucket_sources_sync_c_r.html#adeaa77d1579ea4c3b637c881852c8e70", null ],
+    [ "lease_cr", "class_r_g_w_run_bucket_sources_sync_c_r.html#ae4f9fe5aee3b3c62ab9bc0aca36d905b", null ],
+    [ "min_progress", "class_r_g_w_run_bucket_sources_sync_c_r.html#a4fde210ff8a319b0750222bad223315e", null ],
+    [ "num_shards", "class_r_g_w_run_bucket_sources_sync_c_r.html#a9723de668da05879bd0889439404770f", null ],
+    [ "pipes", "class_r_g_w_run_bucket_sources_sync_c_r.html#aff298b887255d7c2f153c51b9acc484f", null ],
+    [ "progress", "class_r_g_w_run_bucket_sources_sync_c_r.html#aae6049476f88b1162511b2e6e5e61d4c", null ],
+    [ "sc", "class_r_g_w_run_bucket_sources_sync_c_r.html#ac56248281b07df9ee3343d176ba3bf56", null ],
+    [ "shard_progress", "class_r_g_w_run_bucket_sources_sync_c_r.html#a8ee39e5c8a266ae91bae1b8f8e04d0ae", null ],
+    [ "siter", "class_r_g_w_run_bucket_sources_sync_c_r.html#a04c348c113f129ea48d45da5b278e5bd", null ],
+    [ "source_bs", "class_r_g_w_run_bucket_sources_sync_c_r.html#a4c00b0ed60e6f0e1208cfc00343faf21", null ],
+    [ "source_bucket", "class_r_g_w_run_bucket_sources_sync_c_r.html#a5e62109bb6550c075c7a7277200d404c", null ],
+    [ "source_num_shards", "class_r_g_w_run_bucket_sources_sync_c_r.html#a5fc57aace68935c62904eabcca2c9a7e", null ],
+    [ "sync_env", "class_r_g_w_run_bucket_sources_sync_c_r.html#adcb2ef3c0ac93143dba03fea0ba989a1", null ],
+    [ "sync_pair", "class_r_g_w_run_bucket_sources_sync_c_r.html#a26a65d1f2a15f70a3157240728a7bd1e", null ],
+    [ "target_bs", "class_r_g_w_run_bucket_sources_sync_c_r.html#ad9d7113eed4ba5af5c4262df7513f765", null ],
+    [ "target_bucket", "class_r_g_w_run_bucket_sources_sync_c_r.html#a89d8653282ced13ab15337db00c2ac74", null ],
+    [ "target_num_shards", "class_r_g_w_run_bucket_sources_sync_c_r.html#a8636be8ac5c19e34509a94629b25c294", null ],
+    [ "tn", "class_r_g_w_run_bucket_sources_sync_c_r.html#a7ab719612b4d2ebf68e956f416c3d3a5", null ]
+];

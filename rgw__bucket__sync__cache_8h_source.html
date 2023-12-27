@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_bucket_sync_cache.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__bucket__sync__cache_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_bucket_sync_cache.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__bucket__sync__cache_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Copyright (C) 2020 Red Hat, Inc</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * License version 2.1, as published by the Free Software</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Foundation.  See file COPYING.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;boost/smart_ptr/intrusive_ref_counter.hpp&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;common/intrusive_lru.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__data__sync_8h.html">rgw_data_sync.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespacergw_1_1bucket__sync.html">   21</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacergw_1_1bucket__sync.html">rgw::bucket_sync</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// per bucket-shard state cached by DataSyncShardCR</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_state.html">   24</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_state.html">State</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">// the source bucket shard to sync</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_state.html#ac6d765ba227040afdd013d709005b3a6">   26</a></span>  <a class="code hl_struct" href="structrgw__bucket__shard.html">rgw_bucket_shard</a> <a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#ac6d765ba227040afdd013d709005b3a6">key</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="comment">// current sync obligation being processed by DataSyncSingleEntry</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_state.html#a8d5ca11ab515ff3d5ce59a2faf6ad679">   28</a></span>  std::optional&lt;rgw_data_sync_obligation&gt; <a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#a8d5ca11ab515ff3d5ce59a2faf6ad679">obligation</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="comment">// incremented with each new obligation</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_state.html#a9a50d7b7abff7fdbc39ec8d6d709b110">   30</a></span>  uint32_t <a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#a9a50d7b7abff7fdbc39ec8d6d709b110">counter</a> = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">// highest timestamp applied by all sources</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_state.html#afcdd2b137c4e5b34a34c6a80f98733bd">   32</a></span>  ceph::real_time <a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#afcdd2b137c4e5b34a34c6a80f98733bd">progress_timestamp</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_state.html#a59a35343efde6b8f6c2d64ee06c99c9f">   34</a></span>  <a class="code hl_function" href="structrgw_1_1bucket__sync_1_1_state.html#a59a35343efde6b8f6c2d64ee06c99c9f">State</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrgw__bucket__shard.html">rgw_bucket_shard</a>&amp; <a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#ac6d765ba227040afdd013d709005b3a6">key</a>) noexcept : <a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#ac6d765ba227040afdd013d709005b3a6">key</a>(<a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#ac6d765ba227040afdd013d709005b3a6">key</a>) {}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">struct </span>Entry;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">struct </span>EntryToKey;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">class </span>Handle;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespacergw_1_1bucket__sync.html#aa64dccaebae7b2a32408007b9756da27">   41</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacergw_1_1bucket__sync.html#aa64dccaebae7b2a32408007b9756da27">lru_config</a> = ceph::common::intrusive_lru_config&lt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_struct" href="structrgw__bucket__shard.html">rgw_bucket_shard</a>, <a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_entry.html">Entry</a>, <a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_entry_to_key.html">EntryToKey</a>&gt;;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// a recyclable cache entry</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_entry.html">   45</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_entry.html">Entry</a> : <a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_state.html">State</a>, ceph::common::intrusive_lru_base&lt;lru_config&gt; {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">using </span><a class="code hl_function" href="structrgw_1_1bucket__sync_1_1_state.html#a59a35343efde6b8f6c2d64ee06c99c9f">State::State</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_entry_to_key.html">   49</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_entry_to_key.html">EntryToKey</a> {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_entry_to_key.html#a14901cc621638e3aff5ece1a2ae03d49">   50</a></span>  <span class="keyword">using </span><a class="code hl_struct" href="structrgw__bucket__shard.html">type</a> = <a class="code hl_struct" href="structrgw__bucket__shard.html">rgw_bucket_shard</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structrgw_1_1bucket__sync_1_1_entry_to_key.html#a1ae773e17d784687c79eb846490e3e28">   51</a></span>  <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__bucket__shard.html">type</a>&amp; <a class="code hl_function" href="structrgw_1_1bucket__sync_1_1_entry_to_key.html#a1ae773e17d784687c79eb846490e3e28">operator()</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_entry.html">Entry</a>&amp; e) { <span class="keywordflow">return</span> e.<a class="code hl_variable" href="structrgw_1_1bucket__sync_1_1_state.html#ac6d765ba227040afdd013d709005b3a6">key</a>; }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">// use a non-atomic reference count since these aren&#39;t shared across threads</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespacergw_1_1bucket__sync.html#a97ca77f3b3edfd977739f80e27fa7d70">   56</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacergw_1_1bucket__sync.html#a97ca77f3b3edfd977739f80e27fa7d70">thread_unsafe_ref_counter</a> = boost::intrusive_ref_counter&lt;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    T, boost::thread_unsafe_counter&gt;;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// a state cache for entries within a single datalog shard</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_cache.html">   60</a></span><span class="keyword">class </span><a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_cache.html">Cache</a> : <span class="keyword">public</span> <a class="code hl_typedef" href="namespacergw_1_1bucket__sync.html#a97ca77f3b3edfd977739f80e27fa7d70">thread_unsafe_ref_counter</a>&lt;Cache&gt; {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_cache.html#a99189675a1816eb077449c7b3955105d">   61</a></span>  ceph::common::intrusive_lru&lt;lru_config&gt; <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_cache.html#a99189675a1816eb077449c7b3955105d">cache</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">// protected ctor to enforce the use of factory function create()</span></div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_cache.html#a25163723546ec0265b16702cb8c25aba">   64</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_cache.html#a25163723546ec0265b16702cb8c25aba">Cache</a>(<span class="keywordtype">size_t</span> target_size) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_cache.html#a99189675a1816eb077449c7b3955105d">cache</a>.set_target_size(target_size);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_cache.html#ac761eb551e86842c3395065d1b19bd91">   68</a></span>  <span class="keyword">static</span> boost::intrusive_ptr&lt;Cache&gt; <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_cache.html#ac761eb551e86842c3395065d1b19bd91">create</a>(<span class="keywordtype">size_t</span> target_size) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_cache.html">Cache</a>(target_size);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">// find or create a cache entry for the given key, and return a Handle that</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="comment">// keeps it lru-pinned until destruction</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a> get(<span class="keyword">const</span> <a class="code hl_struct" href="structrgw__bucket__shard.html">rgw_bucket_shard</a>&amp; key);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">// a State handle that keeps the Cache referenced</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="};">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html">   78</a></span><span class="keyword">class </span><a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a> {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">   79</a></span>  boost::intrusive_ptr&lt;Cache&gt; <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">cache</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">   80</a></span>  boost::intrusive_ptr&lt;Entry&gt; <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#a14c0339707200eadcd47b8212bd42fbf">   82</a></span>  <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_handle.html#a14c0339707200eadcd47b8212bd42fbf">Handle</a>() noexcept = default;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#a9f93753fc1f25642ff03a3f67cc1ccbb">   83</a></span>  ~<a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>() = default;</div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#adf022225741507dac781548bbeeca5d1">   84</a></span>  <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>(boost::intrusive_ptr&lt;<a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_cache.html">Cache</a>&gt; <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">cache</a>,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>         boost::intrusive_ptr&lt;<a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_entry.html">Entry</a>&gt; <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>) noexcept</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    : <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">cache</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::move(<a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">cache</a>)), <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::move(<a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>)) {}</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#a94e1ad3c296ace6b822a6b999e37dd55">   87</a></span>  <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_handle.html#a94e1ad3c296ace6b822a6b999e37dd55">Handle</a>(<a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#abd66ae9dc923abf7812eb42d2fc513cc">   88</a></span>  <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_handle.html#abd66ae9dc923abf7812eb42d2fc513cc">Handle</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#a0d0fc3014fa137b30177fce24b36c2c0">   89</a></span>  <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>&amp; <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_handle.html#a0d0fc3014fa137b30177fce24b36c2c0">operator=</a>(<a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>&amp;&amp; o) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// move the entry first so that its cache stays referenced over destruction</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a> = std::move(o.entry);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">cache</a> = std::move(o.cache);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  }</div>
+</div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#a26058e15e04bde5ca162be49255e7f2b">   95</a></span>  <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>&amp; <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_handle.html#a26058e15e04bde5ca162be49255e7f2b">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a>&amp; o) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// copy the entry first so that its cache stays referenced over destruction</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a> = o.<a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">cache</a> = o.cache;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#aa7f1142a379cfe020bc5c4b4e29c9ec1">  102</a></span>  <span class="keyword">explicit</span> <span class="keyword">operator</span> bool() const noexcept { <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>); }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#a3b13c675c3cbb72f5366635c6cdf17c7">  103</a></span>  <a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_state.html">State</a>&amp; <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_handle.html#a3b13c675c3cbb72f5366635c6cdf17c7">operator*</a>() const noexcept { <span class="keywordflow">return</span> *<a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>; }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_handle.html#a6efa897aba99dd43f381cd8572c39cba">  104</a></span>  <a class="code hl_struct" href="structrgw_1_1bucket__sync_1_1_state.html">State</a>* <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_handle.html#a6efa897aba99dd43f381cd8572c39cba">operator-&gt;</a>() const noexcept { <span class="keywordflow">return</span> <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">entry</a>.get(); }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classrgw_1_1bucket__sync_1_1_cache.html#a39a55b1bf0a974b7a0c55825beb4084c">  107</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classrgw_1_1bucket__sync_1_1_handle.html">Handle</a> <a class="code hl_function" href="classrgw_1_1bucket__sync_1_1_cache.html#a39a55b1bf0a974b7a0c55825beb4084c">Cache::get</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrgw__bucket__shard.html">rgw_bucket_shard</a>&amp; key)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keyword">auto</span> result = <a class="code hl_variable" href="classrgw_1_1bucket__sync_1_1_cache.html#a99189675a1816eb077449c7b3955105d">cache</a>.get_or_create(key);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">return</span> {<span class="keyword">this</span>, std::move(result.first)};</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>} <span class="comment">// namespace rgw::bucket_sync</span></div>
+</div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_cache_html"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_cache.html">rgw::bucket_sync::Cache</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00060">rgw_bucket_sync_cache.h:60</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_cache_html_a25163723546ec0265b16702cb8c25aba"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_cache.html#a25163723546ec0265b16702cb8c25aba">rgw::bucket_sync::Cache::Cache</a></div><div class="ttdeci">Cache(size_t target_size)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00064">rgw_bucket_sync_cache.h:64</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_cache_html_a39a55b1bf0a974b7a0c55825beb4084c"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_cache.html#a39a55b1bf0a974b7a0c55825beb4084c">rgw::bucket_sync::Cache::get</a></div><div class="ttdeci">Handle get(const rgw_bucket_shard &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00107">rgw_bucket_sync_cache.h:107</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_cache_html_a99189675a1816eb077449c7b3955105d"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_cache.html#a99189675a1816eb077449c7b3955105d">rgw::bucket_sync::Cache::cache</a></div><div class="ttdeci">ceph::common::intrusive_lru&lt; lru_config &gt; cache</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00061">rgw_bucket_sync_cache.h:61</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_cache_html_ac761eb551e86842c3395065d1b19bd91"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_cache.html#ac761eb551e86842c3395065d1b19bd91">rgw::bucket_sync::Cache::create</a></div><div class="ttdeci">static boost::intrusive_ptr&lt; Cache &gt; create(size_t target_size)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00068">rgw_bucket_sync_cache.h:68</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html">rgw::bucket_sync::Handle</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00078">rgw_bucket_sync_cache.h:78</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_a0d0fc3014fa137b30177fce24b36c2c0"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#a0d0fc3014fa137b30177fce24b36c2c0">rgw::bucket_sync::Handle::operator=</a></div><div class="ttdeci">Handle &amp; operator=(Handle &amp;&amp;o) noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00089">rgw_bucket_sync_cache.h:89</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_a14c0339707200eadcd47b8212bd42fbf"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#a14c0339707200eadcd47b8212bd42fbf">rgw::bucket_sync::Handle::Handle</a></div><div class="ttdeci">Handle() noexcept=default</div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_a26058e15e04bde5ca162be49255e7f2b"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#a26058e15e04bde5ca162be49255e7f2b">rgw::bucket_sync::Handle::operator=</a></div><div class="ttdeci">Handle &amp; operator=(const Handle &amp;o) noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00095">rgw_bucket_sync_cache.h:95</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_a3b13c675c3cbb72f5366635c6cdf17c7"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#a3b13c675c3cbb72f5366635c6cdf17c7">rgw::bucket_sync::Handle::operator*</a></div><div class="ttdeci">State &amp; operator*() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00103">rgw_bucket_sync_cache.h:103</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_a6efa897aba99dd43f381cd8572c39cba"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#a6efa897aba99dd43f381cd8572c39cba">rgw::bucket_sync::Handle::operator-&gt;</a></div><div class="ttdeci">State * operator-&gt;() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00104">rgw_bucket_sync_cache.h:104</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_a94e1ad3c296ace6b822a6b999e37dd55"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#a94e1ad3c296ace6b822a6b999e37dd55">rgw::bucket_sync::Handle::Handle</a></div><div class="ttdeci">Handle(Handle &amp;&amp;)=default</div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_aa384864f5e045caff18234f793f7559a"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#aa384864f5e045caff18234f793f7559a">rgw::bucket_sync::Handle::cache</a></div><div class="ttdeci">boost::intrusive_ptr&lt; Cache &gt; cache</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00079">rgw_bucket_sync_cache.h:79</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_ab1454132a52b36a8901e77ce53e33ac8"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#ab1454132a52b36a8901e77ce53e33ac8">rgw::bucket_sync::Handle::entry</a></div><div class="ttdeci">boost::intrusive_ptr&lt; Entry &gt; entry</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00080">rgw_bucket_sync_cache.h:80</a></div></div>
+<div class="ttc" id="aclassrgw_1_1bucket__sync_1_1_handle_html_abd66ae9dc923abf7812eb42d2fc513cc"><div class="ttname"><a href="classrgw_1_1bucket__sync_1_1_handle.html#abd66ae9dc923abf7812eb42d2fc513cc">rgw::bucket_sync::Handle::Handle</a></div><div class="ttdeci">Handle(const Handle &amp;)=default</div></div>
+<div class="ttc" id="anamespacergw_1_1bucket__sync_html"><div class="ttname"><a href="namespacergw_1_1bucket__sync.html">rgw::bucket_sync</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00021">rgw_bucket_sync_cache.h:21</a></div></div>
+<div class="ttc" id="anamespacergw_1_1bucket__sync_html_a97ca77f3b3edfd977739f80e27fa7d70"><div class="ttname"><a href="namespacergw_1_1bucket__sync.html#a97ca77f3b3edfd977739f80e27fa7d70">rgw::bucket_sync::thread_unsafe_ref_counter</a></div><div class="ttdeci">boost::intrusive_ref_counter&lt; T, boost::thread_unsafe_counter &gt; thread_unsafe_ref_counter</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00056">rgw_bucket_sync_cache.h:57</a></div></div>
+<div class="ttc" id="anamespacergw_1_1bucket__sync_html_aa64dccaebae7b2a32408007b9756da27"><div class="ttname"><a href="namespacergw_1_1bucket__sync.html#aa64dccaebae7b2a32408007b9756da27">rgw::bucket_sync::lru_config</a></div><div class="ttdeci">ceph::common::intrusive_lru_config&lt; rgw_bucket_shard, Entry, EntryToKey &gt; lru_config</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00041">rgw_bucket_sync_cache.h:42</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__data__sync_8h_html"><div class="ttname"><a href="rgw__data__sync_8h.html">rgw_data_sync.h</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_entry_html"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_entry.html">rgw::bucket_sync::Entry</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00045">rgw_bucket_sync_cache.h:45</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_entry_to_key_html"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_entry_to_key.html">rgw::bucket_sync::EntryToKey</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00049">rgw_bucket_sync_cache.h:49</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_entry_to_key_html_a1ae773e17d784687c79eb846490e3e28"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_entry_to_key.html#a1ae773e17d784687c79eb846490e3e28">rgw::bucket_sync::EntryToKey::operator()</a></div><div class="ttdeci">const type &amp; operator()(const Entry &amp;e)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00051">rgw_bucket_sync_cache.h:51</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_state_html"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_state.html">rgw::bucket_sync::State</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00024">rgw_bucket_sync_cache.h:24</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_state_html_a59a35343efde6b8f6c2d64ee06c99c9f"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_state.html#a59a35343efde6b8f6c2d64ee06c99c9f">rgw::bucket_sync::State::State</a></div><div class="ttdeci">State(const rgw_bucket_shard &amp;key) noexcept</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00034">rgw_bucket_sync_cache.h:34</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_state_html_a8d5ca11ab515ff3d5ce59a2faf6ad679"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_state.html#a8d5ca11ab515ff3d5ce59a2faf6ad679">rgw::bucket_sync::State::obligation</a></div><div class="ttdeci">std::optional&lt; rgw_data_sync_obligation &gt; obligation</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00028">rgw_bucket_sync_cache.h:28</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_state_html_a9a50d7b7abff7fdbc39ec8d6d709b110"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_state.html#a9a50d7b7abff7fdbc39ec8d6d709b110">rgw::bucket_sync::State::counter</a></div><div class="ttdeci">uint32_t counter</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00030">rgw_bucket_sync_cache.h:30</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_state_html_ac6d765ba227040afdd013d709005b3a6"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_state.html#ac6d765ba227040afdd013d709005b3a6">rgw::bucket_sync::State::key</a></div><div class="ttdeci">rgw_bucket_shard key</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00026">rgw_bucket_sync_cache.h:26</a></div></div>
+<div class="ttc" id="astructrgw_1_1bucket__sync_1_1_state_html_afcdd2b137c4e5b34a34c6a80f98733bd"><div class="ttname"><a href="structrgw_1_1bucket__sync_1_1_state.html#afcdd2b137c4e5b34a34c6a80f98733bd">rgw::bucket_sync::State::progress_timestamp</a></div><div class="ttdeci">ceph::real_time progress_timestamp</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__sync__cache_8h_source.html#l00032">rgw_bucket_sync_cache.h:32</a></div></div>
+<div class="ttc" id="astructrgw__bucket__shard_html"><div class="ttname"><a href="structrgw__bucket__shard.html">rgw_bucket_shard</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00430">rgw_basic_types.h:430</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__bucket__sync__cache_8h.html">rgw_bucket_sync_cache.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

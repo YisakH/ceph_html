@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/services/svc_bilog_rados.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('svc__bilog__rados_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">svc_bilog_rados.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="svc__bilog__rados_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="svc__bilog__rados_8h.html">svc_bilog_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="svc__bi__rados_8h.html">svc_bi_rados.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;cls/rgw/cls_rgw_client.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="svc__bilog__rados_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">    9</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a4345b13ae162488a2c45423e56429f78">   13</a></span><a class="code hl_function" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a4345b13ae162488a2c45423e56429f78">RGWSI_BILog_RADOS::RGWSI_BILog_RADOS</a>(CephContext *<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>) : <a class="code hl_class" href="class_r_g_w_service_instance.html">RGWServiceInstance</a>(<a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#aa99be3b15a084b5f5baebc3ecdd409bf">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#aa99be3b15a084b5f5baebc3ecdd409bf">RGWSI_BILog_RADOS::init</a>(<a class="code hl_class" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html">RGWSI_BucketIndex_RADOS</a> *bi_rados_svc)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_variable" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#afd437694b4c31848177fed3a382233d6">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc.html#a47668d30f599d9f40868d7193ebaaf7d">bi</a> = bi_rados_svc;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a1cfea7fed476d2aef2570a6d588fcaae">   22</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a1cfea7fed476d2aef2570a6d588fcaae">RGWSI_BILog_RADOS::log_trim</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; bucket_info, <span class="keywordtype">int</span> shard_id, <span class="keywordtype">string</span>&amp; start_marker, <span class="keywordtype">string</span>&amp; end_marker)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html">RGWSI_RADOS::Pool</a> index_pool;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  map&lt;int, string&gt; bucket_objs;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  BucketIndexShardsManager start_marker_mgr;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  BucketIndexShardsManager end_marker_mgr;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#afd437694b4c31848177fed3a382233d6">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc.html#a47668d30f599d9f40868d7193ebaaf7d">bi</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#aaa63aef652cb6b732d3d1209f8a75954">open_bucket_index</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, bucket_info, shard_id, &amp;index_pool, &amp;bucket_objs, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = start_marker_mgr.from_string(start_marker, shard_id);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = end_marker_mgr.from_string(end_marker, shard_id);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">return</span> CLSRGWIssueBILogTrim(index_pool.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), start_marker_mgr, end_marker_mgr, bucket_objs,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                  <a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>-&gt;_conf-&gt;rgw_bucket_index_max_aio)();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a244183814514970d717457b1562585dc">   49</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a244183814514970d717457b1562585dc">RGWSI_BILog_RADOS::log_start</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; bucket_info, <span class="keywordtype">int</span> shard_id)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html">RGWSI_RADOS::Pool</a> index_pool;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  map&lt;int, string&gt; bucket_objs;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#afd437694b4c31848177fed3a382233d6">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc.html#a47668d30f599d9f40868d7193ebaaf7d">bi</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#aaa63aef652cb6b732d3d1209f8a75954">open_bucket_index</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, bucket_info, shard_id, &amp;index_pool, &amp;bucket_objs, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">return</span> CLSRGWIssueResyncBucketBILog(index_pool.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), bucket_objs, <a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>-&gt;_conf-&gt;rgw_bucket_index_max_aio)();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#acf4d014448490d383c26d98a42d01abf">   60</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#acf4d014448490d383c26d98a42d01abf">RGWSI_BILog_RADOS::log_stop</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; bucket_info, <span class="keywordtype">int</span> shard_id)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html">RGWSI_RADOS::Pool</a> index_pool;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  map&lt;int, string&gt; bucket_objs;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#afd437694b4c31848177fed3a382233d6">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc.html#a47668d30f599d9f40868d7193ebaaf7d">bi</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#aaa63aef652cb6b732d3d1209f8a75954">open_bucket_index</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, bucket_info, shard_id, &amp;index_pool, &amp;bucket_objs, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordflow">return</span> CLSRGWIssueBucketBILogStop(index_pool.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), bucket_objs, <a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>-&gt;_conf-&gt;rgw_bucket_index_max_aio)();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="svc__bilog__rados_8cc.html#af7108d22a05cdc3120d4e81353452277">   71</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="svc__bilog__rados_8cc.html#af7108d22a05cdc3120d4e81353452277">build_bucket_index_marker</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; shard_id_str,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                      <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; shard_marker,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                      <span class="keywordtype">string</span> *marker) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">if</span> (marker) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    *marker = shard_id_str;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    marker-&gt;append(BucketIndexShardsManager::KEY_VALUE_SEPARATOR);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    marker-&gt;append(shard_marker);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a0cf423aab0587d9d2ea74b1ae6d69c26">   81</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a0cf423aab0587d9d2ea74b1ae6d69c26">RGWSI_BILog_RADOS::log_list</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; bucket_info, <span class="keywordtype">int</span> shard_id, <span class="keywordtype">string</span>&amp; marker, uint32_t max,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                                std::list&lt;rgw_bi_log_entry&gt;&amp; result, <span class="keywordtype">bool</span> *truncated)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  ldpp_dout(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, 20) &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; bucket_info.<a class="code hl_variable" href="struct_r_g_w_bucket_info.html#afbd8422e16061abdf72d710794ac74d4">bucket</a> &lt;&lt; <span class="stringliteral">&quot; marker &quot;</span> &lt;&lt; marker &lt;&lt; <span class="stringliteral">&quot; shard_id=&quot;</span> &lt;&lt; shard_id &lt;&lt; <span class="stringliteral">&quot; max &quot;</span> &lt;&lt; max &lt;&lt; dendl;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  result.clear();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html">RGWSI_RADOS::Pool</a> index_pool;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  map&lt;int, string&gt; oids;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  map&lt;int, cls_rgw_bi_log_list_ret&gt; bi_log_lists;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#afd437694b4c31848177fed3a382233d6">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc.html#a47668d30f599d9f40868d7193ebaaf7d">bi</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#aaa63aef652cb6b732d3d1209f8a75954">open_bucket_index</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, bucket_info, shard_id, &amp;index_pool, &amp;oids, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  BucketIndexShardsManager marker_mgr;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">bool</span> has_shards = (oids.size() &gt; 1 || shard_id &gt;= 0);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="comment">// If there are multiple shards for the bucket index object, the marker</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="comment">// should have the pattern &#39;{shard_id_1}#{shard_marker_1},{shard_id_2}#</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">// {shard_marker_2}...&#39;, if there is no sharding, the bi_log_list should</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">// only contain one record, and the key is the bucket instance id.</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = marker_mgr.from_string(marker, shard_id);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = CLSRGWIssueBILogList(index_pool.<a class="code hl_function" href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">ioctx</a>(), marker_mgr, max, oids, bi_log_lists, <a class="code hl_variable" href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">cct</a>-&gt;_conf-&gt;rgw_bucket_index_max_aio)();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  map&lt;int, list&lt;rgw_bi_log_entry&gt;::iterator&gt; vcurrents;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  map&lt;int, list&lt;rgw_bi_log_entry&gt;::iterator&gt; vends;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">if</span> (truncated) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    *truncated = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  map&lt;int, cls_rgw_bi_log_list_ret&gt;::iterator miter = bi_log_lists.begin();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordflow">for</span> (; miter != bi_log_lists.end(); ++miter) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">int</span> shard_id = miter-&gt;first;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    vcurrents[shard_id] = miter-&gt;second.entries.begin();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    vends[shard_id] = miter-&gt;second.entries.end();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> (truncated) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      *truncated = (*truncated || miter-&gt;second.truncated);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordtype">size_t</span> total = 0;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">bool</span> has_more = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  map&lt;int, list&lt;rgw_bi_log_entry&gt;::iterator&gt;::iterator viter;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  map&lt;int, list&lt;rgw_bi_log_entry&gt;::iterator&gt;::iterator eiter;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordflow">while</span> (total &lt; max &amp;&amp; has_more) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    has_more = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    viter = vcurrents.begin();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    eiter = vends.begin();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">for</span> (; total &lt; max &amp;&amp; viter != vcurrents.end(); ++viter, ++eiter) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      assert (eiter != vends.end());</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keywordtype">int</span> shard_id = viter-&gt;first;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      list&lt;rgw_bi_log_entry&gt;::iterator&amp; liter = viter-&gt;second;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <span class="keywordflow">if</span> (liter == eiter-&gt;second){</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      rgw_bi_log_entry&amp; entry = *(liter);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      <span class="keywordflow">if</span> (has_shards) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordtype">char</span> buf[16];</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%d&quot;</span>, shard_id);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordtype">string</span> tmp_id;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <a class="code hl_function" href="svc__bilog__rados_8cc.html#af7108d22a05cdc3120d4e81353452277">build_bucket_index_marker</a>(buf, entry.id, &amp;tmp_id);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        entry.id.swap(tmp_id);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      marker_mgr.add(shard_id, entry.id);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      result.push_back(entry);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      total++;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      has_more = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      ++liter;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordflow">if</span> (truncated) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">for</span> (viter = vcurrents.begin(), eiter = vends.begin(); viter != vcurrents.end(); ++viter, ++eiter) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      assert (eiter != vends.end());</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      *truncated = (*truncated || (viter-&gt;second != eiter-&gt;second));</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="comment">// Refresh marker, if there are multiple shards, the output will look like</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="comment">// &#39;{shard_oid_1}#{shard_marker_1},{shard_oid_2}#{shard_marker_2}...&#39;,</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">// if there is no sharding, the simply marker (without oid) is returned</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordflow">if</span> (has_shards) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    marker_mgr.to_string(&amp;marker);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">if</span> (!result.empty()) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      marker = result.rbegin()-&gt;id;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#aa40354b23a8f83171b9dc90707634325">  179</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#aa40354b23a8f83171b9dc90707634325">RGWSI_BILog_RADOS::get_log_status</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                                      <span class="keyword">const</span> <a class="code hl_struct" href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a>&amp; bucket_info,</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                                      <span class="keywordtype">int</span> shard_id,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                                      map&lt;int, string&gt; *markers,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                      optional_yield y)</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>{</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  vector&lt;rgw_bucket_dir_header&gt; headers;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  map&lt;int, string&gt; bucket_instance_ids;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> = <a class="code hl_variable" href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#afd437694b4c31848177fed3a382233d6">svc</a>.<a class="code hl_variable" href="struct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc.html#a47668d30f599d9f40868d7193ebaaf7d">bi</a>-&gt;<a class="code hl_function" href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#ad79c27ec8435bf5e736858b016e725ee">cls_bucket_head</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, bucket_info, shard_id, &amp;headers, &amp;bucket_instance_ids, y);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a> &lt; 0)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  ceph_assert(headers.size() == bucket_instance_ids.size());</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keyword">auto</span> iter = headers.begin();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  map&lt;int, string&gt;::iterator viter = bucket_instance_ids.begin();</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keywordflow">for</span>(; iter != headers.end(); ++iter, ++viter) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">if</span> (shard_id &gt;= 0) {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      (*markers)[shard_id] = iter-&gt;max_marker;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      (*markers)[viter-&gt;first] = iter-&gt;max_marker;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_a0cf423aab0587d9d2ea74b1ae6d69c26"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a0cf423aab0587d9d2ea74b1ae6d69c26">RGWSI_BILog_RADOS::log_list</a></div><div class="ttdeci">int log_list(const DoutPrefixProvider *dpp, const RGWBucketInfo &amp;bucket_info, int shard_id, std::string &amp;marker, uint32_t max, std::list&lt; rgw_bi_log_entry &gt; &amp;result, bool *truncated)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00081">svc_bilog_rados.cc:81</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_a1cfea7fed476d2aef2570a6d588fcaae"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a1cfea7fed476d2aef2570a6d588fcaae">RGWSI_BILog_RADOS::log_trim</a></div><div class="ttdeci">int log_trim(const DoutPrefixProvider *dpp, const RGWBucketInfo &amp;bucket_info, int shard_id, std::string &amp;start_marker, std::string &amp;end_marker)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00022">svc_bilog_rados.cc:22</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_a244183814514970d717457b1562585dc"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a244183814514970d717457b1562585dc">RGWSI_BILog_RADOS::log_start</a></div><div class="ttdeci">int log_start(const DoutPrefixProvider *dpp, const RGWBucketInfo &amp;bucket_info, int shard_id)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00049">svc_bilog_rados.cc:49</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_a4345b13ae162488a2c45423e56429f78"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#a4345b13ae162488a2c45423e56429f78">RGWSI_BILog_RADOS::RGWSI_BILog_RADOS</a></div><div class="ttdeci">RGWSI_BILog_RADOS(CephContext *cct)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00013">svc_bilog_rados.cc:13</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_aa40354b23a8f83171b9dc90707634325"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#aa40354b23a8f83171b9dc90707634325">RGWSI_BILog_RADOS::get_log_status</a></div><div class="ttdeci">int get_log_status(const DoutPrefixProvider *dpp, const RGWBucketInfo &amp;bucket_info, int shard_id, std::map&lt; int, std::string &gt; *markers, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00179">svc_bilog_rados.cc:179</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_aa99be3b15a084b5f5baebc3ecdd409bf"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#aa99be3b15a084b5f5baebc3ecdd409bf">RGWSI_BILog_RADOS::init</a></div><div class="ttdeci">void init(RGWSI_BucketIndex_RADOS *bi_rados_svc)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00017">svc_bilog_rados.cc:17</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_acf4d014448490d383c26d98a42d01abf"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#acf4d014448490d383c26d98a42d01abf">RGWSI_BILog_RADOS::log_stop</a></div><div class="ttdeci">int log_stop(const DoutPrefixProvider *dpp, const RGWBucketInfo &amp;bucket_info, int shard_id)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00060">svc_bilog_rados.cc:60</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___b_i_log___r_a_d_o_s_html_afd437694b4c31848177fed3a382233d6"><div class="ttname"><a href="class_r_g_w_s_i___b_i_log___r_a_d_o_s.html#afd437694b4c31848177fed3a382233d6">RGWSI_BILog_RADOS::svc</a></div><div class="ttdeci">struct RGWSI_BILog_RADOS::Svc svc</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket_index___r_a_d_o_s_html"><div class="ttname"><a href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html">RGWSI_BucketIndex_RADOS</a></div><div class="ttdef"><b>Definition</b> <a href="svc__bi__rados_8h_source.html#l00035">svc_bi_rados.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket_index___r_a_d_o_s_html_aaa63aef652cb6b732d3d1209f8a75954"><div class="ttname"><a href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#aaa63aef652cb6b732d3d1209f8a75954">RGWSI_BucketIndex_RADOS::open_bucket_index</a></div><div class="ttdeci">int open_bucket_index(const DoutPrefixProvider *dpp, const RGWBucketInfo &amp;bucket_info, RGWSI_RADOS::Pool *index_pool, std::string *bucket_oid)</div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___bucket_index___r_a_d_o_s_html_ad79c27ec8435bf5e736858b016e725ee"><div class="ttname"><a href="class_r_g_w_s_i___bucket_index___r_a_d_o_s.html#ad79c27ec8435bf5e736858b016e725ee">RGWSI_BucketIndex_RADOS::cls_bucket_head</a></div><div class="ttdeci">int cls_bucket_head(const DoutPrefixProvider *dpp, const RGWBucketInfo &amp;bucket_info, int shard_id, std::vector&lt; rgw_bucket_dir_header &gt; *headers, std::map&lt; int, std::string &gt; *bucket_instance_ids, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="svc__bi__rados_8cc_source.html#l00302">svc_bi_rados.cc:302</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_pool_html"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html">RGWSI_RADOS::Pool</a></div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00082">svc_rados.h:82</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_1_1_pool_html_a93e7513947d59965733e309d18e7b192"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s_1_1_pool.html#a93e7513947d59965733e309d18e7b192">RGWSI_RADOS::Pool::ioctx</a></div><div class="ttdeci">librados::IoCtx &amp; ioctx()</div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00111">svc_rados.h:111</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html"><div class="ttname"><a href="class_r_g_w_service_instance.html">RGWServiceInstance</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00018">rgw_service.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_service_instance_html_ab329eb7534d92dadb1c4232a6a617937"><div class="ttname"><a href="class_r_g_w_service_instance.html#ab329eb7534d92dadb1c4232a6a617937">RGWServiceInstance::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__service_8h_source.html#l00023">rgw_service.h:23</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__aio_8cc_html_ae38055824c6eac64615832ad9d888539"><div class="ttname"><a href="rgw__aio_8cc.html#ae38055824c6eac64615832ad9d888539">r</a></div><div class="ttdeci">AioResult &amp; r</div><div class="ttdef"><b>Definition</b> <a href="rgw__aio_8cc_source.html#l00067">rgw_aio.cc:67</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_info_html"><div class="ttname"><a href="struct_r_g_w_bucket_info.html">RGWBucketInfo</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01062">rgw_common.h:1062</a></div></div>
+<div class="ttc" id="astruct_r_g_w_bucket_info_html_afbd8422e16061abdf72d710794ac74d4"><div class="ttname"><a href="struct_r_g_w_bucket_info.html#afbd8422e16061abdf72d710794ac74d4">RGWBucketInfo::bucket</a></div><div class="ttdeci">rgw_bucket bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01063">rgw_common.h:1063</a></div></div>
+<div class="ttc" id="astruct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc_html_a47668d30f599d9f40868d7193ebaaf7d"><div class="ttname"><a href="struct_r_g_w_s_i___b_i_log___r_a_d_o_s_1_1_svc.html#a47668d30f599d9f40868d7193ebaaf7d">RGWSI_BILog_RADOS::Svc::bi</a></div><div class="ttdeci">RGWSI_BucketIndex_RADOS * bi</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8h_source.html#l00031">svc_bilog_rados.h:31</a></div></div>
+<div class="ttc" id="asvc__bi__rados_8h_html"><div class="ttname"><a href="svc__bi__rados_8h.html">svc_bi_rados.h</a></div></div>
+<div class="ttc" id="asvc__bilog__rados_8cc_html_af7108d22a05cdc3120d4e81353452277"><div class="ttname"><a href="svc__bilog__rados_8cc.html#af7108d22a05cdc3120d4e81353452277">build_bucket_index_marker</a></div><div class="ttdeci">static void build_bucket_index_marker(const string &amp;shard_id_str, const string &amp;shard_marker, string *marker)</div><div class="ttdef"><b>Definition</b> <a href="svc__bilog__rados_8cc_source.html#l00071">svc_bilog_rados.cc:71</a></div></div>
+<div class="ttc" id="asvc__bilog__rados_8h_html"><div class="ttname"><a href="svc__bilog__rados_8h.html">svc_bilog_rados.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="dir_0806e5fe8c1e11f19e2f09d9746a581b.html">services</a></li><li class="navelem"><a class="el" href="svc__bilog__rados_8cc.html">svc_bilog_rados.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

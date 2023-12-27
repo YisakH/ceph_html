@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_sync_error_repo.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__sync__error__repo_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_sync_error_repo.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__sync__error__repo_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Ceph - scalable distributed file system</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Copyright (C) 2020 Red Hat, Inc</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * This is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * License version 2.1, as published by the Free Software</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * Foundation.  See file COPYING.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;include/rados/librados_fwd.hpp&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;include/buffer_fwd.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;common/ceph_time.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s.html">RGWSI_RADOS</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">struct </span><a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// decode a timestamp as a uint64_t for CMPXATTR_MODE_U64</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="rgw__sync__error__repo_8h.html#a5a6a34dd273387c83271db67d5fb8f15">   26</a></span>ceph::real_time <a class="code hl_function" href="rgw__sync__error__repo_8h.html#a5a6a34dd273387c83271db67d5fb8f15">rgw_error_repo_decode_value</a>(<span class="keyword">const</span> ceph::bufferlist&amp; bl);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// write an omap key iff the given timestamp is newer</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">int</span> <a class="code hl_function" href="rgw__sync__error__repo_8h.html#ad2be60b388a32b131be9bee192e2e98f">rgw_error_repo_write</a>(librados::ObjectWriteOperation&amp; op,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                         <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                         ceph::real_time timestamp);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a>* <a class="code hl_function" href="rgw__sync__error__repo_8h.html#ab329fededb3f68ac1a8b744cca53b2d6">rgw_error_repo_write_cr</a>(<a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s.html">RGWSI_RADOS</a>* rados,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                                      <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                      <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                      ceph::real_time timestamp);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// remove an omap key iff there isn&#39;t a newer timestamp</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">int</span> <a class="code hl_function" href="rgw__sync__error__repo_8h.html#ac635d856d8fadbb4ea5e4d881e07d480">rgw_error_repo_remove</a>(librados::ObjectWriteOperation&amp; op,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                          <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                          ceph::real_time timestamp);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><a class="code hl_class" href="class_r_g_w_coroutine.html">RGWCoroutine</a>* <a class="code hl_function" href="rgw__sync__error__repo_8h.html#a206838d2fcff9bb4c932f662c62a10a3">rgw_error_repo_remove_cr</a>(<a class="code hl_class" href="class_r_g_w_s_i___r_a_d_o_s.html">RGWSI_RADOS</a>* rados,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                                       <span class="keyword">const</span> <a class="code hl_struct" href="structrgw__raw__obj.html">rgw_raw_obj</a>&amp; obj,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                       <span class="keyword">const</span> std::string&amp; key,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                                       ceph::real_time timestamp);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="ttc" id="aclass_r_g_w_coroutine_html"><div class="ttname"><a href="class_r_g_w_coroutine.html">RGWCoroutine</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__coroutine_8h_source.html#l00186">rgw_coroutine.h:186</a></div></div>
+<div class="ttc" id="aclass_r_g_w_s_i___r_a_d_o_s_html"><div class="ttname"><a href="class_r_g_w_s_i___r_a_d_o_s.html">RGWSI_RADOS</a></div><div class="ttdef"><b>Definition</b> <a href="svc__rados_8h_source.html#l00028">svc_rados.h:29</a></div></div>
+<div class="ttc" id="argw__sync__error__repo_8h_html_a206838d2fcff9bb4c932f662c62a10a3"><div class="ttname"><a href="rgw__sync__error__repo_8h.html#a206838d2fcff9bb4c932f662c62a10a3">rgw_error_repo_remove_cr</a></div><div class="ttdeci">RGWCoroutine * rgw_error_repo_remove_cr(RGWSI_RADOS *rados, const rgw_raw_obj &amp;obj, const std::string &amp;key, ceph::real_time timestamp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__error__repo_8cc_source.html#l00131">rgw_sync_error_repo.cc:131</a></div></div>
+<div class="ttc" id="argw__sync__error__repo_8h_html_a5a6a34dd273387c83271db67d5fb8f15"><div class="ttname"><a href="rgw__sync__error__repo_8h.html#a5a6a34dd273387c83271db67d5fb8f15">rgw_error_repo_decode_value</a></div><div class="ttdeci">ceph::real_time rgw_error_repo_decode_value(const ceph::bufferlist &amp;bl)</div></div>
+<div class="ttc" id="argw__sync__error__repo_8h_html_ab329fededb3f68ac1a8b744cca53b2d6"><div class="ttname"><a href="rgw__sync__error__repo_8h.html#ab329fededb3f68ac1a8b744cca53b2d6">rgw_error_repo_write_cr</a></div><div class="ttdeci">RGWCoroutine * rgw_error_repo_write_cr(RGWSI_RADOS *rados, const rgw_raw_obj &amp;obj, const std::string &amp;key, ceph::real_time timestamp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__error__repo_8cc_source.html#l00088">rgw_sync_error_repo.cc:88</a></div></div>
+<div class="ttc" id="argw__sync__error__repo_8h_html_ac635d856d8fadbb4ea5e4d881e07d480"><div class="ttname"><a href="rgw__sync__error__repo_8h.html#ac635d856d8fadbb4ea5e4d881e07d480">rgw_error_repo_remove</a></div><div class="ttdeci">int rgw_error_repo_remove(librados::ObjectWriteOperation &amp;op, const std::string &amp;key, ceph::real_time timestamp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__error__repo_8cc_source.html#l00044">rgw_sync_error_repo.cc:44</a></div></div>
+<div class="ttc" id="argw__sync__error__repo_8h_html_ad2be60b388a32b131be9bee192e2e98f"><div class="ttname"><a href="rgw__sync__error__repo_8h.html#ad2be60b388a32b131be9bee192e2e98f">rgw_error_repo_write</a></div><div class="ttdeci">int rgw_error_repo_write(librados::ObjectWriteOperation &amp;op, const std::string &amp;key, ceph::real_time timestamp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__error__repo_8cc_source.html#l00033">rgw_sync_error_repo.cc:33</a></div></div>
+<div class="ttc" id="astructrgw__raw__obj_html"><div class="ttname"><a href="structrgw__raw__obj.html">rgw_raw_obj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00922">rgw_common.h:922</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__sync__error__repo_8h.html">rgw_sync_error_repo.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

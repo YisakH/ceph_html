@@ -1,0 +1,1009 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_sync_module_pubsub.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__sync__module__pubsub_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#typedef-members">타입정의</a> &#124;
+<a href="#func-members">함수</a>  </div>
+  <div class="headertitle"><div class="title">rgw_sync_module_pubsub.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="svc__zone_8h_source.html">services/svc_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__common_8h_source.html">rgw_common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__coroutine_8h_source.html">rgw_coroutine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__module_8h_source.html">rgw_sync_module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__data__sync_8h_source.html">rgw_data_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__module__pubsub_8h_source.html">rgw_sync_module_pubsub.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sync__module__pubsub__rest_8h_source.html">rgw_sync_module_pubsub_rest.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__rest__conn_8h_source.html">rgw_rest_conn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__rados_8h_source.html">rgw_cr_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__rest_8h_source.html">rgw_cr_rest.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__tools_8h_source.html">rgw_cr_tools.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__op_8h_source.html">rgw_op.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__pubsub_8h_source.html">rgw_pubsub.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__pubsub__push_8h_source.html">rgw_pubsub_push.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__notify__event__type_8h_source.html">rgw_notify_event_type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__perf__counters_8h_source.html">rgw_perf_counters.h</a>&quot;</code><br />
+<code>#include &lt;boost/algorithm/hex.hpp&gt;</code><br />
+<code>#include &lt;boost/asio/yield.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_sync_module_pubsub.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__sync__module__pubsub_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__sync__module__pubsub_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__sync__module__pubsub_8cc">
+<area shape="rect" title=" " alt="" coords="3144,5,3341,48"/>
+<area shape="rect" href="svc__zone_8h.html" title=" " alt="" coords="948,187,1086,213"/>
+<area shape="poly" title=" " alt="" coords="3144,31,2709,37,2109,48,1545,68,1340,82,1267,90,1219,99,1171,115,1124,136,1049,180,1046,175,1122,131,1169,110,1218,93,1266,85,1339,77,1545,63,2109,43,2709,31,3144,26"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="1433,336,1566,363"/>
+<area shape="poly" title=" " alt="" coords="3144,43,2967,67,2764,99,2413,162,2070,230,1572,335,1571,330,2069,225,2412,157,2763,93,2966,62,3143,38"/>
+<area shape="rect" href="rgw__coroutine_8h.html" title=" " alt="" coords="3312,261,3424,288"/>
+<area shape="poly" title=" " alt="" coords="3239,49,3231,83,3226,125,3229,170,3235,192,3245,212,3268,236,3298,253,3296,258,3265,241,3240,215,3230,194,3224,171,3220,125,3225,82,3233,48"/>
+<area shape="rect" href="rgw__sync__module_8h.html" title=" " alt="" coords="2993,187,3129,213"/>
+<area shape="poly" title=" " alt="" coords="3228,50,3190,93,3143,141,3094,180,3090,175,3139,137,3186,90,3224,47"/>
+<area shape="rect" href="rgw__data__sync_8h.html" title=" " alt="" coords="3009,104,3129,131"/>
+<area shape="poly" title=" " alt="" coords="3203,51,3109,99,3106,94,3201,46"/>
+<area shape="rect" href="rgw__sync__module__pubsub_8h.html" title=" " alt="" coords="2800,104,2986,131"/>
+<area shape="poly" title=" " alt="" coords="3161,51,2959,102,2957,97,3160,46"/>
+<area shape="rect" href="rgw__sync__module__pubsub__rest_8h.html" title=" " alt="" coords="3486,96,3660,139"/>
+<area shape="poly" title=" " alt="" coords="3321,46,3482,89,3480,94,3319,51"/>
+<area shape="rect" href="rgw__rest__conn_8h.html" title=" " alt="" coords="3116,261,3233,288"/>
+<area shape="poly" title=" " alt="" coords="3144,31,3044,35,2938,46,2889,55,2846,66,2812,81,2790,98,2777,117,2771,134,2773,150,2780,165,2793,178,2811,191,2859,213,2918,231,2981,246,3101,264,3100,269,2980,251,2916,237,2857,218,2808,196,2790,182,2776,168,2768,151,2766,134,2772,114,2786,94,2810,76,2845,61,2888,50,2937,41,3044,30,3144,26"/>
+<area shape="rect" href="rgw__cr__rados_8h.html" title=" " alt="" coords="3377,187,3486,213"/>
+<area shape="poly" title=" " alt="" coords="3261,47,3298,90,3346,137,3399,176,3396,180,3342,141,3294,93,3257,50"/>
+<area shape="rect" href="rgw__cr__rest_8h.html" title=" " alt="" coords="3254,187,3353,213"/>
+<area shape="poly" title=" " alt="" coords="3252,48,3297,171,3292,173,3247,49"/>
+<area shape="rect" href="rgw__cr__tools_8h.html" title=" " alt="" coords="3356,104,3462,131"/>
+<area shape="poly" title=" " alt="" coords="3283,46,3373,94,3371,99,3280,51"/>
+<area shape="rect" href="rgw__op_8h.html" title=" " alt="" coords="1046,261,1119,288"/>
+<area shape="poly" title=" " alt="" coords="3144,31,2729,33,2162,43,1881,51,1632,63,1439,79,1372,88,1327,99,1259,130,1197,172,1144,216,1106,252,1103,248,1141,212,1194,168,1257,126,1326,93,1371,83,1439,73,1631,58,1880,46,2162,37,2729,28,3144,25"/>
+<area shape="rect" href="rgw__pubsub_8h.html" title=" " alt="" coords="3734,104,3836,131"/>
+<area shape="poly" title=" " alt="" coords="3341,36,3517,58,3716,93,3731,97,3730,102,3715,99,3516,63,3341,41"/>
+<area shape="rect" href="rgw__notify__event__type_8h.html" title=" " alt="" coords="3661,187,3821,213"/>
+<area shape="poly" title=" " alt="" coords="3341,32,3431,40,3528,53,3614,71,3648,81,3673,94,3693,110,3710,130,3733,171,3728,173,3705,133,3689,114,3670,98,3646,86,3612,76,3527,58,3431,46,3341,37"/>
+<area shape="rect" href="rgw__pubsub__push_8h.html" title=" " alt="" coords="428,261,564,288"/>
+<area shape="poly" title=" " alt="" coords="3144,31,2729,32,2141,41,1834,50,1547,62,1299,78,1112,99,946,133,784,177,644,222,543,258,542,253,643,217,783,172,945,128,1111,93,1299,72,1546,56,1834,44,2141,36,2729,27,3144,25"/>
+<area shape="rect" href="rgw__perf__counters_8h.html" title=" " alt="" coords="3860,104,3998,131"/>
+<area shape="poly" title=" " alt="" coords="3341,32,3573,55,3711,72,3848,93,3868,97,3867,103,3847,99,3710,77,3573,60,3341,38"/>
+<area shape="rect" title=" " alt="" coords="4022,104,4183,131"/>
+<area shape="poly" title=" " alt="" coords="3341,30,3641,51,3826,69,4011,93,4036,98,4035,103,4010,99,3825,75,3641,56,3341,35"/>
+<area shape="rect" title=" " alt="" coords="4207,104,4344,131"/>
+<area shape="poly" title=" " alt="" coords="3341,27,3504,32,3717,43,3955,63,4195,93,4216,97,4215,103,4194,99,3955,68,3717,49,3504,37,3341,32"/>
+<area shape="rect" href="rgw__service_8h.html" title=" " alt="" coords="898,261,1021,288"/>
+<area shape="poly" title=" " alt="" coords="1009,216,981,251,977,247,1005,212"/>
+<area shape="rect" title=" " alt="" coords="237,501,378,544"/>
+<area shape="poly" title=" " alt="" coords="898,281,496,300,291,317,219,327,177,338,140,361,113,388,105,403,102,418,105,435,114,452,136,474,162,491,192,503,223,511,221,517,190,509,160,496,132,479,110,455,100,436,97,418,100,401,109,385,137,357,175,334,217,322,291,312,495,294,898,275"/>
+<area shape="poly" title=" " alt="" coords="1022,284,1033,285,1418,336,1417,341,1033,291,1021,289"/>
+<area shape="poly" title=" " alt="" coords="1433,363,1415,365,1283,371,1113,374,1026,378,945,385,875,396,821,413,808,422,800,433,791,445,777,456,746,467,705,478,604,495,394,518,394,513,603,490,704,473,745,462,775,451,788,441,795,430,804,418,819,408,874,391,945,379,1026,373,1113,369,1283,366,1414,360,1432,358"/>
+<area shape="rect" title=" " alt="" coords="561,419,612,445"/>
+<area shape="poly" title=" " alt="" coords="1433,354,1252,359,1018,369,789,386,695,398,624,413,621,414,619,409,623,408,694,393,789,381,1018,363,1252,353,1432,349"/>
+<area shape="rect" title=" " alt="" coords="1430,592,1514,619"/>
+<area shape="poly" title=" " alt="" coords="1433,363,1415,365,1165,377,1012,390,958,400,940,406,930,413,910,440,904,464,908,485,922,504,945,521,976,536,1056,561,1150,578,1248,590,1414,600,1414,605,1247,595,1149,583,1054,566,974,541,943,526,919,508,903,487,898,464,906,437,926,409,938,401,956,395,1011,384,1164,371,1414,360,1432,358"/>
+<area shape="rect" title=" " alt="" coords="3315,509,3375,536"/>
+<area shape="poly" title=" " alt="" coords="1567,349,1955,353,2507,364,3015,382,3187,394,3241,401,3270,408,3294,426,3312,448,3338,493,3333,496,3308,451,3290,430,3268,413,3240,406,3187,399,3015,387,2507,369,1955,359,1567,354"/>
+<area shape="rect" title=" " alt="" coords="1635,419,1746,445"/>
+<area shape="poly" title=" " alt="" coords="1531,361,1648,410,1646,415,1529,366"/>
+<area shape="rect" title=" " alt="" coords="1769,419,1926,445"/>
+<area shape="poly" title=" " alt="" coords="1555,361,1779,412,1777,417,1554,366"/>
+<area shape="rect" title=" " alt="" coords="1950,419,2119,445"/>
+<area shape="poly" title=" " alt="" coords="1567,356,1736,377,1939,408,1963,413,1962,418,1938,413,1736,383,1567,361"/>
+<area shape="rect" href="rgw__acl_8h.html" title=" " alt="" coords="1560,509,1637,536"/>
+<area shape="poly" title=" " alt="" coords="1523,361,1550,381,1574,409,1592,452,1599,493,1594,494,1587,454,1570,412,1546,385,1520,365"/>
+<area shape="rect" href="rgw__bucket__layout_8h.html" title=" " alt="" coords="2143,419,2283,445"/>
+<area shape="poly" title=" " alt="" coords="1567,351,1816,369,1973,386,2131,408,2152,412,2151,417,2130,413,1972,391,1815,374,1567,357"/>
+<area shape="rect" href="rgw__cors_8h.html" title=" " alt="" coords="138,419,222,445"/>
+<area shape="poly" title=" " alt="" coords="1433,354,1182,357,836,367,488,385,344,397,235,413,224,416,222,411,234,408,343,392,488,379,835,361,1182,352,1433,349"/>
+<area shape="rect" href="rgw__iam__policy_8h.html" title=" " alt="" coords="1439,419,1560,445"/>
+<area shape="poly" title=" " alt="" coords="1502,363,1502,403,1497,403,1497,363"/>
+<area shape="rect" href="rgw__string_8h.html" title=" " alt="" coords="1371,509,1463,536"/>
+<area shape="poly" title=" " alt="" coords="1478,365,1451,385,1429,412,1421,432,1417,453,1416,494,1411,494,1412,453,1416,431,1424,409,1447,381,1474,361"/>
+<area shape="rect" href="rgw__quota_8h.html" title=" " alt="" coords="3166,419,3257,445"/>
+<area shape="poly" title=" " alt="" coords="1567,349,2320,368,2772,385,2961,396,3104,408,3151,415,3151,420,3103,413,2961,401,2772,391,2320,373,1567,355"/>
+<area shape="rect" href="rgw__website_8h.html" title=" " alt="" coords="2307,419,2410,445"/>
+<area shape="poly" title=" " alt="" coords="1567,348,1702,350,1883,359,2089,377,2194,391,2296,408,2310,411,2309,417,2295,413,2193,396,2089,382,1883,364,1702,356,1567,353"/>
+<area shape="rect" href="rgw__object__lock_8h.html" title=" " alt="" coords="246,419,372,445"/>
+<area shape="poly" title=" " alt="" coords="1433,355,907,374,605,391,479,402,384,413,365,417,364,412,383,408,479,396,604,386,906,369,1433,350"/>
+<area shape="rect" href="rgw__tag_8h.html" title=" " alt="" coords="661,509,738,536"/>
+<area shape="poly" title=" " alt="" coords="1433,363,1415,365,1333,372,1264,373,1145,370,1088,371,1028,376,962,390,885,413,866,422,852,432,821,456,738,504,735,499,818,451,849,427,863,417,883,408,960,385,1027,371,1088,365,1145,365,1264,368,1333,367,1414,360,1432,358"/>
+<area shape="rect" href="rgw__op__type_8h.html" title=" " alt="" coords="2434,419,2539,445"/>
+<area shape="poly" title=" " alt="" coords="1567,347,1721,348,1934,355,2177,373,2302,388,2423,408,2438,411,2436,417,2422,413,2301,394,2177,379,1934,360,1721,353,1567,352"/>
+<area shape="rect" href="rgw__sync__policy_8h.html" title=" " alt="" coords="636,419,764,445"/>
+<area shape="poly" title=" " alt="" coords="1433,363,1415,365,1237,379,1098,384,959,392,783,413,761,417,760,412,782,408,959,386,1098,379,1237,374,1414,360,1432,358"/>
+<area shape="rect" title=" " alt="" coords="2563,411,2714,453"/>
+<area shape="poly" title=" " alt="" coords="1567,348,1736,350,1977,359,2258,377,2404,390,2548,408,2547,413,2403,396,2258,382,1977,364,1736,356,1567,353"/>
+<area shape="rect" title=" " alt="" coords="2737,419,2908,445"/>
+<area shape="poly" title=" " alt="" coords="1567,348,1764,349,2051,357,2385,375,2557,389,2725,408,2754,413,2753,418,2725,413,2557,395,2385,380,2051,362,1764,355,1567,353"/>
+<area shape="rect" title=" " alt="" coords="2932,419,3092,445"/>
+<area shape="poly" title=" " alt="" coords="1567,349,2235,368,2630,385,2795,396,2920,408,2947,412,2946,418,2919,413,2795,401,2630,390,2235,373,1567,355"/>
+<area shape="rect" title=" " alt="" coords="940,419,1113,445"/>
+<area shape="poly" title=" " alt="" coords="1433,363,1124,413,1101,418,1100,412,1123,408,1432,358"/>
+<area shape="rect" href="rgw__public__access_8h.html" title=" " alt="" coords="395,419,538,445"/>
+<area shape="poly" title=" " alt="" coords="1433,354,1275,357,1056,365,804,383,675,397,550,413,528,417,527,412,549,408,675,391,804,378,1055,360,1275,351,1432,348"/>
+<area shape="rect" title=" " alt="" coords="1136,419,1255,445"/>
+<area shape="poly" title=" " alt="" coords="1450,366,1267,413,1255,417,1254,411,1266,408,1449,361"/>
+<area shape="rect" href="rgw__auth_8h.html" title=" " alt="" coords="1279,419,1363,445"/>
+<area shape="poly" title=" " alt="" coords="1466,366,1357,414,1355,409,1464,361"/>
+<area shape="poly" title=" " alt="" coords="1580,539,1506,586,1503,581,1577,534"/>
+<area shape="rect" title=" " alt="" coords="1564,592,1686,619"/>
+<area shape="poly" title=" " alt="" coords="1605,536,1619,577,1614,579,1600,537"/>
+<area shape="poly" title=" " alt="" coords="1500,446,1479,577,1474,576,1495,445"/>
+<area shape="poly" title=" " alt="" coords="1516,444,1575,497,1571,501,1512,448"/>
+<area shape="poly" title=" " alt="" coords="1490,448,1441,500,1437,496,1486,444"/>
+<area shape="poly" title=" " alt="" coords="1428,535,1457,578,1453,581,1423,538"/>
+<area shape="poly" title=" " alt="" coords="3166,446,3104,456,2865,473,2568,484,2232,490,1877,493,1186,495,889,498,649,504,394,518,394,513,649,499,889,493,1186,490,1877,487,2232,484,2568,478,2865,468,3103,451,3165,441"/>
+<area shape="poly" title=" " alt="" coords="3232,444,3315,498,3312,503,3229,448"/>
+<area shape="rect" title=" " alt="" coords="3169,509,3278,536"/>
+<area shape="poly" title=" " alt="" coords="3216,446,3223,493,3217,494,3211,446"/>
+<area shape="poly" title=" " alt="" coords="702,446,702,494,697,494,697,446"/>
+<area shape="poly" title=" " alt="" coords="1354,416,1464,367,1466,372,1357,421"/>
+<area shape="poly" title=" " alt="" coords="3311,285,3245,291,2751,317,2267,335,1582,350,1582,344,2267,329,2750,312,3245,285,3311,280"/>
+<area shape="poly" title=" " alt="" coords="3425,278,3476,286,3523,302,3542,313,3554,327,3559,344,3554,364,3539,389,3521,412,3478,451,3432,482,3391,505,3388,500,3430,478,3475,447,3517,408,3535,386,3549,362,3554,344,3550,329,3538,317,3521,307,3474,292,3424,283"/>
+<area shape="poly" title=" " alt="" coords="3425,282,3513,303,3551,317,3575,334,3594,371,3596,389,3595,405,3580,436,3554,464,3519,489,3478,511,3389,547,3346,556,3282,565,3101,579,2867,590,2604,597,2077,605,1702,607,1702,601,2077,600,2604,592,2867,584,3101,574,3282,560,3345,551,3387,541,3476,506,3516,485,3551,460,3576,433,3589,404,3591,389,3589,373,3571,338,3549,322,3512,308,3424,287"/>
+<area shape="poly" title=" " alt="" coords="3374,288,3379,322,3378,343,3373,364,3350,407,3319,445,3286,477,3256,502,3253,498,3283,473,3315,442,3345,404,3368,362,3373,343,3373,323,3368,289"/>
+<area shape="rect" title=" " alt="" coords="3433,336,3540,363"/>
+<area shape="poly" title=" " alt="" coords="3390,286,3454,325,3452,330,3387,291"/>
+<area shape="rect" title=" " alt="" coords="3665,336,3817,363"/>
+<area shape="poly" title=" " alt="" coords="3425,284,3662,330,3661,335,3424,290"/>
+<area shape="rect" title=" " alt="" coords="3185,336,3358,363"/>
+<area shape="poly" title=" " alt="" coords="3353,291,3302,329,3299,324,3349,286"/>
+<area shape="poly" title=" " alt="" coords="2993,210,1582,343,1582,338,2992,205"/>
+<area shape="poly" title=" " alt="" coords="3116,211,3300,255,3299,260,3114,217"/>
+<area shape="poly" title=" " alt="" coords="3029,134,2998,141,2661,201,2374,238,2121,261,1884,276,1647,292,1393,315,1107,353,946,380,771,413,755,417,754,412,770,408,945,375,1106,348,1393,310,1646,287,1883,271,2120,256,2374,233,2660,195,2997,136,3027,129"/>
+<area shape="poly" title=" " alt="" coords="3085,129,3134,169,3200,211,3254,235,3307,254,3306,259,3252,240,3197,216,3131,173,3082,133"/>
+<area shape="poly" title=" " alt="" coords="3071,131,3066,172,3061,171,3065,131"/>
+<area shape="poly" title=" " alt="" coords="2921,129,3023,177,3020,182,2918,134"/>
+<area shape="poly" title=" " alt="" coords="3173,289,3166,324,3168,344,3175,361,3189,376,3205,383,3239,386,3276,388,3294,395,3312,409,3327,428,3336,451,3346,493,3341,494,3331,452,3322,431,3309,413,3292,400,3275,394,3239,392,3203,388,3186,380,3171,364,3163,345,3161,324,3167,288"/>
+<area shape="poly" title=" " alt="" coords="3193,286,3245,325,3242,329,3190,291"/>
+<area shape="poly" title=" " alt="" coords="3487,201,3607,211,3675,222,3740,237,3795,258,3817,271,3833,285,3844,302,3848,321,3844,342,3831,364,3810,390,3786,412,3733,450,3672,478,3610,498,3547,512,3487,520,3391,525,3391,520,3487,515,3546,507,3608,493,3671,473,3730,445,3783,408,3806,386,3827,361,3839,340,3843,321,3839,304,3829,289,3813,275,3793,263,3739,242,3674,227,3607,217,3487,206"/>
+<area shape="poly" title=" " alt="" coords="3423,216,3391,251,3387,248,3419,212"/>
+<area shape="poly" title=" " alt="" coords="3459,211,3702,327,3700,331,3457,216"/>
+<area shape="poly" title=" " alt="" coords="3317,212,3349,248,3345,251,3313,216"/>
+<area shape="poly" title=" " alt="" coords="3340,211,3555,285,3687,328,3686,333,3554,291,3339,216"/>
+<area shape="poly" title=" " alt="" coords="3283,216,3212,256,3209,251,3280,212"/>
+<area shape="poly" title=" " alt="" coords="3415,130,3427,171,3422,173,3410,132"/>
+<area shape="poly" title=" " alt="" coords="1120,280,1418,331,1417,337,1119,285"/>
+<area shape="poly" title=" " alt="" coords="1046,288,829,348,710,384,625,413,623,414,621,409,623,408,709,379,828,343,1044,283"/>
+<area shape="poly" title=" " alt="" coords="1120,274,1533,288,2186,316,2516,335,2802,356,3010,381,3074,394,3105,409,3114,420,3116,432,3114,444,3105,455,3083,465,3038,474,2893,489,2691,500,2457,509,1983,520,1652,524,1652,518,1983,514,2457,504,2691,495,2892,484,3037,469,3081,460,3102,451,3109,442,3111,432,3109,422,3102,413,3072,399,3009,386,2802,362,2516,340,2186,321,1533,293,1120,280"/>
+<area shape="poly" title=" " alt="" coords="1046,288,1034,291,899,308,793,315,688,321,554,339,393,369,235,413,227,416,226,411,234,408,392,364,553,333,687,316,793,310,898,303,1033,285,1045,283"/>
+<area shape="poly" title=" " alt="" coords="1120,273,1505,274,2116,281,2433,288,2716,299,2937,314,3015,323,3066,333,3101,348,3135,367,3188,406,3185,410,3132,371,3099,353,3064,339,3014,328,2937,319,2716,304,2432,293,2116,286,1504,279,1120,279"/>
+<area shape="poly" title=" " alt="" coords="1046,288,1034,291,933,306,854,314,775,322,675,339,529,373,384,413,372,417,370,411,383,408,528,368,674,333,775,317,853,309,932,301,1033,285,1045,283"/>
+<area shape="poly" title=" " alt="" coords="1046,288,1034,291,939,303,858,310,721,314,584,318,504,325,409,339,363,344,322,345,249,345,217,350,186,361,157,381,127,412,119,433,121,442,127,451,147,459,194,467,340,485,646,514,645,520,339,491,194,472,146,464,123,455,116,444,113,432,123,409,153,377,184,356,215,345,249,340,322,340,363,339,409,333,503,320,584,312,721,308,858,305,938,298,1033,285,1045,283"/>
+<area shape="poly" title=" " alt="" coords="1046,288,1034,291,903,313,846,323,774,339,634,378,518,416,516,411,632,373,772,333,845,318,902,308,1033,285,1045,283"/>
+<area shape="poly" title=" " alt="" coords="3781,132,3757,175,3753,172,3776,130"/>
+<area shape="poly" title=" " alt="" coords="427,283,193,303,86,319,51,328,32,338,14,366,8,394,15,422,33,452,44,462,61,471,108,487,165,500,222,509,221,514,164,505,107,493,59,476,41,466,28,455,10,424,3,394,9,364,29,334,49,323,85,313,192,297,427,277"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__sync__module__pubsub_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_sub_config.html">PSSubConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_topic_config.html">PSTopicConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_notification_config.html">PSNotificationConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_config.html">PSConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structobjstore__event.html">objstore_event</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_env.html">PSEnv</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_event.html">PSEvent&lt; EventType &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_singleton_c_r.html">RGWSingletonCR&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_singleton_c_r_1_1_waiter_info.html">RGWSingletonCR&lt; T &gt;::WaiterInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_subscription.html">PSSubscription</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_subscription_1_1_init_bucket_lifecycle_c_r.html">PSSubscription::InitBucketLifecycleCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_subscription_1_1_init_c_r.html">PSSubscription::InitCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_subscription_1_1_store_event_c_r.html">PSSubscription::StoreEventCR&lt; EventType &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_subscription_1_1_push_event_c_r.html">PSSubscription::PushEventCR&lt; EventType &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_manager.html">PSManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_s_manager_1_1_get_sub_c_r.html">PSManager::GetSubCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_init_env_c_b_c_r.html">RGWPSInitEnvCBCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_find_bucket_topics_c_r.html">RGWPSFindBucketTopicsCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_handle_obj_event_c_r.html">RGWPSHandleObjEventCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_handle_remote_obj_c_b_c_r.html">RGWPSHandleRemoteObjCBCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_handle_remote_obj_c_r.html">RGWPSHandleRemoteObjCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_handle_obj_create_c_r.html">RGWPSHandleObjCreateCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_generic_obj_event_c_b_c_r.html">RGWPSGenericObjEventCBCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_p_s_data_sync_module.html">RGWPSDataSyncModule</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e5b84b7bca0feba6fcd9334622d05b" id="r_a70e5b84b7bca0feba6fcd9334622d05b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a70e5b84b7bca0feba6fcd9334622d05b">PUBSUB_EVENTS_RETENTION_DEFAULT</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a70e5b84b7bca0feba6fcd9334622d05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+타입정의</h2></td></tr>
+<tr class="memitem:a9c6fe8a9e35bb688bdc0dfcb46e74a91" id="r_a9c6fe8a9e35bb688bdc0dfcb46e74a91"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a9c6fe8a9e35bb688bdc0dfcb46e74a91">PSSubConfigRef</a> = std::shared_ptr&lt; <a class="el" href="struct_p_s_sub_config.html">PSSubConfig</a> &gt;</td></tr>
+<tr class="separator:a9c6fe8a9e35bb688bdc0dfcb46e74a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2fa2f9ee7be9ec943c521e7f7699c8e" id="r_ae2fa2f9ee7be9ec943c521e7f7699c8e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#ae2fa2f9ee7be9ec943c521e7f7699c8e">PSTopicConfigRef</a> = std::shared_ptr&lt; <a class="el" href="struct_p_s_topic_config.html">PSTopicConfig</a> &gt;</td></tr>
+<tr class="separator:ae2fa2f9ee7be9ec943c521e7f7699c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fac3e9ba436ccafb2b1e164c38b2c93" id="r_a8fac3e9ba436ccafb2b1e164c38b2c93"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a8fac3e9ba436ccafb2b1e164c38b2c93">TopicsRef</a> = std::shared_ptr&lt; std::vector&lt; <a class="el" href="rgw__sync__module__pubsub_8cc.html#ae2fa2f9ee7be9ec943c521e7f7699c8e">PSTopicConfigRef</a> &gt; &gt;</td></tr>
+<tr class="separator:a8fac3e9ba436ccafb2b1e164c38b2c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f05c1346843738a4e4afdd42062743" id="r_ae3f05c1346843738a4e4afdd42062743"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#ae3f05c1346843738a4e4afdd42062743">PSConfigRef</a> = std::shared_ptr&lt; <a class="el" href="struct_p_s_config.html">PSConfig</a> &gt;</td></tr>
+<tr class="separator:ae3f05c1346843738a4e4afdd42062743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b26748ff02957ec1ec373a4f0a420f" id="r_ad8b26748ff02957ec1ec373a4f0a420f"><td class="memTemplParams" colspan="2">template&lt;typename EventType &gt; </td></tr>
+<tr class="memitem:ad8b26748ff02957ec1ec373a4f0a420f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef</a> = std::shared_ptr&lt; EventType &gt;</td></tr>
+<tr class="separator:ad8b26748ff02957ec1ec373a4f0a420f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d66fdaaedde99f94c039dc9c8d47221" id="r_a3d66fdaaedde99f94c039dc9c8d47221"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a3d66fdaaedde99f94c039dc9c8d47221">PSManagerRef</a> = std::shared_ptr&lt; <a class="el" href="class_p_s_manager.html">PSManager</a> &gt;</td></tr>
+<tr class="separator:a3d66fdaaedde99f94c039dc9c8d47221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf75fd83a22c03e4eeae0932b31752a" id="r_a8cf75fd83a22c03e4eeae0932b31752a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a8cf75fd83a22c03e4eeae0932b31752a">PSEnvRef</a> = std::shared_ptr&lt; <a class="el" href="struct_p_s_env.html">PSEnv</a> &gt;</td></tr>
+<tr class="separator:a8cf75fd83a22c03e4eeae0932b31752a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b984d869299084410b95debaf7a9163" id="r_a6b984d869299084410b95debaf7a9163"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a6b984d869299084410b95debaf7a9163">PSSubscriptionRef</a> = std::shared_ptr&lt; <a class="el" href="class_p_s_subscription.html">PSSubscription</a> &gt;</td></tr>
+<tr class="separator:a6b984d869299084410b95debaf7a9163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:a7dfdc68b9c480a297b0765caacb2acf3" id="r_a7dfdc68b9c480a297b0765caacb2acf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_g_w_h_t_t_p_args.html">RGWHTTPArgs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a7dfdc68b9c480a297b0765caacb2acf3">string_to_args</a> (const std::string &amp;str_args, const DoutPrefixProvider *<a class="el" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>)</td></tr>
+<tr class="separator:a7dfdc68b9c480a297b0765caacb2acf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95cd156406f6d627131b4faa761e7ae6" id="r_a95cd156406f6d627131b4faa761e7ae6"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a95cd156406f6d627131b4faa761e7ae6"><td class="memTemplItemLeft" align="right" valign="top">static string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a95cd156406f6d627131b4faa761e7ae6">json_str</a> (const char *name, const T &amp;obj, bool pretty=false)</td></tr>
+<tr class="separator:a95cd156406f6d627131b4faa761e7ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a680685668a648b33b677265fc07be8ae" id="r_a680685668a648b33b677265fc07be8ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a680685668a648b33b677265fc07be8ae">make_event_ref</a> (CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, const <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &amp;bucket, const <a class="el" href="structrgw__obj__key.html">rgw_obj_key</a> &amp;key, const ceph::real_time &amp;mtime, const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; *attrs, <a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a> event_type, <a class="el" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef</a>&lt; <a class="el" href="structrgw__pubsub__event.html">rgw_pubsub_event</a> &gt; *event)</td></tr>
+<tr class="separator:a680685668a648b33b677265fc07be8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3691422cb11d18dc41d77815abbb6b" id="r_a8b3691422cb11d18dc41d77815abbb6b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#a8b3691422cb11d18dc41d77815abbb6b">make_s3_event_ref</a> (CephContext *<a class="el" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, const <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &amp;bucket, const <a class="el" href="structrgw__user.html">rgw_user</a> &amp;owner, const <a class="el" href="structrgw__obj__key.html">rgw_obj_key</a> &amp;key, const ceph::real_time &amp;mtime, const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; *attrs, <a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a> event_type, <a class="el" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef</a>&lt; <a class="el" href="structrgw__pubsub__s3__event.html">rgw_pubsub_s3_event</a> &gt; *event)</td></tr>
+<tr class="separator:a8b3691422cb11d18dc41d77815abbb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7fc929948fb038192288e423ea816d0" id="r_aa7fc929948fb038192288e423ea816d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__sync__module__pubsub_8cc.html#aa7fc929948fb038192288e423ea816d0">match</a> (const <a class="el" href="structrgw__pubsub__topic__filter.html">rgw_pubsub_topic_filter</a> &amp;filter, const std::string &amp;key_name, <a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a> event_type)</td></tr>
+<tr class="separator:aa7fc929948fb038192288e423ea816d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00024">24</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a70e5b84b7bca0feba6fcd9334622d05b" name="a70e5b84b7bca0feba6fcd9334622d05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e5b84b7bca0feba6fcd9334622d05b">&#9670;&#160;</a></span>PUBSUB_EVENTS_RETENTION_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PUBSUB_EVENTS_RETENTION_DEFAULT&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00027">27</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">타입정의 문서화</h2>
+<a id="ad8b26748ff02957ec1ec373a4f0a420f" name="ad8b26748ff02957ec1ec373a4f0a420f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b26748ff02957ec1ec373a4f0a420f">&#9670;&#160;</a></span>EventRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename EventType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef</a> =  std::shared_ptr&lt;EventType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00189">189</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae3f05c1346843738a4e4afdd42062743" name="ae3f05c1346843738a4e4afdd42062743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f05c1346843738a4e4afdd42062743">&#9670;&#160;</a></span>PSConfigRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#ae3f05c1346843738a4e4afdd42062743">PSConfigRef</a> =  std::shared_ptr&lt;<a class="el" href="struct_p_s_config.html">PSConfig</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00187">187</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8cf75fd83a22c03e4eeae0932b31752a" name="a8cf75fd83a22c03e4eeae0932b31752a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf75fd83a22c03e4eeae0932b31752a">&#9670;&#160;</a></span>PSEnvRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#a8cf75fd83a22c03e4eeae0932b31752a">PSEnvRef</a> =  std::shared_ptr&lt;<a class="el" href="struct_p_s_env.html">PSEnv</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00315">315</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a3d66fdaaedde99f94c039dc9c8d47221" name="a3d66fdaaedde99f94c039dc9c8d47221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d66fdaaedde99f94c039dc9c8d47221">&#9670;&#160;</a></span>PSManagerRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#a3d66fdaaedde99f94c039dc9c8d47221">PSManagerRef</a> =  std::shared_ptr&lt;<a class="el" href="class_p_s_manager.html">PSManager</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00298">298</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9c6fe8a9e35bb688bdc0dfcb46e74a91" name="a9c6fe8a9e35bb688bdc0dfcb46e74a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6fe8a9e35bb688bdc0dfcb46e74a91">&#9670;&#160;</a></span>PSSubConfigRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#a9c6fe8a9e35bb688bdc0dfcb46e74a91">PSSubConfigRef</a> =  std::shared_ptr&lt;<a class="el" href="struct_p_s_sub_config.html">PSSubConfig</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00098">98</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a6b984d869299084410b95debaf7a9163" name="a6b984d869299084410b95debaf7a9163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b984d869299084410b95debaf7a9163">&#9670;&#160;</a></span>PSSubscriptionRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#a6b984d869299084410b95debaf7a9163">PSSubscriptionRef</a> =  std::shared_ptr&lt;<a class="el" href="class_p_s_subscription.html">PSSubscription</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00430">430</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ae2fa2f9ee7be9ec943c521e7f7699c8e" name="ae2fa2f9ee7be9ec943c521e7f7699c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2fa2f9ee7be9ec943c521e7f7699c8e">&#9670;&#160;</a></span>PSTopicConfigRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#ae2fa2f9ee7be9ec943c521e7f7699c8e">PSTopicConfigRef</a> =  std::shared_ptr&lt;<a class="el" href="struct_p_s_topic_config.html">PSTopicConfig</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00148">148</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8fac3e9ba436ccafb2b1e164c38b2c93" name="a8fac3e9ba436ccafb2b1e164c38b2c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fac3e9ba436ccafb2b1e164c38b2c93">&#9670;&#160;</a></span>TopicsRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__sync__module__pubsub_8cc.html#a8fac3e9ba436ccafb2b1e164c38b2c93">TopicsRef</a> =  std::shared_ptr&lt;std::vector&lt;<a class="el" href="rgw__sync__module__pubsub_8cc.html#ae2fa2f9ee7be9ec943c521e7f7699c8e">PSTopicConfigRef</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00149">149</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="a95cd156406f6d627131b4faa761e7ae6" name="a95cd156406f6d627131b4faa761e7ae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95cd156406f6d627131b4faa761e7ae6">&#9670;&#160;</a></span>json_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string json_str </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pretty</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00137">137</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
+<div class="line"><span class="lineno">  139</span>  stringstream ss;</div>
+<div class="line"><span class="lineno">  140</span>  JSONFormatter f(pretty);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>  <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(name, obj, &amp;f);</div>
+<div class="line"><span class="lineno">  143</span>  f.flush(ss);</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>  <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><span class="lineno">  146</span>}</div>
+<div class="ttc" id="argw__admin_8cc_html_ab596b9e1a1fc78e98a4d13a66578b658"><div class="ttname"><a href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a></div><div class="ttdeci">void encode_json(const char *name, const RGWBucketSyncFlowManager::pipe_set &amp;pset, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l02560">rgw_admin.cc:2560</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_cgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_cgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_cgraph" id="argw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,73,56"/>
+<area shape="rect" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658" title=" " alt="" coords="121,29,215,56"/>
+<area shape="poly" title=" " alt="" coords="73,40,105,40,105,45,73,45"/>
+<area shape="poly" title=" " alt="" coords="145,30,141,21,144,11,153,5,168,3,184,5,192,12,189,16,182,10,168,8,155,10,148,14,146,20,150,28"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_icgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_icgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_icgraph" id="argw__sync__module__pubsub_8cc_a95cd156406f6d627131b4faa761e7ae6_icgraph">
+<area shape="rect" title=" " alt="" coords="254,144,321,171"/>
+<area shape="rect" href="class_p_s_event.html#afabf8c753decc69b48189ee73e04629e" title=" " alt="" coords="48,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="271,131,244,87,226,65,204,46,184,36,163,29,164,24,187,31,207,42,230,61,249,84,276,128"/>
+<area shape="rect" href="struct_p_s_config.html#a43e8af7304151cecfe7b6bf5af81456c" title=" " alt="" coords="55,56,156,83"/>
+<area shape="poly" title=" " alt="" coords="259,136,234,115,205,97,155,80,157,75,207,92,237,111,263,131"/>
+<area shape="rect" href="class_p_s_subscription_1_1_init_c_r.html#ad359665f23d5f60eecd6213a9639ed89" title=" " alt="" coords="28,107,183,149"/>
+<area shape="poly" title=" " alt="" coords="238,152,183,143,183,138,239,147"/>
+<area shape="rect" href="class_r_g_w_p_s_init_env_c_b_c_r.html#ad1d4b24c6f68f978507b91d565b9714d" title=" " alt="" coords="7,173,204,200"/>
+<area shape="poly" title=" " alt="" coords="238,168,193,175,192,170,238,163"/>
+<area shape="rect" href="class_r_g_w_p_s_handle_obj_event_c_r.html#a159b407cc30e5ddcb8b0c7d7118ac7d6" title=" " alt="" coords="15,224,196,267"/>
+<area shape="poly" title=" " alt="" coords="259,182,207,214,181,226,178,221,204,210,256,178"/>
+<area shape="rect" href="class_r_g_w_p_s_sync_module_instance.html#ac1aa3dac184a028bb0d626024183f26d" title=" " alt="" coords="5,291,206,333"/>
+<area shape="poly" title=" " alt="" coords="277,186,249,234,230,259,207,281,189,292,186,288,204,277,226,256,245,231,272,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a680685668a648b33b677265fc07be8ae" name="a680685668a648b33b677265fc07be8ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680685668a648b33b677265fc07be8ae">&#9670;&#160;</a></span>make_event_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void make_event_ref </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &amp;&#160;</td>
+          <td class="paramname"><em>bucket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__obj__key.html">rgw_obj_key</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ceph::real_time &amp;&#160;</td>
+          <td class="paramname"><em>mtime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; *&#160;</td>
+          <td class="paramname"><em>attrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a>&#160;</td>
+          <td class="paramname"><em>event_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef</a>&lt; <a class="el" href="structrgw__pubsub__event.html">rgw_pubsub_event</a> &gt; *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00242">242</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  247</span>                                                          {</div>
+<div class="line"><span class="lineno">  248</span>  *<span class="keyword">event</span> = std::make_shared&lt;rgw_pubsub_event&gt;();</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>  <a class="code hl_typedef" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef&lt;rgw_pubsub_event&gt;</a>&amp; e = *event;</div>
+<div class="line"><span class="lineno">  251</span>  e-&gt;event_name = <a class="code hl_function" href="namespacergw_1_1notify.html#aa5f191df4111ed6a5034ba18ae6f8932">rgw::notify::to_ceph_string</a>(event_type);</div>
+<div class="line"><span class="lineno">  252</span>  e-&gt;source = bucket.<a class="code hl_variable" href="structrgw__bucket.html#a32d3529f5b0c53051c856a7abe867a6b">name</a> + <span class="stringliteral">&quot;/&quot;</span> + key.<a class="code hl_variable" href="structrgw__obj__key.html#a009cbe657bf6a001d40af0a80e533186">name</a>;</div>
+<div class="line"><span class="lineno">  253</span>  e-&gt;timestamp = real_clock::now();</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>  <a class="code hl_struct" href="structobjstore__event.html">objstore_event</a> oevent(bucket, key, mtime, attrs);</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>  <span class="keyword">const</span> utime_t ts(e-&gt;timestamp);</div>
+<div class="line"><span class="lineno">  258</span>  <a class="code hl_function" href="rgw__pubsub_8cc.html#a9e56763a419e65292a4d5057e92d52a4">set_event_id</a>(e-&gt;id, oevent.get_hash(), ts);</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>  <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;info&quot;</span>, oevent, &amp;e-&gt;info);</div>
+<div class="line"><span class="lineno">  261</span>}</div>
+<div class="ttc" id="anamespacergw_1_1notify_html_aa5f191df4111ed6a5034ba18ae6f8932"><div class="ttname"><a href="namespacergw_1_1notify.html#aa5f191df4111ed6a5034ba18ae6f8932">rgw::notify::to_ceph_string</a></div><div class="ttdeci">std::string to_ceph_string(EventType t)</div><div class="ttdef"><b>Definition</b> <a href="rgw__notify__event__type_8cc_source.html#l00051">rgw_notify_event_type.cc:51</a></div></div>
+<div class="ttc" id="argw__pubsub_8cc_html_a9e56763a419e65292a4d5057e92d52a4"><div class="ttname"><a href="rgw__pubsub_8cc.html#a9e56763a419e65292a4d5057e92d52a4">set_event_id</a></div><div class="ttdeci">void set_event_id(std::string &amp;id, const std::string &amp;hash, const utime_t &amp;ts)</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8cc_source.html#l00019">rgw_pubsub.cc:19</a></div></div>
+<div class="ttc" id="argw__sync__module__pubsub_8cc_html_ad8b26748ff02957ec1ec373a4f0a420f"><div class="ttname"><a href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef</a></div><div class="ttdeci">std::shared_ptr&lt; EventType &gt; EventRef</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__pubsub_8cc_source.html#l00189">rgw_sync_module_pubsub.cc:189</a></div></div>
+<div class="ttc" id="astructobjstore__event_html"><div class="ttname"><a href="structobjstore__event.html">objstore_event</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__pubsub_8cc_source.html#l00191">rgw_sync_module_pubsub.cc:191</a></div></div>
+<div class="ttc" id="astructrgw__bucket_html_a32d3529f5b0c53051c856a7abe867a6b"><div class="ttname"><a href="structrgw__bucket.html#a32d3529f5b0c53051c856a7abe867a6b">rgw_bucket::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00291">rgw_basic_types.h:291</a></div></div>
+<div class="ttc" id="astructrgw__obj__key_html_a009cbe657bf6a001d40af0a80e533186"><div class="ttname"><a href="structrgw__obj__key.html#a009cbe657bf6a001d40af0a80e533186">rgw_obj_key::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01249">rgw_common.h:1249</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_cgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_cgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_cgraph" id="argw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,105,117,132"/>
+<area shape="rect" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658" title=" " alt="" coords="200,29,295,56"/>
+<area shape="poly" title=" " alt="" coords="86,102,164,66,184,58,186,63,166,70,89,107"/>
+<area shape="rect" href="structobjstore__event.html#a68245bcb773218d0a9263ca05bff167a" title=" " alt="" coords="165,80,330,107"/>
+<area shape="poly" title=" " alt="" coords="117,108,149,104,149,109,117,114"/>
+<area shape="rect" href="rgw__pubsub_8cc.html#a9e56763a419e65292a4d5057e92d52a4" title=" " alt="" coords="201,131,294,157"/>
+<area shape="poly" title=" " alt="" coords="117,124,186,133,185,138,117,129"/>
+<area shape="rect" href="namespacergw_1_1notify.html#aa5f191df4111ed6a5034ba18ae6f8932" title=" " alt="" coords="180,181,315,224"/>
+<area shape="poly" title=" " alt="" coords="90,130,166,167,178,172,176,177,164,172,88,135"/>
+<area shape="poly" title=" " alt="" coords="215,30,210,21,214,11,227,5,247,3,270,5,282,12,279,16,268,10,247,8,228,10,218,15,215,20,220,27"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_icgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_icgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_icgraph" id="argw__sync__module__pubsub_8cc_a680685668a648b33b677265fc07be8ae_icgraph">
+<area shape="rect" title=" " alt="" coords="266,47,377,73"/>
+<area shape="rect" href="class_r_g_w_p_s_handle_remote_obj_c_b_c_r.html#a0006bcf65d152efa3aea512aa11ab384" title=" " alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="249,51,218,46,219,41,250,46"/>
+<area shape="rect" href="class_r_g_w_p_s_generic_obj_event_c_b_c_r.html#a294323e7573ea73747570b2eda958ca3" title=" " alt="" coords="9,72,214,115"/>
+<area shape="poly" title=" " alt="" coords="251,74,215,80,214,74,250,69"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8b3691422cb11d18dc41d77815abbb6b" name="a8b3691422cb11d18dc41d77815abbb6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b3691422cb11d18dc41d77815abbb6b">&#9670;&#160;</a></span>make_s3_event_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void make_s3_event_ref </td>
+          <td>(</td>
+          <td class="paramtype">CephContext *&#160;</td>
+          <td class="paramname"><em>cct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__bucket.html">rgw_bucket</a> &amp;&#160;</td>
+          <td class="paramname"><em>bucket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__user.html">rgw_user</a> &amp;&#160;</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrgw__obj__key.html">rgw_obj_key</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ceph::real_time &amp;&#160;</td>
+          <td class="paramname"><em>mtime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; *&#160;</td>
+          <td class="paramname"><em>attrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a>&#160;</td>
+          <td class="paramname"><em>event_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef</a>&lt; <a class="el" href="structrgw__pubsub__s3__event.html">rgw_pubsub_s3_event</a> &gt; *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00263">263</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  269</span>                                                             {</div>
+<div class="line"><span class="lineno">  270</span>  *<span class="keyword">event</span> = std::make_shared&lt;rgw_pubsub_s3_event&gt;();</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>  <a class="code hl_typedef" href="rgw__sync__module__pubsub_8cc.html#ad8b26748ff02957ec1ec373a4f0a420f">EventRef&lt;rgw_pubsub_s3_event&gt;</a>&amp; e = *event;</div>
+<div class="line"><span class="lineno">  273</span>  e-&gt;eventTime = mtime;</div>
+<div class="line"><span class="lineno">  274</span>  e-&gt;eventName = <a class="code hl_function" href="namespacergw_1_1notify.html#a0de1420337c1b154fc1ac06c8edc8dd8">rgw::notify::to_event_string</a>(event_type);</div>
+<div class="line"><span class="lineno">  275</span>  <span class="comment">// userIdentity: not supported in sync module</span></div>
+<div class="line"><span class="lineno">  276</span>  <span class="comment">// x_amz_request_id: not supported in sync module</span></div>
+<div class="line"><span class="lineno">  277</span>  <span class="comment">// x_amz_id_2: not supported in sync module</span></div>
+<div class="line"><span class="lineno">  278</span>  <span class="comment">// configurationId is filled from subscription configuration</span></div>
+<div class="line"><span class="lineno">  279</span>  e-&gt;bucket_name = bucket.<a class="code hl_variable" href="structrgw__bucket.html#a32d3529f5b0c53051c856a7abe867a6b">name</a>;</div>
+<div class="line"><span class="lineno">  280</span>  e-&gt;bucket_ownerIdentity = owner.<a class="code hl_function" href="structrgw__user.html#af00f510d6a9ff0580d87ee46b274d96e">to_str</a>();</div>
+<div class="line"><span class="lineno">  281</span>  e-&gt;bucket_arn = <a class="code hl_function" href="rgw__keystone_8cc.html#a97140a592af15535629f284708b8f5b4">to_string</a>(<a class="code hl_struct" href="structrgw_1_1_a_r_n.html">rgw::ARN</a>(bucket));</div>
+<div class="line"><span class="lineno">  282</span>  e-&gt;bucket_id = bucket.<a class="code hl_variable" href="structrgw__bucket.html#adaba18504e183a1e80d861533a81c2a1">bucket_id</a>; <span class="comment">// rgw extension</span></div>
+<div class="line"><span class="lineno">  283</span>  e-&gt;object_key = key.<a class="code hl_variable" href="structrgw__obj__key.html#a009cbe657bf6a001d40af0a80e533186">name</a>;</div>
+<div class="line"><span class="lineno">  284</span>  <span class="comment">// object_size not supported in sync module</span></div>
+<div class="line"><span class="lineno">  285</span>  <a class="code hl_struct" href="structobjstore__event.html">objstore_event</a> oevent(bucket, key, mtime, attrs);</div>
+<div class="line"><span class="lineno">  286</span>  e-&gt;object_etag = oevent.get_hash();</div>
+<div class="line"><span class="lineno">  287</span>  e-&gt;object_versionId = key.<a class="code hl_variable" href="structrgw__obj__key.html#aa73e7ab93fad1f34c58dc9e87917213c">instance</a>;</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>  <span class="comment">// use timestamp as per key sequence id (hex encoded)</span></div>
+<div class="line"><span class="lineno">  290</span>  <span class="keyword">const</span> utime_t ts(real_clock::now());</div>
+<div class="line"><span class="lineno">  291</span>  boost::algorithm::hex((<span class="keyword">const</span> <span class="keywordtype">char</span>*)&amp;ts, (<span class="keyword">const</span> <span class="keywordtype">char</span>*)&amp;ts + <span class="keyword">sizeof</span>(utime_t), </div>
+<div class="line"><span class="lineno">  292</span>          std::back_inserter(e-&gt;object_sequencer));</div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>  <a class="code hl_function" href="rgw__pubsub_8cc.html#a9e56763a419e65292a4d5057e92d52a4">set_event_id</a>(e-&gt;id, e-&gt;object_etag, ts);</div>
+<div class="line"><span class="lineno">  295</span>}</div>
+<div class="ttc" id="anamespacergw_1_1notify_html_a0de1420337c1b154fc1ac06c8edc8dd8"><div class="ttname"><a href="namespacergw_1_1notify.html#a0de1420337c1b154fc1ac06c8edc8dd8">rgw::notify::to_event_string</a></div><div class="ttdeci">std::string to_event_string(EventType t)</div><div class="ttdef"><b>Definition</b> <a href="rgw__notify__event__type_8cc_source.html#l00082">rgw_notify_event_type.cc:82</a></div></div>
+<div class="ttc" id="argw__keystone_8cc_html_a97140a592af15535629f284708b8f5b4"><div class="ttname"><a href="rgw__keystone_8cc.html#a97140a592af15535629f284708b8f5b4">to_string</a></div><div class="ttdeci">static std::string to_string(const std::string_view &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__keystone_8cc_source.html#l00571">rgw_keystone.cc:571</a></div></div>
+<div class="ttc" id="astructrgw_1_1_a_r_n_html"><div class="ttname"><a href="structrgw_1_1_a_r_n.html">rgw::ARN</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__arn_8h_source.html#l00042">rgw_arn.h:42</a></div></div>
+<div class="ttc" id="astructrgw__bucket_html_adaba18504e183a1e80d861533a81c2a1"><div class="ttname"><a href="structrgw__bucket.html#adaba18504e183a1e80d861533a81c2a1">rgw_bucket::bucket_id</a></div><div class="ttdeci">std::string bucket_id</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00293">rgw_basic_types.h:293</a></div></div>
+<div class="ttc" id="astructrgw__obj__key_html_aa73e7ab93fad1f34c58dc9e87917213c"><div class="ttname"><a href="structrgw__obj__key.html#aa73e7ab93fad1f34c58dc9e87917213c">rgw_obj_key::instance</a></div><div class="ttdeci">std::string instance</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01250">rgw_common.h:1250</a></div></div>
+<div class="ttc" id="astructrgw__user_html_af00f510d6a9ff0580d87ee46b274d96e"><div class="ttname"><a href="structrgw__user.html#af00f510d6a9ff0580d87ee46b274d96e">rgw_user::to_str</a></div><div class="ttdeci">void to_str(std::string &amp;str) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8h_source.html#l00051">rgw_basic_types.h:51</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_cgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_cgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_cgraph" id="argw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,115,138,141"/>
+<area shape="rect" href="structobjstore__event.html#a68245bcb773218d0a9263ca05bff167a" title=" " alt="" coords="186,5,351,32"/>
+<area shape="poly" title=" " alt="" coords="86,112,129,77,184,42,198,35,200,40,187,46,132,82,89,116"/>
+<area shape="rect" href="rgw__pubsub_8cc.html#a9e56763a419e65292a4d5057e92d52a4" title=" " alt="" coords="222,56,315,83"/>
+<area shape="poly" title=" " alt="" coords="118,112,206,85,208,90,120,117"/>
+<area shape="rect" href="namespacergw_1_1notify.html#a0de1420337c1b154fc1ac06c8edc8dd8" title=" " alt="" coords="200,107,337,149"/>
+<area shape="poly" title=" " alt="" coords="138,125,184,125,184,131,138,131"/>
+<area shape="rect" href="structrgw__user.html#af00f510d6a9ff0580d87ee46b274d96e" title=" " alt="" coords="211,173,326,200"/>
+<area shape="poly" title=" " alt="" coords="120,139,207,166,206,171,118,144"/>
+<area shape="rect" href="rgw__keystone_8cc.html#a97140a592af15535629f284708b8f5b4" title=" " alt="" coords="233,224,304,251"/>
+<area shape="poly" title=" " alt="" coords="89,140,132,174,187,210,219,223,217,227,184,214,129,179,86,144"/>
+<area shape="rect" href="namespacergw_1_1notify.html#a587c52f7b2959d3c68032eadf54f9c78" title=" " alt="" coords="399,115,537,141"/>
+<area shape="poly" title=" " alt="" coords="337,125,383,125,383,131,337,131"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_icgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_icgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_icgraph" id="argw__sync__module__pubsub_8cc_a8b3691422cb11d18dc41d77815abbb6b_icgraph">
+<area shape="rect" title=" " alt="" coords="266,47,398,73"/>
+<area shape="rect" href="class_r_g_w_p_s_handle_remote_obj_c_b_c_r.html#a0006bcf65d152efa3aea512aa11ab384" title=" " alt="" coords="5,5,218,48"/>
+<area shape="poly" title=" " alt="" coords="250,50,218,45,218,40,251,45"/>
+<area shape="rect" href="class_r_g_w_p_s_generic_obj_event_c_b_c_r.html#a294323e7573ea73747570b2eda958ca3" title=" " alt="" coords="9,72,214,115"/>
+<area shape="poly" title=" " alt="" coords="250,75,214,80,214,75,250,70"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7fc929948fb038192288e423ea816d0" name="aa7fc929948fb038192288e423ea816d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7fc929948fb038192288e423ea816d0">&#9670;&#160;</a></span>match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool match </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structrgw__pubsub__topic__filter.html">rgw_pubsub_topic_filter</a> &amp;&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacergw_1_1notify.html#a11587407d1aff95c9cb4a10979ba813b">rgw::notify::EventType</a>&#160;</td>
+          <td class="paramname"><em>event_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00921">921</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  921</span>                                                                                                            {</div>
+<div class="line"><span class="lineno">  922</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="rgw__sync__module__pubsub_8cc.html#aa7fc929948fb038192288e423ea816d0">match</a>(filter.<a class="code hl_variable" href="structrgw__pubsub__topic__filter.html#ae52f145d30a6ca6338fbb32e07df532c">events</a>, event_type)) {</div>
+<div class="line"><span class="lineno">  923</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  924</span>  }</div>
+<div class="line"><span class="lineno">  925</span>  <span class="keywordflow">if</span> (!<a class="code hl_function" href="rgw__sync__module__pubsub_8cc.html#aa7fc929948fb038192288e423ea816d0">match</a>(filter.<a class="code hl_variable" href="structrgw__pubsub__topic__filter.html#aedbefc04debf9258f76149ed50cfefb8">s3_filter</a>.<a class="code hl_variable" href="structrgw__s3__filter.html#a8c693d29716c600c15f8080ffbf1d776">key_filter</a>, key_name)) {</div>
+<div class="line"><span class="lineno">  926</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  927</span>  }</div>
+<div class="line"><span class="lineno">  928</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  929</span>}</div>
+<div class="ttc" id="argw__sync__module__pubsub_8cc_html_aa7fc929948fb038192288e423ea816d0"><div class="ttname"><a href="rgw__sync__module__pubsub_8cc.html#aa7fc929948fb038192288e423ea816d0">match</a></div><div class="ttdeci">bool match(const rgw_pubsub_topic_filter &amp;filter, const std::string &amp;key_name, rgw::notify::EventType event_type)</div><div class="ttdef"><b>Definition</b> <a href="rgw__sync__module__pubsub_8cc_source.html#l00921">rgw_sync_module_pubsub.cc:921</a></div></div>
+<div class="ttc" id="astructrgw__pubsub__topic__filter_html_ae52f145d30a6ca6338fbb32e07df532c"><div class="ttname"><a href="structrgw__pubsub__topic__filter.html#ae52f145d30a6ca6338fbb32e07df532c">rgw_pubsub_topic_filter::events</a></div><div class="ttdeci">rgw::notify::EventTypeList events</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8h_source.html#l00519">rgw_pubsub.h:519</a></div></div>
+<div class="ttc" id="astructrgw__pubsub__topic__filter_html_aedbefc04debf9258f76149ed50cfefb8"><div class="ttname"><a href="structrgw__pubsub__topic__filter.html#aedbefc04debf9258f76149ed50cfefb8">rgw_pubsub_topic_filter::s3_filter</a></div><div class="ttdeci">rgw_s3_filter s3_filter</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8h_source.html#l00521">rgw_pubsub.h:521</a></div></div>
+<div class="ttc" id="astructrgw__s3__filter_html_a8c693d29716c600c15f8080ffbf1d776"><div class="ttname"><a href="structrgw__s3__filter.html#a8c693d29716c600c15f8080ffbf1d776">rgw_s3_filter::key_filter</a></div><div class="ttdeci">rgw_s3_key_filter key_filter</div><div class="ttdef"><b>Definition</b> <a href="rgw__pubsub_8h_source.html#l00070">rgw_pubsub.h:70</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_cgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_cgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_cgraph" id="argw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,63,56"/>
+<area shape="poly" title=" " alt="" coords="22,29,22,12,26,5,34,3,42,6,46,12,42,15,39,10,34,8,29,10,27,14,28,29"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_icgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_icgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_icgraph" id="argw__sync__module__pubsub_8cc_aa7fc929948fb038192288e423ea816d0_icgraph">
+<area shape="rect" title=" " alt="" coords="247,29,304,56"/>
+<area shape="poly" title=" " alt="" coords="305,16,294,10,275,8,257,10,248,15,246,20,250,28,245,30,240,21,244,11,256,5,275,3,296,5,307,12"/>
+<area shape="rect" href="class_r_g_w_p_s_find_bucket_topics_c_r.html#aff2c0fe890bf39b48bc5b5e90399a09e" title=" " alt="" coords="5,21,199,64"/>
+<area shape="poly" title=" " alt="" coords="231,45,199,45,199,40,231,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7dfdc68b9c480a297b0765caacb2acf3" name="a7dfdc68b9c480a297b0765caacb2acf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfdc68b9c480a297b0765caacb2acf3">&#9670;&#160;</a></span>string_to_args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_r_g_w_h_t_t_p_args.html">RGWHTTPArgs</a> string_to_args </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str_args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DoutPrefixProvider *&#160;</td>
+          <td class="paramname"><em>dpp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__sync__module__pubsub_8cc_source.html">rgw_sync_module_pubsub.cc</a> 파일의 <a class="el" href="rgw__sync__module__pubsub_8cc_source.html#l00048">48</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                                                     {</div>
+<div class="line"><span class="lineno">   49</span>  <a class="code hl_class" href="class_r_g_w_h_t_t_p_args.html">RGWHTTPArgs</a> <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>;</div>
+<div class="line"><span class="lineno">   50</span>  <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#ad0167c36e38f885a5dae2bd2b86d67b0">set</a>(str_args);</div>
+<div class="line"><span class="lineno">   51</span>  <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>.parse(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>);</div>
+<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a>;</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html">RGWHTTPArgs</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00327">rgw_common.h:327</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_ad0167c36e38f885a5dae2bd2b86d67b0"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#ad0167c36e38f885a5dae2bd2b86d67b0">RGWHTTPArgs::set</a></div><div class="ttdeci">void set(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00342">rgw_common.h:342</a></div></div>
+<div class="ttc" id="adbstore__tests_8cc_html_a3284f7a2d0ea04744ec7605cbacce0de"><div class="ttname"><a href="dbstore__tests_8cc.html#a3284f7a2d0ea04744ec7605cbacce0de">args</a></div><div class="ttdeci">vector&lt; const char * &gt; args</div><div class="ttdef"><b>Definition</b> <a href="dbstore__tests_8cc_source.html#l00014">dbstore_tests.cc:14</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_cgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_cgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_cgraph" id="argw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,109,57"/>
+<area shape="rect" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5" title=" " alt="" coords="205,5,247,32"/>
+<area shape="poly" title=" " alt="" coords="109,34,189,21,190,27,109,39"/>
+<area shape="rect" href="class_r_g_w_h_t_t_p_args.html#ad0167c36e38f885a5dae2bd2b86d67b0" title=" " alt="" coords="157,56,295,83"/>
+<area shape="poly" title=" " alt="" coords="109,49,142,54,141,59,109,54"/>
+</map>
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_icgraph.png" border="0" usemap="#argw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_icgraph" alt=""/></div>
+<map name="argw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_icgraph" id="argw__sync__module__pubsub_8cc_a7dfdc68b9c480a297b0765caacb2acf3_icgraph">
+<area shape="rect" title=" " alt="" coords="248,5,351,32"/>
+<area shape="rect" href="struct_p_s_sub_config.html#aa8769e7ba834b6235f756e63f8e25c20" title=" " alt="" coords="5,5,200,32"/>
+<area shape="poly" title=" " alt="" coords="232,21,200,21,200,16,232,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__sync__module__pubsub_8cc.html">rgw_sync_module_pubsub.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

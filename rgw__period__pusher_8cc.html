@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_period_pusher.cc 파일 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__period__pusher_8cc.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">클래스</a> &#124;
+<a href="#define-members">매크로</a> &#124;
+<a href="#typedef-members">타입정의</a>  </div>
+  <div class="headertitle"><div class="title">rgw_period_pusher.cc 파일 참조</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;map&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &quot;<a class="el" href="rgw__period__pusher_8h_source.html">rgw_period_pusher.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__cr__rest_8h_source.html">rgw_cr_rest.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__zone_8h_source.html">rgw_zone.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal_8h_source.html">rgw_sal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rgw__sal__rados_8h_source.html">rgw_sal_rados.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="svc__zone_8h_source.html">services/svc_zone.h</a>&quot;</code><br />
+<code>#include &quot;common/errno.h&quot;</code><br />
+<code>#include &lt;boost/asio/yield.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rgw_period_pusher.cc에 대한 include 의존 그래프</div>
+<div class="dyncontent">
+<div class="center"><img src="rgw__period__pusher_8cc__incl.png" border="0" usemap="#a_d_1_2git_2ceph_2src_2rgw_2rgw__period__pusher_8cc" alt=""/></div>
+<map name="a_d_1_2git_2ceph_2src_2rgw_2rgw__period__pusher_8cc" id="a_d_1_2git_2ceph_2src_2rgw_2rgw__period__pusher_8cc">
+<area shape="rect" title=" " alt="" coords="2039,5,2190,48"/>
+<area shape="rect" title=" " alt="" coords="2047,245,2093,272"/>
+<area shape="poly" title=" " alt="" coords="2106,50,2081,104,2061,171,2060,201,2065,230,2059,231,2054,202,2056,170,2076,102,2101,47"/>
+<area shape="rect" title=" " alt="" coords="1836,96,1894,123"/>
+<area shape="poly" title=" " alt="" coords="2051,51,1909,97,1907,92,2049,46"/>
+<area shape="rect" href="rgw__period__pusher_8h.html" title=" " alt="" coords="1765,245,1906,272"/>
+<area shape="poly" title=" " alt="" coords="2038,38,1976,46,1912,59,1858,76,1839,86,1826,98,1817,113,1811,129,1810,165,1816,200,1826,230,1821,232,1811,201,1804,165,1806,128,1812,110,1821,94,1836,82,1856,71,1911,54,1975,41,2038,33"/>
+<area shape="rect" href="rgw__cr__rest_8h.html" title=" " alt="" coords="917,245,1016,272"/>
+<area shape="poly" title=" " alt="" coords="2070,51,1965,98,1936,113,1906,125,1783,157,1656,184,1529,206,1406,223,1188,246,1031,257,1031,252,1188,241,1406,218,1528,201,1655,179,1781,152,1904,120,1934,108,1962,94,2068,46"/>
+<area shape="rect" href="rgw__zone_8h.html" title=" " alt="" coords="1897,395,1985,421"/>
+<area shape="poly" title=" " alt="" coords="2081,51,2049,74,2018,105,1994,141,1987,161,1985,183,1985,260,1982,293,1975,326,1956,381,1951,379,1970,325,1977,293,1980,260,1980,183,1982,160,1989,139,2014,101,2046,70,2078,46"/>
+<area shape="rect" href="rgw__sal_8h.html" title="Base abstractions and API for SAL" alt="" coords="2384,320,2460,347"/>
+<area shape="poly" title=" " alt="" coords="2134,47,2195,114,2273,195,2398,308,2394,312,2270,199,2191,117,2130,50"/>
+<area shape="rect" href="rgw__sal__rados_8h.html" title=" " alt="" coords="2370,96,2485,123"/>
+<area shape="poly" title=" " alt="" coords="2191,45,2365,89,2363,94,2190,50"/>
+<area shape="rect" href="svc__zone_8h.html" title=" " alt="" coords="2810,171,2947,197"/>
+<area shape="poly" title=" " alt="" coords="2191,32,2335,53,2417,70,2498,94,2523,107,2549,120,2611,139,2676,153,2794,172,2794,177,2675,159,2610,144,2546,125,2521,112,2496,98,2416,75,2334,58,2190,37"/>
+<area shape="rect" title=" " alt="" coords="2559,96,2675,123"/>
+<area shape="poly" title=" " alt="" coords="2190,37,2544,94,2543,99,2190,43"/>
+<area shape="rect" title=" " alt="" coords="2699,96,2836,123"/>
+<area shape="poly" title=" " alt="" coords="2190,34,2684,93,2683,98,2190,39"/>
+<area shape="rect" title=" " alt="" coords="2499,395,2567,421"/>
+<area shape="poly" title=" " alt="" coords="1898,270,2480,392,2484,393,2483,398,2479,397,1897,275"/>
+<area shape="rect" title=" " alt="" coords="1102,320,1159,347"/>
+<area shape="poly" title=" " alt="" coords="1766,270,1175,330,1174,325,1765,265"/>
+<area shape="rect" title=" " alt="" coords="2695,469,2750,496"/>
+<area shape="poly" title=" " alt="" coords="1873,270,1986,306,2125,344,2198,360,2255,369,2385,392,2487,419,2680,468,2679,473,2485,424,2384,397,2254,374,2197,365,2124,349,1984,311,1872,275"/>
+<area shape="rect" title=" " alt="" coords="2820,544,2961,587"/>
+<area shape="poly" title=" " alt="" coords="1862,270,2023,344,2114,385,2207,419,2371,463,2536,500,2805,549,2804,554,2535,505,2370,468,2205,424,2112,390,2021,349,1860,275"/>
+<area shape="rect" href="rgw__realm__reloader_8h.html" title=" " alt="" coords="69,320,213,347"/>
+<area shape="poly" title=" " alt="" coords="1765,266,229,331,228,326,1765,260"/>
+<area shape="rect" href="rgw__realm__watcher_8h.html" title=" " alt="" coords="69,395,213,421"/>
+<area shape="poly" title=" " alt="" coords="144,347,144,379,138,379,138,347"/>
+<area shape="rect" title=" " alt="" coords="5,469,122,496"/>
+<area shape="poly" title=" " alt="" coords="112,349,83,368,69,381,59,396,54,410,53,425,57,454,52,455,48,425,49,409,54,393,65,378,79,364,110,345"/>
+<area shape="rect" title=" " alt="" coords="176,469,324,496"/>
+<area shape="poly" title=" " alt="" coords="161,420,220,458,217,463,158,424"/>
+<area shape="rect" title=" " alt="" coords="696,469,815,496"/>
+<area shape="poly" title=" " alt="" coords="213,413,419,434,681,466,681,472,419,440,213,419"/>
+<area shape="poly" title=" " alt="" coords="129,424,90,461,86,457,126,420"/>
+<area shape="poly" title=" " alt="" coords="996,270,1088,311,1086,316,994,275"/>
+<area shape="poly" title=" " alt="" coords="917,266,770,278,578,302,482,320,396,341,325,367,298,381,277,397,267,409,261,423,254,454,249,453,256,422,263,406,274,393,295,377,323,362,394,336,481,314,577,297,769,273,916,260"/>
+<area shape="rect" title=" " alt="" coords="288,395,439,421"/>
+<area shape="poly" title=" " alt="" coords="917,275,431,393,430,388,916,270"/>
+<area shape="rect" href="rgw__coroutine_8h.html" title=" " alt="" coords="814,320,926,347"/>
+<area shape="poly" title=" " alt="" coords="951,275,901,313,897,308,948,270"/>
+<area shape="rect" href="rgw__rest__conn_8h.html" title=" " alt="" coords="1705,320,1822,347"/>
+<area shape="poly" title=" " alt="" coords="1016,262,1690,323,1690,328,1016,267"/>
+<area shape="poly" title=" " alt="" coords="814,342,755,349,692,360,638,376,618,386,606,396,599,408,599,418,604,428,614,437,645,452,683,464,681,469,643,457,611,441,600,431,594,419,594,407,601,393,616,381,636,371,691,355,754,344,813,337"/>
+<area shape="poly" title=" " alt="" coords="814,345,455,396,454,391,813,340"/>
+<area shape="rect" title=" " alt="" coords="616,395,722,421"/>
+<area shape="poly" title=" " alt="" coords="836,350,719,391,717,386,834,345"/>
+<area shape="rect" title=" " alt="" coords="746,395,856,421"/>
+<area shape="poly" title=" " alt="" coords="860,349,825,385,821,381,856,345"/>
+<area shape="rect" title=" " alt="" coords="1505,395,1678,421"/>
+<area shape="poly" title=" " alt="" coords="927,337,1486,392,1490,392,1489,398,1486,397,926,343"/>
+<area shape="rect" title=" " alt="" coords="880,395,1002,421"/>
+<area shape="poly" title=" " alt="" coords="884,345,920,382,916,385,881,349"/>
+<area shape="rect" title=" " alt="" coords="1025,395,1193,421"/>
+<area shape="poly" title=" " alt="" coords="913,345,1053,387,1052,392,911,350"/>
+<area shape="rect" href="rgw__common_8h.html" title=" " alt="" coords="2000,469,2109,496"/>
+<area shape="poly" title=" " alt="" coords="927,336,1133,355,1262,371,1392,392,1443,405,1493,419,1629,440,1765,456,1984,475,1984,480,1764,461,1628,445,1492,424,1441,411,1391,397,1261,376,1132,360,927,341"/>
+<area shape="rect" title=" " alt="" coords="1124,552,1184,579"/>
+<area shape="poly" title=" " alt="" coords="814,342,699,357,636,370,577,386,528,406,509,418,496,431,488,445,486,460,491,476,504,494,515,502,535,509,595,522,768,542,960,554,1109,560,1109,565,960,559,767,547,594,527,533,514,513,506,500,498,486,478,481,460,483,443,492,428,506,414,525,402,575,381,635,364,699,352,813,337"/>
+<area shape="rect" href="rgw__http__client__types_8h.html" title=" " alt="" coords="514,469,672,496"/>
+<area shape="poly" title=" " alt="" coords="814,341,752,348,686,359,628,375,607,385,594,396,587,409,584,424,587,454,582,455,579,424,582,407,589,393,604,381,627,370,685,354,751,343,813,336"/>
+<area shape="rect" title=" " alt="" coords="1217,395,1380,421"/>
+<area shape="poly" title=" " alt="" coords="927,342,1208,389,1208,394,926,347"/>
+<area shape="poly" title=" " alt="" coords="2109,487,2804,553,2804,558,2109,492"/>
+<area shape="rect" title=" " alt="" coords="2029,552,2079,579"/>
+<area shape="poly" title=" " alt="" coords="2057,497,2057,537,2052,537,2052,497"/>
+<area shape="rect" title=" " alt="" coords="2104,552,2188,579"/>
+<area shape="poly" title=" " alt="" coords="2070,494,2123,540,2119,544,2067,499"/>
+<area shape="poly" title=" " alt="" coords="1999,492,1200,563,1200,557,1999,486"/>
+<area shape="rect" href="rgw__sync__policy_8h.html" title=" " alt="" coords="1877,552,2005,579"/>
+<area shape="poly" title=" " alt="" coords="2038,499,1972,545,1969,541,2035,494"/>
+<area shape="rect" title=" " alt="" coords="2247,552,2366,579"/>
+<area shape="poly" title=" " alt="" coords="2094,494,2253,544,2252,550,2093,499"/>
+<area shape="poly" title=" " alt="" coords="673,493,1109,555,1109,560,672,498"/>
+<area shape="poly" title=" " alt="" coords="1735,350,1637,391,1634,386,1733,345"/>
+<area shape="poly" title=" " alt="" coords="1759,348,1733,386,1714,406,1692,424,1628,459,1560,488,1490,511,1421,529,1295,553,1200,564,1199,558,1294,547,1420,524,1489,506,1558,483,1626,454,1689,419,1710,402,1729,382,1754,345"/>
+<area shape="rect" href="rgw__rest__client_8h.html" title=" " alt="" coords="1753,395,1873,421"/>
+<area shape="poly" title=" " alt="" coords="1774,346,1798,380,1794,383,1770,349"/>
+<area shape="rect" title=" " alt="" coords="2979,395,3124,421"/>
+<area shape="poly" title=" " alt="" coords="1822,335,2963,399,2963,404,1822,341"/>
+<area shape="rect" title=" " alt="" coords="2219,395,2372,421"/>
+<area shape="poly" title=" " alt="" coords="1822,340,2204,392,2203,397,1822,345"/>
+<area shape="poly" title=" " alt="" coords="1962,420,2023,458,2020,463,1959,424"/>
+<area shape="poly" title=" " alt="" coords="1944,422,1944,537,1938,537,1938,422"/>
+<area shape="poly" title=" " alt="" coords="2420,348,2387,423,2323,540,2319,537,2382,420,2415,346"/>
+<area shape="rect" href="rgw__user_8h.html" title=" " alt="" coords="2008,395,2092,421"/>
+<area shape="poly" title=" " alt="" coords="2384,345,2108,398,2107,393,2383,340"/>
+<area shape="rect" href="rgw__notify__event__type_8h.html" title=" " alt="" coords="2643,395,2802,421"/>
+<area shape="poly" title=" " alt="" coords="2461,341,2656,388,2654,393,2460,347"/>
+<area shape="poly" title=" " alt="" coords="2008,422,1997,424,1771,449,1579,463,1409,469,1251,470,923,465,730,466,502,472,340,479,340,474,502,467,730,460,923,460,1251,464,1409,464,1578,458,1770,444,1996,419,2007,417"/>
+<area shape="poly" title=" " alt="" coords="2054,422,2055,454,2050,454,2048,422"/>
+<area shape="poly" title=" " alt="" coords="2725,422,2725,454,2720,454,2720,422"/>
+<area shape="poly" title=" " alt="" coords="2440,122,2454,143,2466,170,2470,208,2464,245,2453,279,2440,307,2435,305,2448,277,2459,244,2465,207,2461,171,2450,146,2435,125"/>
+<area shape="rect" href="rgw__rados_8h.html" title=" " alt="" coords="2125,245,2216,272"/>
+<area shape="poly" title=" " alt="" coords="2384,126,2329,145,2273,173,2230,204,2194,236,2190,233,2226,200,2270,168,2327,140,2382,121"/>
+<area shape="rect" href="rgw__notify_8h.html" title=" " alt="" coords="2742,320,2833,347"/>
+<area shape="poly" title=" " alt="" coords="2486,114,2773,145,2961,168,2974,191,2973,213,2961,234,2942,254,2890,289,2835,316,2833,311,2887,285,2939,250,2957,231,2968,212,2969,192,2958,173,2772,150,2485,119"/>
+<area shape="rect" href="rgw__oidc__provider_8h.html" title=" " alt="" coords="2735,245,2869,272"/>
+<area shape="poly" title=" " alt="" coords="2486,118,2624,144,2684,158,2718,168,2757,198,2787,231,2783,235,2754,202,2716,173,2683,163,2623,150,2485,123"/>
+<area shape="rect" href="rgw__role_8h.html" title=" " alt="" coords="3022,171,3102,197"/>
+<area shape="poly" title=" " alt="" coords="2486,114,3004,168,3007,169,3006,174,3003,173,2485,119"/>
+<area shape="rect" href="rgw__multi_8h.html" title=" " alt="" coords="2071,171,2158,197"/>
+<area shape="poly" title=" " alt="" coords="2373,126,2174,172,2172,167,2372,121"/>
+<area shape="rect" href="rgw__putobj__processor_8h.html" title=" " alt="" coords="2526,171,2684,197"/>
+<area shape="poly" title=" " alt="" coords="2459,121,2561,162,2559,167,2457,126"/>
+<area shape="rect" href="svc__tier__rados_8h.html" title=" " alt="" coords="2544,245,2711,272"/>
+<area shape="poly" title=" " alt="" coords="2486,117,2614,141,2669,155,2697,169,2704,188,2697,207,2682,224,2664,239,2660,234,2679,220,2693,204,2699,188,2694,172,2667,160,2613,146,2485,122"/>
+<area shape="rect" title=" " alt="" coords="2284,171,2451,197"/>
+<area shape="poly" title=" " alt="" coords="2419,125,2389,161,2385,157,2415,122"/>
+<area shape="poly" title=" " alt="" coords="2124,272,2105,275,1976,288,1875,291,1775,299,1716,308,1648,323,1575,347,1521,373,1466,400,1392,424,1237,453,1082,471,941,480,830,484,830,478,940,475,1081,466,1236,448,1391,419,1464,395,1518,369,1573,342,1647,317,1715,303,1774,293,1875,286,1976,282,2104,269,2123,266"/>
+<area shape="poly" title=" " alt="" coords="2125,271,2105,275,2042,282,1987,283,1894,281,1850,282,1803,288,1752,300,1694,322,1670,335,1649,351,1613,385,1610,381,1645,347,1668,331,1692,318,1751,295,1802,283,1849,277,1894,276,1987,278,2042,276,2104,269,2124,266"/>
+<area shape="poly" title=" " alt="" coords="2169,273,2147,339,2129,381,2107,423,2079,459,2075,456,2103,420,2124,379,2142,337,2164,271"/>
+<area shape="poly" title=" " alt="" coords="2215,270,2370,314,2369,320,2213,275"/>
+<area shape="rect" href="rgw__service_8h.html" title=" " alt="" coords="2566,320,2689,347"/>
+<area shape="poly" title=" " alt="" coords="2217,265,2551,317,2550,323,2216,270"/>
+<area shape="poly" title=" " alt="" coords="2613,349,2563,387,2560,383,2609,345"/>
+<area shape="poly" title=" " alt="" coords="2690,344,2765,364,2797,378,2816,393,2822,404,2822,415,2811,435,2790,452,2765,466,2763,462,2787,448,2807,432,2817,414,2816,405,2812,396,2794,382,2764,369,2689,349"/>
+<area shape="poly" title=" " alt="" coords="2690,343,2776,364,2813,378,2837,393,2861,424,2877,460,2886,496,2891,528,2886,529,2881,497,2872,462,2856,427,2834,397,2810,382,2774,369,2689,349"/>
+<area shape="poly" title=" " alt="" coords="2627,348,2612,386,2599,407,2581,424,2545,440,2496,454,2372,472,2238,481,2124,484,2124,478,2238,475,2371,466,2495,448,2543,435,2578,419,2595,403,2607,384,2622,346"/>
+<area shape="poly" title=" " alt="" coords="2834,342,2876,360,2896,375,2911,393,2924,427,2925,464,2918,499,2908,530,2903,528,2913,498,2919,463,2918,428,2907,396,2892,379,2874,365,2832,347"/>
+<area shape="poly" title=" " alt="" coords="2742,344,2388,396,2387,391,2742,339"/>
+<area shape="poly" title=" " alt="" coords="2778,349,2745,385,2741,381,2774,345"/>
+<area shape="poly" title=" " alt="" coords="2825,270,3018,384,3016,389,2822,275"/>
+<area shape="poly" title=" " alt="" coords="2736,275,2476,324,2475,319,2735,270"/>
+<area shape="poly" title=" " alt="" coords="3080,196,3106,218,3133,250,3156,289,3162,310,3165,332,3165,410,3160,441,3147,467,3126,490,3100,509,3040,537,2977,554,2976,549,3038,532,3098,505,3123,486,3142,464,3155,439,3160,409,3160,332,3157,311,3151,291,3129,253,3102,222,3077,200"/>
+<area shape="poly" title=" " alt="" coords="3064,198,3055,380,3050,379,3059,198"/>
+<area shape="poly" title=" " alt="" coords="3022,193,2960,200,2544,235,2232,256,2232,251,2544,229,2959,195,3021,188"/>
+<area shape="poly" title=" " alt="" coords="2109,199,2088,233,2083,231,2104,196"/>
+<area shape="poly" title=" " alt="" coords="2591,200,2451,312,2448,308,2588,196"/>
+<area shape="poly" title=" " alt="" coords="2611,197,2622,230,2616,231,2606,199"/>
+<area shape="poly" title=" " alt="" coords="2630,273,2630,304,2625,304,2625,273"/>
+<area shape="poly" title=" " alt="" coords="2886,197,2893,233,2892,255,2883,274,2859,286,2816,298,2705,321,2704,316,2814,293,2858,281,2879,270,2887,253,2888,234,2880,198"/>
+</map>
+</div>
+</div>
+<p><a href="rgw__period__pusher_8cc_source.html">이 파일의 소스 코드 페이지로 가기</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+클래스</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_push_and_retry_c_r.html">PushAndRetryCR</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A coroutine that calls PushCR, and retries with backoff until success.  <a href="class_push_and_retry_c_r.html#details">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_push_all_c_r.html">PushAllCR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_g_w_period_pusher_1_1_c_r_thread.html">RGWPeriodPusher::CRThread</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A background thread to run the <a class="el" href="class_push_all_c_r.html">PushAllCR</a> coroutine and exit.  <a href="class_r_g_w_period_pusher_1_1_c_r_thread.html#details">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+매크로</h2></td></tr>
+<tr class="memitem:a5580a2b7c4743669bb9ca22b07e84324" id="r_a5580a2b7c4743669bb9ca22b07e84324"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__period__pusher_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">dout_subsys</a>&#160;&#160;&#160;ceph_subsys_rgw</td></tr>
+<tr class="separator:a5580a2b7c4743669bb9ca22b07e84324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce752e347fabcf5fa47c54cc22f9fb1" id="r_a7ce752e347fabcf5fa47c54cc22f9fb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__period__pusher_8cc.html#a7ce752e347fabcf5fa47c54cc22f9fb1">dout_prefix</a>&#160;&#160;&#160;(*_dout &lt;&lt; &quot;rgw period pusher: &quot;)</td></tr>
+<tr class="separator:a7ce752e347fabcf5fa47c54cc22f9fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+타입정의</h2></td></tr>
+<tr class="memitem:ae40f7a99150969c92b62cd35b961a63e" id="r_ae40f7a99150969c92b62cd35b961a63e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rgw__period__pusher_8cc.html#ae40f7a99150969c92b62cd35b961a63e">PushCR</a> = <a class="el" href="class_r_g_w_post_r_e_s_t_resource_c_r.html">RGWPostRESTResourceCR</a>&lt; <a class="el" href="class_r_g_w_period.html">RGWPeriod</a>, int &gt;</td></tr>
+<tr class="memdesc:ae40f7a99150969c92b62cd35b961a63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A coroutine to post the period over the given connection.  <br /></td></tr>
+<tr class="separator:ae40f7a99150969c92b62cd35b961a63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">매크로 문서화</h2>
+<a id="a7ce752e347fabcf5fa47c54cc22f9fb1" name="a7ce752e347fabcf5fa47c54cc22f9fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce752e347fabcf5fa47c54cc22f9fb1">&#9670;&#160;</a></span>dout_prefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_prefix&#160;&#160;&#160;(*_dout &lt;&lt; &quot;rgw period pusher: &quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__period__pusher_8cc_source.html">rgw_period_pusher.cc</a> 파일의 <a class="el" href="rgw__period__pusher_8cc_source.html#l00022">22</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a5580a2b7c4743669bb9ca22b07e84324" name="a5580a2b7c4743669bb9ca22b07e84324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5580a2b7c4743669bb9ca22b07e84324">&#9670;&#160;</a></span>dout_subsys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define dout_subsys&#160;&#160;&#160;ceph_subsys_rgw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__period__pusher_8cc_source.html">rgw_period_pusher.cc</a> 파일의 <a class="el" href="rgw__period__pusher_8cc_source.html#l00019">19</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<h2 class="groupheader">타입정의 문서화</h2>
+<a id="ae40f7a99150969c92b62cd35b961a63e" name="ae40f7a99150969c92b62cd35b961a63e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40f7a99150969c92b62cd35b961a63e">&#9670;&#160;</a></span>PushCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="rgw__period__pusher_8cc.html#ae40f7a99150969c92b62cd35b961a63e">PushCR</a> =  <a class="el" href="class_r_g_w_post_r_e_s_t_resource_c_r.html">RGWPostRESTResourceCR</a>&lt;<a class="el" href="class_r_g_w_period.html">RGWPeriod</a>, int&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A coroutine to post the period over the given connection. </p>
+
+<p class="definition"><a class="el" href="rgw__period__pusher_8cc_source.html">rgw_period_pusher.cc</a> 파일의 <a class="el" href="rgw__period__pusher_8cc_source.html#l00025">25</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__period__pusher_8cc.html">rgw_period_pusher.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

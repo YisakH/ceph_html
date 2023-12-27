@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_rest_iam.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__rest__iam_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_rest_iam.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__rest__iam_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;boost/tokenizer.hpp&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest_8h.html">rgw_rest.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest__iam_8h.html">rgw_rest_iam.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__request_8h.html">rgw_request.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__process_8h.html">rgw_process.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest__role_8h.html">rgw_rest_role.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest__user__policy_8h.html">rgw_rest_user_policy.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__rest__oidc__provider_8h.html">rgw_rest_oidc_provider.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="rgw__rest__iam_8cc.html#ac9f1b8ed4aca7999d392b2d432030e30">   16</a></span><span class="preprocessor">#define dout_context g_ceph_context</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="rgw__rest__iam_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">   17</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a79046006c325a7616da227971307509c">   21</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a79046006c325a7616da227971307509c">RGWHandler_REST_IAM::rgw_iam_parse_input</a>()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::string post_body = <a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>.to_str();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">if</span> (post_body.size() &gt; 0) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ldpp_dout(<a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>, 10) &lt;&lt; <span class="stringliteral">&quot;Content of POST: &quot;</span> &lt;&lt; post_body &lt;&lt; dendl;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (post_body.find(<span class="stringliteral">&quot;Action&quot;</span>) != string::npos) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      boost::char_separator&lt;char&gt; sep(<span class="stringliteral">&quot;&amp;&quot;</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      boost::tokenizer&lt;boost::char_separator&lt;char&gt;&gt; tokens(post_body, sep);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; t : tokens) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keyword">auto</span> pos = t.find(<span class="stringliteral">&quot;=&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (pos != string::npos) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>          <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a3c756f3dc1fade13e84def6431e9baa6">append</a>(t.substr(0,pos),</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                              <a class="code hl_function" href="rgw__common_8cc.html#a24038d3511fcd28180be291d406fc8ed">url_decode</a>(t.substr(pos+1, t.size() -1)));</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">auto</span> payload_hash = <a class="code hl_function" href="namespacergw_1_1auth_1_1s3.html#adce49ddc585458e20a19126960b7f21f">rgw::auth::s3::calc_v4_payload_hash</a>(post_body);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a3c756f3dc1fade13e84def6431e9baa6">append</a>(<span class="stringliteral">&quot;PayloadHash&quot;</span>, payload_hash);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#aa6fb597548dd52f6f60ca6768375a885">   43</a></span><a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *<a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#aa6fb597548dd52f6f60ca6768375a885">RGWHandler_REST_IAM::op_post</a>()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a79046006c325a7616da227971307509c">rgw_iam_parse_input</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a236c98a90ba4134660a4ddb161e55464">exists</a>(<span class="stringliteral">&quot;Action&quot;</span>)) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">string</span> action = <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a813d34418ca1289e50c720669aaa9337">get</a>(<span class="stringliteral">&quot;Action&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;CreateRole&quot;</span>) == 0)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_create_role.html">RGWCreateRole</a>(this-&gt;<a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;DeleteRole&quot;</span>) == 0)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_delete_role.html">RGWDeleteRole</a>(this-&gt;<a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;GetRole&quot;</span>) == 0)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_get_role.html">RGWGetRole</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;UpdateAssumeRolePolicy&quot;</span>) == 0)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_modify_role.html">RGWModifyRole</a>(this-&gt;<a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;ListRoles&quot;</span>) == 0)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_list_roles.html">RGWListRoles</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;PutRolePolicy&quot;</span>) == 0)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_put_role_policy.html">RGWPutRolePolicy</a>(this-&gt;<a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;GetRolePolicy&quot;</span>) == 0)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_get_role_policy.html">RGWGetRolePolicy</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;ListRolePolicies&quot;</span>) == 0)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_list_role_policies.html">RGWListRolePolicies</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;DeleteRolePolicy&quot;</span>) == 0)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_delete_role_policy.html">RGWDeleteRolePolicy</a>(this-&gt;<a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;PutUserPolicy&quot;</span>) == 0)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_put_user_policy.html">RGWPutUserPolicy</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;GetUserPolicy&quot;</span>) == 0)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_get_user_policy.html">RGWGetUserPolicy</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;ListUserPolicies&quot;</span>) == 0)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_list_user_policies.html">RGWListUserPolicies</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;DeleteUserPolicy&quot;</span>) == 0)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_delete_user_policy.html">RGWDeleteUserPolicy</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;CreateOpenIDConnectProvider&quot;</span>) == 0)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_create_o_i_d_c_provider.html">RGWCreateOIDCProvider</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;ListOpenIDConnectProviders&quot;</span>) == 0)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_list_o_i_d_c_providers.html">RGWListOIDCProviders</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;GetOpenIDConnectProvider&quot;</span>) == 0)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_get_o_i_d_c_provider.html">RGWGetOIDCProvider</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;DeleteOpenIDConnectProvider&quot;</span>) == 0)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_delete_o_i_d_c_provider.html">RGWDeleteOIDCProvider</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;TagRole&quot;</span>) == 0)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_tag_role.html">RGWTagRole</a>(this-&gt;<a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;ListRoleTags&quot;</span>) == 0)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_list_role_tags.html">RGWListRoleTags</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (action.compare(<span class="stringliteral">&quot;UntagRole&quot;</span>) == 0)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_untag_role.html">RGWUntagRole</a>(this-&gt;<a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">bl_post_body</a>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a2cfc0090b305efe1901a9bd404e292a9">   94</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a2cfc0090b305efe1901a9bd404e292a9">RGWHandler_REST_IAM::init</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                              <span class="keyword">struct</span> <a class="code hl_struct" href="structreq__state.html">req_state</a> *s,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                              <a class="code hl_class" href="classrgw_1_1io_1_1_basic_client.html">rgw::io::BasicClient</a> *cio)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#aaf12d0f72ef8e94d0ce204bc019056bd">dialect</a> = <span class="stringliteral">&quot;iam&quot;</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">if</span> (<span class="keywordtype">int</span> ret = <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a3d854fcd6cebb0f479acfd0fc336759a">RGWHandler_REST_IAM::init_from_header</a>(<a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>, <a class="code hl_define" href="rgw__common_8h.html#adf6d0a37b01f17ef4cf6af90d512e63c">RGW_FORMAT_XML</a>, <span class="keyword">true</span>); ret &lt; 0) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    ldpp_dout(<a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>, 10) &lt;&lt; <span class="stringliteral">&quot;init_from_header returned err=&quot;</span> &lt;&lt; ret &lt;&lt;  dendl;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_r_g_w_handler.html#ad1cab2ab7aed882b568ee6358059b1c5">RGWHandler_REST::init</a>(<a class="code hl_variable" href="class_r_g_w_handler.html#a0a3ceece07032f8419ccb6da0d50b1bf">store</a>, <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>, cio);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a9f8d52693f4cb2cdd948c5c4d015a5a1">  108</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a9f8d52693f4cb2cdd948c5c4d015a5a1">RGWHandler_REST_IAM::authorize</a>(<span class="keyword">const</span> DoutPrefixProvider* <a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, optional_yield y)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_r_g_w___auth___s3.html#ab7d481dc1328afb3b77e44c68ab17bdd">RGW_Auth_S3::authorize</a>(<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_variable" href="class_r_g_w_handler.html#a0a3ceece07032f8419ccb6da0d50b1bf">store</a>, <a class="code hl_variable" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a20a0a5476cd9cbb81df2fff8fc46e344">auth_registry</a>, <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>, y);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a3d854fcd6cebb0f479acfd0fc336759a">  113</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a3d854fcd6cebb0f479acfd0fc336759a">RGWHandler_REST_IAM::init_from_header</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structreq__state.html">req_state</a>* s,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                                          <span class="keywordtype">int</span> default_formatter,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                          <span class="keywordtype">bool</span> configurable_format)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">string</span> req;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">string</span> first;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a2bae8f3e80c4fe4b78984dcd438dc629">prot_flags</a> = <a class="code hl_define" href="rgw__common_8h.html#a6adcc9332142e0082f3faf7bdbd17f11">RGW_REST_IAM</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *p, *req_name;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">if</span> (req_name = <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a97b8aecf66ad69e25c1ea88be20dc7fa">relative_uri</a>.c_str(); *req_name == <span class="charliteral">&#39;?&#39;</span>) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    p = req_name;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    p = <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a44492d6f5f72f8230d489a809bb708b8">request_params</a>.c_str();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#ad0167c36e38f885a5dae2bd2b86d67b0">set</a>(p);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">args</a>.<a class="code hl_function" href="class_r_g_w_h_t_t_p_args.html#a903d65fcb6212960b2540acadaaf91b2">parse</a>(<a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="comment">/* must be called after the args parsing */</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">if</span> (<span class="keywordtype">int</span> ret = <a class="code hl_function" href="class_r_g_w_handler___r_e_s_t.html#a588cf034ba28e6f2e1cf9a5aa93da7ff">allocate_formatter</a>(<a class="code hl_variable" href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">s</a>, default_formatter, configurable_format); ret &lt; 0)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordflow">if</span> (*req_name != <span class="charliteral">&#39;/&#39;</span>)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  req_name++;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keywordflow">if</span> (!*req_name)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  req = req_name;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">int</span> pos = req.find(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordflow">if</span> (pos &gt;= 0) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    first = req.substr(0, pos);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    first = req;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><a class="code hl_class" href="class_r_g_w_handler___r_e_s_t.html">RGWHandler_REST</a>*</div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_r_g_w_r_e_s_t_mgr___i_a_m.html#afc82b34868317f8d9a95f059eede458f">  156</a></span><a class="code hl_function" href="class_r_g_w_r_e_s_t_mgr___i_a_m.html#afc82b34868317f8d9a95f059eede458f">RGWRESTMgr_IAM::get_handler</a>(<a class="code hl_class" href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a>* <a class="code hl_variable" href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a>,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <span class="keyword">struct</span> <a class="code hl_struct" href="structreq__state.html">req_state</a>* <span class="keyword">const</span> s,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                <span class="keyword">const</span> <a class="code hl_class" href="classrgw_1_1auth_1_1_strategy_registry.html">rgw::auth::StrategyRegistry</a>&amp; auth_registry,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                <span class="keyword">const</span> std::string&amp; frontend_prefix)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>{</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  bufferlist bl;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_r_g_w_handler___r_e_s_t___i_a_m.html">RGWHandler_REST_IAM</a>(auth_registry, bl);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w___auth___s3_html_ab7d481dc1328afb3b77e44c68ab17bdd"><div class="ttname"><a href="class_r_g_w___auth___s3.html#ab7d481dc1328afb3b77e44c68ab17bdd">RGW_Auth_S3::authorize</a></div><div class="ttdeci">static int authorize(const DoutPrefixProvider *dpp, rgw::sal::Store *store, const rgw::auth::StrategyRegistry &amp;auth_registry, struct req_state *s, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__s3_8cc_source.html#l05029">rgw_rest_s3.cc:5029</a></div></div>
+<div class="ttc" id="aclass_r_g_w_create_o_i_d_c_provider_html"><div class="ttname"><a href="class_r_g_w_create_o_i_d_c_provider.html">RGWCreateOIDCProvider</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00033">rgw_rest_oidc_provider.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_create_role_html"><div class="ttname"><a href="class_r_g_w_create_role.html">RGWCreateRole</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00041">rgw_rest_role.h:41</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_o_i_d_c_provider_html"><div class="ttname"><a href="class_r_g_w_delete_o_i_d_c_provider.html">RGWDeleteOIDCProvider</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00044">rgw_rest_oidc_provider.h:44</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_role_html"><div class="ttname"><a href="class_r_g_w_delete_role.html">RGWDeleteRole</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00053">rgw_rest_role.h:53</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_role_policy_html"><div class="ttname"><a href="class_r_g_w_delete_role_policy.html">RGWDeleteRolePolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00129">rgw_rest_role.h:129</a></div></div>
+<div class="ttc" id="aclass_r_g_w_delete_user_policy_html"><div class="ttname"><a href="class_r_g_w_delete_user_policy.html">RGWDeleteUserPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00065">rgw_rest_user_policy.h:65</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_o_i_d_c_provider_html"><div class="ttname"><a href="class_r_g_w_get_o_i_d_c_provider.html">RGWGetOIDCProvider</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00053">rgw_rest_oidc_provider.h:53</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_role_html"><div class="ttname"><a href="class_r_g_w_get_role.html">RGWGetRole</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00064">rgw_rest_role.h:64</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_role_policy_html"><div class="ttname"><a href="class_r_g_w_get_role_policy.html">RGWGetRolePolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00109">rgw_rest_role.h:109</a></div></div>
+<div class="ttc" id="aclass_r_g_w_get_user_policy_html"><div class="ttname"><a href="class_r_g_w_get_user_policy.html">RGWGetUserPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00045">rgw_rest_user_policy.h:45</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_a236c98a90ba4134660a4ddb161e55464"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#a236c98a90ba4134660a4ddb161e55464">RGWHTTPArgs::exists</a></div><div class="ttdeci">bool exists(const char *name) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00365">rgw_common.h:365</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_a3c756f3dc1fade13e84def6431e9baa6"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#a3c756f3dc1fade13e84def6431e9baa6">RGWHTTPArgs::append</a></div><div class="ttdeci">void append(const std::string &amp;name, const std::string &amp;val)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00889">rgw_common.cc:889</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_a813d34418ca1289e50c720669aaa9337"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#a813d34418ca1289e50c720669aaa9337">RGWHTTPArgs::get</a></div><div class="ttdeci">const std::string &amp; get(const std::string &amp;name, bool *exists=NULL) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00949">rgw_common.cc:949</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_a903d65fcb6212960b2540acadaaf91b2"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#a903d65fcb6212960b2540acadaaf91b2">RGWHTTPArgs::parse</a></div><div class="ttdeci">int parse(const DoutPrefixProvider *dpp)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l00829">rgw_common.cc:829</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_args_html_ad0167c36e38f885a5dae2bd2b86d67b0"><div class="ttname"><a href="class_r_g_w_h_t_t_p_args.html#ad0167c36e38f885a5dae2bd2b86d67b0">RGWHTTPArgs::set</a></div><div class="ttdeci">void set(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00342">rgw_common.h:342</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html">RGWHandler_REST_IAM</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8h_source.html#l00010">rgw_rest_iam.h:10</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html_a20a0a5476cd9cbb81df2fff8fc46e344"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a20a0a5476cd9cbb81df2fff8fc46e344">RGWHandler_REST_IAM::auth_registry</a></div><div class="ttdeci">const rgw::auth::StrategyRegistry &amp; auth_registry</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8h_source.html#l00011">rgw_rest_iam.h:11</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html_a2cfc0090b305efe1901a9bd404e292a9"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a2cfc0090b305efe1901a9bd404e292a9">RGWHandler_REST_IAM::init</a></div><div class="ttdeci">int init(rgw::sal::Store *store, struct req_state *s, rgw::io::BasicClient *cio) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8cc_source.html#l00094">rgw_rest_iam.cc:94</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html_a3d854fcd6cebb0f479acfd0fc336759a"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a3d854fcd6cebb0f479acfd0fc336759a">RGWHandler_REST_IAM::init_from_header</a></div><div class="ttdeci">static int init_from_header(struct req_state *s, int default_formatter, bool configurable_format)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8cc_source.html#l00113">rgw_rest_iam.cc:113</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html_a79046006c325a7616da227971307509c"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a79046006c325a7616da227971307509c">RGWHandler_REST_IAM::rgw_iam_parse_input</a></div><div class="ttdeci">void rgw_iam_parse_input()</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8cc_source.html#l00021">rgw_rest_iam.cc:21</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html_a9f8d52693f4cb2cdd948c5c4d015a5a1"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html#a9f8d52693f4cb2cdd948c5c4d015a5a1">RGWHandler_REST_IAM::authorize</a></div><div class="ttdeci">int authorize(const DoutPrefixProvider *dpp, optional_yield y) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8cc_source.html#l00108">rgw_rest_iam.cc:108</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html_aa6fb597548dd52f6f60ca6768375a885"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html#aa6fb597548dd52f6f60ca6768375a885">RGWHandler_REST_IAM::op_post</a></div><div class="ttdeci">RGWOp * op_post() override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8cc_source.html#l00043">rgw_rest_iam.cc:43</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t___i_a_m_html_afcb022ffb3a3d3b054914fe846cecc3d"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t___i_a_m.html#afcb022ffb3a3d3b054914fe846cecc3d">RGWHandler_REST_IAM::bl_post_body</a></div><div class="ttdeci">bufferlist bl_post_body</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8h_source.html#l00012">rgw_rest_iam.h:12</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t_html"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t.html">RGWHandler_REST</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8h_source.html#l00537">rgw_rest.h:537</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler___r_e_s_t_html_a588cf034ba28e6f2e1cf9a5aa93da7ff"><div class="ttname"><a href="class_r_g_w_handler___r_e_s_t.html#a588cf034ba28e6f2e1cf9a5aa93da7ff">RGWHandler_REST::allocate_formatter</a></div><div class="ttdeci">static int allocate_formatter(struct req_state *s, int default_formatter, bool configurable)</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest_8cc_source.html#l01724">rgw_rest.cc:1724</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler_html_a0a3ceece07032f8419ccb6da0d50b1bf"><div class="ttname"><a href="class_r_g_w_handler.html#a0a3ceece07032f8419ccb6da0d50b1bf">RGWHandler::store</a></div><div class="ttdeci">rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00091">rgw_op.h:91</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler_html_a0f04c8e72d3ef80580398f332b6de7d2"><div class="ttname"><a href="class_r_g_w_handler.html#a0f04c8e72d3ef80580398f332b6de7d2">RGWHandler::s</a></div><div class="ttdeci">struct req_state * s</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00092">rgw_op.h:92</a></div></div>
+<div class="ttc" id="aclass_r_g_w_handler_html_ad1cab2ab7aed882b568ee6358059b1c5"><div class="ttname"><a href="class_r_g_w_handler.html#ad1cab2ab7aed882b568ee6358059b1c5">RGWHandler::init</a></div><div class="ttdeci">virtual int init(rgw::sal::Store *store, struct req_state *_s, rgw::io::BasicClient *cio)</div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8cc_source.html#l07911">rgw_op.cc:7911</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_o_i_d_c_providers_html"><div class="ttname"><a href="class_r_g_w_list_o_i_d_c_providers.html">RGWListOIDCProviders</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__oidc__provider_8h_source.html#l00062">rgw_rest_oidc_provider.h:62</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_role_policies_html"><div class="ttname"><a href="class_r_g_w_list_role_policies.html">RGWListRolePolicies</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00119">rgw_rest_role.h:119</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_role_tags_html"><div class="ttname"><a href="class_r_g_w_list_role_tags.html">RGWListRoleTags</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00151">rgw_rest_role.h:151</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_roles_html"><div class="ttname"><a href="class_r_g_w_list_roles.html">RGWListRoles</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00087">rgw_rest_role.h:87</a></div></div>
+<div class="ttc" id="aclass_r_g_w_list_user_policies_html"><div class="ttname"><a href="class_r_g_w_list_user_policies.html">RGWListUserPolicies</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00055">rgw_rest_user_policy.h:55</a></div></div>
+<div class="ttc" id="aclass_r_g_w_modify_role_html"><div class="ttname"><a href="class_r_g_w_modify_role.html">RGWModifyRole</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00076">rgw_rest_role.h:76</a></div></div>
+<div class="ttc" id="aclass_r_g_w_op_html"><div class="ttname"><a href="class_r_g_w_op.html">RGWOp</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00175">rgw_op.h:175</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_role_policy_html"><div class="ttname"><a href="class_r_g_w_put_role_policy.html">RGWPutRolePolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00098">rgw_rest_role.h:98</a></div></div>
+<div class="ttc" id="aclass_r_g_w_put_user_policy_html"><div class="ttname"><a href="class_r_g_w_put_user_policy.html">RGWPutUserPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__user__policy_8h_source.html#l00035">rgw_rest_user_policy.h:35</a></div></div>
+<div class="ttc" id="aclass_r_g_w_r_e_s_t_mgr___i_a_m_html_afc82b34868317f8d9a95f059eede458f"><div class="ttname"><a href="class_r_g_w_r_e_s_t_mgr___i_a_m.html#afc82b34868317f8d9a95f059eede458f">RGWRESTMgr_IAM::get_handler</a></div><div class="ttdeci">RGWHandler_REST * get_handler(rgw::sal::Store *store, struct req_state *, const rgw::auth::StrategyRegistry &amp;, const std::string &amp;) override</div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__iam_8cc_source.html#l00156">rgw_rest_iam.cc:156</a></div></div>
+<div class="ttc" id="aclass_r_g_w_tag_role_html"><div class="ttname"><a href="class_r_g_w_tag_role.html">RGWTagRole</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00140">rgw_rest_role.h:140</a></div></div>
+<div class="ttc" id="aclass_r_g_w_untag_role_html"><div class="ttname"><a href="class_r_g_w_untag_role.html">RGWUntagRole</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__rest__role_8h_source.html#l00161">rgw_rest_role.h:161</a></div></div>
+<div class="ttc" id="aclassrgw_1_1auth_1_1_strategy_registry_html"><div class="ttname"><a href="classrgw_1_1auth_1_1_strategy_registry.html">rgw::auth::StrategyRegistry</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__registry_8h_source.html#l00024">rgw_auth_registry.h:24</a></div></div>
+<div class="ttc" id="aclassrgw_1_1io_1_1_basic_client_html"><div class="ttname"><a href="classrgw_1_1io_1_1_basic_client.html">rgw::io::BasicClient</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__client__io_8h_source.html#l00028">rgw_client_io.h:28</a></div></div>
+<div class="ttc" id="aclassrgw_1_1sal_1_1_store_html"><div class="ttname"><a href="classrgw_1_1sal_1_1_store.html">rgw::sal::Store</a></div><div class="ttdoc">Base singleton representing a Store or stacking layer</div><div class="ttdef"><b>Definition</b> <a href="rgw__sal_8h_source.html#l00243">rgw_sal.h:243</a></div></div>
+<div class="ttc" id="anamespacergw_1_1auth_1_1s3_html_adce49ddc585458e20a19126960b7f21f"><div class="ttname"><a href="namespacergw_1_1auth_1_1s3.html#adce49ddc585458e20a19126960b7f21f">rgw::auth::s3::calc_v4_payload_hash</a></div><div class="ttdeci">static const string calc_v4_payload_hash(const string &amp;payload)</div><div class="ttdef"><b>Definition</b> <a href="rgw__auth__s3_8h_source.html#l00548">rgw_auth_s3.h:548</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_a6fdb26d64b14d837b60e83a6ca3e2863"><div class="ttname"><a href="rgw__admin_8cc.html#a6fdb26d64b14d837b60e83a6ca3e2863">store</a></div><div class="ttdeci">static rgw::sal::Store * store</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00079">rgw_admin.cc:79</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="argw__common_8cc_html_a24038d3511fcd28180be291d406fc8ed"><div class="ttname"><a href="rgw__common_8cc.html#a24038d3511fcd28180be291d406fc8ed">url_decode</a></div><div class="ttdeci">std::string url_decode(const std::string_view &amp;src_str, bool in_query)</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8cc_source.html#l01705">rgw_common.cc:1705</a></div></div>
+<div class="ttc" id="argw__common_8h_html_a6adcc9332142e0082f3faf7bdbd17f11"><div class="ttname"><a href="rgw__common_8h.html#a6adcc9332142e0082f3faf7bdbd17f11">RGW_REST_IAM</a></div><div class="ttdeci">#define RGW_REST_IAM</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00170">rgw_common.h:170</a></div></div>
+<div class="ttc" id="argw__common_8h_html_adf6d0a37b01f17ef4cf6af90d512e63c"><div class="ttname"><a href="rgw__common_8h.html#adf6d0a37b01f17ef4cf6af90d512e63c">RGW_FORMAT_XML</a></div><div class="ttdeci">#define RGW_FORMAT_XML</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00157">rgw_common.h:157</a></div></div>
+<div class="ttc" id="argw__process_8h_html"><div class="ttname"><a href="rgw__process_8h.html">rgw_process.h</a></div></div>
+<div class="ttc" id="argw__request_8h_html"><div class="ttname"><a href="rgw__request_8h.html">rgw_request.h</a></div></div>
+<div class="ttc" id="argw__rest_8h_html"><div class="ttname"><a href="rgw__rest_8h.html">rgw_rest.h</a></div></div>
+<div class="ttc" id="argw__rest__iam_8h_html"><div class="ttname"><a href="rgw__rest__iam_8h.html">rgw_rest_iam.h</a></div></div>
+<div class="ttc" id="argw__rest__oidc__provider_8h_html"><div class="ttname"><a href="rgw__rest__oidc__provider_8h.html">rgw_rest_oidc_provider.h</a></div></div>
+<div class="ttc" id="argw__rest__role_8h_html"><div class="ttname"><a href="rgw__rest__role_8h.html">rgw_rest_role.h</a></div></div>
+<div class="ttc" id="argw__rest__user__policy_8h_html"><div class="ttname"><a href="rgw__rest__user__policy_8h.html">rgw_rest_user_policy.h</a></div></div>
+<div class="ttc" id="astructreq__info_html_a44492d6f5f72f8230d489a809bb708b8"><div class="ttname"><a href="structreq__info.html#a44492d6f5f72f8230d489a809bb708b8">req_info::request_params</a></div><div class="ttdeci">std::string request_params</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01237">rgw_common.h:1237</a></div></div>
+<div class="ttc" id="astructreq__info_html_a7c7740398b9cdf48335a1a4253dbdcf7"><div class="ttname"><a href="structreq__info.html#a7c7740398b9cdf48335a1a4253dbdcf7">req_info::args</a></div><div class="ttdeci">RGWHTTPArgs args</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01227">rgw_common.h:1227</a></div></div>
+<div class="ttc" id="astructreq__state_html"><div class="ttname"><a href="structreq__state.html">req_state</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01551">rgw_common.h:1551</a></div></div>
+<div class="ttc" id="astructreq__state_html_a2bae8f3e80c4fe4b78984dcd438dc629"><div class="ttname"><a href="structreq__state.html#a2bae8f3e80c4fe4b78984dcd438dc629">req_state::prot_flags</a></div><div class="ttdeci">int prot_flags</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01659">rgw_common.h:1659</a></div></div>
+<div class="ttc" id="astructreq__state_html_a494770c97c157bfcf918251e31ad2fdc"><div class="ttname"><a href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">req_state::info</a></div><div class="ttdeci">req_info info</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01669">rgw_common.h:1669</a></div></div>
+<div class="ttc" id="astructreq__state_html_a97b8aecf66ad69e25c1ea88be20dc7fa"><div class="ttname"><a href="structreq__state.html#a97b8aecf66ad69e25c1ea88be20dc7fa">req_state::relative_uri</a></div><div class="ttdeci">std::string relative_uri</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01565">rgw_common.h:1565</a></div></div>
+<div class="ttc" id="astructreq__state_html_aaf12d0f72ef8e94d0ce204bc019056bd"><div class="ttname"><a href="structreq__state.html#aaf12d0f72ef8e94d0ce204bc019056bd">req_state::dialect</a></div><div class="ttdeci">std::string dialect</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01678">rgw_common.h:1678</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__rest__iam_8cc.html">rgw_rest_iam.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

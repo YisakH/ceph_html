@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_period_history.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__period__history_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_period_history.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__period__history_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef RGW_PERIOD_HISTORY_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define RGW_PERIOD_HISTORY_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;system_error&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;boost/intrusive/avl_set.hpp&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;include/ceph_assert.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;include/types.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;common/async/yield_context.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;common/dout.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>bi = boost::intrusive;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_history.html">RGWPeriodHistory</a> final {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_history_1_1_history.html">History</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="comment">// comparisons for avl_set ordering</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="class_r_g_w_period_history.html#a89c851804262a1a86bc52ad42166f454">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_history.html">History</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_history.html">History</a>&amp; rhs);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history.html#a2a8fb497e45b92c7b7ee4c7c2b589da2">   32</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_newest_epoch_less.html">NewestEpochLess</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_history_1_1_impl.html">Impl</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history.html#aee6de964ddf072bd3d3472a5f6592473">   35</a></span>  std::unique_ptr&lt;Impl&gt; <a class="code hl_variable" href="class_r_g_w_period_history.html#aee6de964ddf072bd3d3472a5f6592473">impl</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_puller.html">   42</a></span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_history_1_1_puller.html">Puller</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_puller.html#aaba4885785b2d1a5637a2be401f5b26f">   44</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_puller.html#aaba4885785b2d1a5637a2be401f5b26f">~Puller</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_puller.html#a0083fdd912c3852fdb0eeacc99bb2ff7">   46</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_puller.html#a0083fdd912c3852fdb0eeacc99bb2ff7">pull</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <span class="keyword">const</span> std::string&amp; period_id, <a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>&amp; period,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>             optional_yield y) = 0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  };</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_class" href="class_r_g_w_period_history.html">RGWPeriodHistory</a>(CephContext* <a class="code hl_variable" href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a>, <a class="code hl_class" href="class_r_g_w_period_history_1_1_puller.html">Puller</a>* puller,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                   <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>&amp; current_period);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history.html#ad2698ab5251c8ac5225811d6a5b19060">   52</a></span>  <a class="code hl_function" href="class_r_g_w_period_history.html#ad2698ab5251c8ac5225811d6a5b19060">~RGWPeriodHistory</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html">   62</a></span>  <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a> final {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a696f91b9f040f31b782fd6d22d6aa710">   64</a></span>    <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#a696f91b9f040f31b782fd6d22d6aa710">Cursor</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#ad6a5ec01987c19f4bfa7b2d04b36bbba">   65</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#ad6a5ec01987c19f4bfa7b2d04b36bbba">Cursor</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a934360ad74f8b7db55f7e4c170408882">error</a>) : <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a934360ad74f8b7db55f7e4c170408882">error</a>(<a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a934360ad74f8b7db55f7e4c170408882">error</a>) {}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a45a5f414102d5d435f2dcad8974bfd8a">   67</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#a45a5f414102d5d435f2dcad8974bfd8a">get_error</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a934360ad74f8b7db55f7e4c170408882">error</a>; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#adbefd575bcef2d3e1639794223d58bf3">   70</a></span>    <span class="keyword">operator</span> bool()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a3d544a1c9650c385bc3bfa4436b376a5">history</a> != <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#aa136521ef8f6715dbeccaaf0a82cbb55">   72</a></span>    epoch_t <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#aa136521ef8f6715dbeccaaf0a82cbb55">get_epoch</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">epoch</a>; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>&amp; <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#a9fbfc0c721caff3d7202c829b6b533a7">get_period</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#abfd3b6bc296ec2e9ed2e9f8ac1e816df">has_prev</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#a1ea7b21ef6647dff97914b9bf35fc4b6">has_next</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a81cf3a3963acb87ae814213181d4410a">   78</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#a81cf3a3963acb87ae814213181d4410a">prev</a>() { <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">epoch</a>--; }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a769954a487f2a399eedd2d43610f85a3">   79</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#a769954a487f2a399eedd2d43610f85a3">next</a>() { <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">epoch</a>++; }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="class_r_g_w_period_history_1_1_cursor.html#a0dbfb19147a2e471e03f5946ce65d307">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a>&amp; rhs);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="class_r_g_w_period_history_1_1_cursor.html#a91ba3fd58fbddae24c4913653fa06c01">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a>&amp; lhs, <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a>&amp; rhs);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// private constructors for RGWPeriodHistory</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a93a58366e2535b7288432b34fe1f42e4">   86</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_period_history_1_1_impl.html">RGWPeriodHistory::Impl</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#aaa34adb8e166259cc2dfae327175d7c1">   88</a></span>    <a class="code hl_function" href="class_r_g_w_period_history_1_1_cursor.html#aaa34adb8e166259cc2dfae327175d7c1">Cursor</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_history.html">History</a>* <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a3d544a1c9650c385bc3bfa4436b376a5">history</a>, std::mutex* <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#ac200aa7f0e7b04aedc5c12a92c5e7ef6">mutex</a>, epoch_t <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">epoch</a>)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      : <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a3d544a1c9650c385bc3bfa4436b376a5">history</a>(<a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a3d544a1c9650c385bc3bfa4436b376a5">history</a>), <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#ac200aa7f0e7b04aedc5c12a92c5e7ef6">mutex</a>(<a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#ac200aa7f0e7b04aedc5c12a92c5e7ef6">mutex</a>), <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">epoch</a>(<a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">epoch</a>) {}</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a934360ad74f8b7db55f7e4c170408882">   91</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a934360ad74f8b7db55f7e4c170408882">error</a>{0};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a3d544a1c9650c385bc3bfa4436b376a5">   92</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="class_r_g_w_period_history_1_1_history.html">History</a>* <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a3d544a1c9650c385bc3bfa4436b376a5">history</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#ac200aa7f0e7b04aedc5c12a92c5e7ef6">   93</a></span>    std::mutex* <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#ac200aa7f0e7b04aedc5c12a92c5e7ef6">mutex</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">   94</a></span>    epoch_t <a class="code hl_variable" href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">epoch</a>{0}; <span class="comment">//&lt; realm epoch of cursor position</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  };</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a> <a class="code hl_function" href="class_r_g_w_period_history.html#abed5aafbeebde92e34fcd2343640e9d2">get_current</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a> <a class="code hl_function" href="class_r_g_w_period_history.html#ab5f866dbef6045fc0174e2352bba40d0">attach</a>(<span class="keyword">const</span> DoutPrefixProvider *<a class="code hl_function" href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a>, <a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>&amp;&amp; period, optional_yield y);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a> <a class="code hl_function" href="class_r_g_w_period_history.html#a6ca73f6483014540faf2b9c2740dbbae">insert</a>(<a class="code hl_class" href="class_r_g_w_period.html">RGWPeriod</a>&amp;&amp; period);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_class" href="class_r_g_w_period_history_1_1_cursor.html">Cursor</a> <a class="code hl_function" href="class_r_g_w_period_history.html#a88e83c0cf959261f95adf21c8959e925">lookup</a>(epoch_t realm_epoch);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>};</div>
+</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#endif </span><span class="comment">// RGW_PERIOD_HISTORY_H</span></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html">RGWPeriodHistory::Cursor</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00062">rgw_period_history.h:62</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a069fa3e7a6628befb953ff134d16ca26"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a069fa3e7a6628befb953ff134d16ca26">RGWPeriodHistory::Cursor::epoch</a></div><div class="ttdeci">epoch_t epoch</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00094">rgw_period_history.h:94</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a0dbfb19147a2e471e03f5946ce65d307"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a0dbfb19147a2e471e03f5946ce65d307">RGWPeriodHistory::Cursor::operator==</a></div><div class="ttdeci">friend bool operator==(const Cursor &amp;lhs, const Cursor &amp;rhs)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00072">rgw_period_history.cc:72</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a1ea7b21ef6647dff97914b9bf35fc4b6"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a1ea7b21ef6647dff97914b9bf35fc4b6">RGWPeriodHistory::Cursor::has_next</a></div><div class="ttdeci">bool has_next() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00066">rgw_period_history.cc:66</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a3d544a1c9650c385bc3bfa4436b376a5"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a3d544a1c9650c385bc3bfa4436b376a5">RGWPeriodHistory::Cursor::history</a></div><div class="ttdeci">const History * history</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00092">rgw_period_history.h:92</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a45a5f414102d5d435f2dcad8974bfd8a"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a45a5f414102d5d435f2dcad8974bfd8a">RGWPeriodHistory::Cursor::get_error</a></div><div class="ttdeci">int get_error() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00067">rgw_period_history.h:67</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a696f91b9f040f31b782fd6d22d6aa710"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a696f91b9f040f31b782fd6d22d6aa710">RGWPeriodHistory::Cursor::Cursor</a></div><div class="ttdeci">Cursor()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a769954a487f2a399eedd2d43610f85a3"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a769954a487f2a399eedd2d43610f85a3">RGWPeriodHistory::Cursor::next</a></div><div class="ttdeci">void next()</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00079">rgw_period_history.h:79</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a81cf3a3963acb87ae814213181d4410a"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a81cf3a3963acb87ae814213181d4410a">RGWPeriodHistory::Cursor::prev</a></div><div class="ttdeci">void prev()</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00078">rgw_period_history.h:78</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a91ba3fd58fbddae24c4913653fa06c01"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a91ba3fd58fbddae24c4913653fa06c01">RGWPeriodHistory::Cursor::operator!=</a></div><div class="ttdeci">friend bool operator!=(const Cursor &amp;lhs, const Cursor &amp;rhs)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00077">rgw_period_history.cc:77</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a934360ad74f8b7db55f7e4c170408882"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a934360ad74f8b7db55f7e4c170408882">RGWPeriodHistory::Cursor::error</a></div><div class="ttdeci">int error</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00091">rgw_period_history.h:91</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_a9fbfc0c721caff3d7202c829b6b533a7"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#a9fbfc0c721caff3d7202c829b6b533a7">RGWPeriodHistory::Cursor::get_period</a></div><div class="ttdeci">const RGWPeriod &amp; get_period() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00056">rgw_period_history.cc:56</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_aa136521ef8f6715dbeccaaf0a82cbb55"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#aa136521ef8f6715dbeccaaf0a82cbb55">RGWPeriodHistory::Cursor::get_epoch</a></div><div class="ttdeci">epoch_t get_epoch() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00072">rgw_period_history.h:72</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_aaa34adb8e166259cc2dfae327175d7c1"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#aaa34adb8e166259cc2dfae327175d7c1">RGWPeriodHistory::Cursor::Cursor</a></div><div class="ttdeci">Cursor(const History *history, std::mutex *mutex, epoch_t epoch)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00088">rgw_period_history.h:88</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_abfd3b6bc296ec2e9ed2e9f8ac1e816df"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#abfd3b6bc296ec2e9ed2e9f8ac1e816df">RGWPeriodHistory::Cursor::has_prev</a></div><div class="ttdeci">bool has_prev() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00061">rgw_period_history.cc:61</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_ac200aa7f0e7b04aedc5c12a92c5e7ef6"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#ac200aa7f0e7b04aedc5c12a92c5e7ef6">RGWPeriodHistory::Cursor::mutex</a></div><div class="ttdeci">std::mutex * mutex</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00093">rgw_period_history.h:93</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_cursor_html_ad6a5ec01987c19f4bfa7b2d04b36bbba"><div class="ttname"><a href="class_r_g_w_period_history_1_1_cursor.html#ad6a5ec01987c19f4bfa7b2d04b36bbba">RGWPeriodHistory::Cursor::Cursor</a></div><div class="ttdeci">Cursor(int error)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00065">rgw_period_history.h:65</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_history_html"><div class="ttname"><a href="class_r_g_w_period_history_1_1_history.html">RGWPeriodHistory::History</a></div><div class="ttdoc">an ordered history of consecutive periods</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00015">rgw_period_history.cc:15</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_impl_html"><div class="ttname"><a href="class_r_g_w_period_history_1_1_impl.html">RGWPeriodHistory::Impl</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00082">rgw_period_history.cc:82</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_puller_html"><div class="ttname"><a href="class_r_g_w_period_history_1_1_puller.html">RGWPeriodHistory::Puller</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00042">rgw_period_history.h:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_puller_html_a0083fdd912c3852fdb0eeacc99bb2ff7"><div class="ttname"><a href="class_r_g_w_period_history_1_1_puller.html#a0083fdd912c3852fdb0eeacc99bb2ff7">RGWPeriodHistory::Puller::pull</a></div><div class="ttdeci">virtual int pull(const DoutPrefixProvider *dpp, const std::string &amp;period_id, RGWPeriod &amp;period, optional_yield y)=0</div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_1_1_puller_html_aaba4885785b2d1a5637a2be401f5b26f"><div class="ttname"><a href="class_r_g_w_period_history_1_1_puller.html#aaba4885785b2d1a5637a2be401f5b26f">RGWPeriodHistory::Puller::~Puller</a></div><div class="ttdeci">virtual ~Puller()=default</div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html"><div class="ttname"><a href="class_r_g_w_period_history.html">RGWPeriodHistory</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00025">rgw_period_history.h:25</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html_a6ca73f6483014540faf2b9c2740dbbae"><div class="ttname"><a href="class_r_g_w_period_history.html#a6ca73f6483014540faf2b9c2740dbbae">RGWPeriodHistory::insert</a></div><div class="ttdeci">Cursor insert(RGWPeriod &amp;&amp;period)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00346">rgw_period_history.cc:346</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html_a88e83c0cf959261f95adf21c8959e925"><div class="ttname"><a href="class_r_g_w_period_history.html#a88e83c0cf959261f95adf21c8959e925">RGWPeriodHistory::lookup</a></div><div class="ttdeci">Cursor lookup(epoch_t realm_epoch)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00350">rgw_period_history.cc:350</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html_a89c851804262a1a86bc52ad42166f454"><div class="ttname"><a href="class_r_g_w_period_history.html#a89c851804262a1a86bc52ad42166f454">RGWPeriodHistory::operator&lt;</a></div><div class="ttdeci">friend bool operator&lt;(const History &amp;lhs, const History &amp;rhs)</div><div class="ttdoc">value comparison for avl_set</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00040">rgw_period_history.cc:40</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html_ab5f866dbef6045fc0174e2352bba40d0"><div class="ttname"><a href="class_r_g_w_period_history.html#ab5f866dbef6045fc0174e2352bba40d0">RGWPeriodHistory::attach</a></div><div class="ttdeci">Cursor attach(const DoutPrefixProvider *dpp, RGWPeriod &amp;&amp;period, optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00342">rgw_period_history.cc:342</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html_abed5aafbeebde92e34fcd2343640e9d2"><div class="ttname"><a href="class_r_g_w_period_history.html#abed5aafbeebde92e34fcd2343640e9d2">RGWPeriodHistory::get_current</a></div><div class="ttdeci">Cursor get_current() const</div><div class="ttdoc">return a cursor to the current period</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00338">rgw_period_history.cc:338</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html_ad2698ab5251c8ac5225811d6a5b19060"><div class="ttname"><a href="class_r_g_w_period_history.html#ad2698ab5251c8ac5225811d6a5b19060">RGWPeriodHistory::~RGWPeriodHistory</a></div><div class="ttdeci">~RGWPeriodHistory()</div></div>
+<div class="ttc" id="aclass_r_g_w_period_history_html_aee6de964ddf072bd3d3472a5f6592473"><div class="ttname"><a href="class_r_g_w_period_history.html#aee6de964ddf072bd3d3472a5f6592473">RGWPeriodHistory::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8h_source.html#l00035">rgw_period_history.h:35</a></div></div>
+<div class="ttc" id="aclass_r_g_w_period_html"><div class="ttname"><a href="class_r_g_w_period.html">RGWPeriod</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__zone_8h_source.html#l01231">rgw_zone.h:1232</a></div></div>
+<div class="ttc" id="acls__fifo__legacy_8cc_html_aa76801f7597f40e158b5f38b2e6466c5"><div class="ttname"><a href="cls__fifo__legacy_8cc.html#aa76801f7597f40e158b5f38b2e6466c5">cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="cls__fifo__legacy_8cc_source.html#l00247">cls_fifo_legacy.cc:247</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_afe3e74bcdf0327f8777c02b83cfea5b5"><div class="ttname"><a href="rgw__admin_8cc.html#afe3e74bcdf0327f8777c02b83cfea5b5">dpp</a></div><div class="ttdeci">static const DoutPrefixProvider * dpp()</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l00081">rgw_admin.cc:81</a></div></div>
+<div class="ttc" id="astruct_newest_epoch_less_html"><div class="ttname"><a href="struct_newest_epoch_less.html">NewestEpochLess</a></div><div class="ttdoc">key-value comparison for avl_set</div><div class="ttdef"><b>Definition</b> <a href="rgw__period__history_8cc_source.html#l00047">rgw_period_history.cc:47</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__period__history_8h.html">rgw_period_history.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

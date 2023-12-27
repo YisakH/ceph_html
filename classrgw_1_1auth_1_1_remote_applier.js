@@ -1,0 +1,26 @@
+var classrgw_1_1auth_1_1_remote_applier =
+[
+    [ "AuthInfo", "classrgw_1_1auth_1_1_remote_applier_1_1_auth_info.html", "classrgw_1_1auth_1_1_remote_applier_1_1_auth_info" ],
+    [ "Factory", "structrgw_1_1auth_1_1_remote_applier_1_1_factory.html", "structrgw_1_1auth_1_1_remote_applier_1_1_factory" ],
+    [ "acl_strategy_t", "classrgw_1_1auth_1_1_remote_applier.html#a6c69970586e35d57ff86348469400a73", null ],
+    [ "aclspec_t", "classrgw_1_1auth_1_1_remote_applier.html#a397a1f903a9db6963786f41c71d333ba", null ],
+    [ "RemoteApplier", "classrgw_1_1auth_1_1_remote_applier.html#a95e948f9748e79a6c3a651ef155326c6", null ],
+    [ "create_account", "classrgw_1_1auth_1_1_remote_applier.html#a86243ff365e6e084fd0ee2a51e8a5320", null ],
+    [ "get_acct_name", "classrgw_1_1auth_1_1_remote_applier.html#aab0c2b911c1481b0c035e357349659c9", null ],
+    [ "get_identity_type", "classrgw_1_1auth_1_1_remote_applier.html#a4dae2510d9a411c7736606cd134291e4", null ],
+    [ "get_perm_mask", "classrgw_1_1auth_1_1_remote_applier.html#aaeeee7d0b89342616ba8c9d0293e0456", null ],
+    [ "get_perms_from_aclspec", "classrgw_1_1auth_1_1_remote_applier.html#acc7339be8049623992ccbc233eca2d93", null ],
+    [ "get_subuser", "classrgw_1_1auth_1_1_remote_applier.html#a107f14b7235bedb53bea0f99c3de69bb", null ],
+    [ "is_admin_of", "classrgw_1_1auth_1_1_remote_applier.html#ad850fb80e2fa35b6b5b981d0e3568776", null ],
+    [ "is_identity", "classrgw_1_1auth_1_1_remote_applier.html#a969747e5749da2eedcca69a981fe667f", null ],
+    [ "is_owner_of", "classrgw_1_1auth_1_1_remote_applier.html#aefd2e29b5d1677e79cede81c81ade566", null ],
+    [ "load_acct_info", "classrgw_1_1auth_1_1_remote_applier.html#aa61293a482e949d524b347b8a0c6e124", null ],
+    [ "to_str", "classrgw_1_1auth_1_1_remote_applier.html#a6c96883debdd2545b023993192e889a1", null ],
+    [ "write_ops_log_entry", "classrgw_1_1auth_1_1_remote_applier.html#a2727cd8f0a9a96a4a7a6d15ac0ebc124", null ],
+    [ "cct", "classrgw_1_1auth_1_1_remote_applier.html#a8260d104afb5a42ae4651fa939dc3d5e", null ],
+    [ "extra_acl_strategy", "classrgw_1_1auth_1_1_remote_applier.html#a1b5ae570490f183bf8bb2b89276c97fa", null ],
+    [ "implicit_tenant_bit", "classrgw_1_1auth_1_1_remote_applier.html#a2365fc5c987b89abb4f3bcefe117ec27", null ],
+    [ "implicit_tenant_context", "classrgw_1_1auth_1_1_remote_applier.html#a945b52d75b0fb1762bc87a4449b637a9", null ],
+    [ "info", "classrgw_1_1auth_1_1_remote_applier.html#a76fdd4f6880c588b1ad8e7df6e0fbfd0", null ],
+    [ "store", "classrgw_1_1auth_1_1_remote_applier.html#a951bb427317458865df239ffee19be85", null ]
+];

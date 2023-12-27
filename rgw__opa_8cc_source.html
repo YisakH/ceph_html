@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_opa.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__opa_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_opa.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__opa_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__opa_8h.html">rgw_opa.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__http__client_8h.html">rgw_http_client.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="rgw__opa_8cc.html#ac9f1b8ed4aca7999d392b2d432030e30">    7</a></span><span class="preprocessor">#define dout_context g_ceph_context</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="rgw__opa_8cc.html#a5580a2b7c4743669bb9ca22b07e84324">    8</a></span><span class="preprocessor">#define dout_subsys ceph_subsys_rgw</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="rgw__opa_8cc.html#a7dda23b521fb8734c127350df8b5f259">   12</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="rgw__opa_8cc.html#a7dda23b521fb8734c127350df8b5f259">rgw_opa_authorize</a>(<a class="code hl_class" href="class_r_g_w_op.html">RGWOp</a> *&amp; op,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                      <a class="code hl_struct" href="structreq__state.html">req_state</a> * <span class="keyword">const</span> s)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  ldpp_dout(op, 2) &lt;&lt; <span class="stringliteral">&quot;authorizing request using OPA&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="comment">/* get OPA url */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; opa_url = s-&gt;<a class="code hl_variable" href="structreq__state.html#a98ff7b0fe2e9f0a932493c80c89280dc">cct</a>-&gt;_conf-&gt;rgw_opa_url;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (opa_url == <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    ldpp_dout(op, 2) &lt;&lt; <span class="stringliteral">&quot;OPA_URL not provided&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> -<a class="code hl_define" href="rgw__common_8h.html#ad9afe8cb242cef9c7e4cbd064c12aa83">ERR_INVALID_REQUEST</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  ldpp_dout(op, 2) &lt;&lt; <span class="stringliteral">&quot;OPA URL= &quot;</span> &lt;&lt; opa_url.c_str() &lt;&lt; dendl;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">/* get authentication token for OPA */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; opa_token = s-&gt;<a class="code hl_variable" href="structreq__state.html#a98ff7b0fe2e9f0a932493c80c89280dc">cct</a>-&gt;_conf-&gt;rgw_opa_token;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">int</span> ret;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  bufferlist bl;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_class" href="class_r_g_w_h_t_t_p_transceiver.html">RGWHTTPTransceiver</a> req(s-&gt;<a class="code hl_variable" href="structreq__state.html#a98ff7b0fe2e9f0a932493c80c89280dc">cct</a>, <span class="stringliteral">&quot;POST&quot;</span>, opa_url.c_str(), &amp;bl);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="comment">/* set required headers for OPA request */</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  req.<a class="code hl_function" href="class_r_g_w_h_t_t_p_client.html#a8d4aa112a185bf07f192bea69b3c31fb">append_header</a>(<span class="stringliteral">&quot;X-Auth-Token&quot;</span>, opa_token);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  req.<a class="code hl_function" href="class_r_g_w_h_t_t_p_client.html#a8d4aa112a185bf07f192bea69b3c31fb">append_header</a>(<span class="stringliteral">&quot;Content-Type&quot;</span>, <span class="stringliteral">&quot;application/json&quot;</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  req.<a class="code hl_function" href="class_r_g_w_h_t_t_p_client.html#a8d4aa112a185bf07f192bea69b3c31fb">append_header</a>(<span class="stringliteral">&quot;Expect&quot;</span>, <span class="stringliteral">&quot;100-continue&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="comment">/* check if we want to verify OPA server SSL certificate */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  req.<a class="code hl_function" href="class_r_g_w_h_t_t_p_client.html#a1db09d373a335c53cf1fd6d6339b5feb">set_verify_ssl</a>(s-&gt;<a class="code hl_variable" href="structreq__state.html#a98ff7b0fe2e9f0a932493c80c89280dc">cct</a>-&gt;_conf-&gt;rgw_opa_verify_ssl);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="comment">/* create json request body */</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  JSONFormatter jf;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  jf.open_object_section(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  jf.open_object_section(<span class="stringliteral">&quot;input&quot;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  jf.dump_string(<span class="stringliteral">&quot;method&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a8d7bb9e0a8699b24f8b3c511617685a6">env</a>-&gt;<a class="code hl_function" href="class_r_g_w_env.html#ade7d5d23b881eabbb09bce4ac164ea08">get</a>(<span class="stringliteral">&quot;REQUEST_METHOD&quot;</span>));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  jf.dump_string(<span class="stringliteral">&quot;relative_uri&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#a97b8aecf66ad69e25c1ea88be20dc7fa">relative_uri</a>.c_str());</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  jf.dump_string(<span class="stringliteral">&quot;decoded_uri&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#af705d889ac72420fd763ffe815e44e62">decoded_uri</a>.c_str());</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  jf.dump_string(<span class="stringliteral">&quot;params&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#a44492d6f5f72f8230d489a809bb708b8">request_params</a>.c_str());</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  jf.dump_string(<span class="stringliteral">&quot;request_uri_aws4&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">info</a>.<a class="code hl_variable" href="structreq__info.html#ae127757433238547f5a44643755768d5">request_uri_aws4</a>.c_str());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">if</span> (s-&gt;<a class="code hl_variable" href="structreq__state.html#a67c6558952757f16ddb49664ccc25a5c">object</a>) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    jf.dump_string(<span class="stringliteral">&quot;object_name&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#a67c6558952757f16ddb49664ccc25a5c">object</a>-&gt;get_name().c_str());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">if</span> (s-&gt;<a class="code hl_variable" href="structreq__state.html#a6143849ef380f3410a5728a8920a7740">auth</a>.<a class="code hl_variable" href="structreq__state.html#a466fbabdb58814521e4cc80a4a1ef391">identity</a>) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    jf.dump_string(<span class="stringliteral">&quot;subuser&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#a6143849ef380f3410a5728a8920a7740">auth</a>.<a class="code hl_variable" href="structreq__state.html#a466fbabdb58814521e4cc80a4a1ef391">identity</a>-&gt;get_subuser().c_str());</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">if</span> (s-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    jf.dump_object(<span class="stringliteral">&quot;user_info&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">user</a>-&gt;get_info());</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordflow">if</span> (s-&gt;<a class="code hl_variable" href="structreq__state.html#a8b94554a9fef0d41ef5797293a63f2e5">bucket</a>) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    jf.dump_object(<span class="stringliteral">&quot;bucket_info&quot;</span>, s-&gt;<a class="code hl_variable" href="structreq__state.html#a8b94554a9fef0d41ef5797293a63f2e5">bucket</a>-&gt;get_info());</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  jf.close_section();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  jf.close_section();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  std::stringstream ss;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  jf.flush(ss);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  req.<a class="code hl_function" href="class_r_g_w_h_t_t_p_transceiver.html#abd8c12eaff4e72b22336e632826663fd">set_post_data</a>(ss.str());</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  req.<a class="code hl_function" href="class_r_g_w_h_t_t_p_client.html#a340f32b14fc826866fe476175ceb2ed8">set_send_length</a>(ss.str().length());</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="comment">/* send request */</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  ret = req.<a class="code hl_function" href="class_r_g_w_h_t_t_p_client.html#a38de0b9ceefce30a6003b12d562e425d">process</a>(null_yield);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">if</span> (ret &lt; 0) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    ldpp_dout(op, 2) &lt;&lt; <span class="stringliteral">&quot;OPA process error:&quot;</span> &lt;&lt; bl.c_str() &lt;&lt; dendl;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">/* check OPA response */</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  JSONParser parser;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">if</span> (!parser.parse(bl.c_str(), bl.length())) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    ldpp_dout(op, 2) &lt;&lt; <span class="stringliteral">&quot;OPA parse error: malformed json&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">bool</span> opa_result;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  JSONDecoder::decode_json(<span class="stringliteral">&quot;result&quot;</span>, opa_result, &amp;parser);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">if</span> (opa_result == <span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    ldpp_dout(op, 2) &lt;&lt; <span class="stringliteral">&quot;OPA rejecting request&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> -EPERM;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  ldpp_dout(op, 2) &lt;&lt; <span class="stringliteral">&quot;OPA accepting request&quot;</span> &lt;&lt; dendl;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="ttc" id="aclass_r_g_w_env_html_ade7d5d23b881eabbb09bce4ac164ea08"><div class="ttname"><a href="class_r_g_w_env.html#ade7d5d23b881eabbb09bce4ac164ea08">RGWEnv::get</a></div><div class="ttdeci">const char * get(const char *name, const char *def_val=nullptr) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__env_8cc_source.html#l00055">rgw_env.cc:55</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_client_html_a1db09d373a335c53cf1fd6d6339b5feb"><div class="ttname"><a href="class_r_g_w_h_t_t_p_client.html#a1db09d373a335c53cf1fd6d6339b5feb">RGWHTTPClient::set_verify_ssl</a></div><div class="ttdeci">void set_verify_ssl(bool flag)</div><div class="ttdef"><b>Definition</b> <a href="rgw__http__client_8h_source.html#l00144">rgw_http_client.h:144</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_client_html_a340f32b14fc826866fe476175ceb2ed8"><div class="ttname"><a href="class_r_g_w_h_t_t_p_client.html#a340f32b14fc826866fe476175ceb2ed8">RGWHTTPClient::set_send_length</a></div><div class="ttdeci">void set_send_length(size_t len)</div><div class="ttdef"><b>Definition</b> <a href="rgw__http__client_8h_source.html#l00127">rgw_http_client.h:127</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_client_html_a38de0b9ceefce30a6003b12d562e425d"><div class="ttname"><a href="class_r_g_w_h_t_t_p_client.html#a38de0b9ceefce30a6003b12d562e425d">RGWHTTPClient::process</a></div><div class="ttdeci">int process(optional_yield y)</div><div class="ttdef"><b>Definition</b> <a href="rgw__http__client_8cc_source.html#l00538">rgw_http_client.cc:538</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_client_html_a8d4aa112a185bf07f192bea69b3c31fb"><div class="ttname"><a href="class_r_g_w_h_t_t_p_client.html#a8d4aa112a185bf07f192bea69b3c31fb">RGWHTTPClient::append_header</a></div><div class="ttdeci">void append_header(const std::string &amp;name, const std::string &amp;val)</div><div class="ttdef"><b>Definition</b> <a href="rgw__http__client_8h_source.html#l00123">rgw_http_client.h:123</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_transceiver_html"><div class="ttname"><a href="class_r_g_w_h_t_t_p_transceiver.html">RGWHTTPTransceiver</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__http__client_8h_source.html#l00228">rgw_http_client.h:228</a></div></div>
+<div class="ttc" id="aclass_r_g_w_h_t_t_p_transceiver_html_abd8c12eaff4e72b22336e632826663fd"><div class="ttname"><a href="class_r_g_w_h_t_t_p_transceiver.html#abd8c12eaff4e72b22336e632826663fd">RGWHTTPTransceiver::set_post_data</a></div><div class="ttdeci">void set_post_data(const std::string &amp;_post_data)</div><div class="ttdef"><b>Definition</b> <a href="rgw__http__client_8h_source.html#l00256">rgw_http_client.h:256</a></div></div>
+<div class="ttc" id="aclass_r_g_w_op_html"><div class="ttname"><a href="class_r_g_w_op.html">RGWOp</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__op_8h_source.html#l00175">rgw_op.h:175</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="picojson_8h_source.html#l01152">picojson.h:1152</a></div></div>
+<div class="ttc" id="argw__common_8h_html_ad9afe8cb242cef9c7e4cbd064c12aa83"><div class="ttname"><a href="rgw__common_8h.html#ad9afe8cb242cef9c7e4cbd064c12aa83">ERR_INVALID_REQUEST</a></div><div class="ttdeci">#define ERR_INVALID_REQUEST</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l00215">rgw_common.h:215</a></div></div>
+<div class="ttc" id="argw__http__client_8h_html"><div class="ttname"><a href="rgw__http__client_8h.html">rgw_http_client.h</a></div></div>
+<div class="ttc" id="argw__opa_8cc_html_a7dda23b521fb8734c127350df8b5f259"><div class="ttname"><a href="rgw__opa_8cc.html#a7dda23b521fb8734c127350df8b5f259">rgw_opa_authorize</a></div><div class="ttdeci">int rgw_opa_authorize(RGWOp *&amp;op, req_state *const s)</div><div class="ttdef"><b>Definition</b> <a href="rgw__opa_8cc_source.html#l00012">rgw_opa.cc:12</a></div></div>
+<div class="ttc" id="argw__opa_8h_html"><div class="ttname"><a href="rgw__opa_8h.html">rgw_opa.h</a></div></div>
+<div class="ttc" id="astructreq__info_html_a44492d6f5f72f8230d489a809bb708b8"><div class="ttname"><a href="structreq__info.html#a44492d6f5f72f8230d489a809bb708b8">req_info::request_params</a></div><div class="ttdeci">std::string request_params</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01237">rgw_common.h:1237</a></div></div>
+<div class="ttc" id="astructreq__info_html_a8d7bb9e0a8699b24f8b3c511617685a6"><div class="ttname"><a href="structreq__info.html#a8d7bb9e0a8699b24f8b3c511617685a6">req_info::env</a></div><div class="ttdeci">const RGWEnv * env</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01226">rgw_common.h:1226</a></div></div>
+<div class="ttc" id="astructreq__info_html_ae127757433238547f5a44643755768d5"><div class="ttname"><a href="structreq__info.html#ae127757433238547f5a44643755768d5">req_info::request_uri_aws4</a></div><div class="ttdeci">std::string request_uri_aws4</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01235">rgw_common.h:1235</a></div></div>
+<div class="ttc" id="astructreq__state_html"><div class="ttname"><a href="structreq__state.html">req_state</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01551">rgw_common.h:1551</a></div></div>
+<div class="ttc" id="astructreq__state_html_a466fbabdb58814521e4cc80a4a1ef391"><div class="ttname"><a href="structreq__state.html#a466fbabdb58814521e4cc80a4a1ef391">req_state::identity</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::auth::Identity &gt; identity</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01617">rgw_common.h:1617</a></div></div>
+<div class="ttc" id="astructreq__state_html_a494770c97c157bfcf918251e31ad2fdc"><div class="ttname"><a href="structreq__state.html#a494770c97c157bfcf918251e31ad2fdc">req_state::info</a></div><div class="ttdeci">req_info info</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01669">rgw_common.h:1669</a></div></div>
+<div class="ttc" id="astructreq__state_html_a6143849ef380f3410a5728a8920a7740"><div class="ttname"><a href="structreq__state.html#a6143849ef380f3410a5728a8920a7740">req_state::auth</a></div><div class="ttdeci">struct req_state::@5 auth</div></div>
+<div class="ttc" id="astructreq__state_html_a67c6558952757f16ddb49664ccc25a5c"><div class="ttname"><a href="structreq__state.html#a67c6558952757f16ddb49664ccc25a5c">req_state::object</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::sal::Object &gt; object</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01586">rgw_common.h:1586</a></div></div>
+<div class="ttc" id="astructreq__state_html_a8b94554a9fef0d41ef5797293a63f2e5"><div class="ttname"><a href="structreq__state.html#a8b94554a9fef0d41ef5797293a63f2e5">req_state::bucket</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::sal::Bucket &gt; bucket</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01585">rgw_common.h:1585</a></div></div>
+<div class="ttc" id="astructreq__state_html_a97b8aecf66ad69e25c1ea88be20dc7fa"><div class="ttname"><a href="structreq__state.html#a97b8aecf66ad69e25c1ea88be20dc7fa">req_state::relative_uri</a></div><div class="ttdeci">std::string relative_uri</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01565">rgw_common.h:1565</a></div></div>
+<div class="ttc" id="astructreq__state_html_a98ff7b0fe2e9f0a932493c80c89280dc"><div class="ttname"><a href="structreq__state.html#a98ff7b0fe2e9f0a932493c80c89280dc">req_state::cct</a></div><div class="ttdeci">CephContext * cct</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01552">rgw_common.h:1552</a></div></div>
+<div class="ttc" id="astructreq__state_html_ab4d1aae69f6d4a5a0a6f22c52405262a"><div class="ttname"><a href="structreq__state.html#ab4d1aae69f6d4a5a0a6f22c52405262a">req_state::user</a></div><div class="ttdeci">std::unique_ptr&lt; rgw::sal::User &gt; user</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01608">rgw_common.h:1608</a></div></div>
+<div class="ttc" id="astructreq__state_html_af705d889ac72420fd763ffe815e44e62"><div class="ttname"><a href="structreq__state.html#af705d889ac72420fd763ffe815e44e62">req_state::decoded_uri</a></div><div class="ttdeci">std::string decoded_uri</div><div class="ttdef"><b>Definition</b> <a href="rgw__common_8h_source.html#l01564">rgw_common.h:1564</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__opa_8cc.html">rgw_opa.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_policy_s3.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__policy__s3_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_policy_s3.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__policy__s3_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef CEPH_RGW_POLICY_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define CEPH_RGW_POLICY_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;limits.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;include/utime.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__string_8h.html">rgw_string.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_r_g_w_policy_env.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_policy_env.html">RGWPolicyEnv</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_r_g_w_policy_env.html#aec09da3c9880e3c52f46305f2975ab16">   19</a></span>  std::map&lt;std::string, std::string, ltstr_nocase&gt; <a class="code hl_variable" href="class_r_g_w_policy_env.html#aec09da3c9880e3c52f46305f2975ab16">vars</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_policy_env.html#aabaf554148b2112328ba08216a8f5395">add_var</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string&amp; value);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_policy_env.html#a6f9622343459ae5d61af60693d75caef">get_var</a>(<span class="keyword">const</span> std::string&amp; name, std::string&amp; val);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_policy_env.html#a642b3fe37b9ac5f42fa2ac1be41c9b2c">get_value</a>(<span class="keyword">const</span> std::string&amp; s, std::string&amp; val, std::map&lt;std::string, bool, ltstr_nocase&gt;&amp; checked_vars);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_g_w_policy_env.html#a7b889754f0513b34fe2ebeef3ad81936">match_policy_vars</a>(std::map&lt;std::string, bool, ltstr_nocase&gt;&amp; policy_vars, std::string&amp; err_msg);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_policy_condition.html">RGWPolicyCondition</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_g_w_policy.html">RGWPolicy</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#ac71eec9e89799067029710dd1aabc2d6">   32</a></span>  uint64_t <a class="code hl_variable" href="class_r_g_w_policy.html#ac71eec9e89799067029710dd1aabc2d6">expires</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#af3166002773fa0f0209004be6a9e45fd">   33</a></span>  std::string <a class="code hl_variable" href="class_r_g_w_policy.html#af3166002773fa0f0209004be6a9e45fd">expiration_str</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#a77a8d209b8f0badce7c9daae63c4af68">   34</a></span>  std::list&lt;RGWPolicyCondition *&gt; <a class="code hl_variable" href="class_r_g_w_policy.html#a77a8d209b8f0badce7c9daae63c4af68">conditions</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#ab1145b53ac01d94ba5e4155cf9ed7ca6">   35</a></span>  std::list&lt;std::pair&lt;std::string, std::string&gt; &gt; <a class="code hl_variable" href="class_r_g_w_policy.html#ab1145b53ac01d94ba5e4155cf9ed7ca6">var_checks</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#a7ffdf0e99d79aa9abcaba8a3dc928918">   36</a></span>  std::map&lt;std::string, bool, ltstr_nocase&gt; <a class="code hl_variable" href="class_r_g_w_policy.html#a7ffdf0e99d79aa9abcaba8a3dc928918">checked_vars</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#a338a4f153624be27f769f69d4e6895df">   39</a></span>  off_t <a class="code hl_variable" href="class_r_g_w_policy.html#a338a4f153624be27f769f69d4e6895df">min_length</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#afe7d45c7ba656c76c54a6aff7cd8ad47">   40</a></span>  off_t <a class="code hl_variable" href="class_r_g_w_policy.html#afe7d45c7ba656c76c54a6aff7cd8ad47">max_length</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#a2e2cc19d9ca273782ec5233f4f0400a8">   42</a></span>  <a class="code hl_function" href="class_r_g_w_policy.html#a2e2cc19d9ca273782ec5233f4f0400a8">RGWPolicy</a>() : <a class="code hl_variable" href="class_r_g_w_policy.html#ac71eec9e89799067029710dd1aabc2d6">expires</a>(0), <a class="code hl_variable" href="class_r_g_w_policy.html#a338a4f153624be27f769f69d4e6895df">min_length</a>(0), <a class="code hl_variable" href="class_r_g_w_policy.html#afe7d45c7ba656c76c54a6aff7cd8ad47">max_length</a>(LLONG_MAX) {}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_function" href="class_r_g_w_policy.html#ac55c8b0e0fc6c08b16e32b20ff791688">~RGWPolicy</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_policy.html#acf732932a2d0133b31b67dcde5b652ca">set_expires</a>(<span class="keyword">const</span> std::string&amp; e);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#a64d3d8af38c801000ea31a6e86df0add">   47</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_policy.html#a64d3d8af38c801000ea31a6e86df0add">set_var_checked</a>(<span class="keyword">const</span> std::string&amp; var) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_variable" href="class_r_g_w_policy.html#a7ffdf0e99d79aa9abcaba8a3dc928918">checked_vars</a>[var] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_policy.html#a5d3c3c8e7c1cc12149183bdf7490d5b1">add_condition</a>(<span class="keyword">const</span> std::string&amp; op, <span class="keyword">const</span> std::string&amp; first, <span class="keyword">const</span> std::string&amp; second, std::string&amp; err_msg);</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_r_g_w_policy.html#a0bbba8bd9f30176a55778f239806db6a">   52</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_policy.html#a0bbba8bd9f30176a55778f239806db6a">add_simple_check</a>(<span class="keyword">const</span> std::string&amp; var, <span class="keyword">const</span> std::string&amp; value) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_variable" href="class_r_g_w_policy.html#ab1145b53ac01d94ba5e4155cf9ed7ca6">var_checks</a>.emplace_back(var, value);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_policy.html#a271f2482d8368a1aed1177fb90037936">check</a>(<a class="code hl_class" href="class_r_g_w_policy_env.html">RGWPolicyEnv</a> *env, std::string&amp; err_msg);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_g_w_policy.html#aeb26e8900601410a95d8cd32fd3a63b0">from_json</a>(bufferlist&amp; bl, std::string&amp; err_msg);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_r_g_w_policy_condition_html"><div class="ttname"><a href="class_r_g_w_policy_condition.html">RGWPolicyCondition</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00016">rgw_policy_s3.cc:16</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_env_html"><div class="ttname"><a href="class_r_g_w_policy_env.html">RGWPolicyEnv</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00018">rgw_policy_s3.h:18</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_env_html_a642b3fe37b9ac5f42fa2ac1be41c9b2c"><div class="ttname"><a href="class_r_g_w_policy_env.html#a642b3fe37b9ac5f42fa2ac1be41c9b2c">RGWPolicyEnv::get_value</a></div><div class="ttdeci">bool get_value(const std::string &amp;s, std::string &amp;val, std::map&lt; std::string, bool, ltstr_nocase &gt; &amp;checked_vars)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00091">rgw_policy_s3.cc:91</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_env_html_a6f9622343459ae5d61af60693d75caef"><div class="ttname"><a href="class_r_g_w_policy_env.html#a6f9622343459ae5d61af60693d75caef">RGWPolicyEnv::get_var</a></div><div class="ttdeci">bool get_var(const std::string &amp;name, std::string &amp;val)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00080">rgw_policy_s3.cc:80</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_env_html_a7b889754f0513b34fe2ebeef3ad81936"><div class="ttname"><a href="class_r_g_w_policy_env.html#a7b889754f0513b34fe2ebeef3ad81936">RGWPolicyEnv::match_policy_vars</a></div><div class="ttdeci">bool match_policy_vars(std::map&lt; std::string, bool, ltstr_nocase &gt; &amp;policy_vars, std::string &amp;err_msg)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00105">rgw_policy_s3.cc:105</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_env_html_aabaf554148b2112328ba08216a8f5395"><div class="ttname"><a href="class_r_g_w_policy_env.html#aabaf554148b2112328ba08216a8f5395">RGWPolicyEnv::add_var</a></div><div class="ttdeci">void add_var(const std::string &amp;name, const std::string &amp;value)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00075">rgw_policy_s3.cc:75</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_env_html_aec09da3c9880e3c52f46305f2975ab16"><div class="ttname"><a href="class_r_g_w_policy_env.html#aec09da3c9880e3c52f46305f2975ab16">RGWPolicyEnv::vars</a></div><div class="ttdeci">std::map&lt; std::string, std::string, ltstr_nocase &gt; vars</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00019">rgw_policy_s3.h:19</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html"><div class="ttname"><a href="class_r_g_w_policy.html">RGWPolicy</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00031">rgw_policy_s3.h:31</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a0bbba8bd9f30176a55778f239806db6a"><div class="ttname"><a href="class_r_g_w_policy.html#a0bbba8bd9f30176a55778f239806db6a">RGWPolicy::add_simple_check</a></div><div class="ttdeci">void add_simple_check(const std::string &amp;var, const std::string &amp;value)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00052">rgw_policy_s3.h:52</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a271f2482d8368a1aed1177fb90037936"><div class="ttname"><a href="class_r_g_w_policy.html#a271f2482d8368a1aed1177fb90037936">RGWPolicy::check</a></div><div class="ttdeci">int check(RGWPolicyEnv *env, std::string &amp;err_msg)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00189">rgw_policy_s3.cc:189</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a2e2cc19d9ca273782ec5233f4f0400a8"><div class="ttname"><a href="class_r_g_w_policy.html#a2e2cc19d9ca273782ec5233f4f0400a8">RGWPolicy::RGWPolicy</a></div><div class="ttdeci">RGWPolicy()</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00042">rgw_policy_s3.h:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a338a4f153624be27f769f69d4e6895df"><div class="ttname"><a href="class_r_g_w_policy.html#a338a4f153624be27f769f69d4e6895df">RGWPolicy::min_length</a></div><div class="ttdeci">off_t min_length</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00039">rgw_policy_s3.h:39</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a5d3c3c8e7c1cc12149183bdf7490d5b1"><div class="ttname"><a href="class_r_g_w_policy.html#a5d3c3c8e7c1cc12149183bdf7490d5b1">RGWPolicy::add_condition</a></div><div class="ttdeci">int add_condition(const std::string &amp;op, const std::string &amp;first, const std::string &amp;second, std::string &amp;err_msg)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00143">rgw_policy_s3.cc:143</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a64d3d8af38c801000ea31a6e86df0add"><div class="ttname"><a href="class_r_g_w_policy.html#a64d3d8af38c801000ea31a6e86df0add">RGWPolicy::set_var_checked</a></div><div class="ttdeci">void set_var_checked(const std::string &amp;var)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00047">rgw_policy_s3.h:47</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a77a8d209b8f0badce7c9daae63c4af68"><div class="ttname"><a href="class_r_g_w_policy.html#a77a8d209b8f0badce7c9daae63c4af68">RGWPolicy::conditions</a></div><div class="ttdeci">std::list&lt; RGWPolicyCondition * &gt; conditions</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00034">rgw_policy_s3.h:34</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_a7ffdf0e99d79aa9abcaba8a3dc928918"><div class="ttname"><a href="class_r_g_w_policy.html#a7ffdf0e99d79aa9abcaba8a3dc928918">RGWPolicy::checked_vars</a></div><div class="ttdeci">std::map&lt; std::string, bool, ltstr_nocase &gt; checked_vars</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00036">rgw_policy_s3.h:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_ab1145b53ac01d94ba5e4155cf9ed7ca6"><div class="ttname"><a href="class_r_g_w_policy.html#ab1145b53ac01d94ba5e4155cf9ed7ca6">RGWPolicy::var_checks</a></div><div class="ttdeci">std::list&lt; std::pair&lt; std::string, std::string &gt; &gt; var_checks</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00035">rgw_policy_s3.h:35</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_ac55c8b0e0fc6c08b16e32b20ff791688"><div class="ttname"><a href="class_r_g_w_policy.html#ac55c8b0e0fc6c08b16e32b20ff791688">RGWPolicy::~RGWPolicy</a></div><div class="ttdeci">~RGWPolicy()</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00123">rgw_policy_s3.cc:123</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_ac71eec9e89799067029710dd1aabc2d6"><div class="ttname"><a href="class_r_g_w_policy.html#ac71eec9e89799067029710dd1aabc2d6">RGWPolicy::expires</a></div><div class="ttdeci">uint64_t expires</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00032">rgw_policy_s3.h:32</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_acf732932a2d0133b31b67dcde5b652ca"><div class="ttname"><a href="class_r_g_w_policy.html#acf732932a2d0133b31b67dcde5b652ca">RGWPolicy::set_expires</a></div><div class="ttdeci">int set_expires(const std::string &amp;e)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00132">rgw_policy_s3.cc:132</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_aeb26e8900601410a95d8cd32fd3a63b0"><div class="ttname"><a href="class_r_g_w_policy.html#aeb26e8900601410a95d8cd32fd3a63b0">RGWPolicy::from_json</a></div><div class="ttdeci">int from_json(bufferlist &amp;bl, std::string &amp;err_msg)</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8cc_source.html#l00238">rgw_policy_s3.cc:238</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_af3166002773fa0f0209004be6a9e45fd"><div class="ttname"><a href="class_r_g_w_policy.html#af3166002773fa0f0209004be6a9e45fd">RGWPolicy::expiration_str</a></div><div class="ttdeci">std::string expiration_str</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00033">rgw_policy_s3.h:33</a></div></div>
+<div class="ttc" id="aclass_r_g_w_policy_html_afe7d45c7ba656c76c54a6aff7cd8ad47"><div class="ttname"><a href="class_r_g_w_policy.html#afe7d45c7ba656c76c54a6aff7cd8ad47">RGWPolicy::max_length</a></div><div class="ttdeci">off_t max_length</div><div class="ttdef"><b>Definition</b> <a href="rgw__policy__s3_8h_source.html#l00040">rgw_policy_s3.h:40</a></div></div>
+<div class="ttc" id="argw__string_8h_html"><div class="ttname"><a href="rgw__string_8h.html">rgw_string.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__policy__s3_8h.html">rgw_policy_s3.h</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

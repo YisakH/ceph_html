@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: D:/git/ceph/src/rgw/rgw_bucket_encryption.cc 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rgw__bucket__encryption_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rgw_bucket_encryption.cc</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rgw__bucket__encryption_8cc.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// -*- mode:C++; tab-width:8; c-basic-offset:2; indent-tabs-mode:t -*-</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// vim: ts=8 sw=2 smarttab ft=cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__bucket__encryption_8h.html">rgw_bucket_encryption.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="rgw__xml_8h.html">rgw_xml.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;common/ceph_json.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_apply_server_side_encryption_by_default.html#ae60e70a177ac0659fcf76d1388e10a44">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_apply_server_side_encryption_by_default.html#ae60e70a177ac0659fcf76d1388e10a44">ApplyServerSideEncryptionByDefault::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;KMSMasterKeyID&quot;</span>, <a class="code hl_variable" href="class_apply_server_side_encryption_by_default.html#a7cd91093d63d5723ce378b22713f3f88">kmsMasterKeyID</a>, obj, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;SSEAlgorithm&quot;</span>, <a class="code hl_variable" href="class_apply_server_side_encryption_by_default.html#a71fadeb293965b44f664bca4bb6f896f">sseAlgorithm</a>, obj, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_apply_server_side_encryption_by_default.html#a55df9618752442536e5e68ecd9492dad">   13</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_apply_server_side_encryption_by_default.html#a55df9618752442536e5e68ecd9492dad">ApplyServerSideEncryptionByDefault::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;SSEAlgorithm&quot;</span>, <a class="code hl_variable" href="class_apply_server_side_encryption_by_default.html#a71fadeb293965b44f664bca4bb6f896f">sseAlgorithm</a>, f);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_apply_server_side_encryption_by_default.html#a7cd91093d63d5723ce378b22713f3f88">kmsMasterKeyID</a> != <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;KMSMasterKeyID&quot;</span>, <a class="code hl_variable" href="class_apply_server_side_encryption_by_default.html#a7cd91093d63d5723ce378b22713f3f88">kmsMasterKeyID</a>, f);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_server_side_encryption_configuration.html#a1a31c8a5b187fc026bdad95ea27c9cfb">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_server_side_encryption_configuration.html#a1a31c8a5b187fc026bdad95ea27c9cfb">ServerSideEncryptionConfiguration::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;ApplyServerSideEncryptionByDefault&quot;</span>, <a class="code hl_variable" href="class_server_side_encryption_configuration.html#a516afb1691127bcd063f40147e4fa7f6">applyServerSideEncryptionByDefault</a>, obj, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;BucketKeyEnabled&quot;</span>, <a class="code hl_variable" href="class_server_side_encryption_configuration.html#a4c11679cda3b7c2ec851a5219b5cda9e">bucketKeyEnabled</a>, obj, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_server_side_encryption_configuration.html#aa22738ea47076f21d6dc9a02847e4cd6">   25</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_server_side_encryption_configuration.html#aa22738ea47076f21d6dc9a02847e4cd6">ServerSideEncryptionConfiguration::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;ApplyServerSideEncryptionByDefault&quot;</span>, <a class="code hl_variable" href="class_server_side_encryption_configuration.html#a516afb1691127bcd063f40147e4fa7f6">applyServerSideEncryptionByDefault</a>, f);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_server_side_encryption_configuration.html#a4c11679cda3b7c2ec851a5219b5cda9e">bucketKeyEnabled</a>) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;BucketKeyEnabled&quot;</span>, <span class="keyword">true</span>, f);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_r_g_w_bucket_encryption_config.html#a3e7faf2e0ae7ce780069eecb308ecff6">   32</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#a3e7faf2e0ae7ce780069eecb308ecff6">RGWBucketEncryptionConfig::decode_xml</a>(<a class="code hl_class" href="class_x_m_l_obj.html">XMLObj</a> *obj) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_variable" href="class_r_g_w_bucket_encryption_config.html#a70e051c4b07413bc17ba9ad448543d49">rule_exist</a> = <a class="code hl_function" href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a>(<span class="stringliteral">&quot;Rule&quot;</span>, <a class="code hl_variable" href="class_r_g_w_bucket_encryption_config.html#a1910edd8ff1ef55ec8b63608716a3de3">rule</a>, obj);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_r_g_w_bucket_encryption_config.html#a8ca7e37ec0f5051b4d7c978fb279a564">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#a8ca7e37ec0f5051b4d7c978fb279a564">RGWBucketEncryptionConfig::dump_xml</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_g_w_bucket_encryption_config.html#a70e051c4b07413bc17ba9ad448543d49">rule_exist</a>) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a>(<span class="stringliteral">&quot;Rule&quot;</span>, <a class="code hl_variable" href="class_r_g_w_bucket_encryption_config.html#a1910edd8ff1ef55ec8b63608716a3de3">rule</a>, f);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_r_g_w_bucket_encryption_config.html#aa0e3d8d0b999cdf9f3cb909b3006d56b">   42</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#aa0e3d8d0b999cdf9f3cb909b3006d56b">RGWBucketEncryptionConfig::dump</a>(Formatter *f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;rule_exist&quot;</span>, <a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#a60d59e86306f71ba8dcace01a71fa1a7">has_rule</a>(), f);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#a60d59e86306f71ba8dcace01a71fa1a7">has_rule</a>()) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;sse_algorithm&quot;</span>, <a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#a220b33c148f467991172d0a9e2c86032">sse_algorithm</a>(), f);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;kms_master_key_id&quot;</span>, <a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#a31850457eead93f953d2a35c198e2474">kms_master_key_id</a>(), f);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_function" href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a>(<span class="stringliteral">&quot;bucket_key_enabled&quot;</span>, <a class="code hl_function" href="class_r_g_w_bucket_encryption_config.html#ac281ae421455e5e83ab3bb3309f9d716">bucket_key_enabled</a>(), f);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+</div>
+<div class="ttc" id="aclass_apply_server_side_encryption_by_default_html_a55df9618752442536e5e68ecd9492dad"><div class="ttname"><a href="class_apply_server_side_encryption_by_default.html#a55df9618752442536e5e68ecd9492dad">ApplyServerSideEncryptionByDefault::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8cc_source.html#l00013">rgw_bucket_encryption.cc:13</a></div></div>
+<div class="ttc" id="aclass_apply_server_side_encryption_by_default_html_a71fadeb293965b44f664bca4bb6f896f"><div class="ttname"><a href="class_apply_server_side_encryption_by_default.html#a71fadeb293965b44f664bca4bb6f896f">ApplyServerSideEncryptionByDefault::sseAlgorithm</a></div><div class="ttdeci">std::string sseAlgorithm</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00012">rgw_bucket_encryption.h:12</a></div></div>
+<div class="ttc" id="aclass_apply_server_side_encryption_by_default_html_a7cd91093d63d5723ce378b22713f3f88"><div class="ttname"><a href="class_apply_server_side_encryption_by_default.html#a7cd91093d63d5723ce378b22713f3f88">ApplyServerSideEncryptionByDefault::kmsMasterKeyID</a></div><div class="ttdeci">std::string kmsMasterKeyID</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00011">rgw_bucket_encryption.h:11</a></div></div>
+<div class="ttc" id="aclass_apply_server_side_encryption_by_default_html_ae60e70a177ac0659fcf76d1388e10a44"><div class="ttname"><a href="class_apply_server_side_encryption_by_default.html#ae60e70a177ac0659fcf76d1388e10a44">ApplyServerSideEncryptionByDefault::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8cc_source.html#l00008">rgw_bucket_encryption.cc:8</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_a1910edd8ff1ef55ec8b63608716a3de3"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#a1910edd8ff1ef55ec8b63608716a3de3">RGWBucketEncryptionConfig::rule</a></div><div class="ttdeci">ServerSideEncryptionConfiguration rule</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00095">rgw_bucket_encryption.h:95</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_a220b33c148f467991172d0a9e2c86032"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#a220b33c148f467991172d0a9e2c86032">RGWBucketEncryptionConfig::sse_algorithm</a></div><div class="ttdeci">const std::string &amp; sse_algorithm() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00107">rgw_bucket_encryption.h:107</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_a31850457eead93f953d2a35c198e2474"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#a31850457eead93f953d2a35c198e2474">RGWBucketEncryptionConfig::kms_master_key_id</a></div><div class="ttdeci">const std::string &amp; kms_master_key_id() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00103">rgw_bucket_encryption.h:103</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_a3e7faf2e0ae7ce780069eecb308ecff6"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#a3e7faf2e0ae7ce780069eecb308ecff6">RGWBucketEncryptionConfig::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8cc_source.html#l00032">rgw_bucket_encryption.cc:32</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_a60d59e86306f71ba8dcace01a71fa1a7"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#a60d59e86306f71ba8dcace01a71fa1a7">RGWBucketEncryptionConfig::has_rule</a></div><div class="ttdeci">bool has_rule() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00115">rgw_bucket_encryption.h:115</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_a70e051c4b07413bc17ba9ad448543d49"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#a70e051c4b07413bc17ba9ad448543d49">RGWBucketEncryptionConfig::rule_exist</a></div><div class="ttdeci">bool rule_exist</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00094">rgw_bucket_encryption.h:94</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_a8ca7e37ec0f5051b4d7c978fb279a564"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#a8ca7e37ec0f5051b4d7c978fb279a564">RGWBucketEncryptionConfig::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8cc_source.html#l00036">rgw_bucket_encryption.cc:36</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_aa0e3d8d0b999cdf9f3cb909b3006d56b"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#aa0e3d8d0b999cdf9f3cb909b3006d56b">RGWBucketEncryptionConfig::dump</a></div><div class="ttdeci">void dump(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8cc_source.html#l00042">rgw_bucket_encryption.cc:42</a></div></div>
+<div class="ttc" id="aclass_r_g_w_bucket_encryption_config_html_ac281ae421455e5e83ab3bb3309f9d716"><div class="ttname"><a href="class_r_g_w_bucket_encryption_config.html#ac281ae421455e5e83ab3bb3309f9d716">RGWBucketEncryptionConfig::bucket_key_enabled</a></div><div class="ttdeci">bool bucket_key_enabled() const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00111">rgw_bucket_encryption.h:111</a></div></div>
+<div class="ttc" id="aclass_server_side_encryption_configuration_html_a1a31c8a5b187fc026bdad95ea27c9cfb"><div class="ttname"><a href="class_server_side_encryption_configuration.html#a1a31c8a5b187fc026bdad95ea27c9cfb">ServerSideEncryptionConfiguration::decode_xml</a></div><div class="ttdeci">void decode_xml(XMLObj *obj)</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8cc_source.html#l00020">rgw_bucket_encryption.cc:20</a></div></div>
+<div class="ttc" id="aclass_server_side_encryption_configuration_html_a4c11679cda3b7c2ec851a5219b5cda9e"><div class="ttname"><a href="class_server_side_encryption_configuration.html#a4c11679cda3b7c2ec851a5219b5cda9e">ServerSideEncryptionConfiguration::bucketKeyEnabled</a></div><div class="ttdeci">bool bucketKeyEnabled</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00051">rgw_bucket_encryption.h:51</a></div></div>
+<div class="ttc" id="aclass_server_side_encryption_configuration_html_a516afb1691127bcd063f40147e4fa7f6"><div class="ttname"><a href="class_server_side_encryption_configuration.html#a516afb1691127bcd063f40147e4fa7f6">ServerSideEncryptionConfiguration::applyServerSideEncryptionByDefault</a></div><div class="ttdeci">ApplyServerSideEncryptionByDefault applyServerSideEncryptionByDefault</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8h_source.html#l00050">rgw_bucket_encryption.h:50</a></div></div>
+<div class="ttc" id="aclass_server_side_encryption_configuration_html_aa22738ea47076f21d6dc9a02847e4cd6"><div class="ttname"><a href="class_server_side_encryption_configuration.html#aa22738ea47076f21d6dc9a02847e4cd6">ServerSideEncryptionConfiguration::dump_xml</a></div><div class="ttdeci">void dump_xml(Formatter *f) const</div><div class="ttdef"><b>Definition</b> <a href="rgw__bucket__encryption_8cc_source.html#l00025">rgw_bucket_encryption.cc:25</a></div></div>
+<div class="ttc" id="aclass_x_m_l_obj_html"><div class="ttname"><a href="class_x_m_l_obj.html">XMLObj</a></div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00039">rgw_xml.h:40</a></div></div>
+<div class="ttc" id="anamespace_r_g_w_x_m_l_decoder_html_afd109a7a9a8e6466d3365860e0b2426f"><div class="ttname"><a href="namespace_r_g_w_x_m_l_decoder.html#afd109a7a9a8e6466d3365860e0b2426f">RGWXMLDecoder::decode_xml</a></div><div class="ttdeci">bool decode_xml(const char *name, T &amp;val, XMLObj *obj, bool mandatory=false)</div><div class="ttdef"><b>Definition</b> <a href="rgw__xml_8h_source.html#l00218">rgw_xml.h:218</a></div></div>
+<div class="ttc" id="argw__admin_8cc_html_ab596b9e1a1fc78e98a4d13a66578b658"><div class="ttname"><a href="rgw__admin_8cc.html#ab596b9e1a1fc78e98a4d13a66578b658">encode_json</a></div><div class="ttdeci">void encode_json(const char *name, const RGWBucketSyncFlowManager::pipe_set &amp;pset, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="rgw__admin_8cc_source.html#l02560">rgw_admin.cc:2560</a></div></div>
+<div class="ttc" id="argw__basic__types_8cc_html_a0a8bb5599abd436eaa39a31634f1f5e3"><div class="ttname"><a href="rgw__basic__types_8cc.html#a0a8bb5599abd436eaa39a31634f1f5e3">encode_xml</a></div><div class="ttdeci">void encode_xml(const char *name, const rgw_user &amp;val, Formatter *f)</div><div class="ttdef"><b>Definition</b> <a href="rgw__basic__types_8cc_source.html#l00033">rgw_basic_types.cc:33</a></div></div>
+<div class="ttc" id="argw__bucket__encryption_8h_html"><div class="ttname"><a href="rgw__bucket__encryption_8h.html">rgw_bucket_encryption.h</a></div></div>
+<div class="ttc" id="argw__xml_8h_html"><div class="ttname"><a href="rgw__xml_8h.html">rgw_xml.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_e050007e69745d5ed950ce16eed8ed32.html">git</a></li><li class="navelem"><a class="el" href="dir_6892619f22dbda2b625e50c3cfe72b21.html">ceph</a></li><li class="navelem"><a class="el" href="dir_07a1996344d62ceb57ddf5fb87d6faf4.html">src</a></li><li class="navelem"><a class="el" href="dir_ddd8fa4b54862d6407f5aaf9a827e64e.html">rgw</a></li><li class="navelem"><a class="el" href="rgw__bucket__encryption_8cc.html">rgw_bucket_encryption.cc</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

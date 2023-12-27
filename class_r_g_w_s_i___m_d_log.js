@@ -1,0 +1,28 @@
+var class_r_g_w_s_i___m_d_log =
+[
+    [ "Svc", "struct_r_g_w_s_i___m_d_log_1_1_svc.html", "struct_r_g_w_s_i___m_d_log_1_1_svc" ],
+    [ "RGWSI_MDLog", "class_r_g_w_s_i___m_d_log.html#a85aa8b1e78cff4c4eb86f023efc956d8", null ],
+    [ "~RGWSI_MDLog", "class_r_g_w_s_i___m_d_log.html#a0a40684239450cb534290478f4271e6b", null ],
+    [ "add_entry", "class_r_g_w_s_i___m_d_log.html#a18668f27719887626dd8ea6cc2d4a5f5", null ],
+    [ "do_start", "class_r_g_w_s_i___m_d_log.html#a60f32793b17326617832f22815a1fd3b", null ],
+    [ "find_oldest_period", "class_r_g_w_s_i___m_d_log.html#a9f317eeeb1ee658b77842c65f130c808", null ],
+    [ "get_log", "class_r_g_w_s_i___m_d_log.html#a5f95f91fcf398660a41dd04778ee5d41", null ],
+    [ "get_period_history", "class_r_g_w_s_i___m_d_log.html#a77c0a4c1fc7339b3901f9014326e7eb7", null ],
+    [ "get_shard_id", "class_r_g_w_s_i___m_d_log.html#a83d0a9ff9bf656a5a27330c272a45ac5", null ],
+    [ "init", "class_r_g_w_s_i___m_d_log.html#afda736ff23c2c5953dedbf0e6fd2fecb", null ],
+    [ "init_oldest_log_period", "class_r_g_w_s_i___m_d_log.html#a2076ec2f2fca46b49b10a6af14a078df", null ],
+    [ "pull_period", "class_r_g_w_s_i___m_d_log.html#a779972b3f41732c708a0085ec808df73", null ],
+    [ "read_history", "class_r_g_w_s_i___m_d_log.html#a235725e6a17502180c9ecc265794d726", null ],
+    [ "read_oldest_log_period", "class_r_g_w_s_i___m_d_log.html#ae49ede0419b326d17aeb01ef3b617a3c", null ],
+    [ "read_oldest_log_period_cr", "class_r_g_w_s_i___m_d_log.html#a6bfcd02d4a15f1701852f99280d2cab0", null ],
+    [ "trim_log_period_cr", "class_r_g_w_s_i___m_d_log.html#accdc079fa577348f964bb9ed23f9d16c", null ],
+    [ "write_history", "class_r_g_w_s_i___m_d_log.html#abb86f2f0ce3a3a1eda828f0ed94b5048", null ],
+    [ "mdlog::ReadHistoryCR", "class_r_g_w_s_i___m_d_log.html#adefcdc1b93eb4038e0e1e9193f4bf841", null ],
+    [ "mdlog::WriteHistoryCR", "class_r_g_w_s_i___m_d_log.html#ae3e66ba2fd28d1cd0056d6da1624e585", null ],
+    [ "current_log", "class_r_g_w_s_i___m_d_log.html#a176c2df218de4200eb77161b3cdac590", null ],
+    [ "md_logs", "class_r_g_w_s_i___m_d_log.html#a4b24eb983b218fb10b0746830648f1a8", null ],
+    [ "period_history", "class_r_g_w_s_i___m_d_log.html#a1bbe0c708aec8c178c032779cd182a47", null ],
+    [ "period_puller", "class_r_g_w_s_i___m_d_log.html#ac953a8a278a5099b7f3095dea78b4694", null ],
+    [ "run_sync", "class_r_g_w_s_i___m_d_log.html#ad38b14e56095b75716853e49bcad9355", null ],
+    [ "svc", "class_r_g_w_s_i___m_d_log.html#adbe7b0a58707e35775aea8893779b17c", null ]
+];

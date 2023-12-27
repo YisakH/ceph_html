@@ -1,0 +1,814 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: RGWObjState 구조체 참조</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('struct_r_g_w_obj_state.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 멤버 함수</a> &#124;
+<a href="#pub-attribs">Public 속성</a> &#124;
+<a href="struct_r_g_w_obj_state-members.html">모든 멤버 목록</a>  </div>
+  <div class="headertitle"><div class="title">RGWObjState 구조체 참조</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a>&gt;</code></p>
+<div class="dynheader">
+RGWObjState에 대한 협력 다이어그램:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_r_g_w_obj_state__coll__graph.png" border="0" usemap="#a_r_g_w_obj_state_coll__map" alt="Collaboration graph"/></div>
+<map name="a_r_g_w_obj_state_coll__map" id="a_r_g_w_obj_state_coll__map">
+<area shape="rect" title=" " alt="" coords="193,2091,349,2437"/>
+<area shape="rect" href="structrgw__obj.html" title=" " alt="" coords="81,1675,255,1979"/>
+<area shape="poly" title=" " alt="" coords="206,1978,229,2074,224,2075,201,1979"/>
+<area shape="rect" href="structrgw__bucket.html" title=" " alt="" coords="180,1307,353,1611"/>
+<area shape="poly" title=" " alt="" coords="229,1611,216,1659,210,1658,224,1609"/>
+<area shape="rect" title=" " alt="" coords="244,5,289,75"/>
+<area shape="poly" title=" " alt="" coords="246,53,182,87,143,112,103,143,66,178,36,218,16,262,8,311,8,1828,12,1879,25,1929,43,1977,67,2023,123,2108,183,2177,179,2181,119,2111,62,2026,38,1979,19,1930,7,1880,3,1828,3,310,10,261,32,215,62,174,99,138,139,108,179,82,243,49"/>
+<area shape="poly" title=" " alt="" coords="246,63,206,104,160,163,140,197,123,233,112,271,108,311,108,1460,114,1560,130,1658,124,1658,109,1561,103,1460,103,311,107,270,118,232,135,194,156,160,202,101,242,59"/>
+<area shape="poly" title=" " alt="" coords="269,75,269,1290,264,1290,264,75"/>
+<area shape="rect" href="structrgw__pool.html" title=" " alt="" coords="305,171,461,453"/>
+<area shape="poly" title=" " alt="" coords="283,73,318,154,313,156,278,75"/>
+<area shape="rect" href="structrgw__obj__key.html" title=" " alt="" coords="483,477,645,883"/>
+<area shape="poly" title=" " alt="" coords="290,46,331,62,382,87,433,123,456,145,476,169,512,237,539,311,556,386,566,460,561,461,551,387,534,312,508,239,471,172,452,148,430,127,379,92,329,67,288,51"/>
+<area shape="rect" href="structrgw__data__placement__target.html" title=" " alt="" coords="305,907,453,1227"/>
+<area shape="poly" title=" " alt="" coords="336,1227,317,1291,312,1290,331,1226"/>
+<area shape="poly" title=" " alt="" coords="371,453,369,477,364,680,369,883,370,890,364,890,364,883,359,680,364,477,365,453"/>
+<area shape="poly" title=" " alt="" coords="569,882,556,1051,543,1145,524,1242,498,1340,464,1436,421,1527,367,1612,344,1636,320,1647,295,1657,268,1677,268,1677,264,1673,265,1673,292,1653,317,1642,341,1631,363,1609,416,1525,459,1433,493,1338,519,1241,538,1144,551,1051,564,882"/>
+<area shape="rect" title=" " alt="" coords="279,1792,337,1861"/>
+<area shape="poly" title=" " alt="" coords="308,1861,290,2074,284,2074,303,1861"/>
+<area shape="rect" href="struct_r_g_w_obj_version_tracker.html" title=" " alt="" coords="363,1699,515,1955"/>
+<area shape="poly" title=" " alt="" coords="431,1955,420,2012,402,2068,383,2109,360,2149,356,2147,379,2107,398,2066,415,2011,426,1954"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 멤버 함수</h2></td></tr>
+<tr class="memitem:ac8c617fd435466d9402568c5ffa25d72" id="r_ac8c617fd435466d9402568c5ffa25d72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#ac8c617fd435466d9402568c5ffa25d72">RGWObjState</a> ()</td></tr>
+<tr class="separator:ac8c617fd435466d9402568c5ffa25d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60dc0716b3420e5f768f48ad14207d8c" id="r_a60dc0716b3420e5f768f48ad14207d8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a60dc0716b3420e5f768f48ad14207d8c">RGWObjState</a> (const <a class="el" href="struct_r_g_w_obj_state.html">RGWObjState</a> &amp;rhs)</td></tr>
+<tr class="separator:a60dc0716b3420e5f768f48ad14207d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90de76d75a0764deea8c5a607d4fcf0e" id="r_a90de76d75a0764deea8c5a607d4fcf0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a90de76d75a0764deea8c5a607d4fcf0e">~RGWObjState</a> ()</td></tr>
+<tr class="separator:a90de76d75a0764deea8c5a607d4fcf0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e52de8ead8c136ffb90470dfd2f5344" id="r_a1e52de8ead8c136ffb90470dfd2f5344"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a1e52de8ead8c136ffb90470dfd2f5344">get_attr</a> (std::string name, bufferlist &amp;dest)</td></tr>
+<tr class="separator:a1e52de8ead8c136ffb90470dfd2f5344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 속성</h2></td></tr>
+<tr class="memitem:ac265b9af3f0a275a99b1fe142af4fd2d" id="r_ac265b9af3f0a275a99b1fe142af4fd2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrgw__obj.html">rgw_obj</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#ac265b9af3f0a275a99b1fe142af4fd2d">obj</a></td></tr>
+<tr class="separator:ac265b9af3f0a275a99b1fe142af4fd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2912533e36de08ff3c0e86fbafea552a" id="r_a2912533e36de08ff3c0e86fbafea552a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a2912533e36de08ff3c0e86fbafea552a">is_atomic</a> {false}</td></tr>
+<tr class="separator:a2912533e36de08ff3c0e86fbafea552a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2377a3124988a1f45921be32211c5629" id="r_a2377a3124988a1f45921be32211c5629"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a2377a3124988a1f45921be32211c5629">has_attrs</a> {false}</td></tr>
+<tr class="separator:a2377a3124988a1f45921be32211c5629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1abd24ce94dce0b967458bd49afef83" id="r_ae1abd24ce94dce0b967458bd49afef83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#ae1abd24ce94dce0b967458bd49afef83">exists</a> {false}</td></tr>
+<tr class="separator:ae1abd24ce94dce0b967458bd49afef83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565f124606c4c3e5d17d71ff74c6c58f" id="r_a565f124606c4c3e5d17d71ff74c6c58f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a565f124606c4c3e5d17d71ff74c6c58f">size</a> {0}</td></tr>
+<tr class="separator:a565f124606c4c3e5d17d71ff74c6c58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3bf2e122e1958979c337bc2e0982689" id="r_ab3bf2e122e1958979c337bc2e0982689"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#ab3bf2e122e1958979c337bc2e0982689">accounted_size</a> {0}</td></tr>
+<tr class="separator:ab3bf2e122e1958979c337bc2e0982689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2815c7d6f7619484cb56765704d303d3" id="r_a2815c7d6f7619484cb56765704d303d3"><td class="memItemLeft" align="right" valign="top">ceph::real_time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a2815c7d6f7619484cb56765704d303d3">mtime</a></td></tr>
+<tr class="separator:a2815c7d6f7619484cb56765704d303d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af273b5ee7b54cf5d63e97fa9cf4f3351" id="r_af273b5ee7b54cf5d63e97fa9cf4f3351"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#af273b5ee7b54cf5d63e97fa9cf4f3351">epoch</a> {0}</td></tr>
+<tr class="separator:af273b5ee7b54cf5d63e97fa9cf4f3351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d82ca3e6153daf0b5586a35ffe8cc3a" id="r_a6d82ca3e6153daf0b5586a35ffe8cc3a"><td class="memItemLeft" align="right" valign="top">bufferlist&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a6d82ca3e6153daf0b5586a35ffe8cc3a">obj_tag</a></td></tr>
+<tr class="separator:a6d82ca3e6153daf0b5586a35ffe8cc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae14d4d965a2780b99b8705ed24b75305" id="r_ae14d4d965a2780b99b8705ed24b75305"><td class="memItemLeft" align="right" valign="top">bufferlist&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#ae14d4d965a2780b99b8705ed24b75305">tail_tag</a></td></tr>
+<tr class="separator:ae14d4d965a2780b99b8705ed24b75305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf900c298ef153a353c67ff0701c2885" id="r_aaf900c298ef153a353c67ff0701c2885"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#aaf900c298ef153a353c67ff0701c2885">write_tag</a></td></tr>
+<tr class="separator:aaf900c298ef153a353c67ff0701c2885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa25d2024235152fdc76d0f6d9957e76" id="r_afa25d2024235152fdc76d0f6d9957e76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#afa25d2024235152fdc76d0f6d9957e76">fake_tag</a> {false}</td></tr>
+<tr class="separator:afa25d2024235152fdc76d0f6d9957e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe406574ac61dad317fd3333aacd3d37" id="r_afe406574ac61dad317fd3333aacd3d37"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#afe406574ac61dad317fd3333aacd3d37">manifest</a></td></tr>
+<tr class="separator:afe406574ac61dad317fd3333aacd3d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9313fce0fc5f7b55b78e40a5f5b9350" id="r_ab9313fce0fc5f7b55b78e40a5f5b9350"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#ab9313fce0fc5f7b55b78e40a5f5b9350">shadow_obj</a></td></tr>
+<tr class="separator:ab9313fce0fc5f7b55b78e40a5f5b9350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8496682384de0b95f6f054f6ac5ed266" id="r_a8496682384de0b95f6f054f6ac5ed266"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a8496682384de0b95f6f054f6ac5ed266">has_data</a> {false}</td></tr>
+<tr class="separator:a8496682384de0b95f6f054f6ac5ed266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44eac964466eb94214df0742dfe82ba" id="r_ab44eac964466eb94214df0742dfe82ba"><td class="memItemLeft" align="right" valign="top">bufferlist&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#ab44eac964466eb94214df0742dfe82ba">data</a></td></tr>
+<tr class="separator:ab44eac964466eb94214df0742dfe82ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cad205e7761da2c04a7c60a13915f37" id="r_a5cad205e7761da2c04a7c60a13915f37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a5cad205e7761da2c04a7c60a13915f37">prefetch_data</a> {false}</td></tr>
+<tr class="separator:a5cad205e7761da2c04a7c60a13915f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0fe3b8f8ff56b13f9afe2e925f724b" id="r_a7b0fe3b8f8ff56b13f9afe2e925f724b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a7b0fe3b8f8ff56b13f9afe2e925f724b">keep_tail</a> {false}</td></tr>
+<tr class="separator:a7b0fe3b8f8ff56b13f9afe2e925f724b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12777a9b4624473e566dbf75b9711f24" id="r_a12777a9b4624473e566dbf75b9711f24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a12777a9b4624473e566dbf75b9711f24">is_olh</a> {false}</td></tr>
+<tr class="separator:a12777a9b4624473e566dbf75b9711f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a706f6c7fa79508b3321dce3eca530ce7" id="r_a706f6c7fa79508b3321dce3eca530ce7"><td class="memItemLeft" align="right" valign="top">bufferlist&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a706f6c7fa79508b3321dce3eca530ce7">olh_tag</a></td></tr>
+<tr class="separator:a706f6c7fa79508b3321dce3eca530ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9512d35ce69a8a6ab8a85fd9f4ce11e4" id="r_a9512d35ce69a8a6ab8a85fd9f4ce11e4"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a9512d35ce69a8a6ab8a85fd9f4ce11e4">pg_ver</a> {false}</td></tr>
+<tr class="separator:a9512d35ce69a8a6ab8a85fd9f4ce11e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb3ae1209ba1b96ebe920f1550fde793" id="r_afb3ae1209ba1b96ebe920f1550fde793"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#afb3ae1209ba1b96ebe920f1550fde793">zone_short_id</a> {0}</td></tr>
+<tr class="separator:afb3ae1209ba1b96ebe920f1550fde793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0daf1c7701b2543e9f8419aaaaf71c" id="r_a8c0daf1c7701b2543e9f8419aaaaf71c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a8c0daf1c7701b2543e9f8419aaaaf71c">compressed</a> {false}</td></tr>
+<tr class="separator:a8c0daf1c7701b2543e9f8419aaaaf71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef52f909769a6b2101f914c54b8f8ca" id="r_adef52f909769a6b2101f914c54b8f8ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#adef52f909769a6b2101f914c54b8f8ca">objv_tracker</a></td></tr>
+<tr class="separator:adef52f909769a6b2101f914c54b8f8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601539fe29741b0ad0802899b81e9f16" id="r_a601539fe29741b0ad0802899b81e9f16"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, bufferlist &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_g_w_obj_state.html#a601539fe29741b0ad0802899b81e9f16">attrset</a></td></tr>
+<tr class="separator:a601539fe29741b0ad0802899b81e9f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00612">612</a> 번째 라인에서 정의되었습니다.</p>
+</div><h2 class="groupheader">생성자 &amp; 소멸자 문서화</h2>
+<a id="ac8c617fd435466d9402568c5ffa25d72" name="ac8c617fd435466d9402568c5ffa25d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8c617fd435466d9402568c5ffa25d72">&#9670;&#160;</a></span>RGWObjState() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGWObjState::RGWObjState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__rados_8cc_source.html">rgw_rados.cc</a> 파일의 <a class="el" href="rgw__rados_8cc_source.html#l00204">204</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>                         {</div>
+<div class="line"><span class="lineno">  205</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a60dc0716b3420e5f768f48ad14207d8c" name="a60dc0716b3420e5f768f48ad14207d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60dc0716b3420e5f768f48ad14207d8c">&#9670;&#160;</a></span>RGWObjState() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGWObjState::RGWObjState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_r_g_w_obj_state.html">RGWObjState</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__rados_8cc_source.html">rgw_rados.cc</a> 파일의 <a class="el" href="rgw__rados_8cc_source.html#l00210">210</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>                                               : <a class="code hl_variable" href="struct_r_g_w_obj_state.html#ac265b9af3f0a275a99b1fe142af4fd2d">obj</a> (rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ac265b9af3f0a275a99b1fe142af4fd2d">obj</a>) {</div>
+<div class="line"><span class="lineno">  211</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a2912533e36de08ff3c0e86fbafea552a">is_atomic</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a2912533e36de08ff3c0e86fbafea552a">is_atomic</a>;</div>
+<div class="line"><span class="lineno">  212</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a2377a3124988a1f45921be32211c5629">has_attrs</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a2377a3124988a1f45921be32211c5629">has_attrs</a>;</div>
+<div class="line"><span class="lineno">  213</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#ae1abd24ce94dce0b967458bd49afef83">exists</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ae1abd24ce94dce0b967458bd49afef83">exists</a>;</div>
+<div class="line"><span class="lineno">  214</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a565f124606c4c3e5d17d71ff74c6c58f">size</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a565f124606c4c3e5d17d71ff74c6c58f">size</a>;</div>
+<div class="line"><span class="lineno">  215</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#ab3bf2e122e1958979c337bc2e0982689">accounted_size</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ab3bf2e122e1958979c337bc2e0982689">accounted_size</a>;</div>
+<div class="line"><span class="lineno">  216</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a2815c7d6f7619484cb56765704d303d3">mtime</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a2815c7d6f7619484cb56765704d303d3">mtime</a>;</div>
+<div class="line"><span class="lineno">  217</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#af273b5ee7b54cf5d63e97fa9cf4f3351">epoch</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#af273b5ee7b54cf5d63e97fa9cf4f3351">epoch</a>;</div>
+<div class="line"><span class="lineno">  218</span>  <span class="keywordflow">if</span> (rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a6d82ca3e6153daf0b5586a35ffe8cc3a">obj_tag</a>.length()) {</div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a6d82ca3e6153daf0b5586a35ffe8cc3a">obj_tag</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a6d82ca3e6153daf0b5586a35ffe8cc3a">obj_tag</a>;</div>
+<div class="line"><span class="lineno">  220</span>  }</div>
+<div class="line"><span class="lineno">  221</span>  <span class="keywordflow">if</span> (rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ae14d4d965a2780b99b8705ed24b75305">tail_tag</a>.length()) {</div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_variable" href="struct_r_g_w_obj_state.html#ae14d4d965a2780b99b8705ed24b75305">tail_tag</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ae14d4d965a2780b99b8705ed24b75305">tail_tag</a>;</div>
+<div class="line"><span class="lineno">  223</span>  }</div>
+<div class="line"><span class="lineno">  224</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#aaf900c298ef153a353c67ff0701c2885">write_tag</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#aaf900c298ef153a353c67ff0701c2885">write_tag</a>;</div>
+<div class="line"><span class="lineno">  225</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#afa25d2024235152fdc76d0f6d9957e76">fake_tag</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#afa25d2024235152fdc76d0f6d9957e76">fake_tag</a>;</div>
+<div class="line"><span class="lineno">  226</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#afe406574ac61dad317fd3333aacd3d37">manifest</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#afe406574ac61dad317fd3333aacd3d37">manifest</a>;</div>
+<div class="line"><span class="lineno">  227</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#ab9313fce0fc5f7b55b78e40a5f5b9350">shadow_obj</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ab9313fce0fc5f7b55b78e40a5f5b9350">shadow_obj</a>;</div>
+<div class="line"><span class="lineno">  228</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a8496682384de0b95f6f054f6ac5ed266">has_data</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a8496682384de0b95f6f054f6ac5ed266">has_data</a>;</div>
+<div class="line"><span class="lineno">  229</span>  <span class="keywordflow">if</span> (rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ab44eac964466eb94214df0742dfe82ba">data</a>.length()) {</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_variable" href="struct_r_g_w_obj_state.html#ab44eac964466eb94214df0742dfe82ba">data</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#ab44eac964466eb94214df0742dfe82ba">data</a>;</div>
+<div class="line"><span class="lineno">  231</span>  }</div>
+<div class="line"><span class="lineno">  232</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a5cad205e7761da2c04a7c60a13915f37">prefetch_data</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a5cad205e7761da2c04a7c60a13915f37">prefetch_data</a>;</div>
+<div class="line"><span class="lineno">  233</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a7b0fe3b8f8ff56b13f9afe2e925f724b">keep_tail</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a7b0fe3b8f8ff56b13f9afe2e925f724b">keep_tail</a>;</div>
+<div class="line"><span class="lineno">  234</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a12777a9b4624473e566dbf75b9711f24">is_olh</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a12777a9b4624473e566dbf75b9711f24">is_olh</a>;</div>
+<div class="line"><span class="lineno">  235</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#adef52f909769a6b2101f914c54b8f8ca">objv_tracker</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#adef52f909769a6b2101f914c54b8f8ca">objv_tracker</a>;</div>
+<div class="line"><span class="lineno">  236</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a9512d35ce69a8a6ab8a85fd9f4ce11e4">pg_ver</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a9512d35ce69a8a6ab8a85fd9f4ce11e4">pg_ver</a>;</div>
+<div class="line"><span class="lineno">  237</span>  <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a8c0daf1c7701b2543e9f8419aaaaf71c">compressed</a> = rhs.<a class="code hl_variable" href="struct_r_g_w_obj_state.html#a8c0daf1c7701b2543e9f8419aaaaf71c">compressed</a>;</div>
+<div class="line"><span class="lineno">  238</span>}</div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a12777a9b4624473e566dbf75b9711f24"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a12777a9b4624473e566dbf75b9711f24">RGWObjState::is_olh</a></div><div class="ttdeci">bool is_olh</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00631">rgw_obj_manifest.h:631</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a2377a3124988a1f45921be32211c5629"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a2377a3124988a1f45921be32211c5629">RGWObjState::has_attrs</a></div><div class="ttdeci">bool has_attrs</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00615">rgw_obj_manifest.h:615</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a2815c7d6f7619484cb56765704d303d3"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a2815c7d6f7619484cb56765704d303d3">RGWObjState::mtime</a></div><div class="ttdeci">ceph::real_time mtime</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00619">rgw_obj_manifest.h:619</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a2912533e36de08ff3c0e86fbafea552a"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a2912533e36de08ff3c0e86fbafea552a">RGWObjState::is_atomic</a></div><div class="ttdeci">bool is_atomic</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00614">rgw_obj_manifest.h:614</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a565f124606c4c3e5d17d71ff74c6c58f"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a565f124606c4c3e5d17d71ff74c6c58f">RGWObjState::size</a></div><div class="ttdeci">uint64_t size</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00617">rgw_obj_manifest.h:617</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a5cad205e7761da2c04a7c60a13915f37"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a5cad205e7761da2c04a7c60a13915f37">RGWObjState::prefetch_data</a></div><div class="ttdeci">bool prefetch_data</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00629">rgw_obj_manifest.h:629</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a6d82ca3e6153daf0b5586a35ffe8cc3a"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a6d82ca3e6153daf0b5586a35ffe8cc3a">RGWObjState::obj_tag</a></div><div class="ttdeci">bufferlist obj_tag</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00621">rgw_obj_manifest.h:621</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a7b0fe3b8f8ff56b13f9afe2e925f724b"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a7b0fe3b8f8ff56b13f9afe2e925f724b">RGWObjState::keep_tail</a></div><div class="ttdeci">bool keep_tail</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00630">rgw_obj_manifest.h:630</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a8496682384de0b95f6f054f6ac5ed266"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a8496682384de0b95f6f054f6ac5ed266">RGWObjState::has_data</a></div><div class="ttdeci">bool has_data</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00627">rgw_obj_manifest.h:627</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a8c0daf1c7701b2543e9f8419aaaaf71c"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a8c0daf1c7701b2543e9f8419aaaaf71c">RGWObjState::compressed</a></div><div class="ttdeci">bool compressed</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00635">rgw_obj_manifest.h:635</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a9512d35ce69a8a6ab8a85fd9f4ce11e4"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a9512d35ce69a8a6ab8a85fd9f4ce11e4">RGWObjState::pg_ver</a></div><div class="ttdeci">uint64_t pg_ver</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00633">rgw_obj_manifest.h:633</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_aaf900c298ef153a353c67ff0701c2885"><div class="ttname"><a href="struct_r_g_w_obj_state.html#aaf900c298ef153a353c67ff0701c2885">RGWObjState::write_tag</a></div><div class="ttdeci">std::string write_tag</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00623">rgw_obj_manifest.h:623</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_ab3bf2e122e1958979c337bc2e0982689"><div class="ttname"><a href="struct_r_g_w_obj_state.html#ab3bf2e122e1958979c337bc2e0982689">RGWObjState::accounted_size</a></div><div class="ttdeci">uint64_t accounted_size</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00618">rgw_obj_manifest.h:618</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_ab44eac964466eb94214df0742dfe82ba"><div class="ttname"><a href="struct_r_g_w_obj_state.html#ab44eac964466eb94214df0742dfe82ba">RGWObjState::data</a></div><div class="ttdeci">bufferlist data</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00628">rgw_obj_manifest.h:628</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_ab9313fce0fc5f7b55b78e40a5f5b9350"><div class="ttname"><a href="struct_r_g_w_obj_state.html#ab9313fce0fc5f7b55b78e40a5f5b9350">RGWObjState::shadow_obj</a></div><div class="ttdeci">std::string shadow_obj</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00626">rgw_obj_manifest.h:626</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_ac265b9af3f0a275a99b1fe142af4fd2d"><div class="ttname"><a href="struct_r_g_w_obj_state.html#ac265b9af3f0a275a99b1fe142af4fd2d">RGWObjState::obj</a></div><div class="ttdeci">rgw_obj obj</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00613">rgw_obj_manifest.h:613</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_adef52f909769a6b2101f914c54b8f8ca"><div class="ttname"><a href="struct_r_g_w_obj_state.html#adef52f909769a6b2101f914c54b8f8ca">RGWObjState::objv_tracker</a></div><div class="ttdeci">RGWObjVersionTracker objv_tracker</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00639">rgw_obj_manifest.h:639</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_ae14d4d965a2780b99b8705ed24b75305"><div class="ttname"><a href="struct_r_g_w_obj_state.html#ae14d4d965a2780b99b8705ed24b75305">RGWObjState::tail_tag</a></div><div class="ttdeci">bufferlist tail_tag</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00622">rgw_obj_manifest.h:622</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_ae1abd24ce94dce0b967458bd49afef83"><div class="ttname"><a href="struct_r_g_w_obj_state.html#ae1abd24ce94dce0b967458bd49afef83">RGWObjState::exists</a></div><div class="ttdeci">bool exists</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00616">rgw_obj_manifest.h:616</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_af273b5ee7b54cf5d63e97fa9cf4f3351"><div class="ttname"><a href="struct_r_g_w_obj_state.html#af273b5ee7b54cf5d63e97fa9cf4f3351">RGWObjState::epoch</a></div><div class="ttdeci">uint64_t epoch</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00620">rgw_obj_manifest.h:620</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_afa25d2024235152fdc76d0f6d9957e76"><div class="ttname"><a href="struct_r_g_w_obj_state.html#afa25d2024235152fdc76d0f6d9957e76">RGWObjState::fake_tag</a></div><div class="ttdeci">bool fake_tag</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00624">rgw_obj_manifest.h:624</a></div></div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_afe406574ac61dad317fd3333aacd3d37"><div class="ttname"><a href="struct_r_g_w_obj_state.html#afe406574ac61dad317fd3333aacd3d37">RGWObjState::manifest</a></div><div class="ttdeci">std::optional&lt; RGWObjManifest &gt; manifest</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00625">rgw_obj_manifest.h:625</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a90de76d75a0764deea8c5a607d4fcf0e" name="a90de76d75a0764deea8c5a607d4fcf0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90de76d75a0764deea8c5a607d4fcf0e">&#9670;&#160;</a></span>~RGWObjState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGWObjState::~RGWObjState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__rados_8cc_source.html">rgw_rados.cc</a> 파일의 <a class="el" href="rgw__rados_8cc_source.html#l00207">207</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  207</span>                          {</div>
+<div class="line"><span class="lineno">  208</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">멤버 함수 문서화</h2>
+<a id="a1e52de8ead8c136ffb90470dfd2f5344" name="a1e52de8ead8c136ffb90470dfd2f5344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e52de8ead8c136ffb90470dfd2f5344">&#9670;&#160;</a></span>get_attr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::get_attr </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bufferlist &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00647">647</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  647</span>                                                  {</div>
+<div class="line"><span class="lineno">  648</span>    std::map&lt;std::string, bufferlist&gt;::iterator iter = <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a601539fe29741b0ad0802899b81e9f16">attrset</a>.find(name);</div>
+<div class="line"><span class="lineno">  649</span>    <span class="keywordflow">if</span> (iter != <a class="code hl_variable" href="struct_r_g_w_obj_state.html#a601539fe29741b0ad0802899b81e9f16">attrset</a>.end()) {</div>
+<div class="line"><span class="lineno">  650</span>      dest = iter-&gt;second;</div>
+<div class="line"><span class="lineno">  651</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  652</span>    }</div>
+<div class="line"><span class="lineno">  653</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  654</span>  }</div>
+<div class="ttc" id="astruct_r_g_w_obj_state_html_a601539fe29741b0ad0802899b81e9f16"><div class="ttname"><a href="struct_r_g_w_obj_state.html#a601539fe29741b0ad0802899b81e9f16">RGWObjState::attrset</a></div><div class="ttdeci">std::map&lt; std::string, bufferlist &gt; attrset</div><div class="ttdef"><b>Definition</b> <a href="rgw__obj__manifest_8h_source.html#l00641">rgw_obj_manifest.h:641</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_r_g_w_obj_state_a1e52de8ead8c136ffb90470dfd2f5344_icgraph.png" border="0" usemap="#astruct_r_g_w_obj_state_a1e52de8ead8c136ffb90470dfd2f5344_icgraph" alt=""/></div>
+<map name="astruct_r_g_w_obj_state_a1e52de8ead8c136ffb90470dfd2f5344_icgraph" id="astruct_r_g_w_obj_state_a1e52de8ead8c136ffb90470dfd2f5344_icgraph">
+<area shape="rect" title=" " alt="" coords="479,211,635,237"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_delete.html#a7d9eb79062106ce1af7373f1a593ec7e" title=" " alt="" coords="250,93,431,136"/>
+<area shape="poly" title=" " alt="" coords="522,204,479,177,430,150,404,139,406,134,432,146,481,172,525,200"/>
+<area shape="rect" href="class_r_g_w_put_obj.html#a15dc18aad7cf4ed1f3ac1eb4981decde" title=" " alt="" coords="267,160,414,187"/>
+<area shape="poly" title=" " alt="" coords="481,209,400,190,401,185,483,204"/>
+<area shape="rect" href="class_r_g_w_copy_obj.html#ad4c929ec03e2ef0765feb61bd93f94ed" title=" " alt="" coords="262,211,419,237"/>
+<area shape="poly" title=" " alt="" coords="463,227,420,227,420,221,463,221"/>
+<area shape="rect" href="structrgw_1_1store_1_1_d_b_1_1_object_1_1_read.html#afc98b39069d950aba903828a2cfe849d" title=" " alt="" coords="265,261,416,304"/>
+<area shape="poly" title=" " alt="" coords="491,244,417,265,415,260,490,239"/>
+<area shape="rect" href="struct_r_g_w_rados_1_1_object_1_1_read.html#afc5c888441f48bff0e22fd3307001d49" title=" " alt="" coords="253,328,428,371"/>
+<area shape="poly" title=" " alt="" coords="530,250,486,284,432,318,408,330,406,325,430,314,483,280,527,245"/>
+<area shape="rect" href="class_r_g_w_async_remove_obj.html#accafaf5f59056835ae2c72aa1a24d625" title=" " alt="" coords="21,5,186,48"/>
+<area shape="poly" title=" " alt="" coords="271,90,201,62,169,51,171,46,203,58,273,85"/>
+<area shape="rect" href="class_r_g_w_rados.html#a390a22cffcaca08280970e1a7dc0a227" title=" " alt="" coords="25,72,182,99"/>
+<area shape="poly" title=" " alt="" coords="234,104,182,98,183,92,234,99"/>
+<area shape="rect" href="classrgw_1_1sal_1_1_rados_object.html#a0ac066b99684f4f14127604ec387244f" title=" " alt="" coords="29,123,178,165"/>
+<area shape="poly" title=" " alt="" coords="235,130,179,137,178,132,234,125"/>
+<area shape="rect" href="class_r_g_w_pub_sub_1_1_sub_with_events.html#a5df143f9787910688d9d43c95b127658" title=" " alt="" coords="5,189,202,232"/>
+<area shape="poly" title=" " alt="" coords="263,145,251,150,227,165,203,180,175,191,173,186,200,175,224,160,248,146,261,140"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">멤버 데이터 문서화</h2>
+<a id="ab3bf2e122e1958979c337bc2e0982689" name="ab3bf2e122e1958979c337bc2e0982689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3bf2e122e1958979c337bc2e0982689">&#9670;&#160;</a></span>accounted_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjState::accounted_size {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00618">618</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  618</span>{0}; <span class="comment">//&lt; size before compression, encryption</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a601539fe29741b0ad0802899b81e9f16" name="a601539fe29741b0ad0802899b81e9f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601539fe29741b0ad0802899b81e9f16">&#9670;&#160;</a></span>attrset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, bufferlist&gt; RGWObjState::attrset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00641">641</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a8c0daf1c7701b2543e9f8419aaaaf71c" name="a8c0daf1c7701b2543e9f8419aaaaf71c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0daf1c7701b2543e9f8419aaaaf71c">&#9670;&#160;</a></span>compressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::compressed {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00635">635</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  635</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab44eac964466eb94214df0742dfe82ba" name="ab44eac964466eb94214df0742dfe82ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab44eac964466eb94214df0742dfe82ba">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bufferlist RGWObjState::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00628">628</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="af273b5ee7b54cf5d63e97fa9cf4f3351" name="af273b5ee7b54cf5d63e97fa9cf4f3351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af273b5ee7b54cf5d63e97fa9cf4f3351">&#9670;&#160;</a></span>epoch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjState::epoch {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00620">620</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  620</span>{0};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae1abd24ce94dce0b967458bd49afef83" name="ae1abd24ce94dce0b967458bd49afef83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1abd24ce94dce0b967458bd49afef83">&#9670;&#160;</a></span>exists</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::exists {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00616">616</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  616</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa25d2024235152fdc76d0f6d9957e76" name="afa25d2024235152fdc76d0f6d9957e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa25d2024235152fdc76d0f6d9957e76">&#9670;&#160;</a></span>fake_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::fake_tag {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00624">624</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  624</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2377a3124988a1f45921be32211c5629" name="a2377a3124988a1f45921be32211c5629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2377a3124988a1f45921be32211c5629">&#9670;&#160;</a></span>has_attrs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::has_attrs {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00615">615</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  615</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8496682384de0b95f6f054f6ac5ed266" name="a8496682384de0b95f6f054f6ac5ed266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8496682384de0b95f6f054f6ac5ed266">&#9670;&#160;</a></span>has_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::has_data {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00627">627</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  627</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2912533e36de08ff3c0e86fbafea552a" name="a2912533e36de08ff3c0e86fbafea552a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2912533e36de08ff3c0e86fbafea552a">&#9670;&#160;</a></span>is_atomic</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::is_atomic {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00614">614</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  614</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a12777a9b4624473e566dbf75b9711f24" name="a12777a9b4624473e566dbf75b9711f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12777a9b4624473e566dbf75b9711f24">&#9670;&#160;</a></span>is_olh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::is_olh {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00631">631</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  631</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7b0fe3b8f8ff56b13f9afe2e925f724b" name="a7b0fe3b8f8ff56b13f9afe2e925f724b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0fe3b8f8ff56b13f9afe2e925f724b">&#9670;&#160;</a></span>keep_tail</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::keep_tail {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00630">630</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  630</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afe406574ac61dad317fd3333aacd3d37" name="afe406574ac61dad317fd3333aacd3d37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe406574ac61dad317fd3333aacd3d37">&#9670;&#160;</a></span>manifest</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="class_r_g_w_obj_manifest.html">RGWObjManifest</a>&gt; RGWObjState::manifest</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00625">625</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a2815c7d6f7619484cb56765704d303d3" name="a2815c7d6f7619484cb56765704d303d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2815c7d6f7619484cb56765704d303d3">&#9670;&#160;</a></span>mtime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ceph::real_time RGWObjState::mtime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00619">619</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="ac265b9af3f0a275a99b1fe142af4fd2d" name="ac265b9af3f0a275a99b1fe142af4fd2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac265b9af3f0a275a99b1fe142af4fd2d">&#9670;&#160;</a></span>obj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrgw__obj.html">rgw_obj</a> RGWObjState::obj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00613">613</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a6d82ca3e6153daf0b5586a35ffe8cc3a" name="a6d82ca3e6153daf0b5586a35ffe8cc3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d82ca3e6153daf0b5586a35ffe8cc3a">&#9670;&#160;</a></span>obj_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bufferlist RGWObjState::obj_tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00621">621</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="adef52f909769a6b2101f914c54b8f8ca" name="adef52f909769a6b2101f914c54b8f8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef52f909769a6b2101f914c54b8f8ca">&#9670;&#160;</a></span>objv_tracker</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_g_w_obj_version_tracker.html">RGWObjVersionTracker</a> RGWObjState::objv_tracker</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00639">639</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a706f6c7fa79508b3321dce3eca530ce7" name="a706f6c7fa79508b3321dce3eca530ce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a706f6c7fa79508b3321dce3eca530ce7">&#9670;&#160;</a></span>olh_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bufferlist RGWObjState::olh_tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00632">632</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a9512d35ce69a8a6ab8a85fd9f4ce11e4" name="a9512d35ce69a8a6ab8a85fd9f4ce11e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9512d35ce69a8a6ab8a85fd9f4ce11e4">&#9670;&#160;</a></span>pg_ver</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjState::pg_ver {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00633">633</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  633</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5cad205e7761da2c04a7c60a13915f37" name="a5cad205e7761da2c04a7c60a13915f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cad205e7761da2c04a7c60a13915f37">&#9670;&#160;</a></span>prefetch_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RGWObjState::prefetch_data {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00629">629</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  629</span>{<span class="keyword">false</span>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab9313fce0fc5f7b55b78e40a5f5b9350" name="ab9313fce0fc5f7b55b78e40a5f5b9350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9313fce0fc5f7b55b78e40a5f5b9350">&#9670;&#160;</a></span>shadow_obj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RGWObjState::shadow_obj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00626">626</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="a565f124606c4c3e5d17d71ff74c6c58f" name="a565f124606c4c3e5d17d71ff74c6c58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565f124606c4c3e5d17d71ff74c6c58f">&#9670;&#160;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t RGWObjState::size {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00617">617</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  617</span>{0}; <span class="comment">//&lt; size of raw object</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae14d4d965a2780b99b8705ed24b75305" name="ae14d4d965a2780b99b8705ed24b75305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae14d4d965a2780b99b8705ed24b75305">&#9670;&#160;</a></span>tail_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bufferlist RGWObjState::tail_tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00622">622</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="aaf900c298ef153a353c67ff0701c2885" name="aaf900c298ef153a353c67ff0701c2885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf900c298ef153a353c67ff0701c2885">&#9670;&#160;</a></span>write_tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RGWObjState::write_tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00623">623</a> 번째 라인에서 정의되었습니다.</p>
+
+</div>
+</div>
+<a id="afb3ae1209ba1b96ebe920f1550fde793" name="afb3ae1209ba1b96ebe920f1550fde793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb3ae1209ba1b96ebe920f1550fde793">&#9670;&#160;</a></span>zone_short_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t RGWObjState::zone_short_id {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a> 파일의 <a class="el" href="rgw__obj__manifest_8h_source.html#l00634">634</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><span class="lineno">  634</span>{0};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>이 구조체에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__obj__manifest_8h_source.html">rgw_obj_manifest.h</a></li>
+<li>D:/git/ceph/src/rgw/<a class="el" href="rgw__rados_8cc_source.html">rgw_rados.cc</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_r_g_w_obj_state.html">RGWObjState</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
